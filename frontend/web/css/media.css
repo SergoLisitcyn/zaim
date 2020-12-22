@@ -1,0 +1,707 @@
+@media (min-width: 1200px) {
+    .footer {
+        position: relative;
+    }
+}
+
+
+
+@media (min-width: 960px) {
+    header {
+        width: 100%;
+    }
+    .limit-width {
+        max-width: 1200px;
+        margin: auto;
+    }
+    .desktop-hidden {
+        display: none !important;
+    }
+    .header-nav-section {
+        background-color: #146696;
+    }
+    .header-nav__list {
+        display: flex;
+        margin-left: -25px;
+    }
+    .header-nav__item {
+        position: relative;
+        margin-left: 25px;
+    }
+    .header-nav__drop {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 221px;
+        white-space: nowrap;
+        background-color: #1b1d1f;
+    }
+
+    .header-nav__drop.collapse {
+        display: block;
+    }
+
+    .header-nav__item:not(:hover) .header-nav__drop {
+        display: none;
+    }
+
+    .header-nav__item-l2:hover .header-nav__link-l2 {
+        color: #146696;
+        background-color: rgba(255,255,255,.03);
+    }
+
+    .nav-tabs>li.active>a {
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+    }
+}
+
+
+@media screen and (min-width: 810px) {
+    .sz-partners-wrap {
+        max-width: 1170px;
+        margin: 0 auto;
+        padding: 0 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .sz-partners-title {
+        font-size: 18px;
+        font-weight: 600;
+    }
+    .sz-partners-list {
+        display: flex;
+        padding-right: 110px;
+        justify-content: space-between;
+        width: 74%;
+    }
+    .sz-partner {
+        filter: grayscale(100%);
+        display: block;
+        width: 85px;
+        height: 55px;
+    }
+}
+
+@media screen and (max-width: 1230px) {
+    .offers__items {
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+    .yt-video iframe {
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1199px) {
+    .wrapper {
+        background-image: none;
+    }
+    .main-title .subtitle,
+    .main-title .descr {
+        display: none;
+    }
+
+    .main-title__img {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: -36px;
+    }
+    .advantages__list {
+        flex-direction: column;
+        margin-top: 25px;
+    }
+
+    .advantages__list li {
+        max-width: 100%;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin: 10px 0;
+    }
+
+    .advantages__list li p {
+        margin-left: 5px;
+    }
+
+    .feedback-form__fields {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1070px) {
+    .content-row {
+        flex-direction: column;
+    }
+
+    .content-box,
+    .content-sidebar {
+        width: 100%;
+    }
+
+    .content-sidebar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content-sidebar .mfo_card {
+        width: 55%;
+    }
+
+    .content-main-info,
+    .akciya-container,
+    .firstloan,
+    .mfo-footer,
+    .contactdetails {
+        flex-direction: column
+    }
+
+    .content-main-info__item,
+    .akciya-container-item,
+    .contactdetails-item {
+        width: 100%;
+    }
+
+    .mfo-card-btn {
+        margin-bottom: 10px;
+    }
+
+    .akciya-container-item {
+        text-align: center;
+    }
+
+    .mfo-footer {
+        padding-left: 0;
+    }
+
+    .yt-video iframe {
+        width: 100%;
+        height: 500px;
+    }
+
+    .nav-tabs {
+        padding: 0px 40px;
+    }
+
+    .content-main-info__item {
+        padding: 0 15px;
+    }
+
+    .content-main-info__item h1 {
+        font-size: 24px;
+        line-height: 29px;
+    }
+
+    .feedback-form__fields {
+        justify-content: center;
+    }
+
+    .article-contacts__inner {
+        padding: 0 15px;
+    }
+
+    .content-text {
+        padding: 0 25px;
+    }
+
+    .mfo-about {
+        padding: 30px 15px 0;
+    }
+
+    .contactdetails-item {
+        padding: 0 25px 20px;
+    }
+
+    .mfo-offer-recom-title {
+        font-size: 25px;
+        margin-top: 40px;
+    }
+
+    .content-sidebar .subscribe_main {
+        width: 55%;
+    }
+
+    #contacts .content-main-info__content {
+        padding: 0 15px;
+    }
+
+    #creditplus .content-main-info__item {
+        width: 100%;
+    }
+
+    .content-reviews {
+        padding: 25px 15px;
+    }
+}
+
+@media (max-width: 959px) {
+
+    .desktop-visible {
+        display: none !important;
+    }
+
+    .header-body {
+        padding-bottom: 0;
+    }
+
+    .header-body__col--top-left {
+        padding-right: 0;
+    }
+
+    .header-body__row--bottom {
+        flex-wrap: wrap;
+    }
+
+    .header-body__col--all-mfo {
+        order: 1;
+        flex-shrink: 0;
+        width: 100%;
+    }
+
+    .header-all-mfo {
+        margin: 0 -20px;
+        font-size: 20px;
+        font-weight: 600;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        border-radius: 0;
+    }
+
+    .header-nav-section {
+        padding-bottom: 20px;
+    }
+
+    .header-nav-section:not(.active), .header-overlay:not(.active), .header-nav-section:not([data-opened=nav]) .header-nav, .header-nav-section:not([data-opened=search]) .header-nav-section__search-m {
+        display: none;
+    }
+
+    .header-nav-section__row {
+        display: block;
+    }
+
+    .header-nav__link, .header-nav__link-l2 {
+        font-size: 20px;
+        line-height: 1.1;
+        font-weight: 600;
+        padding: 8px 20px;
+        margin: 0 -20px;
+    }
+
+    .header-nav__link--cab {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        background-color: #3b9fd8;
+    }
+
+    .header-nav__list {
+        padding-top: 20px;
+    }
+
+    .header-nav__list {
+        padding-top: 20px;
+    }
+
+    .header-nav__list+.header-nav__list {
+        margin-top: 20px;
+        border-top: 1px solid #fff;
+    }
+
+    .header-nav__link-l2 {
+        padding-left: 40px;
+    }
+    .loan_calculator {
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 25px;
+    }
+
+    .loan_calculator_left, .loan_calculator_right {
+        display: block;
+        width: auto;
+        padding: 0;
+    }
+
+    .loan_calculator_search_left {
+        display: none;
+    }
+
+    .loan_calculator_search span:first-child {
+        display: none;
+    }
+
+    .loan_calculator_search .visible-mobile {
+        display: inline;
+        font-weight: 400;
+    }
+
+    .loan_calculator_right {
+        padding-top: 17px;
+        margin-top: 20px;
+        border-top: 1px solid #9a9a9a;
+    }
+
+    .loan_calculator_submit_mobile {
+        display: block;
+    }
+
+    .loan_calculator_right {
+        padding-top: 17px;
+        margin-top: 20px;
+        border-top: 1px solid #9a9a9a;
+    }
+
+    .loan_calculator:before {
+        border: none;
+    }
+
+    .database__row {
+        flex-direction: column;
+    }
+    .database__item {
+        padding: 0;
+        width: 100%;
+    }
+
+    .database .database__item:nth-child(1) {
+        padding-top: 40px;
+    }
+    
+    .registration__items {
+        flex-direction: column;
+    }
+    
+    .registration__item {
+        width: 100%;
+    }
+
+    .registration__item-right {
+        margin-top: 36px;
+    }
+
+    .how-take__list {
+        flex-direction: column;
+        margin-top: 25px;
+    }
+
+    .how-take__list li {
+        max-width: 100%;
+        align-items: flex-start;
+        margin: 10px 0;
+    }
+
+    .how-take__list li p {
+        margin-left: 5px;
+    }
+
+    .footer__col {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    #rating .offer-content {
+        flex-direction: column;
+    }
+
+    #rating .offer-footer {
+        flex-direction: column;
+        padding-left: 0;
+        padding: 20px;
+    }
+}
+
+
+@media (max-width: 930px) {
+    .mfo_card_info_rating_data {
+        float: none;
+    }
+    .mfo_card {
+        width: 45%;
+    }
+    .subscribe_main {
+        width: 100%;
+    }
+    .subscribe_text_item {
+        font-size: 19px;
+        padding: 0 10px;
+    }
+    .subscribe_input_item {
+        padding: 20px 0 10px;
+    }
+    .subscribe-btn, .subscribe-input {
+        min-width: 70%;
+    }
+    .subscribe-btn {
+        margin-top: 5px;
+        max-width: 195px;
+    }
+    .faq__title,
+    .faq__link {
+        font-size: 33px;
+        margin: 20px 0;
+        letter-spacing: normal;
+    }
+
+    .faq__row {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+
+    .faq__title::before {
+        display: none;
+    }
+
+    .faq__col a {
+        text-align: center;
+    }
+    .faq__col a:not(:last-child) {
+        margin-bottom: 12px;
+    }
+}
+
+
+@media screen and (max-width: 809px) {
+    .sz-partners-wrap {
+        width: 100%;
+        padding: 0 5px;
+    }
+
+    .sz-partners-title {
+        display: none;
+    }
+
+    .sz-partners-list {
+        width: 95%;
+        white-space: nowrap;
+    }
+
+    .sz-partner {
+        background-position: center, center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        filter: grayscale(100%);
+        display: inline-block;
+        width: 20%;
+        height: 55px;
+        margin: 0;
+    }
+    .aktsii-list__container {
+        margin-top: 0;
+    }
+    .aktsii-list__item {
+        width: auto;
+        margin: auto;
+        max-width: 415px;
+        padding: 25px 10px 0;
+    }
+
+    .yt-video iframe {
+        height: 370px;
+    }
+
+    .content-reviews-rating {
+        flex-direction: column;
+    }
+
+    .content-reviews-rating .rating {
+        margin-top: 10px;
+    }
+
+    #aktsii .aktsii-list__container {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 767px) {
+    .review-form__bottom,
+    .review-form__btn button {
+        flex-direction: column;
+    }
+    .review-form__input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .review-form__bottom>div+div {
+        padding: 0;
+    }
+
+    .email_container {
+        flex-direction: column;
+    }
+
+    .text_top_subscribe_container {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .aktsii-article__text {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .aktsii-article__subtitle,
+    .aktsii-article__box h3 {
+        margin-left: 20px;
+        margin-right: 20px;
+        font-size: 24px;
+    }
+
+    .aktsii-article__box h3 {
+        margin-top: 20px;
+    }
+
+    .aktsii-article__list {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .faq-list {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+
+@media (max-width: 700px) { 
+    .mfo_card {
+        width: 100%;
+    }
+    .subscribe_main {
+        width: 100%;
+    }
+}
+
+@media (max-width: 639px) {
+    .loan_calculator_params {
+        margin-left: 0;
+    }
+
+    .loan_calculator_method, .loan_calculator_process {
+        display: block;
+        width: auto;
+        padding-left: 0;
+    }
+
+    .loan_calculator_method {
+        margin-top: 15px;
+    }
+
+    .content-sidebar .mfo_card {
+        width: 100%;
+    }
+
+    .content-sidebar {
+        align-items: baseline;
+    }
+
+    .content-sidebar .subscribe_main {
+        width: 100%;
+    }
+
+    #aktsii .content-main-info__item h1 {
+        padding: 0 20px;
+    }
+
+
+}
+
+
+@media (max-width: 567px) {
+    .top-10-mfo {
+        line-height: 1;
+    }
+
+    .footer__col {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .how-take-points__list {
+        padding: 0;
+    }
+
+    .yt-video iframe {
+        height: 270px;
+    }
+}
+
+@media (max-width: 479px) {
+    .header-city {
+        margin-left: 0;
+        display: inline-block;
+    }
+
+    .header-city ul {
+        left: 50%;
+        transform: translateX(-50%);
+        column-count: 2;
+    }
+
+    .header-body__col--city, .header-body__col--top-mfo {
+        width: 100%;
+        text-align: center;
+    }
+
+    .content-main-info__subtitle {
+        padding-left: 15px;
+    }
+
+    .content-main-info__box {
+        padding-right: 10px; 
+    }
+
+    .content-main-info__list {
+        padding-left: 30px;
+    }
+
+    .subscribe-top-item-wrap {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .subscribe-top-item {
+        margin-top: 5px;
+        padding: 0 10px;
+        width: 100%;
+    }
+
+    .subscribe-top-item input {
+        width: 100%;
+    }
+
+    .aktsii-article__share {
+        flex-direction: column;
+    }
+
+    .aktsii-article__share .articles_button {
+        margin-right: 0;
+    }
+
+    .aktsii-article__share-buttons {
+        margin-top: 10px;
+    }
+
+    .faq-list {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+}
+
+@media (max-width: 402px) {
+    .database {
+        margin-top: 100px;
+    }
+
+    .yt-video iframe {
+        height: 160px;
+    }
+}
