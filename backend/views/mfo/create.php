@@ -5,9 +5,9 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\Mfo */
 
-$this->title = 'Create Mfo';
+$this->title = 'Создать МФО';
 $this->params['breadcrumbs'][] = ['label' => 'Mfos', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->mfo_name;
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="mfo-create">
 
