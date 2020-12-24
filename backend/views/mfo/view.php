@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model common\models\Mfo */
 
-$this->title = $model->title;
+$this->title = $model->mfo_name;
 $this->params['breadcrumbs'][] = ['label' => 'Mfos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);

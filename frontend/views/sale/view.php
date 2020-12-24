@@ -2,13 +2,12 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use \frontend\widgets\Rating;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Sale */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Sales', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
 <section class="breadcrumbs plr">
@@ -36,9 +35,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="content-info">
                     <div class="content-main-info">
                         <div class="content-main-info__item">
-                            <h1>Первый микрокредит в Dengiclick без переплат!</h1>
+                            <h1><?= $model->name?></h1>
                             <div class="aktsii-article__dates">
-                                <i></i><span>20.10.2020 - 20.12.2020</span>
+                                <i></i><span><?= date("d.m.Y", strtotime($model->srok_ot)) ?> - <?= date("d.m.Y", strtotime($model->srok_do)) ?></span>
                             </div>
                             <div class="email_container">
                                 <div	class="text_top_subscribe_container">Подпишитесь на рассылку	и первыми узнавайте<br>	об акциях и специальных	предложениях</div>
@@ -51,6 +50,12 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </div>
                             </div>
                             <div class="aktsii-article__content">
+                                <a href="#" class="aktsii-article__img">
+                                    <img class="lazy lazy-loaded" src="<?= $model->image?>" data-lazy-type="image" data-lazy-src="<?= $model->image?>" alt="Акция Dengiclick" width="600" height="270">
+                                    <noscript>
+                                        <img class="size-medium wp-image-374 aligncenter" src="<?= $model->image?>" alt="Акция Dengiclick" width="600" height="270" />
+                                    </noscript>
+                                </a>
                                 <?= $model->content ?>
                                 <a href="#" class="articles_button">Участвовать в	акции</a>
                                 <div class="aktsii-article__box">
@@ -59,9 +64,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                         <div class="aktsii-article__box-offers">
                                             <a href="#" title="Оформите микрокредит в Creditplus.kz и получите подарок!">
                                                 <noscript>
-                                                    <img src="img/2020/10/creditplus-yablochnyi-kvartal-150x150.jpg" alt="акции" />
+                                                    <img src="<?= $model->image?>" alt="акции" />
                                                 </noscript>
-                                                <img class=" lazyloaded" src="img/2020/10/creditplus-yablochnyi-kvartal-150x150.jpg" data-src="img/2020/10/creditplus-yablochnyi-kvartal-150x150.jpg" alt="акции">
+                                                <img class=" lazyloaded" src="<?= $model->image?>" data-src="<?= $model->image?>" alt="акции">
                                                 <span> Оформите микрокредит в
 															Creditplus.kz и получите подарок! </span>
                                             </a>
@@ -117,16 +122,16 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="mfo_card_company">
                         <a href="#">
                             <noscript>
-                                <img src="img/2016/11/dengiclick.png" alt="ДеньгиClick">
+                                <img src="<?= $mfo->logo?>" alt="ДеньгиClick">
                             </noscript>
-                            <img class=" ls-is-cached lazyloaded" src="img/2016/11/dengiclick.png" data-src="img/2016/11/dengiclick.png" alt="ДеньгиClick">
+                            <img class=" ls-is-cached lazyloaded" src="<?= $mfo->logo?>" data-src="<?= $mfo->logo?>" alt="ДеньгиClick">
                         </a>
                     </div>
                     <div class="mfo_card_compare">
-                        <a href="#" data-mfo="dengiclick" data-title="ДеньгиClick">Сравнить</a>
+                        <a href="<?= $mfo->mfo_name ?>" data-mfo="dengiclick" data-title="ДеньгиClick">Сравнить</a>
                     </div>
                     <div class="mfo_card_info_link">
-                        <a href="#">Подробнее о ДеньгиClick</a>
+                        <a href="#">Подробнее о <?= $mfo->mfo_name ?></a>
                     </div>
                     <div class="mfo_card_info">
                         <div class="mfo_card_info_inner">
@@ -135,28 +140,28 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <div class="mfo_card_info_rating_data">
                                     <div class="rating__stars" style="width:91%">
                                     </div>
-                                    <div class="rating__val">4.6</div>
+                                    <div class="rating__val"><?= $mfo->rating ?></div>
                                 </div>
                             </div>
                             <div class="mfo_card_info_time">
                                 <div class="mfo_card_info_time_label">На срок:</div>
-                                <div class="mfo_card_info_time_data">5 – 30 дней</div>
+                                <div class="mfo_card_info_time_data"><?= $mfo->srok ?></div>
                             </div>
                             <div class="mfo_card_info_sum">
                                 <div class="mfo_card_info_sum_label"> Сумма (тнг):</div>
-                                <div class="mfo_card_info_sum_data">5 000 – 300 000</div>
+                                <div class="mfo_card_info_sum_data"><?= $mfo->sum ?></div>
                             </div>
                             <div class="mfo_card_info_rate">
                                 <div class="mfo_card_info_rate_label">Ставка:</div>
-                                <div class="mfo_card_info_rate_data">от 0,01%</div>
+                                <div class="mfo_card_info_rate_data"><?= $mfo->stavka ?></div>
                             </div>
                             <div class="mfo_card_info_approval">
                                 <div class="mfo_card_info_approval_label">Одобрение:</div>
-                                <div class="mfo_card_info_approval_data">79 %</div>
+                                <div class="mfo_card_info_approval_data"><?= $mfo->odobrenie ?> %</div>
                             </div>
                             <div class="mfo_card_info_accept">
                                 <div class="mfo_card_info_accept_label">Рассмотрение:</div>
-                                <div class="mfo_card_info_accept_data">5 минут</div>
+                                <div class="mfo_card_info_accept_data"><?= $mfo->rasmotrenie ?> </div>
                             </div>
                             <div class="mfo_card_info_ways">
                                 <div class="mfo_card_info_ways_label">Получить:</div>
@@ -201,32 +206,4 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 </section>
 
-<section class="ratings">
-    <div class="ratings-wrap">
-        <form class="ratings-form">
-            <p class="ratings-item">
-                <label class="ratings__description">Оцените наш сайт:</label>
-                <span class="mr-star-rating mr-star-rating-select">
-							<i title="1" class="fa fa-star-o mr-star-empty index-1-rating-item-1-1"></i>
-							<i title="2" class="fa fa-star-o mr-star-empty index-2-rating-item-1-1"></i>
-							<i title="3" class="fa fa-star-o mr-star-empty index-3-rating-item-1-1"></i>
-							<i title="4" class="fa fa-star-o mr-star-empty index-4-rating-item-1-1"></i>
-							<i title="5" class="fa fa-star-o mr-star-empty index-5-rating-item-1-1"></i>
-						</span>
-            </p>
-            <input type="button" class="save-rating" value="OK">
-        </form>
-        <span class="ratings-result">
-					<span class="mr-star-rating">
-						<i class="fa fa-star mr-star-full"></i>
-						<i class="fa fa-star mr-star-full"></i>
-						<i class="fa fa-star mr-star-full"></i>
-						<i class="fa fa-star mr-star-full"></i>
-						<i class="fa fa-star-half-o mr-star-half"></i>
-					</span>
-					<span class="star-result">
-						<span>4.38</span>/<span>5</span>(<span >2665</span>)
-					</span>
-				</span>
-    </div>
-</section>
+<?= Rating::widget(); ?>

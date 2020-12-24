@@ -4,6 +4,7 @@
 use \frontend\widgets\GridCatalog;
 use \frontend\widgets\Rating;
 use \frontend\widgets\SaleCatalog;
+use \frontend\widgets\CalculatorWidget;
 $this->title = 'My Yii Application';
 ?>
 <section class="main-title">
@@ -13,104 +14,7 @@ $this->title = 'My Yii Application';
     <img class="main-title__img" src="img/uncode-child/bg-sm.png" alt="">
 </section>
 
-<section class="calculator plr">
-    <div class="calculator-wrap limit-width">
-        <div class="loan_calculator">
-            <div class="loan_calculator_left">
-                <div class="loan_calculator_sum">
-                    <label for="rs_sum" class="loan_calculator_sum_label">Сумма кредита</label>
-                    <div class="loan_calculator_sum_value">
-                        <div class="loan_calculator_sum_min">0</div>
-                        <div class="loan_calculator_sum_input">
-                            <input id="rs_sum" type="range" name="rs_sum" min="0" max="300000" step="1000">
-                        </div>
-                        <div class="loan_calculator_sum_max">300 000 тнг</div>
-                    </div>
-                </div>
-                <div class="loan_calculator_date">
-                    <label for="rs_date" class="loan_calculator_date_label">Срок кредитования</label>
-                    <div class="loan_calculator_date_value">
-                        <div class="loan_calculator_date_min">0</div>
-                        <div class="loan_calculator_date_input">
-                            <input id="rs_date" type="range" name="rs_date" min="0" max="60" step="1"></div>
-                        <div class="loan_calculator_date_max">60 дней</div>
-                    </div>
-                </div>
-                <div class="loan_calculator_search">
-                    <div class="loan_calculator_search_left">
-                        <div class="mfo_card_button search_company">Подобрать компании</div>
-                    </div>
-                    <div class="loan_calculator_search_right">
-                        <div class="loan_calculator_sum_right">
-                            <span>Сумма</span><span class="visible-mobile">Вы берете</span>
-                            <span class="loan_calculator_sum_input_right">50 000</span> <span>тнг</span>
-                        </div>
-                        <div class="loan_calculator_date_right">
-                            <span>Срок</span><span class="visible-mobile">на срок до</span>
-                            <span class="loan_calculator_date_input_right">7</span> <span>дней</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="loan_calculator_right">
-                <div class="loan_calculator_ext">
-                    <div class="loan_calculator_ext_header"> Дополнительные параметры:</div>
-                    <div class="loan_calculator_ext_params">
-                        <label>
-                            <input type="checkbox" id="advanced_repayment" value="a1">
-                            <span>Досрочное погашение</span>
-                        </label>
-                        <br>
-                        <label>
-                            <input type="checkbox" id="extension_loan" value="a2"><span>Продление (пролонгация) кредита</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="loan_calculator_params">
-                    <div class="loan_calculator_process">
-                        <label for="select_loan_calculator_process">Способ получения:</label>
-                        <select id="select_loan_calculator_process" data-placeholder="Выберите" class="select_loan_calculator">
-                            <option class="others_params" value="">не важно</option>
-                            <option class="others_params" value="money_to_bank_account">на банковский счет</option>
-                            <option class="others_params" value="money_at_stake">на банковскую карту</option>
-                            <option class="others_params" value="money_to_account_address">на счет Казпочты</option>
-                            <option class="others_params" value="loan_cash">займ наличными</option>
-                        </select>
-                    </div>
-                    <div class="loan_calculator_method">
-                        <label for="select_loan_calculator_method">Способ погашения:</label>
-                        <select id="select_loan_calculator_method" class="select_loan_calculator" data-placeholder="Выберите">
-                            <option class="others_params" value="">не важно</option>
-                            <option class="others_params" value="bank_card">банковская карта</option>
-                            <option class="others_params" value="bank_transfer">банковский перевод</option>
-                            <option class="others_params" value="cyber_plat">CyberPlat</option>
-                            <option class="others_params" value="qiwi">QIWI</option>
-                            <option class="others_params" value="kassa24">Kassa24</option>
-                            <option class="others_params" value="cash_on_hand">в кассе банка
-                            </option>
-                            <option class="others_params" value="cash_in_kazpost">в АО «Казпочта»</option>
-                            <option class="others_params" value="cash_in_office">в офисе компании</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="loan_calculator_sort">
-                    <label for="select_loan_calculator_sort" class="loan_calculator_sort_header">Сортировать по:</label>
-                    <div class="loan_calculator_sort_params">
-                        <select id="select_loan_calculator_sort" class="select_loan_calculator">
-                            <option class="others_params" value="">не важно</option>
-                            <option class="others_params" value="max_sum">максимальной сумме</option>
-                            <option class="others_params" value="max_term">максимальному сроку</option>
-                            <option class="others_params" value="approval">проценту одобрения</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="loan_calculator_submit_mobile">
-                <div class="mfo_card_button search_company">Подобрать компании</div>
-            </div>
-        </div>
-    </div>
-</section>
+<?= CalculatorWidget::widget() ?>
 
 <section class="database plr">
     <div class="database-wrap limit-width">

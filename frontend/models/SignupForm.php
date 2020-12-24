@@ -44,6 +44,7 @@ class SignupForm extends Model
      */
     public function signup()
     {
+        $users = User::findAll([]);
         if ($this->validate()) {
             $user = new User();
             $user->username = $this->username;
@@ -53,7 +54,11 @@ class SignupForm extends Model
             $user->generateEmailVerificationToken();
 
             $auth = Yii::$app->authManager;
-            $userRole = $auth->getRole('admin');
+            if (count($users) === 0) {
+                $userRole = $auth->getRole('admin');
+            } else {
+                $userRole = $auth->getRole('client');
+            }
 
             if ($user->save() && $this->sendEmail($user) && $auth->assign($userRole, $user->id)) {
                 return $user;

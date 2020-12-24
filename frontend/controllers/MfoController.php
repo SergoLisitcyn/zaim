@@ -51,10 +51,11 @@ class MfoController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($id)
+    public function actionView($url)
     {
+        $mfo = Mfo::find()->where(['status' => 1, 'url' => $url])->one();
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $mfo,
         ]);
     }
 

@@ -55,9 +55,6 @@ class Mfo extends \yii\db\ActiveRecord
     public function behaviors()
     {
         return [
-            'image' => [
-                'class' => 'rico\yii2images\behaviors\ImageBehave',
-            ],
             TimestampBehavior::className(),
         ];
     }
@@ -68,12 +65,12 @@ class Mfo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['mfo_name', 'stavka', 'title', 'created_at', 'updated_at'], 'required'],
+            [['mfo_name', 'stavka', 'title','url'], 'required'],
             [['rating'], 'number'],
-            [['odobrenie', 'akcii', 'home_page', 'status'], 'integer'],
-            [['rekvisit', 'about_company', 'content'], 'string'],
-            [['mfo_name','logo', 'srok', 'sum', 'stavka', 'rasmotrenie', 'phone', 'email', 'website', 'video', 'link_offer', 'title', 'description', 'keywords'], 'string', 'max' => 255],
-            [['type_credit_array','created_at','updated_at'], 'safe'],
+            [['odobrenie', 'akcii', 'home_page', 'status','sort'], 'integer'],
+            [['rekvisit', 'about_company', 'content','text_video'], 'string'],
+            [['mfo_name','logo', 'srok', 'sum', 'stavka', 'rasmotrenie', 'phone', 'email', 'website', 'video', 'link_offer', 'title', 'description', 'keywords','url'], 'string', 'max' => 255],
+            [['type_credit_array'], 'safe'],
             [['logo_file'], 'file'],
 
         ];
@@ -97,13 +94,13 @@ class Mfo extends \yii\db\ActiveRecord
             'email' => 'Email',
             'website' => 'Название сайта',
             'logo' => 'Логотип МФО',
-            'video' => 'Video',
+            'video' => 'Ссылка на видео',
             'rekvisit' => 'Реквизиты',
             'akcii' => 'Есть акция?',
             'home_page' => 'Отображать на главной странице',
             'link_offer' => 'Партнерская ссылка',
             'about_company' => 'О компании',
-            'content' => 'Контент',
+            'content' => 'Описание компании',
             'title' => 'Title',
             'description' => 'Description',
             'keywords' => 'Keywords',
@@ -113,6 +110,9 @@ class Mfo extends \yii\db\ActiveRecord
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
             'logo_file' => 'Логотип',
+            'sort' => 'Сортировка',
+            'url' => 'Постоянная ссылка',
+            'text_video' => 'Заголовок видео',
         ];
     }
     public function afterFind()

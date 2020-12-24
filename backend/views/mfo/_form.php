@@ -5,6 +5,8 @@ use yii\widgets\ActiveForm;
 use common\models\TypeCredit;
 use \kartik\select2\Select2;
 use \yii\helpers\ArrayHelper;
+use vova07\imperavi\Widget;
+use \yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Mfo */
@@ -25,9 +27,9 @@ use \yii\helpers\ArrayHelper;
                     'fieldConfig' => [
                         'template' => "{label}\n{beginWrapper}\n{input}\n{hint}\n{error}\n{endWrapper}",
                         'horizontalCssClasses' => [
-                        'label' => 'col-sm-4',
-                        'offset' => 'col-sm-offset-4',
-                        'wrapper' => 'col-sm-8',
+                        'label' => 'col-sm-3',
+                        'offset' => 'col-sm-offset-3',
+                        'wrapper' => 'col-sm-9',
                         'error' => '',
                         'hint' => '',
                         ],
@@ -40,10 +42,14 @@ use \yii\helpers\ArrayHelper;
 
                         <h4 class="bold uppercase">1. МФО</h4>
                         <?= $form->field($model, 'mfo_name')->textInput(['maxlength' => true]) ?>
+                        <?= $form->field($model, 'url')->textInput(['maxlength' => true])->hint('например 4slovo') ?>
 
-                        <div>
-                            <img src="<?=$model->logo ?>" class="img_slider_view" alt="Image" style="height: 100px">
-                            <?= \yii\helpers\Html::a('X', ['/mfo/deleteimg', 'id' => $model->id], ['class' => 'btn_port_del']) ?>
+                        <div class="form-group field-mfo-logo_file">
+                            <label class="control-label col-sm-4" for="mfo-logo_file"></label>
+                            <div class="col-sm-8">
+                                <img src="<?=$model->logo ?>" class="img_slider_view" alt="Image" style="height: 100px">
+                                <?= \yii\helpers\Html::a('X', ['/mfo/deleteimg', 'id' => $model->id], ['class' => 'btn_port_del']) ?>
+                            </div>
                         </div>
 
                         <?php
@@ -78,18 +84,46 @@ use \yii\helpers\ArrayHelper;
 
                     <div class="col-xs-6">
 
-                        <h4 class="bold uppercase">2. Billing Address</h4>
+                        <h4 class="bold uppercase">2. «Контактная информация»</h4>
+
                         <?= $form->field($model, 'phone')->textInput(['maxlength' => true]) ?>
 
                         <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
                         <?= $form->field($model, 'website')->textInput(['maxlength' => true]) ?>
 
-
-
+                        <?= $form->field($model, 'text_video')->textInput(['maxlength' => true]) ?>
                         <?= $form->field($model, 'video')->textInput(['maxlength' => true]) ?>
 
-                        <?= $form->field($model, 'rekvisit')->textarea(['rows' => 6]) ?>
+                        <?= $form->field($model, 'rekvisit')->widget(Widget::className(), [
+                            'settings' => [
+                                'lang' => 'ru',
+                                'minHeight' => 200,
+                                'formatting' => ['p', 'blockquote', 'h2', 'h1'],
+                                'attributes' => [
+                                    [
+                                        'attribute' => 'text',
+                                        'format' => 'html'
+                                    ]
+                                ],
+                                'plugins' => [
+                                    'clips',
+                                    'fullscreen'
+                                ]
+
+                            ]
+                        ])?>
+
+                        <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+
+                        <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
+
+                        <?= $form->field($model, 'keywords')->textInput(['maxlength' => true]) ?>
+
+                        <?= $form->field($model, 'status')->dropDownList([
+                            '1' => 'Активен',
+                            '0' => 'Неактивен'
+                        ]) ?>
 
                         <?= $form->field($model, 'akcii')->checkbox(['value' => 1, 'uncheck' => 0]) ?>
 
@@ -115,30 +149,32 @@ use \yii\helpers\ArrayHelper;
 
 
                 <div class="row">
-                    <div class="col-xs-6">
+                    <div class="col-xs-12">
 
-                        <h4 class="bold uppercase">3. Account Info</h4>
-
+                        <h4 class="bold uppercase">3. Описание компании</h4>
 
 
                         <?= $form->field($model, 'about_company')->textarea(['rows' => 6]) ?>
 
-                        <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
+                        <?= $form->field($model, 'content')->widget(Widget::className(), [
+                            'settings' => [
+                                'lang' => 'ru',
+                                'minHeight' => 200,
+                                'formatting' => ['p', 'blockquote', 'h2', 'h1'],
+                                'attributes' => [
+                                    [
+                                        'attribute' => 'text',
+                                        'format' => 'html'
+                                    ]
+                                ],
+                                'plugins' => [
+                                    'clips',
+                                    'fullscreen'
+                                ]
 
-                        <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+                            ]
+                        ])?>
 
-                        <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
-
-                        <?= $form->field($model, 'keywords')->textInput(['maxlength' => true]) ?>
-
-                        <?= $form->field($model, 'status')->dropDownList([
-                            '1' => 'Активен',
-                            '0' => 'Неактивен'
-                        ]) ?>
-
-                        <?= $form->field($model, 'created_at')->textInput() ?>
-
-                        <?= $form->field($model, 'updated_at')->textInput() ?>
                     </div>
 
                     <div class="col-xs-6">
@@ -146,7 +182,7 @@ use \yii\helpers\ArrayHelper;
                     </div>
                 </div>
 
-                <div class="form-group center">
+                <div class="form-group center" style="text-align: center">
                     <?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Обновить', ['class' => $model->isNewRecord ? 'mbtn mbtn-success' : 'mbtn mbtn-primary']) ?>
                 </div>
 

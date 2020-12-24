@@ -5,10 +5,10 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="img-circle" alt="User Image"/>
+                <img src="<?= $avatar;?>" class="img-circle" alt="User Image"/>
             </div>
             <div class="pull-left info">
-                <p>Alexander Pierce</p>
+                <p><?= $fullName;?></p>
 
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
@@ -18,10 +18,10 @@
             [
                 'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
                 'items' => [
-                    ['label' => 'Menu Yii2', 'options' => ['class' => 'header']],
-                    ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
-                    ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
+                    ['label' => 'Навигация', 'options' => ['class' => 'header']],
                     ['label' => 'МФО', 'icon' => 'book', 'url' => ['mfo/index']],
+                    ['label' => 'Создание страниц', 'icon' => 'file-code-o', 'url' => ['/pages']],
+                    ['label' => 'Меню', 'icon' => 'dashboard', 'url' => ['/menu']],
                     ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
                     [
                         'label' => 'Рубрики',
@@ -29,9 +29,9 @@
                         'url' => '#',
                         'items' => [
                             ['label' => 'Новости', 'icon' => 'newspaper-o', 'url' => ['/news'],],
-                            ['label' => 'Статьи', 'icon' => 'paper-plane', 'url' => ['/gii'],],
+                            ['label' => 'Статьи', 'icon' => 'paper-plane', 'url' => ['/news'],],
                             ['label' => 'Акции', 'icon' => 'hand-spock-o', 'url' => ['/sale'],],
-                            ['label' => 'Архив акций', 'icon' => 'archive', 'url' => ['/debug'],],
+                            ['label' => 'Архив акций', 'icon' => 'archive', 'url' => ['/sale'],],
 //                            [
 //                                'label' => 'Level One',
 //                                'icon' => 'circle-o',
@@ -59,6 +59,21 @@
                             ['label' => 'Создать новый фильтр', 'icon' => 'circle-o', 'url' => ['/type-credit'],],
                             ['label' => 'Подфильтры', 'icon' => 'circle-o', 'url' => ['/filters'],],
                             ['label' => 'Города', 'icon' => 'globe', 'url' => ['/city'],],
+                        ],
+                    ],
+                    [
+                        "label" => "Управление пользователями",
+                        "url" => "#",
+                        "icon" => "users",
+                        "items" => [
+                            [
+                                "label" => "Пользователи",
+                                "url" => ["/users/index"],
+                            ],
+                            [
+                                "label" => "Создать пользователя",
+                                "url" => ["/users/create"],
+                            ],
                         ],
                     ],
 

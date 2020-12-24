@@ -35,7 +35,11 @@ $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@vendor/almasaeed201
 
         <?= $this->render(
             'left.php',
-            ['directoryAsset' => $directoryAsset]
+        [
+            'directoryAsset' => $directoryAsset,
+            'fullName' => $user->getUserName(),
+            'avatar' => $user->getAvatar(),
+        ]
         )
         ?>
 

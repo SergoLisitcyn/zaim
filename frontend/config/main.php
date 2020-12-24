@@ -45,11 +45,21 @@ return [
                 'contact' => '/site/contact',
                 '/' => '/site/index',
                 'aktsii' => '/sale/index',
-//                [
-//                    'pattern' => 'page/<slug:\S+>',
-//                    'route' => '/pages/show-page',
-//                    'defaults' => ['slug' => 'error']
-//                ],
+                [
+                    'pattern' => 'mfo/<url:\S+>',
+                    'route' => '/mfo/view',
+                    'defaults' => ['url' => '']
+                ],
+                [
+                    'pattern' => 'aktsii/<url:\S+>',
+                    'route' => '/sale/list',
+                    'defaults' => ['url' => '']
+                ],
+                [
+                    'pattern' => 'page/<slug:\S+>',
+                    'route' => '/pages/show-page',
+                    'defaults' => ['slug' => 'error']
+                ],
 //                [
 //                    'pattern' => '/<slug:\S+>',
 //                    'route' => '/site/index',

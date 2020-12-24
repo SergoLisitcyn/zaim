@@ -1,3 +1,6 @@
+<?php
+use \yii\helpers\Url;
+?>
 <section class="offers plr">
     <div class="offers-wrap limit-width">
         <div class="offers__items">
@@ -7,7 +10,7 @@
                     <div class="mfo_achieve promo">Акция</div>
                 <?php endif; ?>
                 <div class="mfo_card_company">
-                    <a href="creditplus.html">
+                    <a href="<?= Url::toRoute(['mfo/view', 'url' => $mfo->url]) ?>">
                         <img src="<?= $mfo->logo; ?>" alt="<?= $mfo->mfo_name ?>">
                     </a>
                 </div>

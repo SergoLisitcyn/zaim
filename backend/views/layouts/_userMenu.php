@@ -22,7 +22,7 @@ use yii\helpers\Url;
             <p>
                 <?php \Yii::$app->authManager->getRolesByUser(Yii::$app->user->getId()); ?>
                 <span class="capitalize bold"><?= $fullName;?></span>
-                <small>Member since <?php echo date('M Y',Yii::$app->user->identity->created_at);?></small>
+                <small>Зарегистрирован <?php echo date('M Y',Yii::$app->user->identity->created_at);?></small>
             </p>
         </li>
         <!-- Menu Body -->

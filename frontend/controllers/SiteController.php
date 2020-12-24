@@ -147,17 +147,6 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
-    public function actionShowPage($slug = 'error') {
-
-        if (($model = Pages::find()->where(['slug' => $slug])->one()) !== null) {
-            return $this->render('showPage', [
-                'model' => $model,
-            ]);
-        } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
-        }
-    }
-
     /**
      * Signs user up.
      *

@@ -1,19 +1,19 @@
 <?php
 
-namespace frontend\controllers;
+namespace backend\controllers;
 
-use common\models\Mfo;
 use Yii;
-use common\models\Sale;
+use common\models\Calculator;
 use yii\data\ActiveDataProvider;
+use yii\helpers\Json;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * SaleController implements the CRUD actions for Sale model.
+ * CalculatorController implements the CRUD actions for Calculator model.
  */
-class SaleController extends Controller
+class CalculatorController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -31,37 +31,58 @@ class SaleController extends Controller
     }
 
     /**
-     * Lists all Sale models.
+     * Lists all Calculator models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $sales = Sale::find()->all();
+        $dataProvider = new ActiveDataProvider([
+            'query' => Calculator::find(),
+        ]);
+
+        if (Yii::$app->request->post('hasEditable'))
+        {
+            $id = $_POST['editableKey'];
+            $model = $this->findModel($id);
+            $out    = Json::encode(['output'=>'', 'message'=>'']);
+            $post = [];
+            $posted = current($_POST['Calculator']);
+            $post['Calculator'] = $posted;
+            if ($model->load($post)) {
+                $model->save();
+                $output = '';
+                $out = Json::encode(['output'=>$output, 'message'=>'']);
+            }
+            echo $out;
+            return;
+        }
 
         return $this->render('index', [
-            'sales' => $sales,
+            'dataProvider' => $dataProvider,
         ]);
-    }
-
-    public function actionList($url = null)
-    {
-        $sales = Sale::find()->where(['status' => 1, 'url' => $url])->one();
-        $mfo = Mfo::find()->where(['id' => $sales->mfo_id])->one();
-        return $this->render('view', [
-            'model' => $sales,
-            'mfo' => $mfo,
-        ]);
-
     }
 
     /**
-     * Creates a new Sale model.
+     * Displays a single Calculator model.
+     * @param integer $id
+     * @return mixed
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    public function actionView($id)
+    {
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+        ]);
+    }
+
+    /**
+     * Creates a new Calculator model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Sale();
+        $model = new Calculator();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -73,7 +94,7 @@ class SaleController extends Controller
     }
 
     /**
-     * Updates an existing Sale model.
+     * Updates an existing Calculator model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -93,7 +114,7 @@ class SaleController extends Controller
     }
 
     /**
-     * Deletes an existing Sale model.
+     * Deletes an existing Calculator model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -107,15 +128,15 @@ class SaleController extends Controller
     }
 
     /**
-     * Finds the Sale model based on its primary key value.
+     * Finds the Calculator model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Sale the loaded model
+     * @return Calculator the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Sale::findOne($id)) !== null) {
+        if (($model = Calculator::findOne($id)) !== null) {
             return $model;
         }
 

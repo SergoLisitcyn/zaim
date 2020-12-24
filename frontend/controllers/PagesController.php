@@ -2,18 +2,17 @@
 
 namespace frontend\controllers;
 
-use common\models\Mfo;
 use Yii;
-use common\models\Sale;
+use common\models\Pages;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * SaleController implements the CRUD actions for Sale model.
+ * PagesController implements the CRUD actions for Pages model.
  */
-class SaleController extends Controller
+class PagesController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -31,37 +30,41 @@ class SaleController extends Controller
     }
 
     /**
-     * Lists all Sale models.
+     * Lists all Pages models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $sales = Sale::find()->all();
+        $dataProvider = new ActiveDataProvider([
+            'query' => Pages::find(),
+        ]);
 
         return $this->render('index', [
-            'sales' => $sales,
+            'dataProvider' => $dataProvider,
         ]);
-    }
-
-    public function actionList($url = null)
-    {
-        $sales = Sale::find()->where(['status' => 1, 'url' => $url])->one();
-        $mfo = Mfo::find()->where(['id' => $sales->mfo_id])->one();
-        return $this->render('view', [
-            'model' => $sales,
-            'mfo' => $mfo,
-        ]);
-
     }
 
     /**
-     * Creates a new Sale model.
+     * Displays a single Pages model.
+     * @param integer $id
+     * @return mixed
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    public function actionView($id)
+    {
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+        ]);
+    }
+
+    /**
+     * Creates a new Pages model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Sale();
+        $model = new Pages();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -73,7 +76,7 @@ class SaleController extends Controller
     }
 
     /**
-     * Updates an existing Sale model.
+     * Updates an existing Pages model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -93,7 +96,7 @@ class SaleController extends Controller
     }
 
     /**
-     * Deletes an existing Sale model.
+     * Deletes an existing Pages model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -106,16 +109,27 @@ class SaleController extends Controller
         return $this->redirect(['index']);
     }
 
+    public function actionShowPage($slug = 'error') {
+
+        if (($model = Pages::find()->where(['slug' => $slug])->one()) !== null) {
+            return $this->render('showPage', [
+                'model' => $model,
+            ]);
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+
     /**
-     * Finds the Sale model based on its primary key value.
+     * Finds the Pages model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Sale the loaded model
+     * @return Pages the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Sale::findOne($id)) !== null) {
+        if (($model = Pages::findOne($id)) !== null) {
             return $model;
         }
 

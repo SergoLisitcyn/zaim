@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-
+use kartik\rating\StarRating;
 /* @var $this yii\web\View */
 /* @var $model common\models\Mfo */
 
@@ -53,11 +53,22 @@ $this->title = $model->title;
                     </ul>
                     <div class="content-main-info">
                         <div class="content-main-info__item">
-                            <h1>ТОО «МФО «Kredit Seven Kazakhstan (Кредит Севен Казахстан)»</h1>
+                            <h1><?= $model->mfo_name?></h1>
                             <div class="mfo-head__rating">
                                 <div class="rating">
-                                    <div class="rating__stars" style="width:90%"></div>
-                                    <div class="rating__val">4.8</div>
+                                    <?php
+                                    echo StarRating::widget([
+                                        'name' => 'rating_21',
+                                        'value' => $model->rating,
+                                        'pluginOptions' => [
+                                            'readonly' => true,
+                                            'showClear' => false,
+                                            'showCaption' => false,
+                                        ],
+                                    ]);
+                                    ?>
+<!--                                    <div class="rating__stars" style="width:90%"></div>-->
+                                    <div class="rating__val"><?= $model->rating?></div>
                                 </div>
                             </div>
                             <div class="mfo-head__text">Перейти	на	официальный	сайт
@@ -67,7 +78,7 @@ $this->title = $model->title;
                         <div class="content-main-info__item">
                             <div class="mfo-head-logo">
                                 <a href="#">
-                                    <img src="img/2020/07/creditplus.png">
+                                    <img src="<?= $model->logo?>">
                                 </a>
                                 <div class="mfo-head-approv">Одобрение:
                                     <span class="mfo-head-approv-value"><?= $model->odobrenie?>%</span>
@@ -93,7 +104,7 @@ $this->title = $model->title;
                         <div class="mfo-about">
                             <h2 class="mfo-about-title">О	компании</h2>
                             <p class="mfo-about-text">
-                                CreditPlus — это современный	онлайн–сервис по предоставлению	микрокредитов через интернет,	который не требует посещения	отделения МФО и сбора большого	пакета документов. На	заполнение анкеты уходит порядка	10 минут. При положительном	решении денежные средства	переводятся на счет клиента или	платежную карточку. Компания	предлагаем свои услуги	всем, кому необходимо получить	микрокредит оперативно, без	залога и поручителей, а также	без долгих процедур оформления и	дополнительных проверок.
+                                <?= $model->about_company ?>
                             </p>
                         </div>
                         <div class="mfo-stat-container">
@@ -124,7 +135,7 @@ $this->title = $model->title;
                                         <noscript>
                                             <img	src="/img/2016/08/all.png">
                                         </noscript>
-                                        <img class="lazyloaded" src="/img/2016/08/all.png" data-src="img/2016/08/all.png">
+                                        <img class="lazyloaded" src="/img/2016/08/all.png" data-src="/img/2016/08/all.png">
                                     </div>
                                 </div>
                             </div>
@@ -139,61 +150,7 @@ $this->title = $model->title;
                             </div>
                         </div>
                         <div class="content-text">
-                            <h2 class="content-text-title">Способы выдачи:</h2>
-                            <ul class="content-text-list">
-                                <li>на платежную карту;</li>
-                                <li>на IBAN счёт любого	казахстанского банка.</li>
-                            </ul>
-                            <h2 class="content-text-title">Условия кредитования:</h2>
-                            <ul class="content-text-list">
-                                <li>возраст клиента должен быть не менее 19 лет;</li>
-                                <li>наличие карты или IBAN счёта, открытого в любом банке РК;</li>
-                                <li>наличие паспорта и телефона;</li>
-                                <li>предоставление достоверной информации при заполнении анкеты;</li>
-                                <li>отсутствие непогашенной задолженности перед МФО по ранее оформленным микрокредитам.</li>
-                            </ul>
-                            <h2 class="content-text-title">Требования к клиентам:</h2>
-                            <ul class="content-text-list">
-                                <li>право– и дееспособность;</li>
-                                <li>возраст от 18 до 65 лет;</li>
-                                <li>гражданство Республики Казахстан;</li>
-                                <li>финансовая состоятельность.</li>
-                            </ul>
-                            <h2 class="content-text-title">Как оформить микрокредит на creditplus.kz:</h2>
-                            <ul class="content-text-list">
-                                <li>выберите подходящие сумму и срок ссуды с помощью специального калькулятора, представленного на официальном сайте сервиса;</li>
-                                <li>зарегистрируйтесь и заполните небольшую анкету, укажите реквизиты для зачисления денег — на такую процедуру уйдет не более 10 минут;</li>
-                                <li>подайте заявку через интернет;</li>
-                                <li>дождитесь решения — оно станет известно в течение 7 минут;</li>
-                                <li>при одобрении подпишите договор онлайн с помощью СМС–кода;</li>
-                                <li>получите деньги на банковскую карточку или на IBAN счёт.</li>
-                            </ul>
-                            <h2 class="content-text-title">Как вернуть кредитные средства:</h2>
-                            <ul class="content-text-list">
-                                <li>через Qiwi–терминал;</li>
-                                <li>в личном кабинете;</li>
-                                <li>банковским переводом по реквизитам компании;</li>
-                                <li>через терминал Касса24.</li>
-                            </ul>
-                            <h2 class="content-text-title">Преимущества Creditplus:</h2>
-                            <ul class="content-text-list">
-                                <li>сервис доступен на всей территории РК круглосуточно;</li>
-                                <li>заявку можно подать не выходя из дома;</li>
-                                <li>есть промокоды;</li>
-                                <li>заявления рассматриваются в течение 7 минут;</li>
-                                <li>все операции проводятся через интернет;</li>
-                                <li>без поручителей и справок о доходах;</li>
-                                <li>вероятность одобрения составляет 79% для новых клиентов и 83% — для повторных;</li>
-                                <li>можно отложить дату возврата микрокредита;</li>
-                                <li>лояльное отношение к клиентам;</li>
-                                <li>круглосуточная поддержка клиентов;</li>
-                                <li>сразу после погашения долга перед компанией можно подать заявку на новый микрокредит;</li>
-                                <li>предусмотрена опция досрочного (полного, а также частичного) возврата микрокредита;</li>
-                                <li>узнать величину переплаты можно заранее — воспользовавшись удобным онлайн–калькулятором, представленным на сайте сервиса;</li>
-                                <li>выдача и возврат микрокредитов осуществляются несколькими альтернативными способами, из которых можно выбирать подходящий для себя вариант.</li>
-                            </ul>
-                            <h2 class="content-text-title">Штрафные санкции:</h2>
-                            <p class="content-text-descr">При несоблюдении клиентом графика погашения микрокредита ему начисляется неустойка в размере, установленном договором, за каждый день просрочки, начиная с первого дня, следующего за утвержденной датой погашения.</p>
+                            <?= $model->content ?>
                             <a href="#" class="mfo-money-btn content-text-button">Получить деньги</a>
                         </div>
                         <div class="article-contacts">
@@ -257,30 +214,7 @@ $this->title = $model->title;
                             <div	class="contactdetails-item details-requisites">
                                 <h3 class="contactdetails-title">Реквизиты сервиса	"CreditPlus":</h3>
                                 <ul class="contactdetails-list">
-                                    <li>
-                                        <span	class="details-weight">Юридическое	название:</span>	ТОО «МФО «Kredit	SevenKazakhstan	(Кредит Севен	Казахстан)»</li>
-                                    <li>
-                                        <span	class="details-weight">Юридический	адрес:</span>	050000, Республика	Казахстан, город	Алматы, Алмалинский	район, улица Жибек	жолы, дом № 135,	блок 1, офис 1082
-                                    </li>
-                                    <li>
-                                        <span	class="details-weight">Почтовый	адрес:</span>	Казахстан, город	Алматы, Алмалинский	район, Проспект	ЖИБЕК ЖОЛЫ, дом 135,	индекс 050000</li>
-                                    <li>
-                                        <span	class="details-weight">Счёт/ИИК:</span>	KZ746017131000025618
-                                    </li>
-                                    <li>
-                                        <span	class="details-weight">Банк:</span>	АО «Народный Банк	Казахстана»</li>
-                                    <li>
-                                        <span	class="details-weight">БИН:</span>	200340016315</li>
-                                    <li>
-                                        <span	class="details-weight">БИК:</span>	HSBKKZKX</li>
-                                    <li>
-                                        <span	class="details-weight">КНП:</span>	421</li>
-                                    <li>
-                                        <span	class="details-weight">КБе:</span>	15</li>
-                                    <li>
-                                        <span	class="details-weight">Номер	в	реестре:</span>	02.М.20.010</li>
-                                    <li>
-                                        <span	class="details-weight">Дата	включения в	реестр:</span>	25.06.2020</li>
+                                    <?= $model->rekvisit ?>
                                 </ul>
                             </div>
                             <div	class="contactdetails-item details-contact">
@@ -572,8 +506,18 @@ $this->title = $model->title;
                     <div class="mfo_card__info ">
                         <div class="mfo_card__rating">
                             <div class="rating">
-                                <div class="rating__stars"	style="width:96%"></div>
-                                <div	class="rating__val">4.8</div>
+                                <?php
+                                echo StarRating::widget([
+                                    'name' => 'rating_21',
+                                    'value' => $model->rating,
+                                    'pluginOptions' => [
+                                        'readonly' => true,
+                                        'showClear' => false,
+                                        'showCaption' => false,
+                                    ],
+                                ]);
+                                ?>
+                                <div	class="rating__val"><?= $model->rating?></div>
                                 <div	class="rating__vote">6</div>
                             </div>
                         </div>
@@ -581,21 +525,51 @@ $this->title = $model->title;
                             <div class="aside-rating-col">
                                 <div class="aside-rating-title">Простота	получения</div>
                                 <div	class="rating">
-                                    <div class="rating__stars"	style="width:96%"></div>
+                                    <?php
+                                    echo StarRating::widget([
+                                        'name' => 'rating_21',
+                                        'value' => $model->rating,
+                                        'pluginOptions' => [
+                                            'readonly' => true,
+                                            'showClear' => false,
+                                            'showCaption' => false,
+                                        ],
+                                    ]);
+                                    ?>
                                     <div	class="rating__val">4.8</div>
                                 </div>
                             </div>
                             <div class="aside-rating-col">
                                 <div class="aside-rating-title">Скорость<br />выдачи</div>
                                 <div	class="rating">
-                                    <div class="rating__stars"	style="width:100%"></div>
+                                    <?php
+                                    echo StarRating::widget([
+                                        'name' => 'rating_21',
+                                        'value' => $model->rating,
+                                        'pluginOptions' => [
+                                            'readonly' => true,
+                                            'showClear' => false,
+                                            'showCaption' => false,
+                                        ],
+                                    ]);
+                                    ?>
                                     <div	class="rating__val">5.0</div>
                                 </div>
                             </div>
                             <div class="aside-rating-col">
                                 <div class="aside-rating-title">Служба поддержки</div>
                                 <div	class="rating">
-                                    <div class="rating__stars"	style="width:93%"></div>
+                                    <?php
+                                    echo StarRating::widget([
+                                        'name' => 'rating_21',
+                                        'value' => $model->rating,
+                                        'pluginOptions' => [
+                                            'readonly' => true,
+                                            'showClear' => false,
+                                            'showCaption' => false,
+                                        ],
+                                    ]);
+                                    ?>
                                     <div	class="rating__val">4.7</div>
                                 </div>
                             </div>
@@ -611,27 +585,27 @@ $this->title = $model->title;
                         <div	class="mfo_card_info_inner">
                             <div	class="mfo_card_info_time">
                                 <div	class="mfo_card_info_time_label">На срок:</div>
-                                <div	class="mfo_card_info_time_data">7 - 30 дней</div>
+                                <div	class="mfo_card_info_time_data"><?= $model->srok?></div>
                             </div>
                             <div	class="mfo_card_info_sum">
                                 <div	class="mfo_card_info_sum_label">Сумма (тнг):</div>
-                                <div	class="mfo_card_info_sum_data">10 000 - 130 000</div>
+                                <div	class="mfo_card_info_sum_data"><?= $model->sum?></div>
                             </div>
                             <div	class="mfo_card_info_rate">
                                 <div	class="mfo_card_info_rate_label">Ставка:</div>
-                                <div	class="mfo_card_info_rate_data">от 0,01 %</div>
+                                <div	class="mfo_card_info_rate_data"><?= $model->stavka?></div>
                             </div>
                             <div	class="mfo_card_info_accept">
                                 <div	class="mfo_card_info_accept_label">Рассмотрение:</div>
-                                <div	class="mfo_card_info_accept_data">7 минут</div>
+                                <div	class="mfo_card_info_accept_data"><?= $model->rasmotrenie?></div>
                             </div>
                             <div	class="mfo_card_info_ways">
                                 <div	class="mfo_card_info_ways_label">Получить:</div>
                                 <div	class="mfo_card_info_ways_data">
                                     <noscript>
-                                        <img	style="height: 20px;"	src="img/2016/08/all.png">
+                                        <img style="height: 20px;"	src="/img/2016/08/all.png">
                                     </noscript>
-                                    <img	class="lazyload"	style="height: 20px;"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="img/2016/08/all.png">
+                                    <img	class="lazyload"	style="height: 20px;"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="/img/2016/08/all.png">
                                 </div>
                             </div>
                         </div>
