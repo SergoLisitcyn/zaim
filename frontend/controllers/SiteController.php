@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\Mfo;
 use common\models\Pages;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
@@ -258,5 +259,33 @@ class SiteController extends Controller
         return $this->render('resendVerificationEmail', [
             'model' => $model
         ]);
+    }
+
+
+    public function actionCalculator()
+    {
+        $get = Yii::$app->request->get();
+
+        $mfo = Mfo::find()
+            ->joinWith('type')
+            ->where(['>=','max_sum_calc',$get['sum']])
+            ->andWhere(['<=','min_sum_calc',$get['sum']])
+            ->andWhere(['>=','max_term_calc',$get['term']])
+            ->andWhere(['<=','min_term_calc',$get['term']]);
+
+        if(isset($get['advanced_repayment'])) {
+            $mfo->andWhere(['advanced_repayment' => $get['advanced_repayment']]);
+        }
+
+        if(isset($get['extension_loan'])) {
+            $mfo->andWhere(['extension_loan' => $get['extension_loan']]);
+        }
+        if(isset($get['get_loan'])) {
+            $mfo->andWhere(['type_credit.calc_get_url' => $get['get_loan']]);
+        }
+
+        $items = $mfo->all();
+        echo '<pre>';
+        var_dump($items);die;
     }
 }

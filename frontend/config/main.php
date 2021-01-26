@@ -45,6 +45,7 @@ return [
                 'contact' => '/site/contact',
                 '/' => '/site/index',
                 'aktsii' => '/sale/index',
+                'kreditnyj-kalkulyator' => '/site/calculator',
                 [
                     'pattern' => 'mfo/<url:\S+>',
                     'route' => '/mfo/view',

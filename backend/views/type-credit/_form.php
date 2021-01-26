@@ -25,6 +25,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'calc_name')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'calc_get_url')->textInput(['maxlength' => true]) ?>
+
     <?= $form->field($model, 'sort')->textInput() ?>
 
     <?= $form->field($model, 'status')->textInput() ?>

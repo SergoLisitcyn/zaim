@@ -44,11 +44,12 @@ class SignupForm extends Model
      */
     public function signup()
     {
-        $users = User::findAll([]);
+        $users = User::find()->all();
         if ($this->validate()) {
             $user = new User();
             $user->username = $this->username;
             $user->email = $this->email;
+            $user->status = 10;
             $user->setPassword($this->password);
             $user->generateAuthKey();
             $user->generateEmailVerificationToken();
@@ -60,7 +61,7 @@ class SignupForm extends Model
                 $userRole = $auth->getRole('client');
             }
 
-            if ($user->save() && $this->sendEmail($user) && $auth->assign($userRole, $user->id)) {
+            if ($user->save() && $auth->assign($userRole, $user->id)) {
                 return $user;
             }
         }
