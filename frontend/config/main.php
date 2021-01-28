@@ -46,6 +46,7 @@ return [
                 '/' => '/site/index',
                 'aktsii' => '/sale/index',
                 'kreditnyj-kalkulyator' => '/site/calculator',
+                'rating' => '/site/rating',
                 [
                     'pattern' => 'mfo/<url:\S+>',
                     'route' => '/mfo/view',
@@ -61,10 +62,11 @@ return [
                     'route' => '/pages/show-page',
                     'defaults' => ['slug' => 'error']
                 ],
-//                [
-//                    'pattern' => '/<slug:\S+>',
-//                    'route' => '/site/index',
-//                ],
+                [
+                    'pattern' => '/<slug:\S+>',
+                    'route' => '/site/filter',
+                    'defaults' => ['slug' => 'error']
+                ],
 
             ],
         ],

@@ -1,8 +1,10 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\City;
 use common\models\Mfo;
 use common\models\Pages;
+use common\models\TypeCredit;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
@@ -264,28 +266,40 @@ class SiteController extends Controller
 
     public function actionCalculator()
     {
-        $get = Yii::$app->request->get();
+        return $this->render('calculator');
+    }
 
+    public function actionFilter($slug)
+    {
+        $city = City::find()->where(['url' => $slug])->one();
+
+        if(isset($city)){
+            $join = 'city';
+            $where = 'city.url';
+        } else {
+            $join = 'type';
+            $where = 'type_credit.url';
+        }
+
+        $output = Mfo::find()
+            ->joinWith($join)
+            ->where([$where => $slug])
+            ->andWhere(['mfo.status' => '1'])
+            ->all();
+
+        return $this->render('filter', [
+            'output' => $output
+        ]);
+    }
+
+    public function actionRating()
+    {
         $mfo = Mfo::find()
-            ->joinWith('type')
-            ->where(['>=','max_sum_calc',$get['sum']])
-            ->andWhere(['<=','min_sum_calc',$get['sum']])
-            ->andWhere(['>=','max_term_calc',$get['term']])
-            ->andWhere(['<=','min_term_calc',$get['term']]);
+            ->orderBy(['sort' => SORT_ASC])
+            ->all();
 
-        if(isset($get['advanced_repayment'])) {
-            $mfo->andWhere(['advanced_repayment' => $get['advanced_repayment']]);
-        }
-
-        if(isset($get['extension_loan'])) {
-            $mfo->andWhere(['extension_loan' => $get['extension_loan']]);
-        }
-        if(isset($get['get_loan'])) {
-            $mfo->andWhere(['type_credit.calc_get_url' => $get['get_loan']]);
-        }
-
-        $items = $mfo->all();
-        echo '<pre>';
-        var_dump($items);die;
+        return $this->render('rating', [
+            'mfo' => $mfo
+        ]);
     }
 }

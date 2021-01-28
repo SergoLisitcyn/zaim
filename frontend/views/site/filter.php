@@ -18,7 +18,7 @@ $this->title = 'Калькулятор займа онлайн — расчет 
 <?= CalculatorWidget::widget() ?>
 
 
-<?php echo GridCatalog::widget(['input' => 'calculator']); ?>
+<?php echo GridCatalog::widget(['output' => $output]); ?>
 
 <section class="subscribe-main plr mt18">
     <div class="subscribe-main-wrap limit-width">

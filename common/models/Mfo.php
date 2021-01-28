@@ -42,6 +42,7 @@ use yii\web\UploadedFile;
 class Mfo extends \yii\db\ActiveRecord
 {
     public $type_credit_array;
+    public $mfo_city_array;
     public $logo_file;
 
     /**
@@ -70,7 +71,7 @@ class Mfo extends \yii\db\ActiveRecord
             [['odobrenie', 'akcii', 'home_page', 'status','sort'], 'integer'],
             [['rekvisit', 'about_company', 'content','text_video'], 'string'],
             [['mfo_name','logo', 'srok', 'sum', 'stavka', 'rasmotrenie', 'phone', 'email', 'website', 'video', 'link_offer', 'title', 'description', 'keywords','url'], 'string', 'max' => 255],
-            [['type_credit_array'], 'safe'],
+            [['type_credit_array','mfo_city_array'], 'safe'],
             [['logo_file'], 'file'],
 
         ];
@@ -106,12 +107,19 @@ class Mfo extends \yii\db\ActiveRecord
             'keywords' => 'Keywords',
             'status' => 'Статус',
             'type_credit_array' => 'Виды кредита',
+            'mfo_city_array' => 'Города',
             'typeAsString' => 'Тэги',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
             'logo_file' => 'Логотип',
             'sort' => 'Сортировка',
             'url' => 'Постоянная ссылка',
+            'max_sum_calc' => 'Максимальная сумма кредита',
+            'min_sum_calc' => 'Минимальная сумма кредита',
+            'max_term_calc' => 'Максимальный срок кредита',
+            'min_term_calc' => 'Минимальный срок кредита',
+            'advanced_repayment' => 'Досрочное погашение',
+            'extension_loan' => 'Продление (пролонгация) кредита',
             'text_video' => 'Заголовок видео',
         ];
     }
@@ -119,6 +127,7 @@ class Mfo extends \yii\db\ActiveRecord
     {
         parent::afterFind();
         $this->type_credit_array = $this->type;
+        $this->mfo_city_array = $this->city;
     }
 
     public function getMfo(){
@@ -136,6 +145,22 @@ class Mfo extends \yii\db\ActiveRecord
         return implode(', ',$arr);
     }
 
+    public function getMfocity(){
+        return $this->hasMany(MfoCity::className(),['mfo_id'=>'id']);
+    }
+
+    public function getCity()
+    {
+        return $this->hasMany(City::className(), ['id' => 'city_id'])->via('mfocity');
+    }
+
+    public function getCityAsString()
+    {
+        $arr = ArrayHelper::map($this->city,'id','name');
+        return implode(', ',$arr);
+    }
+
+
     public function afterSave($insert, $changedAttributes)
     {
         parent::afterSave($insert, $changedAttributes);
@@ -151,7 +176,22 @@ class Mfo extends \yii\db\ActiveRecord
                 unset($arr[$one]);
             }
         }
+
+        $arr = ArrayHelper::map($this->city,'id','id');
+        foreach ($this->mfo_city_array as $one){
+            if(!in_array($one,$arr)){
+                $model = new MfoCity();
+                $model->mfo_id = $this->id;
+                $model->city_id = $one;
+                $model->save();
+            }
+            if(isset($arr[$one])){
+                unset($arr[$one]);
+            }
+        }
+
         MfoTypeCredit::deleteAll(['type_credit_id'=>$arr]);
+        MfoTypeCredit::deleteAll(['city_id'=>$arr]);
 
         $imageSquareFile = UploadedFile::getInstance($this, 'logo_file');
         if ($imageSquareFile) {

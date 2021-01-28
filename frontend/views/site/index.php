@@ -38,7 +38,7 @@ $this->title = 'My Yii Application';
     </div>
 </section>
 
-<?php echo GridCatalog::widget(['input' => Yii::$app->request->url]); ?>
+<?php echo GridCatalog::widget(['input' => 'homepage']); ?>
 
 <section class="subscribe-main plr mt18">
     <div class="subscribe-main-wrap limit-width">

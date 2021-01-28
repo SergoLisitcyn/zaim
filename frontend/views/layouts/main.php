@@ -14,6 +14,14 @@ use \frontend\widgets\TopMenu;
 use \frontend\widgets\MenuFooter;
 
 AppAsset::register($this);
+$url = Yii::$app->request->url;
+if($url == '/'){
+    $class = 'home';
+} elseif ($url == '/rating'){
+    $class = 'rating';
+} else {
+    $class = 'home';
+}
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -31,7 +39,7 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<body class="custom-background" id="home">
+<body class="custom-background" id="<?= $class ?>">
 <?php $this->beginBody() ?>
 
 <div class="wrapper">
@@ -79,7 +87,7 @@ AppAsset::register($this);
                         <a class="header-all-mfo" href="#" target="_blank">Одна заявка во все МФО</a>
                     </div>
                     <div class="header-body__col header-body__col--top-mfo">
-                        <a href="#" class="top-10-mfo">
+                        <a href="/rating" class="top-10-mfo">
                             <i></i>
                             <span>Топ-10 МФО</span>
                         </a>

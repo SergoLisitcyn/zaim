@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use common\models\TypeCredit;
+use \common\models\City;
 use \kartik\select2\Select2;
 use \yii\helpers\ArrayHelper;
 use vova07\imperavi\Widget;
@@ -80,6 +81,16 @@ use \yii\helpers\Url;
                         <?= $form->field($model, 'rasmotrenie')->textInput(['maxlength' => true])->hint('например 10 минут') ?>
 
                         <?= $form->field($model, 'link_offer')->textInput(['maxlength' => true]) ?>
+
+
+                        <?= $form->field($model, 'max_sum_calc')->textInput(['maxlength' => true])->hint('Для калькулятора и страницы рейтинга') ?>
+
+                        <?= $form->field($model, 'min_sum_calc')->textInput(['maxlength' => true])->hint('Для калькулятора и страницы рейтинга') ?>
+
+                        <?= $form->field($model, 'max_term_calc')->textInput(['maxlength' => true])->hint('Для калькулятора и страницы рейтинга') ?>
+                        <?= $form->field($model, 'min_term_calc')->textInput(['maxlength' => true])->hint('Для калькулятора и страницы рейтинга') ?>
+
+
                     </div>
 
                     <div class="col-xs-6">
@@ -129,6 +140,9 @@ use \yii\helpers\Url;
 
                         <?= $form->field($model, 'home_page')->checkbox(['value' => 1, 'uncheck' => 0]) ?>
 
+                        <?= $form->field($model, 'advanced_repayment')->checkbox(['value' => 1, 'uncheck' => 0]) ?>
+
+                        <?= $form->field($model, 'extension_loan')->checkbox(['value' => 1, 'uncheck' => 0]) ?>
                     </div>
                 </div>
                 <div class="row">
@@ -144,6 +158,15 @@ use \yii\helpers\Url;
                                     'allowClear' => true,
                             ],
                             ]); ?>
+
+                        <?php echo $form->field($model, 'mfo_city_array',['options'=>['class'=>'col-xs-12']])->widget(Select2::classname(), [
+                            'data' => ArrayHelper::map(City::find()->all(),'id','name'),
+                            'language' => 'ru',
+                            'options' => ['placeholder' => 'Выбрать города ...', 'multiple' => true],
+                            'pluginOptions' => [
+                                'allowClear' => true,
+                            ],
+                        ]); ?>
                     </div>
                 </div>
 
