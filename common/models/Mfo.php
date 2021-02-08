@@ -179,29 +179,33 @@ class Mfo extends \yii\db\ActiveRecord
     {
         parent::afterSave($insert, $changedAttributes);
         $arr = ArrayHelper::map($this->type,'id','name');
-        foreach ($this->type_credit_array as $one){
-            if(!in_array($one,$arr)){
-                $model = new MfoTypeCredit();
-                $model->mfo_id = $this->id;
-                $model->type_credit_id = $one;
-                $model->save();
-            }
-            if(isset($arr[$one])){
-                unset($arr[$one]);
+        if($this->type_credit_array) {
+            foreach ($this->type_credit_array as $one){
+                if(!in_array($one,$arr)){
+                    $model = new MfoTypeCredit();
+                    $model->mfo_id = $this->id;
+                    $model->type_credit_id = $one;
+                    $model->save();
+                }
+                if(isset($arr[$one])){
+                    unset($arr[$one]);
+                }
             }
         }
-
         $arr = ArrayHelper::map($this->city,'id','name');
-        foreach ($this->mfo_city_array as $one){
-            if(!in_array($one,$arr)){
-                $model = new MfoCity();
-                $model->mfo_id = $this->id;
-                $model->city_id = $one;
-                $model->save();
+        if($this->mfo_city_array){
+            foreach ($this->mfo_city_array as $one){
+                if(!in_array($one,$arr)){
+                    $model = new MfoCity();
+                    $model->mfo_id = $this->id;
+                    $model->city_id = $one;
+                    $model->save();
+                }
+                if(isset($arr[$one])){
+                    unset($arr[$one]);
+                }
             }
-            if(isset($arr[$one])){
-                unset($arr[$one]);
-            }
+
         }
 
         MfoTypeCredit::deleteAll(['type_credit_id'=>$arr]);

@@ -56,8 +56,8 @@
                         'icon' => 'filter',
                         'url' => '#',
                         'items' => [
-                            ['label' => 'Создать новый фильтр', 'icon' => 'circle-o', 'url' => ['/type-credit'],],
-                            ['label' => 'Подфильтры', 'icon' => 'circle-o', 'url' => ['/filters'],],
+                            ['label' => 'Создать новый фильтр', 'icon' => 'circle-o', 'url' => ['/filters'],],
+                            ['label' => 'Подфильтры', 'icon' => 'circle-o', 'url' => ['/type-credit'],],
                             ['label' => 'Города', 'icon' => 'globe', 'url' => ['/city'],],
                         ],
                     ],

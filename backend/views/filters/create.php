@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\Filters */
 
-$this->title = 'Create Filters';
-$this->params['breadcrumbs'][] = ['label' => 'Filters', 'url' => ['index']];
+$this->title = 'Создать Фильтр';
+$this->params['breadcrumbs'][] = ['label' => 'Фильтры', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="filters-create">

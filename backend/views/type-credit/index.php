@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel common\models\TypeCreditSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Type Credits';
+$this->title = 'Подфильтры';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="type-credit-index">

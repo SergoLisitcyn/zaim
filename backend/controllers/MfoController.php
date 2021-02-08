@@ -133,9 +133,9 @@ class MfoController extends Controller
 
         $model = Mfo::find()->where(['id' => $id])->one();
         $model->logo = null;
-        $model->update(false);
+        $model->save();
 
-        return $this->redirect(["mfo/update?id=$id"]);
+//        return $this->redirect(["mfo/update?id=$id"]);
     }
 
     /**

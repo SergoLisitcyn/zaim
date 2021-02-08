@@ -48,8 +48,11 @@ use \yii\helpers\Url;
                         <div class="form-group field-mfo-logo_file">
                             <label class="control-label col-sm-4" for="mfo-logo_file"></label>
                             <div class="col-sm-8">
-                                <img src="<?=$model->logo ?>" class="img_slider_view" alt="Image" style="height: 100px">
-                                <?= \yii\helpers\Html::a('X', ['/mfo/deleteimg', 'id' => $model->id], ['class' => 'btn_port_del']) ?>
+                                <?php if($model->logo) : ?>
+                                <img src="<?= $model->logo ?>" class="img_slider_view" alt="Image" style="height: 100px">
+                                <?php else: ?>
+                                <b>Логотип отсутствует</b>
+                                <?php endif; ?>
                             </div>
                         </div>
 

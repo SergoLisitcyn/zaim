@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel common\models\FiltersSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Filters';
+$this->title = 'Фильтры';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="filters-index">
