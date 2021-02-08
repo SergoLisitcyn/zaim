@@ -7,7 +7,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel backend\models\UserSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Manage Users';
+$this->title = 'Пользователи';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="row">
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="box box-default">
             <div class="box-header with-border">
                 <div class="pull-left">
-                    <?= Html::a('<i class="fa fa-plus"></i> Create User', ['create'], ['class' => 'mbtn mbtn-success']) ?>
+                    <?= Html::a('<i class="fa fa-plus"></i> Создать пользователя', ['create'], ['class' => 'mbtn mbtn-success']) ?>
                 </div>
             </div>
             <div class="box-body">
@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         ['class' => 'yii\grid\SerialColumn'],
                         'username',
                         'email:email',
-                        'userRole',
+                        'role',
                         [
                             'attribute' => 'status',
                             'value' => function ($model) {

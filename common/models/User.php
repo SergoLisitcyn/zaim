@@ -60,6 +60,16 @@ class User extends ActiveRecord implements IdentityInterface
             [['role'], 'string', 'max' => 12],
         ];
     }
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+            'status' => 'Статус',
+            'role' => 'Роль',
+        ];
+    }
 
     /**
      * {@inheritdoc}

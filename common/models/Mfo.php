@@ -68,12 +68,16 @@ class Mfo extends \yii\db\ActiveRecord
         return [
             [['mfo_name', 'stavka', 'title','url'], 'required'],
             [['rating'], 'number'],
-            [['odobrenie', 'akcii', 'home_page', 'status','sort'], 'integer'],
+            [['odobrenie', 'akcii', 'home_page', 'status','sort','max_sum_calc','min_sum_calc'
+                ,'max_term_calc','min_term_calc','advanced_repayment','extension_loan'], 'integer'],
             [['rekvisit', 'about_company', 'content','text_video'], 'string'],
-            [['mfo_name','logo', 'srok', 'sum', 'stavka', 'rasmotrenie', 'phone', 'email', 'website', 'video', 'link_offer', 'title', 'description', 'keywords','url'], 'string', 'max' => 255],
+            [['mfo_name','logo', 'srok', 'sum', 'stavka', 'rasmotrenie', 'phone', 'email', 'website', 'video',
+                'link_offer', 'title', 'description', 'keywords','url','srok_new_client','sum_new_client',
+                'stavka_new_client','odobrenie_new_client','rasmotrenie_new_client',
+                'srok_for_client','sum_for_client','stavka_for_client',
+                'odobrenie_for_client','rasmotrenie_for_client'], 'string', 'max' => 255],
             [['type_credit_array','mfo_city_array'], 'safe'],
             [['logo_file'], 'file'],
-
         ];
     }
 
@@ -121,6 +125,16 @@ class Mfo extends \yii\db\ActiveRecord
             'advanced_repayment' => 'Досрочное погашение',
             'extension_loan' => 'Продление (пролонгация) кредита',
             'text_video' => 'Заголовок видео',
+            'srok_new_client' => 'Срок для нового клиента',
+            'sum_new_client' => 'Сумма для нового клиента',
+            'stavka_new_client' => 'Ставка для нового клиента',
+            'odobrenie_new_client' => 'Одобрение для нового клиента',
+            'rasmotrenie_new_client' => 'Рассмотрение для нового клиента',
+            'srok_for_client' => 'Срок для существуещего клиента',
+            'sum_for_client' => 'Сумма для существуещего клиента',
+            'stavka_for_client' => 'Ставка для существуещего клиента',
+            'odobrenie_for_client' => 'Одобрение для существуещего клиента',
+            'rasmotrenie_for_client' => 'Рассмотрение для существуещего клиента',
         ];
     }
     public function afterFind()
@@ -164,7 +178,7 @@ class Mfo extends \yii\db\ActiveRecord
     public function afterSave($insert, $changedAttributes)
     {
         parent::afterSave($insert, $changedAttributes);
-        $arr = ArrayHelper::map($this->type,'id','id');
+        $arr = ArrayHelper::map($this->type,'id','name');
         foreach ($this->type_credit_array as $one){
             if(!in_array($one,$arr)){
                 $model = new MfoTypeCredit();
@@ -177,7 +191,7 @@ class Mfo extends \yii\db\ActiveRecord
             }
         }
 
-        $arr = ArrayHelper::map($this->city,'id','id');
+        $arr = ArrayHelper::map($this->city,'id','name');
         foreach ($this->mfo_city_array as $one){
             if(!in_array($one,$arr)){
                 $model = new MfoCity();

@@ -70,15 +70,6 @@ use \yii\helpers\Url;
 
                         <?= $form->field($model, 'rating')->textInput(['maxlength' => true])->hint('Только цифры и точка(например 4.8)') ?>
 
-                        <?= $form->field($model, 'srok')->textInput(['maxlength' => true])->hint('например 7 - 30 дней') ?>
-
-                        <?= $form->field($model, 'sum')->textInput(['maxlength' => true])->hint('например 10 000 - 130 000') ?>
-
-                        <?= $form->field($model, 'stavka')->textInput(['maxlength' => true])->hint('например от 0,01 %') ?>
-
-                        <?= $form->field($model, 'odobrenie')->textInput()->hint('только цифры без знака %') ?>
-
-                        <?= $form->field($model, 'rasmotrenie')->textInput(['maxlength' => true])->hint('например 10 минут') ?>
 
                         <?= $form->field($model, 'link_offer')->textInput(['maxlength' => true]) ?>
 
@@ -89,7 +80,13 @@ use \yii\helpers\Url;
 
                         <?= $form->field($model, 'max_term_calc')->textInput(['maxlength' => true])->hint('Для калькулятора и страницы рейтинга') ?>
                         <?= $form->field($model, 'min_term_calc')->textInput(['maxlength' => true])->hint('Для калькулятора и страницы рейтинга') ?>
+                        <?= $form->field($model, 'akcii')->checkbox(['value' => 1, 'uncheck' => 0]) ?>
 
+                        <?= $form->field($model, 'home_page')->checkbox(['value' => 1, 'uncheck' => 0]) ?>
+
+                        <?= $form->field($model, 'advanced_repayment')->checkbox(['value' => 1, 'uncheck' => 0]) ?>
+
+                        <?= $form->field($model, 'extension_loan')->checkbox(['value' => 1, 'uncheck' => 0]) ?>
 
                     </div>
 
@@ -135,14 +132,48 @@ use \yii\helpers\Url;
                             '1' => 'Активен',
                             '0' => 'Неактивен'
                         ]) ?>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <h4 class="bold uppercase">Подраздел “Условия общие”</h4>
 
-                        <?= $form->field($model, 'akcii')->checkbox(['value' => 1, 'uncheck' => 0]) ?>
+                        <?= $form->field($model, 'srok')->textInput(['maxlength' => true])->hint('например 7 - 30 дней') ?>
 
-                        <?= $form->field($model, 'home_page')->checkbox(['value' => 1, 'uncheck' => 0]) ?>
+                        <?= $form->field($model, 'sum')->textInput(['maxlength' => true])->hint('например 10 000 - 130 000') ?>
 
-                        <?= $form->field($model, 'advanced_repayment')->checkbox(['value' => 1, 'uncheck' => 0]) ?>
+                        <?= $form->field($model, 'stavka')->textInput(['maxlength' => true])->hint('например от 0,01 %') ?>
 
-                        <?= $form->field($model, 'extension_loan')->checkbox(['value' => 1, 'uncheck' => 0]) ?>
+                        <?= $form->field($model, 'odobrenie')->textInput()->hint('только цифры без знака %') ?>
+
+                        <?= $form->field($model, 'rasmotrenie')->textInput(['maxlength' => true])->hint('например 10 минут') ?>
+                    </div>
+                    <div class="col-xs-6">
+
+                        <h4 class="bold uppercase">Подраздел “Условия Новый клиент”</h4>
+
+                        <?= $form->field($model, 'srok_new_client')->textInput(['maxlength' => true])->hint('например 7 - 30 дней') ?>
+
+                        <?= $form->field($model, 'sum_new_client')->textInput(['maxlength' => true])->hint('например 10 000 - 130 000') ?>
+
+                        <?= $form->field($model, 'stavka_new_client')->textInput(['maxlength' => true])->hint('например от 0,01 %') ?>
+
+                        <?= $form->field($model, 'odobrenie_new_client')->textInput()->hint('только цифры без знака %') ?>
+
+                        <?= $form->field($model, 'rasmotrenie_new_client')->textInput(['maxlength' => true])->hint('например 10 минут') ?>
+                    </div>
+                    <div class="col-xs-6">
+                        <h4 class="bold uppercase">Подраздел “Условия Существующий клиент”</h4>
+
+                        <?= $form->field($model, 'srok_for_client')->textInput(['maxlength' => true])->hint('например 7 - 30 дней') ?>
+
+                        <?= $form->field($model, 'sum_for_client')->textInput(['maxlength' => true])->hint('например 10 000 - 130 000') ?>
+
+                        <?= $form->field($model, 'stavka_for_client')->textInput(['maxlength' => true])->hint('например от 0,01 %') ?>
+
+                        <?= $form->field($model, 'odobrenie_for_client')->textInput()->hint('только цифры без знака %') ?>
+
+                        <?= $form->field($model, 'rasmotrenie_for_client')->textInput(['maxlength' => true])->hint('например 10 минут') ?>
                     </div>
                 </div>
                 <div class="row">
@@ -174,7 +205,7 @@ use \yii\helpers\Url;
                 <div class="row">
                     <div class="col-xs-12">
 
-                        <h4 class="bold uppercase">3. Описание компании</h4>
+                        <h4 class="bold uppercase">4. Описание компании</h4>
 
 
                         <?= $form->field($model, 'about_company')->textarea(['rows' => 6]) ?>
