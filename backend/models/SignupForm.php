@@ -14,6 +14,7 @@ class SignupForm extends Model
     public $email;
     public $password;
     public $password_repeat;
+    public $role;
 
 
     /**
@@ -32,7 +33,7 @@ class SignupForm extends Model
             ['email', 'email'],
             ['email', 'string', 'max' => 255],
             ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'Такой e-mail уже существует.'],
-
+            ['role', 'string', 'max' => 255],
             ['password', 'required'],
             ['password', 'string', 'min' => 3],
             ['password_repeat', 'required'],
@@ -51,14 +52,20 @@ class SignupForm extends Model
     {
         if ($this->validate()) {
             $user = new User();
+
             $user->username = $this->username;
             $user->email = $this->email;
             $user->status = 10;
-            $user->role = 'manager';
+
+            if($this->role == 'manager'){
+                $user->role = 'manager';
+            } else {
+                $user->role = 'client';
+            }
             $user->setPassword($this->password);
             $user->generateAuthKey();
             $auth = Yii::$app->authManager;
-            $userRole = $auth->getRole('manager');
+            $userRole = $auth->getRole($user->role);
             if ($user->save() && $auth->assign($userRole, $user->id)) {
                 return $user;
             }
