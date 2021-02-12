@@ -111,23 +111,23 @@ $this->title = $model->title;
                             <div class="firstloan">
                                 <div class="firstloan-col">
                                     <div class="offer-row-col">Срок/дней</div>
-                                    <div class="offer-col"><?= $model->srok?></div>
+                                    <div class="offer-col"><?= $model->srok_new_client?></div>
                                 </div>
                                 <div class="firstloan-col">
                                     <div class="offer-row-col">Макс.сумма/<br>тенге</div>
-                                    <div class="offer-col"><?= $model->sum?></div>
+                                    <div class="offer-col"><?= $model->sum_new_client?></div>
                                 </div>
                                 <div class="firstloan-col">
                                     <div class="offer-row-col">Ставка в	день</div>
-                                    <div class="offer-col"><?= $model->stavka?></div>
+                                    <div class="offer-col"><?= $model->stavka_new_client?></div>
                                 </div>
                                 <div class="firstloan-col">
                                     <div class="offer-row-col">Одобрение:</div>
-                                    <div class="offer-col"><?= $model->odobrenie?>%</div>
+                                    <div class="offer-col"><?= $model->odobrenie_new_client?>%</div>
                                 </div>
                                 <div class="firstloan-col">
                                     <div class="offer-row-col">Рассмотрение/<br>минут</div>
-                                    <div class="offer-col"><?= $model->rasmotrenie?></div>
+                                    <div class="offer-col"><?= $model->rasmotrenie_new_client?></div>
                                 </div>
                                 <div class="firstloan-col">
                                     <div class="offer-row-col">Получение:</div>
