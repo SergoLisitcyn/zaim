@@ -2927,6 +2927,7 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
     display: flex;
     justify-content: space-around;
     width: 100%;
+    padding-top: 10px;
 }
 
 .firstloan-col {
@@ -4305,4 +4306,8 @@ input.subscribe-form-item__btn.subscribe-form-item__btn--btn-submit, input.subsc
     color: #f8a801 !important;
      -webkit-text-stroke: inherit !important;
      text-shadow: none !important;
+}
+
+.conexist {
+    display: none;
 }

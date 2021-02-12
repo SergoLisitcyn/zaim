@@ -100,5 +100,11 @@ jQuery(document).ready(function ($) {
     });
 
 
+    $('.mfo-show-rule').click(function(e) {
+      e.preventDefault();
+      $(this).parent().next('.conexist').slideToggle();
+    });
+
+
 
 });

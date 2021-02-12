@@ -148,6 +148,39 @@ $this->title = $model->title;
                                 <a class="mfo-footer mfo-show-rule" href="#" >Показать	условия для	существующих	клиентов</a>
                                 <a class="mfo-footer-item mfo-card-btn" href="#" >Получить деньги</a>
                             </div>
+                            <div class="conexist">
+                                <div class="firstloan">
+                                    <div class="firstloan-col">
+                                        <div class="offer-row-col">Срок/дней</div>
+                                        <div class="offer-col"><?= $model->srok_for_client ?></div>
+                                    </div>
+                                    <div class="firstloan-col">
+                                        <div class="offer-row-col">Макс.сумма/<br>тенге</div>
+                                        <div class="offer-col"><?= $model->sum_for_client ?></div>
+                                    </div>
+                                    <div class="firstloan-col">
+                                        <div class="offer-row-col">Ставка в	день</div>
+                                        <div class="offer-col"><?= $model->stavka_for_client ?></div>
+                                    </div>
+                                    <div class="firstloan-col">
+                                        <div class="offer-row-col">Одобрение:</div>
+                                        <div class="offer-col"><?= $model->odobrenie_for_client ?>%</div>
+                                    </div>
+                                    <div class="firstloan-col">
+                                        <div class="offer-row-col">Рассмотрение/<br>минут</div>
+                                        <div class="offer-col"><?= $model->rasmotrenie_for_client ?></div>
+                                    </div>
+                                    <div class="firstloan-col">
+                                        <div class="offer-row-col">Получение:</div>
+                                        <div class="offer-col">
+                                            <noscript>
+                                                <img	src="img/2016/08/all.png">
+                                            </noscript>
+                                            <img class="lazyloaded" src="img/2016/08/all.png" data-src="img/2016/08/all.png">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="content-text">
                             <?= $model->content ?>
