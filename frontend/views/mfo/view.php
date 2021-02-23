@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use \yii\helpers\Url;
 use kartik\rating\StarRating;
 /* @var $this yii\web\View */
 /* @var $model common\models\Mfo */
@@ -31,17 +32,17 @@ $this->title = $model->title;
                 <div class="content-info">
                     <ul	class="nav nav-tabs">
                         <li class="active">
-                            <a href="creditplus.html">
+                            <a href="<?= Url::toRoute(['mfo/view', 'url' => $model->url]) ?>">
                                 <span>О	компании</span>
                             </a>
                         </li>
                         <li class="">
-                            <a href="creditplus-login.html">
+                            <a href="<?= Url::toRoute(['mfo/login', 'url' => $model->url]) ?>">
                                 <span>Личный	кабинет</span>
                             </a>
                         </li>
                         <li class="">
-                            <a href="creditplus-reviews.html">
+                            <a href="<?= Url::toRoute(['mfo/reviews', 'url' => $model->url]) ?>">
                                 <span>Отзывы ( <span	class="rr-reviews-count">6</span> )</span>
                             </a>
                         </li>
@@ -189,7 +190,7 @@ $this->title = $model->title;
                         <div class="article-contacts">
                             <div class="article-contacts__inner">
                                 <div class="feedback-form article-contacts__form">
-                                    <div class="feedback-form__title">Задать вопрос	представителю	компании CreditPlus</div>
+                                    <div class="feedback-form__title">Задать вопрос	представителю	компании <?= $model->mfo_name?></div>
                                     <form>
                                         <div class="feedback-form__fields">
                                             <div class="feedback-form__group feedback-form__group--sm">

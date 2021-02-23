@@ -48,6 +48,16 @@ return [
                 'kreditnyj-kalkulyator' => '/site/calculator',
                 'rating' => '/site/rating',
                 [
+                    'pattern' => 'mfo/<url:\S+>/reviews',
+                    'route' => '/mfo/reviews',
+                    'defaults' => ['url' => '']
+                ],
+                [
+                    'pattern' => 'mfo/<url:\S+>/login',
+                    'route' => '/mfo/login',
+                    'defaults' => ['url' => '']
+                ],
+                [
                     'pattern' => 'mfo/<url:\S+>',
                     'route' => '/mfo/view',
                     'defaults' => ['url' => '']

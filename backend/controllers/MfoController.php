@@ -6,8 +6,11 @@ use common\models\UploadForm;
 use Yii;
 use common\models\Mfo;
 use common\models\MfoSearch;
+use yii\base\DynamicModel;
 use yii\filters\AccessControl;
+use yii\helpers\FileHelper;
 use yii\helpers\Json;
+use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -48,6 +51,16 @@ class MfoController extends Controller
         ];
     }
 
+    public function actions()
+    {
+        return [
+            'image-upload' => [
+                'class' => 'vova07\imperavi\actions\UploadAction',
+//                'url' => 'http://yii.loc/public/images/', // URL адрес папки где хранятся изображения.
+                'path' => '@frontend/web/uploads/images/mfo', // Или абсолютный путь к папке с изображениями.
+            ],
+        ];
+    }
     /**
      * Lists all Mfo models.
      * @return mixed
@@ -165,6 +178,49 @@ class MfoController extends Controller
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+
+    public function actionSaveRedactorImg ($sub='main')
+
+    {
+        $this -> enableCsrfValidation = false;
+        if (Yii::$app->request->isPost) {
+            $dir = Yii::getAlias('@frontend/web') . '/uploads/images/mfo' . $sub . '/';
+            if (!file_exists($dir)){
+                FileHelper::createDirectory($dir);
+            }
+
+            $result_link = 'http://zaim.local/uploads/images/mfo' . $sub . '/';
+            $file = UploadedFile::getInstanceByName('file');
+            $model = new DynamicModel (compact ('file'));
+            $model ->addRule ('file', 'image')->validate();
+
+            if ($model ->hasErrors()) {
+
+                $result = [
+                    'error' => $model -> getFirstError ('file')
+                ];
+            } else {
+
+                $model->file->name = strtotime('now').'_'.Yii::$app->getSecurity()->generateRandomString(6) . '.' . $model->file->extension;
+
+                if ($model->file->saveAs ($dir . $model->file->name)) {
+                    $result = ['filelink' => $result_link . $model->file->name,'filename'=>$model->file->name];
+
+                } else {
+
+                    $result = [
+                        'error' => Yii::t ('vova07/imperavi', 'ERROR_CAN_NOT_UPLOAD_FILE')
+                    ];
+
+                }
+            }
+            Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+            return $result;
+        } else {
+            throw new BadRequestHttpException ('Only Post is allowed');
         }
     }
 

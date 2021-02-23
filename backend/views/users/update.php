@@ -30,6 +30,11 @@ $this->params['breadcrumbs'][] = 'Update';
 
                     <?= $form->field($model, 'email') ?>
 
+                    <?= $form->field($model, 'role')->dropDownList([
+                        'manager' => 'Менеджер',
+                        'client' => 'Клиент'
+                    ]) ?>
+
                     <?= $form->field($model, 'status')->dropDownList([
                             '10' => 'Активен',
                             '0' => 'Неактивен'

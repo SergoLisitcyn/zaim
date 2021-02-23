@@ -239,6 +239,41 @@ use \yii\helpers\Url;
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="col-xs-12">
+
+                        <h4 class="bold uppercase">5. Личный кабинет</h4>
+
+
+                        <?= $form->field($model, 'login_link')->textInput(['maxlength' => true])->hint('ссылка на личноый кабинет мфо(https://moneyman.kz/secure/registration?partner=smartzaimkz&utm_source=smartzaim&utm_medium=affiliate)') ?>
+
+                        <?= $form->field($model, 'login_content')->widget(Widget::className(), [
+                            'settings' => [
+                                'lang' => 'ru',
+                                'minHeight' => 300,
+                                'formatting' => ['p', 'blockquote', 'h2', 'h1'],
+                                'imageUpload' => Url::to(['/mfo/save-redactor-img','sub'=>'content']),
+                                'attributes' => [
+                                    [
+                                        'attribute' => 'text',
+                                        'format' => 'html'
+                                    ]
+                                ],
+                                'plugins' => [
+                                    'clips',
+                                    'fullscreen'
+                                ]
+
+                            ]
+                        ])?>
+
+                    </div>
+
+                    <div class="col-xs-6">
+
+                    </div>
+                </div>
+
                 <div class="form-group center" style="text-align: center">
                     <?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Обновить', ['class' => $model->isNewRecord ? 'mbtn mbtn-success' : 'mbtn mbtn-primary']) ?>
                 </div>

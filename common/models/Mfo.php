@@ -70,12 +70,12 @@ class Mfo extends \yii\db\ActiveRecord
             [['rating'], 'number'],
             [['odobrenie', 'akcii', 'home_page', 'status','sort','max_sum_calc','min_sum_calc'
                 ,'max_term_calc','min_term_calc','advanced_repayment','extension_loan'], 'integer'],
-            [['rekvisit', 'about_company', 'content','text_video'], 'string'],
+            [['rekvisit', 'about_company', 'content','text_video','login_content'], 'string'],
             [['mfo_name','logo', 'srok', 'sum', 'stavka', 'rasmotrenie', 'phone', 'email', 'website', 'video',
                 'link_offer', 'title', 'description', 'keywords','url','srok_new_client','sum_new_client',
                 'stavka_new_client','odobrenie_new_client','rasmotrenie_new_client',
                 'srok_for_client','sum_for_client','stavka_for_client',
-                'odobrenie_for_client','rasmotrenie_for_client'], 'string', 'max' => 255],
+                'odobrenie_for_client','rasmotrenie_for_client','login_link'], 'string', 'max' => 255],
             [['type_credit_array','mfo_city_array'], 'safe'],
             [['logo_file'], 'file'],
         ];
@@ -106,6 +106,7 @@ class Mfo extends \yii\db\ActiveRecord
             'link_offer' => 'Партнерская ссылка',
             'about_company' => 'О компании',
             'content' => 'Описание компании',
+            'login_content' => 'Текст для страницы логина',
             'title' => 'Title',
             'description' => 'Description',
             'keywords' => 'Keywords',
@@ -135,6 +136,7 @@ class Mfo extends \yii\db\ActiveRecord
             'stavka_for_client' => 'Ставка для существуещего клиента',
             'odobrenie_for_client' => 'Одобрение для существуещего клиента',
             'rasmotrenie_for_client' => 'Рассмотрение для существуещего клиента',
+            'login_link' => 'Ссылка на личный кабинет'
         ];
     }
     public function afterFind()
@@ -192,25 +194,23 @@ class Mfo extends \yii\db\ActiveRecord
                 }
             }
         }
-        $arr = ArrayHelper::map($this->city,'id','name');
+        $arrCity = ArrayHelper::map($this->city,'id','id');
         if($this->mfo_city_array){
             foreach ($this->mfo_city_array as $one){
-                if(!in_array($one,$arr)){
+                if(!in_array($one,$arrCity)){
                     $model = new MfoCity();
                     $model->mfo_id = $this->id;
                     $model->city_id = $one;
                     $model->save();
                 }
-                if(isset($arr[$one])){
-                    unset($arr[$one]);
+                if(isset($arrCity[$one])){
+                    unset($arrCity[$one]);
                 }
             }
 
         }
-
         MfoTypeCredit::deleteAll(['type_credit_id'=>$arr]);
-        MfoTypeCredit::deleteAll(['city_id'=>$arr]);
-
+        MfoCity::deleteAll(['city_id'=>$arrCity]);
         $imageSquareFile = UploadedFile::getInstance($this, 'logo_file');
         if ($imageSquareFile) {
             $directory = Yii::getAlias('@frontend/web/uploads/images/mfo/logo') . DIRECTORY_SEPARATOR;

@@ -95,7 +95,7 @@ if($url == '/'){
                     <div class="header-body__col header-body__col--nav desktop-visible">
                         <nav class="header-body-nav">
                             <ul>
-                                <li><a href="#">Акции</a></li>
+                                <li><a href="/aktsii">Акции</a></li>
                                 <li><a href="#">Реестр МФО</a></li>
                             </ul>
                         </nav>
@@ -113,7 +113,7 @@ if($url == '/'){
                             </div>
                             <ul class="header-nav__list desktop-hidden">
                                 <li class="header-nav__item">
-                                    <a class="header-nav__link" href="#">Акции</a>
+                                    <a class="header-nav__link" href="/aktsii">Акции</a>
                                 </li>
                                 <li class="header-nav__item">
                                     <a class="header-nav__link" href="#">Реестр МФО</a>

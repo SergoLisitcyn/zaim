@@ -59,8 +59,17 @@ class MfoController extends Controller
         ]);
     }
 
-    public function actionReviews()
+    public function actionLogin($url)
     {
+        $mfo = Mfo::find()->where(['status' => 1, 'url' => $url])->one();
+        return $this->render('login', [
+            'model' => $mfo,
+        ]);
+    }
+
+    public function actionReviews($url)
+    {
+        $mfo = Mfo::find()->where(['status' => 1, 'url' => $url])->one();
         $model = new Review();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             Yii::$app->session->setFlash('success', 'Ваш отзыв был отправлен. Благодарим за обращение!');
@@ -69,6 +78,7 @@ class MfoController extends Controller
         } else {
             return $this->render('reviews', [
                 'model' => $model,
+                'mfo' => $mfo,
             ]);
         }
 //        return $this->render('reviews');
