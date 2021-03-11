@@ -19,8 +19,8 @@ class CalculatorWidget extends Widget
     public function run()
     {
         $calculator = Calculator::findOne(1);
-        $spPol = TypeCredit::find()->where(['parent_id' => 3,'status' => 1])->all();
-        $spPog = TypeCredit::find()->where(['parent_id' => 2,'status' => 1])->all();
+        $spPol = TypeCredit::find()->where(['parent_id' => 3])->all();
+        $spPog = TypeCredit::find()->where(['parent_id' => 2])->all();
 
         return $this->render('calculator', [
             'calculator' => $calculator,

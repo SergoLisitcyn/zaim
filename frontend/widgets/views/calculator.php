@@ -59,9 +59,6 @@
                             <?php foreach ($spPogs as $pog) : ?>
                             <option class="others_params" value="money_to_bank_account"><?= $pog->name ?></option>
                             <?php endforeach; ?>
-<!--                            <option class="others_params" value="money_at_stake">на банковскую карту</option>-->
-<!--                            <option class="others_params" value="money_to_account_address">на счет Казпочты</option>-->
-<!--                            <option class="others_params" value="loan_cash">займ наличными</option>-->
                         </select>
                     </div>
                     <div class="loan_calculator_method">
@@ -71,15 +68,6 @@
                             <?php foreach ($spPols as $pol) : ?>
                                 <option class="others_params" value="bank_card"><?= $pol->name ?></option>
                             <?php endforeach; ?>
-<!--                            <option class="others_params" value="bank_card">банковская карта</option>-->
-<!--                            <option class="others_params" value="bank_transfer">банковский перевод</option>-->
-<!--                            <option class="others_params" value="cyber_plat">CyberPlat</option>-->
-<!--                            <option class="others_params" value="qiwi">QIWI</option>-->
-<!--                            <option class="others_params" value="kassa24">Kassa24</option>-->
-<!--                            <option class="others_params" value="cash_on_hand">в кассе банка-->
-<!--                            </option>-->
-<!--                            <option class="others_params" value="cash_in_kazpost">в АО «Казпочта»</option>-->
-<!--                            <option class="others_params" value="cash_in_office">в офисе компании</option>-->
                         </select>
                     </div>
                 </div>
