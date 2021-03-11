@@ -54,6 +54,15 @@ class SaleController extends Controller
 
     }
 
+    public function actionArhiv()
+    {
+        $sales = Sale::find()->where(['status' => 0])->all();
+        return $this->render('arhiv', [
+            'sales' => $sales,
+        ]);
+
+    }
+
     /**
      * Creates a new Sale model.
      * If creation is successful, the browser will be redirected to the 'view' page.

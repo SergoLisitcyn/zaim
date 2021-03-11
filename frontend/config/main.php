@@ -45,6 +45,7 @@ return [
                 'contact' => '/site/contact',
                 '/' => '/site/index',
                 'aktsii' => '/sale/index',
+                'arhiv' => '/sale/arhiv',
                 'kreditnyj-kalkulyator' => '/site/calculator',
                 'rating' => '/site/rating',
                 [
