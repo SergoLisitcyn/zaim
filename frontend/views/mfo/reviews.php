@@ -1,3 +1,12 @@
+<?php
+
+use \yii\helpers\Url;
+use \yii\web\YiiAsset;
+/* @var $this yii\web\View */
+/* @var $model common\models\Mfo */
+
+YiiAsset::register($this);
+?>
 <section class="breadcrumbs plr">
     <div class="breadcrumbs-wrap limit-width">
         <ul class="breadcrumbs__items">
@@ -5,14 +14,14 @@
                 <a href="/">Займы онлайн</a>
             </li>
             <li>
-                <a href="creditplus.html">CreditPlus</a>
+                <a href="<?= Url::toRoute(['mfo/view', 'url' => $mfo->url]) ?>"><?= $mfo->mfo_name ?></a>
             </li>
             <li>
                 Отзывы
             </li>
         </ul>
     </div>
-    <img class="main-title__img" src="img/uncode-child/bg-sm.png" alt="">
+    <img class="main-title__img" src="/img/uncode-child/bg-sm.png" alt="">
 </section>
 
 
@@ -23,17 +32,17 @@
                 <div class="content-info">
                     <ul	class="nav nav-tabs">
                         <li>
-                            <a href="creditplus.html">
+                            <a href="<?= Url::toRoute(['mfo/view', 'url' => $mfo->url]) ?>">
                                 <span>О	компании</span>
                             </a>
                         </li>
                         <li>
-                            <a href="creditplus-login.html">
+                            <a href="<?= Url::toRoute(['mfo/login', 'url' => $mfo->url]) ?>">
                                 <span>Личный	кабинет</span>
                             </a>
                         </li>
                         <li class="active">
-                            <a href="creditplus-reviews.html">
+                            <a href="<?= Url::toRoute(['mfo/reviews', 'url' => $mfo->url]) ?>">
                                 <span>Отзывы ( <span	class="rr-reviews-count">6</span> )</span>
                             </a>
                         </li>
@@ -45,207 +54,44 @@
                     </ul>
                     <div class="content-main-info">
                         <div class="content-main-info__item">
-                            <h1>Отзывы	о	CreditPlus</h1>
+                            <h1>Отзывы	о	<?= $mfo->mfo_name ?></h1>
                             <a href="#" class="content-main-info__button">Получить	деньги</a>
                             <div class="content-reviews">
+                                <?php foreach ($reviews as $review) :?>
                                 <div class="content-reviews-item">
-                                    <div class="rr_review_name">Злата</div>
+                                    <div class="rr_review_name"><?= $review->name_client ?></div>
                                     <span class="rr_date">13.08.2020</span>
                                     <div class="content-reviews-rating">
                                         <div class="rating">
                                             <span class="rating__caption">Простота	получения</span>
                                             <div class="rating__stars rating__stars--sm" style="width:100%">
                                             </div>
-                                            <div class="rating__val">5</div>
+                                            <div class="rating__val"><?= $review->prostota ?></div>
                                         </div>
                                         <div class="rating">
                                             <span class="rating__caption">Скорость	выдачи</span>
                                             <div class="rating__stars rating__stars--sm" style="width:100%">
                                             </div>
-                                            <div class="rating__val">5</div>
+                                            <div class="rating__val"><?= $review->speed ?></div>
                                         </div>
                                         <div class="rating">
                                             <span class="rating__caption">Служба	поддержки</span>
                                             <div class="rating__stars rating__stars--sm" style="width:100%">
                                             </div>
-                                            <div class="rating__val">5</div>
+                                            <div class="rating__val"><?= $review->support ?></div>
                                         </div>
                                     </div>
-                                    <p class="content-reviews-text">Меня	привлекла простота	обращения сюда. Никаких	странных вопросов в	анкете, к тому же заявку	ты заполняешь сам прямо	из дома. Деньги сразу на	карту приходят. Никаких	проблем не возникает,	если в срок отдаешь. Уже	не первый раз обращаюсь	сюда.</p>
+                                    <p class="content-reviews-text"><?= $review->body ?></p>
                                     <div class="content-reviews-plus">
                                         <span>Плюсы:</span>
-                                        <span>Просто и	быстро.</span>
+                                        <span><?= $review->plus ?></span>
                                     </div>
                                     <div class="content-reviews-minus">
                                         <span>Минусы:</span>
-                                        <span>Нет, если все	внимательно	делать.</span>
+                                        <span><?= $review->minus ?></span>
                                     </div>
                                 </div>
-                                <div class="content-reviews-item">
-                                    <div class="rr_review_name">Сергей</div>
-                                    <span class="rr_date">29.07.2020</span>
-                                    <div class="content-reviews-rating">
-                                        <div class="rating">
-                                            <span class="rating__caption">Простота	получения</span>
-                                            <div class="rating__stars rating__stars--sm" style="width:100%">
-                                            </div>
-                                            <div class="rating__val">5</div>
-                                        </div>
-                                        <div class="rating">
-                                            <span class="rating__caption">Скорость	выдачи</span>
-                                            <div class="rating__stars rating__stars--sm" style="width:100%">
-                                            </div>
-                                            <div class="rating__val">5</div>
-                                        </div>
-                                        <div class="rating">
-                                            <span class="rating__caption">Служба	поддержки</span>
-                                            <div class="rating__stars rating__stars--sm" style="width:61%">
-                                            </div>
-                                            <div class="rating__val">3</div>
-                                        </div>
-                                    </div>
-                                    <p class="content-reviews-text">О сервисе остались только хорошие впечатления. Мне выдали деньги через полчаса и даже не спросили, куда я собираюсь их потратить. Правда, возникли некоторые сложности при возврате долга, потому что платёж нужно отправлять через банк заранее, а меня никто не предупредил, что в противном случае может возникнуть просрочка.</p>
-                                    <div class="content-reviews-plus">
-                                        <span>Плюсы:</span>
-                                        <span>нецелевое использование займа, оперативное оформление.</span>
-                                    </div>
-                                    <div class="content-reviews-minus">
-                                        <span>Минусы:</span>
-                                        <span>нет хорошей обратной связи с клиентами.</span>
-                                    </div>
-                                </div>
-                                <div class="content-reviews-item">
-                                    <div class="rr_review_name">Петр</div>
-                                    <span class="rr_date">02.07.2020</span>
-                                    <div class="content-reviews-rating">
-                                        <div class="rating">
-                                            <span class="rating__caption">Простота	получения</span>
-                                            <div class="rating__stars rating__stars--sm" style="width:100%">
-                                            </div>
-                                            <div class="rating__val">5</div>
-                                        </div>
-                                        <div class="rating">
-                                            <span class="rating__caption">Скорость	выдачи</span>
-                                            <div class="rating__stars rating__stars--sm" style="width:100%">
-                                            </div>
-                                            <div class="rating__val">5</div>
-                                        </div>
-                                        <div class="rating">
-                                            <span class="rating__caption">Служба	поддержки</span>
-                                            <div class="rating__stars rating__stars--sm" style="width:100%">
-                                            </div>
-                                            <div class="rating__val">5</div>
-                                        </div>
-                                    </div>
-                                    <p class="content-reviews-text">Получил небольшой займ всего под 0,01%. Это практически бесплатно! Условия договора оказались вполне приемлемы, главное возвращать в оговоренный срок. Когда деньги требуются на срочный ремонт, лекарства или что-то подобное - самое то сюда обращаться. И вернуть можно разными способами, и получить.</p>
-                                    <div class="content-reviews-plus">
-                                        <span>Плюсы:</span>
-                                        <span>Низкий процент,	гарантия	одобрения.</span>
-                                    </div>
-                                    <div class="content-reviews-minus">
-                                        <span>Минусы:</span>
-                                        <span>Не вижу.</span>
-                                    </div>
-                                </div>
-                                <div class="content-reviews-item">
-                                    <div class="rr_review_name">Илья</div>
-                                    <span class="rr_date">15.06.2020</span>
-                                    <div class="content-reviews-rating">
-                                        <div class="rating">
-                                            <span class="rating__caption">Простота	получения</span>
-                                            <div class="rating__stars rating__stars--sm" style="width:81%">
-                                            </div>
-                                            <div class="rating__val">4</div>
-                                        </div>
-                                        <div class="rating">
-                                            <span class="rating__caption">Скорость	выдачи</span>
-                                            <div class="rating__stars rating__stars--sm" style="width:100%">
-                                            </div>
-                                            <div class="rating__val">5</div>
-                                        </div>
-                                        <div class="rating">
-                                            <span class="rating__caption">Служба	поддержки</span>
-                                            <div class="rating__stars rating__stars--sm" style="width:100%">
-                                            </div>
-                                            <div class="rating__val">5</div>
-                                        </div>
-                                    </div>
-                                    <p class="content-reviews-text">Компанию мне посоветовал друг. Сказал, что если взять займ на неделю, то ставка будет практически нулевой. Я проверил — действительно деньги выдали с минимальной переплатой.</p>
-                                    <div class="content-reviews-plus">
-                                        <span>Плюсы:</span>
-                                        <span>выгодные условия,	быстрое	оформление.</span>
-                                    </div>
-                                    <div class="content-reviews-minus">
-                                        <span>Минусы:</span>
-                                        <span>пролонгация договора	возможна только при	условии оплаты	начисленных	процентов.</span>
-                                    </div>
-                                </div>
-                                <div class="content-reviews-item">
-                                    <div class="rr_review_name">Фатима</div>
-                                    <span class="rr_date">09.06.2020</span>
-                                    <div class="content-reviews-rating">
-                                        <div class="rating">
-                                            <span class="rating__caption">Простота	получения</span>
-                                            <div class="rating__stars rating__stars--sm" style="width:100%">
-                                            </div>
-                                            <div class="rating__val">5</div>
-                                        </div>
-                                        <div class="rating">
-                                            <span class="rating__caption">Скорость	выдачи</span>
-                                            <div class="rating__stars rating__stars--sm" style="width:100%">
-                                            </div>
-                                            <div class="rating__val">5</div>
-                                        </div>
-                                        <div class="rating">
-                                            <span class="rating__caption">Служба	поддержки</span>
-                                            <div class="rating__stars rating__stars--sm" style="width:100%">
-                                            </div>
-                                            <div class="rating__val">5</div>
-                                        </div>
-                                    </div>
-                                    <p class="content-reviews-text">Потеряла телефон, а он мне нужен по работе. Но компания меня выручила — мне выдали деньги в день обращения. При этом даже не запросили справки о доходах, понадобился только паспорт. Проценты насчитали, но они получились невысокие.</p>
-                                    <div class="content-reviews-plus">
-                                        <span>Плюсы:</span>
-                                        <span>на	любые цели, только по	паспорту, низкие	ставки.</span>
-                                    </div>
-                                    <div class="content-reviews-minus">
-                                        <span>Минусы:</span>
-                                        <span>при повторном	обращении скидка не	предоставляется.</span>
-                                    </div>
-                                </div>
-                                <div class="content-reviews-item">
-                                    <div class="rr_review_name">Асан</div>
-                                    <span class="rr_date">17.05.2020</span>
-                                    <div class="content-reviews-rating">
-                                        <div class="rating">
-                                            <span class="rating__caption">Простота	получения</span>
-                                            <div class="rating__stars rating__stars--sm" style="width:100%">
-                                            </div>
-                                            <div class="rating__val">5</div>
-                                        </div>
-                                        <div class="rating">
-                                            <span class="rating__caption">Скорость	выдачи</span>
-                                            <div class="rating__stars rating__stars--sm" style="width:100%">
-                                            </div>
-                                            <div class="rating__val">5</div>
-                                        </div>
-                                        <div class="rating">
-                                            <span class="rating__caption">Служба	поддержки</span>
-                                            <div class="rating__stars rating__stars--sm" style="width:100%">
-                                            </div>
-                                            <div class="rating__val">5</div>
-                                        </div>
-                                    </div>
-                                    <p class="content-reviews-text">Кредит плюс оказался для меня просто находкой. Одобряют в большинстве случаев, процентная ставка не зашкаливает за предел. Первый раз не всю сумму, которую хотел получил, но тем не менее. Вернул исправно и в срок, и теперь мне всегда идут навстречу.</p>
-                                    <div class="content-reviews-plus">
-                                        <span>Плюсы:</span>
-                                        <span>Внимательное отношение	к клиентам.</span>
-                                    </div>
-                                    <div class="content-reviews-minus">
-                                        <span>Минусы:</span>
-                                        <span>Не увидел пока	никаких, главное	внимательно договор	читать.</span>
-                                    </div>
-                                </div>
+                                <?php endforeach; ?>
                                 <form class="review-form"  id="review-form" action="/mfo/reviews" method="post">
                                     <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
                                     <input type="hidden" id="review-cat_id" name="Review[cat_id]" value="1"/>
@@ -253,47 +99,6 @@
                                     <input type="hidden" id="review-speed" name="Review[speed]" value="1"/>
                                     <input type="hidden" id="review-support" name="Review[support]" value="1"/>
                                     <input type="hidden" id="review-support" name="Review[date]" value="<?= date('Y/m/d h:i:s')?>"/>
-<!--                                    <div class="content-reviews-rating">-->
-<!--                                        <div class="rating">-->
-<!--                                            <div class="rating-row">-->
-<!--                                                <span class="rating__caption">Простота	получения</span>-->
-<!--                                                <div class="rr_stars_container">-->
-<!--                                                    <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="1"></span>-->
-<!--                                                    <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="2"></span>-->
-<!--                                                    <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="3"></span>-->
-<!--                                                    <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="4"></span>-->
-<!--                                                    <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="5"></span>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                            <span class="form-err"></span>-->
-<!--                                        </div>-->
-<!--                                        <div class="rating">-->
-<!--                                            <div class="rating-row">-->
-<!--                                                <span class="rating__caption">Скорость выдачи</span>-->
-<!--                                                <div class="rr_stars_container">-->
-<!--                                                    <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="1"></span>-->
-<!--                                                    <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="2"></span>-->
-<!--                                                    <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="3"></span>-->
-<!--                                                    <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="4"></span>-->
-<!--                                                    <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="5"></span>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                            <span class="form-err"></span>-->
-<!--                                        </div>-->
-<!--                                        <div class="rating">-->
-<!--                                            <div class="rating-row">-->
-<!--                                                <span class="rating__caption">Служба поддержки</span>-->
-<!--                                                <div class="rr_stars_container">-->
-<!--                                                    <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="1"></span>-->
-<!--                                                    <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="2"></span>-->
-<!--                                                    <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="3"></span>-->
-<!--                                                    <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="4"></span>-->
-<!--                                                    <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="5"></span>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                            <span class="form-err"></span>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
                                     <div class="review-form__textarea-wrap">
                                         <textarea class="textarea-review" id="review-body" placeholder="Оставьте свой отзыв" name="Review[body]"></textarea>
                                         <textarea class="textarea-plus" id="review-plus" placeholder="Плюсы компании" name="Review[plus]"></textarea>
@@ -320,9 +125,7 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
             <sidebar class="content-sidebar">
                 <div class="mfo_card">
                     <div class="mfo_card__title">Рейтинг	компании</div>
@@ -386,15 +189,15 @@
                                 <div	class="mfo_card_info_ways_label">Получить:</div>
                                 <div	class="mfo_card_info_ways_data">
                                     <noscript>
-                                        <img	style="height: 20px;"	src="img/2016/08/all.png">
+                                        <img style="height: 20px;"	src="/img/2016/08/all.png">
                                     </noscript>
-                                    <img	class="lazyload"	style="height: 20px;"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="img/2016/08/all.png">
+                                    <img	class="lazyload"	style="height: 20px;"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="/img/2016/08/all.png">
                                 </div>
                             </div>
                         </div>
                         <noindex>
                             <a href="#">
-                                <div	class="mfo_card_button">Получить деньги</div>
+                                <div class="mfo_card_button">Получить деньги</div>
                             </a>
                         </noindex>
                     </div>
@@ -416,9 +219,9 @@
                             <div class="aside-rating-mfo-item">
                                 <a	href="#">
                                     <noscript>
-                                        <img	src="img/2016/08/4slovo-e1550510710120.png">
+                                        <img src="/img/2016/08/4slovo-e1550510710120.png">
                                     </noscript>
-                                    <img	class="lazyload"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="img/2016/08/4slovo-e1550510710120.png"	style="width: 110px;">
+                                    <img	class="lazyload"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="/img/2016/08/4slovo-e1550510710120.png"	style="width: 110px;">
                                 </a>
                             </div>
                             <div class="aside-rating-mfo-item">
@@ -440,7 +243,7 @@
                                     <noscript>
                                         <img	src="img2016/08/moneyman.png">
                                     </noscript>
-                                    <img	class="lazyload"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="img/2016/08/moneyman.png"	style="width: 110px;">
+                                    <img	class="lazyload"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="/img/2016/08/moneyman.png"	style="width: 110px;">
                                 </a>
                             </div>
                             <div class="aside-rating-mfo-item">
@@ -460,9 +263,9 @@
                             <div class="aside-rating-mfo-item">
                                 <a	href="#">
                                     <noscript>
-                                        <img	src="img/2018/01/tengokz_300x140_0.png">
+                                        <img	src="/img/2018/01/tengokz_300x140_0.png">
                                     </noscript>
-                                    <img	class="lazyload"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="img/2018/01/tengokz_300x140_0.png">
+                                    <img	class="lazyload"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="/img/2018/01/tengokz_300x140_0.png">
                                 </a>
                             </div>
                             <div class="aside-rating-mfo-item">

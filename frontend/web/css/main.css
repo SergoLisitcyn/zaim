@@ -4027,7 +4027,6 @@ input.subscribe-form-item__btn.subscribe-form-item__btn--btn-submit, input.subsc
     border: 1px solid #fda729;
     padding: 10px 20px;
     background: #fda729;
-    margin: 10px auto;
     width: 250px;
     color: #fff;
     text-transform: uppercase;
@@ -4144,7 +4143,6 @@ input.subscribe-form-item__btn.subscribe-form-item__btn--btn-submit, input.subsc
     transition: all .5s ease;
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
-    -ms-transition: all .5s ease;
     -o-transition: all .5s ease;
 }
 
@@ -4310,4 +4308,38 @@ input.subscribe-form-item__btn.subscribe-form-item__btn--btn-submit, input.subsc
 
 .conexist {
     display: none;
+}
+
+.content-text h2{
+    color: #028ab4;
+    font-size: 30px;
+    line-height: 1;
+    font-family: 'PT Sans';
+    margin-bottom: 15px;
+    font-weight: 500;
+    margin-top: 30px;
+}
+
+.content-text li {
+    font-size: 16px;
+    font-weight: 300;
+    color: #111;
+    position: relative;
+    padding-left: 15px;
+}
+
+.content-text li:before {
+    position: absolute;
+    content: '';
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #2c8dc4;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
 }

@@ -53,6 +53,9 @@ class MfoController extends Controller
      */
     public function actionView($url)
     {
+        if(!$url){
+            return $this->redirect('/');
+        }
         $mfo = Mfo::find()->where(['status' => 1, 'url' => $url])->one();
         return $this->render('view', [
             'model' => $mfo,
@@ -61,6 +64,9 @@ class MfoController extends Controller
 
     public function actionLogin($url)
     {
+        if(!$url){
+            return $this->redirect('/');
+        }
         $mfo = Mfo::find()->where(['status' => 1, 'url' => $url])->one();
         return $this->render('login', [
             'model' => $mfo,
@@ -69,7 +75,11 @@ class MfoController extends Controller
 
     public function actionReviews($url)
     {
+        if(!$url){
+            return $this->redirect('/');
+        }
         $mfo = Mfo::find()->where(['status' => 1, 'url' => $url])->one();
+        $reviews= Review::find()->where(['cat_id' => $mfo->id])->all();
         $model = new Review();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             Yii::$app->session->setFlash('success', 'Ваш отзыв был отправлен. Благодарим за обращение!');
@@ -78,6 +88,7 @@ class MfoController extends Controller
         } else {
             return $this->render('reviews', [
                 'model' => $model,
+                'reviews' => $reviews,
                 'mfo' => $mfo,
             ]);
         }

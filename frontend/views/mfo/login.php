@@ -15,7 +15,7 @@ use \yii\helpers\Url;
             </li>
         </ul>
     </div>
-    <img class="main-title__img" src="img/uncode-child/bg-sm.png" alt="">
+    <img class="main-title__img" src="/img/uncode-child/bg-sm.png" alt="">
 </section>
 
 
@@ -49,89 +49,9 @@ use \yii\helpers\Url;
                     <div class="content-main-info">
                         <div class="content-main-info__item">
                             <h1>Личный кабинет <?= $model->mfo_name?></h1>
-                            <a href class="content-main-info__button">Войти в личный кабинет</a>
+                            <a href="<?= $model->login_link ?>" class="content-main-info__button">Войти в личный кабинет</a>
                             <div class="content-main-info__content">
-                                <p class="content-main-info__text">
-                                    Возможно ли все время иметь под рукой финансовую поддержку, не обращаясь в банк и не прибегая к помощи близких? Да, это вполне реально, если получить доступ в личный кабинет CreditPlus.kz. Сервис предлагает потребителям лояльные условия и всегда приходит на помощь в сложных финансовых ситуациях. На официальном сайте компании можно взять в долг до 130 тысяч тенге на банковскую карту в день обращения на любые цели.
-                                </p>
-                                <p class="content-main-info__text">
-                                    Чтобы зарегистрироваться в сервисе, понадобится только удостоверение личности, мобильный телефон и интернет. Когда вы станете одним из клиентов CreditPlus.kz, вам откроется вход в личный кабинет и вы получите возможность обращаться за микрокредитом в любое время дня и ночи.
-                                </p>
-                                <h3 class="content-main-info__subtitle">Как пройти регистрацию в CreditPlus.kz</h3>
-                                <p class="content-main-info__text">
-                                    CreditPlus.kz — современный и безопасный сервис, доступный всем гражданам Казахстана. В отличие от кредитования в банке, при оформлении микрокредита в этой МФО не требуется огромный пакет документов, включающий в себя справки о зарплате. Чтобы подать заявку на получение денег в долг, клиенту организации нужно самостоятельно заполнить небольшую анкету, предоставив самые важные данные. Процедура регистрации максимально простая и быстрая, а средства перечисляются на банковскую карту клиента в первые минуты после подписания договора.
-                                </p>
-                                <h3 class="content-main-info__subtitle">Как именно проходит процесс подачи заявки в CreditPlus.kz на получение микрокредита?</h3>
-                                <div class="content-main-info__box">
-                                    <ol class="content-main-info__list">
-                                        <li>
-                                            <p>Зайдите на главную страницу официального сайта компании, где размещен специальный калькулятор вычисления переплаты. Передвигая бегунки, обозначьте, какую сумму и на какой срок вы желаете получить. Выбрав параметры микрокредита, вы сразу увидите дату погашения и величину совокупной платы. Если условия вас устраивают, щёлкните на кнопку «Получить микрокредит».
-                                            </p>
-                                            <noscript>
-                                                <img	class="content-main-info__img"	src="img/2020/07/creditplus-step-1.png"	alt=""	width="955"height="717" />
-                                            </noscript>
-                                            <img class="content-main-info__img lazyloaded" src="img/2020/07/creditplus-step-1.png" data-src="img/2020/07/creditplus-step-1.png" alt="" width="955" height="717">
-                                        </li>
-                                        <li>
-                                            <p>Предоставьте основные данные: фамилию, имя, отчество, номер мобильного телефона. Придумайте пароль, чтобы в дальнейшем выполнять вход в личный кабинет. Комбинация должна состоять из латинских букв и цифр. Ознакомьтесь с «Правилами предоставления микрокредитов», дайте согласие на их применение. Кликните на кнопку «Продолжить».
-                                            </p>
-                                            <noscript>
-                                                <img	class="content-main-info__img"	src="img/2020/07/creditplus-step-2.png"	alt=""	width="955"height="717" />
-                                            </noscript>
-                                            <img class="content-main-info__img lazyloaded" src="img/2020/07/creditplus-step-2.png" data-src="img/2020/07/creditplus-step-2.png" alt="" width="955" height="717">
-                                        </li>
-                                        <li>
-                                            <p>Подтвердите номер телефона. Понадобится в открывшемся окне ввести код, отправленный в СМС. Сообщение не приходит — кликните на «Выслать код повторно».
-                                            </p>
-                                            <noscript>
-                                                <img	class="content-main-info__img"	src="img/2020/07/creditplus-step-3.png"	alt=""	width="955"height="717" />
-                                            </noscript>
-                                            <img class="content-main-info__img lazyloaded" src="img/2020/07/creditplus-step-3.png" data-src="img/2020/07/creditplus-step-3.png" alt="" width="955" height="717">
-                                        </li>
-                                        <li>
-                                            <p>Укажите свой ИИН и реквизиты удостоверения личности — номер документа, орган и дату выдачи. Введите адрес действующей электронной почты.
-                                            </p>
-                                            <noscript>
-                                                <img	class="content-main-info__img"	src="img/2020/07/creditplus-step-4.png"	alt=""	width="955"height="717" />
-                                            </noscript>
-                                            <img class="content-main-info__img lazyloaded" src="img/2020/07/creditplus-step-4.png" data-src="img/2020/07/creditplus-step-4.png" alt="" width="955" height="717">
-                                        </li>
-                                        <li>
-                                            <p>Укажите точный адрес по прописке (область, город или населенный пункт, улицу, дом, квартиру, домашний телефон — при наличии). Обозначьте место фактического проживания, если оно отличается от адреса по прописке.
-                                            </p>
-                                            <noscript>
-                                                <img	class="content-main-info__img"	src="img/2020/07/creditplus-step-5.png"	alt=""	width="955"height="717" />
-                                            </noscript>
-                                            <img class="content-main-info__img lazyloaded" src="img/2020/07/creditplus-step-5.png" data-src="img/2020/07/creditplus-step-5.png" alt="" width="955" height="717">
-                                        </li>
-                                        <li>
-                                            <p>Укажите семейное положение и количество несовершеннолетних детей. Предоставьте персональные данные вашего контактного лица (Ф.И.О., степень родства, мобильный телефон). Через этого человека компания будет сообщать вам важные сведения, когда дозвониться до вас по указанным в заявке телефонам не удастся. Обратите внимание, что контактное лицо не является поручителем.
-                                            </p>
-                                            <noscript>
-                                                <img	class="content-main-info__img"	src="img/2020/07/creditplus-step-6.png"	alt=""	width="955"height="717" />
-                                            </noscript>
-                                            <img class="content-main-info__img lazyloaded" src="img/2020/07/creditplus-step-6.png" data-src="img/2020/07/creditplus-step-6.png" alt="" width="955" height="717">
-                                        </li>
-                                        <li>
-                                            <p>После того, как система закончит проверку ваших персональных данных, ознакомьтесь с предложением, которое автоматически сформирует сервис. Изучите условия оферты: сумму и срок микрокредита, сколько придется вернуть. На этом этапе можно изменить параметры получения денег (если вас что-то не устроит) и ввести промокод. Далее укажите номер IBAN (банковского счёта) для зачисления денег. Кликните на кнопку «Подать заявку на микрокредит».
-                                            </p>
-                                            <noscript>
-                                                <img	class="content-main-info__img"	src="img/2020/07/creditplus-step-7.png"	alt=""	width="955"height="717" />
-                                            </noscript>
-                                            <img class="content-main-info__img lazyloaded" src="img/2020/07/creditplus-step-7.png" data-src="img/2020/07/creditplus-step-7.png" alt="" width="955" height="717">
-                                        </li>
-                                    </ol>
-                                    <p class="content-main-info__text">
-                                        Теперь вы получите не только деньги в CreditPlus.kz на какие угодно цели, но и возможность входить в личный кабинет и контролировать состояние микрокредита в удобное время суток. Через свой персональный аккаунт будет удобно уточнять в режиме онлайн размер платежа, дату погашения задолженности, реквизиты компании и другие важные для правильного обслуживания микрокредитов моменты. Здесь можно подать заявку на пролонгацию договора или же досрочное погашение ссуды.
-                                    </p>
-                                    <h3 class="content-main-info__subtitle">Важная информация для клиентов компании</h3>
-                                    <p class="content-main-info__text">
-                                        Важно понимать, что оформление любых микрокредитов — ответственный шаг, к которому стоит подойти обдуманно. Даже когда дополнительные финансы требуются очень срочно, постарайтесь заполнить заявку без лишней суеты. Советуем ознакомиться с параметрами кредитования, действующими в компании. Стоит обратить внимание на значение процентной ставки, размер обязательного платежа, дату внесения денежных средств в счёт оплаты долга, правила пролонгации договора. Так у вас получится заключить выгодную сделку, а значит, справиться с финансовыми проблемами и не испортить кредитную историю.
-                                    </p>
-                                    <p class="content-main-info__text">
-                                        Обращение в CreditPlus.kz — отличный способ решить денежный вопрос, когда вам недоступен банковский кредит, а дополнительные средства понадобились срочно. Кредитная организация выдает микрокредиты день в день без залога и поручителей.
-                                    </p>
-                                </div>
+                                <?= $model->login_content ?>
                             </div>
                         </div>
                     </div>
@@ -202,9 +122,9 @@ use \yii\helpers\Url;
                                 <div	class="mfo_card_info_ways_label">Получить:</div>
                                 <div	class="mfo_card_info_ways_data">
                                     <noscript>
-                                        <img	style="height: 20px;"	src="img/2016/08/all.png">
+                                        <img	style="height: 20px;"	src="/img/2016/08/all.png">
                                     </noscript>
-                                    <img	class="lazyload"	style="height: 20px;"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="img/2016/08/all.png">
+                                    <img	class="lazyload"	style="height: 20px;"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="/img/2016/08/all.png">
                                 </div>
                             </div>
                         </div>
@@ -232,9 +152,9 @@ use \yii\helpers\Url;
                             <div class="aside-rating-mfo-item">
                                 <a	href="#">
                                     <noscript>
-                                        <img	src="img/2016/08/4slovo-e1550510710120.png">
+                                        <img	src="/img/2016/08/4slovo-e1550510710120.png">
                                     </noscript>
-                                    <img	class="lazyload"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="img/2016/08/4slovo-e1550510710120.png"	style="width: 110px;">
+                                    <img	class="lazyload"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="/img/2016/08/4slovo-e1550510710120.png"	style="width: 110px;">
                                 </a>
                             </div>
                             <div class="aside-rating-mfo-item">
@@ -256,7 +176,7 @@ use \yii\helpers\Url;
                                     <noscript>
                                         <img	src="img2016/08/moneyman.png">
                                     </noscript>
-                                    <img	class="lazyload"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="img/2016/08/moneyman.png"	style="width: 110px;">
+                                    <img	class="lazyload"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="/img/2016/08/moneyman.png"	style="width: 110px;">
                                 </a>
                             </div>
                             <div class="aside-rating-mfo-item">
@@ -276,9 +196,9 @@ use \yii\helpers\Url;
                             <div class="aside-rating-mfo-item">
                                 <a	href="#">
                                     <noscript>
-                                        <img	src="img/2018/01/tengokz_300x140_0.png">
+                                        <img	src="/img/2018/01/tengokz_300x140_0.png">
                                     </noscript>
-                                    <img	class="lazyload"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="img/2018/01/tengokz_300x140_0.png">
+                                    <img	class="lazyload"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="/img/2018/01/tengokz_300x140_0.png">
                                 </a>
                             </div>
                             <div class="aside-rating-mfo-item">

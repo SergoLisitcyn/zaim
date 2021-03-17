@@ -175,9 +175,9 @@ $this->title = $model->title;
                                         <div class="offer-row-col">Получение:</div>
                                         <div class="offer-col">
                                             <noscript>
-                                                <img	src="img/2016/08/all.png">
+                                                <img	src="/img/2016/08/all.png">
                                             </noscript>
-                                            <img class="lazyloaded" src="img/2016/08/all.png" data-src="img/2016/08/all.png">
+                                            <img class="lazyloaded" src="/img/2016/08/all.png" data-src="/img/2016/08/all.png">
                                         </div>
                                     </div>
                                 </div>
@@ -274,9 +274,9 @@ $this->title = $model->title;
                                         <div class="offer-logo">
                                             <a href="#">
                                                 <noscript>
-                                                    <img	src="img/2016/08/moneyman.png">
+                                                    <img	src="/img/2016/08/moneyman.png">
                                                 </noscript>
-                                                <img class=" ls-is-cached lazyloaded" src="img/2016/08/moneyman.png" data-src="img/2016/08/moneyman.png">
+                                                <img class=" ls-is-cached lazyloaded" src="/img/2016/08/moneyman.png" data-src="/img/2016/08/moneyman.png">
                                             </a>
                                         </div>
                                         <div class="mfo_card_info_rating_data">
@@ -314,9 +314,9 @@ $this->title = $model->title;
                                         <div class="offer-logo">
                                             <a href="#">
                                                 <noscript>
-                                                    <img	src="img/2018/12/koke.png">
+                                                    <img	src="/img/2018/12/koke.png">
                                                 </noscript>
-                                                <img class=" ls-is-cached lazyloaded" src="img/2018/12/koke.png" data-src="img/2018/12/koke.png">
+                                                <img class=" ls-is-cached lazyloaded" src="/img/2018/12/koke.png" data-src="/img/2018/12/koke.png">
                                             </a>
                                         </div>
                                         <div class="mfo_card_info_rating_data">
@@ -354,9 +354,9 @@ $this->title = $model->title;
                                         <div class="offer-logo">
                                             <a href="#">
                                                 <noscript>
-                                                    <img	src="img/2016/08/zaymer.png">
+                                                    <img	src="/img/2016/08/zaymer.png">
                                                 </noscript>
-                                                <img class=" ls-is-cached lazyloaded" src="img/2016/08/zaymer.png" data-src="img/2016/08/zaymer.png">
+                                                <img class=" ls-is-cached lazyloaded" src="/img/2016/08/zaymer.png" data-src="/img/2016/08/zaymer.png">
                                             </a>
                                         </div>
                                         <div class="mfo_card_info_rating_data">
@@ -667,9 +667,9 @@ $this->title = $model->title;
                             <div class="aside-rating-mfo-item">
                                 <a	href="#">
                                     <noscript>
-                                        <img	src="img/2016/08/4slovo-e1550510710120.png">
+                                        <img	src="/img/2016/08/4slovo-e1550510710120.png">
                                     </noscript>
-                                    <img	class="lazyload"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="img/2016/08/4slovo-e1550510710120.png"	style="width: 110px;">
+                                    <img	class="lazyload"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="/img/2016/08/4slovo-e1550510710120.png"	style="width: 110px;">
                                 </a>
                             </div>
                             <div class="aside-rating-mfo-item">
@@ -691,7 +691,7 @@ $this->title = $model->title;
                                     <noscript>
                                         <img	src="img2016/08/moneyman.png">
                                     </noscript>
-                                    <img	class="lazyload"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="img/2016/08/moneyman.png"	style="width: 110px;">
+                                    <img	class="lazyload"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="/img/2016/08/moneyman.png"	style="width: 110px;">
                                 </a>
                             </div>
                             <div class="aside-rating-mfo-item">
@@ -711,9 +711,9 @@ $this->title = $model->title;
                             <div class="aside-rating-mfo-item">
                                 <a	href="#">
                                     <noscript>
-                                        <img	src="img/2018/01/tengokz_300x140_0.png">
+                                        <img	src="/img/2018/01/tengokz_300x140_0.png">
                                     </noscript>
-                                    <img	class="lazyload"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="img/2018/01/tengokz_300x140_0.png">
+                                    <img	class="lazyload"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="/img/2018/01/tengokz_300x140_0.png">
                                 </a>
                             </div>
                             <div class="aside-rating-mfo-item">
