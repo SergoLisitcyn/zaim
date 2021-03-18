@@ -41,7 +41,18 @@ $this->params['breadcrumbs'][] = $this->title;
             'name_client',
             'otvet_review:ntext',
             'date',
-            'status',
+            [
+                'label' => 'Статус',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    if($model->status == 1){
+                        $result = 'Активен';
+                    } else {
+                        $result = 'Неактивен';
+                    }
+                    return $result;
+                }
+            ]
         ],
     ]) ?>
 

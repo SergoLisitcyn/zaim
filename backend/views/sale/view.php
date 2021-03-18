@@ -37,7 +37,18 @@ $this->params['breadcrumbs'][] = $this->title;
             'srok_do',
             'url:url',
             'sort',
-            'status',
+            [
+                'label' => 'Статус',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    if($model->status == 1){
+                        $result = 'Активен';
+                    } else {
+                        $result = 'Неактивен';
+                    }
+                    return $result;
+                }
+            ]
         ],
     ]) ?>
 

@@ -31,8 +31,19 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'name',
-            'status',
             'sort',
+            [
+                'label' => 'Статус',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    if($model->status == 1){
+                        $result = 'Активен';
+                    } else {
+                        $result = 'Неактивен';
+                    }
+                    return $result;
+                }
+            ]
         ],
     ]) ?>
 
