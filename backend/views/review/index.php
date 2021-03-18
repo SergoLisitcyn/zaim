@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Review', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Создать отзыв', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -26,19 +26,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
             'cat_id',
             'body:ntext',
-            'plus:ntext',
-            'minus:ntext',
-            //'prostota',
-            //'speed',
-            //'support',
-            //'email:email',
-            //'name_client',
-            //'otvet_review:ntext',
-            //'date',
-            //'status',
+            'name_client',
+            'status',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

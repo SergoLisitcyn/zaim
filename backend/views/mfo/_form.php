@@ -184,7 +184,7 @@ use \yii\helpers\Url;
 
                         <h4 class="bold uppercase">3. Фильтры</h4>
 
-                        <?php echo $form->field($model, 'type_credit_array',['options'=>['class'=>'col-xs-12']])->widget(Select2::classname(), [
+                        <?php echo $form->field($model, 'type_credit_arr',['options'=>['class'=>'col-xs-12']])->widget(Select2::classname(), [
                             'data' => ArrayHelper::map(TypeCredit::find()->all(),'id','name'),
                             'language' => 'ru',
                             'options' => ['placeholder' => 'Выбрать тип кредита ...', 'multiple' => true],
@@ -193,7 +193,7 @@ use \yii\helpers\Url;
                             ],
                             ]); ?>
 
-                        <?php echo $form->field($model, 'mfo_city_array',['options'=>['class'=>'col-xs-12']])->widget(Select2::classname(), [
+                        <?php echo $form->field($model, 'mfo_city_arr',['options'=>['class'=>'col-xs-12']])->widget(Select2::classname(), [
                             'data' => ArrayHelper::map(City::find()->all(),'id','name'),
                             'language' => 'ru',
                             'options' => ['placeholder' => 'Выбрать города ...', 'multiple' => true],

@@ -52,6 +52,14 @@
                         ],
                     ],
                     [
+                        'label' => 'Отзывы',
+                        'icon' => 'comments',
+                        'url' => '#',
+                        'items' => [
+                            ['label' => 'Все отзывы', 'icon' => 'circle-o', 'url' => ['/review/index'],],
+                        ],
+                    ],
+                    [
                         'label' => 'Фильтры',
                         'icon' => 'filter',
                         'url' => '#',

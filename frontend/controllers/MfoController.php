@@ -79,7 +79,12 @@ class MfoController extends Controller
             return $this->redirect('/');
         }
         $mfo = Mfo::find()->where(['status' => 1, 'url' => $url])->one();
-        $reviews= Review::find()->where(['cat_id' => $mfo->id])->all();
+        $reviews= Review::find()
+            ->where([
+                'cat_id' => $mfo->id,
+                'status' => 1
+            ])
+            ->all();
         $model = new Review();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             Yii::$app->session->setFlash('success', 'Ваш отзыв был отправлен. Благодарим за обращение!');

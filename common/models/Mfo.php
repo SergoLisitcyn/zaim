@@ -38,11 +38,34 @@ use yii\web\UploadedFile;
  * @property int|null $status
  * @property int $created_at
  * @property int $updated_at
+ * @property string|null $type_credit_array
+ * @property string $url
+ * @property int|null $sort
+ * @property string|null $text_video
+ * @property int|null $max_sum_calc
+ * @property int|null $min_sum_calc
+ * @property int|null $max_term_calc
+ * @property int|null $min_term_calc
+ * @property int|null $advanced_repayment
+ * @property int|null $extension_loan
+ * @property string|null $mfo_city_array
+ * @property string|null $srok_new_client
+ * @property string|null $sum_new_client
+ * @property string|null $stavka_new_client
+ * @property string|null $odobrenie_new_client
+ * @property string|null $rasmotrenie_new_client
+ * @property string|null $srok_for_client
+ * @property string|null $sum_for_client
+ * @property string|null $stavka_for_client
+ * @property string|null $odobrenie_for_client
+ * @property string|null $rasmotrenie_for_client
+ * @property string|null $login_content
+ * @property string|null $login_link
  */
 class Mfo extends \yii\db\ActiveRecord
 {
-    public $type_credit_array;
-    public $mfo_city_array;
+    public $type_credit_arr;
+    public $mfo_city_arr;
     public $logo_file;
 
     /**
@@ -65,18 +88,32 @@ class Mfo extends \yii\db\ActiveRecord
      */
     public function rules()
     {
+//        return [
+//            [['mfo_name', 'stavka', 'title','url'], 'required'],
+//            [['rating'], 'number'],
+//            [['odobrenie', 'akcii', 'home_page', 'status','sort','max_sum_calc','min_sum_calc'
+//                ,'max_term_calc','min_term_calc','advanced_repayment','extension_loan'], 'integer'],
+//            [['rekvisit', 'about_company', 'content','text_video','login_content'], 'string'],
+//            [['mfo_name','logo', 'srok', 'sum', 'stavka', 'rasmotrenie', 'phone', 'email', 'website', 'video',
+//                'link_offer', 'title', 'description', 'keywords','url','srok_new_client','sum_new_client',
+//                'stavka_new_client','odobrenie_new_client','rasmotrenie_new_client',
+//                'srok_for_client','sum_for_client','stavka_for_client',
+//                'odobrenie_for_client','rasmotrenie_for_client','login_link'], 'string', 'max' => 255],
+//            [['type_credit_array','mfo_city_array'], 'safe'],
+//            [['logo_file'], 'file'],
+//        ];
         return [
-            [['mfo_name', 'stavka', 'title','url'], 'required'],
+            [['mfo_name', 'stavka', 'title', 'created_at', 'updated_at', 'url'], 'required'],
             [['rating'], 'number'],
-            [['odobrenie', 'akcii', 'home_page', 'status','sort','max_sum_calc','min_sum_calc'
-                ,'max_term_calc','min_term_calc','advanced_repayment','extension_loan'], 'integer'],
-            [['rekvisit', 'about_company', 'content','text_video','login_content'], 'string'],
-            [['mfo_name','logo', 'srok', 'sum', 'stavka', 'rasmotrenie', 'phone', 'email', 'website', 'video',
-                'link_offer', 'title', 'description', 'keywords','url','srok_new_client','sum_new_client',
-                'stavka_new_client','odobrenie_new_client','rasmotrenie_new_client',
-                'srok_for_client','sum_for_client','stavka_for_client',
-                'odobrenie_for_client','rasmotrenie_for_client','login_link'], 'string', 'max' => 255],
-            [['type_credit_array','mfo_city_array'], 'safe'],
+            [['odobrenie', 'akcii', 'home_page', 'status', 'created_at', 'updated_at', 'sort', 'max_sum_calc',
+                'min_sum_calc', 'max_term_calc', 'min_term_calc', 'advanced_repayment', 'extension_loan'], 'integer'],
+            [['rekvisit', 'about_company', 'content', 'login_content'], 'string'],
+            [['mfo_name', 'srok', 'sum', 'stavka', 'rasmotrenie', 'phone', 'email', 'website', 'logo', 'video',
+                'link_offer', 'title', 'description', 'keywords', 'type_credit_array', 'url', 'text_video',
+                'mfo_city_array', 'srok_new_client', 'sum_new_client', 'stavka_new_client', 'odobrenie_new_client',
+                'rasmotrenie_new_client', 'srok_for_client', 'sum_for_client', 'stavka_for_client',
+                'odobrenie_for_client', 'rasmotrenie_for_client', 'login_link'], 'string', 'max' => 255],
+            [['type_credit_arr','mfo_city_arr'], 'safe'],
             [['logo_file'], 'file'],
         ];
     }
@@ -111,8 +148,8 @@ class Mfo extends \yii\db\ActiveRecord
             'description' => 'Description',
             'keywords' => 'Keywords',
             'status' => 'Статус',
-            'type_credit_array' => 'Виды кредита',
-            'mfo_city_array' => 'Города',
+            'type_credit_arr' => 'Виды кредита',
+            'mfo_city_arr' => 'Города',
             'typeAsString' => 'Тэги',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
@@ -142,8 +179,8 @@ class Mfo extends \yii\db\ActiveRecord
     public function afterFind()
     {
         parent::afterFind();
-        $this->type_credit_array = $this->type;
-        $this->mfo_city_array = $this->city;
+        $this->type_credit_arr = $this->type;
+        $this->mfo_city_arr = $this->city;
     }
 
     public function getMfo(){
@@ -181,8 +218,8 @@ class Mfo extends \yii\db\ActiveRecord
     {
         parent::afterSave($insert, $changedAttributes);
         $arr = ArrayHelper::map($this->type,'id','name');
-        if($this->type_credit_array) {
-            foreach ($this->type_credit_array as $one){
+        if($this->type_credit_arr) {
+            foreach ($this->type_credit_arr as $one){
                 if(!in_array($one,$arr)){
                     $model = new MfoTypeCredit();
                     $model->mfo_id = $this->id;
@@ -195,8 +232,8 @@ class Mfo extends \yii\db\ActiveRecord
             }
         }
         $arrCity = ArrayHelper::map($this->city,'id','id');
-        if($this->mfo_city_array){
-            foreach ($this->mfo_city_array as $one){
+        if($this->mfo_city_arr){
+            foreach ($this->mfo_city_arr as $one){
                 if(!in_array($one,$arrCity)){
                     $model = new MfoCity();
                     $model->mfo_id = $this->id;

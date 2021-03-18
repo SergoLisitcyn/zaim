@@ -53,18 +53,18 @@ class Review extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'cat_id' => 'Cat ID',
-            'body' => 'Body',
-            'plus' => 'Plus',
-            'minus' => 'Minus',
-            'prostota' => 'Prostota',
-            'speed' => 'Speed',
-            'support' => 'Support',
+            'cat_id' => 'МФО',
+            'body' => 'Сообщение',
+            'plus' => 'Плюсы',
+            'minus' => 'Минусы',
+            'prostota' => 'Простота получения',
+            'speed' => 'Скорость',
+            'support' => 'Поддержка',
             'email' => 'Email',
-            'name_client' => 'Name Client',
+            'name_client' => 'Имя',
             'otvet_review' => 'Otvet Review',
             'date' => 'Date',
-            'status' => 'Status',
+            'status' => 'Статус',
         ];
     }
 }
