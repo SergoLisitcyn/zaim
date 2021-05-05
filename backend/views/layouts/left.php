@@ -21,6 +21,7 @@
                     ['label' => 'Навигация', 'options' => ['class' => 'header']],
                     ['label' => 'МФО', 'icon' => 'book', 'url' => ['mfo/index']],
                     ['label' => 'Создание страниц', 'icon' => 'file-code-o', 'url' => ['/pages']],
+                    ['label' => 'Редактор главной страницы', 'icon' => 'file-code-o', 'url' => ['/main-page']],
                     ['label' => 'Меню', 'icon' => 'dashboard', 'url' => ['/menu']],
                     ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
                     [
