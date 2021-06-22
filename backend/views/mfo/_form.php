@@ -183,15 +183,20 @@ use \yii\helpers\Url;
                     <div class="col-xs-12">
 
                         <h4 class="bold uppercase">3. Фильтры</h4>
-
-                        <?php echo $form->field($model, 'type_credit_arr',['options'=>['class'=>'col-xs-12']])->widget(Select2::classname(), [
-                            'data' => ArrayHelper::map(TypeCredit::find()->all(),'id','name'),
-                            'language' => 'ru',
-                            'options' => ['placeholder' => 'Выбрать тип кредита ...', 'multiple' => true],
-                            'pluginOptions' => [
-                                    'allowClear' => true,
-                            ],
-                            ]); ?>
+                            <?php $typeCredits = \common\models\Filters::find()->with('typeCredits')->all();
+                               foreach ($typeCredits as $value){
+                                   echo $form->field($model, 'type_credit_arr['.$value['id'].']',['options'=>['class'=>'col-xs-12']])->widget(Select2::classname(), [
+                                       'data' => ArrayHelper::map($value->typeCredits,'id','name'),
+                                       'language' => 'ru',
+                                       'options' => ['placeholder' => 'Выбрать '.$value['name'].'', 'multiple' => true],
+                                       'pluginOptions' => [
+                                           'allowClear' => true,
+                                       ],
+                                   ])
+                                       ->label($value['name'])
+                                   ;
+                               }
+                            ?>
 
                         <?php echo $form->field($model, 'mfo_city_arr',['options'=>['class'=>'col-xs-12']])->widget(Select2::classname(), [
                             'data' => ArrayHelper::map(City::find()->all(),'id','name'),

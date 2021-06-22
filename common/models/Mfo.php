@@ -4,6 +4,7 @@ namespace common\models;
 
 use common\helpers\Common;
 use Yii;
+use yii\base\BaseObject;
 use yii\behaviors\TimestampBehavior;
 use yii\db\Expression;
 use \yii\helpers\ArrayHelper;
@@ -179,7 +180,10 @@ class Mfo extends \yii\db\ActiveRecord
     public function afterFind()
     {
         parent::afterFind();
-        $this->type_credit_arr = $this->type;
+        foreach ($this->type as $key => $value){
+            $this->type_credit_arr[$value['parent_id']] = $this->type;
+        }
+
         $this->mfo_city_arr = $this->city;
     }
 
@@ -217,20 +221,25 @@ class Mfo extends \yii\db\ActiveRecord
     public function afterSave($insert, $changedAttributes)
     {
         parent::afterSave($insert, $changedAttributes);
-        $arr = ArrayHelper::map($this->type,'id','name');
-        if($this->type_credit_arr) {
-            foreach ($this->type_credit_arr as $one){
-                if(!in_array($one,$arr)){
-                    $model = new MfoTypeCredit();
-                    $model->mfo_id = $this->id;
-                    $model->type_credit_id = $one;
-                    $model->save();
-                }
-                if(isset($arr[$one])){
-                    unset($arr[$one]);
+        $arr = ArrayHelper::map($this->type,'id','id');
+
+        foreach ($this->type_credit_arr as $key => $value){
+            if($value){
+                foreach ($value as $item){
+                    $find = MfoTypeCredit::find()->where(['type_credit_id' => $item])->all();
+                    if($item && empty($find)){
+                        $model = new MfoTypeCredit();
+                        $model->mfo_id = $this->id;
+                        $model->type_credit_id = $item;
+                        $model->save();
+                    }
+                    if(isset($arr[$item])){
+                        unset($arr[$item]);
+                    }
                 }
             }
         }
+
         $arrCity = ArrayHelper::map($this->city,'id','id');
         if($this->mfo_city_arr){
             foreach ($this->mfo_city_arr as $one){

@@ -46,4 +46,9 @@ class Filters extends \yii\db\ActiveRecord
             'sort' => 'Sort',
         ];
     }
+
+    public function getTypeCredits()
+    {
+        return $this->hasMany(TypeCredit::className(), ['parent_id' => 'id']);
+    }
 }
