@@ -2,6 +2,9 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use vova07\imperavi\Widget;
+use yii\helpers\ArrayHelper;
+use common\models\Filters;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\TypeCredit */
@@ -18,7 +21,7 @@ use yii\widgets\ActiveForm;
         'options' =>
             ['id' => 'type-credit-parent_id', 'class' => 'form-group']
     ])->dropDownList(
-        \yii\helpers\ArrayHelper::map(\common\models\Filters::find()->all(), 'id', 'name'),
+        ArrayHelper::map(Filters::find()->all(), 'id', 'name'),
         ['prompt' => 'Выбрать категорию фильтра']
     );
     ?>
@@ -28,6 +31,26 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'calc_name')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'calc_get_url')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'content')->widget(Widget::className(), [
+        'settings' => [
+            'lang' => 'ru',
+            'minHeight' => 200,
+            'formatting' => ['p', 'blockquote', 'h2', 'h1'],
+            'attributes' => [
+                [
+                    'attribute' => 'text',
+                    'format' => 'html'
+                ]
+            ],
+            'plugins' => [
+                'clips',
+                'fullscreen'
+            ]
+
+        ]
+    ])?>
 
     <?= $form->field($model, 'sort')->textInput() ?>
 

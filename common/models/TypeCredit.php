@@ -31,7 +31,8 @@ class TypeCredit extends \yii\db\ActiveRecord
         return [
             [['name', 'url','parent_id'], 'required'],
             [['sort', 'status','parent_id'], 'integer'],
-            [['name', 'url','calc_name','calc_get_url'], 'string', 'max' => 255],
+            [['name', 'url','calc_name','calc_get_url','title'], 'string', 'max' => 255],
+            [['content'], 'string'],
         ];
     }
 
@@ -49,6 +50,8 @@ class TypeCredit extends \yii\db\ActiveRecord
             'calc_name' => 'Название в калькуляторе',
             'calc_get_url' => 'Get url в калькуляторе',
             'status' => 'Статус',
+            'title' => 'Заголовок',
+            'content' => 'Текст',
         ];
     }
 

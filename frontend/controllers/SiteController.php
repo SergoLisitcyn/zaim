@@ -272,6 +272,7 @@ class SiteController extends Controller
     public function actionFilter($slug)
     {
         $city = City::find()->where(['url' => $slug])->one();
+        $typeCredit = TypeCredit::find()->where(['url' => $slug])->one();
 
         if(isset($city)){
             $join = 'city';
@@ -288,7 +289,8 @@ class SiteController extends Controller
             ->all();
 
         return $this->render('filter', [
-            'output' => $output
+            'output' => $output,
+            'typeCredit' => $typeCredit
         ]);
     }
 

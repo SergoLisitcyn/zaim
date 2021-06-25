@@ -1,8 +1,6 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
-use common\models\TypeCredit;
 use \common\models\City;
 use \kartik\select2\Select2;
 use \yii\helpers\ArrayHelper;

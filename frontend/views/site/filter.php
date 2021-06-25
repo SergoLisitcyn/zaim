@@ -8,7 +8,7 @@ use \frontend\widgets\CalculatorWidget;
 $this->title = 'Калькулятор займа онлайн — расчет суммы и процентов по кредиту';
 ?>
 <section class="main-title">
-    <h1 class="title">Калькулятор займа онлайн</h1>
+    <h1 class="title"><?= $typeCredit->title ?></h1>
     <h2 class="subtitle">Подберите наиболее выгодное предложение бесплатно!</h2>
     <h3 class="descr">Для получения займа без отказа заполните заявку в максимальное количество кредитных организаций:
     </h3>

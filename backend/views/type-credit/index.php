@@ -26,11 +26,22 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
             'name',
             'url:url',
             'sort',
-            'status',
+            [
+                'label' => 'Статус',
+                'value' => function ($model) {
+                    $result = '';
+                    if($model->status == 1){
+                        $result .= 'Активен';
+                    } else {
+                        $result .= 'Неактивен';
+                    }
+
+                    return $result;
+                },
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

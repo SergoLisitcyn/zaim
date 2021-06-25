@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\TypeCredit */
 
-$this->title = 'Обновить Подфильтр: ' . $model->name;
+$this->title = 'Обновить';
 $this->params['breadcrumbs'][] = ['label' => 'Подфильтры', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Обновить';
 ?>
 <div class="type-credit-update">
 
