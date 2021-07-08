@@ -40,7 +40,6 @@ input:required:valid {
     border-color: green;
 }
 
-
 b, strong {
     font-weight: bold;
 }
@@ -65,16 +64,16 @@ ul, li {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	padding: 0;
+    padding: 0;
     margin: 0;
 }
 
 button {
-	background: transparent;
-	border: none;
-	cursor: pointer;
-	padding: 0;
-	margin: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
     outline: none;
 }
 
@@ -352,6 +351,15 @@ select {
     display: inline-block;
 }
 
+.less_sum,
+.more_sum {
+    color: #303133;
+}
+
+.more_sum {
+    margin-right: 5px;
+}
+
 .header-body__col--nav {
     flex-shrink: 0;
 }
@@ -404,6 +412,7 @@ select {
     font-size: 16px;
     line-height: 18px;
     color: #fff;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .header-nav__link:not([href]) {
@@ -641,9 +650,9 @@ select {
     text-align: center;
     font-size: 24px;
     line-height: 1.45;
-    font-weight: 500;
+    font-weight: 400;
     margin-top: 0;
-    font-family: 'PT Sans';
+    font-family: 'Open Sans';
     z-index: 1;
     position: relative;
 }
@@ -797,7 +806,7 @@ label.loan_calculator_sum_label, label.loan_calculator_date_label {
 .loan_calculator_search_left {
     display: inline-block;
     vertical-align: top;
-    margin-right: 16px;
+    margin-right: 11px;
     margin-bottom: 15px;
 }
 
@@ -949,6 +958,8 @@ select:not([multiple]){
     border-radius: 2px;
     font-weight: 400;
     border: 1px solid #eee;
+    background-color: #fff;
+    font-family: 'Open Sans', sans-serif;
 }
 
 
@@ -975,7 +986,7 @@ select:not([multiple]){
 }
 
 label.loan_calculator_sort_header {
-    margin: 0 5px 0 0;
+    margin: 0 0 0 0;
 }
 
 .loan_calculator_sort_params {
@@ -1028,15 +1039,15 @@ label.loan_calculator_sort_header {
 }
 
 .database__row {
-    margin-top: -30px;
+    margin-top: -15px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
 }
 
 .database__item {
     width: 33.33333333333333%;
-    padding: 40px 0 15px;
+    padding: 40px 0 4px;
     font-size: 14px;
 }
 
@@ -1045,6 +1056,7 @@ label.loan_calculator_sort_header {
     font-size: 75px;
     font-weight: 700;
     display: inline-block;
+    line-height: 75px;
 }
 
 .database .field {
@@ -1156,8 +1168,8 @@ label.loan_calculator_sort_header {
 
 .mfo_card_info_accept, .mfo_card_info_approval, .mfo_card_info_link, .mfo_card_info_rate, .mfo_card_info_rating, .mfo_card_info_sum, .mfo_card_info_time, .mfo_card_info_ways {
     display: flex;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     justify-content: space-between;
     border-bottom: 1px dotted #000;
     font-weight: 600;
@@ -1204,12 +1216,16 @@ label.loan_calculator_sort_header {
 .line_mfo .text_unit_small {
     font-size: 12px;
     font-weight: 400;
+    color: #000;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .line_mfo>div:first-child:after {
     content: "+";
     position: absolute;
     right: -14px;
+    color: #000;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .line_mfo>div:nth-child(2) {
@@ -1252,7 +1268,7 @@ div.mfo_card_info {
 .rating__stars {
     min-width: 110px;
     max-width: 110px;
-    height: 19px;
+    height: 19.5px;
     background: url(../img/uncode-child/star.svg) top left/contain repeat-x;
 }
 
@@ -1379,9 +1395,12 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
 
 .subscribe-main h2 {
     color: #fff;
-    font-size: 27pt;
+    font-size: 36px;
+    line-height: 32px;
     margin: 0;
     padding: 0 10px;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 500;
 }
 
 .subscribe_text_item {
@@ -1414,12 +1433,13 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
     margin: 5px 45px;
     font-size: 14px;
     line-height: initial;
-    padding: 10px 15px;
+    padding: 10px 7px;
     border-width: 1px;
     border-style: solid;
     border-radius: 2px;
     font-weight: 400;
     border: 1px solid transparent;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .subscribe-btn {
@@ -1458,7 +1478,7 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
 }
 
 .faq__content {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .faq__title,
@@ -1501,6 +1521,8 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
     font-size: 19px;
     color: #028ab4;
     line-height: 27px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: left;
 }
 
 .faq__col a:hover {
@@ -1523,8 +1545,8 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
     text-decoration: none;
     font-size: 15px;
     margin: 0 auto;
-    font-size: 19px;
     display: inline;
+    font-family: 'Open Sans', sans-serif;
 }
 
 /* Registration */
@@ -1549,6 +1571,9 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
 
 .registration__item-right p{
     margin: 13px 0 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: #028ab4;
 }
 
 .registration__text p{
@@ -1567,7 +1592,7 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
     line-height: 18px;
     border: 1px solid #028ab4;
     border-radius: 5px;
-    padding: 20px;
+    padding: 18px;
 }
 
 /** How take credit **/
@@ -1683,6 +1708,7 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
     color: #fff;
     font-weight: 600;
     text-align: center;
+    font-size: 18px;
 }
 
 
@@ -1732,6 +1758,7 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
     justify-content: space-between;
     max-width: 600px;
     margin: 45px auto 0;
+    width: 45%;
 }
 
 .advantages__list li:before {
@@ -1898,6 +1925,14 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
     margin-top: 0;
 }
 
+#home .rating__val {
+    color: #000;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    margin-left: 0;
+    font-size: 14px;
+}
+
 .ratings {
     margin-top: 36px;
     background-color: #f7f7f7;
@@ -1942,7 +1977,7 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
 
 .save-rating {
     cursor: pointer;
-    margin: 0 10px 0; 
+    margin: 0 10px 0;
     padding: 5px 10px;
 }
 
@@ -2015,7 +2050,7 @@ a.scrollup-right {
 
 .offers__btn a {
     color: #fff;
-    font-size: 14px;
+    font-size: 12px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     text-transform: uppercase;
@@ -2372,6 +2407,7 @@ a.scrollup-right {
     align-items: center;
     margin-top: 36px;
     flex-wrap: wrap;
+    margin-left: 10px;
 }
 
 .breadcrumbs__items li {
@@ -2603,8 +2639,8 @@ a.scrollup-right {
 }
 
 .mfo_card_info_col {
-    padding-right: 20px; 
-    padding-left: 20px; 
+    padding-right: 20px;
+    padding-left: 20px;
     background: #f8f8f8;
 }
 
@@ -2918,7 +2954,6 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
 .mfo-stat-container {
     background: #eff1f1;
     margin-top: 30px;
-    padding-top: 10px;
 }
 
 .firstloan {
@@ -2937,6 +2972,10 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+}
+
+.conexist {
+    display: none;
 }
 
 .mfo-footer {
@@ -3398,7 +3437,7 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
     margin-right: 6px;
 }
 
-.content-reviews-rating .rating__stars--sm, 
+.content-reviews-rating .rating__stars--sm,
 .content-reviews-rating .rating__stars--sm:before {
     background-size: 11px 10px;
 }
@@ -4027,6 +4066,7 @@ input.subscribe-form-item__btn.subscribe-form-item__btn--btn-submit, input.subsc
     border: 1px solid #fda729;
     padding: 10px 20px;
     background: #fda729;
+    margin: 10px auto;
     width: 250px;
     color: #fff;
     text-transform: uppercase;
@@ -4143,6 +4183,7 @@ input.subscribe-form-item__btn.subscribe-form-item__btn--btn-submit, input.subsc
     transition: all .5s ease;
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
     -o-transition: all .5s ease;
 }
 
@@ -4197,7 +4238,7 @@ input.subscribe-form-item__btn.subscribe-form-item__btn--btn-submit, input.subsc
 
 #faq .faq-title::before {
     display: none;
-} 
+}
 
 #faq .faq-title span{
     color: #fff;
@@ -4295,15 +4336,14 @@ input.subscribe-form-item__btn.subscribe-form-item__btn--btn-submit, input.subsc
 .faq-list__item ul li{
     list-style-type: disc;
 }
-
 .rating-md {
     font-size: 18px !important;
 }
 
 .rating-container .filled-stars {
     color: #f8a801 !important;
-     -webkit-text-stroke: inherit !important;
-     text-shadow: none !important;
+    -webkit-text-stroke: inherit !important;
+    text-shadow: none !important;
 }
 
 .conexist {
@@ -4342,4 +4382,7 @@ input.subscribe-form-item__btn.subscribe-form-item__btn--btn-submit, input.subsc
     -moz-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     -o-transform: translateY(-50%);
+}
+label{
+    font-weight: 400 !important;
 }

@@ -3,17 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\Filters;
-use common\models\FiltersSearch;
-use yii\helpers\Json;
+use common\models\Main;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * FiltersController implements the CRUD actions for Filters model.
+ * MainController implements the CRUD actions for Main model.
  */
-class FiltersController extends Controller
+class MainController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -31,37 +30,22 @@ class FiltersController extends Controller
     }
 
     /**
-     * Lists all Filters models.
+     * Lists all Main models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new FiltersSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        if (Yii::$app->request->post('hasEditable'))
-        {
-            $id=$_POST['editableKey'];
-            $model = $this->findModel($id);
-            $out    = Json::encode(['output'=>'', 'message'=>'']);
-            $post = [];
-            $posted = current($_POST['Filters']);
-            $post['Filters'] = $posted;
-            if ($model->load($post)) {
-                $model->save();
-                $output = '';
-                $out = Json::encode(['output'=>$output, 'message'=>'']);
-            }
-            echo $out;
-            return $this->refresh();
-        }
+        $dataProvider = new ActiveDataProvider([
+            'query' => Main::find(),
+        ]);
+
         return $this->render('index', [
-            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
 
     /**
-     * Displays a single Filters model.
+     * Displays a single Main model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -74,13 +58,13 @@ class FiltersController extends Controller
     }
 
     /**
-     * Creates a new Filters model.
+     * Creates a new Main model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Filters();
+        $model = new Main();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -92,7 +76,7 @@ class FiltersController extends Controller
     }
 
     /**
-     * Updates an existing Filters model.
+     * Updates an existing Main model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -103,8 +87,7 @@ class FiltersController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->session->addFlash('success', 'Фильтр обновлен');
-            return $this->redirect(['update', 'id' => $model->id]);
+            return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('update', [
@@ -113,7 +96,7 @@ class FiltersController extends Controller
     }
 
     /**
-     * Deletes an existing Filters model.
+     * Deletes an existing Main model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -127,15 +110,15 @@ class FiltersController extends Controller
     }
 
     /**
-     * Finds the Filters model based on its primary key value.
+     * Finds the Main model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Filters the loaded model
+     * @return Main the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Filters::findOne($id)) !== null) {
+        if (($model = Main::findOne($id)) !== null) {
             return $model;
         }
 

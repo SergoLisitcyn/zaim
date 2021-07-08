@@ -20,23 +20,31 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <?= GridView::widget([
+    <?= \kartik\grid\GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
+            [
+                'class' => 'yii\grid\SerialColumn',
+                'options' => ['width' => '10'],
+            ],
             'name',
             'slug',
-            'content:ntext',
-            'title',
+//            'title',
             //'description',
             //'keywords',
             //'status',
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
+            [
+                'label' => 'Действия',
+                'format' => 'raw',
+                'options' => ['width' => '200'],
+                'value' => function ($model, $index, $jobList) {
+                    return Html::tag('a', 'Редактировать', ['href' => \yii\helpers\Url::toRoute(['pages/update', 'id' => $index]), 'class' => 'btn btn-success', 'style' => 'font-weight: 100;margin-right:10px'])
+                        .Html::tag('a', 'Удалить', ['href' => \yii\helpers\Url::toRoute(['pages/delete', 'id' => $index]), 'data-method' => 'post', 'data-confirm' => 'Вы точно хотите удалить?', 'class' => 'btn btn-order btn-danger', 'style' => 'font-weight: 100']);
+                },
+            ],
+            ],
     ]); ?>
 
 

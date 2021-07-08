@@ -8,7 +8,7 @@ use \yii\helpers\Url;
 $this->title = 'Рейтинг лучших МФО — smartzaim.kz';
 ?>
 <section class="main-title">
-    <h1 class="title">Рейтинг лучших МФО</h1>
+    <h1 class="title">Үздік МҚҰ рейтингі</h1>
     <p class="updated">Обновлено в декабре 2020</p>
     <h3 class="descr">Для получения онлайн займа, заполните заявку в максимальное количество кредитных организаций:</h3>
     <img class="main-title__img" src="img/uncode-child/bg-sm.png" alt="">

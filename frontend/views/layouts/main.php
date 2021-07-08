@@ -66,8 +66,8 @@ if($url == '/'){
                             </div>
                         </div>
                         <div class="header-cab">
-                            <a href="#" class="header-cab__btn header-cab__btn--outline">Войти</a>
-                            <a href="#" class="header-cab__btn desktop-visible">Регистрация</a>
+                            <a href="#" class="header-cab__btn header-cab__btn--outline">Кіру</a>
+                            <a href="#" class="header-cab__btn desktop-visible">Тіркелу</a>
                         </div>
                         <div class="header-body__menu-btn desktop-hidden">
                             <button type="button" class="header-menu-btn" id="headerMenuBtn" aria-label="Меню">
@@ -84,19 +84,19 @@ if($url == '/'){
                 <div class="header-body__row header-body__row--bottom">
                     <?= CityWidget::widget(); ?>
                     <div class="header-body__col header-body__col--all-mfo">
-                        <a class="header-all-mfo" href="#" target="_blank">Одна заявка во все МФО</a>
+                        <a class="header-all-mfo" href="#" target="_blank">Барлық МҚҰ бір өтінім</a>
                     </div>
                     <div class="header-body__col header-body__col--top-mfo">
                         <a href="/rating" class="top-10-mfo">
                             <i></i>
-                            <span>Топ-10 МФО</span>
+                            <span>МҚҰ ТОП-10</span>
                         </a>
                     </div>
                     <div class="header-body__col header-body__col--nav desktop-visible">
                         <nav class="header-body-nav">
                             <ul>
-                                <li><a href="/aktsii">Акции</a></li>
-                                <li><a href="#">Реестр МФО</a></li>
+                                <li><a href="/aktsii">Акциялар</a></li>
+                                <li><a href="#">МҚҰ тізілімі</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -113,10 +113,10 @@ if($url == '/'){
                             </div>
                             <ul class="header-nav__list desktop-hidden">
                                 <li class="header-nav__item">
-                                    <a class="header-nav__link" href="/aktsii">Акции</a>
+                                    <a class="header-nav__link" href="/aktsii">Акциялар</a>
                                 </li>
                                 <li class="header-nav__item">
-                                    <a class="header-nav__link" href="#">Реестр МФО</a>
+                                    <a class="header-nav__link" href="#">МҚҰ тізілімі</a>
                                 </li>
                             </ul>
                             <?= TopMenu::widget(); ?>

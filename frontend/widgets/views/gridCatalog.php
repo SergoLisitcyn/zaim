@@ -20,17 +20,17 @@ use \yii\helpers\Url;
                 <div class="mfo_card_info_link">
                     <div class="line_mfo">
                         <div>
-                            <span class="text_unit">Сумма займа</span>
+                            <span class="text_unit">Қарыз сомасы</span>
                             <span class="zaym_result">50000</span>
                             <span class="text_unit_small">тнг</span>
                         </div>
                         <div>
-                            <span class="text_unit">Комиссия <b class="kom_dni">7</b> дн</span>
+                            <span class="text_unit">Комиссия <b class="kom_dni">7</b> күн</span>
                             <span class="zaym_com">35</span>
                             <span class="text_unit_small">тнг</span>
                         </div>
                         <div>
-                            <span class="text_unit">К выплате</span>
+                            <span class="text_unit">Төлеуге</span>
                             <span class="zaym_vipl">50035</span>
                             <span class="text_unit_small">тнг</span>
                         </div>
@@ -46,27 +46,27 @@ use \yii\helpers\Url;
                             </div>
                         </div>
                         <div class="mfo_card_info_time">
-                            <div class="mfo_card_info_time_label">На срок:</div>
+                            <div class="mfo_card_info_time_label">Мерзімге:</div>
                             <div class="mfo_card_info_time_data"><?= $mfo->srok ?></div>
                         </div>
                         <div class="mfo_card_info_sum">
-                            <div class="mfo_card_info_sum_label">Сумма (тнг):</div>
+                            <div class="mfo_card_info_sum_label">Сомасы (тнг):</div>
                             <div class="mfo_card_info_sum_data"><?= $mfo->sum ?></div>
                         </div>
                         <div class="mfo_card_info_rate">
-                            <div class="mfo_card_info_rate_label">Ставка:</div>
+                            <div class="mfo_card_info_rate_label">Мөлшерлемесі:</div>
                             <div class="mfo_card_info_rate_data"><?= $mfo->stavka ?></div>
                         </div>
                         <div class="mfo_card_info_approval">
-                            <div class="mfo_card_info_approval_label">Одобрение:</div>
+                            <div class="mfo_card_info_approval_label">Мақұлдау:</div>
                             <div class="mfo_card_info_approval_data"><?= $mfo->odobrenie ?>%</div>
                         </div>
                         <div class="mfo_card_info_accept">
-                            <div class="mfo_card_info_accept_label">Рассмотрение:</div>
+                            <div class="mfo_card_info_accept_label">Қаралуы:</div>
                             <div class="mfo_card_info_accept_data"><?= $mfo->rasmotrenie ?></div>
                         </div>
                         <div class="mfo_card_info_ways">
-                            <div class="mfo_card_info_ways_label">Получить:</div>
+                            <div class="mfo_card_info_ways_label">Алу:</div>
                             <div class="mfo_card_info_ways_data">
                                 <noscript>
                                     <img src="img/2016/08/all.png" alt="all">
@@ -76,18 +76,18 @@ use \yii\helpers\Url;
                         </div>
                     </div>
                     <a href="#">
-                        <div class="mfo_card_button">Получить деньги</div>
+                        <div class="mfo_card_button">Ақшаны алу</div>
                     </a>
                 </div>
             </div>
             <?php endforeach; ?>
             <div class="subscribe_main">
-                <div class="text_main_subscribe_container">Оформить<br>заявку на займ</div>
+                <div class="text_main_subscribe_container">ҚАРЫЗҒА <br>ӨТІНІМ РЕСІМДЕУ</div>
                 <div class="email_sidebar_container">
-                    <div class="text_item_subscribe_container">Без потери времени!<br><br>Одна заявка во все МФО<br><br>Получите самое выгодное предложение</div>
+                    <div class="text_item_subscribe_container">Уақыт жоғалтпайсыз!<br><br>Барлық МҚҰ бір өтінім<br><br>Ең тиімді ұсыныс алу</div>
                     <div class="subscribe-sidebar-item subscribe-sidebar-item--btn-submit">
                         <form>
-                            <input class="subscribe-sidebar-item__btn subscribe-sidebar-item__btn--btn-submit" type="submit" value="ПОДАТЬ ЗАЯВКУ">
+                            <input class="subscribe-sidebar-item__btn subscribe-sidebar-item__btn--btn-submit" type="submit" value="Өтінім беру">
                         </form>
                     </div>
                 </div>

@@ -2,6 +2,7 @@
 namespace frontend\controllers;
 
 use common\models\City;
+use common\models\Main;
 use common\models\Mfo;
 use common\models\Pages;
 use common\models\TypeCredit;
@@ -79,7 +80,10 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $main = Main::findOne(1);
+        return $this->render('index', [
+            'main' => $main,
+        ]);
     }
 
     /**

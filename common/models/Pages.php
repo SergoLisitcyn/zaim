@@ -46,13 +46,13 @@ class Pages extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'slug' => 'Slug',
+            'name' => 'Название страницы',
+            'slug' => 'Ссылка',
             'content' => 'Content',
-            'title' => 'Title',
+            'title' => 'Заголовок',
             'description' => 'Description',
             'keywords' => 'Keywords',
-            'status' => 'Status',
+            'status' => 'Статус',
         ];
     }
 }

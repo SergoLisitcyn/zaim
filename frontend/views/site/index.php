@@ -18,7 +18,7 @@ $this->title = 'My Yii Application';
 
 <section class="database plr">
     <div class="database-wrap limit-width">
-        <h2 class="database__title">Самая актуальная информация о кредитных компаниях</h2>
+        <h2 class="database__title">Кредиттік ұйымдар туралы ең өзекті ақпарат</h2>
         <div class="database__row">
             <div class="database__item">
                 <div class="quantity">65</div>
@@ -26,11 +26,11 @@ $this->title = 'My Yii Application';
             </div>
             <div class="database__item">
                 <div class="quantity">800</div>
-                <div class="field">Отзывов<br>клиентов</div>
+                <div class="field">Клиенттің<br> пікірі </div>
             </div>
             <div class="database__item">
                 <div class="quantity">27</div>
-                <div class="field">Заявок<br>в месяц</div>
+                <div class="field">Айына<br>в өтінім</div>
                 <div class="thousand"><br>тыс.</div>
             </div>
         </div>

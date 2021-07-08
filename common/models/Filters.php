@@ -41,9 +41,9 @@ class Filters extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'status' => 'Status',
-            'sort' => 'Sort',
+            'name' => 'Название фильтра',
+            'status' => 'Статус',
+            'sort' => 'Сортировка',
         ];
     }
 
