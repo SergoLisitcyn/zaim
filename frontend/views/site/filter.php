@@ -7,6 +7,46 @@ use \frontend\widgets\SaleCatalog;
 use \frontend\widgets\CalculatorWidget;
 $this->title = 'Калькулятор займа онлайн — расчет суммы и процентов по кредиту';
 ?>
+<style>
+    .content-filter li {
+        font-size: 18px;
+        font-weight: 300;
+        color: #111;
+        position: relative;
+        padding-left: 15px;
+    }
+    .content-filter ul {
+        text-align: left;
+        margin-bottom: 20px;
+    }
+    .content-filter li:before {
+        position: absolute;
+        content: '';
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #000000;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+    }
+    .content-filter h2 {
+        color: #000000;
+        font-size: 30px;
+        line-height: 1;
+        font-family: 'PT Sans';
+        margin-bottom: 15px;
+        font-weight: 500;
+        margin-top: 30px;
+    }
+    .content-filter p {
+        margin-bottom: 20px;
+    }
+</style>
 <section class="main-title">
     <h1 class="title"><?= $typeCredit->title ?></h1>
     <h2 class="subtitle">Подберите наиболее выгодное предложение бесплатно!</h2>
@@ -70,6 +110,11 @@ $this->title = 'Калькулятор займа онлайн — расчет 
         <div class="faq__btn">
             <a href="faq.html">Читать все</a>
         </div>
+    </div>
+</section>
+<section class="advantages">
+    <div class="content-filter limit-width">
+        <?= $typeCredit->content ?>
     </div>
 </section>
 <?= Rating::widget(); ?>
