@@ -5,6 +5,7 @@ namespace backend\controllers;
 use Yii;
 use common\models\City;
 use common\models\CitySearch;
+use yii\filters\AccessControl;
 use yii\helpers\Json;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -21,6 +22,20 @@ class CityController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['admin','manager'],
+                    ],
+                    [
+                        'allow' => false,
+                        'roles' => ['client'],
+                        'denyCallback' => function() { $this->redirect('/'); }
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

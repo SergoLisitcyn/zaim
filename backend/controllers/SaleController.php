@@ -6,6 +6,7 @@ use Yii;
 use common\models\Sale;
 use common\models\SaleSearch;
 use yii\base\DynamicModel;
+use yii\filters\AccessControl;
 use yii\helpers\FileHelper;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
@@ -25,6 +26,20 @@ class SaleController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['admin','manager'],
+                    ],
+                    [
+                        'allow' => false,
+                        'roles' => ['client'],
+                        'denyCallback' => function() { $this->redirect('/'); }
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

@@ -5,6 +5,7 @@ namespace backend\controllers;
 use Yii;
 use common\models\Filters;
 use common\models\FiltersSearch;
+use yii\filters\AccessControl;
 use yii\helpers\Json;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -21,6 +22,24 @@ class FiltersController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [   'actions' => ['login'],
+                        'allow' => true,
+                        'roles' => ['?'],
+                    ],
+                    [
+                        'allow' => true,
+                        'roles' => ['admin','manager'],
+                    ],
+                    [
+                        'allow' => false,
+                        'roles' => ['client'],
+                        'denyCallback' => function() { $this->redirect('/'); }
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

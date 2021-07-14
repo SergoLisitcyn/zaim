@@ -5,6 +5,7 @@ namespace backend\controllers;
 use Yii;
 use common\models\News;
 use common\models\NewsSearch;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -20,6 +21,20 @@ class NewsController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['admin','manager'],
+                    ],
+                    [
+                        'allow' => false,
+                        'roles' => ['client'],
+                        'denyCallback' => function() { $this->redirect('/'); }
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
