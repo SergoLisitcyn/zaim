@@ -34,6 +34,7 @@ if($url == '/'){
     <link rel="icon" href="img/2016/05/cropped-smartzaimkz_favicon-192x192.png" sizes="192x192">
     <link rel="stylesheet" href="libs/rangeslider/rangeslider.css" />
     <link rel="stylesheet" href="libs/fontawesome/css/font-awesome.min.css" />
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" id="ao_optimized_gfonts" href="https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C600%2C700%2C800%7COpen+Sans%3A300%2Cregular%2Citalic%2C600%2C700%2C800%7CPT+Serif%3Aregular%2Citalic%7CPT+Sans%3Aregular%2Citalic%2C700" />
     <?php $this->registerCsrfMetaTags() ?>
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
