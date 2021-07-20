@@ -27,12 +27,12 @@
                     </div>
                     <div class="loan_calculator_search_right">
                         <div class="loan_calculator_sum_right">
-                            <span>Сумма</span><span class="visible-mobile">Вы берете</span>
+                            <span>Сомасы</span><span class="visible-mobile">Вы берете</span>
                             <span class="loan_calculator_sum_input_right">50 000</span> <span>тнг</span>
                         </div>
                         <div class="loan_calculator_date_right">
-                            <span>Срок</span><span class="visible-mobile">на срок до</span>
-                            <span class="loan_calculator_date_input_right">7</span> <span>дней</span>
+                            <span>Мерзімі</span><span class="visible-mobile">на срок до</span>
+                            <span class="loan_calculator_date_input_right">7</span> <span>күн</span>
                         </div>
                     </div>
                 </div>
@@ -62,9 +62,9 @@
                         </select>
                     </div>
                     <div class="loan_calculator_method">
-                        <label for="select_loan_calculator_method">Способ погашения:</label>
+                        <label for="select_loan_calculator_method">Өтеу тәсілі:</label>
                         <select id="select_loan_calculator_method" class="select_loan_calculator" data-placeholder="Выберите">
-                            <option class="others_params" value="">не важно</option>
+                            <option class="others_params" value="">маңызды емес</option>
                             <?php foreach ($spPols as $pol) : ?>
                                 <option class="others_params" value="bank_card"><?= $pol->name ?></option>
                             <?php endforeach; ?>
@@ -84,7 +84,7 @@
                 </div>
             </div>
             <div class="loan_calculator_submit_mobile">
-                <div class="mfo_card_button search_company">Подобрать компании</div>
+                <div class="mfo_card_button search_company">Компанияны таңдау</div>
             </div>
         </div>
     </div>

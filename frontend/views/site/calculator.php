@@ -23,16 +23,16 @@ $this->title = 'Калькулятор займа онлайн — расчет 
 <section class="subscribe-main plr mt18">
     <div class="subscribe-main-wrap limit-width">
         <form name="subscribtion_form">
-            <h2>Подписка на акции</h2>
+            <h2>Акцияға жазылу</h2>
             <div class="subscribe_text_item">
-                <label for="subscribe_email">У нас бывают индивидуальные скидки для подписчиков!</label>
+                <span>Жазылушылар үшін бізде жеке жеңілдіктер болады!</span>
                 <br>
-                <label for="subscribe_phone">Вы хотите узнать о них первыми?</label>
+                <span>Бірінші болып білгіңіз келе ме?</span>
             </div>
             <div class="subscribe_input_item">
                 <input id="subscribe_email" class="subscribe-input" placeholder="E-mail" type="text" name="email" value="">
-                <input id="subscribe_phone" class="subscribe-input" placeholder="Телефон (необязательно)" type="text" name="phone" value="">
-                <input class="subscribe-btn" type="submit" value="Подписаться">
+                <input id="subscribe_phone" class="subscribe-input" placeholder="Телефон (міндетті емес)" type="text" name="phone" value="">
+                <input class="subscribe-btn" type="submit" value="Қол қою">
             </div>
         </form>
     </div>

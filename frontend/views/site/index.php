@@ -8,9 +8,9 @@ use \frontend\widgets\CalculatorWidget;
 $this->title = 'My Yii Application';
 ?>
 <section class="main-title">
-    <h1 class="title">Займы онлайн в Казахстане</h1>
-    <h2 class="subtitle">Подберите наиболее выгодное предложение бесплатно!</h2>
-    <h3 class="descr">Для получения онлайн займа, заполните заявку в максимальное количество кредитных организаций:</h3>
+    <h1 class="title">Қазақстандағы онлайн қарыздар</h1>
+    <h2 class="subtitle">Неғұрлым тиімді ұсынысты тегін таңдаңыз!</h2>
+    <h3 class="descr">Онлайн қарыз алу үшін, кредиттік ұйымдарға берілетін өтінім санын барынша көбірек толтырыңыз:</h3>
     <img class="main-title__img" src="img/uncode-child/bg-sm.png" alt="">
 </section>
 
@@ -43,16 +43,16 @@ $this->title = 'My Yii Application';
 <section class="subscribe-main plr mt18">
     <div class="subscribe-main-wrap limit-width">
         <form name="subscribtion_form">
-            <h2>Подписка на акции</h2>
+            <h2>Акцияға жазылу</h2>
             <div class="subscribe_text_item">
-                <label for="subscribe_email">У нас бывают индивидуальные скидки для подписчиков!</label>
+                <span>Жазылушылар үшін бізде жеке жеңілдіктер болады!</span>
                 <br>
-                <label for="subscribe_phone">Вы хотите узнать о них первыми?</label>
+                <span>Бірінші болып білгіңіз келе ме?</span>
             </div>
             <div class="subscribe_input_item">
                 <input id="subscribe_email" class="subscribe-input" placeholder="E-mail" type="text" name="email" value="">
-                <input id="subscribe_phone" class="subscribe-input" placeholder="Телефон (необязательно)" type="text" name="phone" value="">
-                <input class="subscribe-btn" type="submit" value="Подписаться">
+                <input id="subscribe_phone" class="subscribe-input" placeholder="Телефон (міндетті емес)" type="text" name="phone" value="">
+                <input class="subscribe-btn" type="submit" value="Қол қою">
             </div>
         </form>
     </div>

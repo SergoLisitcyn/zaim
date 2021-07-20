@@ -94,7 +94,7 @@ use \yii\helpers\Url;
             </div>
         </div>
         <div class="offers__btn">
-            <a href="rating.html">Показать все МФО</a>
+            <a href="rating">Показать все МФО</a>
         </div>
     </div>
 </section>
