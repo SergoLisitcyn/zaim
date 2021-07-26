@@ -10,7 +10,7 @@ use common\models\TypeCredit;
             <ul class="header-nav__list-l2">
                 <?php foreach ($typeCredits as $typeCredit): ?>
                 <li class="header-nav__item-l2">
-                    <a href="<?= $typeCredit->url?>" class="header-nav__link-l2"><?= $typeCredit->name?></a>
+                    <a href="/<?= $typeCredit->url?>" class="header-nav__link-l2"><?= $typeCredit->name?></a>
                 </li>
                 <?php endforeach; ?>
             </ul>

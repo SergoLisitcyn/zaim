@@ -57,7 +57,7 @@ p {
     margin: 0;
     padding: 0;
 }
-ul, li {
+ul li {
     padding: 0;
     margin: 0;
     list-style-type: none;
@@ -1730,15 +1730,20 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
 }
 
 .advantages p {
-    font-size: 18px;
+    font-size: 17px;
     line-height: 24px;
     color: #000;
     margin: 0;
-    padding: 0 10px
+    padding: 0;
 }
 
 .advantages__list p {
     padding: 0 12px 0 15px;
+}
+
+.advantages h2 {
+    font-size: 26px;
+    font-weight: 500;
 }
 
 .advantages__text p:not(:first-child) {
@@ -4385,4 +4390,44 @@ input.subscribe-form-item__btn.subscribe-form-item__btn--btn-submit, input.subsc
 }
 label{
     font-weight: 400 !important;
+}
+
+ol li {
+    margin-left: -20px;
+    line-height: 2;
+    font-size: 17px;
+}
+
+p {
+    line-height: 1.45;
+    font-size: 17px;
+    margin: 9px 0;
+}
+
+.content-filter li {
+    font-size: 18px;
+    color: #111;
+    position: relative;
+    padding-left: 15px;
+    font-weight: normal;
+}
+.content-filter ul {
+    text-align: left;
+    margin-bottom: 20px;
+    padding: 0 0 0 18px;
+}
+.content-filter ul li{
+    list-style-type: initial !important;
+}
+.content-filter h2 {
+    color: #000000;
+    font-size: 30px;
+    line-height: 1;
+    font-family: 'PT Sans';
+    margin-bottom: 15px;
+    font-weight: 500;
+    margin-top: 30px;
+}
+.content-filter p {
+    margin-bottom: 20px;
 }
