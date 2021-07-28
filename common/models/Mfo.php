@@ -89,22 +89,8 @@ class Mfo extends \yii\db\ActiveRecord
      */
     public function rules()
     {
-//        return [
-//            [['mfo_name', 'stavka', 'title','url'], 'required'],
-//            [['rating'], 'number'],
-//            [['odobrenie', 'akcii', 'home_page', 'status','sort','max_sum_calc','min_sum_calc'
-//                ,'max_term_calc','min_term_calc','advanced_repayment','extension_loan'], 'integer'],
-//            [['rekvisit', 'about_company', 'content','text_video','login_content'], 'string'],
-//            [['mfo_name','logo', 'srok', 'sum', 'stavka', 'rasmotrenie', 'phone', 'email', 'website', 'video',
-//                'link_offer', 'title', 'description', 'keywords','url','srok_new_client','sum_new_client',
-//                'stavka_new_client','odobrenie_new_client','rasmotrenie_new_client',
-//                'srok_for_client','sum_for_client','stavka_for_client',
-//                'odobrenie_for_client','rasmotrenie_for_client','login_link'], 'string', 'max' => 255],
-//            [['type_credit_array','mfo_city_array'], 'safe'],
-//            [['logo_file'], 'file'],
-//        ];
         return [
-            [['mfo_name', 'stavka', 'title', 'created_at', 'updated_at', 'url'], 'required'],
+            [['mfo_name', 'stavka', 'title', 'url'], 'required'],
             [['rating'], 'number'],
             [['odobrenie', 'akcii', 'home_page', 'status', 'created_at', 'updated_at', 'sort', 'max_sum_calc',
                 'min_sum_calc', 'max_term_calc', 'min_term_calc', 'advanced_repayment', 'extension_loan'], 'integer'],

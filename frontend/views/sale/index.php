@@ -5,16 +5,16 @@ use \frontend\widgets\Rating;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Sales';
+$this->title = 'Акциялар - smartzaim.kz';
 ?>
 <section class="breadcrumbs plr">
     <div class="breadcrumbs-wrap limit-width">
         <ul class="breadcrumbs__items">
             <li>
-                <a href="/">Займы онлайн</a>
+                <a href="/">Онлайн қарыздар</a>
             </li>
             <li>
-                Акции
+                Акциялар
             </li>
         </ul>
     </div>
@@ -29,7 +29,7 @@ $this->title = 'Sales';
                 <div class="content-info">
                     <div class="content-main-info">
                         <div class="content-main-info__item">
-                            <h1>📰 Акции</h1>
+                            <h1>📰 Акциялар</h1>
                             <div class="email_container">
                                 <div	class="text_top_subscribe_container">Подпишитесь на рассылку	и первыми узнавайте<br>	об акциях и специальных	предложениях</div>
                                 <div class="subscribe-top-item-wrap">
@@ -58,9 +58,6 @@ $this->title = 'Sales';
                                     </div>
                                 </div>
                                 <?php endforeach; ?>
-                            </div>
-                            <div class="aktsii-arhiv">
-                                <a href="/arhiv">Архив акций >></a>
                             </div>
                             <ul class="pagination">
                                 <li>

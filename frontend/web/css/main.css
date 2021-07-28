@@ -2450,6 +2450,7 @@ a.scrollup-right {
     color: #fff;
     font-size: 20px;
     font-weight: 600;
+    font-family: 'Open Sans',sans-serif;
 }
 
 .content {
@@ -3924,7 +3925,22 @@ input.subscribe-form-item__btn.subscribe-form-item__btn--btn-submit, input.subsc
     display: block;
     width: 36px;
     height: 36px;
-    line-height: 36px;
+    line-height: 22px;
+    margin-top: 4.5px;
+    margin-bottom: 4.5px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.pagination > li:last-child > a, .pagination > li:last-child > span {
+    z-index: 2;
+    background-color: #eee;
+    color: #333;
+    cursor: pointer;
+    display: block;
+    width: 36px;
+    height: 36px;
+    line-height: 22px;
     margin-top: 4.5px;
     margin-bottom: 4.5px;
     border-radius: 50%;
