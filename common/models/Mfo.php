@@ -2,7 +2,6 @@
 
 namespace common\models;
 
-use common\helpers\Common;
 use Yii;
 use yii\base\BaseObject;
 use yii\behaviors\TimestampBehavior;
@@ -212,7 +211,11 @@ class Mfo extends \yii\db\ActiveRecord
         foreach ($this->type_credit_arr as $key => $value){
             if($value){
                 foreach ($value as $item){
-                    $find = MfoTypeCredit::find()->where(['type_credit_id' => $item])->all();
+                    $find = MfoTypeCredit::find()
+                        ->where(['type_credit_id' => $item])
+                        ->andWhere(['mfo_id' => $this->id])
+                        ->all();
+
                     if($item && empty($find)){
                         $model = new MfoTypeCredit();
                         $model->mfo_id = $this->id;
