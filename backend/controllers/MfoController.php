@@ -191,7 +191,7 @@ class MfoController extends Controller
                 FileHelper::createDirectory($dir);
             }
 
-            $result_link = 'http://zaim.local/uploads/images/mfo' . $sub . '/';
+            $result_link = 'https://kz.smartzaim.kz/uploads/images/mfo' . $sub . '/';
             $file = UploadedFile::getInstanceByName('file');
             $model = new DynamicModel (compact ('file'));
             $model ->addRule ('file', 'image')->validate();

@@ -159,7 +159,7 @@ class SaleController extends Controller
                 FileHelper::createDirectory($dir);
             }
 
-            $result_link = 'http://zaim.local/uploads/images/sale' . $sub . '/';
+            $result_link = 'https://kz.smartzaim.kz/uploads/images/sale' . $sub . '/';
             $file = UploadedFile::getInstanceByName('file');
             $model = new DynamicModel (compact ('file'));
             $model ->addRule ('file', 'image')->validate();
