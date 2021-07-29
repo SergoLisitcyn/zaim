@@ -2422,7 +2422,6 @@ a.scrollup-right {
     font-size: 20px;
     font-weight: 600;
     padding: 0 10px;
-    font-family: 'Open Sans SemiBold';
 }
 
 .breadcrumbs__items li:not(:last-child):hover {
