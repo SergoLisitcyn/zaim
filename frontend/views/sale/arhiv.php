@@ -11,7 +11,7 @@ $this->title = 'Архив акций';
     <div class="breadcrumbs-wrap limit-width">
         <ul class="breadcrumbs__items">
             <li>
-                <a href="/">Займы онлайн</a>
+                <a href="/">Онлайн қарыздар</a>
             </li>
             <li>
                 Архив акций
@@ -84,7 +84,7 @@ $this->title = 'Архив акций';
                         </a>
                     </div>
                     <div class="mfo_card_compare">
-                        <a href="#" data-mfo="4slovo" data-title="Честное слово – микрокредит онлайн в Казахстане">Сравнить</a>
+                        <a href="#" data-mfo="4slovo" data-title="Честное слово – микрокредит онлайн в Казахстане">Салыстыру</a>
                     </div>
                     <div class="mfo_card_info_link">
                         <a href="#">Подробнее о Честном слове</a>
@@ -112,7 +112,7 @@ $this->title = 'Архив акций';
                                 <div class="mfo_card_info_rate_data">от 0,67% в день</div>
                             </div>
                             <div class="mfo_card_info_approval">
-                                <div class="mfo_card_info_approval_label">Одобрение:</div>
+                                <div class="mfo_card_info_approval_label">Мақұлдау:</div>
                                 <div class="mfo_card_info_approval_data">81%</div>
                             </div>
                             <div class="mfo_card_info_accept">

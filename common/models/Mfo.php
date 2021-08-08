@@ -61,6 +61,7 @@ use yii\web\UploadedFile;
  * @property string|null $rasmotrenie_for_client
  * @property string|null $login_content
  * @property string|null $login_link
+ * @property string|null $gesv
  */
 class Mfo extends \yii\db\ActiveRecord
 {
@@ -98,7 +99,7 @@ class Mfo extends \yii\db\ActiveRecord
                 'link_offer', 'title', 'description', 'keywords', 'type_credit_array', 'url', 'text_video',
                 'mfo_city_array', 'srok_new_client', 'sum_new_client', 'stavka_new_client', 'odobrenie_new_client',
                 'rasmotrenie_new_client', 'srok_for_client', 'sum_for_client', 'stavka_for_client',
-                'odobrenie_for_client', 'rasmotrenie_for_client', 'login_link'], 'string', 'max' => 255],
+                'odobrenie_for_client', 'rasmotrenie_for_client', 'login_link','gesv'], 'string', 'max' => 255],
             [['type_credit_arr','mfo_city_arr'], 'safe'],
             [['logo_file'], 'file'],
         ];
@@ -159,7 +160,8 @@ class Mfo extends \yii\db\ActiveRecord
             'stavka_for_client' => 'Ставка для существуещего клиента',
             'odobrenie_for_client' => 'Одобрение для существуещего клиента',
             'rasmotrenie_for_client' => 'Рассмотрение для существуещего клиента',
-            'login_link' => 'Ссылка на личный кабинет'
+            'login_link' => 'Ссылка на личный кабинет',
+            'gesv' => 'ГЭСВ'
         ];
     }
     public function afterFind()

@@ -14,7 +14,7 @@ $this->title = $model->name;
     <div class="breadcrumbs-wrap limit-width">
         <ul class="breadcrumbs__items">
             <li>
-                <a href="/">Займы онлайн</a>
+                <a href="/">Онлайн қарыздар</a>
             </li>
             <li>
                 <a href="#">Акции</a>
@@ -45,7 +45,7 @@ $this->title = $model->name;
                                     <div	class="subscribe-top-item subscribe-top-item--input-email">
                                         <input	class="subscribe-top-item__control subscribe-top-item__control--input-email"	placeholder="Email"	type="text"	name="email"	value=""></div>
                                     <div	class="subscribe-top-item subscribe-top-item--btn-submit">
-                                        <input	class="subscribe-top-item__btn subscribe-top-item__btn--btn-submit"	type="submit"	value="Подписаться">
+                                        <input	class="subscribe-top-item__btn subscribe-top-item__btn--btn-submit"	type="submit"	value="Қол қою">
                                     </div>
                                 </div>
                             </div>
@@ -128,7 +128,7 @@ $this->title = $model->name;
                         </a>
                     </div>
                     <div class="mfo_card_compare">
-                        <a href="<?= $mfo->mfo_name ?>" data-mfo="dengiclick" data-title="ДеньгиClick">Сравнить</a>
+                        <a href="<?= $mfo->mfo_name ?>" data-mfo="dengiclick" data-title="ДеньгиClick">Салыстыру</a>
                     </div>
                     <div class="mfo_card_info_link">
                         <a href="#">Подробнее о <?= $mfo->mfo_name ?></a>
@@ -156,7 +156,7 @@ $this->title = $model->name;
                                 <div class="mfo_card_info_rate_data"><?= $mfo->stavka ?></div>
                             </div>
                             <div class="mfo_card_info_approval">
-                                <div class="mfo_card_info_approval_label">Одобрение:</div>
+                                <div class="mfo_card_info_approval_label">Мақұлдау:</div>
                                 <div class="mfo_card_info_approval_data"><?= $mfo->odobrenie ?> %</div>
                             </div>
                             <div class="mfo_card_info_accept">
@@ -196,7 +196,7 @@ $this->title = $model->name;
                             <div	class="subscribe-sidebar-item subscribe-sidebar-item--input-email">
                                 <input	class="subscribe-sidebar-item__control subscribe-sidebar-item__control--input-email"	placeholder="Email"	type="text"	name="email"	value=""></div>
                             <div	class="subscribe-sidebar-item subscribe-sidebar-item--btn-submit">
-                                <input	class="subscribe-sidebar-item__btn subscribe-sidebar-item__btn--btn-submit"	type="submit"	value="Подписаться">
+                                <input	class="subscribe-sidebar-item__btn subscribe-sidebar-item__btn--btn-submit"	type="submit"	value="Қол қою">
                             </div>
                         </div>
                     </form>

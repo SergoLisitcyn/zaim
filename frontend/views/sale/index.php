@@ -36,7 +36,7 @@ $this->title = 'Акциялар - smartzaim.kz';
                                     <div	class="subscribe-top-item subscribe-top-item--input-email">
                                         <input	class="subscribe-top-item__control subscribe-top-item__control--input-email"	placeholder="Email"	type="text"	name="email"	value=""></div>
                                     <div	class="subscribe-top-item subscribe-top-item--btn-submit">
-                                        <input	class="subscribe-top-item__btn subscribe-top-item__btn--btn-submit"	type="submit"	value="Подписаться">
+                                        <input	class="subscribe-top-item__btn subscribe-top-item__btn--btn-submit"	type="submit"	value="Қол қою">
                                     </div>
                                 </div>
                             </div>
@@ -149,7 +149,7 @@ $this->title = 'Акциялар - smartzaim.kz';
                             <div	class="subscribe-sidebar-item subscribe-sidebar-item--input-email">
                                 <input	class="subscribe-sidebar-item__control subscribe-sidebar-item__control--input-email"	placeholder="Email"	type="text"	name="email"	value=""></div>
                             <div	class="subscribe-sidebar-item subscribe-sidebar-item--btn-submit">
-                                <input	class="subscribe-sidebar-item__btn subscribe-sidebar-item__btn--btn-submit"	type="submit"	value="Подписаться">
+                                <input	class="subscribe-sidebar-item__btn subscribe-sidebar-item__btn--btn-submit"	type="submit"	value="Қол қою">
                             </div>
                         </div>
                     </form>

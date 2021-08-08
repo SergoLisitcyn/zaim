@@ -5,7 +5,7 @@ use \yii\helpers\Url;
     <div class="breadcrumbs-wrap limit-width">
         <ul class="breadcrumbs__items">
             <li>
-                <a href="/">Займы онлайн</a>
+                <a href="/">Онлайн қарыздар</a>
             </li>
             <li>
                 <a href="<?= Url::toRoute(['mfo/view', 'url' => $model->url]) ?>"><?= $model->mfo_name?></a>
@@ -42,7 +42,7 @@ use \yii\helpers\Url;
                         </li>
                         <li	class="add_to_compare">
                             <a data-mfo="creditplus"	data-title="CreditPlus"	href="#">
-                                <span>Сравнить</span>
+                                <span>Салыстыру</span>
                             </a>
                         </li>
                     </ul>
@@ -227,7 +227,7 @@ use \yii\helpers\Url;
                             <div	class="subscribe-sidebar-item subscribe-sidebar-item--input-email">
                                 <input	class="subscribe-sidebar-item__control subscribe-sidebar-item__control--input-email"	placeholder="Email"	type="text"	name="email"	value=""></div>
                             <div	class="subscribe-sidebar-item subscribe-sidebar-item--btn-submit">
-                                <input	class="subscribe-sidebar-item__btn subscribe-sidebar-item__btn--btn-submit"	type="submit"	value="Подписаться">
+                                <input	class="subscribe-sidebar-item__btn subscribe-sidebar-item__btn--btn-submit"	type="submit"	value="Қол қою">
                             </div>
                         </div>
                     </form>

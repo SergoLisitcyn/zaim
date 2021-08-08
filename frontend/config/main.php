@@ -43,6 +43,7 @@ return [
             'rules' => [
                 'login' => '/site/login',
                 'contact' => '/site/contact',
+                'faq' => '/site/faq',
                 '/' => '/site/index',
                 'aktsii' => '/sale/index',
                 'arhiv' => '/sale/arhiv',

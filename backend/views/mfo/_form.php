@@ -145,6 +145,8 @@ use \yii\helpers\Url;
 
                         <?= $form->field($model, 'stavka')->textInput(['maxlength' => true])->hint('например от 0,01 %') ?>
 
+                        <?= $form->field($model, 'gesv')->textInput(['maxlength' => true])->hint('например от 7,3%') ?>
+
                         <?= $form->field($model, 'odobrenie')->textInput()->hint('только цифры без знака %') ?>
 
                         <?= $form->field($model, 'rasmotrenie')->textInput(['maxlength' => true])->hint('например 10 минут') ?>

@@ -1692,6 +1692,7 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
     margin-top: 35px;
     padding-left: 60px;
     position: relative;
+    list-style-type: none;
 }
 
 .how-take-points__item:before {
@@ -3253,7 +3254,12 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
 .contactdetails-list {
     margin: 15px 0 0;
     list-style: none;
+    padding-left: 0;
 }
+.contactdetails-list ul {
+    padding-left: 0;
+}
+
 
 .contactdetails-list li {
     font-size: 14px;
@@ -4445,4 +4451,37 @@ p {
 }
 .content-filter p {
     margin-bottom: 20px;
+}
+
+.head-orange {
+    border-radius: 6px 6px 0 0 !important;
+    background-color: #fda729 !important;
+    color: #fff !important;
+    font-size: 36px !important;
+    line-height: 1.2 !important;
+    font-weight: 400 !important;
+    font-family: inherit !important;
+    text-align: center !important;
+    padding: 25px !important;
+    margin-bottom: 25px !important;
+}
+
+.article-faq-list .head-orange i {
+    font-size: 43px !important;
+    font-weight: 600 !important;
+    width: 48px !important;
+    height: 48px !important;
+    line-height: 48px !important;
+    border-radius: 50% !important;
+    background-color: #fff !important;
+    margin-right: 15px !important;
+    position: relative !important;
+}
+
+.head-orange i {
+    display: inline-block;
+    vertical-align: middle !important;
+    font-style: normal !important;
+    color: #fda729 !important;
+    text-align: center !important;
 }

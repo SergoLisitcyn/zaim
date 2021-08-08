@@ -14,7 +14,7 @@ $this->title = $model->title;
     <div class="breadcrumbs-wrap limit-width">
         <ul class="breadcrumbs__items">
             <li>
-                <a href="/">Займы онлайн</a>
+                <a href="/">Онлайн қарыздар</a>
             </li>
             <li>
                 <?= $this->title ?>
@@ -33,22 +33,22 @@ $this->title = $model->title;
                     <ul	class="nav nav-tabs">
                         <li class="active">
                             <a href="<?= Url::toRoute(['mfo/view', 'url' => $model->url]) ?>">
-                                <span>О	компании</span>
+                                <span>Компания туралы</span>
                             </a>
                         </li>
                         <li class="">
                             <a href="<?= Url::toRoute(['mfo/login', 'url' => $model->url]) ?>">
-                                <span>Личный	кабинет</span>
+                                <span>Жеке кабинет</span>
                             </a>
                         </li>
                         <li class="">
                             <a href="<?= Url::toRoute(['mfo/reviews', 'url' => $model->url]) ?>">
-                                <span>Отзывы ( <span	class="rr-reviews-count">6</span> )</span>
+                                <span>Пікірлер ( <span	class="rr-reviews-count">6</span> )</span>
                             </a>
                         </li>
                         <li	class="add_to_compare">
-                            <a data-mfo="creditplus"	data-title="CreditPlus"	href="#">
-                                <span>Сравнить</span>
+                            <a data-mfo="<?= $model->mfo_name?>"	data-title="<?= $model->mfo_name?>"	href="#">
+                                <span>Салыстыру</span>
                             </a>
                         </li>
                     </ul>
@@ -72,7 +72,7 @@ $this->title = $model->title;
                                     <div class="rating__val"><?= $model->rating?></div>
                                 </div>
                             </div>
-                            <div class="mfo-head__text">Перейти	на	официальный	сайт
+                            <div class="mfo-head__text">Ресми сайтқа өту
                                 <a href="#"><?= $model->website?></a>
                             </div>
                         </div>
@@ -81,7 +81,7 @@ $this->title = $model->title;
                                 <a href="#">
                                     <img src="<?= $model->logo?>">
                                 </a>
-                                <div class="mfo-head-approv">Одобрение:
+                                <div class="mfo-head-approv">Мақұлдау:
                                     <span class="mfo-head-approv-value"><?= $model->odobrenie?>%</span>
                                 </div>
                             </div>
@@ -92,7 +92,7 @@ $this->title = $model->title;
                             <div class="akciya-container-item">
                                 <div class="akciya-caption">Акция!
                                 </div>
-                                <div class="akciya-text">Оформите	микрокредит в Creditplus.kz и	получите подарок!</div>
+                                <div class="akciya-text">Оформите микрокредит в <?= $model->website?> и	получите подарок!</div>
                             </div>
                             <div class="akciya-container-item">
                                 <div class="akciya-date-wrap">
@@ -111,27 +111,27 @@ $this->title = $model->title;
                         <div class="mfo-stat-container">
                             <div class="firstloan">
                                 <div class="firstloan-col">
-                                    <div class="offer-row-col">Срок/дней</div>
+                                    <div class="offer-row-col">Мерзімі/күн</div>
                                     <div class="offer-col"><?= $model->srok_new_client?></div>
                                 </div>
                                 <div class="firstloan-col">
-                                    <div class="offer-row-col">Макс.сумма/<br>тенге</div>
+                                    <div class="offer-row-col">Макс. сомасы/<br>теңге</div>
                                     <div class="offer-col"><?= $model->sum_new_client?></div>
                                 </div>
                                 <div class="firstloan-col">
-                                    <div class="offer-row-col">Ставка в	день</div>
+                                    <div class="offer-row-col">Бір күндік мөлшерлемесі</div>
                                     <div class="offer-col"><?= $model->stavka_new_client?></div>
                                 </div>
                                 <div class="firstloan-col">
-                                    <div class="offer-row-col">Одобрение:</div>
+                                    <div class="offer-row-col">Мақұлдау:</div>
                                     <div class="offer-col"><?= $model->odobrenie_new_client?>%</div>
                                 </div>
                                 <div class="firstloan-col">
-                                    <div class="offer-row-col">Рассмотрение/<br>минут</div>
+                                    <div class="offer-row-col">Қарау/<br>минут</div>
                                     <div class="offer-col"><?= $model->rasmotrenie_new_client?></div>
                                 </div>
                                 <div class="firstloan-col">
-                                    <div class="offer-row-col">Получение:</div>
+                                    <div class="offer-row-col">Алу:</div>
                                     <div class="offer-col">
                                         <noscript>
                                             <img	src="/img/2016/08/all.png">
@@ -143,36 +143,36 @@ $this->title = $model->title;
                             <div class="mfo-footer">
                                 <div class="mfo-footer-item">
                                     <div class="mfo-card-compare mfo_card_compare">
-                                        <a data-mfo="creditplus" data-title="CreditPlus" href="#">Сравнить</a>
+                                        <a data-mfo="<?= $model->mfo_name?>" data-title="<?= $model->mfo_name?>" href="#">Салыстыру</a>
                                     </div>
                                 </div>
-                                <a class="mfo-footer mfo-show-rule" href="#" >Показать	условия для	существующих	клиентов</a>
-                                <a class="mfo-footer-item mfo-card-btn" href="#" >Получить деньги</a>
+                                <a class="mfo-footer mfo-show-rule" href="#" >Бар клиенттерге арналған шарттарды көрсету</a>
+                                <a class="mfo-footer-item mfo-card-btn" href="#" >Ақшаны алу</a>
                             </div>
                             <div class="conexist">
                                 <div class="firstloan">
                                     <div class="firstloan-col">
-                                        <div class="offer-row-col">Срок/дней</div>
+                                        <div class="offer-row-col">Мерзімі/күн</div>
                                         <div class="offer-col"><?= $model->srok_for_client ?></div>
                                     </div>
                                     <div class="firstloan-col">
-                                        <div class="offer-row-col">Макс.сумма/<br>тенге</div>
+                                        <div class="offer-row-col">Макс. сомасы/<br>теңге</div>
                                         <div class="offer-col"><?= $model->sum_for_client ?></div>
                                     </div>
                                     <div class="firstloan-col">
-                                        <div class="offer-row-col">Ставка в	день</div>
+                                        <div class="offer-row-col">Бір күндік мөлшерлемесі</div>
                                         <div class="offer-col"><?= $model->stavka_for_client ?></div>
                                     </div>
                                     <div class="firstloan-col">
-                                        <div class="offer-row-col">Одобрение:</div>
+                                        <div class="offer-row-col">Мақұлдау:</div>
                                         <div class="offer-col"><?= $model->odobrenie_for_client ?>%</div>
                                     </div>
                                     <div class="firstloan-col">
-                                        <div class="offer-row-col">Рассмотрение/<br>минут</div>
+                                        <div class="offer-row-col">Қарау/<br>минут</div>
                                         <div class="offer-col"><?= $model->rasmotrenie_for_client ?></div>
                                     </div>
                                     <div class="firstloan-col">
-                                        <div class="offer-row-col">Получение:</div>
+                                        <div class="offer-row-col">Алу:</div>
                                         <div class="offer-col">
                                             <noscript>
                                                 <img	src="/img/2016/08/all.png">
@@ -185,7 +185,7 @@ $this->title = $model->title;
                         </div>
                         <div class="content-text">
                             <?= $model->content ?>
-                            <a href="#" class="mfo-money-btn content-text-button">Получить деньги</a>
+                            <a href="#" class="mfo-money-btn content-text-button">Ақшаны алу</a>
                         </div>
                         <div class="article-contacts">
                             <div class="article-contacts__inner">
@@ -246,7 +246,7 @@ $this->title = $model->title;
                         </div>
                         <div class="contactdetails">
                             <div	class="contactdetails-item details-requisites">
-                                <h3 class="contactdetails-title">Реквизиты сервиса	"CreditPlus":</h3>
+                                <h3 class="contactdetails-title">Сервисінің деректемелері	"<?= $model->mfo_name?>":</h3>
                                 <ul class="contactdetails-list">
                                     <?= $model->rekvisit ?>
                                 </ul>
@@ -286,19 +286,19 @@ $this->title = $model->title;
                                         </div>
                                     </div>
                                     <div class="firstloan-col">
-                                        <div class="offer-row-col">Срок/дней</div>
+                                        <div class="offer-row-col">Мерзімі/күн</div>
                                         <div class="offer-col">5	- 31</div>
                                     </div>
                                     <div class="firstloan-col">
-                                        <div class="offer-row-col">Макс.сумма/<br>тенге</div>
+                                        <div class="offer-row-col">Макс. сомасы/<br>теңге</div>
                                         <div class="offer-col">75 000</div>
                                     </div>
                                     <div class="firstloan-col">
-                                        <div class="offer-row-col">Ставка в	день</div>
+                                        <div class="offer-row-col">Бір күндік мөлшерлемесі</div>
                                         <div class="offer-col">от 0,01 %</div>
                                     </div>
                                     <div class="firstloan-col">
-                                        <div class="offer-row-col">Одобрение:</div>
+                                        <div class="offer-row-col">Мақұлдау:</div>
                                         <div class="offer-col">74%</div>
                                     </div>
                                     <div class="firstloan-col">
@@ -326,19 +326,19 @@ $this->title = $model->title;
                                         </div>
                                     </div>
                                     <div class="firstloan-col">
-                                        <div class="offer-row-col">Срок/дней</div>
+                                        <div class="offer-row-col">Мерзімі/күн</div>
                                         <div class="offer-col">5	- 30</div>
                                     </div>
                                     <div class="firstloan-col">
-                                        <div class="offer-row-col">Макс.сумма/<br>тенге</div>
+                                        <div class="offer-row-col">Макс. сомасы/<br>теңге</div>
                                         <div class="offer-col">135 000</div>
                                     </div>
                                     <div class="firstloan-col">
-                                        <div class="offer-row-col">Ставка в	день</div>
+                                        <div class="offer-row-col">Бір күндік мөлшерлемесі</div>
                                         <div class="offer-col">0,1 %</div>
                                     </div>
                                     <div class="firstloan-col">
-                                        <div class="offer-row-col">Одобрение:</div>
+                                        <div class="offer-row-col">Мақұлдау:</div>
                                         <div class="offer-col">85%</div>
                                     </div>
                                     <div class="firstloan-col">
@@ -366,19 +366,19 @@ $this->title = $model->title;
                                         </div>
                                     </div>
                                     <div class="firstloan-col">
-                                        <div class="offer-row-col">Срок/дней</div>
+                                        <div class="offer-row-col">Мерзімі/күн</div>
                                         <div class="offer-col">30</div>
                                     </div>
                                     <div class="firstloan-col">
-                                        <div class="offer-row-col">Макс.сумма/<br>тенге</div>
+                                        <div class="offer-row-col">Макс. сомасы/<br>теңге</div>
                                         <div class="offer-col">138 000</div>
                                     </div>
                                     <div class="firstloan-col">
-                                        <div class="offer-row-col">Ставка в	день</div>
+                                        <div class="offer-row-col">Бір күндік мөлшерлемесі</div>
                                         <div class="offer-col">от 0,01 %</div>
                                     </div>
                                     <div class="firstloan-col">
-                                        <div class="offer-row-col">Одобрение:</div>
+                                        <div class="offer-row-col">Мақұлдау:</div>
                                         <div class="offer-col">75%</div>
                                     </div>
                                     <div class="firstloan-col">
@@ -530,7 +530,7 @@ $this->title = $model->title;
                             </div>
                         </div>
                     </form>
-                    <a href="creditplus-reviews.html" class="content-reviews-btn">Смотреть все отзывы о CreditPlus</a>
+                    <a href="creditplus-reviews.html" class="content-reviews-btn">Смотреть все отзывы о <?= $model->mfo_name?></a>
                 </div>
             </div>
 
@@ -613,7 +613,7 @@ $this->title = $model->title;
                 <div class="mfo_card">
                     <div	class="mfo_achieve promo">Акция</div>
                     <div class="mfo_card_company">
-                        <div class="mfo_card__title">Предложение creditplus.kz</div>
+                        <div class="mfo_card__title">Предложение <?= $model->website?></div>
                     </div>
                     <div class="mfo_card_info mfo_card_info_col">
                         <div	class="mfo_card_info_inner">
@@ -630,7 +630,7 @@ $this->title = $model->title;
                                 <div	class="mfo_card_info_rate_data"><?= $model->stavka?></div>
                             </div>
                             <div	class="mfo_card_info_accept">
-                                <div	class="mfo_card_info_accept_label">Рассмотрение:</div>
+                                <div	class="mfo_card_info_accept_label">Қарау:</div>
                                 <div	class="mfo_card_info_accept_data"><?= $model->rasmotrenie?></div>
                             </div>
                             <div	class="mfo_card_info_ways">
@@ -645,7 +645,7 @@ $this->title = $model->title;
                         </div>
                         <noindex>
                             <a href="#">
-                                <div	class="mfo_card_button">Получить деньги</div>
+                                <div	class="mfo_card_button">Ақшаны алу</div>
                             </a>
                         </noindex>
                     </div>
@@ -742,7 +742,7 @@ $this->title = $model->title;
                             <div	class="subscribe-sidebar-item subscribe-sidebar-item--input-email">
                                 <input	class="subscribe-sidebar-item__control subscribe-sidebar-item__control--input-email"	placeholder="Email"	type="text"	name="email"	value=""></div>
                             <div	class="subscribe-sidebar-item subscribe-sidebar-item--btn-submit">
-                                <input	class="subscribe-sidebar-item__btn subscribe-sidebar-item__btn--btn-submit"	type="submit"	value="Подписаться">
+                                <input	class="subscribe-sidebar-item__btn subscribe-sidebar-item__btn--btn-submit"	type="submit"	value="Қол қою">
                             </div>
                         </div>
                     </form>
@@ -783,7 +783,7 @@ $this->title = $model->title;
                             </li>
                             <li>
                                 <span	class="aside-list__date">01.11.2020</span>
-                                <a href="#"	class="aside-list__title">Средняя	заработная плата	казахстанских	докторов вырастет до	561 000 тенге к 2023	году</a>
+                                <a href="#"	class="aside-list__title">Средняя	заработная плата	казахстанских	докторов вырастет до	561 000 теңге к 2023	году</a>
                             </li>
                         </ul>
                         <a href="#" target="_blank"	rel="nofollow">

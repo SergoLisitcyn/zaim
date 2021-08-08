@@ -67,7 +67,7 @@ $this->title = 'Рейтинг лучших МФО — smartzaim.kz';
                         <div class="offer-col"><?= $item->stavka ?></div>
                     </div>
                     <div class="offer-row">
-                        <div class="offer-row-col">Одобрение:</div>
+                        <div class="offer-row-col">Мақұлдау:</div>
                         <div class="offer-col"><?= $item->odobrenie ?> %</div>
                     </div>
                     <div class="offer-row">

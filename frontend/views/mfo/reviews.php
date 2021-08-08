@@ -11,7 +11,7 @@ YiiAsset::register($this);
     <div class="breadcrumbs-wrap limit-width">
         <ul class="breadcrumbs__items">
             <li>
-                <a href="/">Займы онлайн</a>
+                <a href="/">Онлайн қарыздар</a>
             </li>
             <li>
                 <a href="<?= Url::toRoute(['mfo/view', 'url' => $mfo->url]) ?>"><?= $mfo->mfo_name ?></a>
@@ -48,7 +48,7 @@ YiiAsset::register($this);
                         </li>
                         <li	class="add_to_compare">
                             <a data-mfo="creditplus"	data-title="CreditPlus"	href="#">
-                                <span>Сравнить</span>
+                                <span>Салыстыру</span>
                             </a>
                         </li>
                     </ul>
@@ -294,7 +294,7 @@ YiiAsset::register($this);
                             <div	class="subscribe-sidebar-item subscribe-sidebar-item--input-email">
                                 <input	class="subscribe-sidebar-item__control subscribe-sidebar-item__control--input-email"	placeholder="Email"	type="text"	name="email"	value=""></div>
                             <div	class="subscribe-sidebar-item subscribe-sidebar-item--btn-submit">
-                                <input	class="subscribe-sidebar-item__btn subscribe-sidebar-item__btn--btn-submit"	type="submit"	value="Подписаться">
+                                <input	class="subscribe-sidebar-item__btn subscribe-sidebar-item__btn--btn-submit"	type="submit"	value="Қол қою">
                             </div>
                         </div>
                     </form>

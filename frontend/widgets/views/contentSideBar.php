@@ -9,7 +9,7 @@
             </a>
         </div>
         <div class="mfo_card_compare">
-            <a href="#" data-mfo="4slovo" data-title="Честное слово – микрокредит онлайн в Казахстане">Сравнить</a>
+            <a href="#" data-mfo="4slovo" data-title="Честное слово – микрокредит онлайн в Казахстане">Салыстыру</a>
         </div>
         <div class="mfo_card_info_link">
             <a href="#">Подробнее о Честном слове</a>
@@ -37,7 +37,7 @@
                     <div class="mfo_card_info_rate_data">от 0,67% в день</div>
                 </div>
                 <div class="mfo_card_info_approval">
-                    <div class="mfo_card_info_approval_label">Одобрение:</div>
+                    <div class="mfo_card_info_approval_label">Мақұлдау:</div>
                     <div class="mfo_card_info_approval_data">81%</div>
                 </div>
                 <div class="mfo_card_info_accept">
@@ -77,7 +77,7 @@
                 <div class="subscribe-sidebar-item subscribe-sidebar-item--input-email">
                     <input class="subscribe-sidebar-item__control subscribe-sidebar-item__control--input-email" placeholder="Email" type="text" name="email" value=""></div>
                 <div class="subscribe-sidebar-item subscribe-sidebar-item--btn-submit">
-                    <input class="subscribe-sidebar-item__btn subscribe-sidebar-item__btn--btn-submit" type="submit" value="Подписаться">
+                    <input class="subscribe-sidebar-item__btn subscribe-sidebar-item__btn--btn-submit" type="submit" value="Қол қою">
                 </div>
             </div>
         </form>

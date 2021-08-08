@@ -15,7 +15,7 @@ use \yii\helpers\Url;
                     </a>
                 </div>
                 <div class="mfo_card_compare">
-                    <a href="#" data-mfo="creditplus" data-title="<?= $mfo->mfo_name ?>">Сравнить</a>
+                    <a href="#" data-mfo="creditplus" data-title="<?= $mfo->mfo_name ?>">Салыстыру</a>
                 </div>
                 <div class="mfo_card_info_link">
                     <div class="line_mfo">
@@ -56,6 +56,10 @@ use \yii\helpers\Url;
                         <div class="mfo_card_info_rate">
                             <div class="mfo_card_info_rate_label">Мөлшерлемесі:</div>
                             <div class="mfo_card_info_rate_data"><?= $mfo->stavka ?></div>
+                        </div>
+                        <div class="mfo_card_info_accept">
+                            <div class="mfo_card_info_accept_label">ГЭСВ:</div>
+                            <div class="mfo_card_info_accept_data"><?= $mfo->gesv ?></div>
                         </div>
                         <div class="mfo_card_info_approval">
                             <div class="mfo_card_info_approval_label">Мақұлдау:</div>

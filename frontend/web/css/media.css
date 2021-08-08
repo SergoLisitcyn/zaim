@@ -27,6 +27,7 @@
     .header-nav__list {
         display: flex;
         margin-left: -25px;
+        margin-bottom: 0;
     }
     .header-nav__item {
         position: relative;

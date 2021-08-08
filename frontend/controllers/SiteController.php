@@ -154,6 +154,11 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
+    public function actionFaq()
+    {
+        return $this->render('faq');
+    }
+
     /**
      * Signs user up.
      *
