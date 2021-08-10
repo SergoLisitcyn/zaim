@@ -37,7 +37,7 @@ use \yii\helpers\Url;
                         </li>
                         <li class="">
                             <a href="<?= Url::toRoute(['mfo/reviews', 'url' => $model->url]) ?>">
-                                <span>Отзывы ( <span	class="rr-reviews-count">6</span> )</span>
+                                <span>Пікірлер ( <span	class="rr-reviews-count">6</span> )</span>
                             </a>
                         </li>
                         <li	class="add_to_compare">
@@ -130,7 +130,7 @@ use \yii\helpers\Url;
                         </div>
                         <noindex>
                             <a href="#">
-                                <div	class="mfo_card_button">Получить деньги</div>
+                                <div	class="mfo_card_button">Ақшаны алу</div>
                             </a>
                         </noindex>
                     </div>
@@ -140,12 +140,12 @@ use \yii\helpers\Url;
                     <div class="mfo_card__info">
                         <div class="mfo_card__text">Не	смогли выбрать компанию?	Оставьте заявку и мы	подберем для Вас наиболее	выгодные займы!</div>
                         <a href="#">
-                            <div	class="mfo_card_button">Подробнее</div>
+                            <div	class="mfo_card_button">Нақтырақ</div>
                         </a>
                     </div>
                 </div>
                 <div class="mfo_card">
-                    <div class="mfo_card__title">Рейтинг	заемщиков</div>
+                    <div class="mfo_card__title">Қарыз алушылар рейтингі</div>
                     <div	class="aside-rating aside-rating-mfo">
 
                         <div class="aside-rating-mfo-col">
@@ -164,7 +164,7 @@ use \yii\helpers\Url;
                                             <div class="rating__stars"	style="width:87%"></div>
                                             <div	class="rating__val">4.4</div>
                                         </div>
-                                        <div	class="aside-rating-mfo__rev">Отзывы:	177</div>
+                                        <div	class="aside-rating-mfo__rev">Пікірлер:	177</div>
                                     </div>
                                 </a>
                             </div>
@@ -186,7 +186,7 @@ use \yii\helpers\Url;
                                             <div class="rating__stars"	style="width:87%"></div>
                                             <div	class="rating__val">4.6</div>
                                         </div>
-                                        <div	class="aside-rating-mfo__rev">Отзывы:	41</div>
+                                        <div	class="aside-rating-mfo__rev">Пікірлер:	41</div>
                                     </div>
                                 </a>
                             </div>
@@ -208,7 +208,7 @@ use \yii\helpers\Url;
                                             <div class="rating__stars"	style="width:87%"></div>
                                             <div	class="rating__val">3.6</div>
                                         </div>
-                                        <div	class="aside-rating-mfo__rev">Отзывы:	30</div>
+                                        <div	class="aside-rating-mfo__rev">Пікірлер:	30</div>
                                     </div>
                                 </a>
                             </div>
@@ -216,13 +216,13 @@ use \yii\helpers\Url;
                     </div>
                     <div class="mfo_card__info">
                         <a href="#">
-                            <div	class="mfo_card_button">Подобрать другой займ</div>
+                            <div	class="mfo_card_button">Басқа қарызды таңдау</div>
                         </a>
                     </div>
                 </div>
                 <div class="mfo_card">
                     <form	class="subscribtion_form">
-                        <div	class="aside-subscribe-text">Вы хотите первыми узнавать	<br> о специальных	предложениях <br> и акциях?</div>
+                        <div class="aside-subscribe-text">Вы хотите первыми узнавать	<br> о специальных	предложениях <br> и акциях?</div>
                         <div	class="email_sidebar_container">
                             <div	class="subscribe-sidebar-item subscribe-sidebar-item--input-email">
                                 <input	class="subscribe-sidebar-item__control subscribe-sidebar-item__control--input-email"	placeholder="Email"	type="text"	name="email"	value=""></div>
@@ -233,7 +233,7 @@ use \yii\helpers\Url;
                     </form>
                 </div>
                 <div class="mfo_card">
-                    <div class="mfo_card__title">Полезные материалы</div>
+                    <div class="mfo_card__title">Пайдалы материалдар</div>
                     <div class="mfo_card__info">
                         <ul class="aside-list">
                             <li>
@@ -251,11 +251,11 @@ use \yii\helpers\Url;
                                    class="aside-list__title">7	простых шагов для	получения частного	займа без	предоплаты</a>
                             </li>
                         </ul>
-                        <a href="#"	class="btn-yellow">Все	статьи</a>
+                        <a href="#"	class="btn-yellow">Барлық мақалалар</a>
                     </div>
                 </div>
                 <div class="mfo_card">
-                    <div class="mfo_card__title">Свежие	новости</div>
+                    <div class="mfo_card__title">Соңғы жаңалықтар</div>
                     <div class="mfo_card__info">
                         <ul class="aside-list">
                             <li>
@@ -272,7 +272,7 @@ use \yii\helpers\Url;
                             </li>
                         </ul>
                         <a href="#" target="_blank"	rel="nofollow">
-                            <div	class="mfo_card_button">Все новости</div>
+                            <div	class="mfo_card_button">Барлық жаңалықтар</div>
                         </a>
                     </div>
                 </div>

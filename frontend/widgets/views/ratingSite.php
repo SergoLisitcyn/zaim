@@ -17,7 +17,7 @@ use \kartik\rating\StarRating;
             ]
         ); ?>
         <p class="ratings-item">
-            <label class="ratings__description">Оцените наш сайт:</label>
+            <label class="ratings__description">Біздің сайтымызды бағалаңыз:</label>
             <?php
             echo $form->field($model, 'rating')->label(false)->widget(StarRating::classname(), [
                  'pluginOptions' => [

@@ -97,7 +97,7 @@ $this->title = $model->title;
                             <div class="akciya-container-item">
                                 <div class="akciya-date-wrap">
                                     <div class="akciya-date">08.10.2020 - 15.01.2021
-                                        <a href="#" class="akciya-btn">Подробнее</a>
+                                        <a href="#" class="akciya-btn">Нақтырақ</a>
                                     </div>
                                 </div>
                             </div>
@@ -303,7 +303,7 @@ $this->title = $model->title;
                                     </div>
                                     <div class="firstloan-col">
                                         <div class="offer-card-wrap">
-                                            <a href="#" class="offers-card-btn">Подробнее</a>
+                                            <a href="#" class="offers-card-btn">Нақтырақ</a>
                                         </div>
                                     </div>
                                 </div>
@@ -343,7 +343,7 @@ $this->title = $model->title;
                                     </div>
                                     <div class="firstloan-col">
                                         <div class="offer-card-wrap">
-                                            <a href="#" class="offers-card-btn">Подробнее</a>
+                                            <a href="#" class="offers-card-btn">Нақтырақ</a>
                                         </div>
                                     </div>
                                 </div>
@@ -383,7 +383,7 @@ $this->title = $model->title;
                                     </div>
                                     <div class="firstloan-col">
                                         <div class="offer-card-wrap">
-                                            <a href="#" class="offers-card-btn">Подробнее</a>
+                                            <a href="#" class="offers-card-btn">Нақтырақ</a>
                                         </div>
                                     </div>
                                 </div>
@@ -399,7 +399,7 @@ $this->title = $model->title;
 
                 </div>
                 <div class="content-reviews">
-                    <h2 class="content-reviews-title">Отзывы о <?= $model->mfo_name?></h2>
+                    <h2 class="content-reviews-title">Нақтырақ о <?= $model->mfo_name?></h2>
                     <div class="content-reviews-item">
                         <div class="rr_review_name">Злата</div>
                         <span class="rr_date">13.08.2020</span>
@@ -509,10 +509,10 @@ $this->title = $model->title;
                             </div>
                         </div>
                         <div class="review-form__textarea-wrap">
-                            <textarea class="textarea-review" placeholder="Оставьте свой отзыв" name="rText"></textarea>
-                            <textarea class="textarea-plus" placeholder="Плюсы компании" name="rPlus"></textarea>
+                            <textarea class="textarea-review" placeholder="Өз пікіріңізді қалдырыңыз" name="rText"></textarea>
+                            <textarea class="textarea-plus" placeholder="Компанияның артықшылықтары" name="rPlus"></textarea>
                             <span class="form-err"></span>
-                            <textarea class="textarea-minus" placeholder="Минусы компании" name="rMinus"></textarea>
+                            <textarea class="textarea-minus" placeholder="Компанияның кемшіліктері" name="rMinus"></textarea>
                             <span class="form-err"></span>
                         </div>
                         <div class="review-form__bottom">
@@ -525,12 +525,12 @@ $this->title = $model->title;
                                 <span class="form-err"></span>
                             </div>
                             <div class="review-form__btn">
-                                <button type="submit" class="review-form__btn">Опубликовать отзыв</button>
+                                <button type="submit" class="review-form__btn">Пікірді жариялау</button>
                                 <span class="form-err"></span>
                             </div>
                         </div>
                     </form>
-                    <a href="creditplus-reviews.html" class="content-reviews-btn">Смотреть все отзывы о <?= $model->mfo_name?></a>
+                    <a href="creditplus-reviews.html" class="content-reviews-btn">Смотреть все Нақтырақ о <?= $model->mfo_name?></a>
                 </div>
             </div>
 
@@ -655,12 +655,12 @@ $this->title = $model->title;
                     <div class="mfo_card__info">
                         <div class="mfo_card__text">Не	смогли выбрать компанию?	Оставьте заявку и мы	подберем для Вас наиболее	выгодные займы!</div>
                         <a href="#">
-                            <div	class="mfo_card_button">Подробнее</div>
+                            <div	class="mfo_card_button">Нақтырақ</div>
                         </a>
                     </div>
                 </div>
                 <div class="mfo_card">
-                    <div class="mfo_card__title">Рейтинг	заемщиков</div>
+                    <div class="mfo_card__title">Қарыз алушылар рейтингі</div>
                     <div	class="aside-rating aside-rating-mfo">
 
                         <div class="aside-rating-mfo-col">
@@ -679,7 +679,7 @@ $this->title = $model->title;
                                             <div class="rating__stars"	style="width:87%"></div>
                                             <div	class="rating__val">4.4</div>
                                         </div>
-                                        <div	class="aside-rating-mfo__rev">Отзывы:	177</div>
+                                        <div	class="aside-rating-mfo__rev">Нақтырақ:	177</div>
                                     </div>
                                 </a>
                             </div>
@@ -701,7 +701,7 @@ $this->title = $model->title;
                                             <div class="rating__stars"	style="width:87%"></div>
                                             <div	class="rating__val">4.6</div>
                                         </div>
-                                        <div	class="aside-rating-mfo__rev">Отзывы:	41</div>
+                                        <div	class="aside-rating-mfo__rev">Нақтырақ:	41</div>
                                     </div>
                                 </a>
                             </div>
@@ -723,7 +723,7 @@ $this->title = $model->title;
                                             <div class="rating__stars"	style="width:87%"></div>
                                             <div	class="rating__val">3.6</div>
                                         </div>
-                                        <div	class="aside-rating-mfo__rev">Отзывы:	30</div>
+                                        <div	class="aside-rating-mfo__rev">Нақтырақ:	30</div>
                                     </div>
                                 </a>
                             </div>
@@ -731,7 +731,7 @@ $this->title = $model->title;
                     </div>
                     <div class="mfo_card__info">
                         <a href="#">
-                            <div	class="mfo_card_button">Подобрать другой займ</div>
+                            <div	class="mfo_card_button">Басқа қарызды таңдау</div>
                         </a>
                     </div>
                 </div>
@@ -748,7 +748,7 @@ $this->title = $model->title;
                     </form>
                 </div>
                 <div class="mfo_card">
-                    <div class="mfo_card__title">Полезные материалы</div>
+                    <div class="mfo_card__title">Пайдалы материалдар</div>
                     <div class="mfo_card__info">
                         <ul class="aside-list">
                             <li>
@@ -766,11 +766,11 @@ $this->title = $model->title;
                                    class="aside-list__title">Власти Казахстана проверят подозрительные денежные интернет-переводы на причастность к наркобизнесу</a>
                             </li>
                         </ul>
-                        <a href="#"	class="btn-yellow">Все	статьи</a>
+                        <a href="#"	class="btn-yellow">Барлық мақалалар</a>
                     </div>
                 </div>
                 <div class="mfo_card">
-                    <div class="mfo_card__title">Свежие	новости</div>
+                    <div class="mfo_card__title">Соңғы жаңалықтар</div>
                     <div class="mfo_card__info">
                         <ul class="aside-list">
                             <li>
@@ -787,7 +787,7 @@ $this->title = $model->title;
                             </li>
                         </ul>
                         <a href="#" target="_blank"	rel="nofollow">
-                            <div	class="mfo_card_button">Все новости</div>
+                            <div	class="mfo_card_button">Барлық жаңалықтар</div>
                         </a>
                     </div>
                 </div>
@@ -800,7 +800,7 @@ $this->title = $model->title;
     <div class="ratings-wrap">
         <form class="ratings-form">
             <p class="ratings-item">
-                <label class="ratings__description">Оцените наш сайт:</label>
+                <label class="ratings__description">Біздің сайтымызды бағалаңыз:</label>
                 <span class="mr-star-rating mr-star-rating-select">
 							<i title="1" class="fa fa-star-o mr-star-empty index-1-rating-item-1-1"></i>
 							<i title="2" class="fa fa-star-o mr-star-empty index-2-rating-item-1-1"></i>

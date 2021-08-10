@@ -135,6 +135,8 @@ class MfoController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             Yii::$app->session->addFlash('success', 'Мфо обновлен');
             return $this->redirect(['update', 'id' => $model->id]);
+        } else {
+            var_dump($model->errors);die;
         }
 
         return $this->render('update', [

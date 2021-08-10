@@ -97,7 +97,7 @@ $this->title = 'Рейтинг лучших МФО — smartzaim.kz';
                     <div class="offer-footer-item offer-zaim-calc mfo_card_vert_info_link_creditplus">Сумма займа 50000 тг + комиссия за 7 дней 35 тг = 50035 к выплате</div>
                     <div class="offer-footer-item offer-btn">
                         <a data-mfo="creditplus" href="#" class="offers-compare-btn"></a>
-                        <a href="<?= $item->link_offer ?>" class="offers-card-btn">Получить деньги</a>
+                        <a href="<?= $item->link_offer ?>" class="offers-card-btn">Ақшаны алу</a>
                     </div>
                 </div>
             </div>

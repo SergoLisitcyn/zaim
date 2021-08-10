@@ -55,7 +55,7 @@
                 </div>
             </div>
             <a href="#">
-                <div class="mfo_card_button">Получить деньги</div>
+                <div class="mfo_card_button">Ақшаны алу</div>
             </a>
         </div>
     </div>

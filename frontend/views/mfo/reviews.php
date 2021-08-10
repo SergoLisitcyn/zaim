@@ -17,7 +17,7 @@ YiiAsset::register($this);
                 <a href="<?= Url::toRoute(['mfo/view', 'url' => $mfo->url]) ?>"><?= $mfo->mfo_name ?></a>
             </li>
             <li>
-                Отзывы
+                Пікірлер
             </li>
         </ul>
     </div>
@@ -43,7 +43,7 @@ YiiAsset::register($this);
                         </li>
                         <li class="active">
                             <a href="<?= Url::toRoute(['mfo/reviews', 'url' => $mfo->url]) ?>">
-                                <span>Отзывы ( <span	class="rr-reviews-count">6</span> )</span>
+                                <span>Пікірлер ( <span	class="rr-reviews-count">6</span> )</span>
                             </a>
                         </li>
                         <li	class="add_to_compare">
@@ -54,7 +54,7 @@ YiiAsset::register($this);
                     </ul>
                     <div class="content-main-info">
                         <div class="content-main-info__item">
-                            <h1>Отзывы	о	<?= $mfo->mfo_name ?></h1>
+                            <h1>Пікірлер	о	<?= $mfo->mfo_name ?></h1>
                             <a href="#" class="content-main-info__button">Получить	деньги</a>
                             <div class="content-reviews">
                                 <?php foreach ($reviews as $review) :?>
@@ -100,10 +100,10 @@ YiiAsset::register($this);
                                     <input type="hidden" id="review-support" name="Review[support]" value="1"/>
                                     <input type="hidden" id="review-support" name="Review[date]" value="<?= date('Y/m/d h:i:s')?>"/>
                                     <div class="review-form__textarea-wrap">
-                                        <textarea class="textarea-review" id="review-body" placeholder="Оставьте свой отзыв" name="Review[body]"></textarea>
-                                        <textarea class="textarea-plus" id="review-plus" placeholder="Плюсы компании" name="Review[plus]"></textarea>
+                                        <textarea class="textarea-review" id="review-body" placeholder="Өз пікіріңізді қалдырыңыз" name="Review[body]"></textarea>
+                                        <textarea class="textarea-plus" id="review-plus" placeholder="Компанияның артықшылықтары" name="Review[plus]"></textarea>
                                         <span class="form-err"></span>
-                                        <textarea class="textarea-minus" id="review-minus" placeholder="Минусы компании" name="Review[minus]"></textarea>
+                                        <textarea class="textarea-minus" id="review-minus" placeholder="Компанияның кемшіліктері" name="Review[minus]"></textarea>
                                         <span class="form-err"></span>
                                     </div>
                                     <div class="review-form__bottom">
@@ -116,7 +116,7 @@ YiiAsset::register($this);
                                             <span class="form-err"></span>
                                         </div>
                                         <div class="review-form__btn">
-                                            <button type="submit" class="review-form__btn">Опубликовать отзыв</button>
+                                            <button type="submit" class="review-form__btn">Пікірді жариялау</button>
                                             <span class="form-err"></span>
                                         </div>
                                     </div>
@@ -197,7 +197,7 @@ YiiAsset::register($this);
                         </div>
                         <noindex>
                             <a href="#">
-                                <div class="mfo_card_button">Получить деньги</div>
+                                <div class="mfo_card_button">Ақшаны алу</div>
                             </a>
                         </noindex>
                     </div>
@@ -207,12 +207,12 @@ YiiAsset::register($this);
                     <div class="mfo_card__info">
                         <div class="mfo_card__text">Не	смогли выбрать компанию?	Оставьте заявку и мы	подберем для Вас наиболее	выгодные займы!</div>
                         <a href="#">
-                            <div	class="mfo_card_button">Подробнее</div>
+                            <div	class="mfo_card_button">Нақтырақ</div>
                         </a>
                     </div>
                 </div>
                 <div class="mfo_card">
-                    <div class="mfo_card__title">Рейтинг	заемщиков</div>
+                    <div class="mfo_card__title">Қарыз алушылар рейтингі</div>
                     <div	class="aside-rating aside-rating-mfo">
 
                         <div class="aside-rating-mfo-col">
@@ -231,7 +231,7 @@ YiiAsset::register($this);
                                             <div class="rating__stars"	style="width:87%"></div>
                                             <div	class="rating__val">4.4</div>
                                         </div>
-                                        <div	class="aside-rating-mfo__rev">Отзывы:	177</div>
+                                        <div	class="aside-rating-mfo__rev">Пікірлер:	177</div>
                                     </div>
                                 </a>
                             </div>
@@ -253,7 +253,7 @@ YiiAsset::register($this);
                                             <div class="rating__stars"	style="width:87%"></div>
                                             <div	class="rating__val">4.6</div>
                                         </div>
-                                        <div	class="aside-rating-mfo__rev">Отзывы:	41</div>
+                                        <div	class="aside-rating-mfo__rev">Пікірлер:	41</div>
                                     </div>
                                 </a>
                             </div>
@@ -275,7 +275,7 @@ YiiAsset::register($this);
                                             <div class="rating__stars"	style="width:87%"></div>
                                             <div	class="rating__val">3.6</div>
                                         </div>
-                                        <div	class="aside-rating-mfo__rev">Отзывы:	30</div>
+                                        <div	class="aside-rating-mfo__rev">Пікірлер:	30</div>
                                     </div>
                                 </a>
                             </div>
@@ -283,7 +283,7 @@ YiiAsset::register($this);
                     </div>
                     <div class="mfo_card__info">
                         <a href="#">
-                            <div	class="mfo_card_button">Подобрать другой займ</div>
+                            <div	class="mfo_card_button">Басқа қарызды таңдау</div>
                         </a>
                     </div>
                 </div>
@@ -300,7 +300,7 @@ YiiAsset::register($this);
                     </form>
                 </div>
                 <div class="mfo_card">
-                    <div class="mfo_card__title">Полезные материалы</div>
+                    <div class="mfo_card__title">Пайдалы материалдар</div>
                     <div class="mfo_card__info">
                         <ul class="aside-list">
                             <li>
@@ -318,11 +318,11 @@ YiiAsset::register($this);
                                    class="aside-list__title">7	простых шагов для	получения частного	займа без	предоплаты</a>
                             </li>
                         </ul>
-                        <a href="#"	class="btn-yellow">Все	статьи</a>
+                        <a href="#"	class="btn-yellow">Барлық мақалалар</a>
                     </div>
                 </div>
                 <div class="mfo_card">
-                    <div class="mfo_card__title">Свежие	новости</div>
+                    <div class="mfo_card__title">Соңғы жаңалықтар</div>
                     <div class="mfo_card__info">
                         <ul class="aside-list">
                             <li>
@@ -339,7 +339,7 @@ YiiAsset::register($this);
                             </li>
                         </ul>
                         <a href="#" target="_blank" rel="nofollow">
-                            <div class="mfo_card_button">Все новости</div>
+                            <div class="mfo_card_button">Барлық жаңалықтар</div>
                         </a>
                     </div>
                 </div>

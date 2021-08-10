@@ -31,7 +31,7 @@ $this->title = 'Акциялар - smartzaim.kz';
                         <div class="content-main-info__item">
                             <h1>📰 Акциялар</h1>
                             <div class="email_container">
-                                <div	class="text_top_subscribe_container">Подпишитесь на рассылку	и первыми узнавайте<br>	об акциях и специальных	предложениях</div>
+                                <div class="text_top_subscribe_container">Сілтемеге жазылыңыз және акциялар мен арнайы<br> ұсыныстар туралы алғашқылардың бірі болып біліңіз</div>
                                 <div class="subscribe-top-item-wrap">
                                     <div	class="subscribe-top-item subscribe-top-item--input-email">
                                         <input	class="subscribe-top-item__control subscribe-top-item__control--input-email"	placeholder="Email"	type="text"	name="email"	value=""></div>

@@ -40,7 +40,7 @@ $this->title = $model->name;
                                 <i></i><span><?= date("d.m.Y", strtotime($model->srok_ot)) ?> - <?= date("d.m.Y", strtotime($model->srok_do)) ?></span>
                             </div>
                             <div class="email_container">
-                                <div	class="text_top_subscribe_container">Подпишитесь на рассылку	и первыми узнавайте<br>	об акциях и специальных	предложениях</div>
+                                <div class="text_top_subscribe_container">Сілтемеге жазылыңыз және акциялар мен арнайы<br> ұсыныстар туралы алғашқылардың бірі болып біліңіз</div>
                                 <div class="subscribe-top-item-wrap">
                                     <div	class="subscribe-top-item subscribe-top-item--input-email">
                                         <input	class="subscribe-top-item__control subscribe-top-item__control--input-email"	placeholder="Email"	type="text"	name="email"	value=""></div>
@@ -86,11 +86,11 @@ $this->title = $model->name;
                                             </a>
                                         </div>
                                         <div class="aktsii-article__btn">
-                                            <a href="aktsii.html">Все акции</a>
+                                            <a href="aktsii.html">Барлық акциялар</a>
                                         </div>
                                     </div>
                                     <div class="aktsii-article__share">
-                                        <a href="#" class="articles_button">Получить деньги</a>
+                                        <a href="#" class="articles_button">Ақшаны алу</a>
                                         <div class="aktsii-article__share-buttons">
                                             <p class="aktsii-article__share-title">Поделиться в соц.сетях:</p>
                                             <div class="aktsii-article__share-links">
@@ -131,7 +131,7 @@ $this->title = $model->name;
                         <a href="<?= $mfo->mfo_name ?>" data-mfo="dengiclick" data-title="ДеньгиClick">Салыстыру</a>
                     </div>
                     <div class="mfo_card_info_link">
-                        <a href="#">Подробнее о <?= $mfo->mfo_name ?></a>
+                        <a href="#">Нақтырақ о <?= $mfo->mfo_name ?></a>
                     </div>
                     <div class="mfo_card_info">
                         <div class="mfo_card_info_inner">
@@ -174,7 +174,7 @@ $this->title = $model->name;
                             </div>
                         </div>
                         <a href="#">
-                            <div class="mfo_card_button">Получить деньги</div>
+                            <div class="mfo_card_button">Ақшаны алу</div>
                         </a>
                     </div>
                 </div>

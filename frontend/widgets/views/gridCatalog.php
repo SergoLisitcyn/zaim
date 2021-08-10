@@ -98,7 +98,7 @@ use \yii\helpers\Url;
             </div>
         </div>
         <div class="offers__btn">
-            <a href="rating">Показать все МФО</a>
+            <a href="rating">Барлық МҚҰ көрсету</a>
         </div>
     </div>
 </section>

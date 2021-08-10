@@ -54,7 +54,7 @@ $this->title = 'Архив акций';
                                             <h3 class="aktsii-item__title"><?= $sale->name ?></h3>
                                         </a>
                                         <div class="aktsii-item__date">с <?= date('m.d.Y',strtotime($sale->srok_ot)) ?> по <?= date('m.d.Y',strtotime($sale->srok_do)) ?></div>
-                                        <a href="<?= \yii\helpers\Url::toRoute(['sale/list', 'url' => $sale->url]) ?>" class="aktsii-item__more">Подробнее</a>
+                                        <a href="<?= \yii\helpers\Url::toRoute(['sale/list', 'url' => $sale->url]) ?>" class="aktsii-item__more">Нақтырақ</a>
                                     </div>
                                 </div>
                                 <?php endforeach; ?>
@@ -130,7 +130,7 @@ $this->title = 'Архив акций';
                             </div>
                         </div>
                         <a href="#">
-                            <div class="mfo_card_button">Получить деньги</div>
+                            <div class="mfo_card_button">Ақшаны алу</div>
                         </a>
                     </div>
                 </div>
