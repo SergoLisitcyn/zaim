@@ -52,7 +52,7 @@ $this->title = 'Contact';
                                             <input type="text" name="surname" value="" size="40" placeholder="Фамилия">
                                         </div>
                                         <div class="feedback-form__group feedback-form__group--sm">
-                                            <input type="text" name="name" value="" size="40" placeholder="Имя">
+                                            <input type="text" name="name" value="" size="40" placeholder="Атыңыз">
                                         </div>
                                         <div class="feedback-form__group feedback-form__group--sm">
                                             <input type="text" name="name" value="" size="40" placeholder="Отчество">

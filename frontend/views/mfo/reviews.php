@@ -63,19 +63,19 @@ YiiAsset::register($this);
                                     <span class="rr_date">13.08.2020</span>
                                     <div class="content-reviews-rating">
                                         <div class="rating">
-                                            <span class="rating__caption">Простота	получения</span>
+                                            <span class="rating__caption">Алу қарапайымдылығы</span>
                                             <div class="rating__stars rating__stars--sm" style="width:100%">
                                             </div>
                                             <div class="rating__val"><?= $review->prostota ?></div>
                                         </div>
                                         <div class="rating">
-                                            <span class="rating__caption">Скорость	выдачи</span>
+                                            <span class="rating__caption">Беру жылдамдығы</span>
                                             <div class="rating__stars rating__stars--sm" style="width:100%">
                                             </div>
                                             <div class="rating__val"><?= $review->speed ?></div>
                                         </div>
                                         <div class="rating">
-                                            <span class="rating__caption">Служба	поддержки</span>
+                                            <span class="rating__caption">Қолдау көрсету қызметі</span>
                                             <div class="rating__stars rating__stars--sm" style="width:100%">
                                             </div>
                                             <div class="rating__val"><?= $review->support ?></div>
@@ -108,7 +108,7 @@ YiiAsset::register($this);
                                     </div>
                                     <div class="review-form__bottom">
                                         <div class="review-form__input">
-                                            <input type="text" placeholder="Имя" id="review-name_client" name="Review[name_client]" value="">
+                                            <input type="text" placeholder="Атыңыз" id="review-name_client" name="Review[name_client]" value="">
                                             <span class="form-err"></span>
                                         </div>
                                         <div class="review-form__input">
@@ -128,7 +128,7 @@ YiiAsset::register($this);
             </div>
             <sidebar class="content-sidebar">
                 <div class="mfo_card">
-                    <div class="mfo_card__title">Рейтинг	компании</div>
+                    <div class="mfo_card__title">Компанияның рейтингі</div>
                     <div class="mfo_card__info ">
                         <div class="mfo_card__rating">
                             <div class="rating">
@@ -139,7 +139,7 @@ YiiAsset::register($this);
                         </div>
                         <div class="aside-rating">
                             <div class="aside-rating-col">
-                                <div class="aside-rating-title">Простота	получения</div>
+                                <div class="aside-rating-title">Алу қарапайымдылығы</div>
                                 <div	class="rating">
                                     <div class="rating__stars"	style="width:96%"></div>
                                     <div	class="rating__val">4.8</div>
@@ -203,9 +203,9 @@ YiiAsset::register($this);
                     </div>
                 </div>
                 <div class="mfo_card">
-                    <div class="mfo_card__title">Подать	заявку</div>
+                    <div class="mfo_card__title">Өтінім беру</div>
                     <div class="mfo_card__info">
-                        <div class="mfo_card__text">Не	смогли выбрать компанию?	Оставьте заявку и мы	подберем для Вас наиболее	выгодные займы!</div>
+                        <div class="mfo_card__text">Компанияны таңдай алмадыңыз ба? Өтінім қалдырыңыз, біз Сіз үшін мейлінше пайдалы қарыз түрлерін іріктеп таңдап береміз!</div>
                         <a href="#">
                             <div	class="mfo_card_button">Нақтырақ</div>
                         </a>
@@ -289,7 +289,7 @@ YiiAsset::register($this);
                 </div>
                 <div class="mfo_card">
                     <form	class="subscribtion_form">
-                        <div	class="aside-subscribe-text">Вы хотите первыми узнавать	<br> о специальных	предложениях <br> и акциях?</div>
+                        <div	class="aside-subscribe-text">Арнайы ұсыныстар мен акциялар <br>туралы бірінші білгіңіз <br> келе ме?</div>
                         <div	class="email_sidebar_container">
                             <div	class="subscribe-sidebar-item subscribe-sidebar-item--input-email">
                                 <input	class="subscribe-sidebar-item__control subscribe-sidebar-item__control--input-email"	placeholder="Email"	type="text"	name="email"	value=""></div>

@@ -5,7 +5,9 @@ use \frontend\widgets\GridCatalog;
 use \frontend\widgets\Rating;
 use \frontend\widgets\SaleCatalog;
 use \frontend\widgets\CalculatorWidget;
-$this->title = 'Калькулятор займа онлайн — расчет суммы и процентов по кредиту';
+if(isset($typeCredit->title_seo) and !empty($typeCredit->title_seo)) { $this->title = $typeCredit->title_seo; }
+if(isset($typeCredit->keywords) and !empty($typeCredit->keywords)) { $this->registerMetaTag(['name' => 'keywords','content' => $typeCredit->keywords]); }
+if(isset($typeCredit->description) and !empty($typeCredit->description)) { $this->registerMetaTag(['name' => 'description','content' => $typeCredit->description]); }
 ?>
 <section class="main-title">
     <h1 class="title"><?= $typeCredit->title ?></h1>

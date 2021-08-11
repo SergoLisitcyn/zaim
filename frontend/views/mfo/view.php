@@ -206,7 +206,7 @@ $this->title = $model->title;
                                                 <input type="text" name="surname" value="" size="40" placeholder="Фамилия">
                                             </div>
                                             <div class="feedback-form__group feedback-form__group--sm">
-                                                <input type="text" name="name" value="" size="40" placeholder="Имя">
+                                                <input type="text" name="name" value="" size="40" placeholder="Атыңыз">
                                             </div>
                                             <div class="feedback-form__group feedback-form__group--sm">
                                                 <input type="text" name="name" value="" size="40" placeholder="Отчество">
@@ -390,7 +390,7 @@ $this->title = $model->title;
                             </div>
                         </div>
                         <div class="mfo-about__video">
-                            <h3 class="mfo-about__video-title">Как получить деньги в <?= $model->mfo_name?></h3>
+                            <h3 class="mfo-about__video-title"><?= $model->mfo_name?> ақшаны қалай алуға болады</h3>
                             <div class="yt-video">
                                 <iframe width="805" height="460" src="<?= $model->video?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
@@ -405,19 +405,19 @@ $this->title = $model->title;
                         <span class="rr_date">13.08.2020</span>
                         <div class="content-reviews-rating">
                             <div class="rating">
-                                <span class="rating__caption">Простота	получения</span>
+                                <span class="rating__caption">Алу қарапайымдылығы</span>
                                 <div class="rating__stars rating__stars--sm" style="width:100%">
                                 </div>
                                 <div class="rating__val">5</div>
                             </div>
                             <div class="rating">
-                                <span class="rating__caption">Скорость	выдачи</span>
+                                <span class="rating__caption">Беру жылдамдығы</span>
                                 <div class="rating__stars rating__stars--sm" style="width:100%">
                                 </div>
                                 <div class="rating__val">5</div>
                             </div>
                             <div class="rating">
-                                <span class="rating__caption">Служба	поддержки</span>
+                                <span class="rating__caption">Қолдау көрсету қызметі</span>
                                 <div class="rating__stars rating__stars--sm" style="width:100%">
                                 </div>
                                 <div class="rating__val">5</div>
@@ -438,19 +438,19 @@ $this->title = $model->title;
                         <span class="rr_date">29.07.2020</span>
                         <div class="content-reviews-rating">
                             <div class="rating">
-                                <span class="rating__caption">Простота	получения</span>
+                                <span class="rating__caption">Алу қарапайымдылығы</span>
                                 <div class="rating__stars rating__stars--sm" style="width:100%">
                                 </div>
                                 <div class="rating__val">5</div>
                             </div>
                             <div class="rating">
-                                <span class="rating__caption">Скорость	выдачи</span>
+                                <span class="rating__caption">Беру жылдамдығы</span>
                                 <div class="rating__stars rating__stars--sm" style="width:100%">
                                 </div>
                                 <div class="rating__val">5</div>
                             </div>
                             <div class="rating">
-                                <span class="rating__caption">Служба	поддержки</span>
+                                <span class="rating__caption">Қолдау көрсету қызметі</span>
                                 <div class="rating__stars rating__stars--sm" style="width:61%">
                                 </div>
                                 <div class="rating__val">3</div>
@@ -470,7 +470,7 @@ $this->title = $model->title;
                         <div class="content-reviews-rating">
                             <div class="rating">
                                 <div class="rating-row">
-                                    <span class="rating__caption">Простота	получения</span>
+                                    <span class="rating__caption">Алу қарапайымдылығы</span>
                                     <div class="rr_stars_container">
                                         <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="1"></span>
                                         <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="2"></span>
@@ -517,7 +517,7 @@ $this->title = $model->title;
                         </div>
                         <div class="review-form__bottom">
                             <div class="review-form__input">
-                                <input type="text" placeholder="Имя" name="rName" value="">
+                                <input type="text" placeholder="Атыңыз" name="rName" value="">
                                 <span class="form-err"></span>
                             </div>
                             <div class="review-form__input">
@@ -536,7 +536,7 @@ $this->title = $model->title;
 
             <sidebar class="content-sidebar">
                 <div class="mfo_card">
-                    <div class="mfo_card__title">Рейтинг компании</div>
+                    <div class="mfo_card__title">Компанияның рейтингі</div>
                     <div class="mfo_card__info ">
                         <div class="mfo_card__rating">
                             <div class="rating">
@@ -557,7 +557,7 @@ $this->title = $model->title;
                         </div>
                         <div class="aside-rating">
                             <div class="aside-rating-col">
-                                <div class="aside-rating-title">Простота	получения</div>
+                                <div class="aside-rating-title">Алу қарапайымдылығы</div>
                                 <div	class="rating">
                                     <?php
                                     echo StarRating::widget([
@@ -651,9 +651,9 @@ $this->title = $model->title;
                     </div>
                 </div>
                 <div class="mfo_card">
-                    <div class="mfo_card__title">Подать	заявку</div>
+                    <div class="mfo_card__title">Өтінім беру</div>
                     <div class="mfo_card__info">
-                        <div class="mfo_card__text">Не	смогли выбрать компанию?	Оставьте заявку и мы	подберем для Вас наиболее	выгодные займы!</div>
+                        <div class="mfo_card__text">Компанияны таңдай алмадыңыз ба? Өтінім қалдырыңыз, біз Сіз үшін мейлінше пайдалы қарыз түрлерін іріктеп таңдап береміз!</div>
                         <a href="#">
                             <div	class="mfo_card_button">Нақтырақ</div>
                         </a>
@@ -737,7 +737,7 @@ $this->title = $model->title;
                 </div>
                 <div class="mfo_card">
                     <form	class="subscribtion_form">
-                        <div	class="aside-subscribe-text">Вы хотите первыми узнавать	<br> о специальных	предложениях <br> и акциях?</div>
+                        <div	class="aside-subscribe-text">Арнайы ұсыныстар мен акциялар <br>туралы бірінші білгіңіз <br> келе ме?</div>
                         <div	class="email_sidebar_container">
                             <div	class="subscribe-sidebar-item subscribe-sidebar-item--input-email">
                                 <input	class="subscribe-sidebar-item__control subscribe-sidebar-item__control--input-email"	placeholder="Email"	type="text"	name="email"	value=""></div>

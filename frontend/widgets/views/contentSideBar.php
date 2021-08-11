@@ -60,19 +60,19 @@
         </div>
     </div>
     <div class="subscribe_main">
-        <div class="text_main_subscribe_container">Оформить<br>заявку на займ</div>
+        <div class="text_main_subscribe_container">ҚАРЫЗҒА<br> ӨТІНІМ РЕСІМДЕУ</div>
         <div class="email_sidebar_container">
-            <div class="text_item_subscribe_container">Без потери времени!<br><br>Одна заявка во все МФО<br><br>Получите самое выгодное предложение</div>
+            <div class="text_item_subscribe_container">Уақыт жоғалтпайсыз!<br><br>Барлық МҚҰ бір өтінім<br><br>Ең тиімді ұсыныс алу</div>
             <div class="subscribe-sidebar-item subscribe-sidebar-item--btn-submit">
                 <form>
-                    <input class="subscribe-sidebar-item__btn subscribe-sidebar-item__btn--btn-submit" type="submit" value="ПОДАТЬ ЗАЯВКУ">
+                    <input class="subscribe-sidebar-item__btn subscribe-sidebar-item__btn--btn-submit" type="submit" value="Өтінім беру">
                 </form>
             </div>
         </div>
     </div>
     <div class="mfo_card">
         <form class="subscribtion_form subscribtion_form-second">
-            <div class="aside-subscribe-text">Вы хотите первыми узнавать	<br> о специальных	предложениях <br> и акциях?</div>
+            <div class="aside-subscribe-text">Арнайы ұсыныстар мен акциялар <br>туралы бірінші білгіңіз <br> келе ме?</div>
             <div class="email_sidebar_container">
                 <div class="subscribe-sidebar-item subscribe-sidebar-item--input-email">
                     <input class="subscribe-sidebar-item__control subscribe-sidebar-item__control--input-email" placeholder="Email" type="text" name="email" value=""></div>

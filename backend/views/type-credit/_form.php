@@ -52,6 +52,10 @@ use common\models\Filters;
         ]
     ])?>
 
+    <?= $form->field($model, 'title_seo')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'keywords')->textInput(['maxlength' => true]) ?>
+
     <?= $form->field($model, 'sort')->textInput() ?>
 
     <?= $form->field($model, 'status')->dropDownList([
