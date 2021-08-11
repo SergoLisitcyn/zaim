@@ -8,7 +8,7 @@ use kartik\rating\StarRating;
 /* @var $model common\models\Mfo */
 
 $this->title = $model->title;
-if(isset($typeCredit->description) and !empty($typeCredit->description)) { $this->registerMetaTag(['name' => 'description','content' => $typeCredit->description]); }
+if(isset($model->description) and !empty($model->description)) { $this->registerMetaTag(['name' => 'description','content' => $model->description]); }
 
 \yii\web\YiiAsset::register($this);
 ?>

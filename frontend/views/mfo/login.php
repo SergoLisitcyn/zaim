@@ -1,5 +1,7 @@
 <?php
 use \yii\helpers\Url;
+$this->title = $model->title_login;
+if(isset($model->title_description) and !empty($model->title_description)) { $this->registerMetaTag(['name' => 'description','content' => $model->title_description]); }
 ?>
 <section class="breadcrumbs plr">
     <div class="breadcrumbs-wrap limit-width">
