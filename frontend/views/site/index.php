@@ -39,7 +39,16 @@ $this->registerMetaTag(['name' => 'description',
                 <div class="thousand"><br>тыс.</div>
             </div>
         </div>
-        <span class="mfo_update_date">Обновлено в ноябре 2020</span>
+        <?php
+        $monthsList = [
+            "1"=>"қаңтарда","2"=>"ақпанда","3"=>"наурызда",
+            "4"=>"сәуірде","5"=>"мамырда", "6"=>"маусымда",
+            "7"=>"шілдеде","8"=>"тамызда","9"=>"қыркүйекте",
+            "10"=>"қазанда","11"=>"қарашада","12"=>"желтоқсанда"];
+
+        $month = $monthsList[date("n")];
+        ?>
+        <span class="mfo_update_date">Жаңартылған <?= $month.' '.date("Y") ?></span>
     </div>
 </section>
 

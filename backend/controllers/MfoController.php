@@ -141,6 +141,7 @@ class MfoController extends Controller
             }
 
         }
+        var_dump($model->errors);die;
 
         return $this->render('update', [
             'model' => $model,
