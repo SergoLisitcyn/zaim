@@ -131,17 +131,16 @@ class MfoController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        var_dump($model->errors);die;
         if ($model->load(Yii::$app->request->post())) {
             if($model->save()){
                 Yii::$app->session->addFlash('success', 'Мфо обновлен');
                 return $this->redirect(['update', 'id' => $model->id]);
             } else {
-                var_dump($model->errors);die;
+                echo $model->errors;die;
             }
-
+        } else {
+            echo $model->errors;die;
         }
-
 
         return $this->render('update', [
             'model' => $model,
