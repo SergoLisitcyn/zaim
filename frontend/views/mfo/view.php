@@ -8,6 +8,8 @@ use kartik\rating\StarRating;
 /* @var $model common\models\Mfo */
 
 $this->title = $model->title;
+if(isset($typeCredit->description) and !empty($typeCredit->description)) { $this->registerMetaTag(['name' => 'description','content' => $typeCredit->description]); }
+
 \yii\web\YiiAsset::register($this);
 ?>
 <section class="breadcrumbs plr">
@@ -17,7 +19,7 @@ $this->title = $model->title;
                 <a href="/">Онлайн қарыздар</a>
             </li>
             <li>
-                <?= $this->title ?>
+                <?= $model->mfo_name?>
             </li>
         </ul>
     </div>

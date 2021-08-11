@@ -252,6 +252,10 @@ use \yii\helpers\Url;
 
                         <?= $form->field($model, 'login_link')->textInput(['maxlength' => true])->hint('ссылка на личноый кабинет мфо(https://moneyman.kz/secure/registration?partner=smartzaimkz&utm_source=smartzaim&utm_medium=affiliate)') ?>
 
+                        <?= $form->field($model, 'title_login')->textInput(['maxlength' => true])->hint('Для СЕО на странице личный кабинет') ?>
+
+                        <?= $form->field($model, 'title_description')->textInput(['maxlength' => true])->hint('Для СЕО на странице личный кабинет') ?>
+
                         <?= $form->field($model, 'login_content')->widget(Widget::className(), [
                             'settings' => [
                                 'lang' => 'ru',

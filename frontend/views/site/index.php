@@ -5,7 +5,12 @@ use \frontend\widgets\GridCatalog;
 use \frontend\widgets\Rating;
 use \frontend\widgets\SaleCatalog;
 use \frontend\widgets\CalculatorWidget;
-$this->title = 'My Yii Application';
+$this->title = 'Қазақстандағы онлайн-қарыздар: интернет арқылы жедел микроқарыз алу — smartzaim.kz';
+$this->registerMetaTag(['name' => 'description',
+    'content' => '➤Қазақстанда онлайн-қарыздарды қалай жылдам алуға болатынын біліп
+     алыңыз ✔Кредит берудің ең пайдалы шарттары бар қаржылық компанияны таңдаңыз және нысанды толтырыңыз.
+      Өтінімді қарауға небары 10-15 минут уақыт кетедіツ']);
+
 ?>
 <section class="main-title">
     <h1 class="title">Қазақстандағы онлайн қарыздар</h1>

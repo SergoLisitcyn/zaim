@@ -6,6 +6,8 @@ use \frontend\widgets\Rating;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Акциялар - smartzaim.kz';
+$this->registerMetaTag(['name' => 'description',
+    'content' => '➤Акциялар. Сілтемеге жазылыңыз акциялар мен арнайы ұсыныстар туралы алғашқылардың бірі болып біліңізツ']);
 ?>
 <section class="breadcrumbs plr">
     <div class="breadcrumbs-wrap limit-width">

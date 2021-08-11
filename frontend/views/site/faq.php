@@ -1,3 +1,7 @@
+<?php
+$this->title = 'Жиі қойылатын сұрақтар — smartzaim.kz';
+$this->registerMetaTag(['name' => 'description','content' => '✔Жиі қойылатын сұрақтар. МҚҰ не үшін жүгіну қажет? Онлайн-қарыз дегеніміз не? Оны ресімдеу үшін не қажет?']);
+?>
 <script type='text/javascript'>jQuery(document).ready(function() {
         jQuery('h3.faq-list__title').click(function() {
             if (jQuery(this).hasClass('active')) {
