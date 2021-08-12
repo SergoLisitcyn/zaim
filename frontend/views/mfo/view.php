@@ -269,7 +269,7 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                             </div>
                         </div>
                         <div class="mfo-offer-recom">
-                            <h3 class="mfo-offer-recom-title">Похожие	предложения</h3>
+                            <h3 class="mfo-offer-recom-title">Ұқсас ұсыныстар</h3>
                             <div class="mfo-offer-recom-container">
                                 <div class="firstloan">
                                     <div class="firstloan-col">
@@ -620,15 +620,15 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                     <div class="mfo_card_info mfo_card_info_col">
                         <div	class="mfo_card_info_inner">
                             <div	class="mfo_card_info_time">
-                                <div	class="mfo_card_info_time_label">На срок:</div>
+                                <div	class="mfo_card_info_time_label">Мерзімге:</div>
                                 <div	class="mfo_card_info_time_data"><?= $model->srok?></div>
                             </div>
                             <div	class="mfo_card_info_sum">
-                                <div	class="mfo_card_info_sum_label">Сумма (тнг):</div>
+                                <div	class="mfo_card_info_sum_label">Сомасы (тнг):</div>
                                 <div	class="mfo_card_info_sum_data"><?= $model->sum?></div>
                             </div>
                             <div	class="mfo_card_info_rate">
-                                <div	class="mfo_card_info_rate_label">Ставка:</div>
+                                <div	class="mfo_card_info_rate_label">Мөлшерлемесі:</div>
                                 <div	class="mfo_card_info_rate_data"><?= $model->stavka?></div>
                             </div>
                             <div	class="mfo_card_info_accept">
@@ -636,7 +636,7 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                                 <div	class="mfo_card_info_accept_data"><?= $model->rasmotrenie?></div>
                             </div>
                             <div	class="mfo_card_info_ways">
-                                <div	class="mfo_card_info_ways_label">Получить:</div>
+                                <div	class="mfo_card_info_ways_label">Алу:</div>
                                 <div	class="mfo_card_info_ways_data">
                                     <noscript>
                                         <img style="height: 20px;"	src="/img/2016/08/all.png">

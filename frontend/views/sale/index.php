@@ -86,7 +86,7 @@ $this->registerMetaTag(['name' => 'description',
                         <a href="#" data-mfo="4slovo" data-title="Честное слово – микрокредит онлайн в Казахстане">Салыстыру</a>
                     </div>
                     <div class="mfo_card_info_link">
-                        <a href="#">Подробнее о Честном слове</a>
+                        <a href="#">Честное слово туралы нақтырақ</a>
                     </div>
                     <div class="mfo_card_info">
                         <div class="mfo_card_info_inner">

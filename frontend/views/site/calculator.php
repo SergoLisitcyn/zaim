@@ -46,24 +46,24 @@ $this->title = 'Калькулятор займа онлайн — расчет 
         <div class="faq__content">
             <div class="faq__row">
                 <div class="faq__col">
-                    <a href="faq.html#choose_mfo">Как выбрать МФО?</a>
+                    <a href="faq.html#choose_mfo">МҚҰ қалай таңдауға болады?</a>
                 </div>
                 <div class="faq__col">
-                    <a href="faq.html#how_apply">Как подать заявку?</a>
+                    <a href="faq.html#how_apply">Өтінімді қалай беруге болады?</a>
                 </div>
                 <div class="faq__col">
-                    <a href="faq.html#where_money">Куда зачисляются деньги?</a>
+                    <a href="faq.html#where_money">Ақша қайда аударылады?</a>
                 </div>
             </div>
             <div class="faq__row">
                 <div class="faq__col">
-                    <a href="faq.html#when_pay">Когда надо платить?</a>
+                    <a href="faq.html#when_pay">Қашан төлеу керек?</a>
                 </div>
                 <div class="faq__col">
-                    <a href="faq.html#loan_online">Что такое займ онлайн?</a>
+                    <a href="faq.html#loan_online">Онлайн қарыз дегеніміз не?</a>
                 </div>
                 <div class="faq__col">
-                    <a href="faq.html#how_much">Сколько стоит продление?</a>
+                    <a href="faq.html#how_much">Ұзарту қанша тұрады?</a>
                 </div>
             </div>
         </div>

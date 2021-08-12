@@ -57,9 +57,9 @@ $this->title = $model->name;
                                     </noscript>
                                 </a>
                                 <?= $model->content ?>
-                                <a href="#" class="articles_button">Участвовать в	акции</a>
+                                <a href="#" class="articles_button">Акцияға қатысу</a>
                                 <div class="aktsii-article__box">
-                                    <h3>Похожие предложения</h3>
+                                    <h3>Ұқсас ұсыныстар</h3>
                                     <div class="aktsii-article__box-inner">
                                         <div class="aktsii-article__box-offers">
                                             <a href="#" title="Оформите микрокредит в Creditplus.kz и получите подарок!">
@@ -91,21 +91,6 @@ $this->title = $model->name;
                                     </div>
                                     <div class="aktsii-article__share">
                                         <a href="#" class="articles_button">Ақшаны алу</a>
-                                        <div class="aktsii-article__share-buttons">
-                                            <p class="aktsii-article__share-title">Поделиться в соц.сетях:</p>
-                                            <div class="aktsii-article__share-links">
-                                                <script type="text/javascript">(function() {
-                                                        if (window.pluso)if (typeof window.pluso.start == "function") return;
-                                                        if (window.ifpluso==undefined) { window.ifpluso = 1;
-                                                            var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
-                                                            s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
-                                                            s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
-                                                            var h=d[g]('body')[0];
-                                                            h.appendChild(s);
-                                                        }})();</script>
-                                                <div class="pluso" data-background="transparent" data-options="big,round,line,horizontal,nocounter,theme=08" data-services="facebook,vkontakte,google"></div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -144,15 +129,15 @@ $this->title = $model->name;
                                 </div>
                             </div>
                             <div class="mfo_card_info_time">
-                                <div class="mfo_card_info_time_label">На срок:</div>
+                                <div class="mfo_card_info_time_label">Мерзімге:</div>
                                 <div class="mfo_card_info_time_data"><?= $mfo->srok ?></div>
                             </div>
                             <div class="mfo_card_info_sum">
-                                <div class="mfo_card_info_sum_label"> Сумма (тнг):</div>
+                                <div class="mfo_card_info_sum_label"> Сомасы (тнг):</div>
                                 <div class="mfo_card_info_sum_data"><?= $mfo->sum ?></div>
                             </div>
                             <div class="mfo_card_info_rate">
-                                <div class="mfo_card_info_rate_label">Ставка:</div>
+                                <div class="mfo_card_info_rate_label">Мөлшерлемесі:</div>
                                 <div class="mfo_card_info_rate_data"><?= $mfo->stavka ?></div>
                             </div>
                             <div class="mfo_card_info_approval">
@@ -160,11 +145,11 @@ $this->title = $model->name;
                                 <div class="mfo_card_info_approval_data"><?= $mfo->odobrenie ?> %</div>
                             </div>
                             <div class="mfo_card_info_accept">
-                                <div class="mfo_card_info_accept_label">Рассмотрение:</div>
+                                <div class="mfo_card_info_accept_label">Қарау:</div>
                                 <div class="mfo_card_info_accept_data"><?= $mfo->rasmotrenie ?> </div>
                             </div>
                             <div class="mfo_card_info_ways">
-                                <div class="mfo_card_info_ways_label">Получить:</div>
+                                <div class="mfo_card_info_ways_label">Алу:</div>
                                 <div class="mfo_card_info_ways_data">
                                     <noscript>
                                         <img src="img/2016/08/all.png" alt="all">

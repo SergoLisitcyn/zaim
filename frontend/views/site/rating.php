@@ -69,7 +69,7 @@ $this->title = 'Рейтинг лучших МФО — smartzaim.kz';
                         <div class="offer-col"><?= $item->max_sum_calc ?></div>
                     </div>
                     <div class="offer-row">
-                        <div class="offer-row-col">Ставка<br>
+                        <div class="offer-row-col">Мөлшерлемесі<br>
                             <div class="offer-row-col-weight">в день</div>
                         </div>
                         <div class="offer-col"><?= $item->stavka ?></div>
@@ -79,7 +79,7 @@ $this->title = 'Рейтинг лучших МФО — smartzaim.kz';
                         <div class="offer-col"><?= $item->odobrenie ?> %</div>
                     </div>
                     <div class="offer-row">
-                        <div class="offer-row-col">Рассмотрение/<br>
+                        <div class="offer-row-col">Қарау/<br>
                             <div class="offer-row-col-weight">минут</div>
                         </div>
                         <div class="offer-col"><?= $item->rasmotrenie ?></div>

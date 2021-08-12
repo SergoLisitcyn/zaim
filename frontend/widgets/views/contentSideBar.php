@@ -12,7 +12,7 @@
             <a href="#" data-mfo="4slovo" data-title="Честное слово – микрокредит онлайн в Казахстане">Салыстыру</a>
         </div>
         <div class="mfo_card_info_link">
-            <a href="#">Подробнее о Честном слове</a>
+            <a href="#">Честное слово туралы нақтыра</a>
         </div>
         <div class="mfo_card_info">
             <div class="mfo_card_info_inner">
@@ -25,15 +25,15 @@
                     </div>
                 </div>
                 <div class="mfo_card_info_time">
-                    <div class="mfo_card_info_time_label">На срок:</div>
+                    <div class="mfo_card_info_time_label">Мерзімге:</div>
                     <div class="mfo_card_info_time_data">5 – 45 дней</div>
                 </div>
                 <div class="mfo_card_info_sum">
-                    <div class="mfo_card_info_sum_label">Сумма (тнг):</div>
+                    <div class="mfo_card_info_sum_label">Сомасы (тнг):</div>
                     <div class="mfo_card_info_sum_data">5 000 – 138 000</div>
                 </div>
                 <div class="mfo_card_info_rate">
-                    <div class="mfo_card_info_rate_label">Ставка:</div>
+                    <div class="mfo_card_info_rate_label">Мөлшерлемесі:</div>
                     <div class="mfo_card_info_rate_data">от 0,67% в день</div>
                 </div>
                 <div class="mfo_card_info_approval">
@@ -41,11 +41,11 @@
                     <div class="mfo_card_info_approval_data">81%</div>
                 </div>
                 <div class="mfo_card_info_accept">
-                    <div class="mfo_card_info_accept_label">Рассмотрение:</div>
+                    <div class="mfo_card_info_accept_label">Қарау:</div>
                     <div class="mfo_card_info_accept_data">5 минут</div>
                 </div>
                 <div class="mfo_card_info_ways">
-                    <div class="mfo_card_info_ways_label">Получить:</div>
+                    <div class="mfo_card_info_ways_label">Алу:</div>
                     <div class="mfo_card_info_ways_data">
                         <noscript>
                             <img src="img/2016/08/all.png" alt="all">
