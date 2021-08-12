@@ -1,6 +1,6 @@
 <section class="aktsii plr">
     <div class="aktsii-wrap limit-width">
-        <h2 class="aktsii__title">Акции</h2>
+        <h2 class="aktsii__title">Акциялар</h2>
         <div class="aktsii-list__container">
             <?php foreach ($sales as $sale) : ?>
             <div class="aktsii-list__item">

@@ -67,6 +67,9 @@ if($url == '/'){
                             </div>
                         </div>
                         <div class="header-cab">
+
+                            <div style="display: inline-block;vertical-align: top;text-align: center;line-height: 28px;"><a href="">RU</a></div>
+                            <div style="display: inline-block;vertical-align: top;text-align: center;line-height: 28px;">KZ</div>
                             <a href="#" class="header-cab__btn header-cab__btn--outline">Кіру</a>
                             <a href="#" class="header-cab__btn desktop-visible">Тіркелу</a>
                         </div>
@@ -183,7 +186,7 @@ if($url == '/'){
 
     <main>
         <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            'links' => $this->params['breadcrumbs'] ?? [],
         ]) ?>
         <?= $content ?>
     </main>

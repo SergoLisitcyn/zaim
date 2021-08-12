@@ -8,57 +8,54 @@ $this->title = 'Contact';
             <div class="content-box">
                 <div class="content-info">
                     <div class="content-main-info__content">
-                        <h1>Контакты</h1>
+                        <h1>Байланыстар</h1>
                         <p class="content-main-info__text">
-                            Smartzaim.kz – это сервис, помогающий заемщикам выбрать оптимальные условия кредита и подобрать МФО. На одной странице собраны популярные микрофинансовые организации Казахстана, где наглядно сравниваются параметры сервисов по рейтингу, сроку кредитования, ставке, времени рассмотрения и способам получения. Это избавляет от необходимости переходить с сайта на сайт в поисках подходящего кредита или акции.
-                        </p>
+                            Smartzaim.kz – бұл қарыз алушыларға кредиттің оңтайлы шарттарын таңдауға және МҚҰ таңдауға көмектесетін сервис. Бір бетте Қазақстанның танымал микроқаржылық ұйымдары жинақталған, онда рейтинг, кредит беру мерзімі, мөлшерлеме, қарау уақыты және алу тәсілдері бойынша сервистердің параметрлері көрнекі түрде салыстырылады. Бұл қажетті кредитті немесе акцияны  іздеп сайттан сайтқа өту қажеттілігінен құтқарады.                        </p>
                         <p class="content-main-info__text">
-                            Если с выбором возникли проблемы, то сотрудники портала Smartzaim.kz готовы помочь. Мы профессионалы в сфере микрокредитования с большим опытом работы, которые знают о кредитах все и готовы этим поделиться.
-                        </p>
+                            Егер таңдау қиындық тудыратын болса, Smartzaim.kz порталының қызметкерлері көмектесуге дайын. Біз жұмыс тәжірибесі үлкен, кредиттер туралы бәрін білетін және онымен бөлісуге дайын микрокредит беру саласындағы кәсіби мамандармыз.                        </p>
                         <p class="content-main-info__text">
-                            Можно задать любой вопрос об МФО: как выбрать кредитную организацию, где проходят выгодные акции, как выдаются деньги, что делать заемщику с плохой кредитной историей, куда обратиться за деньгами, если нет постоянной прописки или официальной работы и многие другие. Для этого необходимо заполнить форму обратной связи.
-                        </p>
+                            МҚҰ туралы кез-келген: тиімді акциялар өтетін кредиттік қйымды қалай таңдауға болады, ақша қалай беріледі, нашар несие тарихы бар қарыз алушыға не істеу керек, тұрақты тіркелімі немесе ресми жұмысы болмаса, ақшаны қайдан алуға болады және тағы басқа сұрақтар қоюға болады. Ол үшін кері байланыс нысанын толтыру қажет.                        </p>
                         <p class="content-main-info__text">
-                            Предложения о сотрудничестве, размещении рекламы ждем по адресу:
+                            Бірлесіп жұмыс істеу, жарнама орналастыру туралы ұсыныстарды мына мекенжай бойынша күтеміз:
                             <a href="#" class="email">info@creditplus.kz</a>
                         </p>
                         <p class="content-main-info__text">
-                            Телефон:
+                            Телефоны:
                             <a class="phone" href="tel:+77172727920">+7	(717) 272-79-20</a>
                         </p>
                         <p class="content-main-info__text">
-                            Адрес: Тимирязева, 42 к10, Бостандыкский район, Алматы
+                            Мекенжайы: Алматы қаласы, Бостандық ауданы, Тимирязев көшесі,42. к10
                         </p>
                         <p class="content-main-info__text">
-                            Чтобы задать вопрос, воспользуйтесь формой ниже. Ответим в ближайшее время.
+                            Сұрақ қою үшін төмендегі нысанды қолданыңыз. Жақын арада жауап берейік.
                         </p>
                     </div>
                     <div class="article-contacts">
                         <div class="article-contacts__inner">
                             <div class="feedback-form article-contacts__form">
-                                <div class="feedback-form__title">Форма обратной связи</div>
+                                <div class="feedback-form__title">Кері байланыс нысаны</div>
                                 <form>
                                     <div class="feedback-form__fields">
                                         <div class="feedback-form__group feedback-form__group--sm">
                                             <select name="question">
-                                                <option disabled="" selected="">Выберите	категорию	вопроса</option>
-                                                <option>Получение займа</option>
-                                                <option>Погашение займа</option>
-                                                <option>Предложение	сотрудничества</option>
-                                                <option>Другие вопросы</option>
+                                                <option disabled="" selected="">Сұрақ санатын таңдаңыз</option>
+                                                <option>Қарызды алу</option>
+                                                <option>Қарызды өтеу</option>
+                                                <option>Ынтымақтастық ұсынысы</option>
+                                                <option>Өзге сұрақтар</option>
                                             </select>
                                         </div>
                                         <div class="feedback-form__group feedback-form__group--sm">
-                                            <input type="text" name="surname" value="" size="40" placeholder="Фамилия">
+                                            <input type="text" name="surname" value="" size="40" placeholder="Тегі">
                                         </div>
                                         <div class="feedback-form__group feedback-form__group--sm">
                                             <input type="text" name="name" value="" size="40" placeholder="Атыңыз">
                                         </div>
                                         <div class="feedback-form__group feedback-form__group--sm">
-                                            <input type="text" name="name" value="" size="40" placeholder="Отчество">
+                                            <input type="text" name="name" value="" size="40" placeholder="Әкесінің  аты">
                                             <div class="control-check-muted">
-                                                <input type="checkbox" name="no-patronymic[]" value="У меня нет отчества">
-                                                <span>У меня нет	отчества</span>
+                                                <input type="checkbox" name="no-patronymic[]" value="Менің әкемнің аты жоқ">
+                                                <span>Менің әкемнің аты жоқ</span>
                                             </div>
                                         </div>
                                         <div class="feedback-form__group feedback-form__group--sm">
@@ -68,14 +65,14 @@ $this->title = 'Contact';
                                             <input type="tel" name="mobile" value="" size="40" class="tel" placeholder="+7 (___) ___-__-__">
                                         </div>
                                         <div class="feedback-form__group feedback-form__group--sm">
-                                            <input type="text" name="subject" value="" size="40" placeholder="Тема обращения">
+                                            <input type="text" name="subject" value="" size="40" placeholder="Өтініш тақырыбы">
                                         </div>
                                         <div class="feedback-form__group">
-                                            <textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Пожалуйста, опишите Ваш вопрос максимально подробно"></textarea>
+                                            <textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Сіз өз сұрағыңызды мүмкіндігінше егжей-тегжейлі сипаттаңыз"></textarea>
                                         </div>
                                         <div class="feedback-form__group feedback-form__group--submit">
-                                            <input type="submit" value="Отправить" class="wpcf7-form-control wpcf7-submit"><br><br>
-                                            <span class="i_agree">Нажимая кнопку «Отправить», Вы даёте согласие на <a class="i_agree-link" href="#" target="_blank">обработку персональных данных</a> и получение рекламных сообщений в SMS и Email.</span>
+                                            <input type="submit" value="Жіберу" class="wpcf7-form-control wpcf7-submit"><br><br>
+                                            <span class="i_agree">«Жөнелту» батырмасын баса отырып, сіз <a class="i_agree-link" href="#" target="_blank">дербес деректерді өңдеуге</a> және SMS және Email арқылы жарнамалық хабарламалар алуға келісім бересіз.</span>
                                         </div>
                                     </div>
                                 </form>

@@ -17,7 +17,7 @@ $this->title = $model->name;
                 <a href="/">Онлайн қарыздар</a>
             </li>
             <li>
-                <a href="#">Акции</a>
+                <a href="#">Акциялар</a>
             </li>
             <li>
                 Первый микрокредит в Dengiclick без переплат!

@@ -230,7 +230,7 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                                                 <textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Пожалуйста, опишите Ваш вопрос максимально подробно"></textarea>
                                             </div>
                                             <div class="feedback-form__group feedback-form__group--submit">
-                                                <input type="submit" value="Отправить" class="wpcf7-form-control wpcf7-submit"><br><br>
+                                                <input type="submit" value="Жіберу" class="wpcf7-form-control wpcf7-submit"><br><br>
                                                 <span class="i_agree">Нажимая кнопку «Отправить», Вы даёте согласие на <a class="i_agree-link" href="#" target="_blank">обработку персональных данных</a> и получение рекламных сообщений в SMS и Email.</span>
                                             </div>
                                         </div>
