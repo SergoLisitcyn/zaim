@@ -20,7 +20,7 @@ $this->title = $model->name;
                 <a href="#">Акциялар</a>
             </li>
             <li>
-                Первый микрокредит в Dengiclick без переплат!
+                <?= $model->name ?>
             </li>
         </ul>
     </div>
@@ -35,7 +35,7 @@ $this->title = $model->name;
                 <div class="content-info">
                     <div class="content-main-info">
                         <div class="content-main-info__item">
-                            <h1><?= $model->name?></h1>
+                            <h1><?= $model->name ?></h1>
                             <div class="aktsii-article__dates">
                                 <i></i><span><?= date("d.m.Y", strtotime($model->srok_ot)) ?> - <?= date("d.m.Y", strtotime($model->srok_do)) ?></span>
                             </div>
@@ -50,14 +50,14 @@ $this->title = $model->name;
                                 </div>
                             </div>
                             <div class="aktsii-article__content">
-                                <a href="#" class="aktsii-article__img">
+                                <a href="<?= $model->partner_link?>"  target="_blank" class="aktsii-article__img">
                                     <img class="lazy lazy-loaded" src="<?= $model->image?>" data-lazy-type="image" data-lazy-src="<?= $model->image?>" alt="Акция Dengiclick" width="600" height="270">
                                     <noscript>
                                         <img class="size-medium wp-image-374 aligncenter" src="<?= $model->image?>" alt="Акция Dengiclick" width="600" height="270" />
                                     </noscript>
                                 </a>
                                 <?= $model->content ?>
-                                <a href="#" class="articles_button">Акцияға қатысу</a>
+                                <a href="<?= $model->partner_link?>" target="_blank" class="articles_button">Акцияға қатысу</a>
                                 <div class="aktsii-article__box">
                                     <h3>Ұқсас ұсыныстар</h3>
                                     <div class="aktsii-article__box-inner">
@@ -86,7 +86,7 @@ $this->title = $model->name;
                                             </a>
                                         </div>
                                         <div class="aktsii-article__btn">
-                                            <a href="aktsii.html">Барлық акциялар</a>
+                                            <a href="#">Барлық акциялар</a>
                                         </div>
                                     </div>
                                     <div class="aktsii-article__share">

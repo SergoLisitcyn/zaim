@@ -17,6 +17,7 @@ use yii\web\UploadedFile;
  * @property string|null $srok_do
  * @property string $url
  * @property string $image
+ * @property string $partner_link
  * @property int|null $sort
  * @property int|null $status
  */
@@ -65,7 +66,7 @@ class Sale extends \yii\db\ActiveRecord
         return [
             [['mfo_id', 'sort', 'status'], 'integer'],
             [['name', 'url'], 'required'],
-            [['content','image'], 'string'],
+            [['content','image','partner_link'], 'string'],
             [['srok_ot', 'srok_do'], 'safe'],
             [['name', 'url'], 'string', 'max' => 255],
             [['file'], 'file', 'extensions' => 'png, jpg'],
@@ -91,6 +92,7 @@ class Sale extends \yii\db\ActiveRecord
             'image' => 'Изображение',
             'file' => 'Картинка',
             'mainfile' => 'Главная картинка',
+            'partner_link' => 'Партнерская ссылка',
         ];
     }
 
