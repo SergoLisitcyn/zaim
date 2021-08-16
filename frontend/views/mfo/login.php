@@ -131,8 +131,8 @@ if(isset($model->title_description) and !empty($model->title_description)) { $th
                             </div>
                         </div>
                         <noindex>
-                            <a href="#">
-                                <div	class="mfo_card_button">Ақшаны алу</div>
+                            <a href="<?= $model->link_offer ?>">
+                                <div class="mfo_card_button">Ақшаны алу</div>
                             </a>
                         </noindex>
                     </div>

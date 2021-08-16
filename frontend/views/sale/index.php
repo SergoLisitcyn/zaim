@@ -48,12 +48,16 @@ $this->registerMetaTag(['name' => 'description',
                                     <div class="aktsii-item">
                                         <a href="<?= \yii\helpers\Url::toRoute(['sale/list', 'url' => $sale->url]) ?>" class="aktsii-item__link">
                                             <div class="aktsii-item__img-wrap">
-                                                <img src="<?= $sale->image ?>" data-lazy-type="image" data-lazy-src="<?= $sale->image ?>" alt="" class="lazy aktsii-item__img lazy-loaded">
+                                                <a href="<?= \yii\helpers\Url::toRoute(['sale/list', 'url' => $sale->url]) ?>">
+                                                    <img src="<?= $sale->image ?>" data-lazy-type="image" data-lazy-src="<?= $sale->image ?>" alt="" class="lazy aktsii-item__img lazy-loaded">
+                                                </a>
                                                 <noscript>
                                                     <img src="<?= $sale->srok_ot ?>" alt="" class="aktsii-item__img">
                                                 </noscript>
                                             </div>
+                                            <a href="<?= \yii\helpers\Url::toRoute(['sale/list', 'url' => $sale->url]) ?>">
                                             <h3 class="aktsii-item__title"><?= $sale->name ?></h3>
+                                            </a>
                                         </a>
                                         <div class="aktsii-item__date">с <?= date('m.d.Y',strtotime($sale->srok_ot)) ?> по <?= date('m.d.Y',strtotime($sale->srok_do)) ?></div>
                                         <a href="<?= \yii\helpers\Url::toRoute(['sale/list', 'url' => $sale->url]) ?>" class="aktsii-item__more">Подробнее</a>

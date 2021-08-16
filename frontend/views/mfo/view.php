@@ -149,7 +149,7 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                                     </div>
                                 </div>
                                 <a class="mfo-footer mfo-show-rule" href="#" >Бар клиенттерге арналған шарттарды көрсету</a>
-                                <a class="mfo-footer-item mfo-card-btn" href="#" >Ақшаны алу</a>
+                                <a class="mfo-footer-item mfo-card-btn" href="<?= $model->link_offer ?>" >Ақшаны алу</a>
                             </div>
                             <div class="conexist">
                                 <div class="firstloan">
@@ -187,7 +187,7 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                         </div>
                         <div class="content-text">
                             <?= $model->content ?>
-                            <a href="#" class="mfo-money-btn content-text-button">Ақшаны алу</a>
+                            <a href="<?= $model->link_offer ?>" class="mfo-money-btn content-text-button">Ақшаны алу</a>
                         </div>
                         <div class="article-contacts">
                             <div class="article-contacts__inner">
@@ -646,7 +646,7 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                             </div>
                         </div>
                         <noindex>
-                            <a href="#">
+                            <a href="<?= $model->link_offer ?>">
                                 <div	class="mfo_card_button">Ақшаны алу</div>
                             </a>
                         </noindex>

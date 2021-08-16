@@ -41,34 +41,34 @@ $this->title = 'Калькулятор займа онлайн — расчет 
 <section class="faq plr">
     <div class="faq-wrap limit-width">
         <div class="faq__title">
-            <a class="faq__link" href="faq.html">Часто задаваемые вопросы</a>
+            <a class="faq__link" href="faq">Жиі қойылатын сұрақтар</a>
         </div>
         <div class="faq__content">
             <div class="faq__row">
                 <div class="faq__col">
-                    <a href="faq.html#choose_mfo">МҚҰ қалай таңдауға болады?</a>
+                    <a href="faq#choose_mfo">МҚҰ қалай таңдауға болады?</a>
                 </div>
                 <div class="faq__col">
-                    <a href="faq.html#how_apply">Өтінімді қалай беруге болады?</a>
+                    <a href="faq#how_apply">Өтінімді қалай беруге болады?</a>
                 </div>
                 <div class="faq__col">
-                    <a href="faq.html#where_money">Ақша қайда аударылады?</a>
+                    <a href="faq#where_money">Ақша қайда аударылады?</a>
                 </div>
             </div>
             <div class="faq__row">
                 <div class="faq__col">
-                    <a href="faq.html#when_pay">Қашан төлеу керек?</a>
+                    <a href="faq#when_pay">Қашан төлеу керек?</a>
                 </div>
                 <div class="faq__col">
-                    <a href="faq.html#loan_online">Онлайн қарыз дегеніміз не?</a>
+                    <a href="faq#loan_online">Онлайн қарыз дегеніміз не?</a>
                 </div>
                 <div class="faq__col">
-                    <a href="faq.html#how_much">Ұзарту қанша тұрады?</a>
+                    <a href="faq#how_much">Ұзарту қанша тұрады?</a>
                 </div>
             </div>
         </div>
         <div class="faq__btn">
-            <a href="faq.html">Читать все</a>
+            <a href="faq">Нақтырақ</a>
         </div>
     </div>
 </section>
