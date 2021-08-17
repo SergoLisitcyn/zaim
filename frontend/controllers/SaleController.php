@@ -3,9 +3,11 @@
 namespace frontend\controllers;
 
 use common\models\Mfo;
+use common\models\Reviews;
 use Yii;
 use common\models\Sale;
 use yii\data\ActiveDataProvider;
+use yii\db\Expression;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -46,10 +48,17 @@ class SaleController extends Controller
     public function actionList($url = null)
     {
         $sales = Sale::find()->where(['status' => 1, 'url' => $url])->one();
+        $salesRandom = Sale::find()
+            ->where(['status' => 1])
+            ->andWhere(['!=','id', $sales->id])
+            ->orderBy(new Expression('rand()'))
+            ->limit(3)
+            ->all();
         $mfo = Mfo::find()->where(['id' => $sales->mfo_id])->one();
         return $this->render('view', [
             'model' => $sales,
             'mfo' => $mfo,
+            'salesRandom' => $salesRandom,
         ]);
 
     }

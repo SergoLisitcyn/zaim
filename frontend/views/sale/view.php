@@ -62,28 +62,15 @@ $this->title = $model->name;
                                     <h3>Ұқсас ұсыныстар</h3>
                                     <div class="aktsii-article__box-inner">
                                         <div class="aktsii-article__box-offers">
-                                            <a href="#" title="Оформите микрокредит в Creditplus.kz и получите подарок!">
+                                            <?php foreach ($salesRandom as $random) : ?>
+                                            <a href="<?= \yii\helpers\Url::toRoute(['sale/list', 'url' => $random->url]) ?>" title="<?= $random->name?>">
                                                 <noscript>
-                                                    <img src="<?= $model->image?>" alt="акции" />
+                                                    <img src="<?= $random->image?>" alt="акции" />
                                                 </noscript>
-                                                <img class=" lazyloaded" src="<?= $model->image?>" data-src="<?= $model->image?>" alt="акции">
-                                                <span> Оформите микрокредит в
-															Creditplus.kz и получите подарок! </span>
+                                                <img class=" lazyloaded" src="<?= $random->image?>" data-src="<?= $random->image?>" alt="акции">
+                                                <span> <?= $random->name?> </span>
                                             </a>
-                                            <a href="#" title="Первый микрокредит в Zaimer.kz без переплат!">
-                                                <noscript>
-                                                    <img src="img/2020/10/zaimer-pervy-mikrokredt-bez-pereplat-150x150.jpg"	alt="акции" />
-                                                </noscript>
-                                                <img class=" lazyloaded" src="img/2020/10/zaimer-pervy-mikrokredt-bez-pereplat-150x150.jpg" data-src="img/2020/10/zaimer-pervy-mikrokredt-bez-pereplat-150x150.jpg" alt="акции">
-                                                <span> Первый микрокредит в	Zaimer.kz без переплат! </span>
-                                            </a>
-                                            <a href="#" title="Получи деньги в Tengo.kz и выиграй квартиру или технику для дома!">
-                                                <noscript>
-                                                    <img	src="img/2020/10/vyigraj-kvartiru-ili-tehniku-dlya-doma-150x150.jpg"	alt="акции" />
-                                                </noscript>
-                                                <img class=" lazyloaded" src="img/2020/10/vyigraj-kvartiru-ili-tehniku-dlya-doma-150x150.jpg" data-src="img/2020/10/vyigraj-kvartiru-ili-tehniku-dlya-doma-150x150.jpg" alt="акции">
-                                                <span> Получи деньги в Tengo.kz и	выиграй квартиру или технику для дома! </span>
-                                            </a>
+                                            <?php endforeach; ?>
                                         </div>
                                         <div class="aktsii-article__btn">
                                             <a href="#">Барлық акциялар</a>

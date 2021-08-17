@@ -4495,3 +4495,7 @@ p {
     color: #fda729 !important;
     text-align: center !important;
 }
+
+.aktsii-article__content li a {
+    display: initial;
+}
