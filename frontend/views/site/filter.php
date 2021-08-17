@@ -11,9 +11,8 @@ if(isset($typeCredit->description) and !empty($typeCredit->description)) { $this
 ?>
 <section class="main-title">
     <h1 class="title"><?= $typeCredit->title ?></h1>
-    <h2 class="subtitle">Подберите наиболее выгодное предложение бесплатно!</h2>
-    <h3 class="descr">Для получения займа без отказа заполните заявку в максимальное количество кредитных организаций:
-    </h3>
+    <h2 class="subtitle">Неғұрлым тиімді ұсынысты тегін таңдаңыз!</h2>
+    <h3 class="descr">Онлайн қарыз алу үшін, кредиттік ұйымдарға берілетін өтінім санын барынша көбірек толтырыңыз:</h3>
     <img class="main-title__img" src="img/uncode-child/bg-sm.png" alt="">
 </section>
 
