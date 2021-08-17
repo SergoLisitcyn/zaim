@@ -3470,8 +3470,7 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
     font-size: 16px;
     color: #000;
     font-weight: 300;
-    line-height: 18px;
-    font-family: 'Open Sans Light';
+    line-height: 1.65;
 }
 
 .content-reviews-plus {
