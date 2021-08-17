@@ -1,7 +1,7 @@
 <?php
 use \yii\helpers\Url;
 ?>
-<section class="offers plr">
+<section class="offers plr" style="margin-top: 70px">
     <div class="offers-wrap limit-width">
         <div class="offers__items">
             <?php foreach ($mfoAll as $mfo) : ?>

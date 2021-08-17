@@ -21,7 +21,6 @@ class GridCatalog extends Widget
             $output = Mfo::find()
                 ->where(['status' => '1'])
                 ->andWhere(['home_page' => '1'])
-//                ->orderBy(['cat_priority' => SORT_ASC, 'cat_id' => SORT_ASC])
                 ->all();
         }
 

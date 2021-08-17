@@ -2,7 +2,7 @@
 
 $this->title = 'Contact';
 ?>
-<section class="content plr">
+<section class="content plr" id="contacts">
     <div class="content-wrap limit-width">
         <div class="content-row">
             <div class="content-box">

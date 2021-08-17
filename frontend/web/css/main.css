@@ -3580,10 +3580,8 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
 .content-main-info__text {
     margin-top: 18px;
     line-height: 24px;
-    font-family: 'Open Sans Light';
     font-weight: 300;
     color: #111;
-    line-height: 1.5;
     font-size: 17px;
 }
 
@@ -4245,7 +4243,6 @@ input.subscribe-form-item__btn.subscribe-form-item__btn--btn-submit, input.subsc
 .phone {
     font-weight: 600;
     color: #018ab4;
-    font-family: 'Open Sans SemiBold';
 }
 
 /** FAQ ***********************/
