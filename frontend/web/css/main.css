@@ -4497,6 +4497,66 @@ p {
     display: initial;
 }
 
+.aktsii-article__content ol {
+    list-style: none;
+    margin: 0;
+    background-color: #fda729;
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0 40px 25px;
+    counter-reset: aktsii-list;
+}
+
+.aktsii-article__content ol li {
+    min-height: 56px;
+}
+.aktsii-article__content ol li {
+    position: relative;
+    padding-left: 75px;
+    margin-top: 25px;
+    flex: none;
+    width: 100%;
+    max-width: 320px;
+    color: inherit;
+    line-height: 1.45;
+}
+
+.aktsii-article__content ol li::before {
+    counter-increment: aktsii-list;
+    content: counter(aktsii-list);
+    position: absolute;
+    top: 3px;
+    left: 12px;
+    width: 53px;
+    height: 53px;
+    line-height: 53px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #fda729;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 56px;
+    font-weight: 700;
+}
+
+.aktsii-article__content p {
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 18px;
+}
+
+.aktsii-article__content h2 {
+    font-family: inherit;
+    font-size: 36px;
+    font-weight: 600;
+    text-align: center;
+    color: #fda729;
+    margin: 35px 40px 12px;
+}
+
 .header-nav__language{
     display: flex;
     background-color: #3b9fd8;

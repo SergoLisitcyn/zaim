@@ -34,8 +34,8 @@ $this->title = $model->name;
             <div class="content-box">
                 <div class="content-info">
                     <div class="content-main-info">
-                        <div class="content-main-info__item">
-                            <h1><?= $model->name ?></h1>
+                        <div class="content-main-info__item" style="padding: 0">
+                            <h1 style="text-align: center"><?= $model->name ?></h1>
                             <div class="aktsii-article__dates">
                                 <i></i><span><?= date("d.m.Y", strtotime($model->srok_ot)) ?> - <?= date("d.m.Y", strtotime($model->srok_do)) ?></span>
                             </div>
