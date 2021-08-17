@@ -167,20 +167,20 @@ jQuery(document).ready(function($){
             $(".loan_calculator_date_input_right").text(this.$element.val());
             var sum=$('input[name="rs_sum"]').val();if(sum==0){sum=5000;}
             var term=this.$element.val();setLoanParameters(sum,term);}});
-            $(".search_company").on('click',function(){var location_url="http://zaim.local/kreditnyj-kalkulyator?sum="+($(".loan_calculator_sum_input_right").text()||'50000')+"&term="+($(".loan_calculator_date_input_right").text()||'7');
+            $(".search_company").on('click',function(){var location_url="https://kz.smartzaim.kz/kreditnyj-kalkulyator?sum="+($(".loan_calculator_sum_input_right").text()||'50000')+"&term="+($(".loan_calculator_date_input_right").text()||'7');
             var select_loan_calculator_process=$("#select_loan_calculator_process").val();
             if(select_loan_calculator_process){location_url+="&get_loan="+select_loan_calculator_process;}
             var select_loan_calculator_method=$("#select_loan_calculator_method").val();
             if(select_loan_calculator_method){location_url+="&loan_repayment="+select_loan_calculator_method;}
             var select_loan_calculator_sort=$("#select_loan_calculator_sort").val();if(select_loan_calculator_sort){location_url+="&sort="+select_loan_calculator_sort;}var advanced_repayment=$("#advanced_repayment").is(':checked');if(advanced_repayment){location_url+="&advanced_repayment=1";}var extension_loan=$("#extension_loan").is(':checked');if(extension_loan){location_url+="&extension_loan=1";}window.location=location_url;});
-            $('.loan_calculator #select_loan_calculator_sort').on('change',function(){var url='http://zaim.local/kreditnyj-kalkulyator';var sum=$(".loan_calculator_sum_input_right").text()||'50000';var term=$(".loan_calculator_date_input_right").text()||'7';var get_loan=$("#select_loan_calculator_process").val();
+            $('.loan_calculator #select_loan_calculator_sort').on('change',function(){var url='https://kz.smartzaim.kz/kreditnyj-kalkulyator';var sum=$(".loan_calculator_sum_input_right").text()||'50000';var term=$(".loan_calculator_date_input_right").text()||'7';var get_loan=$("#select_loan_calculator_process").val();
             var loan_repayment=$("#select_loan_calculator_method").val();var sort=$("#select_loan_calculator_sort").val();
             var advanced_repayment=$("#advanced_repayment").is(':checked')?1:0;
             var extension_loan=$("#extension_loan").is(':checked')?1:0;
             var requestData={action:'get_all_offers',sum:sum,term:term,get_loan:get_loan,loan_repayment:loan_repayment,sort:sort,advanced_repayment:advanced_repayment,extension_loan:extension_loan};jQuery.post(url,requestData,function(response){$('.offer_row').hide();
             $('.show_mfo_btn').hide();$('.show_mfo_btn + div').hide();$('.show_mfo_btn + div + div').hide();
             $('.loan_calculator_offers').html(response);});});$('#select_loan_calculator_sort_rating').on('change',function()
-    {var url='http://zaim.local/kreditnyj-kalkulyator';
+    {var url='https://kz.smartzaim.kz/kreditnyj-kalkulyator';
         var sum=$(".loan_calculator_sum_input_right").text()||'50000';var term=$(".loan_calculator_date_input_right").text()||'7';var get_loan=$("#select_loan_calculator_process").val();var loan_repayment=$("#select_loan_calculator_method").val();var sort=$("#select_loan_calculator_sort_rating").val();var advanced_repayment=$("#advanced_repayment").is(':checked')?1:0;var extension_loan=$("#extension_loan").is(':checked')?1:0;var requestData={action:'get_all_rating_offers',sum:sum,term:term,get_loan:get_loan,loan_repayment:loan_repayment,sort:sort,advanced_repayment:advanced_repayment,extension_loan:extension_loan};jQuery.post(url,requestData,function(response){$('.rated_mfo').html(response);});});$(".loan_calculator_ext_header_title_2,.loan_calculator_ext_header_trn_up,.loan_calculator_ext_header_trn_down").on('click',function(){if($(".loan_calculator_ext_params").is(":visible")){$(".loan_calculator_ext_params").hide();$(".loan_calculator_params").hide();$(".loan_calculator_ext_header_trn_up").fadeIn(1000).css('display','block');
         $(".loan_calculator_ext_header_trn_down").hide();$(".loan_calculator").height(250);}else
             {$(".loan_calculator_ext_params").fadeIn(1000).css('display','inline-block');
