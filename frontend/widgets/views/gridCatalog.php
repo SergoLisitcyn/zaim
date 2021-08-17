@@ -79,7 +79,7 @@ use \yii\helpers\Url;
                             </div>
                         </div>
                     </div>
-                    <a href="<?= $mfo->link_offer ?>">
+                    <a href="<?= $mfo->link_offer ?>" target="_blank">
                         <div class="mfo_card_button">Ақшаны алу</div>
                     </a>
                 </div>

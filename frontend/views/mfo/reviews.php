@@ -55,7 +55,7 @@ YiiAsset::register($this);
                     <div class="content-main-info">
                         <div class="content-main-info__item">
                             <h1>Пікірлер	о	<?= $mfo->mfo_name ?></h1>
-                            <a href="<?= $mfo->link_offer ?>" class="content-main-info__button">Ақшаны алу</a>
+                            <a href="<?= $mfo->link_offer ?>"  target="_blank" class="content-main-info__button">Ақшаны алу</a>
                             <div class="content-reviews">
                                 <?php foreach ($reviews as $review) :?>
                                 <div class="content-reviews-item">
@@ -196,7 +196,7 @@ YiiAsset::register($this);
                             </div>
                         </div>
                         <noindex>
-                            <a href="<?= $mfo->link_offer ?>">
+                            <a href="<?= $mfo->link_offer ?>" target="_blank">
                                 <div class="mfo_card_button">Ақшаны алу</div>
                             </a>
                         </noindex>
