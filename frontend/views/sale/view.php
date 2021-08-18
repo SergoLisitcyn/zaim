@@ -35,7 +35,7 @@ $this->title = $model->name;
                 <div class="content-info">
                     <div class="content-main-info">
                         <div class="content-main-info__item" style="padding: 0">
-                            <h1 style="text-align: center"><?= $model->name ?></h1>
+                            <h1 style="text-align: center;color: #146696!important;font-family: inherit;font-weight: 700;margin: 0 40px 25px;"><?= $model->name ?></h1>
                             <div class="aktsii-article__dates">
                                 <i></i><span><?= date("d.m.Y", strtotime($model->srok_ot)) ?> - <?= date("d.m.Y", strtotime($model->srok_do)) ?></span>
                             </div>
@@ -57,7 +57,7 @@ $this->title = $model->name;
                                     </noscript>
                                 </a>
                                 <?= $model->content ?>
-                                <a href="<?= $model->partner_link?>" target="_blank" class="articles_button">Акцияға қатысу</a>
+                                <a href="<?= $model->partner_link ?>" target="_blank" class="articles_button">Акцияға қатысу</a>
                                 <div class="aktsii-article__box">
                                     <h3>Ұқсас ұсыныстар</h3>
                                     <div class="aktsii-article__box-inner">
@@ -139,13 +139,13 @@ $this->title = $model->name;
                                 <div class="mfo_card_info_ways_label">Алу:</div>
                                 <div class="mfo_card_info_ways_data">
                                     <noscript>
-                                        <img src="img/2016/08/all.png" alt="all">
+                                        <img src="/img/2016/08/all.png" alt="all">
                                     </noscript>
-                                    <img class=" ls-is-cached lazyloaded" src="img/2016/08/all.png" data-src="img/2016/08/all.png" alt="all">
+                                    <img class=" ls-is-cached lazyloaded" src="/img/2016/08/all.png" data-src="/img/2016/08/all.png" alt="all">
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="<?= $model->partner_link?>">
                             <div class="mfo_card_button">Ақшаны алу</div>
                         </a>
                     </div>
