@@ -197,24 +197,24 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                                         <div class="feedback-form__fields">
                                             <div class="feedback-form__group feedback-form__group--sm">
                                                 <select name="question">
-                                                    <option disabled="" selected="">Выберите	категорию	вопроса</option>
-                                                    <option>Получение займа</option>
-                                                    <option>Погашение займа</option>
-                                                    <option>Предложение	сотрудничества</option>
-                                                    <option>Другие вопросы</option>
+                                                    <option disabled="" selected="">Сұрақ санатын таңдаңыз</option>
+                                                    <option>Қарызды алу</option>
+                                                    <option>Қарызды өтеу</option>
+                                                    <option>Ынтымақтастық ұсынысы</option>
+                                                    <option>Өзге сұрақтар</option>
                                                 </select>
                                             </div>
                                             <div class="feedback-form__group feedback-form__group--sm">
-                                                <input type="text" name="surname" value="" size="40" placeholder="Фамилия">
+                                                <input type="text" name="surname" value="" size="40" placeholder="Тегі">
                                             </div>
                                             <div class="feedback-form__group feedback-form__group--sm">
                                                 <input type="text" name="name" value="" size="40" placeholder="Атыңыз">
                                             </div>
                                             <div class="feedback-form__group feedback-form__group--sm">
-                                                <input type="text" name="name" value="" size="40" placeholder="Отчество">
+                                                <input type="text" name="name" value="" size="40" placeholder="Әкесінің  аты">
                                                 <div class="control-check-muted">
-                                                    <input type="checkbox" name="no-patronymic[]" value="У меня нет отчества">
-                                                    <span>У меня нет	отчества</span>
+                                                    <input type="checkbox" name="no-patronymic[]" value="Менің әкемнің аты жоқ">
+                                                    <span>Менің әкемнің аты жоқ</span>
                                                 </div>
                                             </div>
                                             <div class="feedback-form__group feedback-form__group--sm">
@@ -224,14 +224,14 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                                                 <input type="tel" name="mobile" value="" size="40" class="tel" placeholder="+7 (___) ___-__-__">
                                             </div>
                                             <div class="feedback-form__group feedback-form__group--sm">
-                                                <input type="text" name="subject" value="" size="40" placeholder="Тема обращения">
+                                                <input type="text" name="subject" value="" size="40" placeholder="Өтініш тақырыбы">
                                             </div>
                                             <div class="feedback-form__group">
-                                                <textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Пожалуйста, опишите Ваш вопрос максимально подробно"></textarea>
+                                                <textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Сіз өз сұрағыңызды мүмкіндігінше егжей-тегжейлі сипаттаңыз"></textarea>
                                             </div>
                                             <div class="feedback-form__group feedback-form__group--submit">
                                                 <input type="submit" value="Жіберу" class="wpcf7-form-control wpcf7-submit"><br><br>
-                                                <span class="i_agree">Нажимая кнопку «Отправить», Вы даёте согласие на <a class="i_agree-link" href="#" target="_blank">обработку персональных данных</a> и получение рекламных сообщений в SMS и Email.</span>
+                                                <span class="i_agree">«Жөнелту» батырмасын баса отырып, сіз <a class="i_agree-link" href="#" target="_blank">дербес деректерді өңдеуге</a> және SMS және Email арқылы жарнамалық хабарламалар алуға келісім бересіз.</span>
                                             </div>
                                         </div>
                                     </form>
@@ -532,7 +532,7 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                             </div>
                         </div>
                     </form>
-                    <a href="creditplus-reviews.html" class="content-reviews-btn">Смотреть все Нақтырақ о <?= $model->mfo_name?></a>
+                    <a href="/mfo/<?= $model->url ?>/reviews" class="content-reviews-btn">Смотреть все Нақтырақ о <?= $model->mfo_name?></a>
                 </div>
             </div>
 

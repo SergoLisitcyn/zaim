@@ -21,7 +21,7 @@ if(isset($model->title_description) and !empty($model->title_description)) { $th
 </section>
 
 
-<section class="content plr">
+<section class="content plr" id="login">
     <div class="content-wrap limit-width">
         <div class="content-row">
             <div class="content-box">

@@ -4566,3 +4566,30 @@ p {
     margin: 0 -20px;
     color: #fff;
 }
+
+#login .content-main-info__content p{
+    font-weight: 300;
+    color: #111;
+    font-size: 16px;
+    line-height: 1.5!important;
+    margin: 18px 0 0;
+}
+
+#login .content-main-info__content h2{
+    line-height: 1.2;
+    margin: 27px 0 0;
+    font-weight: 500;
+    font-size: 26px;
+    color: #028ab4!important;
+}
+
+#login .content-main-info__content li{
+    font-weight: 300;
+    color: #111;
+    font-size: 16px;
+    line-height: 1.5!important;
+}
+#login .content-main-info__content ol{
+    padding: 0 40px!important;
+}
+
