@@ -39,11 +39,11 @@ if($url == '/'){
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
-    <!-- Yandex.Metrika counter -->
-<!--    <script type="text/javascript" > (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};-->
-<!--        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(37301585, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true, ecommerce:"dataLayer" }); </script>-->
-<!--    <noscript><div><img src="https://mc.yandex.ru/watch/37301585" style="position:absolute; left:-9999px;" alt="" /></div></noscript>-->
-    <!-- /Yandex.Metrika counter -->
+<!--     Yandex.Metrika counter -->
+    <script type="text/javascript" > (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(37301585, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true, ecommerce:"dataLayer" }); </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/37301585" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!--     /Yandex.Metrika counter -->
 </head>
 <body class="custom-background" id="<?= $class ?>">
 <?php $this->beginBody() ?>
@@ -72,8 +72,11 @@ if($url == '/'){
                             </div>
                         </div>
                         <div class="header-cab">
-                            <a href="https://smartzaim.kz/lk/login" class="header-cab__btn header-cab__btn--outline">Кіру</a>
-                            <a href="https://smartzaim.kz/lk/register" class="header-cab__btn desktop-visible">Тіркелу</a>
+                            <div class="desktop-visible" style="display: inline-block;vertical-align: top;text-align: center;line-height: 30px;">Язык:</div>
+                            <a class="desktop-visible" href="https://smartzaim.kz/" style="display: inline-block;vertical-align: top;text-align: center;line-height: 30px;">RU</a>
+                            <div class="desktop-visible" style="color:#337ab7;display: inline-block;vertical-align: top;text-align: center;line-height: 30px;padding-right: 15px;"><b >| KZ</b></div>
+                            <a href="https://smartzaim.kz/lk/login?utm_source=kz.smartzaim.kz" class="header-cab__btn header-cab__btn--outline">Кіру</a>
+                            <a href="https://smartzaim.kz/lk/register?utm_source=kz.smartzaim.kz" class="header-cab__btn desktop-visible">Тіркелу</a>
                         </div>
                         <div class="header-body__menu-btn desktop-hidden">
                             <button type="button" class="header-menu-btn" id="headerMenuBtn" aria-label="Меню">
@@ -102,7 +105,7 @@ if($url == '/'){
                         <nav class="header-body-nav">
                             <ul>
                                 <li><a href="/aktsii">Акциялар</a></li>
-                                <li><a href="https://smartzaim.kz/reestr-mfo/">МҚҰ тізілімі</a></li>
+                                <li><a href="https://smartzaim.kz/reestr-mfo/?utm_source=kz.smartzaim.kz">МҚҰ тізілімі</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -125,7 +128,7 @@ if($url == '/'){
                                     <a class="header-nav__link" href="/aktsii">Акциялар</a>
                                 </li>
                                 <li class="header-nav__item">
-                                    <a class="header-nav__link" href="https://smartzaim.kz/reestr-mfo/">МҚҰ тізілімі</a>
+                                    <a class="header-nav__link" href="https://smartzaim.kz/reestr-mfo/?utm_source=kz.smartzaim.kz">МҚҰ тізілімі</a>
                                 </li>
                             </ul>
                             <?= TopMenu::widget(); ?>
@@ -152,7 +155,7 @@ if($url == '/'){
                                     </a>
                                 </div>
                                 <div class="header-navbar__col">
-                                    <a class="navbar-compare" href="https://smartzaim.kz/compare/" data-counter="0">
+                                    <a class="navbar-compare" href="https://smartzaim.kz/compare/?utm_source=kz.smartzaim.kz" data-counter="0">
                                         <svg width="26" height="26" id="i-head-compare" viewBox="0 0 32.33 32.1">
                                             <g style="stroke:currentColor;fill:none;stroke-width:1.91;stroke-linecap:round;stroke-linejoin:round">
                                                 <path d="M5.52 24.24L31.37 9.03M18.45 16.63V30.2M6.8 31.14h23.52M11.37 13.41c0 2.88-2.33 5.21-5.21 5.21-2.87 0-5.21-2.33-5.21-5.21 0-2.87 2.34-5.2 5.21-5.2 2.88 0 5.21 2.33 5.21 5.2zM29.5 4.58c0 2-1.62 3.63-3.63 3.63-2 0-3.62-1.63-3.62-3.63S23.87.96 25.87.96c2.01 0 3.63 1.62 3.63 3.62z"></path>

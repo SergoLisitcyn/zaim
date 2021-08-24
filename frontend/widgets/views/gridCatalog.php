@@ -90,7 +90,7 @@ use \yii\helpers\Url;
                 <div class="email_sidebar_container">
                     <div class="text_item_subscribe_container">Уақыт жоғалтпайсыз!<br><br>Барлық МҚҰ бір өтінім<br><br>Ең тиімді ұсыныс алу</div>
                     <div class="subscribe-sidebar-item subscribe-sidebar-item--btn-submit">
-                        <form action="https://smartzaim.kz/zayavka-na-zajm/">
+                        <form action="https://smartzaim.kz/zayavka-na-zajm/?utm_source=kz.smartzaim.kz">
                             <input class="subscribe-sidebar-item__btn subscribe-sidebar-item__btn--btn-submit" type="submit" value="Өтінім беру">
                         </form>
                     </div>

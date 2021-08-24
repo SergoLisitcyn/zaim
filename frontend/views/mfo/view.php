@@ -402,72 +402,39 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                 </div>
                 <div class="content-reviews">
                     <h2 class="content-reviews-title">Нақтырақ о <?= $model->mfo_name?></h2>
-                    <div class="content-reviews-item">
-                        <div class="rr_review_name">Злата</div>
-                        <span class="rr_date">13.08.2020</span>
-                        <div class="content-reviews-rating">
-                            <div class="rating">
-                                <span class="rating__caption">Алу қарапайымдылығы</span>
-                                <div class="rating__stars rating__stars--sm" style="width:100%">
-                                </div>
-                                <div class="rating__val">5</div>
-                            </div>
-                            <div class="rating">
-                                <span class="rating__caption">Беру жылдамдығы</span>
-                                <div class="rating__stars rating__stars--sm" style="width:100%">
-                                </div>
-                                <div class="rating__val">5</div>
-                            </div>
-                            <div class="rating">
-                                <span class="rating__caption">Қолдау көрсету қызметі</span>
-                                <div class="rating__stars rating__stars--sm" style="width:100%">
-                                </div>
-                                <div class="rating__val">5</div>
-                            </div>
-                        </div>
-                        <p class="content-reviews-text">Меня	привлекла простота	обращения сюда. Никаких	странных вопросов в	анкете, к тому же заявку	ты заполняешь сам прямо	из дома. Деньги сразу на	карту приходят. Никаких	проблем не возникает,	если в срок отдаешь. Уже	не первый раз обращаюсь	сюда.</p>
-                        <div class="content-reviews-plus">
-                            <span>Плюсы:</span>
-                            <span>Просто и	быстро.</span>
-                        </div>
-                        <div class="content-reviews-minus">
-                            <span>Минусы:</span>
-                            <span>Нет, если все	внимательно	делать.</span>
-                        </div>
-                    </div>
-                    <div class="content-reviews-item">
-                        <div class="rr_review_name">Сергей</div>
-                        <span class="rr_date">29.07.2020</span>
-                        <div class="content-reviews-rating">
-                            <div class="rating">
-                                <span class="rating__caption">Алу қарапайымдылығы</span>
-                                <div class="rating__stars rating__stars--sm" style="width:100%">
-                                </div>
-                                <div class="rating__val">5</div>
-                            </div>
-                            <div class="rating">
-                                <span class="rating__caption">Беру жылдамдығы</span>
-                                <div class="rating__stars rating__stars--sm" style="width:100%">
-                                </div>
-                                <div class="rating__val">5</div>
-                            </div>
-                            <div class="rating">
-                                <span class="rating__caption">Қолдау көрсету қызметі</span>
-                                <div class="rating__stars rating__stars--sm" style="width:61%">
-                                </div>
-                                <div class="rating__val">3</div>
-                            </div>
-                        </div>
-                        <p class="content-reviews-text">О сервисе остались только хорошие впечатления. Мне выдали деньги через полчаса и даже не спросили, куда я собираюсь их потратить. Правда, возникли некоторые сложности при возврате долга, потому что платёж нужно отправлять через банк заранее, а меня никто не предупредил, что в противном случае может возникнуть просрочка.</p>
-                        <div class="content-reviews-plus">
-                            <span>Плюсы:</span>
-                            <span>нецелевое использование займа, оперативное оформление.</span>
-                        </div>
-                        <div class="content-reviews-minus">
-                            <span>Минусы:</span>
-                            <span>нет хорошей обратной связи с клиентами.</span>
-                        </div>
-                    </div>
+<!--                    <div class="content-reviews-item">-->
+<!--                        <div class="rr_review_name">Злата</div>-->
+<!--                        <span class="rr_date">13.08.2020</span>-->
+<!--                        <div class="content-reviews-rating">-->
+<!--                            <div class="rating">-->
+<!--                                <span class="rating__caption">Алу қарапайымдылығы</span>-->
+<!--                                <div class="rating__stars rating__stars--sm" style="width:100%">-->
+<!--                                </div>-->
+<!--                                <div class="rating__val">5</div>-->
+<!--                            </div>-->
+<!--                            <div class="rating">-->
+<!--                                <span class="rating__caption">Беру жылдамдығы</span>-->
+<!--                                <div class="rating__stars rating__stars--sm" style="width:100%">-->
+<!--                                </div>-->
+<!--                                <div class="rating__val">5</div>-->
+<!--                            </div>-->
+<!--                            <div class="rating">-->
+<!--                                <span class="rating__caption">Қолдау көрсету қызметі</span>-->
+<!--                                <div class="rating__stars rating__stars--sm" style="width:100%">-->
+<!--                                </div>-->
+<!--                                <div class="rating__val">5</div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <p class="content-reviews-text">Меня	привлекла простота	обращения сюда. Никаких	странных вопросов в	анкете, к тому же заявку	ты заполняешь сам прямо	из дома. Деньги сразу на	карту приходят. Никаких	проблем не возникает,	если в срок отдаешь. Уже	не первый раз обращаюсь	сюда.</p>-->
+<!--                        <div class="content-reviews-plus">-->
+<!--                            <span>Плюсы:</span>-->
+<!--                            <span>Просто и	быстро.</span>-->
+<!--                        </div>-->
+<!--                        <div class="content-reviews-minus">-->
+<!--                            <span>Минусы:</span>-->
+<!--                            <span>Нет, если все	внимательно	делать.</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
                     <form class="review-form">
                         <div class="content-reviews-rating">
                             <div class="rating">
@@ -698,12 +665,12 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                             </div>
                             <div class="aside-rating-mfo-item">
                                 <a	href="#">
-                                    <div	class="rating rating-wraps">
+                                    <div class="rating rating-wraps">
                                         <div class="rating-box">
                                             <div class="rating__stars"	style="width:87%"></div>
-                                            <div	class="rating__val">4.6</div>
+                                            <div class="rating__val">4.6</div>
                                         </div>
-                                        <div	class="aside-rating-mfo__rev">Нақтырақ:	41</div>
+                                        <div class="aside-rating-mfo__rev">Нақтырақ:	41</div>
                                     </div>
                                 </a>
                             </div>
