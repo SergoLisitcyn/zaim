@@ -118,7 +118,7 @@ if($url == '/'){
                     <div class="header-nav-section__col">
                         <nav class="header-nav">
                             <div class="header-nav__language desktop-hidden">
-                                Язык:<a href="https://smartzaim.kz/" style="padding-left: 15px;color: #FFFFFF">RU</a> <span>|</span><b style="color:#337ab7">KZ</b>
+                                Язык:<a href="https://smartzaim.kz/" style="padding-left: 15px;color: #337ab7">RU</a> <span>|</span><b style="color:#FFFFFF">KZ</b>
                             </div>
                             <div class="header-nav__cab desktop-hidden">
                                 <a	class="header-nav__link header-nav__link--cab" href="#">Регистрация</a>
