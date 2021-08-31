@@ -111,7 +111,7 @@ $this->title = 'Рейтинг лучших МФО — smartzaim.kz';
             </div>
         </div>
         <?php endforeach;?>
-        <a href="https://smartzaim.kz/rating/?utm_source=kz.smartzaim.kz" class="offers-show-all-btn">Показать еще</a>
+        <a href="https://smartzaim.kz/rating/?utm_source=kz.smartzaim.kz" class="offers-show-all">Показать еще</a>
     </div>
 </section>
 

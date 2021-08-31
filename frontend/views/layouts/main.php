@@ -30,8 +30,6 @@ if($url == '/'){
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="img/2016/05/cropped-smartzaimkz_favicon-32x32.png" sizes="32x32">
-    <link rel="icon" href="img/2016/05/cropped-smartzaimkz_favicon-192x192.png" sizes="192x192">
     <link rel="stylesheet" href="libs/rangeslider/rangeslider.css" />
     <link rel="stylesheet" href="libs/fontawesome/css/font-awesome.min.css" />
     <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" id="ao_optimized_gfonts" href="https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C600%2C700%2C800%7COpen+Sans%3A300%2Cregular%2Citalic%2C600%2C700%2C800%7CPT+Serif%3Aregular%2Citalic%7CPT+Sans%3Aregular%2Citalic%2C700" />
@@ -44,6 +42,15 @@ if($url == '/'){
         m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(37301585, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true, ecommerce:"dataLayer" }); </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/37301585" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!--     /Yandex.Metrika counter -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-78532063-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-78532063-1');
+    </script>
 </head>
 <body class="custom-background" id="<?= $class ?>">
 <?php $this->beginBody() ?>
@@ -93,7 +100,7 @@ if($url == '/'){
                 <div class="header-body__row header-body__row--bottom">
                     <?= CityWidget::widget(); ?>
                     <div class="header-body__col header-body__col--all-mfo">
-                        <a class="header-all-mfo" href="#" target="_blank">Барлық МҚҰ бір өтінім</a>
+                        <a class="header-all-mfo" href="https://smartzaim.kz/zayavka-na-zajm/?utm_source=kz.smartzaim.kz" target="_blank">Барлық МҚҰ бір өтінім</a>
                     </div>
                     <div class="header-body__col header-body__col--top-mfo">
                         <a href="/rating" class="top-10-mfo">
@@ -121,7 +128,7 @@ if($url == '/'){
                                 Язык:<a href="https://smartzaim.kz/" style="padding-left: 15px;color: #337ab7">RU</a> <span>|</span><b style="color:#FFFFFF">KZ</b>
                             </div>
                             <div class="header-nav__cab desktop-hidden">
-                                <a	class="header-nav__link header-nav__link--cab" href="#">Регистрация</a>
+                                <a	class="header-nav__link header-nav__link--cab" href="#">Тiркелу</a>
                             </div>
                             <ul class="header-nav__list desktop-hidden">
                                 <li class="header-nav__item">
@@ -216,14 +223,14 @@ if($url == '/'){
                         <a class="vk" aria-label="vk" href="https://vk.com/smartzaimkz" target="_blank"></a>
                     </li>
                     <li>
-                        <a class="inst" aria-label="instagram" href="https://www.instagram.com/smartzaim.kz/"></a>
+                        <a class="inst" aria-label="instagram" href="https://www.instagram.com/smartzaim.kz/" target="_blank"></a>
                     </li>
                     <li>
                         <a class="yt" aria-label="youtube" href="https://www.youtube.com/channel/UCMreDvPVHVU6zMG1hoqSKXw/video" target="_blank"></a>
                     </li>
                 </ul>
                 <div class="footer__logo">
-                    <a href="#" aria-label="footer">
+                    <a href="/" aria-label="footer">
                         <noscript>
                             <img src="/img/uncode-child/logo-footer.png" alt="">
                         </noscript>
