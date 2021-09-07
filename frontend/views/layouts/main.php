@@ -102,6 +102,11 @@ if($url == '/'){
                     <div class="header-body__col header-body__col--all-mfo">
                         <a class="header-all-mfo" href="https://smartzaim.kz/zayavka-na-zajm/?utm_source=kz.smartzaim.kz" target="_blank">Барлық МҚҰ бір өтінім</a>
                     </div>
+                    <div class="desktop-hidden" style="padding-left: 15px;padding-right: 15px;padding-top: 15px;width: 100%;text-align: center;">
+                        <div style="display: inline-block;vertical-align: top;text-align: center;line-height: 30px;">Язык:</div>
+                        <a href="https://smartzaim.kz/" style="display: inline-block;vertical-align: top;text-align: center;line-height: 30px;">RU</a>
+                        <div style="color:#337ab7;display: inline-block;vertical-align: top;text-align: center;line-height: 30px;padding-right: 15px;"><b >| KZ</b></div>
+                    </div>
                     <div class="header-body__col header-body__col--top-mfo">
                         <a href="/rating" class="top-10-mfo">
                             <i></i>
@@ -124,9 +129,6 @@ if($url == '/'){
                 <div class="header-nav-section__row">
                     <div class="header-nav-section__col">
                         <nav class="header-nav">
-                            <div class="header-nav__language desktop-hidden">
-                                Язык:<a href="https://smartzaim.kz/" style="padding-left: 15px;color: #337ab7">RU</a> <span>|</span><b style="color:#FFFFFF">KZ</b>
-                            </div>
                             <div class="header-nav__cab desktop-hidden">
                                 <a	class="header-nav__link header-nav__link--cab" href="#">Тiркелу</a>
                             </div>
