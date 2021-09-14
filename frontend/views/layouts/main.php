@@ -103,11 +103,17 @@ if($url == '/'){
                         <a class="header-all-mfo" href="https://smartzaim.kz/zayavka-na-zajm/?utm_source=kz.smartzaim.kz" target="_blank">Барлық МҚҰ бір өтінім</a>
                     </div>
                     <div class="desktop-hidden" style="padding-left: 15px;padding-right: 15px;padding-top: 15px;width: 100%;text-align: center;">
-                        <div style="display: inline-block;vertical-align: top;text-align: center;line-height: 30px;">Язык:</div>
-                        <a href="https://smartzaim.kz/" style="display: inline-block;vertical-align: top;text-align: center;line-height: 30px;">RU</a>
-                        <div style="color:#337ab7;display: inline-block;vertical-align: top;text-align: center;line-height: 30px;padding-right: 15px;"><b >| KZ</b></div>
+                        <a href="/rating" class="top-10-mfo" style="float: left">
+                            <i></i>
+                            <span>МҚҰ ТОП-10</span>
+                        </a>
+                        <div style="float: right">
+                        <div style="display: inline-block;vertical-align: top;text-align: center;line-height: 28px;font-size: 16px;">Язык:</div>
+                        <a href="https://smartzaim.kz/" style="display: inline-block;vertical-align: top;text-align: center;line-height: 28px;font-size: 16px;">RU</a>
+                        <div style="color:#337ab7;display: inline-block;vertical-align: top;text-align: center;padding-right: 15px;"><b style="line-height: 28px;font-size: 16px;">| KZ</b></div>
+                        </div>
                     </div>
-                    <div class="header-body__col header-body__col--top-mfo">
+                    <div class="header-body__col header-body__col--top-mfo  desktop-visible">
                         <a href="/rating" class="top-10-mfo">
                             <i></i>
                             <span>МҚҰ ТОП-10</span>
