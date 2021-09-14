@@ -50,9 +50,9 @@ $this->title = 'Рейтинг лучших МФО — smartzaim.kz';
                         <div class="offer-logo">
                             <a href="<?= Url::toRoute(['mfo/view', 'url' => $item->url]) ?>">
                                 <noscript>
-                                    <img src="<?= $item->logo; ?>">
+                                    <img alt="<?= $item->mfo_name; ?>" src="<?= $item->logo; ?>">
                                 </noscript>
-                                <img class="lazyloaded" src="<?= $item->logo; ?>" data-src="<?= $item->logo; ?>">
+                                <img class="lazyloaded" alt="<?= $item->mfo_name; ?>" src="<?= $item->logo; ?>" data-src="<?= $item->logo; ?>">
                             </a>
                         </div>
                     </div>

@@ -49,7 +49,7 @@ $this->registerMetaTag(['name' => 'description',
                                         <a href="<?= \yii\helpers\Url::toRoute(['sale/list', 'url' => $sale->url]) ?>" class="aktsii-item__link">
                                             <div class="aktsii-item__img-wrap">
                                                 <a href="<?= \yii\helpers\Url::toRoute(['sale/list', 'url' => $sale->url]) ?>">
-                                                    <img src="<?= $sale->image ?>" data-lazy-type="image" data-lazy-src="<?= $sale->image ?>" alt="" class="lazy aktsii-item__img lazy-loaded">
+                                                    <img src="<?= $sale->image ?>" data-lazy-type="image" data-lazy-src="<?= $sale->image ?>" alt="<?= $sale->name ?>" class="lazy aktsii-item__img lazy-loaded">
                                                 </a>
                                                 <noscript>
                                                     <img src="<?= $sale->srok_ot ?>" alt="" class="aktsii-item__img">

@@ -65,9 +65,9 @@ $this->title = $model->name;
                                             <?php foreach ($salesRandom as $random) : ?>
                                             <a href="<?= \yii\helpers\Url::toRoute(['sale/list', 'url' => $random->url]) ?>" title="<?= $random->name?>">
                                                 <noscript>
-                                                    <img src="<?= $random->image?>" alt="акции" />
+                                                    <img src="<?= $random->image?>" alt="<?= $random->name?>" />
                                                 </noscript>
-                                                <img class=" lazyloaded" src="<?= $random->image?>" data-src="<?= $random->image?>" alt="акции">
+                                                <img class=" lazyloaded" src="<?= $random->image?>" data-src="<?= $random->image?>" alt="<?= $random->name?>">
                                                 <span> <?= $random->name?> </span>
                                             </a>
                                             <?php endforeach; ?>
