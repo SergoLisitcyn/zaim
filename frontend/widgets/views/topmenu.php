@@ -15,11 +15,11 @@ use common\models\TypeCredit;
                     if($url == 'zajm-60-dnej'){
                         $url = 'https://smartzaim.kz/zajm-60-dnej/';
                         ?>
-                        <a href="/<?= $url ?>" class="header-nav__link-l2"><?= $typeCredit->name?></a>
+                        <a href="<?= $url ?>" class="header-nav__link-l2"><?= $typeCredit->name?></a>
                     <?php } elseif($url == 'zajm-na-90-dnej') { $url = 'https://smartzaim.kz/zajm-na-90-dnej/';  ?>
-                    <a href="/<?= $url ?>" class="header-nav__link-l2"><?= $typeCredit->name?></a>
-                    <?php } else { ?>
                     <a href="<?= $url ?>" class="header-nav__link-l2"><?= $typeCredit->name?></a>
+                    <?php } else { ?>
+                    <a href="/<?= $url ?>" class="header-nav__link-l2"><?= $typeCredit->name?></a>
                     <?php }
 
                     ?>
