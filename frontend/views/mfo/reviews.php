@@ -239,7 +239,7 @@ YiiAsset::register($this);
 
                         <div class="aside-rating-mfo-col">
                             <div class="aside-rating-mfo-item">
-                                <a	href="#">
+                                <a	href="http://moneyman.kz/secure/registration?partner=smartzaimkz&utm_source=smartzaim&utm_medium=affiliate">
                                     <noscript>
                                         <img	src="img2016/08/moneyman.png">
                                     </noscript>

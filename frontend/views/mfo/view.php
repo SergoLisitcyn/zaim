@@ -274,7 +274,7 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                                 <div class="firstloan">
                                     <div class="firstloan-col">
                                         <div class="offer-logo">
-                                            <a href="#">
+                                            <a href="http://moneyman.kz/secure/registration?partner=smartzaimkz&utm_source=smartzaim&utm_medium=affiliate">
                                                 <noscript>
                                                     <img	src="/img/2016/08/moneyman.png">
                                                 </noscript>
@@ -314,7 +314,7 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                                 <div class="firstloan">
                                     <div class="firstloan-col">
                                         <div class="offer-logo">
-                                            <a href="#">
+                                            <a href="http://sunfinance.go2cloud.org/aff_c?offer_id=14&aff_id=1022&source=smartzaim&aff_sub=AFFILIATE_CLICK_ID&aff_sub2=smartzaim">
                                                 <noscript>
                                                     <img	src="/img/2018/12/koke.png">
                                                 </noscript>
@@ -354,7 +354,7 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                                 <div class="firstloan">
                                     <div class="firstloan-col">
                                         <div class="offer-logo">
-                                            <a href="#">
+                                            <a href="http://gl.guruleads.ru/click/12/30?sub1=smartzaim&sub2=site">
                                                 <noscript>
                                                     <img	src="/img/2016/08/zaymer.png">
                                                 </noscript>
