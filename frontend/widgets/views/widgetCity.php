@@ -3,7 +3,7 @@
         <span>Қаланы таңдау</span>
         <ul>
             <?php foreach ($cities as $city ) : ?>
-            <li><a href="<?= $city['url'] ?>"><?= $city['name'] ?></a></li>
+            <li><a href="/<?= $city['url'] ?>"><?= $city['name'] ?></a></li>
             <?php endforeach; ?>
         </ul>
     </div>
