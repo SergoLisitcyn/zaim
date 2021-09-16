@@ -305,7 +305,7 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                                     </div>
                                     <div class="firstloan-col">
                                         <div class="offer-card-wrap">
-                                            <a href="#" class="offers-card-btn">Нақтырақ</a>
+                                            <a href="http://moneyman.kz/secure/registration?partner=smartzaimkz&utm_source=smartzaim&utm_medium=affiliate" class="offers-card-btn">Нақтырақ</a>
                                         </div>
                                     </div>
                                 </div>
@@ -345,7 +345,7 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                                     </div>
                                     <div class="firstloan-col">
                                         <div class="offer-card-wrap">
-                                            <a href="#" class="offers-card-btn">Нақтырақ</a>
+                                            <a href="http://sunfinance.go2cloud.org/aff_c?offer_id=14&aff_id=1022&source=smartzaim&aff_sub=AFFILIATE_CLICK_ID&aff_sub2=smartzaim" class="offers-card-btn">Нақтырақ</a>
                                         </div>
                                     </div>
                                 </div>
@@ -385,7 +385,7 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                                     </div>
                                     <div class="firstloan-col">
                                         <div class="offer-card-wrap">
-                                            <a href="#" class="offers-card-btn">Нақтырақ</a>
+                                            <a href="http://gl.guruleads.ru/click/12/30?sub1=smartzaim&sub2=site" class="offers-card-btn">Нақтырақ</a>
                                         </div>
                                     </div>
                                 </div>
