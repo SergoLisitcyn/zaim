@@ -75,12 +75,12 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                                 </div>
                             </div>
                             <div class="mfo-head__text">Ресми сайтқа өту
-                                <a href="#"><?= $model->website?></a>
+                                <a href="<?= $model->link_offer ?>"><?= $model->website?></a>
                             </div>
                         </div>
                         <div class="content-main-info__item">
                             <div class="mfo-head-logo">
-                                <a href="#">
+                                <a href="<?= $model->link_offer ?>">
                                     <img src="<?= $model->logo?>">
                                 </a>
                                 <div class="mfo-head-approv">Мақұлдау:
@@ -260,7 +260,7 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                                     <div	class="contact-phone-field"><?= $model->phone?></div>
                                     <div	class="contact-email">E-mail:</div>
                                     <div	class="contact-email-field">
-                                        <a href="#" class="email"><?= $model->email?></a>
+                                        <a href="<?= $model->email?>" class="email"><?= $model->email?></a>
                                     </div>
                                     <div	class="contact-site">Cайт:
                                         <a class="contact-site-link" href="#"><?= $model->website?></a>
@@ -616,7 +616,7 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                         </div>
                         <noindex>
                             <a href="<?= $model->link_offer ?>" target="_blank">
-                                <div	class="mfo_card_button">Ақшаны алу</div>
+                                <div class="mfo_card_button">Ақшаны алу</div>
                             </a>
                         </noindex>
                     </div>
@@ -625,7 +625,7 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                     <div class="mfo_card__title">Өтінім беру</div>
                     <div class="mfo_card__info">
                         <div class="mfo_card__text">Компанияны таңдай алмадыңыз ба? Өтінім қалдырыңыз, біз Сіз үшін мейлінше пайдалы қарыз түрлерін іріктеп таңдап береміз!</div>
-                        <a href="#">
+                        <a href="https://smartzaim.kz/zayavka-na-zajm/?utm_source=kz.smartzaim.kz">
                             <div	class="mfo_card_button">Нақтырақ</div>
                         </a>
                     </div>
@@ -701,8 +701,8 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                         </div>
                     </div>
                     <div class="mfo_card__info">
-                        <a href="#">
-                            <div	class="mfo_card_button">Басқа қарызды таңдау</div>
+                        <a href="/">
+                            <div class="mfo_card_button">Басқа қарызды таңдау</div>
                         </a>
                     </div>
                 </div>
