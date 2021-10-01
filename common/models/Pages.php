@@ -12,6 +12,7 @@ use Yii;
  * @property string $slug
  * @property string|null $content
  * @property string|null $title
+ * @property string|null $title_seo
  * @property string|null $description
  * @property string|null $keywords
  * @property int|null $status
@@ -35,7 +36,7 @@ class Pages extends \yii\db\ActiveRecord
             [['name', 'slug'], 'required'],
             [['content'], 'string'],
             [['status'], 'integer'],
-            [['name', 'slug', 'title', 'description', 'keywords'], 'string', 'max' => 255],
+            [['name', 'slug', 'title', 'description', 'keywords','title_seo'], 'string', 'max' => 255],
         ];
     }
 
@@ -50,6 +51,7 @@ class Pages extends \yii\db\ActiveRecord
             'slug' => 'Ссылка',
             'content' => 'Content',
             'title' => 'Заголовок',
+            'title_seo' => 'Title Seo',
             'description' => 'Description',
             'keywords' => 'Keywords',
             'status' => 'Статус',

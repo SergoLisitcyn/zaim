@@ -1,7 +1,7 @@
 <?php
-if(isset($model->title) and !empty($model->title)) { $this->title = $model->title; }
-if(isset($model->keywords) and !empty($model->keywords)) { $this->registerMetaTag(['name' => 'keywords','content' => $model->keywords]); }
-if(isset($model->description) and !empty($model->description)) { $this->registerMetaTag(['name' => 'description','content' => $model->description]); }
+if(isset($model->title_seo) && !empty($model->title)) { $this->title = $model->title_seo; }
+if(isset($model->keywords) && !empty($model->keywords)) { $this->registerMetaTag(['name' => 'keywords','content' => $model->keywords]); }
+if(isset($model->description) && !empty($model->description)) { $this->registerMetaTag(['name' => 'description','content' => $model->description]); }
 ?>
 <style>
     .content-info h1 {
