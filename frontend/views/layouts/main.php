@@ -109,7 +109,7 @@ if($url == '/'){
                         </a>
                         <div style="float: right">
                         <div style="display: inline-block;vertical-align: top;text-align: center;line-height: 28px;font-size: 16px;">Язык:</div>
-                        <a href="https://smartzaim.kz/" style="display: inline-block;vertical-align: top;text-align: center;line-height: 28px;font-size: 16px;">RU</a>
+                        <a href="https://smartzaim.kz/" style="display: inline-block;color: #337ab7;vertical-align: top;text-align: center;line-height: 28px;font-size: 16px;">RU</a>
                         <div style="color:#337ab7;display: inline-block;vertical-align: top;text-align: center;padding-right: 15px;"><b style="line-height: 28px;font-size: 16px;">| KZ</b></div>
                         </div>
                     </div>
