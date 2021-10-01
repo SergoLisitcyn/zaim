@@ -1508,7 +1508,8 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
 .faq__row {
     text-align: left;
     display: flex;
-    align-items: center;
+    /*align-items: center;*/
+    align-items: flex-start;
     justify-content: space-between;
     padding: 0 80px;
 }
@@ -1700,7 +1701,7 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
     counter-increment: list;
     position: absolute;
     top: -2px;
-    left: 0;
+    left: 20px;
     width: 29px;
     height: 29px;
     line-height: 29px;
@@ -2734,6 +2735,7 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
     color: #fff;
     text-transform: uppercase;
     width: 300px;
+    font-weight: 700;
 }
 
 .mfo_card .aside-list {

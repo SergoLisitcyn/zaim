@@ -145,7 +145,7 @@ $this->registerMetaTag(['name' => 'description',
             <p>Кредит берудің негізгі шарттары:</p>
         </div>
         <div class="how-take__items">
-            <ul class="how-take__list">
+            <ul class="how-take__list" style="padding-left: 0">
                 <li>
                     <p>Дұрыс дербес ақпарат көрсетілген, қатесіз толтырылған сауалнама. Банк шотының немесе картасының
                         нөмірі расталған және клиентке тиесілі;</p>
@@ -160,7 +160,7 @@ $this->registerMetaTag(['name' => 'description',
 
 <section class="how-take-points plr">
     <div class="how-take-points-wrap limit-width">
-        <h2 class="how-take-points__title">Өтініш берген күні шағын қарызды қалай алуға болады?</h2>
+        <h2 class="how-take__title">Өтініш берген күні шағын қарызды қалай алуға болады?</h2>
         <p class="how-take-points__text">
             Сіздердің назарларыңызға микрокредитті рәсімдеудің адымдық нұсқаулығын ұсынамыз. Егер сіз оны ұстанатын болсаңыз,
             сіз ең қысқа мерзімде сол күні және тиімді шарттар бойынша теңгемен қарыз ресімдейсіз.
@@ -215,7 +215,7 @@ $this->registerMetaTag(['name' => 'description',
                 компанияларда алу неліктен тиімді екендігі төменде сипатталған:</p>
         </div>
         <div class="advantages__items">
-            <ul class="advantages__list">
+            <ul class="advantages__list" style="padding-left: 0">
                 <li>
                     <p>Қарыз бойынша пайыздық мөлшерлемелерді салыстыру мүмкіндігімен МҚҰ ағымдағы ұсыныстарын салыстырудың ыңғайлылығы;</p>
                 </li>

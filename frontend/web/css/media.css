@@ -130,7 +130,7 @@
 
     .advantages__list li {
         max-width: 100%;
-        align-items: center;
+        /*align-items: center;*/
         justify-content: flex-start;
         margin: 10px 0;
         width: 100%;
