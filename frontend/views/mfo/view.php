@@ -105,7 +105,7 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                             </div>
                         </div>
                         <div class="mfo-about">
-                            <h2 class="mfo-about-title">О	компании</h2>
+                            <h2 class="mfo-about-title">Компания туралы</h2>
                             <p class="mfo-about-text">
                                 <?= $model->about_company ?>
                             </p>
@@ -192,7 +192,7 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                         <div class="article-contacts">
                             <div class="article-contacts__inner">
                                 <div class="feedback-form article-contacts__form">
-                                    <div class="feedback-form__title">Задать вопрос	представителю	компании <?= $model->mfo_name?></div>
+                                    <div class="feedback-form__title">Компания өкіліне сұрақ қою <?= $model->mfo_name?></div>
                                     <form>
                                         <div class="feedback-form__fields">
                                             <div class="feedback-form__group feedback-form__group--sm">
@@ -254,7 +254,7 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                                 </ul>
                             </div>
                             <div	class="contactdetails-item details-contact">
-                                <h3 class="contactdetails-title">Контактная информация</h3>
+                                <h3 class="contactdetails-title">Байланыс ақпараты</h3>
                                 <div	class="contact-wrap">
                                     <div	class="contact-phone">Телефон:</div>
                                     <div	class="contact-phone-field"><?= $model->phone?></div>
@@ -263,7 +263,7 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                                         <a href="#" class="email"><?= $model->email?></a>
                                     </div>
                                     <div	class="contact-site">Cайт:
-                                        <a class="contact-site-link"	href="#"><?= $model->website?></a>
+                                        <a class="contact-site-link" href="#"><?= $model->website?></a>
                                     </div>
                                 </div>
                             </div>
@@ -391,12 +391,14 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                                 </div>
                             </div>
                         </div>
+                        <?php if($model->video) : ?>
                         <div class="mfo-about__video">
                             <h3 class="mfo-about__video-title"><?= $model->mfo_name?> ақшаны қалай алуға болады</h3>
                             <div class="yt-video">
                                 <iframe width="805" height="460" src="<?= $model->video?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                         </div>
+                        <?php endif; ?>
                     </div>
 
                 </div>
