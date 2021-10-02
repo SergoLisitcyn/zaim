@@ -54,7 +54,7 @@
                     </div>
                 </div>
             </div>
-            <a href="#">
+            <a href="http://4slovo.kz/register/?aprt159=6512bd43d9caa6e02c990b0a82652dca&utm_source=smartzaim.kz&utm_content=sitekz" target="_blank">
                 <div class="mfo_card_button">Ақшаны алу</div>
             </a>
         </div>

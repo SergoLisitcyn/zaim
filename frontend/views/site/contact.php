@@ -1,6 +1,9 @@
 <?php
 
-$this->title = 'Contact';
+$this->title = 'Байланыстар — smartzaim.kz';
+$this->registerMetaTag(['name' => 'description',
+    'content' => '➤Smartzaim.kz дегеніміз - қарыз алушыларға кредиттің оңтайлы шарттарын таңдауға және МҚҰ іріктеуге
+     көмектесетін сервисツ']);
 ?>
 <section class="content plr" id="contacts">
     <div class="content-wrap limit-width">
