@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\NewsSearch */
+/* @var $model common\models\ArticlesSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="news-search">
+<div class="articles-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -19,15 +19,19 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name') ?>
 
+    <?= $form->field($model, 'preview_image') ?>
+
     <?= $form->field($model, 'content') ?>
 
-    <?= $form->field($model, 'text_content') ?>
-
-    <?= $form->field($model, 'images') ?>
+    <?= $form->field($model, 'date_publish') ?>
 
     <?php // echo $form->field($model, 'url') ?>
 
-    <?php // echo $form->field($model, 'date') ?>
+    <?php // echo $form->field($model, 'title_seo') ?>
+
+    <?php // echo $form->field($model, 'description') ?>
+
+    <?php // echo $form->field($model, 'user_id') ?>
 
     <?php // echo $form->field($model, 'sort') ?>
 

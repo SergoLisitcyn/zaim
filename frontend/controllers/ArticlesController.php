@@ -2,20 +2,19 @@
 
 namespace frontend\controllers;
 
-use common\models\Articles;
 use common\models\Mfo;
 use Yii;
-use common\models\News;
-use common\models\NewsSearch;
+use common\models\Articles;
+use common\models\ArticlesSearch;
 use yii\db\Expression;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * NewsController implements the CRUD actions for News model.
+ * ArticlesController implements the CRUD actions for Articles model.
  */
-class NewsController extends Controller
+class ArticlesController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -34,39 +33,39 @@ class NewsController extends Controller
 
     public function actionIndex()
     {
-        $news = News::find()->where(['status' => 1])->all();
+        $articles = Articles::find()->where(['status' => 1])->all();
 
         return $this->render('index', [
-            'news' => $news,
+            'articles' => $articles,
         ]);
     }
 
     public function actionView($url = null): string
     {
-        $news = News::find()->where(['status' => 1, 'url' => $url])->one();
-        $newsRandom = News::find()
+        $articles = Articles::find()->where(['status' => 1, 'url' => $url])->one();
+        $articlesRandom = Articles::find()
             ->where(['status' => 1])
-            ->andWhere(['!=','id', $news->id])
+            ->andWhere(['!=','id', $articles->id])
             ->orderBy(new Expression('rand()'))
             ->limit(3)
             ->all();
         $mfo = Mfo::find()->where(['id' => 1])->one();
         return $this->render('view', [
-            'model' => $news,
+            'model' => $articles,
             'mfo' => $mfo,
-            'newsRandom' => $newsRandom,
+            'articlesRandom' => $articlesRandom,
         ]);
 
     }
 
     /**
-     * Creates a new News model.
+     * Creates a new Articles model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new News();
+        $model = new Articles();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -78,7 +77,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Updates an existing News model.
+     * Updates an existing Articles model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -98,7 +97,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Deletes an existing News model.
+     * Deletes an existing Articles model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -112,15 +111,15 @@ class NewsController extends Controller
     }
 
     /**
-     * Finds the News model based on its primary key value.
+     * Finds the Articles model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return News the loaded model
+     * @return Articles the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = News::findOne($id)) !== null) {
+        if (($model = Articles::findOne($id)) !== null) {
             return $model;
         }
 

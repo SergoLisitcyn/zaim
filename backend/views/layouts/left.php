@@ -30,7 +30,7 @@
                         'url' => '#',
                         'items' => [
                             ['label' => 'Новости', 'icon' => 'newspaper-o', 'url' => ['/news'],],
-                            ['label' => 'Статьи', 'icon' => 'paper-plane', 'url' => ['/news'],],
+                            ['label' => 'Статьи', 'icon' => 'paper-plane', 'url' => ['/articles'],],
                             ['label' => 'Акции', 'icon' => 'hand-spock-o', 'url' => ['/sale'],],
                             ['label' => 'Архив акций', 'icon' => 'archive', 'url' => ['/sale'],],
 //                            [

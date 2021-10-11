@@ -20,38 +20,6 @@ $this->registerMetaTag(['name' => 'description',
 </section>
 
 <?= CalculatorWidget::widget() ?>
-
-<section class="database plr">
-    <div class="database-wrap limit-width">
-        <h2 class="database__title">Кредиттік ұйымдар туралы ең өзекті ақпарат</h2>
-        <div class="database__row">
-            <div class="database__item">
-                <div class="quantity">65</div>
-                <div class="field">Компаний<br>в Казахстане</div>
-            </div>
-            <div class="database__item">
-                <div class="quantity">800</div>
-                <div class="field">Клиенттің<br> пікірі </div>
-            </div>
-            <div class="database__item">
-                <div class="quantity">27</div>
-                <div class="field">Айына<br>в өтінім</div>
-                <div class="thousand"><br>тыс.</div>
-            </div>
-        </div>
-        <?php
-        $monthsList = [
-            "1"=>"қаңтарда","2"=>"ақпанда","3"=>"наурызда",
-            "4"=>"сәуірде","5"=>"мамырда", "6"=>"маусымда",
-            "7"=>"шілдеде","8"=>"тамызда","9"=>"қыркүйекте",
-            "10"=>"қазанда","11"=>"қарашада","12"=>"желтоқсанда"];
-
-        $month = $monthsList[date("n")];
-        ?>
-        <span class="mfo_update_date">Жаңартылған <?= $month.' '.date("Y") ?></span>
-    </div>
-</section>
-
 <?php echo GridCatalog::widget(['input' => 'homepage']); ?>
 
 <section class="subscribe-main plr mt18">

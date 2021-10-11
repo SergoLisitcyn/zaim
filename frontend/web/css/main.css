@@ -86,8 +86,8 @@ img {
 .wrapper {
     overflow: hidden;
     min-height: 100%;
-    background: url(../img/uncode-child/bg-lg.jpg) 50% 0 no-repeat #50e3c2;
-    background-color: #50e3c2;
+    background: url(../img/uncode-child/bg-lg-new.jpg) 50% 0 #e0e3e3;
+    background-color: rgb(45 138 180);
 }
 
 select {
