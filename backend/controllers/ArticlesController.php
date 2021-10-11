@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use common\models\AdvantagesSearch;
 use common\models\Sale;
 use Yii;
 use common\models\Articles;
@@ -9,6 +10,7 @@ use common\models\ArticlesSearch;
 use yii\base\DynamicModel;
 use yii\filters\AccessControl;
 use yii\helpers\FileHelper;
+use yii\helpers\Json;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -49,15 +51,26 @@ class ArticlesController extends Controller
         ];
     }
 
-    /**
-     * Lists all Articles models.
-     * @return mixed
-     */
     public function actionIndex()
     {
         $searchModel = new ArticlesSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
+        if (Yii::$app->request->post('hasEditable'))
+        {
+            $id=$_POST['editableKey'];
+            $model = $this->findModel($id);
+            $out    = Json::encode(['output'=>'', 'message'=>'']);
+            $post = [];
+            $posted = current($_POST['Articles']);
+            $post['Articles'] = $posted;
+            if ($model->load($post)) {
+                $model->save();
+                $output = '';
+                $out = Json::encode(['output'=>$output, 'message'=>'']);
+            }
+            echo $out;
+            return;
+        }
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,

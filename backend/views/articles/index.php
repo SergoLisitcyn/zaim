@@ -18,29 +18,61 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Создать', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <?= GridView::widget([
+    <?= \kartik\grid\GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            [
+                'class' => 'yii\grid\SerialColumn',
+                'options' => ['width' => '10'],
+            ],
 
-            'id',
             'name',
-            'preview_image',
-            'content:ntext',
-            'date_publish',
-            //'url:url',
-            //'title_seo',
-            //'description',
-            //'user_id',
-            //'sort',
-            //'status',
+            [
+                'label' => 'Изображение',
+                'format' => 'raw',
+                'hAlign' => 'center',
+                'value' => function ($model) {
+                    if($model->preview_image){
+                        return Html::img($model->preview_image,['style' => 'height: 50px;']);
+                    } else {
+                        return '';
+                    }
 
-            ['class' => 'yii\grid\ActionColumn'],
+                },
+            ],
+            [
+                'label' => 'Статус',
+                'value' => function ($model) {
+                    $result = '';
+                    if($model->status == 1){
+                        $result .= 'Активен';
+                    } else {
+                        $result .= 'Неактивен';
+                    }
+
+                    return $result;
+                },
+            ],
+            'date_publish',
+            [
+                'class' => 'kartik\grid\EditableColumn',
+                'attribute' => 'sort',
+                'hAlign' => 'center',
+                'filter' => false,
+                'value' => function($model){ return $model->sort; },
+            ],
+
+            [
+                'label' => 'Действия',
+                'format' => 'raw',
+                'options' => ['width' => '200'],
+                'value' => function ($model, $index, $jobList) {
+                    return Html::tag('a', 'Редактировать', ['href' => \yii\helpers\Url::toRoute(['articles/update', 'id' => $index]), 'class' => 'btn btn-success', 'style' => 'font-weight: 100;margin-right:10px'])
+                        .Html::tag('a', 'Удалить', ['href' => \yii\helpers\Url::toRoute(['articles/delete', 'id' => $index]), 'data-method' => 'post', 'data-confirm' => 'Вы точно хотите удалить?', 'class' => 'btn btn-order btn-danger', 'style' => 'font-weight: 100']);
+                },
+            ],
         ],
     ]); ?>
-
 
 </div>

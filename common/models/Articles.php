@@ -77,10 +77,10 @@ class Articles extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'preview_image' => 'Preview Image',
+            'name' => 'Название',
+            'preview_image' => 'Главная картинка',
             'content' => 'Content',
-            'date_publish' => 'Date Publish',
+            'date_publish' => 'Дата публикации',
             'url' => 'Постоянная ссылка',
             'title_seo' => 'Title Seo',
             'description' => 'Description',

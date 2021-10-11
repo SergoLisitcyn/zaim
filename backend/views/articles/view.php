@@ -31,7 +31,31 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'name',
-            'preview_image',
+            [
+                'label' => 'Изображение',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    if($model->preview_image){
+                        return Html::img($model->preview_image,['style' => 'height: 60px;']);
+                    } else {
+                        return '';
+                    }
+
+                },
+            ],
+            [
+                'label' => 'Статус',
+                'value' => function ($model) {
+                    $result = '';
+                    if($model->status == 1){
+                        $result .= 'Активен';
+                    } else {
+                        $result .= 'Неактивен';
+                    }
+
+                    return $result;
+                },
+            ],
             'content:ntext',
             'date_publish',
             'url:url',
@@ -39,7 +63,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'description',
             'user_id',
             'sort',
-            'status',
         ],
     ]) ?>
 

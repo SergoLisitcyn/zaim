@@ -85,8 +85,10 @@ use \kartik\date\DatePicker;
 
     <?= $form->field($model, 'sort')->textInput() ?>
 
-    <?= $form->field($model, 'status')->textInput() ?>
-
+    <?= $form->field($model, 'status')->dropDownList([
+        '1' => 'Активен',
+        '0' => 'Неактивен'
+    ]) ?>
     <div class="form-group">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
     </div>
