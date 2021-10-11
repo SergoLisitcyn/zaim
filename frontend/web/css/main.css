@@ -4595,3 +4595,12 @@ p {
     padding: 0 40px!important;
 }
 
+.articles_news li{
+    list-style-type: initial;
+    font-size: 17px;
+}
+
+.articles_news p{
+    list-style-type: initial;
+    font-size: 17px;
+}

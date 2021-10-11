@@ -46,7 +46,7 @@ $this->title = $model->name;
                                     </div>
                                 </div>
                             </div>
-                            <div class="aktsii-article__content">
+                            <div class="aktsii-article__content articles_news">
                                 <?= $model->content ?>
                                 <div class="aktsii-article__box">
                                     <h3>Ұқсас ұсыныстар</h3>
