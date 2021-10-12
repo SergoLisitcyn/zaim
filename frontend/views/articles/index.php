@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel common\models\ArticlesSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Articles';
+$this->title = 'Пайдалы материалдар';
 ?>
     <section class="breadcrumbs plr">
         <div class="breadcrumbs-wrap limit-width">

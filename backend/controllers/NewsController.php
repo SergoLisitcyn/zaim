@@ -5,10 +5,14 @@ namespace backend\controllers;
 use Yii;
 use common\models\News;
 use common\models\NewsSearch;
+use yii\base\DynamicModel;
 use yii\filters\AccessControl;
+use yii\helpers\FileHelper;
+use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * NewsController implements the CRUD actions for News model.
@@ -122,6 +126,58 @@ class NewsController extends Controller
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
+    }
+
+    public function actionDeleteimg($id){
+
+        $model = News::find()->where(['id' => $id])->one();
+        $model->images = null;
+        $model->update(false);
+
+        return $this->redirect(["news/update?id=$id"]);
+    }
+
+    public function actionSaveRedactorImg ($sub='main')
+
+    {
+        $this -> enableCsrfValidation = false;
+        if (Yii::$app->request->isPost) {
+            $dir = Yii::getAlias('@frontend/web') . '/uploads/images/news' . $sub . '/';
+            if (!file_exists($dir)){
+                FileHelper::createDirectory($dir);
+            }
+
+            $result_link = 'https://kz.smartzaim.kz/uploads/images/news' . $sub . '/';
+            $file = UploadedFile::getInstanceByName('file');
+            $model = new DynamicModel (compact ('file'));
+            $model ->addRule ('file', 'image')->validate();
+
+            if ($model ->hasErrors()) {
+
+                $result = [
+                    'error' => $model -> getFirstError ('file')
+                ];
+            } else {
+
+                $model->file->name = strtotime('now').'_'.Yii::$app->getSecurity()->generateRandomString(6) . '.' . $model->file->extension;
+
+                if ($model->file->saveAs ($dir . $model->file->name)) {
+                    $result = ['filelink' => $result_link . $model->file->name,'filename'=>$model->file->name];
+
+                } else {
+
+                    $result = [
+                        'error' => Yii::t ('vova07/imperavi', 'ERROR_CAN_NOT_UPLOAD_FILE')
+                    ];
+
+                }
+            }
+            Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+            return $result;
+        } else {
+            throw new BadRequestHttpException ('Only Post is allowed');
+        }
     }
 
     /**

@@ -146,7 +146,7 @@ class ArticlesController extends Controller
     public function actionDeleteimg($id){
 
         $model = Articles::find()->where(['id' => $id])->one();
-        $model->image = null;
+        $model->preview_image = null;
         $model->update(false);
 
         return $this->redirect(["articles/update?id=$id"]);

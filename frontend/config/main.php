@@ -48,6 +48,7 @@ return [
                 '/' => '/site/index',
                 'aktsii' => '/sale/index',
                 'articles' => '/articles/index',
+                'news' => '/news/index',
                 'arhiv' => '/sale/arhiv',
                 'kreditnyj-kalkulyator' => '/site/calculator',
                 'rating' => '/site/rating',
@@ -74,6 +75,11 @@ return [
                 [
                     'pattern' => 'articles/<url:\S+>',
                     'route' => '/articles/view',
+                    'defaults' => ['url' => '']
+                ],
+                [
+                    'pattern' => 'news/<url:\S+>',
+                    'route' => '/news/view',
                     'defaults' => ['url' => '']
                 ],
                 [

@@ -16,20 +16,14 @@
     <div class="mfo_card__title">Соңғы жаңалықтар</div>
     <div class="mfo_card__info">
         <ul class="aside-list">
-            <li>
-                <span	class="aside-list__date">15.11.2020</span>
-                <a href="#"	class="aside-list__title">Власти	Казахстана проверят	подозрительные	денежные	интернет-переводы на	причастность к	наркобизнесу</a>
-            </li>
-            <li>
-                <span	class="aside-list__date">08.11.2020</span>
-                <a href="#"	class="aside-list__title">Moneyman	появился	уполномоченный по	правам клиентов</a>
-            </li>
-            <li>
-                <span	class="aside-list__date">01.11.2020</span>
-                <a href="#"	class="aside-list__title">Средняя	заработная плата	казахстанских	докторов вырастет до	561 000 теңге к 2023	году</a>
-            </li>
+            <?php foreach ($news as $new) :?>
+                <li>
+                    <span class="aside-list__date"><?= date('d.m.Y',strtotime($new['date'])) ?></span>
+                    <a href="<?= \yii\helpers\Url::toRoute(['news/view', 'url' => $new->url]) ?>"	class="aside-list__title"><?= $new['name'] ?></a>
+                </li>
+            <?php endforeach; ?>
         </ul>
-        <a href="#" target="_blank"	rel="nofollow">
+        <a href="/news" target="_blank"	rel="nofollow">
             <div	class="mfo_card_button">Барлық жаңалықтар</div>
         </a>
     </div>
