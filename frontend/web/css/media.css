@@ -119,9 +119,8 @@
     }
 
     .main-title__img {
-        display: block;
-        margin: 0 auto;
-        margin-bottom: -36px;
+        display: none;
+        margin: 0 auto -36px;
     }
     .advantages__list {
         flex-direction: column;
