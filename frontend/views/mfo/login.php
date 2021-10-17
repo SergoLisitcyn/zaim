@@ -234,7 +234,7 @@ if(isset($model->title_description) and !empty($model->title_description)) { $th
                         </div>
                     </form>
                 </div>
-                <?= \frontend\widgets\ArticlesNews::widget() ?>
+<!--                --><?php //echo \frontend\widgets\ArticlesNews::widget() ?>
             </sidebar>
         </div>
     </div>

@@ -79,7 +79,7 @@ if($url == '/'){
                             </div>
                         </div>
                         <div class="header-cab">
-                            <div class="desktop-visible" style="display: inline-block;vertical-align: top;text-align: center;line-height: 30px;">Язык:</div>
+                            <div class="desktop-visible" style="display: inline-block;vertical-align: top;text-align: center;line-height: 30px;">Тілі:</div>
                             <a class="desktop-visible" href="https://smartzaim.kz/" style="display: inline-block;vertical-align: top;text-align: center;line-height: 30px;">RU</a>
                             <div class="desktop-visible" style="color:#337ab7;display: inline-block;vertical-align: top;text-align: center;line-height: 30px;padding-right: 15px;"><b >| KZ</b></div>
                             <a href="https://smartzaim.kz/lk/login?utm_source=kz.smartzaim.kz" class="header-cab__btn header-cab__btn--outline">Кіру</a>
@@ -108,7 +108,7 @@ if($url == '/'){
                             <span>МҚҰ ТОП-10</span>
                         </a>
                         <div style="float: right">
-                        <div style="display: inline-block;vertical-align: top;text-align: center;line-height: 28px;font-size: 16px;">Язык:</div>
+                        <div style="display: inline-block;vertical-align: top;text-align: center;line-height: 28px;font-size: 16px;">Тілі:</div>
                         <a href="https://smartzaim.kz/" style="display: inline-block;color: #337ab7;vertical-align: top;text-align: center;line-height: 28px;font-size: 16px;">RU</a>
                         <div style="color:#337ab7;display: inline-block;vertical-align: top;text-align: center;padding-right: 15px;"><b style="line-height: 28px;font-size: 16px;">| KZ</b></div>
                         </div>
@@ -219,7 +219,7 @@ if($url == '/'){
     <div class="footer__container container">
         <div class="footer__row">
             <div class="footer__col"> © Smartzaim.kz 2016-2020. <br>Барлық құқықтар қорғалған <br><br>
-                <a href="tel:+77172727920">+7 (717) 272-79-20</a> <br><br> Сайттың мазмұны айрықша ақпараттық-анықтамалық сипатқа ие. Smartzaim.kz сайты кредиттік ұйым болып табылмайды және кредиттер бермейді. Сайт таңдалған микрокредиттеу сервисіне берілген өтініш үшін клиенттен төлемақы алмайды.
+                <a href="tel:+77172727920">+7 (717) 272-79-20</a> <br> Сайттың мазмұны айрықша ақпараттық-анықтамалық сипатқа ие. Smartzaim.kz сайты кредиттік ұйым болып табылмайды және кредиттер бермейді. Сайт таңдалған микрокредиттеу сервисіне берілген өтініш үшін клиенттен төлемақы алмайды.
             </div>
             <div class="footer__col"> Барлық ұсынылған компаниялардың тиісті қызметке лицензиялары бар.
                 <br> Материалдарды пайдалану кезінде Smartzaim.kz сайтына белсенді гиперсілтеме жіберу міндетті болып табылады.</div>
