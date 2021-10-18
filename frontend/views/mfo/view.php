@@ -1,7 +1,5 @@
 <?php
 
-use yii\helpers\Html;
-use yii\widgets\DetailView;
 use \yii\helpers\Url;
 use kartik\rating\StarRating;
 /* @var $this yii\web\View */
@@ -42,7 +40,7 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                                 <span>Жеке кабинет</span>
                             </a>
                         </li>
-                        <li class="">
+                        <li>
                             <a href="<?= Url::toRoute(['mfo/reviews', 'url' => $model->url]) ?>">
                                 <span>Пікірлер ( <span	class="rr-reviews-count">6</span> )</span>
                             </a>
@@ -89,20 +87,22 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                         </div>
                     </div>
                     <div class="content-main-info__content">
+                        <?php if($sale) : ?>
                         <div class="akciya-container">
                             <div class="akciya-container-item">
                                 <div class="akciya-caption">Акция!
                                 </div>
-                                <div class="akciya-text">Оформите микрокредит в <?= $model->website?> и	получите подарок!</div>
+                                <div class="akciya-text"><?= $sale->name?></div>
                             </div>
                             <div class="akciya-container-item">
                                 <div class="akciya-date-wrap">
-                                    <div class="akciya-date">08.10.2020 - 15.01.2021
-                                        <a href="#" class="akciya-btn">Нақтырақ</a>
+                                    <div class="akciya-date"><?= date('m.d.Y',strtotime($sale->srok_ot)) ?> - <?= date('m.d.Y',strtotime($sale->srok_do)) ?>
+                                        <a href="<?= \yii\helpers\Url::toRoute(['sale/list', 'url' => $sale->url]) ?>" class="akciya-btn">Нақтырақ</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <?php endif; ?>
                         <div class="mfo-about">
                             <h2 class="mfo-about-title">Компания туралы</h2>
                             <div class="mfo-about-text">
@@ -260,10 +260,10 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                                     <div	class="contact-phone-field"><?= $model->phone?></div>
                                     <div	class="contact-email">E-mail:</div>
                                     <div	class="contact-email-field">
-                                        <a href="<?= $model->email?>" class="email"><?= $model->email?></a>
+                                        <a href="mailto:<?= $model->email?>" class="email"><?= $model->email?></a>
                                     </div>
                                     <div	class="contact-site">Cайт:
-                                        <a class="contact-site-link" href="#"><?= $model->website?></a>
+                                        <a class="contact-site-link" href="<?= $model->link_offer ?>"><?= $model->website ?></a>
                                     </div>
                                 </div>
                             </div>

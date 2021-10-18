@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 
 use common\models\Review;
+use common\models\Sale;
 use Yii;
 use common\models\Mfo;
 use yii\data\ActiveDataProvider;
@@ -49,7 +50,6 @@ class MfoController extends Controller
      * Displays a single Mfo model.
      * @param integer $id
      * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionView($url)
     {
@@ -57,9 +57,10 @@ class MfoController extends Controller
 
         $mfo = Mfo::find()->where(['status' => 1, 'url' => $url])->one();
         if(!$mfo) return $this->redirect('/');
-
+        $sale = Sale::find()->where(['status' => 1,'mfo_id' => $mfo->id])->orderBy(['srok_do' => SORT_DESC])->one();
         return $this->render('view', [
             'model' => $mfo,
+            'sale' => $sale,
         ]);
     }
 

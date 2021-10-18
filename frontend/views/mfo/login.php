@@ -13,7 +13,7 @@ if(isset($model->title_description) and !empty($model->title_description)) { $th
                 <a href="<?= Url::toRoute(['mfo/view', 'url' => $model->url]) ?>"><?= $model->mfo_name?></a>
             </li>
             <li>
-                Личный кабинет
+                Жеке кабинет
             </li>
         </ul>
     </div>
@@ -28,12 +28,12 @@ if(isset($model->title_description) and !empty($model->title_description)) { $th
                     <ul	class="nav nav-tabs">
                         <li>
                             <a href="<?= Url::toRoute(['mfo/view', 'url' => $model->url]) ?>">
-                                <span>О	компании</span>
+                                <span>Компания туралы</span>
                             </a>
                         </li>
                         <li class="active">
                             <a href="<?= Url::toRoute(['mfo/login', 'url' => $model->url]) ?>">
-                                <span>Личный	кабинет</span>
+                                <span>Жеке кабинет</span>
                             </a>
                         </li>
                         <li class="">
@@ -42,7 +42,7 @@ if(isset($model->title_description) and !empty($model->title_description)) { $th
                             </a>
                         </li>
                         <li	class="add_to_compare">
-                            <a data-mfo="creditplus"	data-title="CreditPlus"	href="#">
+                            <a data-mfo="creditplus" data-title="CreditPlus"	href="#">
                                 <span>Салыстыру</span>
                             </a>
                         </li>
@@ -140,7 +140,7 @@ if(isset($model->title_description) and !empty($model->title_description)) { $th
                     <div class="mfo_card__title">Өтінім беру</div>
                     <div class="mfo_card__info">
                         <div class="mfo_card__text">Компанияны таңдай алмадыңыз ба? Өтінім қалдырыңыз, біз Сіз үшін мейлінше пайдалы қарыз түрлерін іріктеп таңдап береміз!</div>
-                        <a href="#">
+                        <a href="https://smartzaim.kz/zayavka-na-zajm/?utm_source=kz.smartzaim.kz">
                             <div	class="mfo_card_button">Нақтырақ</div>
                         </a>
                     </div>
@@ -197,9 +197,9 @@ if(isset($model->title_description) and !empty($model->title_description)) { $th
                             <div class="aside-rating-mfo-item">
                                 <a	href="#">
                                     <noscript>
-                                        <img	src="/img/2018/01/tengokz_300x140_0.png">
+                                        <img src="/img/2018/01/tengokz_300x140_0.png">
                                     </noscript>
-                                    <img	class="lazyload"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="/img/2018/01/tengokz_300x140_0.png">
+                                    <img class="lazyload"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="/img/2018/01/tengokz_300x140_0.png">
                                 </a>
                             </div>
                             <div class="aside-rating-mfo-item">

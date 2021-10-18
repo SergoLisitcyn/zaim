@@ -59,7 +59,7 @@ $this->registerMetaTag(['name' => 'description',
                                             </a>
                                         </a>
                                         <div class="aktsii-item__date">с <?= date('m.d.Y',strtotime($sale->srok_ot)) ?> по <?= date('m.d.Y',strtotime($sale->srok_do)) ?></div>
-                                        <a href="<?= \yii\helpers\Url::toRoute(['sale/list', 'url' => $sale->url]) ?>" class="aktsii-item__more">Подробнее</a>
+                                        <a href="<?= \yii\helpers\Url::toRoute(['sale/list', 'url' => $sale->url]) ?>" class="aktsii-item__more">Нақтырақ</a>
                                     </div>
                                 </div>
                                 <?php endforeach; ?>

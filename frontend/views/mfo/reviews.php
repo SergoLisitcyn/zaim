@@ -32,12 +32,12 @@ YiiAsset::register($this);
                     <ul	class="nav nav-tabs">
                         <li>
                             <a href="<?= Url::toRoute(['mfo/view', 'url' => $mfo->url]) ?>">
-                                <span>О	компании</span>
+                                <span>Компания туралы</span>
                             </a>
                         </li>
                         <li>
                             <a href="<?= Url::toRoute(['mfo/login', 'url' => $mfo->url]) ?>">
-                                <span>Личный	кабинет</span>
+                                <span>Жеке кабинет</span>
                             </a>
                         </li>
                         <li class="active">
@@ -46,7 +46,7 @@ YiiAsset::register($this);
                             </a>
                         </li>
                         <li	class="add_to_compare">
-                            <a data-mfo="creditplus"	data-title="CreditPlus"	href="#">
+                            <a data-mfo="<?= $mfo->mfo_name?>"	data-title="<?= $mfo->mfo_name?>"	href="#">
                                 <span>Салыстыру</span>
                             </a>
                         </li>
@@ -205,8 +205,8 @@ YiiAsset::register($this);
                     <div class="mfo_card__title">Өтінім беру</div>
                     <div class="mfo_card__info">
                         <div class="mfo_card__text">Компанияны таңдай алмадыңыз ба? Өтінім қалдырыңыз, біз Сіз үшін мейлінше пайдалы қарыз түрлерін іріктеп таңдап береміз!</div>
-                        <a href="#">
-                            <div	class="mfo_card_button">Нақтырақ</div>
+                        <a href="https://smartzaim.kz/zayavka-na-zajm/?utm_source=kz.smartzaim.kz">
+                            <div class="mfo_card_button">Нақтырақ</div>
                         </a>
                     </div>
                 </div>
