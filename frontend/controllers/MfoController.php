@@ -53,10 +53,11 @@ class MfoController extends Controller
      */
     public function actionView($url)
     {
-        if(!$url){
-            return $this->redirect('/');
-        }
+        if(!$url) return $this->redirect('/');
+
         $mfo = Mfo::find()->where(['status' => 1, 'url' => $url])->one();
+        if(!$mfo) return $this->redirect('/');
+
         return $this->render('view', [
             'model' => $mfo,
         ]);
