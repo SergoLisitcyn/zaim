@@ -58,7 +58,7 @@ $this->registerMetaTag(['name' => 'description',
                                             <h3 class="aktsii-item__title"><?= $sale->name ?></h3>
                                             </a>
                                         </a>
-                                        <div class="aktsii-item__date">с <?= date('m.d.Y',strtotime($sale->srok_ot)) ?> по <?= date('m.d.Y',strtotime($sale->srok_do)) ?></div>
+                                        <div class="aktsii-item__date">с <?= date('d.m.Y',strtotime($sale->srok_ot)) ?> по <?= date('d.m.Y',strtotime($sale->srok_do)) ?></div>
                                         <a href="<?= \yii\helpers\Url::toRoute(['sale/list', 'url' => $sale->url]) ?>" class="aktsii-item__more">Нақтырақ</a>
                                     </div>
                                 </div>

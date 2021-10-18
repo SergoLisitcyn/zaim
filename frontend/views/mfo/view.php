@@ -96,7 +96,7 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                             </div>
                             <div class="akciya-container-item">
                                 <div class="akciya-date-wrap">
-                                    <div class="akciya-date"><?= date('m.d.Y',strtotime($sale->srok_ot)) ?> - <?= date('m.d.Y',strtotime($sale->srok_do)) ?>
+                                    <div class="akciya-date"><?= date('d.m.Y',strtotime($sale->srok_ot)) ?> - <?= date('d.m.Y',strtotime($sale->srok_do)) ?>
                                         <a href="<?= \yii\helpers\Url::toRoute(['sale/list', 'url' => $sale->url]) ?>" class="akciya-btn">Нақтырақ</a>
                                     </div>
                                 </div>
