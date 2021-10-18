@@ -21,7 +21,6 @@ YiiAsset::register($this);
             </li>
         </ul>
     </div>
-    <img class="main-title__img" src="/img/uncode-child/bg-sm.png" alt="">
 </section>
 
 

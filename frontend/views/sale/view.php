@@ -17,14 +17,13 @@ $this->title = $model->name;
                 <a href="/">Онлайн қарыздар</a>
             </li>
             <li>
-                <a href="#">Акциялар</a>
+                <a href="/aktsii">Акциялар</a>
             </li>
             <li>
                 <?= $model->name ?>
             </li>
         </ul>
     </div>
-    <img class="main-title__img" src="img/uncode-child/bg-sm.png" alt="">
 </section>
 
 

@@ -11,7 +11,6 @@ $this->title = 'Калькулятор займа онлайн — расчет 
     <h1 class="title">Калькулятор займа онлайн</h1>
     <h2 class="subtitle">Неғұрлым тиімді ұсынысты тегін таңдаңыз!</h2>
     <h3 class="descr">Онлайн қарыз алу үшін, кредиттік ұйымдарға берілетін өтінім санын барынша көбірек толтырыңыз:</h3>
-    <img class="main-title__img" src="img/uncode-child/bg-sm.png" alt="">
 </section>
 
 <?= CalculatorWidget::widget() ?>

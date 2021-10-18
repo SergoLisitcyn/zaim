@@ -5,7 +5,7 @@
             <?php foreach ($sales as $sale) : ?>
             <div class="aktsii-list__item">
                 <div class="aktsii-item">
-                    <a href="#" class="aktsii-item__link">
+                    <a href="<?= \yii\helpers\Url::toRoute(['sale/list', 'url' => $sale->url]) ?>" class="aktsii-item__link">
                         <div class="aktsii-item__img-wrap">
                             <a href="<?= \yii\helpers\Url::toRoute(['sale/list', 'url' => $sale->url]) ?>">
                             <img src="<?= $sale->image ?>" data-lazy-type="image" data-lazy-src="<?= $sale->image ?>" alt="" class="lazy aktsii-item__img lazy-loaded">

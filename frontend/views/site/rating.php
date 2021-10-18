@@ -19,7 +19,6 @@ $this->title = 'Рейтинг лучших МФО — smartzaim.kz';
     ?>
     <p class="updated">Жаңартылған <?= $month.' '.date("Y") ?></p>
     <h3 class="descr">Для получения онлайн займа, заполните заявку в максимальное количество кредитных организаций:</h3>
-    <img class="main-title__img" src="img/uncode-child/bg-sm.png" alt="">
 </section>
 
 <?= CalculatorWidget::widget() ?>

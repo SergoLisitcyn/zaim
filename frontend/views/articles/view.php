@@ -28,7 +28,6 @@ if (isset($model->description) && !empty($model->description)) $this->registerMe
             </li>
         </ul>
     </div>
-    <img class="main-title__img" src="img/uncode-child/bg-sm.png" alt="">
 </section>
 
 
@@ -85,13 +84,13 @@ if (isset($model->description) && !empty($model->description)) $this->registerMe
                     <div class="mfo_card_company">
                         <a href="#">
                             <noscript>
-                                <img src="<?= $mfo->logo?>" alt="ДеньгиClick">
+                                <img src="<?= $mfo->logo?>" alt="<?= $mfo->mfo_name ?>">
                             </noscript>
-                            <img class=" ls-is-cached lazyloaded" src="<?= $mfo->logo?>" data-src="<?= $mfo->logo?>" alt="ДеньгиClick">
+                            <img class=" ls-is-cached lazyloaded" src="<?= $mfo->logo?>" data-src="<?= $mfo->logo?>" alt="<?= $mfo->mfo_name ?>">
                         </a>
                     </div>
                     <div class="mfo_card_compare">
-                        <a href="<?= $mfo->mfo_name ?>" data-mfo="dengiclick" data-title="ДеньгиClick">Салыстыру</a>
+                        <a href="<?= $mfo->mfo_name ?>" data-mfo="<?= $mfo->mfo_name ?>" data-title="<?= $mfo->mfo_name ?>">Салыстыру</a>
                     </div>
                     <div class="mfo_card_info_link">
                         <a href="#">Нақтырақ о <?= $mfo->mfo_name ?></a>

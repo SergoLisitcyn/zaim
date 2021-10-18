@@ -23,7 +23,6 @@ if(isset($model->description) and !empty($model->description)) { $this->register
             </li>
         </ul>
     </div>
-    <img class="main-title__img" src="img/uncode-child/bg-sm.png" alt="">
 </section>
 
 

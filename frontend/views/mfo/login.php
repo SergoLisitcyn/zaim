@@ -17,7 +17,6 @@ if(isset($model->title_description) and !empty($model->title_description)) { $th
             </li>
         </ul>
     </div>
-    <img class="main-title__img" src="/img/uncode-child/bg-sm.png" alt="">
 </section>
 
 

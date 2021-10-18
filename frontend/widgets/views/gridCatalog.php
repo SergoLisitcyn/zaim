@@ -15,7 +15,7 @@ use \yii\helpers\Url;
                     </a>
                 </div>
                 <div class="mfo_card_compare">
-                    <a href="#" data-mfo="creditplus" data-title="<?= $mfo->mfo_name ?>">Салыстыру</a>
+                    <a href="<?= $mfo->link_offer ?>" data-mfo="<?= $mfo->mfo_name ?>" data-title="<?= $mfo->mfo_name ?>">Салыстыру</a>
                 </div>
                 <div class="mfo_card_info_link">
                     <div class="line_mfo">
