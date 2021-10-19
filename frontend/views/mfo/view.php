@@ -22,8 +22,6 @@ if(isset($model->description) and !empty($model->description)) { $this->register
         </ul>
     </div>
 </section>
-
-
 <section class="content plr">
     <div class="content-wrap limit-width">
         <div class="content-row">
@@ -45,29 +43,19 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                                 <span>Пікірлер ( <span	class="rr-reviews-count">6</span> )</span>
                             </a>
                         </li>
-                        <li	class="add_to_compare">
-                            <a data-mfo="<?= $model->mfo_name?>"	data-title="<?= $model->mfo_name?>"	href="#">
-                                <span>Салыстыру</span>
-                            </a>
-                        </li>
+<!--                        <li	class="add_to_compare">-->
+<!--                            <a data-mfo="--><?php //$model->mfo_name?><!--"	data-title="--><?php //$model->mfo_name?><!--"	href="#">-->
+<!--                                <span>Салыстыру</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
                     </ul>
                     <div class="content-main-info">
                         <div class="content-main-info__item">
                             <h1><?= $model->mfo_name?></h1>
                             <div class="mfo-head__rating">
                                 <div class="rating">
-                                    <?php
-                                    echo StarRating::widget([
-                                        'name' => 'rating_21',
-                                        'value' => $model->rating,
-                                        'pluginOptions' => [
-                                            'readonly' => true,
-                                            'showClear' => false,
-                                            'showCaption' => false,
-                                        ],
-                                    ]);
-                                    ?>
-<!--                                    <div class="rating__stars" style="width:90%"></div>-->
+                                    <?php $starRate = (100 *  $model->rating)/5;?>
+                                    <div class="rating__stars" style="width:<?= $starRate?>%"></div>
                                     <div class="rating__val"><?= $model->rating?></div>
                                 </div>
                             </div>
@@ -142,12 +130,12 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                                 </div>
                             </div>
                             <div class="mfo-footer">
-                                <div class="mfo-footer-item">
-                                    <div class="mfo-card-compare mfo_card_compare">
-                                        <a data-mfo="<?= $model->mfo_name?>" data-title="<?= $model->mfo_name?>" href="#">Салыстыру</a>
-                                    </div>
-                                </div>
-                                <a class="mfo-footer mfo-show-rule" href="#" >Бар клиенттерге арналған шарттарды көрсету</a>
+<!--                                <div class="mfo-footer-item">-->
+<!--                                    <div class="mfo-card-compare mfo_card_compare">-->
+<!--                                        <a data-mfo="--><?php //$model->mfo_name?><!--" data-title="--><?php //$model->mfo_name?><!--" href="#">Салыстыру</a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+                                <a class="mfo-footer mfo-show-rule" href="#" style="text-decoration: none">Бар клиенттерге арналған шарттарды көрсету ></a>
                                 <a class="mfo-footer-item mfo-card-btn" href="<?= $model->link_offer ?>" target="_blank">Ақшаны алу</a>
                             </div>
                             <div class="conexist">
@@ -510,72 +498,32 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                     <div class="mfo_card__title">Компанияның рейтингі</div>
                     <div class="mfo_card__info ">
                         <div class="mfo_card__rating">
-                            <div class="rating">
-                                <?php
-                                echo StarRating::widget([
-                                    'name' => 'rating_21',
-                                    'value' => $model->rating,
-                                    'pluginOptions' => [
-                                        'readonly' => true,
-                                        'showClear' => false,
-                                        'showCaption' => false,
-                                    ],
-                                ]);
-                                ?>
-                                <div	class="rating__val"><?= $model->rating?></div>
-                                <div	class="rating__vote">6</div>
-                            </div>
+                             <div class="rating">
+                                 <div class="rating__stars" style="width:<?= $starRate ?>%"></div>
+                                 <div class="rating__val"><?= $model->rating ?></div>
+                                 <div class="rating__vote">6</div>
+                             </div>
                         </div>
                         <div class="aside-rating">
                             <div class="aside-rating-col">
                                 <div class="aside-rating-title">Алу қарапайымдылығы</div>
-                                <div	class="rating">
-                                    <?php
-                                    echo StarRating::widget([
-                                        'name' => 'rating_21',
-                                        'value' => $model->rating,
-                                        'pluginOptions' => [
-                                            'readonly' => true,
-                                            'showClear' => false,
-                                            'showCaption' => false,
-                                        ],
-                                    ]);
-                                    ?>
-                                    <div	class="rating__val">4.8</div>
+                                <div class="rating">
+                                    <div class="rating__stars" style="width:<?= $starRate ?>%"></div>
+                                    <div class="rating__val"><?= $model->rating ?></div>
                                 </div>
                             </div>
                             <div class="aside-rating-col">
                                 <div class="aside-rating-title">Скорость<br />выдачи</div>
-                                <div	class="rating">
-                                    <?php
-                                    echo StarRating::widget([
-                                        'name' => 'rating_21',
-                                        'value' => $model->rating,
-                                        'pluginOptions' => [
-                                            'readonly' => true,
-                                            'showClear' => false,
-                                            'showCaption' => false,
-                                        ],
-                                    ]);
-                                    ?>
-                                    <div	class="rating__val">5.0</div>
+                                <div class="rating">
+                                    <div class="rating__stars" style="width:100%"></div>
+                                    <div class="rating__val">5.0</div>
                                 </div>
                             </div>
                             <div class="aside-rating-col">
                                 <div class="aside-rating-title">Служба поддержки</div>
-                                <div	class="rating">
-                                    <?php
-                                    echo StarRating::widget([
-                                        'name' => 'rating_21',
-                                        'value' => $model->rating,
-                                        'pluginOptions' => [
-                                            'readonly' => true,
-                                            'showClear' => false,
-                                            'showCaption' => false,
-                                        ],
-                                    ]);
-                                    ?>
-                                    <div	class="rating__val">4.7</div>
+                                <div class="rating">
+                                    <div class="rating__stars" style="width:<?= $starRate ?>%"></div>
+                                    <div class="rating__val">4.7</div>
                                 </div>
                             </div>
                         </div>
@@ -718,38 +666,38 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                         </div>
                     </form>
                 </div>
-                <?= \frontend\widgets\ArticlesNews::widget() ?>
+                <!--                --><?php //echo \frontend\widgets\ArticlesNews::widget() ?>
             </sidebar>
         </div>
     </div>
 </section>
 
-<section class="ratings">
-    <div class="ratings-wrap">
-        <form class="ratings-form">
-            <p class="ratings-item">
-                <label class="ratings__description">Біздің сайтымызды бағалаңыз:</label>
-                <span class="mr-star-rating mr-star-rating-select">
-							<i title="1" class="fa fa-star-o mr-star-empty index-1-rating-item-1-1"></i>
-							<i title="2" class="fa fa-star-o mr-star-empty index-2-rating-item-1-1"></i>
-							<i title="3" class="fa fa-star-o mr-star-empty index-3-rating-item-1-1"></i>
-							<i title="4" class="fa fa-star-o mr-star-empty index-4-rating-item-1-1"></i>
-							<i title="5" class="fa fa-star-o mr-star-empty index-5-rating-item-1-1"></i>
-						</span>
-            </p>
-            <input type="button" class="save-rating" value="OK">
-        </form>
-        <span class="ratings-result">
-					<span class="mr-star-rating">
-						<i class="fa fa-star mr-star-full"></i>
-						<i class="fa fa-star mr-star-full"></i>
-						<i class="fa fa-star mr-star-full"></i>
-						<i class="fa fa-star mr-star-full"></i>
-						<i class="fa fa-star-half-o mr-star-half"></i>
-					</span>
-					<span class="star-result">
-						<span>4.38</span>/<span>5</span>(<span >2665</span>)
-					</span>
-				</span>
-    </div>
-</section>
+<!--<section class="ratings">-->
+<!--    <div class="ratings-wrap">-->
+<!--        <form class="ratings-form">-->
+<!--            <p class="ratings-item">-->
+<!--                <label class="ratings__description">Біздің сайтымызды бағалаңыз:</label>-->
+<!--                <span class="mr-star-rating mr-star-rating-select">-->
+<!--							<i title="1" class="fa fa-star-o mr-star-empty index-1-rating-item-1-1"></i>-->
+<!--							<i title="2" class="fa fa-star-o mr-star-empty index-2-rating-item-1-1"></i>-->
+<!--							<i title="3" class="fa fa-star-o mr-star-empty index-3-rating-item-1-1"></i>-->
+<!--							<i title="4" class="fa fa-star-o mr-star-empty index-4-rating-item-1-1"></i>-->
+<!--							<i title="5" class="fa fa-star-o mr-star-empty index-5-rating-item-1-1"></i>-->
+<!--						</span>-->
+<!--            </p>-->
+<!--            <input type="button" class="save-rating" value="OK">-->
+<!--        </form>-->
+<!--        <span class="ratings-result">-->
+<!--					<span class="mr-star-rating">-->
+<!--						<i class="fa fa-star mr-star-full"></i>-->
+<!--						<i class="fa fa-star mr-star-full"></i>-->
+<!--						<i class="fa fa-star mr-star-full"></i>-->
+<!--						<i class="fa fa-star mr-star-full"></i>-->
+<!--						<i class="fa fa-star-half-o mr-star-half"></i>-->
+<!--					</span>-->
+<!--					<span class="star-result">-->
+<!--						<span>4.38</span>/<span>5</span>(<span >2665</span>)-->
+<!--					</span>-->
+<!--				</span>-->
+<!--    </div>-->
+<!--</section>-->

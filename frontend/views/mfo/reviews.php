@@ -45,11 +45,6 @@ YiiAsset::register($this);
                                 <span>Пікірлер ( <span	class="rr-reviews-count">6</span> )</span>
                             </a>
                         </li>
-                        <li	class="add_to_compare">
-                            <a data-mfo="<?= $mfo->mfo_name?>"	data-title="<?= $mfo->mfo_name?>"	href="#">
-                                <span>Салыстыру</span>
-                            </a>
-                        </li>
                     </ul>
                     <div class="content-main-info">
                         <div class="content-main-info__item">
@@ -298,7 +293,7 @@ YiiAsset::register($this);
                         </div>
                     </form>
                 </div>
-                <?= \frontend\widgets\ArticlesNews::widget() ?>
+                <!--                --><?php //echo \frontend\widgets\ArticlesNews::widget() ?>
 
             </sidebar>
         </div>

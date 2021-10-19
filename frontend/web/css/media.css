@@ -34,6 +34,9 @@
         position: relative;
         margin-left: 25px;
     }
+    .header-nav__item:first-child{
+        margin-left: 0;
+    }
     .header-nav__drop {
         position: absolute;
         top: 100%;

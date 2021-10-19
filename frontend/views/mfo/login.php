@@ -41,11 +41,11 @@ if(isset($model->title_description) and !empty($model->title_description)) { $th
                                 <span>Пікірлер ( <span	class="rr-reviews-count">6</span> )</span>
                             </a>
                         </li>
-                        <li	class="add_to_compare">
-                            <a data-mfo="creditplus" data-title="CreditPlus"	href="#">
-                                <span>Салыстыру</span>
-                            </a>
-                        </li>
+<!--                        <li	class="add_to_compare">-->
+<!--                            <a data-mfo="creditplus" data-title="CreditPlus"	href="#">-->
+<!--                                <span>Салыстыру</span>-->
+<!--                            </a>-->
+<!--                        </li>-->
                     </ul>
                     <div class="content-main-info">
                         <div class="content-main-info__item">
@@ -99,31 +99,31 @@ if(isset($model->title_description) and !empty($model->title_description)) { $th
                 <div class="mfo_card">
                     <div	class="mfo_achieve promo">Акция</div>
                     <div class="mfo_card_company">
-                        <div class="mfo_card__title">Предложение creditplus.kz</div>
+                        <div class="mfo_card__title">Предложение <?= $model->website?></div>
                     </div>
                     <div class="mfo_card_info mfo_card_info_col">
                         <div	class="mfo_card_info_inner">
                             <div	class="mfo_card_info_time">
                                 <div	class="mfo_card_info_time_label">Мерзімге:</div>
-                                <div	class="mfo_card_info_time_data">7 - 30 дней</div>
+                                <div	class="mfo_card_info_time_data"><?= $model->srok?></div>
                             </div>
                             <div	class="mfo_card_info_sum">
                                 <div	class="mfo_card_info_sum_label">Сомасы (тнг):</div>
-                                <div	class="mfo_card_info_sum_data">10 000 - 130 000</div>
+                                <div	class="mfo_card_info_sum_data"><?= $model->sum?></div>
                             </div>
                             <div	class="mfo_card_info_rate">
                                 <div	class="mfo_card_info_rate_label">Мөлшерлемесі:</div>
-                                <div	class="mfo_card_info_rate_data">от 0,01 %</div>
+                                <div	class="mfo_card_info_rate_data"><?= $model->stavka?></div>
                             </div>
                             <div	class="mfo_card_info_accept">
                                 <div	class="mfo_card_info_accept_label">Қарау:</div>
-                                <div	class="mfo_card_info_accept_data">7 минут</div>
+                                <div	class="mfo_card_info_accept_data"><?= $model->rasmotrenie?></div>
                             </div>
                             <div	class="mfo_card_info_ways">
                                 <div	class="mfo_card_info_ways_label">Алу:</div>
                                 <div	class="mfo_card_info_ways_data">
                                     <noscript>
-                                        <img	style="height: 20px;"	src="/img/2016/08/all.png">
+                                        <img style="height: 20px;"	src="/img/2016/08/all.png">
                                     </noscript>
                                     <img	class="lazyload"	style="height: 20px;"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="/img/2016/08/all.png">
                                 </div>
@@ -216,8 +216,8 @@ if(isset($model->title_description) and !empty($model->title_description)) { $th
                         </div>
                     </div>
                     <div class="mfo_card__info">
-                        <a href="#">
-                            <div	class="mfo_card_button">Басқа қарызды таңдау</div>
+                        <a href="/">
+                            <div class="mfo_card_button">Басқа қарызды таңдау</div>
                         </a>
                     </div>
                 </div>

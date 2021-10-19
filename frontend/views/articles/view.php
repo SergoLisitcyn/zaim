@@ -9,7 +9,7 @@ use \frontend\widgets\Rating;
 
 $this->title = $model->name;
 
-if (isset($model->title_seo) && !empty($model->title)) $this->title = $model->title_seo;
+if (isset($model->title_seo) && !empty($model->title_seo)) $this->title = $model->title_seo;
 if (isset($model->description) && !empty($model->description)) $this->registerMetaTag(['name' => 'description', 'content' => $model->description]);
 
 \yii\web\YiiAsset::register($this);
@@ -89,9 +89,9 @@ if (isset($model->description) && !empty($model->description)) $this->registerMe
                             <img class=" ls-is-cached lazyloaded" src="<?= $mfo->logo?>" data-src="<?= $mfo->logo?>" alt="<?= $mfo->mfo_name ?>">
                         </a>
                     </div>
-                    <div class="mfo_card_compare">
-                        <a href="<?= $mfo->mfo_name ?>" data-mfo="<?= $mfo->mfo_name ?>" data-title="<?= $mfo->mfo_name ?>">Салыстыру</a>
-                    </div>
+<!--                    <div class="mfo_card_compare">-->
+<!--                        <a href="--><?php //$mfo->mfo_name ?><!--" data-mfo="--><?php //$mfo->mfo_name ?><!--" data-title="--><?php //$mfo->mfo_name ?><!--">Салыстыру</a>-->
+<!--                    </div>-->
                     <div class="mfo_card_info_link">
                         <a href="#">Нақтырақ о <?= $mfo->mfo_name ?></a>
                     </div>
