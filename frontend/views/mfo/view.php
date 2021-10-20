@@ -532,7 +532,7 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                 <div class="mfo_card">
                     <div	class="mfo_achieve promo">Акция</div>
                     <div class="mfo_card_company">
-                        <div class="mfo_card__title">Предложение <?= $model->website?></div>
+                        <div class="mfo_card__title"><?= $model->website?> ұсынысы</div>
                     </div>
                     <div class="mfo_card_info mfo_card_info_col">
                         <div	class="mfo_card_info_inner">

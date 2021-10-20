@@ -159,7 +159,7 @@ YiiAsset::register($this);
                 <div class="mfo_card">
                     <div	class="mfo_achieve promo">Акция</div>
                     <div class="mfo_card_company">
-                        <div class="mfo_card__title">Предложение <?= $mfo->website?></div>
+                        <div class="mfo_card__title"><?= $mfo->website?> ұсынысы</div>
                     </div>
                     <div class="mfo_card_info mfo_card_info_col">
                         <div	class="mfo_card_info_inner">
