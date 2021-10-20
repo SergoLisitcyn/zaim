@@ -4574,7 +4574,13 @@ p {
     margin: 0 -20px;
     color: #fff;
 }
-
+#login .content-main-info__content img{
+    border-color: #f8f8f8;
+    border-width: 8px;
+    border-style: solid;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 #login .content-main-info__content p{
     font-weight: 300;
     color: #111;

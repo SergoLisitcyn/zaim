@@ -159,25 +159,25 @@ YiiAsset::register($this);
                 <div class="mfo_card">
                     <div	class="mfo_achieve promo">Акция</div>
                     <div class="mfo_card_company">
-                        <div class="mfo_card__title">Предложение creditplus.kz</div>
+                        <div class="mfo_card__title">Предложение <?= $mfo->website?></div>
                     </div>
                     <div class="mfo_card_info mfo_card_info_col">
                         <div	class="mfo_card_info_inner">
                             <div	class="mfo_card_info_time">
                                 <div	class="mfo_card_info_time_label">Мерзімге:</div>
-                                <div	class="mfo_card_info_time_data">7 - 30 дней</div>
+                                <div	class="mfo_card_info_time_data"><?= $mfo->srok?></div>
                             </div>
                             <div	class="mfo_card_info_sum">
                                 <div	class="mfo_card_info_sum_label">Сомасы (тнг):</div>
-                                <div	class="mfo_card_info_sum_data">10 000 - 130 000</div>
+                                <div	class="mfo_card_info_sum_data"><?= $mfo->sum?></div>
                             </div>
                             <div	class="mfo_card_info_rate">
                                 <div	class="mfo_card_info_rate_label">Мөлшерлемесі:</div>
-                                <div	class="mfo_card_info_rate_data">от 0,01 %</div>
+                                <div	class="mfo_card_info_rate_data"><?= $mfo->stavka?></div>
                             </div>
                             <div	class="mfo_card_info_accept">
                                 <div	class="mfo_card_info_accept_label">Қарау:</div>
-                                <div	class="mfo_card_info_accept_data">7 минут</div>
+                                <div	class="mfo_card_info_accept_data"><?= $mfo->rasmotrenie?></div>
                             </div>
                             <div	class="mfo_card_info_ways">
                                 <div	class="mfo_card_info_ways_label">Алу:</div>
@@ -276,7 +276,7 @@ YiiAsset::register($this);
                         </div>
                     </div>
                     <div class="mfo_card__info">
-                        <a href="#">
+                        <a href="/">
                             <div	class="mfo_card_button">Басқа қарызды таңдау</div>
                         </a>
                     </div>
