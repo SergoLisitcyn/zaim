@@ -34,8 +34,8 @@ jQuery(document).ready(function($){
     var index;for(index=0;index<offer.length;++index){setLoanParametersOffer(procent[index],sum,term,offer[index]);}}
     $('input[name="rs_sum"]').val(getParameterByName('sum')||'50000');
     $(".loan_calculator_sum_input_right").text(getParameterByName('sum')||'50000');
-    $('input[name="rs_date"]').val(getParameterByName('term')||'7');
-    $(".loan_calculator_date_input_right").text(getParameterByName('term')||'7');
+    $('input[name="rs_date"]').val(getParameterByName('term')||'5');
+    $(".loan_calculator_date_input_right").text(getParameterByName('term')||'5');
     $('#select_loan_calculator_process option[value='+getParameterByName('get_loan')+']').attr('selected','selected');
     $('#select_loan_calculator_method option[value='+getParameterByName('loan_repayment')+']').attr('selected','selected');
     $('#select_loan_calculator_sort option[value='+getParameterByName('sort')+']').attr('selected','selected');
@@ -140,10 +140,10 @@ jQuery(document).ready(function($){
         {this.output=$('<div class="rs_sum_output" />').insertAfter('.loan_calculator_sum_label').html('<a href="/zajm-'+getLessSum(this.$element.val())+'-tenge/" class="less_sum" onclick="return false;">&larr;&nbsp;</a>'+this.$element.val()+'<a href="/zajm-'+getMoreSum(this.$element.val())+'-tenge/" class="more_sum" onclick="return false;">&nbsp;&rarr;</a>'+' тнг');
         $(".loan_calculator_sum_input_right").text(this.$element.val());var sum=this.$element.val();
         var term=$('input[name="rs_date"]').val();
-        if(term==0){term=7;}setLoanParameters(sum,term);},onSlide:function(position,value)
+        if(term==0){term=5;}setLoanParameters(sum,term);},onSlide:function(position,value)
         {this.output.html('<a href="/zajm-'+getLessSum(this.$element.val())+'-tenge/" class="less_sum" onclick="return false;">&larr;&nbsp;</a>'+value+'<a href="/zajm-'+getMoreSum(this.$element.val())+'-tenge/" class="more_sum" onclick="return false;">&nbsp;&rarr;</a>'+' тнг');
         $(".loan_calculator_sum_input_right").text(this.$element.val());
-        var sum=this.$element.val();var term=$('input[name="rs_date"]').val();if(term==0){term=7;}setLoanParameters(sum,term);}});
+        var sum=this.$element.val();var term=$('input[name="rs_date"]').val();if(term==0){term=5;}setLoanParameters(sum,term);}});
             function getLessSum(value){var sum=5000;if(value==0){sum=5000;}else if(value==5000){sum=5000;}else if(value==10000){sum=5000;}
             else if(value==15000){sum=10000;}else if(value==20000){sum=15000;}else if(value==25000){sum=20000;}
             else if(value==30000){sum=25000;}else if(value==35000){sum=30000;}else if(value==40000){sum=35000;}
@@ -167,13 +167,13 @@ jQuery(document).ready(function($){
             $(".loan_calculator_date_input_right").text(this.$element.val());
             var sum=$('input[name="rs_sum"]').val();if(sum==0){sum=5000;}
             var term=this.$element.val();setLoanParameters(sum,term);}});
-            $(".search_company").on('click',function(){var location_url="https://kz.smartzaim.kz/kreditnyj-kalkulyator?sum="+($(".loan_calculator_sum_input_right").text()||'50000')+"&term="+($(".loan_calculator_date_input_right").text()||'7');
+            $(".search_company").on('click',function(){var location_url="https://kz.smartzaim.kz/kreditnyj-kalkulyator?sum="+($(".loan_calculator_sum_input_right").text()||'50000')+"&term="+($(".loan_calculator_date_input_right").text()||'5');
             var select_loan_calculator_process=$("#select_loan_calculator_process").val();
             if(select_loan_calculator_process){location_url+="&get_loan="+select_loan_calculator_process;}
             var select_loan_calculator_method=$("#select_loan_calculator_method").val();
             if(select_loan_calculator_method){location_url+="&loan_repayment="+select_loan_calculator_method;}
             var select_loan_calculator_sort=$("#select_loan_calculator_sort").val();if(select_loan_calculator_sort){location_url+="&sort="+select_loan_calculator_sort;}var advanced_repayment=$("#advanced_repayment").is(':checked');if(advanced_repayment){location_url+="&advanced_repayment=1";}var extension_loan=$("#extension_loan").is(':checked');if(extension_loan){location_url+="&extension_loan=1";}window.location=location_url;});
-            $('.loan_calculator #select_loan_calculator_sort').on('change',function(){var url='https://kz.smartzaim.kz/kreditnyj-kalkulyator';var sum=$(".loan_calculator_sum_input_right").text()||'50000';var term=$(".loan_calculator_date_input_right").text()||'7';var get_loan=$("#select_loan_calculator_process").val();
+            $('.loan_calculator #select_loan_calculator_sort').on('change',function(){var url='https://kz.smartzaim.kz/kreditnyj-kalkulyator';var sum=$(".loan_calculator_sum_input_right").text()||'50000';var term=$(".loan_calculator_date_input_right").text()||'5';var get_loan=$("#select_loan_calculator_process").val();
             var loan_repayment=$("#select_loan_calculator_method").val();var sort=$("#select_loan_calculator_sort").val();
             var advanced_repayment=$("#advanced_repayment").is(':checked')?1:0;
             var extension_loan=$("#extension_loan").is(':checked')?1:0;
@@ -181,7 +181,7 @@ jQuery(document).ready(function($){
             $('.show_mfo_btn').hide();$('.show_mfo_btn + div').hide();$('.show_mfo_btn + div + div').hide();
             $('.loan_calculator_offers').html(response);});});$('#select_loan_calculator_sort_rating').on('change',function()
     {var url='https://kz.smartzaim.kz/kreditnyj-kalkulyator';
-        var sum=$(".loan_calculator_sum_input_right").text()||'50000';var term=$(".loan_calculator_date_input_right").text()||'7';var get_loan=$("#select_loan_calculator_process").val();var loan_repayment=$("#select_loan_calculator_method").val();var sort=$("#select_loan_calculator_sort_rating").val();var advanced_repayment=$("#advanced_repayment").is(':checked')?1:0;var extension_loan=$("#extension_loan").is(':checked')?1:0;var requestData={action:'get_all_rating_offers',sum:sum,term:term,get_loan:get_loan,loan_repayment:loan_repayment,sort:sort,advanced_repayment:advanced_repayment,extension_loan:extension_loan};jQuery.post(url,requestData,function(response){$('.rated_mfo').html(response);});});$(".loan_calculator_ext_header_title_2,.loan_calculator_ext_header_trn_up,.loan_calculator_ext_header_trn_down").on('click',function(){if($(".loan_calculator_ext_params").is(":visible")){$(".loan_calculator_ext_params").hide();$(".loan_calculator_params").hide();$(".loan_calculator_ext_header_trn_up").fadeIn(1000).css('display','block');
+        var sum=$(".loan_calculator_sum_input_right").text()||'50000';var term=$(".loan_calculator_date_input_right").text()||'5';var get_loan=$("#select_loan_calculator_process").val();var loan_repayment=$("#select_loan_calculator_method").val();var sort=$("#select_loan_calculator_sort_rating").val();var advanced_repayment=$("#advanced_repayment").is(':checked')?1:0;var extension_loan=$("#extension_loan").is(':checked')?1:0;var requestData={action:'get_all_rating_offers',sum:sum,term:term,get_loan:get_loan,loan_repayment:loan_repayment,sort:sort,advanced_repayment:advanced_repayment,extension_loan:extension_loan};jQuery.post(url,requestData,function(response){$('.rated_mfo').html(response);});});$(".loan_calculator_ext_header_title_2,.loan_calculator_ext_header_trn_up,.loan_calculator_ext_header_trn_down").on('click',function(){if($(".loan_calculator_ext_params").is(":visible")){$(".loan_calculator_ext_params").hide();$(".loan_calculator_params").hide();$(".loan_calculator_ext_header_trn_up").fadeIn(1000).css('display','block');
         $(".loan_calculator_ext_header_trn_down").hide();$(".loan_calculator").height(250);}else
             {$(".loan_calculator_ext_params").fadeIn(1000).css('display','inline-block');
         $(".loan_calculator_params").fadeIn(1000).css('display','inline-block');$(".loan_calculator_ext_header_trn_up").hide();
