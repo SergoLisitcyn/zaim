@@ -29,7 +29,7 @@ if(isset($model->description) && !empty($model->description)) { $this->registerM
             </div>
         </div>
         <?php if($_SERVER['REQUEST_URI'] == '/page/vakansii') : ?>
-            <div class="article-faq-list" style="margin-bottom: 20px">
+            <div class="article-faq-list" style="padding-bottom: 30px;">
                 <div class="article-faq-list__inner">
                     <div class="faq-list__item">
                         <h3 class="faq-list__title">1. SMM  маманы</h3>
