@@ -41,9 +41,10 @@ class NewsController extends Controller
         ]);
     }
 
-    public function actionView($url = null): string
+    public function actionView($url = null)
     {
         $news = News::find()->where(['status' => 1, 'url' => $url])->one();
+        if(!$news) return $this->redirect('/');
         $newsRandom = News::find()
             ->where(['status' => 1])
             ->andWhere(['!=','id', $news->id])

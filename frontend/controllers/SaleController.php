@@ -48,6 +48,7 @@ class SaleController extends Controller
     public function actionList($url = null)
     {
         $sales = Sale::find()->where(['status' => 1, 'url' => $url])->one();
+        if(!$sales) return $this->redirect('/');
         $salesRandom = Sale::find()
             ->where(['status' => 1])
             ->andWhere(['!=','id', $sales->id])
