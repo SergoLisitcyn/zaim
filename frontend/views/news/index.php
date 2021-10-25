@@ -54,7 +54,7 @@ $this->title = 'Жаңалықтар';
                                                         <img src="<?= $article->images ?>" alt="" class="aktsii-item__img">
                                                     </noscript>
                                                 </div>
-                                                <a href="<?= \yii\helpers\Url::toRoute(['articles/list', 'url' => $article->url]) ?>">
+                                                <a href="<?= \yii\helpers\Url::toRoute(['articles/view', 'url' => $article->url]) ?>">
                                                     <h3 class="aktsii-item__title"><?= $article->name ?></h3>
                                                 </a>
                                             </a>

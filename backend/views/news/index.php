@@ -70,8 +70,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' => 'raw',
                 'options' => ['width' => '200'],
                 'value' => function ($model, $index, $jobList) {
-                    return Html::tag('a', 'Редактировать', ['href' => \yii\helpers\Url::toRoute(['articles/update', 'id' => $index]), 'class' => 'btn btn-success', 'style' => 'font-weight: 100;margin-right:10px'])
-                        .Html::tag('a', 'Удалить', ['href' => \yii\helpers\Url::toRoute(['articles/delete', 'id' => $index]), 'data-method' => 'post', 'data-confirm' => 'Вы точно хотите удалить?', 'class' => 'btn btn-order btn-danger', 'style' => 'font-weight: 100']);
+                    return Html::tag('a', 'Редактировать', ['href' => \yii\helpers\Url::toRoute(['news/update', 'id' => $index]), 'class' => 'btn btn-success', 'style' => 'font-weight: 100;margin-right:10px'])
+                        .Html::tag('a', 'Удалить', ['href' => \yii\helpers\Url::toRoute(['news/delete', 'id' => $index]), 'data-method' => 'post', 'data-confirm' => 'Вы точно хотите удалить?', 'class' => 'btn btn-order btn-danger', 'style' => 'font-weight: 100']);
                 },
             ],
         ],

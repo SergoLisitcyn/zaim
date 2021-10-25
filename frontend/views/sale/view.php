@@ -62,7 +62,7 @@ $this->title = $model->name;
                                     <div class="aktsii-article__box-inner">
                                         <div class="aktsii-article__box-offers">
                                             <?php foreach ($salesRandom as $random) : ?>
-                                            <a href="<?= \yii\helpers\Url::toRoute(['sale/list', 'url' => $random->url]) ?>" title="<?= $random->name?>">
+                                            <a href="<?= \yii\helpers\Url::toRoute(['sale/list', 'url' => $random->url]) ?>">
                                                 <noscript>
                                                     <img src="<?= $random->image?>" alt="<?= $random->name?>" />
                                                 </noscript>
