@@ -99,7 +99,7 @@ $this->title = $model->name;
                         </a>
                     </div>
                     <div class="mfo_card_compare">
-                        <a href="<?= $mfo->mfo_name ?>" data-mfo="dengiclick" data-title="ДеньгиClick">Салыстыру</a>
+                        <a href="<?= $mfo->mfo_name ?>">Салыстыру</a>
                     </div>
                     <div class="mfo_card_info_link">
                         <a href="#">Нақтырақ о <?= $mfo->mfo_name ?></a>
