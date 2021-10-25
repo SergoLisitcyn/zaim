@@ -85,6 +85,7 @@ use \yii\helpers\Url;
                 </div>
             </div>
             <?php endforeach; ?>
+            <?php if(Yii::$app->controller->route != 'site/error') : ?>
             <div class="subscribe_main">
                 <div class="text_main_subscribe_container">ҚАРЫЗҒА <br>ӨТІНІМ РЕСІМДЕУ</div>
                 <div class="email_sidebar_container">
@@ -96,9 +97,12 @@ use \yii\helpers\Url;
                     </div>
                 </div>
             </div>
+            <?php endif; ?>
         </div>
+        <?php if(Yii::$app->controller->route != 'site/error') : ?>
         <div class="offers__btn">
             <a href="rating">Барлық МҚҰ көрсету</a>
         </div>
+        <?php endif; ?>
     </div>
 </section>

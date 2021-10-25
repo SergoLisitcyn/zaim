@@ -10,7 +10,7 @@ if(isset($typeCredit->keywords) and !empty($typeCredit->keywords)) { $this->regi
 if(isset($typeCredit->description) and !empty($typeCredit->description)) { $this->registerMetaTag(['name' => 'description','content' => $typeCredit->description]); }
 ?>
 <section class="main-title">
-    <h1 class="title"><?= $typeCredit->title ?></h1>
+    <h1 class="title"><?php  if($typeCredit) echo $typeCredit->title ?></h1>
     <h2 class="subtitle">Неғұрлым тиімді ұсынысты тегін таңдаңыз!</h2>
     <h3 class="descr">Онлайн қарыз алу үшін, кредиттік ұйымдарға берілетін өтінім санын барынша көбірек толтырыңыз:</h3>
 </section>
@@ -74,7 +74,7 @@ if(isset($typeCredit->description) and !empty($typeCredit->description)) { $this
 </section>
 <section class="advantages">
     <div class="content-filter limit-width">
-        <?= $typeCredit->content ?>
+        <?php if($typeCredit) echo $typeCredit->content ?>
     </div>
 </section>
 <?= Rating::widget(); ?>

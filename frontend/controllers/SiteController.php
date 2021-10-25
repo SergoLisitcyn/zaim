@@ -19,6 +19,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use yii\web\HttpException;
 use yii\web\NotFoundHttpException;
 
 /**
@@ -278,6 +279,9 @@ class SiteController extends Controller
         return $this->render('calculator');
     }
 
+    /**
+     * @throws HttpException
+     */
     public function actionFilter($slug)
     {
         $city = City::find()->where(['url' => $slug])->one();
@@ -287,6 +291,7 @@ class SiteController extends Controller
             $join = 'city';
             $where = 'city.url';
         } else {
+            if(!$typeCredit) throw new HttpException(404, 'Страница не существует.');
             $join = 'type';
             $where = 'type_credit.url';
         }

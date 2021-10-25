@@ -9,6 +9,7 @@ use common\models\News;
 use common\models\NewsSearch;
 use yii\db\Expression;
 use yii\web\Controller;
+use yii\web\HttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -44,7 +45,7 @@ class NewsController extends Controller
     public function actionView($url = null)
     {
         $news = News::find()->where(['status' => 1, 'url' => $url])->one();
-        if(!$news) return $this->redirect('/');
+        if(!$news) throw new HttpException(404, 'Страница не существует.');
         $newsRandom = News::find()
             ->where(['status' => 1])
             ->andWhere(['!=','id', $news->id])

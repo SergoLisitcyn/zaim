@@ -9,6 +9,7 @@ use common\models\Sale;
 use yii\data\ActiveDataProvider;
 use yii\db\Expression;
 use yii\web\Controller;
+use yii\web\HttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -48,7 +49,7 @@ class SaleController extends Controller
     public function actionList($url = null)
     {
         $sales = Sale::find()->where(['status' => 1, 'url' => $url])->one();
-        if(!$sales) return $this->redirect('/');
+        if(!$sales) throw new HttpException(404, 'Страница не существует.');
         $salesRandom = Sale::find()
             ->where(['status' => 1])
             ->andWhere(['!=','id', $sales->id])

@@ -8,6 +8,7 @@ use Yii;
 use common\models\Mfo;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
+use yii\web\HttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -78,7 +79,7 @@ class MfoController extends Controller
     public function actionReviews($url)
     {
         if(!$url){
-            return $this->redirect('/');
+            throw new HttpException(404, 'Страница не существует.');
         }
         $mfo = Mfo::find()->where(['status' => 1, 'url' => $url])->one();
         $reviews= Review::find()
