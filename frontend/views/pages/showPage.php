@@ -30,11 +30,12 @@ if(isset($model->description) && !empty($model->description)) { $this->registerM
         </div>
         <?php if($_SERVER['REQUEST_URI'] == '/page/vakansii') : ?>
             <div class="article-faq-list" style="padding-bottom: 30px;">
+                <h1>Актуальные вакансии</h1>
                 <div class="article-faq-list__inner">
                     <div class="faq-list__item">
-                        <h3 class="faq-list__title">1. SMM  маманы</h3>
+                        <h3 class="faq-list__title">SMM  маманы</h3>
                         <div class="faq-list__text">
-                            <p>Негізгі міндеттері:</p>
+                            <p style="font-weight: 700;">Негізгі міндеттері:</p>
                             <ul>
                                 <li>Instagram, ВКонтакте, Facebook және т.б. әлеуметтік желілерде компанияның брендін ілгерілету үшін SMM-стратегияларды әзірлеу және енгізу.</li>
                                 <li>Компания қызметтеріне әлеуметтік желілер аудиториясының адалдығын арттыру.</li>
@@ -49,9 +50,9 @@ if(isset($model->description) && !empty($model->description)) { $this->registerM
                         </div>
                     </div>
                     <div class="faq-list__item">
-                        <h3 class="faq-list__title">2. Контент-маркетинг бойынша маман</h3>
+                        <h3 class="faq-list__title">Контент-маркетинг бойынша маман</h3>
                         <div class="faq-list__text">
-                            <p>Негізгі міндеттері:</p>
+                            <p style="font-weight: 700;">Негізгі міндеттері:</p>
                             <ul>
                                 <li>Нысаналы аудиторияның маркетингтік стратегиясы мен қажеттіліктеріне сәйкес контент-жоспар құру.</li>
                                 <li>Компанияның сайттары мен пабликтеріне арналған ақпараттық контентті дайындау.</li>
@@ -65,9 +66,9 @@ if(isset($model->description) && !empty($model->description)) { $this->registerM
                         </div>
                     </div>
                     <div class="faq-list__item">
-                        <h3 class="faq-list__title">3. Директ-маркетинг бойынша маман</h3>
+                        <h3 class="faq-list__title">Директ-маркетинг бойынша маман</h3>
                         <div class="faq-list__text">
-                            <p>Негізгі міндеттері:</p>
+                            <p style="font-weight: 700;">Негізгі міндеттері:</p>
                             <ul>
                                 <li>E-mail, push, sms, мессенджерлер, триггерлер және т.б. арналары бойынша Direct-маркетингтің клиенттерімен байланыс жасау және адалдықты басқару.</li>
                                 <li>Стратегияны әзірлеу және іске асыру, жіберілімдерді автоматтандыру, хаттар тізбегін құру.</li>
@@ -81,7 +82,7 @@ if(isset($model->description) && !empty($model->description)) { $this->registerM
                         </div>
                     </div>
                     <div class="faq-list__item">
-                        <h3 class="faq-list__title">4. Мәнмәтіндік жарнама бойынша маман</h3>
+                        <h3 class="faq-list__title">Мәнмәтіндік жарнама бойынша маман</h3>
                         <div class="faq-list__text">
                             <ul>
                                 <li>Яндекс.Директ, Google Ads жүйелерінде мәнмәтіндік жарнаманы жүргізу.  (дайындау, іске қосу, оңтайландыру, масштабтау, жарнамалық науқандардың тиімділігін күнделікті бақылау және талдау).</li>
@@ -93,9 +94,9 @@ if(isset($model->description) && !empty($model->description)) { $this->registerM
                         </div>
                     </div>
                     <div class="faq-list__item">
-                        <h3 class="faq-list__title">5. Интернет-маркетолог</h3>
+                        <h3 class="faq-list__title">Интернет-маркетолог</h3>
                         <div class="faq-list__text">
-                            <p>Негізгі міндеттері:</p>
+                            <p style="font-weight: 700;">Негізгі міндеттері:</p>
                             <ul>
                                 <li>Маркетингтік белсенділік жоспарын әзірлеу және жүргізу.</li>
                                 <li>Адалдық бағдарламасын құру.</li>

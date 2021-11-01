@@ -41,8 +41,7 @@ class Review extends \yii\db\ActiveRecord
             [['cat_id', 'status'], 'integer'],
             [['body', 'plus', 'minus', 'otvet_review'], 'string'],
             [['prostota', 'speed', 'support'], 'number'],
-            [['date'], 'safe'],
-            [['email', 'name_client'], 'string', 'max' => 255],
+            [['email', 'name_client','date'], 'string', 'max' => 255],
         ];
     }
 
@@ -62,8 +61,8 @@ class Review extends \yii\db\ActiveRecord
             'support' => 'Поддержка',
             'email' => 'Email',
             'name_client' => 'Имя',
-            'otvet_review' => 'Otvet Review',
-            'date' => 'Date',
+            'otvet_review' => 'Ответ на отзыв',
+            'date' => 'Дата',
             'status' => 'Статус',
         ];
     }

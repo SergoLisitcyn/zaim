@@ -2,6 +2,9 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use \kartik\select2\Select2;
+use \yii\helpers\ArrayHelper;
+use \common\models\Mfo;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Review */
@@ -12,7 +15,14 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'cat_id')->textInput() ?>
+    <?=  $form->field($model, 'cat_id', [
+        'options' =>
+            ['id' => 'review-cat_id', 'class' => 'form-group']
+    ])->dropDownList(
+        ArrayHelper::map(Mfo::find()->all(), 'id', 'mfo_name'),
+        ['prompt' => 'Выбрать МФО']
+    );
+    ?>
 
     <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
 
@@ -32,7 +42,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'otvet_review')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'date')->textInput() ?>
+    <?= $form->field($model, 'date')->widget(\kartik\date\DatePicker::className(),['pluginOptions' => [
+        'autoclose'=>true,
+        'format' => 'dd.mm.yyyy'
+    ]])->label('Дата публикации') ?>
 
     <?= $form->field($model, 'status')->dropDownList([
         '0' => 'Ожидает проверки',

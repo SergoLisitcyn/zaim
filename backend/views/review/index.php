@@ -28,19 +28,29 @@ $this->params['breadcrumbs'][] = $this->title;
                 'class' => 'yii\grid\SerialColumn',
                 'options' => ['width' => '10'],
             ],
-            'cat_id',
+            [
+                'label' => 'МФО',
+                'value' => function ($model) {
+                    $mfoName = \common\models\Mfo::findOne($model->cat_id);
+                    $result = $mfoName->mfo_name;
+
+                    return $result;
+                },
+            ],
             'body:ntext',
             'name_client',
+            'date',
             [
                 'label' => 'Статус',
                 'value' => function ($model) {
                     $result = '';
-                    if($model->status == 1){
-                        $result .= 'Активен';
+                    if($model->status == 0){
+                        $result .= 'Ожидает проверки';
+                    } elseif($model->status == 1) {
+                        $result .= 'Опубликован';
                     } else {
-                        $result .= 'Неактивен';
+                        $result .= 'Неопубликован';
                     }
-
                     return $result;
                 },
             ],

@@ -74,6 +74,9 @@ use \kartik\select2\Select2;
 
     <?= $form->field($model, 'url')->textInput(['maxlength' => true])->hint('например rozygrysh-shesti-ajfonov-ot-turbomoney') ?>
     <?= $form->field($model, 'partner_link')->textInput(['maxlength' => true])->hint('например https://dengiclick.kz/?utm_source=smartzaimkz') ?>
+        <?= $form->field($model, 'title_seo')->textInput(['maxlength' => true]) ?>
+
+        <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'sort')->textInput() ?>
 

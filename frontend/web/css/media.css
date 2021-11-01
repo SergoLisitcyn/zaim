@@ -545,6 +545,7 @@
 
     .email_container {
         flex-direction: column;
+        display: none;
     }
 
     .text_top_subscribe_container {

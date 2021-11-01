@@ -20,6 +20,8 @@ use yii\web\UploadedFile;
  * @property string $partner_link
  * @property int|null $sort
  * @property int|null $status
+ * @property string|null $description
+ * @property string|null $title_seo
  */
 class Sale extends \yii\db\ActiveRecord
 {
@@ -68,7 +70,7 @@ class Sale extends \yii\db\ActiveRecord
             [['name', 'url'], 'required'],
             [['content','image','partner_link'], 'string'],
             [['srok_ot', 'srok_do'], 'safe'],
-            [['name', 'url'], 'string', 'max' => 255],
+            [['name', 'url','description','title_seo'], 'string', 'max' => 255],
             [['file'], 'file', 'extensions' => 'png, jpg'],
             [['mainfile'], 'file'],
         ];
@@ -93,6 +95,8 @@ class Sale extends \yii\db\ActiveRecord
             'file' => 'Картинка',
             'mainfile' => 'Главная картинка',
             'partner_link' => 'Партнерская ссылка',
+            'title_seo' => 'Title Seo',
+            'description' => 'Description',
         ];
     }
 

@@ -55,14 +55,22 @@ class MfoController extends Controller
     public function actionView($url)
     {
         if(!$url) return $this->redirect('/');
-
         $mfo = Mfo::find()->where(['status' => 1, 'url' => $url])->one();
         if(!$mfo) return $this->redirect('/');
         $sale = Sale::find()->where(['status' => 1,'mfo_id' => $mfo->id])->orderBy(['srok_do' => SORT_DESC])->one();
-        return $this->render('view', [
-            'model' => $mfo,
-            'sale' => $sale,
-        ]);
+        $reviews = Review::find()->where(['cat_id' => $mfo->id])->andWhere(['status' => 1])->orderBy(['date' => SORT_DESC])->limit(3)->all();
+        $model = new Review();
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('success', 'Ваш отзыв был отправлен. Благодарим за обращение!');
+
+            return $this->refresh();
+        } else {
+            return $this->render('view', [
+                'model' => $mfo,
+                'sale' => $sale,
+                'reviews' => $reviews,
+            ]);
+        }
     }
 
     public function actionLogin($url)

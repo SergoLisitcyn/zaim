@@ -44,23 +44,24 @@ $this->title = 'Жаңалықтар — smartzaim.kz';
                             <div class="aktsii-list__container">
                                 <?php foreach ($news as $article) :?>
                                     <div class="aktsii-list__item">
-                                        <div class="aktsii-item">
+                                        <div class="news-item">
                                             <a href="<?= \yii\helpers\Url::toRoute(['news/view', 'url' => $article->url]) ?>" class="aktsii-item__link">
-                                                <div class="aktsii-item__img-wrap">
-                                                    <a href="<?= \yii\helpers\Url::toRoute(['news/view', 'url' => $article->url]) ?>">
-                                                        <img src="<?= $article->images ?>" data-lazy-type="image" data-lazy-src="<?= $article->images ?>" alt="<?= $article->name ?>" class="lazy aktsii-item__img lazy-loaded">
-                                                    </a>
-                                                    <noscript>
-                                                        <img src="<?= $article->images ?>" alt="" class="aktsii-item__img">
-                                                    </noscript>
+                                                <div class="news-item__img-wrap">
+                                                    <img src="<?= $article->images ?>"
+                                                         data-lazy-type="image"
+                                                         data-lazy-src="<?= $article->images ?>"
+                                                         alt="" class="lazy aktsii-item__img lazy-loaded"><noscript>
+                                                        <img src="<?= $article->images ?>"
+                                                             alt="" class="aktsii-item__img"></noscript>
+                                                    <div class="news-item__title">
+                                                        <h3><?= $article->name ?></h3>
+                                                        <span><?= date('m.d.Y',strtotime($article->date)) ?></span>
+                                                    </div>
                                                 </div>
-                                                <a href="<?= \yii\helpers\Url::toRoute(['articles/view', 'url' => $article->url]) ?>">
-                                                    <h3 class="aktsii-item__title"><?= $article->name ?></h3>
-                                                </a>
                                             </a>
-                                            <div class="aktsii-item__date"><?= date('m.d.Y',strtotime($article->date)) ?></div>
                                         </div>
                                     </div>
+
                                 <?php endforeach; ?>
                             </div>
                             <ul class="pagination">

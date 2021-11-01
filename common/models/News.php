@@ -14,6 +14,8 @@ use yii\web\UploadedFile;
  * @property string|null $content
  * @property string|null $text_content
  * @property string|null $images
+ * @property string|null $description
+ * @property string|null $title_seo
  * @property string $url
  * @property string|null $date
  * @property int|null $sort
@@ -64,7 +66,7 @@ class News extends \yii\db\ActiveRecord
             [['content', 'text_content'], 'string'],
             [['date'], 'safe'],
             [['sort', 'status'], 'integer'],
-            [['name', 'images', 'url'], 'string', 'max' => 255],
+            [['name', 'images', 'url','description','title_seo'], 'string', 'max' => 255],
         ];
     }
 

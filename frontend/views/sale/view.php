@@ -8,6 +8,8 @@ use \frontend\widgets\Rating;
 /* @var $model common\models\Sale */
 
 $this->title = $model->name;
+if (isset($model->title_seo) && !empty($model->title)) $this->title = $model->title_seo;
+if (isset($model->description) && !empty($model->description)) $this->registerMetaTag(['name' => 'description', 'content' => $model->description]);
 \yii\web\YiiAsset::register($this);
 ?>
 <section class="breadcrumbs plr">
