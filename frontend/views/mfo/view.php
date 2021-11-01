@@ -60,12 +60,12 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                                 </div>
                             </div>
                             <div class="mfo-head__text">Ресми сайтқа өту
-                                <a href="<?= $model->link_offer ?>"><?= $model->website?></a>
+                                <a href="<?= $model->link_offer ?>" target="_blank"><?= $model->website?></a>
                             </div>
                         </div>
                         <div class="content-main-info__item">
                             <div class="mfo-head-logo">
-                                <a href="<?= $model->link_offer ?>">
+                                <a href="<?= $model->link_offer ?>" target="_blank">
                                     <img src="<?= $model->logo?>">
                                 </a>
                                 <div class="mfo-head-approv">Мақұлдау:
@@ -392,103 +392,107 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                 </div>
                 <div class="content-reviews">
                     <h2 class="content-reviews-title">Нақтырақ о <?= $model->mfo_name?></h2>
-<!--                    <div class="content-reviews-item">-->
-<!--                        <div class="rr_review_name">Злата</div>-->
-<!--                        <span class="rr_date">13.08.2020</span>-->
-<!--                        <div class="content-reviews-rating">-->
-<!--                            <div class="rating">-->
-<!--                                <span class="rating__caption">Алу қарапайымдылығы</span>-->
-<!--                                <div class="rating__stars rating__stars--sm" style="width:100%">-->
-<!--                                </div>-->
-<!--                                <div class="rating__val">5</div>-->
-<!--                            </div>-->
-<!--                            <div class="rating">-->
-<!--                                <span class="rating__caption">Беру жылдамдығы</span>-->
-<!--                                <div class="rating__stars rating__stars--sm" style="width:100%">-->
-<!--                                </div>-->
-<!--                                <div class="rating__val">5</div>-->
-<!--                            </div>-->
-<!--                            <div class="rating">-->
-<!--                                <span class="rating__caption">Қолдау көрсету қызметі</span>-->
-<!--                                <div class="rating__stars rating__stars--sm" style="width:100%">-->
-<!--                                </div>-->
-<!--                                <div class="rating__val">5</div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <p class="content-reviews-text">Меня	привлекла простота	обращения сюда. Никаких	странных вопросов в	анкете, к тому же заявку	ты заполняешь сам прямо	из дома. Деньги сразу на	карту приходят. Никаких	проблем не возникает,	если в срок отдаешь. Уже	не первый раз обращаюсь	сюда.</p>-->
-<!--                        <div class="content-reviews-plus">-->
-<!--                            <span>Плюсы:</span>-->
-<!--                            <span>Просто и	быстро.</span>-->
-<!--                        </div>-->
-<!--                        <div class="content-reviews-minus">-->
-<!--                            <span>Минусы:</span>-->
-<!--                            <span>Нет, если все	внимательно	делать.</span>-->
-<!--                        </div>-->
-<!--                    </div>-->
-                    <form class="review-form">
+                    <?php if($reviews) : ?>
+                    <?php foreach ($reviews as $review) : ?>
+                    <div class="content-reviews-item">
+                        <div class="rr_review_name"><?= $review['name_client'] ?></div>
+                        <span class="rr_date"><?= $review['date'] ?></span>
                         <div class="content-reviews-rating">
                             <div class="rating">
-                                <div class="rating-row">
-                                    <span class="rating__caption">Алу қарапайымдылығы</span>
-                                    <div class="rr_stars_container">
-                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="1"></span>
-                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="2"></span>
-                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="3"></span>
-                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="4"></span>
-                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="5"></span>
-                                    </div>
+                                <span class="rating__caption">Алу қарапайымдылығы</span>
+                                <div class="rating__stars rating__stars--sm" style="width:100%">
                                 </div>
-                                <span class="form-err"></span>
+                                <div class="rating__val">5</div>
                             </div>
                             <div class="rating">
-                                <div class="rating-row">
-                                    <span class="rating__caption">Скорость выдачи</span>
-                                    <div class="rr_stars_container">
-                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="1"></span>
-                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="2"></span>
-                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="3"></span>
-                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="4"></span>
-                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="5"></span>
-                                    </div>
+                                <span class="rating__caption">Беру жылдамдығы</span>
+                                <div class="rating__stars rating__stars--sm" style="width:100%">
                                 </div>
-                                <span class="form-err"></span>
+                                <div class="rating__val">5</div>
                             </div>
                             <div class="rating">
-                                <div class="rating-row">
-                                    <span class="rating__caption">Служба поддержки</span>
-                                    <div class="rr_stars_container">
-                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="1"></span>
-                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="2"></span>
-                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="3"></span>
-                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="4"></span>
-                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="5"></span>
-                                    </div>
+                                <span class="rating__caption">Қолдау көрсету қызметі</span>
+                                <div class="rating__stars rating__stars--sm" style="width:100%">
                                 </div>
-                                <span class="form-err"></span>
+                                <div class="rating__val">5</div>
                             </div>
                         </div>
-                        <div class="review-form__textarea-wrap">
-                            <textarea class="textarea-review" placeholder="Өз пікіріңізді қалдырыңыз" name="rText"></textarea>
-                            <textarea class="textarea-plus" placeholder="Компанияның артықшылықтары" name="rPlus"></textarea>
-                            <span class="form-err"></span>
-                            <textarea class="textarea-minus" placeholder="Компанияның кемшіліктері" name="rMinus"></textarea>
-                            <span class="form-err"></span>
+                        <p class="content-reviews-text"><?= $review['body'] ?></p>
+                        <div class="content-reviews-plus">
+                            <span>Плюсы:</span>
+                            <span><?= $review['plus'] ?></span>
                         </div>
-                        <div class="review-form__bottom">
-                            <div class="review-form__input">
-                                <input type="text" placeholder="Атыңыз" name="rName" value="">
-                                <span class="form-err"></span>
-                            </div>
-                            <div class="review-form__input">
-                                <input type="text" placeholder="E-mail">
-                                <span class="form-err"></span>
-                            </div>
-                            <div class="review-form__btn">
-                                <button type="submit" class="review-form__btn">Пікірді жариялау</button>
-                                <span class="form-err"></span>
-                            </div>
+                        <div class="content-reviews-minus">
+                            <span>Минусы:</span>
+                            <span><?= $review['minus'] ?></span>
                         </div>
-                    </form>
+                    </div>
+                    <?php endforeach; ?>
+                    <?php endif; ?>
+<!--                    <form class="review-form" id="review" action="/mfo/" method="post">-->
+<!--                        <div class="content-reviews-rating">-->
+<!--                            <div class="rating">-->
+<!--                                <div class="rating-row">-->
+<!--                                    <span class="rating__caption">Алу қарапайымдылығы</span>-->
+<!--                                    <div class="rr_stars_container">-->
+<!--                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="1"></span>-->
+<!--                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="2"></span>-->
+<!--                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="3"></span>-->
+<!--                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="4"></span>-->
+<!--                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="5"></span>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <span class="form-err"></span>-->
+<!--                            </div>-->
+<!--                            <div class="rating">-->
+<!--                                <div class="rating-row">-->
+<!--                                    <span class="rating__caption">Скорость выдачи</span>-->
+<!--                                    <div class="rr_stars_container">-->
+<!--                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="1"></span>-->
+<!--                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="2"></span>-->
+<!--                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="3"></span>-->
+<!--                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="4"></span>-->
+<!--                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="5"></span>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <span class="form-err"></span>-->
+<!--                            </div>-->
+<!--                            <div class="rating">-->
+<!--                                <div class="rating-row">-->
+<!--                                    <span class="rating__caption">Служба поддержки</span>-->
+<!--                                    <div class="rr_stars_container">-->
+<!--                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="1"></span>-->
+<!--                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="2"></span>-->
+<!--                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="3"></span>-->
+<!--                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="4"></span>-->
+<!--                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="5"></span>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <span class="form-err"></span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="review-form__textarea-wrap">-->
+<!--                            <textarea class="textarea-review" placeholder="Өз пікіріңізді қалдырыңыз" name="Review[body]"></textarea>-->
+<!--                            <textarea class="textarea-plus" placeholder="Компанияның артықшылықтары" name="Review[plus]"></textarea>-->
+<!--                            <span class="form-err"></span>-->
+<!--                            <textarea class="textarea-minus" placeholder="Компанияның кемшіліктері" name="Review[minus]"></textarea>-->
+<!--                            <span class="form-err"></span>-->
+<!--                        </div>-->
+<!--                        <div class="review-form__bottom">-->
+<!--                            <div class="review-form__input">-->
+<!--                                <input type="text" placeholder="Атыңыз" name="Review[name_client]" value="">-->
+<!--                                <span class="form-err"></span>-->
+<!--                            </div>-->
+<!--                            <div class="review-form__input">-->
+<!--                                <input type="text" placeholder="E-mail" name="Review[email]">-->
+<!--                                <span class="form-err"></span>-->
+<!--                            </div>-->
+<!--                            <div class="review-form__btn">-->
+<!--                                <button type="submit" class="review-form__btn">Пікірді жариялау</button>-->
+<!--                                <span class="form-err"></span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </form>-->
                     <a href="/mfo/<?= $model->url ?>/reviews" class="content-reviews-btn">Смотреть все Нақтырақ о <?= $model->mfo_name?></a>
                 </div>
             </div>
