@@ -4409,7 +4409,7 @@ input.subscribe-form-item__btn.subscribe-form-item__btn--btn-submit, input.subsc
     padding-left: 15px;
 }
 
-.content-text li:before {
+.content-text ul li:before {
     position: absolute;
     content: '';
     top: 50%;
