@@ -8,9 +8,9 @@
                 <img class=" ls-is-cached lazyloaded" src="img/2016/08/4slovo-e1550510710120.png" data-src="img/2016/08/4slovo-e1550510710120.png" alt="Честное слово – микрокредит онлайн в Казахстане">
             </a>
         </div>
-        <div class="mfo_card_compare">
-            <a href="http://4slovo.kz/register/?aprt159=6512bd43d9caa6e02c990b0a82652dca&utm_source=smartzaim.kz&utm_content=sitekz" data-mfo="4slovo" data-title="Честное слово – микрокредит онлайн в Казахстане">Салыстыру</a>
-        </div>
+<!--        <div class="mfo_card_compare">-->
+<!--            <a href="http://4slovo.kz/register/?aprt159=6512bd43d9caa6e02c990b0a82652dca&utm_source=smartzaim.kz&utm_content=sitekz" data-mfo="4slovo" data-title="Честное слово – микрокредит онлайн в Казахстане">Салыстыру</a>-->
+<!--        </div>-->
         <div class="mfo_card_info_link">
             <a href="http://4slovo.kz/register/?aprt159=6512bd43d9caa6e02c990b0a82652dca&utm_source=smartzaim.kz&utm_content=sitekz">Честное слово туралы нақтыра</a>
         </div>
