@@ -89,9 +89,9 @@ if (isset($model->description) && !empty($model->description)) $this->registerMe
                             <img class=" ls-is-cached lazyloaded" src="<?= $mfo->logo?>" data-src="<?= $mfo->logo?>" alt="ДеньгиClick">
                         </a>
                     </div>
-                    <div class="mfo_card_compare">
-                        <a href="<?= $mfo->mfo_name ?>" data-mfo="dengiclick" data-title="ДеньгиClick">Салыстыру</a>
-                    </div>
+<!--                    <div class="mfo_card_compare">-->
+<!--                        <a href="--><?php //echo $mfo->mfo_name ?><!--" data-mfo="dengiclick" data-title="ДеньгиClick">Салыстыру</a>-->
+<!--                    </div>-->
                     <div class="mfo_card_info_link">
                         <a href="#">Нақтырақ о <?= $mfo->mfo_name ?></a>
                     </div>

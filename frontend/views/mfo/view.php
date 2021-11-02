@@ -257,7 +257,7 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                             </div>
                         </div>
                         <div class="mfo-offer-recom">
-                            <h3 class="mfo-offer-recom-title">Ұқсас ұсыныстар</h3>
+                            <h3 class="mfo-offer-recom-title" style="text-align: center">Ұқсас ұсыныстар</h3>
                             <div class="mfo-offer-recom-container">
                                 <div class="firstloan">
                                     <div class="firstloan-col">
@@ -526,7 +526,7 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                             <div class="aside-rating-col">
                                 <div class="aside-rating-title">Служба поддержки</div>
                                 <div class="rating">
-                                    <div class="rating__stars" style="width:<?= $starRate ?>%"></div>
+                                    <div class="rating__stars" style="width:90%"></div>
                                     <div class="rating__val">4.7</div>
                                 </div>
                             </div>
