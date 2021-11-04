@@ -55,7 +55,7 @@ $this->title = 'Жаңалықтар — smartzaim.kz';
                                                              alt="" class="aktsii-item__img"></noscript>
                                                     <div class="news-item__title">
                                                         <h3><?= $article->name ?></h3>
-                                                        <span><?= date('m.d.Y',strtotime($article->date)) ?></span>
+                                                        <span><?= $article->date ?></span>
                                                     </div>
                                                 </div>
                                             </a>

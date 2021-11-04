@@ -517,14 +517,14 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                                 </div>
                             </div>
                             <div class="aside-rating-col">
-                                <div class="aside-rating-title">Скорость<br />выдачи</div>
+                                <div class="aside-rating-title">Беру <br />жылдамдығы</div>
                                 <div class="rating">
                                     <div class="rating__stars" style="width:100%"></div>
                                     <div class="rating__val">5.0</div>
                                 </div>
                             </div>
                             <div class="aside-rating-col">
-                                <div class="aside-rating-title">Служба поддержки</div>
+                                <div class="aside-rating-title">Қолдау қызметі</div>
                                 <div class="rating">
                                     <div class="rating__stars" style="width:90%"></div>
                                     <div class="rating__val">4.7</div>

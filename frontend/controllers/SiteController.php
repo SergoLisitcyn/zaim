@@ -318,4 +318,11 @@ class SiteController extends Controller
             'mfo' => $mfo
         ]);
     }
+
+    public function actionUnisender(){
+        if(isset($_POST['email'])){
+            file_get_contents('https://api.unisender.com/ru/api/subscribe?format=json&api_key=6rr5gxtr4upg4zwcn7mcfayogxiatbmx98pox7xa&list_ids=20738343&fields[email]='.$_POST['email'].'&double_optin=0&overwrite=0');
+        }
+        return $this->redirect('/');
+    }
 }
