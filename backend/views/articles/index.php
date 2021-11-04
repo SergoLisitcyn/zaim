@@ -29,6 +29,19 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'name',
             [
+                'label' => 'Ссылка на статью',
+                'format' => 'raw',
+                'hAlign' => 'center',
+                'value' => function ($model) {
+                    if($model->url){
+                        return Html::tag('a', Yii::$app->params['siteUrl'].'articles/'.$model->url, ['href' => (Yii::$app->params['siteUrl'].'articles/'.$model->url)]);
+                    } else {
+                        return '';
+                    }
+
+                },
+            ],
+            [
                 'label' => 'Изображение',
                 'format' => 'raw',
                 'hAlign' => 'center',

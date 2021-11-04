@@ -37,20 +37,6 @@ if($url == '/'){
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
-<!--     Yandex.Metrika counter -->
-    <script type="text/javascript" > (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(37301585, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true, ecommerce:"dataLayer" }); </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/37301585" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!--     /Yandex.Metrika counter -->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-78532063-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-78532063-1');
-    </script>
 </head>
 <body class="custom-background" id="<?= $class ?>">
 <?php $this->beginBody() ?>
@@ -249,7 +235,20 @@ if($url == '/'){
         </div>
     </div>
 </div>
+<!--     Yandex.Metrika counter -->
+<script type="text/javascript" > (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(37301585, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true, ecommerce:"dataLayer" }); </script>
+<noscript><div><img src="https://mc.yandex.ru/watch/37301585" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!--     /Yandex.Metrika counter -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-78532063-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
+    gtag('config', 'UA-78532063-1');
+</script>
 <?php $this->endBody() ?>
 </body>
 </html>
