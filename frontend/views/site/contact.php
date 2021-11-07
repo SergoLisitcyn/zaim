@@ -92,7 +92,7 @@ $this->registerMetaTag(['name' => 'description',
 <!--                    </div>-->
                 </div>
             </div>
-            <?= \frontend\widgets\ContentSideBar::widget(); ?>
+            <?= \frontend\widgets\ContentSideBar::widget(['type' => 'contact']); ?>
         </div>
     </div>
 </section>

@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use common\models\MainPage;
 use common\models\Review;
 use common\models\Sale;
 use Yii;
@@ -59,6 +60,10 @@ class MfoController extends Controller
         if(!$mfo) return $this->redirect('/');
         $sale = Sale::find()->where(['status' => 1,'mfo_id' => $mfo->id])->orderBy(['srok_do' => SORT_DESC])->one();
         $reviews = Review::find()->where(['cat_id' => $mfo->id])->andWhere(['status' => 1])->orderBy(['date' => SORT_DESC])->limit(3)->all();
+        if(isset($_POST['email_unisender'])){
+            (new MainPage)->unisender($_POST['email_unisender']);
+            return $this->refresh();
+        }
         $model = new Review();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             Yii::$app->session->setFlash('success', 'Ваш отзыв был отправлен. Благодарим за обращение!');
@@ -78,6 +83,10 @@ class MfoController extends Controller
         if(!$url){
             return $this->redirect('/');
         }
+        if(isset($_POST['email_unisender'])){
+            (new MainPage)->unisender($_POST['email_unisender']);
+            return $this->refresh();
+        }
         $mfo = Mfo::find()->where(['status' => 1, 'url' => $url])->one();
         return $this->render('login', [
             'model' => $mfo,
@@ -96,6 +105,10 @@ class MfoController extends Controller
                 'status' => 1
             ])
             ->all();
+        if(isset($_POST['email_unisender'])){
+            (new MainPage)->unisender($_POST['email_unisender']);
+            return $this->refresh();
+        }
         $model = new Review();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             Yii::$app->session->setFlash('success', 'Ваш отзыв был отправлен. Благодарим за обращение!');

@@ -6,6 +6,7 @@ namespace frontend\widgets;
 
 class ContentSideBar extends \yii\bootstrap\Widget
 {
+    public $type;
     public function init()
     {
         parent::init();
@@ -16,7 +17,7 @@ class ContentSideBar extends \yii\bootstrap\Widget
 //        $menu = Menu::find()->where(['status' => 1])->orderBy(['sort' => SORT_ASC])->all();
 
         return $this->render('contentSideBar', [
-//            'menus' => $menu,
+            'type' => $this->type,
         ]);
     }
 }

@@ -74,4 +74,9 @@ class MainPage extends \yii\db\ActiveRecord
             'advantages_list_4' => 'Преимущества 4',
         ];
     }
+
+    public function unisender($email){
+        if(!$email) return false;
+        file_get_contents('https://api.unisender.com/ru/api/subscribe?format=json&api_key=6rr5gxtr4upg4zwcn7mcfayogxiatbmx98pox7xa&list_ids=20738343&fields[email]='.$email.'&double_optin=0&overwrite=0');
+    }
 }

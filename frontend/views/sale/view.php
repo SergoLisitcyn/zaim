@@ -163,7 +163,8 @@ if (isset($model->description) && !empty($model->description)) $this->registerMe
                     </div>
                 </div>
                 <div class="mfo_card">
-                    <form	class="subscribtion_form subscribtion_form-second">
+                    <form	class="subscribtion_form subscribtion_form-second" action="/aktsii/<?= $model->url ?>" method="post">
+                        <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
                         <div	class="aside-subscribe-text">Арнайы ұсыныстар мен акциялар <br>туралы бірінші білгіңіз <br> келе ме?</div>
                         <div	class="email_sidebar_container">
                             <div	class="subscribe-sidebar-item subscribe-sidebar-item--input-email">

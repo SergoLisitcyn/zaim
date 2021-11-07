@@ -52,6 +52,8 @@ return [
                 'arhiv' => '/sale/arhiv',
                 'kreditnyj-kalkulyator' => '/site/calculator',
                 'rating' => '/site/rating',
+                'unisender' => '/site/unisender',
+                'unisender_mfo' => '/mfo/unisender',
                 [
                     'pattern' => 'mfo/<url:\S+>/reviews',
                     'route' => '/mfo/reviews',

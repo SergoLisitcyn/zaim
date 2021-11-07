@@ -6,7 +6,9 @@ use \yii\web\YiiAsset;
 /* @var $model common\models\Mfo */
 
 YiiAsset::register($this);
-?>
+$this->title = 'Пікірлер о '.$mfo->mfo_name.' – ең аз пайызбен берілетін онлайн микрокредиттер';
+$this->registerMetaTag(['name' => 'description',
+    'content' => 'Пікірлер о '.$mfo->mfo_name.' – ең аз пайызбен берілетін онлайн микрокредиттер.Қазақстанның несие компаниясының нақты клиенттерінен. Онлайн режимде ақша алу тәжірибесі туралы пайдалы ақпарат']);?>
 <section class="breadcrumbs plr">
     <div class="breadcrumbs-wrap limit-width">
         <ul class="breadcrumbs__items">
@@ -48,29 +50,32 @@ YiiAsset::register($this);
                     </ul>
                     <div class="content-main-info">
                         <div class="content-main-info__item">
-                            <h1>Пікірлер	о	<?= $mfo->mfo_name ?></h1>
-                            <a href="<?= $mfo->link_offer ?>"  target="_blank" class="content-main-info__button">Ақшаны алу</a>
+                            <h1>Пікірлер о	<?= $mfo->mfo_name ?></h1>
+                            <a href="<?= $mfo->link_offer ?>"  target="_blank" class="content-main-info__button" style="background: #fda729;">Ақшаны алу</a>
                             <div class="content-reviews">
                                 <?php foreach ($reviews as $review) :?>
                                 <div class="content-reviews-item">
                                     <div class="rr_review_name"><?= $review->name_client ?></div>
-                                    <span class="rr_date">13.08.2020</span>
+                                    <span class="rr_date"><?= $review->date ?></span>
                                     <div class="content-reviews-rating">
                                         <div class="rating">
+                                            <?php $starRate = (100 *  $review->prostota)/5;?>
                                             <span class="rating__caption">Алу қарапайымдылығы</span>
-                                            <div class="rating__stars rating__stars--sm" style="width:100%">
+                                            <div class="rating__stars rating__stars--sm" style="width:<?= $starRate?>%">
                                             </div>
                                             <div class="rating__val"><?= $review->prostota ?></div>
                                         </div>
                                         <div class="rating">
+                                            <?php $starRat = (100 *  $review->speed)/5;?>
                                             <span class="rating__caption">Беру жылдамдығы</span>
-                                            <div class="rating__stars rating__stars--sm" style="width:100%">
+                                            <div class="rating__stars rating__stars--sm" style="width:<?= $starRat?>%">
                                             </div>
                                             <div class="rating__val"><?= $review->speed ?></div>
                                         </div>
                                         <div class="rating">
+                                            <?php $starRa = (100 *  $review->support)/5;?>
                                             <span class="rating__caption">Қолдау көрсету қызметі</span>
-                                            <div class="rating__stars rating__stars--sm" style="width:100%">
+                                            <div class="rating__stars rating__stars--sm" style="width:<?= $starRa?>%">
                                             </div>
                                             <div class="rating__val"><?= $review->support ?></div>
                                         </div>
@@ -86,13 +91,13 @@ YiiAsset::register($this);
                                     </div>
                                 </div>
                                 <?php endforeach; ?>
-                                <form class="review-form"  id="review-form" action="/mfo/reviews" method="post">
+                                    <form class="review-form"  id="review-form" action="/mfo/<?= $mfo->url ?>/reviews" method="post">
                                     <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
-                                    <input type="hidden" id="review-cat_id" name="Review[cat_id]" value="1"/>
+                                    <input type="hidden" id="review-cat_id" name="Review[cat_id]" value="<?= $mfo->id ?>"/>
                                     <input type="hidden" id="review-prostota" name="Review[prostota]" value="1"/>
                                     <input type="hidden" id="review-speed" name="Review[speed]" value="1"/>
                                     <input type="hidden" id="review-support" name="Review[support]" value="1"/>
-                                    <input type="hidden" id="review-support" name="Review[date]" value="<?= date('Y/m/d h:i:s')?>"/>
+                                    <input type="hidden" id="review-support" name="Review[date]" value="<?= date('d.m.Y')?>"/>
                                     <div class="review-form__textarea-wrap">
                                         <textarea class="textarea-review" id="review-body" placeholder="Өз пікіріңізді қалдырыңыз" name="Review[body]"></textarea>
                                         <textarea class="textarea-plus" id="review-plus" placeholder="Компанияның артықшылықтары" name="Review[plus]"></textarea>
@@ -140,14 +145,14 @@ YiiAsset::register($this);
                                 </div>
                             </div>
                             <div class="aside-rating-col">
-                                <div class="aside-rating-title">Скорость<br />выдачи</div>
+                                <div class="aside-rating-title">Беру <br />жылдамдығы</div>
                                 <div	class="rating">
                                     <div class="rating__stars"	style="width:100%"></div>
                                     <div	class="rating__val">5.0</div>
                                 </div>
                             </div>
                             <div class="aside-rating-col">
-                                <div class="aside-rating-title">Служба поддержки</div>
+                                <div class="aside-rating-title">Қолдау қызметі</div>
                                 <div	class="rating">
                                     <div class="rating__stars"	style="width:93%"></div>
                                     <div	class="rating__val">4.7</div>
@@ -282,11 +287,12 @@ YiiAsset::register($this);
                     </div>
                 </div>
                 <div class="mfo_card">
-                    <form	class="subscribtion_form">
+                    <form	class="subscribtion_form" action="/mfo/<?= $mfo->url ?>/reviews" method="post">
+                        <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
                         <div	class="aside-subscribe-text">Арнайы ұсыныстар мен акциялар <br>туралы бірінші білгіңіз <br> келе ме?</div>
                         <div	class="email_sidebar_container">
                             <div	class="subscribe-sidebar-item subscribe-sidebar-item--input-email">
-                                <input	class="subscribe-sidebar-item__control subscribe-sidebar-item__control--input-email"	placeholder="Email"	type="text"	name="email"	value=""></div>
+                                <input	class="subscribe-sidebar-item__control subscribe-sidebar-item__control--input-email" placeholder="Email" type="text"	name="email_unisender"	value=""></div>
                             <div	class="subscribe-sidebar-item subscribe-sidebar-item--btn-submit">
                                 <input	class="subscribe-sidebar-item__btn subscribe-sidebar-item__btn--btn-submit"	type="submit"	value="Қол қою">
                             </div>

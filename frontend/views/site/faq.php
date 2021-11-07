@@ -624,7 +624,7 @@ $this->registerMetaTag(['name' => 'description','content' => '✔Жиі қойы
 </div>
                 </div>
                 </div>
-            <?= \frontend\widgets\ContentSideBar::widget(); ?>
+            <?= \frontend\widgets\ContentSideBar::widget(['type' => 'faq']); ?>
 
                 </div>
                 </div>

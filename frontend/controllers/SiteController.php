@@ -3,6 +3,7 @@ namespace frontend\controllers;
 
 use common\models\City;
 use common\models\Main;
+use common\models\MainPage;
 use common\models\Mfo;
 use common\models\Pages;
 use common\models\TypeCredit;
@@ -130,6 +131,10 @@ class SiteController extends Controller
     public function actionContact()
     {
         $model = new ContactForm();
+        if(isset($_POST['email'])){
+            (new MainPage)->unisender($_POST['email']);
+            return $this->refresh();
+        }
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
                 Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
@@ -157,6 +162,10 @@ class SiteController extends Controller
 
     public function actionFaq()
     {
+        if(isset($_POST['email'])){
+            (new MainPage)->unisender($_POST['email']);
+            return $this->refresh();
+        }
         return $this->render('faq');
     }
 
@@ -295,7 +304,10 @@ class SiteController extends Controller
             $join = 'type';
             $where = 'type_credit.url';
         }
-
+        if(isset($_POST['email'])){
+            (new MainPage)->unisender($_POST['email']);
+            return $this->refresh();
+        }
         $output = Mfo::find()
             ->joinWith($join)
             ->where([$where => $slug])
@@ -321,7 +333,7 @@ class SiteController extends Controller
 
     public function actionUnisender(){
         if(isset($_POST['email'])){
-            file_get_contents('https://api.unisender.com/ru/api/subscribe?format=json&api_key=6rr5gxtr4upg4zwcn7mcfayogxiatbmx98pox7xa&list_ids=20738343&fields[email]='.$_POST['email'].'&double_optin=0&overwrite=0');
+            (new MainPage)->unisender($_POST['email']);
         }
         return $this->redirect('/');
     }

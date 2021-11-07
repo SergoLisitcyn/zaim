@@ -74,7 +74,7 @@ $this->title = 'Пайдалы материалдар — smartzaim.kz';
 
                 </div>
 
-                <?= \frontend\widgets\ContentSideBar::widget(); ?>
+                <?= \frontend\widgets\ContentSideBar::widget(['type' => 'articles']); ?>
 
             </div>
         </div>

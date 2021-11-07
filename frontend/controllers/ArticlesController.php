@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use common\models\MainPage;
 use common\models\Mfo;
 use Yii;
 use common\models\Articles;
@@ -34,13 +35,16 @@ class ArticlesController extends Controller
     public function actionIndex()
     {
         $articles = Articles::find()->where(['status' => 1])->all();
-
+        if(isset($_POST['email'])){
+            (new MainPage)->unisender($_POST['email']);
+            return $this->refresh();
+        }
         return $this->render('index', [
             'articles' => $articles,
         ]);
     }
 
-    public function actionView($url = null): string
+    public function actionView($url = null)
     {
         $articles = Articles::find()->where(['status' => 1, 'url' => $url])->one();
         $articlesRandom = Articles::find()
@@ -50,6 +54,10 @@ class ArticlesController extends Controller
             ->limit(3)
             ->all();
         $mfo = Mfo::find()->where(['id' => 1])->one();
+        if(isset($_POST['email'])){
+            (new MainPage)->unisender($_POST['email']);
+            return $this->refresh();
+        }
         return $this->render('view', [
             'model' => $articles,
             'mfo' => $mfo,

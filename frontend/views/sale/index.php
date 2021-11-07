@@ -75,7 +75,7 @@ $this->registerMetaTag(['name' => 'description',
 
             </div>
 
-            <?= \frontend\widgets\ContentSideBar::widget(); ?>
+            <?= \frontend\widgets\ContentSideBar::widget(['type' => 'aktsii']); ?>
 
         </div>
     </div>

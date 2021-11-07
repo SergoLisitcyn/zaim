@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 
 use common\models\Articles;
+use common\models\MainPage;
 use common\models\Mfo;
 use Yii;
 use common\models\News;
@@ -36,6 +37,10 @@ class NewsController extends Controller
     public function actionIndex()
     {
         $news = News::find()->where(['status' => 1])->all();
+        if(isset($_POST['email'])){
+            (new MainPage)->unisender($_POST['email']);
+            return $this->refresh();
+        }
 
         return $this->render('index', [
             'news' => $news,
@@ -53,6 +58,10 @@ class NewsController extends Controller
             ->limit(3)
             ->all();
         $mfo = Mfo::find()->where(['id' => 1])->one();
+        if(isset($_POST['email'])){
+            (new MainPage)->unisender($_POST['email']);
+            return $this->refresh();
+        }
         return $this->render('view', [
             'model' => $news,
             'mfo' => $mfo,

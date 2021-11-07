@@ -75,7 +75,7 @@ $this->title = 'Жаңалықтар — smartzaim.kz';
 
             </div>
 
-            <?= \frontend\widgets\ContentSideBar::widget(); ?>
+            <?= \frontend\widgets\ContentSideBar::widget(['type' => 'news']); ?>
 
         </div>
     </div>

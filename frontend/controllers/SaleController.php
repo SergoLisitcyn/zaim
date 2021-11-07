@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use common\models\MainPage;
 use common\models\Mfo;
 use common\models\Reviews;
 use Yii;
@@ -40,7 +41,10 @@ class SaleController extends Controller
     public function actionIndex()
     {
         $sales = Sale::find()->all();
-
+        if(isset($_POST['email'])){
+            (new MainPage)->unisender($_POST['email']);
+            return $this->refresh();
+        }
         return $this->render('index', [
             'sales' => $sales,
         ]);
@@ -57,6 +61,10 @@ class SaleController extends Controller
             ->limit(3)
             ->all();
         $mfo = Mfo::find()->where(['id' => $sales->mfo_id])->one();
+        if(isset($_POST['email'])){
+            (new MainPage)->unisender($_POST['email']);
+            return $this->refresh();
+        }
         return $this->render('view', [
             'model' => $sales,
             'mfo' => $mfo,

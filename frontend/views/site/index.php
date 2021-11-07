@@ -23,7 +23,8 @@ $this->registerMetaTag(['name' => 'description',
 
 <section class="subscribe-main plr mt18">
     <div class="subscribe-main-wrap limit-width">
-        <form name="subscribtion_form">
+        <form name="subscribtion_form" action="/unisender" method="post">
+            <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
             <h2>Акцияға жазылу</h2>
             <div class="subscribe_text_item">
                 <span>Жазылушылар үшін бізде жеке жеңілдіктер болады!</span>

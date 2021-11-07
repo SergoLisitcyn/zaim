@@ -659,11 +659,12 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                     </div>
                 </div>
                 <div class="mfo_card">
-                    <form	class="subscribtion_form">
+                    <form	class="subscribtion_form" action="/mfo/<?= $model->url ?>" method="post">
+                        <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
                         <div	class="aside-subscribe-text">Арнайы ұсыныстар мен акциялар <br>туралы бірінші білгіңіз <br> келе ме?</div>
                         <div	class="email_sidebar_container">
                             <div	class="subscribe-sidebar-item subscribe-sidebar-item--input-email">
-                                <input	class="subscribe-sidebar-item__control subscribe-sidebar-item__control--input-email"	placeholder="Email"	type="text"	name="email"	value=""></div>
+                                <input	class="subscribe-sidebar-item__control subscribe-sidebar-item__control--input-email"	placeholder="Email"	type="text"	name="email_unisender"	value=""></div>
                             <div	class="subscribe-sidebar-item subscribe-sidebar-item--btn-submit">
                                 <input	class="subscribe-sidebar-item__btn subscribe-sidebar-item__btn--btn-submit"	type="submit"	value="Қол қою">
                             </div>
