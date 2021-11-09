@@ -337,4 +337,46 @@ class SiteController extends Controller
         }
         return $this->redirect('/');
     }
+
+    public function actionCurrency()
+    {
+        $valutes = [];
+        $url = "http://www.nationalbank.kz/rss/rates_all.xml";
+        $dataObj = simplexml_load_file($url);
+        if ($dataObj){
+            foreach ($dataObj->channel->item as $item){
+                $valutes[strval($item->title)] = strval($item->description);
+            }
+        }
+
+        $month = [
+            '01' => 'қаңтар',
+            '02' => 'ақпан',
+            '03' => 'наурыз',
+            '04' => 'сәуір',
+            '05' => 'мамыр',
+            '06' => 'маусым',
+            '07' => 'шілде',
+            '08' => 'тамыз',
+            '09' => 'қыркүйек',
+            '10' => 'қазан',
+            '11' => 'қараша',
+            '12' => 'желтоқсан',
+        ];
+        $day = [
+            '0' => 'Жексенбі',
+            '1' => 'Дүйсенбіге',
+            '2' => 'Сейсенбі',
+            '3' => 'Сәрсенбі',
+            '4' => 'Бейсенбі',
+            '5' => 'Жұма',
+            '6' => 'Сенбі',
+        ];
+        return $this->render('currency', [
+            'valutes' => $valutes,
+            'month' => $month,
+            'day' => $day,
+        ]);
+
+    }
 }

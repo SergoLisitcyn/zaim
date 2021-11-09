@@ -5,10 +5,12 @@ use \frontend\widgets\GridCatalog;
 use \frontend\widgets\Rating;
 use \frontend\widgets\SaleCatalog;
 use \frontend\widgets\CalculatorWidget;
-$this->title = 'Калькулятор займа онлайн — расчет суммы и процентов по кредиту';
+$this->title = 'Онлайн-қарыз калькуляторы — кредит сомасы мен пайызын есептеу';
+$this->registerMetaTag(['name' => 'description','content' => 'Қазақстандағы онлайн қарыз калькуляторы сайтта Smartzaim.kz.
+ Несиені сомасы мен мерзімі бойынша таңдаңыз']);
 ?>
 <section class="main-title">
-    <h1 class="title">Калькулятор займа онлайн</h1>
+    <h1 class="title">Онлайн-қарыз калькуляторы </h1>
     <h2 class="subtitle">Неғұрлым тиімді ұсынысты тегін таңдаңыз!</h2>
     <h3 class="descr">Онлайн қарыз алу үшін, кредиттік ұйымдарға берілетін өтінім санын барынша көбірек толтырыңыз:</h3>
 </section>

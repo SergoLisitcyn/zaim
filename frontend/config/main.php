@@ -46,6 +46,7 @@ return [
                 'contact' => '/site/contact',
                 'faq' => '/site/faq',
                 '/' => '/site/index',
+                'valuta-bagamy' => '/site/currency',
                 'aktsii' => '/sale/index',
                 'articles' => '/articles/index',
                 'news' => '/news/index',

@@ -26,14 +26,15 @@
                         <div class="mfo_card_button search_company">Компанияны таңдау</div>
                     </div>
                     <div class="loan_calculator_search_right">
-                        <div class="loan_calculator_sum_right">
-                            <span>Сомасы</span><span class="visible-mobile">Вы берете</span>
-                            <span class="loan_calculator_sum_input_right">50 000</span> <span>тнг</span>
-                        </div>
                         <div class="loan_calculator_date_right">
-                            <span>Мерзімі</span><span class="visible-mobile">на срок до</span>
-                            <span class="loan_calculator_date_input_right">7</span> <span>күн</span>
+                            <span>Мерзімі</span><span class="visible-mobile">Сіз</span>
+                            <span class="loan_calculator_date_input_right">7</span> <span>күн</span> <span class="visible-mobile">мерзімге дейін</span>
                         </div>
+                        <div class="loan_calculator_sum_right">
+                            <span>Сомасы</span>
+                            <span class="loan_calculator_sum_input_right">50 000</span> <span>теңге</span><span class="visible-mobile"> аласыз</span>
+                        </div>
+
                     </div>
                 </div>
             </div>

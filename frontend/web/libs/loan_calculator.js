@@ -15,7 +15,7 @@ jQuery(document).ready(function($){
         '</div><div><span class="text_unit">К выплате</span>' +
         '<span class="zaym_vipl">'+sum_offer+'</span>' +
         '<span class="text_unit_small">тнг</span></div></div>');
-    $(".mfo_card_vert_info_link_"+offer).html('Сумма займа ' + sum + ' тг + комиссия за '+term+' дней '+com_offer+' тг = '+sum_offer+' к выплате');
+    $(".mfo_card_vert_info_link_"+offer).html('Сумма займа ' + sum + ' тг + комиссия за '+term+' күн '+com_offer+' тг = '+sum_offer+' к выплате');
     $(".mfo_card_info_return_data_"+offer).text(sum_offer);
     }
 
@@ -161,9 +161,9 @@ jQuery(document).ready(function($){
             else if(value==90000){sum=100000;}else if(value==100000){sum=110000;}else if(value==110000){sum=120000;}
             else if(value==120000){sum=130000;}else if(value==130000){sum=150000;}else if(value==150000){sum=200000;}
             else if(value==200000){sum=250000;}else if(value==250000){sum=300000;}else if(value==300000){sum=300000;}
-            return sum;}$('input[name="rs_date"]').rangeslider({polyfill:false,onInit:function(){this.output=$('<div class="rs_date_output" />').insertAfter('.loan_calculator_date_label').html(this.$element.val()+' дней');
+            return sum;}$('input[name="rs_date"]').rangeslider({polyfill:false,onInit:function(){this.output=$('<div class="rs_date_output" />').insertAfter('.loan_calculator_date_label').html(this.$element.val()+' күн');
             $(".loan_calculator_date_input_right").text(this.$element.val());
-            var sum=$('input[name="rs_sum"]').val();if(sum==0){sum=5000;}var term=this.$element.val();setLoanParameters(sum,term);},onSlide:function(position,value){this.output.html(value+' дней');
+            var sum=$('input[name="rs_sum"]').val();if(sum==0){sum=5000;}var term=this.$element.val();setLoanParameters(sum,term);},onSlide:function(position,value){this.output.html(value+' күн');
             $(".loan_calculator_date_input_right").text(this.$element.val());
             var sum=$('input[name="rs_sum"]').val();if(sum==0){sum=5000;}
             var term=this.$element.val();setLoanParameters(sum,term);}});
