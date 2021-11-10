@@ -9,7 +9,7 @@ use \frontend\widgets\Rating;
 
 $this->title = $model->name;
 
-if (isset($model->title_seo) && !empty($model->title)) $this->title = $model->title_seo;
+if (isset($model->title_seo) && !empty($model->title_seo)) $this->title = $model->title_seo;
 if (isset($model->description) && !empty($model->description)) $this->registerMetaTag(['name' => 'description', 'content' => $model->description]);
 
 \yii\web\YiiAsset::register($this);
@@ -38,7 +38,7 @@ if (isset($model->description) && !empty($model->description)) $this->registerMe
                 <div class="content-info">
                     <div class="content-main-info">
                         <div class="content-main-info__item" style="padding: 0">
-                            <h1 style="text-align: center;color: #146696!important;font-family: inherit;font-weight: 700;margin: 0 40px 25px;"><?= $model->name ?></h1>
+                            <h1 style="text-align: center;color: #146696!important;font-family: inherit;font-weight: 700;margin: 0 20px 25px;"><?= $model->name ?></h1>
                             <div class="email_container">
                                 <div class="text_top_subscribe_container">Сілтемеге жазылыңыз және акциялар мен арнайы<br> ұсыныстар туралы алғашқылардың бірі болып біліңіз</div>
                                 <div class="subscribe-top-item-wrap">
@@ -51,6 +51,23 @@ if (isset($model->description) && !empty($model->description)) $this->registerMe
                             </div>
                             <div class="aktsii-article__content articles_news">
                                 <?= $model->content ?>
+                                <?php if($author) : ?>
+                                <div class="read-author-info entry-author">
+                                    <div class="author-avatar round-images">
+                                        <noscript>
+                                            <img alt="" src="<?= $author->image; ?>"
+                                                 class="avatar avatar-80 photo" height="80" width="80">
+                                        </noscript>
+                                        <img alt="" src="<?= $author->image; ?>"
+                                             data-src="<?= $author->image; ?>" height="80" width="80">
+                                    </div>
+                                    <div class="author-description">
+                                        <h4> <span class="author-heading">Автор:</span>&nbsp;<?= $author->name; ?></h4>
+                                        <p class="author-bio"><?= $author->description; ?>
+                                        </p>
+                                    </div>
+                                </div>
+                                <?php endif; ?>
                                 <div class="aktsii-article__box">
                                     <h3>Ұқсас ұсыныстар</h3>
                                     <div class="aktsii-article__box-inner">

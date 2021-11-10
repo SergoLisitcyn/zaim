@@ -51,6 +51,23 @@ if (isset($model->description) && !empty($model->description)) $this->registerMe
                             </div>
                             <div class="aktsii-article__content articles_news">
                                 <?= $model->content ?>
+                                <?php if($author) : ?>
+                                    <div class="read-author-info entry-author">
+                                        <div class="author-avatar round-images">
+                                            <noscript>
+                                                <img alt="" src="<?= $author->image; ?>"
+                                                     class="avatar avatar-80 photo" height="80" width="80">
+                                            </noscript>
+                                            <img alt="" src="<?= $author->image; ?>"
+                                                 data-src="<?= $author->image; ?>" height="80" width="80">
+                                        </div>
+                                        <div class="author-description">
+                                            <h4> <span class="author-heading">Автор:</span>&nbsp;<?= $author->name; ?></h4>
+                                            <p class="author-bio"><?= $author->description; ?>
+                                            </p>
+                                        </div>
+                                    </div>
+                                <?php endif; ?>
                                 <div class="aktsii-article__box">
                                     <h3>Ұқсас ұсыныстар</h3>
                                     <div class="aktsii-article__box-inner">

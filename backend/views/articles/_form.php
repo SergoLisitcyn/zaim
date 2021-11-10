@@ -6,7 +6,9 @@ use vova07\imperavi\Widget;
 use \kartik\file\FileInput;
 use \yii\helpers\Url;
 use \kartik\date\DatePicker;
-
+use \kartik\select2\Select2;
+use \yii\helpers\ArrayHelper;
+use \common\models\Author;
 /* @var $this yii\web\View */
 /* @var $model common\models\Articles */
 /* @var $form yii\widgets\ActiveForm */
@@ -69,6 +71,13 @@ use \kartik\date\DatePicker;
 
         ]
     ])?>
+
+    <?php echo $form->field($model, 'user_id',['options'=>['class'=>'col-xs-12','style'=>'padding-left:0']])->widget(Select2::classname(), [
+        'data' => ArrayHelper::map(Author::find()->all(),'id','name'),
+        'language' => 'ru',
+        'options' => ['placeholder' => 'Выбрать Автора ...'],
+        'pluginOptions' => ['allowClear' => true],
+    ]); ?>
 
     <?= $form->field($model, 'date_publish')->widget(DatePicker::className(),['pluginOptions' => [
         'autoclose'=>true,

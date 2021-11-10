@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use common\models\Author;
 use common\models\MainPage;
 use common\models\Mfo;
 use Yii;
@@ -58,10 +59,13 @@ class ArticlesController extends Controller
             (new MainPage)->unisender($_POST['email']);
             return $this->refresh();
         }
+        $author = Author::findOne($articles->user_id);
+
         return $this->render('view', [
             'model' => $articles,
             'mfo' => $mfo,
             'articlesRandom' => $articlesRandom,
+            'author' => $author,
         ]);
 
     }

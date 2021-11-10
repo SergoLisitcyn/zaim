@@ -1,24 +1,18 @@
 <?php
 
-namespace frontend\controllers;
+namespace backend\controllers;
 
-use common\models\Articles;
-use common\models\Author;
-use common\models\MainPage;
-use common\models\Mfo;
 use Yii;
-use common\models\News;
-use common\models\NewsSearch;
-use yii\db\Expression;
+use common\models\Author;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
-use yii\web\HttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * NewsController implements the CRUD actions for News model.
+ * AuthorController implements the CRUD actions for Author model.
  */
-class NewsController extends Controller
+class AuthorController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -35,52 +29,42 @@ class NewsController extends Controller
         ];
     }
 
+    /**
+     * Lists all Author models.
+     * @return mixed
+     */
     public function actionIndex()
     {
-        $news = News::find()->where(['status' => 1])->all();
-        if(isset($_POST['email'])){
-            (new MainPage)->unisender($_POST['email']);
-            return $this->refresh();
-        }
+        $dataProvider = new ActiveDataProvider([
+            'query' => Author::find(),
+        ]);
 
         return $this->render('index', [
-            'news' => $news,
+            'dataProvider' => $dataProvider,
         ]);
-    }
-
-    public function actionView($url = null)
-    {
-        $news = News::find()->where(['status' => 1, 'url' => $url])->one();
-        if(!$news) throw new HttpException(404, 'Страница не существует.');
-        $newsRandom = News::find()
-            ->where(['status' => 1])
-            ->andWhere(['!=','id', $news->id])
-            ->orderBy(new Expression('rand()'))
-            ->limit(3)
-            ->all();
-        $mfo = Mfo::find()->where(['id' => 1])->one();
-        if(isset($_POST['email'])){
-            (new MainPage)->unisender($_POST['email']);
-            return $this->refresh();
-        }
-        $author = Author::findOne($news->author_id);
-        return $this->render('view', [
-            'model' => $news,
-            'mfo' => $mfo,
-            'newsRandom' => $newsRandom,
-            'author' => $author,
-        ]);
-
     }
 
     /**
-     * Creates a new News model.
+     * Displays a single Author model.
+     * @param integer $id
+     * @return mixed
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    public function actionView($id)
+    {
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+        ]);
+    }
+
+    /**
+     * Creates a new Author model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new News();
+        $model = new Author();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -92,7 +76,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Updates an existing News model.
+     * Updates an existing Author model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -110,9 +94,17 @@ class NewsController extends Controller
             'model' => $model,
         ]);
     }
+    public function actionDeleteimg($id){
+
+        $model = Author::find()->where(['id' => $id])->one();
+        $model->image = null;
+        $model->update(false);
+
+        return $this->redirect(["author/update?id=$id"]);
+    }
 
     /**
-     * Deletes an existing News model.
+     * Deletes an existing Author model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -126,15 +118,15 @@ class NewsController extends Controller
     }
 
     /**
-     * Finds the News model based on its primary key value.
+     * Finds the Author model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return News the loaded model
+     * @return Author the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = News::findOne($id)) !== null) {
+        if (($model = Author::findOne($id)) !== null) {
             return $model;
         }
 

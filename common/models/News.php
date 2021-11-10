@@ -19,6 +19,7 @@ use yii\web\UploadedFile;
  * @property string $url
  * @property string|null $date
  * @property int|null $sort
+ * @property int|null $author_id
  * @property int|null $status
  */
 class News extends \yii\db\ActiveRecord
@@ -65,7 +66,7 @@ class News extends \yii\db\ActiveRecord
             [['name', 'url'], 'required'],
             [['content', 'text_content'], 'string'],
             [['date'], 'safe'],
-            [['sort', 'status'], 'integer'],
+            [['sort', 'status','author_id'], 'integer'],
             [['name', 'images', 'url','description','title_seo'], 'string', 'max' => 255],
         ];
     }
@@ -88,6 +89,7 @@ class News extends \yii\db\ActiveRecord
             'sort' => 'Сортировка',
             'status' => 'Статус',
             'mainfile' => 'Главная картинка',
+            'author_id' => 'Автор',
         ];
     }
 }
