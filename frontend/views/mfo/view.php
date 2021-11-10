@@ -253,6 +253,15 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                                     <div	class="contact-site">Cайт:
                                         <a class="contact-site-link" href="<?= $model->link_offer ?>"><?= $model->website ?></a>
                                     </div>
+                                    <?php if($model->certificate) : ?>
+
+                                    <div style="margin-top: 15px; text-align: center;cursor: zoom-in;" class="certificate_image">
+                                        <a href="#pexels-photo" style="cursor: zoom-in;">
+                                            <img src="<?= $model->certificate ?>" style="width:200px;height:283px;">
+                                        </a>
+                                        <a id="pexels-photo-large" href="#" class="full" style="background-image:url(<?= $model->certificate ?>)"></a>
+                                    </div>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>

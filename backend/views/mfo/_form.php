@@ -103,6 +103,29 @@ use \yii\helpers\Url;
 
                         <?= $form->field($model, 'text_video')->textInput(['maxlength' => true]) ?>
                         <?= $form->field($model, 'video')->textInput(['maxlength' => true]) ?>
+                        <div class="form-group field-mfo-logo_file">
+                            <label class="control-label col-sm-4" for="mfo-logo_file"></label>
+                            <div class="col-sm-8">
+                                <?php if($model->certificate) : ?>
+                                    <img src="<?= $model->certificate ?>" class="img_slider_view" alt="Image" style="height: 100px">
+                                <?php else: ?>
+                                    <b>Сертификат отсутствует</b>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                        <?php
+                        echo $form->field($model, 'certificate_file')->widget(\kartik\file\FileInput::classname(), [
+                            'options' => [
+                                'accept' => 'image/*',
+                                'multiple' => false
+                            ],
+                            'pluginOptions' => [
+                                'showPreview' => false,
+                                'showRemove' => true,
+                                'showUpload' => false
+                            ]
+                        ]);
+                        ?>
 
                         <?= $form->field($model, 'rekvisit')->widget(Widget::className(), [
                             'settings' => [

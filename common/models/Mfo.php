@@ -25,6 +25,7 @@ use yii\web\UploadedFile;
  * @property string|null $email
  * @property string|null $website
  * @property string|null $logo
+ * @property string|null $certificate
  * @property string|null $video
  * @property string|null $rekvisit
  * @property int|null $akcii
@@ -68,6 +69,7 @@ class Mfo extends \yii\db\ActiveRecord
     public $type_credit_arr;
     public $mfo_city_arr;
     public $logo_file;
+    public $certificate_file;
 
     /**
      * {@inheritdoc}
@@ -99,9 +101,9 @@ class Mfo extends \yii\db\ActiveRecord
                 'link_offer', 'title', 'description', 'keywords', 'type_credit_array', 'url', 'text_video',
                 'mfo_city_array', 'srok_new_client', 'sum_new_client', 'stavka_new_client', 'odobrenie_new_client',
                 'rasmotrenie_new_client', 'srok_for_client', 'sum_for_client', 'stavka_for_client',
-                'odobrenie_for_client', 'rasmotrenie_for_client', 'login_link','gesv'], 'string', 'max' => 255],
+                'odobrenie_for_client', 'rasmotrenie_for_client', 'login_link','gesv','certificate'], 'string', 'max' => 255],
             [['type_credit_arr','mfo_city_arr'], 'safe'],
-            [['logo_file'], 'file'],
+            [['logo_file','certificate_file'], 'file'],
         ];
     }
 
@@ -123,6 +125,8 @@ class Mfo extends \yii\db\ActiveRecord
             'email' => 'Email',
             'website' => 'Название сайта',
             'logo' => 'Логотип МФО',
+            'certificate' => 'Сертификат',
+            'certificate_file' => 'Сертификат',
             'video' => 'Ссылка на видео',
             'rekvisit' => 'Реквизиты',
             'akcii' => 'Есть акция?',
@@ -263,6 +267,24 @@ class Mfo extends \yii\db\ActiveRecord
 
                 @unlink(Yii::getAlias('@frontend/web') . $this->logo_file);
                 $this->setAttribute('logo', $path);
+                $this->save();
+            }
+        }
+        $certificateFile = UploadedFile::getInstance($this, 'certificate_file');
+        if ($certificateFile) {
+            $directory = Yii::getAlias('@frontend/web/uploads/images/mfo/certificate') . DIRECTORY_SEPARATOR;
+            if (!is_dir($directory)) {
+                FileHelper::createDirectory($directory);
+            }
+
+            $uid = date('YmdHs').Yii::$app->security->generateRandomString(6);
+            $fileName = $uid . '-mfo_certificate.' . $certificateFile->extension;
+            $filePath = $directory . $fileName;
+            if ($certificateFile->saveAs($filePath)) {
+                $path = '/uploads/images/mfo/certificate/' . $fileName;
+
+                @unlink(Yii::getAlias('@frontend/web') . $this->certificate_file);
+                $this->setAttribute('certificate', $path);
                 $this->save();
             }
         }
