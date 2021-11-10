@@ -19,7 +19,7 @@ class SaleCatalog extends Widget
     {
         $sales = Sale::find()
             ->where(['status' => '1'])
-            ->orderBy(['sort' => SORT_ASC])
+            ->orderBy(['id' => SORT_DESC])
             ->all();
 
         return $this->render('sale', [
