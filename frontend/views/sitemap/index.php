@@ -31,7 +31,7 @@
         <changefreq>weekly</changefreq>
     </url>
     <?php foreach($urls as $url): ?>
-    <url>
+<url>
         <loc><?= $host.'/' . $url['loc']; ?></loc>
         <?php if(isset($url['lastmod'])): ?>
         <lastmod><?= $url['lastmod']; ?></lastmod>
