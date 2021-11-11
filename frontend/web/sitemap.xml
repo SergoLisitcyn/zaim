@@ -1,617 +1,524 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-<url>
-  <loc>http://kz.smartzaim.kz/</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/almaty</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/aktau</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/aktobe</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/atyrau</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/zhezkazgan</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/karaganda</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/kokshetau</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/kostanaj</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/kyzylorda</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/astana</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/pavlodar</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/petropavlovsk</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/ridder</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/semej</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/taldykorgan</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/taraz</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/temirtau</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/uralsk</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/ust-kamenogorsk</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/shymkent</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/ekibastuz</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/rating</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/aktsii</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/zajmy-po-pasportu</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/kredit-bez-poruchitelej</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/zaem-bez-spravki-o-dohodah</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/mikrokredit-bez-zaloga</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/mikrozajm-bez-raspiski</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/zajmy-do-zarplaty-v-kazahstane</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/kredit-dlya-biznesa</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/kratkosrochnye-zajmy</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/onlajn-kredit-nalichnymi-bez-spravok</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/onlajn-zajm-bez-proverok</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/zajmy-s-plohoj-kreditnoj-istoriej</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/zajmy-bez-otkaza</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/chastnyj-zajm-v-kazahstane-bez-predoplaty</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/onlajn-zajmy-v-kazahstane-s-prosrochkami</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/zajmy-24-chasa</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/onlajn-zajmy-bez-protsentov-v-kazahstane</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/onlajn-zajm-na-kartu</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/zajm-na-bankovskij-schet</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/dengi-na-schet-kazpochty</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/zajm-nalichnymi</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/bankovskaya-karta</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/bankovskij-perevod</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/cyberplat</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/qiwi</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/kassa24</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/nalichnymi-v-kasse-banka</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/nalichnymi-v-ao-kazpochta</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/nalichnymi-v-ofise-kompanii</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/rabotayushhij</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/bezrabotnyj</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/student</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/onlajn-zajmy-pensioneram</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/onlajn-zajmy-s-18-let</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/zajm-nedelya</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/zajm-30-dnej</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/contact</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/mfo/4slovo</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/mfo/koke</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/mfo/zaimer</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/mfo/moneyman</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/mfo/creditplus</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/mfo/tengo</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/mfo/dengiclick</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/mfo/turbomoney</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/mfo/credit365</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/faq</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/aktsii/pervye-mikrokredit-v-moneyman-bez-pereplat</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/aktsii/mikrokredit-na-teplyh-usloviyah-v-tengo</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/aktsii/pervyi-mikrokredit-v-koke-bez-pereplat</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/aktsii/dengiclick-bezprocentnyi-period-30-dney</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/aktsii/dlya-novyh-klientov-creditplus-mikrokredit-pod-001-proc</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/aktsii/pervyi-mikrokredit-v-zaimer-bez-pereplat</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/aktsii/dlya-novyh-klientov-credit365-osobennoe-predlozhenie</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/aktsii/microcredit-alyp-autoclik-utyp-alygyz</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/aktsii/onlajn-servis-chestnoe-slovo-snizhaet-protsenty-po-mikrokreditam-dlya-novyh-klientov</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/page/politika-konfidentsialnosti</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/page/vakansii</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/page/publichnaya-oferta</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/page/polzovatelskoe-soglashenie</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/articles</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/news</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/page/about</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/mfo/4slovo/login</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/mfo/4slovo/reviews</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/mfo/koke/login</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/mfo/koke/reviews</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/mfo/zaimer/login</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/mfo/zaimer/reviews</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/mfo/moneyman/login</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/mfo/moneyman/reviews</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/mfo/creditplus/login</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/mfo/creditplus/reviews</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/mfo/tengo/login</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/mfo/tengo/reviews</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/mfo/dengiclick/login</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/mfo/dengiclick/reviews</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/mfo/turbomoney/login</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/mfo/turbomoney/reviews</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/mfo/credit365/login</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/mfo/credit365/reviews</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/articles/3-vazhnyh-usloviya-dlya-polucheniya-onlajn-zajma-na-kartu-10334</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/articles/3-preimushhestva-polucheniya-onlajn-zajma-nalichnymi-bez-spravok-10235</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/articles/5-izvestnyh-mifov-ob-onlajn-zajmah-bez-protsentov-11231</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/articles/kak-zarabotat-v-internete-proverennye-sposoby-3305</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/articles/kak-uluchshit-svoyu-kreditnuyu-istoriyu-1693</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/news/v-kazahstane-zarabotala-programma-po-ochishheniyu-kreditnoj-istorii-12144</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/articles/v-kazahstane-zarabotala-programma-po-ochishheniyu-kreditnoj-istorii-12144</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/news/mozhet-li-magazin-otkazatsya-prinimat-k-oplate-kartochku-12400</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/articles/mozhet-li-magazin-otkazatsya-prinimat-k-oplate-kartochku-12400</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/news/mat-i-rebenok-v-god-mogut-poluchit-2-5-mln-tenge-12505</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/articles/mat-i-rebenok-v-god-mogut-poluchit-2-5-mln-tenge-12505</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/news/ne-popadites-v-ruki-moshennikov-politsiya-rasskazyvaet-kak-prestupniki-v-internete-obmanyvayut-grazhdan-11730</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/articles/ne-popadites-v-ruki-moshennikov-politsiya-rasskazyvaet-kak-prestupniki-v-internete-obmanyvayut-grazhdan-11730</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/news/obnulenie-kredita-ili-novye-shemy-moshennichestva-11812</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/articles/obnulenie-kredita-ili-novye-shemy-moshennichestva-11812</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/news/qazaqstanda-kredit-tarihyn-tazarty-bagdarlamasy-iske-qosyldy</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://kz.smartzaim.kz/articles/qazaqstanda-kredit-tarihyn-tazarty-bagdarlamasy-iske-qosyldy</loc>
-  <lastmod>2021-10-25T20:57:12+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <!--  created with Free Online Sitemap Generator www.xml-sitemaps.com  -->
+  <url>
+    <loc>https://kz.smartzaim.kz/</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/almaty</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/aktau</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/aktobe</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/atyrau</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/zhezkazgan</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/karaganda</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/kokshetau</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/kostanaj</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/kyzylorda</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/astana</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/pavlodar</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/petropavlovsk</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/ridder</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/semej</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/taldykorgan</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/taraz</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/temirtau</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/uralsk</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/ust-kamenogorsk</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/shymkent</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/ekibastuz</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/rating</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/aktsii</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/zajmy-po-pasportu</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/kredit-bez-poruchitelej</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/zaem-bez-spravki-o-dohodah</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/mikrokredit-bez-zaloga</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/mikrozajm-bez-raspiski</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/zajmy-do-zarplaty-v-kazahstane</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/kredit-dlya-biznesa</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/kratkosrochnye-zajmy</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/onlajn-kredit-nalichnymi-bez-spravok</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/onlajn-zajm-bez-proverok</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/zajmy-s-plohoj-kreditnoj-istoriej</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/zajmy-bez-otkaza</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/chastnyj-zajm-v-kazahstane-bez-predoplaty</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/onlajn-zajmy-v-kazahstane-s-prosrochkami</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/zajmy-24-chasa</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/onlajn-zajmy-bez-protsentov-v-kazahstane</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/onlajn-zajm-na-kartu</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/zajm-na-bankovskij-schet</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/dengi-na-schet-kazpochty</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/zajm-nalichnymi</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/bankovskaya-karta</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/bankovskij-perevod</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/cyberplat</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/qiwi</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/kassa24</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/nalichnymi-v-kasse-banka</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/nalichnymi-v-ao-kazpochta</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/nalichnymi-v-ofise-kompanii</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/rabotayushhij</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/bezrabotnyj</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/student</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/onlajn-zajmy-pensioneram</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/onlajn-zajmy-s-18-let</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/zajm-nedelya</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/zajm-30-dnej</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/contact</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/mfo/4slovo</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/mfo/koke</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/mfo/zaimer</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/mfo/moneyman</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/mfo/creditplus</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/mfo/tengo</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/mfo/dengiclick</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/mfo/turbomoney</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/mfo/credit365</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/faq</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/aktsii/tengo-saitynda-sailyqqa-mikrokredit</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/aktsii/onlajn-servis-chestnoe-slovo-snizhaet-protsenty-po-mikrokreditam-dlya-novyh-klientov</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/aktsii/microcredit-alyp-autoclik-utyp-alygyz</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/aktsii/dlya-novyh-klientov-credit365-osobennoe-predlozhenie</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/aktsii/pervyi-mikrokredit-v-zaimer-bez-pereplat</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/aktsii/dlya-novyh-klientov-creditplus-mikrokredit-pod-001-proc</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/aktsii/dengiclick-bezprocentnyi-period-30-dney</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/aktsii/pervyi-mikrokredit-v-koke-bez-pereplat</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/aktsii/mikrokredit-na-teplyh-usloviyah-v-tengo</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/aktsii/pervye-mikrokredit-v-moneyman-bez-pereplat</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/page/politika-konfidentsialnosti</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/page/polzovatelskoe-soglashenie</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/page/about</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/page/publichnaya-oferta</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/valuta-bagamy</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/page/vakansii</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/mfo/4slovo/login</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/mfo/4slovo/reviews</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/mfo/koke/login</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/mfo/koke/reviews</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/mfo/zaimer/login</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/mfo/zaimer/reviews</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/mfo/moneyman/login</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/mfo/moneyman/reviews</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/mfo/creditplus/login</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/mfo/creditplus/reviews</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/mfo/tengo/login</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/mfo/tengo/reviews</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/mfo/dengiclick/login</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/mfo/dengiclick/reviews</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/mfo/turbomoney/login</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/mfo/turbomoney/reviews</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/mfo/credit365/login</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://kz.smartzaim.kz/mfo/credit365/reviews</loc>
+    <lastmod>2021-11-11T17:55:23+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
 </urlset>
