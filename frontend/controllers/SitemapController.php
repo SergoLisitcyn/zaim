@@ -91,11 +91,9 @@ class SitemapController extends Controller
 
 //            Yii::$app->cache->set('sitemap', $xml_sitemap, 60*60*12); // кэшируем результат на 12 ч
 //        }
-
         Yii::$app->response->format = \yii\web\Response::FORMAT_RAW;
         $headers = Yii::$app->response->headers;
-//        $headers->add('Content-Type', 'text/xml');
-
+        $headers->add('Content-Type', 'text/xml');
         return $xml_sitemap;
     }
 
