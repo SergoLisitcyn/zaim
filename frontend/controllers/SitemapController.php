@@ -8,9 +8,6 @@ use common\models\Mfo;
 use common\models\Pages;
 use common\models\Sale;
 use common\models\TypeCredit;
-use frontend\models\blog\articles\BlogArticles;
-use frontend\models\blog\categories\BlogCategories;
-use frontend\models\blog\tags\BlogTags;
 use yii\web\Controller;
 use Yii;
 
