@@ -31,13 +31,13 @@
         <changefreq>weekly</changefreq>
     </url>
     <?php foreach($urls as $url): ?>
-        <url>
-            <loc><?= $host.'/' . $url['loc']; ?></loc>
-            <?php if(isset($url['lastmod'])): ?>
-                <lastmod><?= $url['lastmod']; ?></lastmod>
-            <?php endif; ?>
-            <priority><?= $url['priority']; ?></priority>
-            <changefreq>weekly</changefreq>
-        </url>
+    <url>
+        <loc><?= $host.'/' . $url['loc']; ?></loc>
+        <?php if(isset($url['lastmod'])): ?>
+        <lastmod><?= $url['lastmod']; ?></lastmod>
+        <?php endif; ?>
+        <priority><?= $url['priority']; ?></priority>
+        <changefreq>weekly</changefreq>
+    </url>
     <?php endforeach; ?>
 </urlset>
