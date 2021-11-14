@@ -3419,6 +3419,7 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
     line-height: 1.2;
     font-size: 26px;
     color: #028ab4;
+    margin-bottom: 10px;
 }
 
 .content-reviews-item {
