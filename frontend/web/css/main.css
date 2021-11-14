@@ -557,13 +557,9 @@ select {
     height: 100%;
     background-color: #2c8dc4;
 }
-
-/* Main Title */
-
 .main-title {
     margin-bottom: 18px;
 }
-
 .main-title .title {
     padding: 36px 16px;
     color: #fff;
@@ -576,8 +572,6 @@ select {
     position: relative;
     font-family: 'PT Sans';
 }
-
-
 .main-title .subtitle {
     color: #fff;
     text-align: center;
@@ -589,7 +583,6 @@ select {
     z-index: 1;
     position: relative;
 }
-
 .main-title .descr {
     color: #fff;
     line-height: 1.45;
@@ -600,14 +593,9 @@ select {
     margin-top: 0;
     font-weight: normal;
 }
-
 .main-title__img {
     display: none;
 }
-
-
-/* Calculator */
-
 .loan_calculator, .mfo_card, .subscribe_item, .subscribe_main {
     padding: 20px 0;
     border: 1px solid #ebebeb;
@@ -618,7 +606,6 @@ select {
     color: #000;
     transition: box-shadow, .5s;
 }
-
 .loan_calculator {
     display: none;
     text-align: left;
@@ -630,7 +617,6 @@ select {
     z-index: 1;
     margin-bottom: 25px;
 }
-
 .loan_calculator:before {
     content: '';
     position: absolute;
@@ -642,40 +628,29 @@ select {
     width: 1px;
     border-left: 1px solid #d6d6d6;
 }
-
 .loan_calculator_left, .loan_calculator_right {
     display: inline-block;
     vertical-align: top;
     width: 50%;
     padding: 0 30px;
 }
-
-.loan_calculator_left {
-    font-size: 18px;
-}
-
-.loan_calculator_date_label, .loan_calculator_sum_label {
-    display: inline-block;
-}
-
+.loan_calculator_left {font-size: 18px;}
+.loan_calculator_date_label, .loan_calculator_sum_label {display: inline-block;}
 label.loan_calculator_sum_label, label.loan_calculator_date_label {
     font-size: 18px;
     margin: 0;
     line-height: 1;
 }
-
 .rs_date_output, .rs_sum_output {
     display: inline-flex;
     font-weight: 600;
     color: #146696;
     margin-left: 10px;
 }
-
 .loan_calculator_date_value, .loan_calculator_sum_value {
     position: relative;
     margin: 16px 0 18px;
 }
-
 .loan_calculator_date_max, .loan_calculator_date_min, .loan_calculator_sum_max, .loan_calculator_sum_min {
     position: absolute;
     top: 100%;
@@ -683,28 +658,14 @@ label.loan_calculator_sum_label, label.loan_calculator_date_label {
     font-size: 12px;
     color: #777;
 }
-
-.loan_calculator_date_min, .loan_calculator_sum_min {
-    left: 0;
-}
-
+.loan_calculator_date_min, .loan_calculator_sum_min {left: 0;}
 .rangeslider, .rangeslider__fill {
     -webkit-box-shadow: none;
     box-shadow: none;
 }
-
-.rangeslider {
-    background: #e1e1e1;
-}
-
-.rangeslider--horizontal {
-    height: 6px;
-}
-
-.rangeslider__fill {
-    background: #ffa900;
-}
-
+.rangeslider {background: #e1e1e1;}
+.rangeslider--horizontal {height: 6px;}
+.rangeslider__fill {background: #ffa900;}
 .rangeslider__handle {
     width: 18px;
     height: 18px;
@@ -713,29 +674,14 @@ label.loan_calculator_sum_label, label.loan_calculator_date_label {
     -webkit-box-shadow: none;
     box-shadow: none;
 }
-
-.rangeslider--horizontal .rangeslider__handle {
-    top: -6px;
-}
-
+.rangeslider--horizontal .rangeslider__handle {top: -6px;}
 .rangeslider__handle:after {
     width: 13px;
-    height: 0px;
+    height: 0;
 }
-
-.loan_calculator_date_max, .loan_calculator_sum_max {
-    right: 0;
-}
-
-.loan_calculator_date {
-    padding-top: 30px;
-    padding-bottom: 10px;
-}
-
-.loan_calculator_search {
-    padding-top: 15px;
-}
-
+.loan_calculator_date_max, .loan_calculator_sum_max {right: 0;}
+.loan_calculator_date {padding-top: 30px;padding-bottom: 10px;}
+.loan_calculator_search {padding-top: 15px;}
 .loan_calculator_search_left {
     display: inline-block;
     vertical-align: top;

@@ -12,13 +12,12 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/main.css?v=48',
+        'css/main.css?v=49',
         'css/media.css?v=3',
         'css/fonts.css',
     ];
     public $js = [
         'js/common.js',
-//        'js/scripts.min.js',
         'libs/autoptimize/lazysizes.min.js',
         'libs/bj-lazy-load/bj-lazy-load.min.js',
         'libs/smooth-scroll-up/jquery.scrollUp.min.js',
