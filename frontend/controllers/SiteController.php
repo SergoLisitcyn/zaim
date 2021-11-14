@@ -313,6 +313,7 @@ class SiteController extends Controller
             ->joinWith($join)
             ->where([$where => $slug])
             ->andWhere(['mfo.status' => '1'])
+            ->orderBy(new Expression('rand()'))
             ->all();
 
         return $this->render('filter', [
