@@ -50,9 +50,9 @@ if($url == '/'){
                         <div class="header-logo">
                             <a href="/">
                                 <noscript>
-                                    <img src="/img/2016/05/logo-2.png" alt="logo">
+                                    <img src="/img/2016/05/logo-2.png" alt="logo" width="160" height="30">
                                 </noscript>
-                                <img src='data:image/svg+xml,%3Csvg%20xmlns=%22https://www.w3.org/2000/svg%22%20viewBox=%220%200%201%201%22%3E%3C/svg%3E'	data-src="/img/2016/05/logo-2.png" alt="logo"	class="lazyload">
+                                <img src='data:image/svg+xml,%3Csvg%20xmlns=%22https://www.w3.org/2000/svg%22%20viewBox=%220%200%201%201%22%3E%3C/svg%3E'	data-src="/img/2016/05/logo-2.png" alt="logo"	class="lazyload" width="160" height="30">
                             </a>
                         </div>
                     </div>
