@@ -28,9 +28,11 @@ class Rating extends Widget
 
         $model = new RatingSite();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            $this->view->context->redirect('/');
-//            return $this->redirect('/#anketa');
-//            Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
+            $url = ((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+            $urlNew = $url.'#successRating';
+            Yii::$app->session->setFlash('successRating', 'Your rating was '.$model->rating.'/5');
+            header("Location: $urlNew");
+
         } else {
             return $this->render('ratingSite', [
                 'model' => $model,

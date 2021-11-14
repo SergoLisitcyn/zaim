@@ -32,7 +32,12 @@ use \kartik\rating\StarRating;
         </p>
         <?= Html::submitButton('<span>OK</span>', ['class' => 'save-rating']) ?>
         <?php ActiveForm::end(); ?>
-
+        <?php if( Yii::$app->session->hasFlash('successRating') ): ?>
+            <div class="alert alert-success alert-dismissible" role="alert" id="successRating" style="width: 20%;">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <?php echo Yii::$app->session->getFlash('successRating'); ?>
+            </div>
+        <?php endif;?>
         <span class="ratings-result">
             <span class="mr-star-rating">
                 <?php if($countRating > 0 && $countRating < 1.5) : ?>
