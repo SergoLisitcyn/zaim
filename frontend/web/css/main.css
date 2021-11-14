@@ -1952,7 +1952,7 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
 }
 
 .ratings-form {
-    margin: 15px 0 30px;
+    /*margin: 15px 0 30px;*/
     width: auto;
     max-width: 100%;
     display: flex;
@@ -1986,6 +1986,7 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
     cursor: pointer;
     margin: 0 10px 0;
     padding: 5px 10px;
+    border: 1px solid #666;
 }
 
 /** ScrollUp **/
@@ -2482,7 +2483,7 @@ a.scrollup-right {
     width: 26%;
 }
 
-.nav-tabs {
+.nav-tabs-mfo {
     padding: 0 100px;
     display: flex;
     align-items: flex-start;
@@ -2494,14 +2495,14 @@ a.scrollup-right {
     text-align: center;
 }
 
-.nav-tabs>li {
+.nav-tabs-mfo>li {
     display: inline-block;
     margin-top: 0;
     margin-bottom: -1px;
     cursor: pointer;
 }
 
-.nav-tabs>li> a {
+.nav-tabs-mfo>li> a {
     font-weight: 300;
     color: #146696;
     font-size: 16px;
@@ -2511,13 +2512,13 @@ a.scrollup-right {
     text-transform: uppercase;
 }
 
-.nav-tabs>li>a {
+.nav-tabs-mfo>li>a {
     color: #146696;
     padding: 0 23px 18px;
     line-height: normal;
 }
 
-.nav-tabs>li>a span {
+.nav-tabs-mfo>li>a span {
     font-size: 12px;
 }
 
@@ -3446,7 +3447,8 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
 .content-reviews-rating {
     margin: 15px 0 20px;
     display: flex;
-    align-items: center;
+    /*align-items: center;*/
+    align-items: flex-start;
     justify-content: space-between;
 }
 
@@ -3697,7 +3699,7 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
 
 .rating-row {
     display: flex;
-    align-items: center;
+    align-items: baseline;
 }
 
 .rr_stars_container {
@@ -4721,4 +4723,25 @@ a:focus + .full {
     font-weight: 600;
     font-family: PT Sans;
     line-height: 1.2;
+}
+
+.field-ratingsite-rating{
+    margin-bottom: 0 !important;
+}
+
+.ratings-wrap .help-block {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #737373;
+}
+.nav > li > a:hover{
+    background-color: transparent !important;
+}
+.rr_stars_container p{
+    font-size: 10px;
+}
+
+.review-form .form-group{
+    margin-bottom: 0;
 }

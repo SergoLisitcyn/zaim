@@ -12,12 +12,13 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/main.css?v=26',
-        'css/media.css?v=2',
+        'css/main.css?v=39',
+        'css/media.css?v=3',
         'css/fonts.css',
     ];
     public $js = [
         'js/common.js',
+//        'js/scripts.min.js',
         'libs/autoptimize/lazysizes.min.js',
         'libs/bj-lazy-load/bj-lazy-load.min.js',
         'libs/smooth-scroll-up/jquery.scrollUp.min.js',
@@ -29,6 +30,6 @@ class AppAsset extends AssetBundle
     ];
     public $depends = [
         'yii\web\YiiAsset',
-//        'yii\bootstrap\BootstrapAsset',
+        'yii\bootstrap\BootstrapAsset',
     ];
 }

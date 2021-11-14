@@ -22,32 +22,57 @@ use \kartik\rating\StarRating;
             echo $form->field($model, 'rating')->label(false)->widget(StarRating::classname(), [
                  'pluginOptions' => [
                      'theme' => 'krajee-uni',
-                     'filledStar' => '&#x2605;',
-                     'emptyStar' => '&#x2606;',
                      'showClear' => false,
                      'showCaption' => false,
-
+                     'filledStar' => '<i class="fa fa-star mr-star-full"></i>',
+                     'emptyStar' => '<i class="fa fa-star-o mr-star-empty"></i>',
                     ]
                 ]);
             ?>
         </p>
-        <?= Html::submitButton('OK', ['class' => 'save-rating', 'name' => 'button']) ?>
+        <?= Html::submitButton('<span>OK</span>', ['class' => 'save-rating']) ?>
         <?php ActiveForm::end(); ?>
 
         <span class="ratings-result">
             <span class="mr-star-rating">
-                <?php
-                echo StarRating::widget([
-                    'name' => 'rating_21',
-                    'value' => $countRating,
-                    'pluginOptions' => [
-                        'readonly' => true,
-                        'showClear' => false,
-                        'showCaption' => false,
-                    ],
-                ]);
-                ?>
-            </span>
+                <?php if($countRating > 0 && $countRating < 1.5) : ?>
+					<i class="fa fa-star mr-star-full"></i>
+                    <i class="fa fa-star-o mr-star-empty"></i>
+                    <i class="fa fa-star-o mr-star-empty"></i>
+                    <i class="fa fa-star-o mr-star-empty"></i>
+                    <i class="fa fa-star-o mr-star-empty"></i>
+                    <i class="fa fa-star-o mr-star-empty"></i>
+                <?php endif; ?>
+                <?php if($countRating > 1.5 && $countRating < 2.5) : ?>
+                    <i class="fa fa-star mr-star-full"></i>
+                    <i class="fa fa-star mr-star-full"></i>
+                    <i class="fa fa-star-o mr-star-empty"></i>
+                    <i class="fa fa-star-o mr-star-empty"></i>
+                    <i class="fa fa-star-o mr-star-empty"></i>
+                <?php endif; ?>
+                <?php if($countRating > 2.5 && $countRating < 3.5) : ?>
+                    <i class="fa fa-star mr-star-full"></i>
+                    <i class="fa fa-star mr-star-full"></i>
+                    <i class="fa fa-star mr-star-full"></i>
+                    <i class="fa fa-star-o mr-star-empty"></i>
+                    <i class="fa fa-star-o mr-star-empty"></i>
+                <?php endif; ?>
+                <?php if($countRating > 3.5 && $countRating < 4.5) : ?>
+                    <i class="fa fa-star mr-star-full"></i>
+                    <i class="fa fa-star mr-star-full"></i>
+                    <i class="fa fa-star mr-star-full"></i>
+                    <i class="fa fa-star mr-star-full"></i>
+                    <i class="fa fa-star-o mr-star-empty"></i>
+                <?php endif; ?>
+                <?php if($countRating > 4.5) : ?>
+                    <i class="fa fa-star mr-star-full"></i>
+                    <i class="fa fa-star mr-star-full"></i>
+                    <i class="fa fa-star mr-star-full"></i>
+                    <i class="fa fa-star mr-star-full"></i>
+                    <i class="fa fa-star mr-star-full"></i>
+                <?php endif; ?>
+<!--							<i class="fa fa-star-half-o mr-star-half"></i>-->
+			</span>
             <span class="star-result">
                 <span><?= $countRating ?></span>/<span>5</span>(<span ><?= $count ?></span>)
             </span>

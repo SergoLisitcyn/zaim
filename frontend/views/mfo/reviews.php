@@ -2,6 +2,9 @@
 
 use \yii\helpers\Url;
 use \yii\web\YiiAsset;
+use kartik\rating\StarRating;
+use yii\bootstrap\ActiveForm;
+use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\Mfo */
 
@@ -31,7 +34,7 @@ $this->registerMetaTag(['name' => 'description',
         <div class="content-row">
             <div class="content-box">
                 <div class="content-info">
-                    <ul	class="nav nav-tabs">
+                    <ul	class="nav nav-tabs-mfo">
                         <li>
                             <a href="<?= Url::toRoute(['mfo/view', 'url' => $mfo->url]) ?>">
                                 <span>Компания туралы</span>
@@ -50,7 +53,9 @@ $this->registerMetaTag(['name' => 'description',
                     </ul>
                     <div class="content-main-info">
                         <div class="content-main-info__item">
-                            <h1>Пікірлер о	<?= $mfo->mfo_name ?></h1>
+<!--                            <h1 style="color: #028ab4">Пікірлер о	--><?php //echo $mfo->mfo_name ?><!--</h1>-->
+                            <h1 style="color: #028ab4"><?= $mfo->mfo_name?> туралы пікірлер</h1>
+
                             <a href="<?= $mfo->link_offer ?>"  target="_blank" class="content-main-info__button" style="background: #fda729;">Ақшаны алу</a>
                             <div class="content-reviews">
                                 <?php foreach ($reviews as $review) :?>
@@ -91,35 +96,102 @@ $this->registerMetaTag(['name' => 'description',
                                     </div>
                                 </div>
                                 <?php endforeach; ?>
-                                    <form class="review-form"  id="review-form" action="/mfo/<?= $mfo->url ?>/reviews" method="post">
-                                    <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
-                                    <input type="hidden" id="review-cat_id" name="Review[cat_id]" value="<?= $mfo->id ?>"/>
-                                    <input type="hidden" id="review-prostota" name="Review[prostota]" value="1"/>
-                                    <input type="hidden" id="review-speed" name="Review[speed]" value="1"/>
-                                    <input type="hidden" id="review-support" name="Review[support]" value="1"/>
-                                    <input type="hidden" id="review-support" name="Review[date]" value="<?= date('d.m.Y')?>"/>
-                                    <div class="review-form__textarea-wrap">
-                                        <textarea class="textarea-review" id="review-body" placeholder="Өз пікіріңізді қалдырыңыз" name="Review[body]"></textarea>
-                                        <textarea class="textarea-plus" id="review-plus" placeholder="Компанияның артықшылықтары" name="Review[plus]"></textarea>
-                                        <span class="form-err"></span>
-                                        <textarea class="textarea-minus" id="review-minus" placeholder="Компанияның кемшіліктері" name="Review[minus]"></textarea>
-                                        <span class="form-err"></span>
+                                <?php if( Yii::$app->session->hasFlash('successMfoLogin') ): ?>
+                                    <div class="alert alert-success alert-dismissible" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <?php echo Yii::$app->session->getFlash('successMfoLogin'); ?>
                                     </div>
-                                    <div class="review-form__bottom">
-                                        <div class="review-form__input">
-                                            <input type="text" placeholder="Атыңыз" id="review-name_client" name="Review[name_client]" value="">
-                                            <span class="form-err"></span>
-                                        </div>
-                                        <div class="review-form__input">
-                                            <input type="text" placeholder="E-mail" id="review-email" name="Review[email]">
-                                            <span class="form-err"></span>
-                                        </div>
-                                        <div class="review-form__btn">
-                                            <button type="submit" class="review-form__btn">Пікірді жариялау</button>
-                                            <span class="form-err"></span>
+                                <?php endif;?>
+                                <?php
+                                $action = '/mfo/'.$mfo->url.'/reviews';
+                                $form = ActiveForm::begin(
+                                    [
+                                        'action' =>[$action],
+                                        'options' => [
+                                            'class' => 'review-form',
+                                            'id' => 'review'
+                                        ]
+                                    ]
+                                ); ?>
+                                <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
+                                <input type="hidden" id="review-cat_id" name="Review[cat_id]" value="<?= $mfo->id ?>"/>
+                                <input type="hidden" name="Review[date]" value="<?php echo date('d.m.Y') ?>"/>
+                                <div class="content-reviews-rating">
+                                    <div class="rating">
+                                        <div class="rating-row">
+                                            <span class="rating__caption">Алу қарапайымдылығы</span>
+                                            <div class="rr_stars_container">
+                                                <?php
+                                                echo $form->field($model, 'prostota')->label(false)->widget(StarRating::classname(), [
+                                                    'pluginOptions' => [
+                                                        'theme' => 'krajee-uni',
+                                                        'showClear' => false,
+                                                        'showCaption' => false,
+                                                        'step' => 1,
+                                                        'filledStar' => '<span class="rr_star glyphicon glyphicon-star" style="font-size: 14px;"></span>',
+                                                        'emptyStar' => '<span class="rr_star glyphicon glyphicon-star-empty" style="font-size: 14px;"></span>',
+                                                    ]
+                                                ]);
+                                                ?>
+                                            </div>
                                         </div>
                                     </div>
-                                </form>
+                                    <div class="rating">
+                                        <div class="rating-row">
+                                            <span class="rating__caption">Скорость выдачи</span>
+                                            <div class="rr_stars_container">
+                                                <?php
+                                                echo $form->field($model, 'speed')->label(false)->widget(StarRating::classname(), [
+                                                    'pluginOptions' => [
+                                                        'theme' => 'krajee-uni',
+                                                        'showClear' => false,
+                                                        'showCaption' => false,
+                                                        'step' => 1,
+                                                        'filledStar' => '<span class="rr_star glyphicon glyphicon-star" style="font-size: 14px;"></span>',
+                                                        'emptyStar' => '<span class="rr_star glyphicon glyphicon-star-empty" style="font-size: 14px;"></span>',
+                                                    ]
+                                                ]);
+                                                ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rating">
+                                        <div class="rating-row">
+                                            <span class="rating__caption">Служба поддержки</span>
+                                            <div class="rr_stars_container">
+                                                <?php
+                                                echo $form->field($model, 'support')->label(false)->widget(StarRating::classname(), [
+                                                    'pluginOptions' => [
+                                                        'theme' => 'krajee-uni',
+                                                        'showClear' => false,
+                                                        'showCaption' => false,
+                                                        'step' => 1,
+                                                        'filledStar' => '<span class="rr_star glyphicon glyphicon-star" style="font-size: 14px;"></span>',
+                                                        'emptyStar' => '<span class="rr_star glyphicon glyphicon-star-empty" style="font-size: 14px;"></span>',
+                                                    ]
+                                                ]);
+                                                ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-form__textarea-wrap">
+                                    <?= $form->field($model, 'body')->textarea(['class' => 'textarea-review','placeholder' => "Өз пікіріңізді қалдырыңыз"])->label(false) ?>
+                                    <?= $form->field($model, 'plus')->textarea(['class' => 'textarea-plus','placeholder' => "Компанияның артықшылықтары"])->label(false) ?>
+                                    <?= $form->field($model, 'minus')->textarea(['class' => 'textarea-minus','placeholder' => "Компанияның кемшіліктері"])->label(false) ?>
+                                </div>
+                                <div class="review-form__bottom">
+                                    <div class="review-form__input">
+                                        <?= $form->field($model, 'name_client')->textInput(['class' => 'review-form__input','placeholder' => "Атыңыз"])->label(false) ?>
+                                    </div>
+                                    <div class="review-form__input">
+                                        <?= $form->field($model, 'email')->textInput(['class' => 'review-form__input','placeholder' => "E-mail"])->label(false) ?>
+                                    </div>
+                                    <div class="review-form__btn">
+                                        <?= Html::submitButton('Пікірді жариялау', ['class' => 'review-form__btn']) ?>
+                                    </div>
+                                </div>
+                                <?php ActiveForm::end(); ?>
                             </div>
                         </div>
                     </div>

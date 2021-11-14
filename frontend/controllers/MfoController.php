@@ -66,7 +66,7 @@ class MfoController extends Controller
         }
         $model = new Review();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->session->setFlash('success', 'Ваш отзыв был отправлен. Благодарим за обращение!');
+            Yii::$app->session->setFlash('successMfoView', 'Сіздің пікіріңіз жіберілді. Хабарласқаныңыз үшін рахмет!');
 
             return $this->refresh();
         } else {
@@ -74,6 +74,7 @@ class MfoController extends Controller
                 'model' => $mfo,
                 'sale' => $sale,
                 'reviews' => $reviews,
+                'reviewsModel' => $model
             ]);
         }
     }
@@ -111,8 +112,7 @@ class MfoController extends Controller
         }
         $model = new Review();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->session->setFlash('success', 'Ваш отзыв был отправлен. Благодарим за обращение!');
-
+            Yii::$app->session->setFlash('successMfoLogin', 'Сіздің пікіріңіз жіберілді. Хабарласқаныңыз үшін рахмет!');
             return $this->refresh();
         } else {
             return $this->render('reviews', [

@@ -37,7 +37,7 @@ class Review extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['cat_id', 'prostota', 'speed', 'support'], 'required'],
+            [['cat_id', 'prostota', 'speed', 'support','body','name_client'], 'required'],
             [['cat_id', 'status'], 'integer'],
             [['body', 'plus', 'minus', 'otvet_review'], 'string'],
             [['prostota', 'speed', 'support'], 'number'],

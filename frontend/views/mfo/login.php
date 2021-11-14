@@ -25,7 +25,7 @@ if(isset($model->title_description) and !empty($model->title_description)) { $th
         <div class="content-row">
             <div class="content-box">
                 <div class="content-info">
-                    <ul	class="nav nav-tabs">
+                    <ul	class="nav nav-tabs-mfo">
                         <li>
                             <a href="<?= Url::toRoute(['mfo/view', 'url' => $model->url]) ?>">
                                 <span>Компания туралы</span>
