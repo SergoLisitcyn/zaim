@@ -11,7 +11,7 @@ use \yii\helpers\Url;
                 <?php endif; ?>
                 <div class="mfo_card_company">
                     <a href="<?= Url::toRoute(['mfo/view', 'url' => $mfo->url]) ?>">
-                        <img src="<?= $mfo->logo; ?>" alt="<?= $mfo->mfo_name ?>">
+                        <img src="<?= $mfo->logo; ?>" alt="<?= $mfo->mfo_name ?>" width="210" height="70">
                     </a>
                 </div>
 <!--                <div class="mfo_card_compare">-->
