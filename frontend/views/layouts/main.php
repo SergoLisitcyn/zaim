@@ -226,9 +226,9 @@ if($url == '/'){
                 <div class="footer__logo">
                     <a href="/" aria-label="footer">
                         <noscript>
-                            <img src="/img/uncode-child/logo-footer.png" alt="logo">
+                            <img src="/img/uncode-child/logo-footer.png" alt="logo" width="241" height="46">
                         </noscript>
-                        <img class="lazyload" src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E' data-src="/img/uncode-child/logo-footer.png" alt="logo">
+                        <img class="lazyload" src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E' data-src="/img/uncode-child/logo-footer.png" alt="logo" width="241" height="46">
                     </a>
                 </div>
             </div>
