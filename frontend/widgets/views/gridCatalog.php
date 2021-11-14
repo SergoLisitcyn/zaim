@@ -72,10 +72,7 @@ use \yii\helpers\Url;
                         <div class="mfo_card_info_ways">
                             <div class="mfo_card_info_ways_label">Алу:</div>
                             <div class="mfo_card_info_ways_data">
-                                <noscript>
-                                    <img src="img/2016/08/all.png" alt="all">
-                                </noscript>
-                                <img class="lazyload" src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E' data-src="img/2016/08/all.png" alt="all">
+                                <img class="lazyload" src="img/2016/08/all.png" alt="all" width="93" height="20">
                             </div>
                         </div>
                     </div>
