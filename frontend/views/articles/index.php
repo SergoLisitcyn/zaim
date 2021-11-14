@@ -8,6 +8,8 @@ use yii\grid\GridView;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Пайдалы материалдар — smartzaim.kz';
+$this->registerMetaTag(['name' => 'description',
+    'content' => 'Пайдалы материалдар. Таратылымға жазылыңыз және акциялар мен арнайы ұсыныстар туралы бірінші болып біліңіз']);
 ?>
     <section class="breadcrumbs plr">
         <div class="breadcrumbs-wrap limit-width">
