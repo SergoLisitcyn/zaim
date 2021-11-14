@@ -11,6 +11,7 @@ use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
 use yii\base\InvalidArgumentException;
+use yii\db\Expression;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -312,6 +313,7 @@ class SiteController extends Controller
             ->joinWith($join)
             ->where([$where => $slug])
             ->andWhere(['mfo.status' => '1'])
+            ->orderBy(new Expression('rand()'))
             ->all();
 
         return $this->render('filter', [
