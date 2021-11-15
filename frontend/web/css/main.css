@@ -4399,6 +4399,10 @@ p {
     display: initial;
 }
 
+.aktsii-article__content li{
+    list-style-type: disc;
+}
+
 .aktsii-article__content ol {
     list-style: none;
     margin: 0;
