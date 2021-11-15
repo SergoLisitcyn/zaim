@@ -318,7 +318,8 @@ class SiteController extends Controller
 
         return $this->render('filter', [
             'output' => $output,
-            'typeCredit' => $typeCredit
+            'typeCredit' => $typeCredit,
+            'city' => $city
         ]);
     }
 

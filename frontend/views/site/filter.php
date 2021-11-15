@@ -8,9 +8,17 @@ use \frontend\widgets\CalculatorWidget;
 if(isset($typeCredit->title_seo) and !empty($typeCredit->title_seo)) { $this->title = $typeCredit->title_seo; }
 if(isset($typeCredit->keywords) and !empty($typeCredit->keywords)) { $this->registerMetaTag(['name' => 'keywords','content' => $typeCredit->keywords]); }
 if(isset($typeCredit->description) and !empty($typeCredit->description)) { $this->registerMetaTag(['name' => 'description','content' => $typeCredit->description]); }
+if(isset($city->title) and !empty($city->title)) { $this->title = $city->title; }
+if(isset($city->keywords) and !empty($city->keywords)) { $this->registerMetaTag(['name' => 'keywords','content' => $city->keywords]); }
+if(isset($city->description) and !empty($city->description)) { $this->registerMetaTag(['name' => 'description','content' => $city->description]); }
 ?>
 <section class="main-title">
-    <h1 class="title"><?php  if($typeCredit) echo $typeCredit->title ?></h1>
+    <?php if($typeCredit) : ?>
+    <h1 class="title"><?php  echo $typeCredit->title ?></h1>
+    <?php endif; ?>
+    <?php if($city) : ?>
+        <h1 class="title"><?php  echo $city->title_h1 ?></h1>
+    <?php endif; ?>
     <h2 class="subtitle">Неғұрлым тиімді ұсынысты тегін таңдаңыз!</h2>
     <h3 class="descr">Онлайн қарыз алу үшін, кредиттік ұйымдарға берілетін өтінім санын барынша көбірек толтырыңыз:</h3>
 </section>

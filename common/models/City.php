@@ -10,6 +10,10 @@ use Yii;
  * @property int $id
  * @property string $name
  * @property string $url
+ * @property string|null $title_h1
+ * @property string|null $title
+ * @property string|null $description
+ * @property string|null $keywords
  * @property int|null $sort
  * @property int|null $status
  */
@@ -31,7 +35,7 @@ class City extends \yii\db\ActiveRecord
         return [
             [['name', 'url'], 'required'],
             [['sort', 'status'], 'integer'],
-            [['name', 'url'], 'string', 'max' => 255],
+            [['name', 'url','title_h1','title','description','keywords'], 'string', 'max' => 255],
         ];
     }
 
@@ -46,6 +50,10 @@ class City extends \yii\db\ActiveRecord
             'url' => 'Url',
             'sort' => 'Сортировка',
             'status' => 'Статус',
+            'title_h1' => 'Заголовок h1',
+            'title' => 'Title',
+            'description' => 'Description',
+            'keywords' => 'Keywords',
         ];
     }
 }
