@@ -251,6 +251,39 @@
     .content-reviews {
         padding: 25px 15px;
     }
+    .firstloan-col {
+        width: 100%!important;
+        padding: 12px 15px!important;
+        display: block;
+    }
+    .mfo-offer-recom-container .offer-logo {
+        margin: 0 auto;
+        width: 100%!important;
+        text-align: center;
+    }
+    .mfo_card_info_rating_data {
+        text-align: center;
+        float: none!important;
+        margin: 0 auto!important;
+    }
+    .offer-row-col {
+        float: left;
+        font-size: 16px!important;
+        font-weight: 700;
+        clear: both;
+        text-align: left;
+    }
+    .offer-col {
+        text-align: right;
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .offers-card-btn {
+        margin: 0 auto!important;
+    }
+    .firstloan {
+        padding: 0;
+    }
 }
 
 @media (max-width: 959px) {
@@ -430,9 +463,6 @@
 
 
 @media (max-width: 930px) {
-    .mfo_card_info_rating_data {
-        float: none;
-    }
     .mfo_card {
         width: 45%;
     }
@@ -474,26 +504,6 @@
     }
     .faq__col a:not(:last-child) {
         margin-bottom: 12px;
-    }
-    .offer-row-col {
-        float: left;
-        font-size: 16px!important;
-        font-weight: 700;
-        clear: both;
-        text-align: left;
-    }
-    .offer-col {
-        text-align: right;
-        font-size: 20px;
-        font-weight: 700;
-    }
-    .firstloan {
-        padding: 0;
-    }
-    .firstloan-col {
-        width: 100%!important;
-        padding: 12px 15px!important;
-        display: block;
     }
 }
 
