@@ -10,6 +10,7 @@ use common\models\Articles;
 use common\models\ArticlesSearch;
 use yii\db\Expression;
 use yii\web\Controller;
+use yii\web\HttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -48,6 +49,7 @@ class ArticlesController extends Controller
     public function actionView($url = null)
     {
         $articles = Articles::find()->where(['status' => 1, 'url' => $url])->one();
+        if(!$articles) throw new HttpException(404, 'Страница не существует.');
         $articlesRandom = Articles::find()
             ->where(['status' => 1])
             ->andWhere(['!=','id', $articles->id])

@@ -4520,6 +4520,10 @@ p {
     font-size: 17px;
 }
 
+.articles_news a{
+    display: inherit;
+}
+
 
 .news-item {
     box-shadow: 0 2px 6px 0 rgb(12 13 13 / 23%);
