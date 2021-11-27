@@ -1,5 +1,4 @@
 <?php
-echo 'test';exit;
 // Подключаем клиент Google таблиц
 require __DIR__ . '../../../../vendor/autoload.php';
 
