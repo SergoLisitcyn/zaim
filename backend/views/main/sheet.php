@@ -1,12 +1,12 @@
 <?php
-
+var_dump(__DIR__);die;
 // Подключаем клиент Google таблиц
 require __DIR__ . '../../../../vendor/autoload.php';
 
 // Наш ключ доступа к сервисному аккаунту
 $googleAccountKeyFilePath = __DIR__ . '/service_key.json';
 putenv('GOOGLE_APPLICATION_CREDENTIALS=' . $googleAccountKeyFilePath);
-var_dump($googleAccountKeyFilePath);die;
+
 // Создаем новый клиент
 $client = new Google_Client();
 // Устанавливаем полномочия
