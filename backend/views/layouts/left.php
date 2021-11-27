@@ -86,7 +86,7 @@
                         ],
                     ],
                     ['label' => 'Создать автора', 'icon' => 'pencil', 'url' => ['/author']],
-                    ['label' => 'Обновить Page-to-page', 'icon' => 'pencil', 'url' => ['site/zapusk']],
+                    ['label' => 'Обновить Page-to-page', 'icon' => 'pencil', 'url' => ['main/zapusk']],
 
 
                 ],
