@@ -21,6 +21,7 @@ $service = new Google_Service_Sheets($client);
 //$spreadsheetId = '1bcGLtmGQuafRszK_7gw28Hq6V_JCLUTHpeCCqVOUWRg';
 $spreadsheetId = '1R_sI1XHQJqX-yCI8H7nsapa6c0mSLy2z5rAgIwkhjgI';
 $response = $service->spreadsheets->get($spreadsheetId);
+var_dump($response);die;
 // Получение свойств таблицы
 $spreadsheetProperties = $response->getProperties();
 // Обход всех листов
