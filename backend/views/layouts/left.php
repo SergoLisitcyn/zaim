@@ -86,6 +86,7 @@
                         ],
                     ],
                     ['label' => 'Создать автора', 'icon' => 'pencil', 'url' => ['/author']],
+                    ['label' => 'Обновить Page-to-page', 'icon' => 'pencil', 'url' => ['site/sheet']],
 
 
                 ],

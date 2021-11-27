@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "smartzaimcrm",
+  "private_key_id": "59bd2db3d60529ad13f35c4ab4b2d004de752fa3",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCgw7LwpIxBW+BS\nOzNSAEhgY93FWcbrtzlt9ni13yxLP59vVVLO9FPxluq4Stljjh0kZyrHGvNMISfG\nCyxskB8hoqN0g6XyUz6aceVb4OfnkAzz7byenddRto7wqxrnTTYMtPhR2JEWlCxn\nAAde9lk6M45j7g2MdO6G52h0ul9FHaM7gtiF4cP7MfTWOtxOOUa3BFLUP7HgGk2u\nocc5bsFpiJ6haEuWfqpUc0id6cAGAWx/2lsZuidsDM1EbrG9fCWqIZ9izreZCjx1\nplkdJ2tmmsMRiJRGvD29PWfl18XPVxlVc0qWGzyaxWy1fgtLUQhSrcV/4KJgY+rX\nWvNS4qNFAgMBAAECggEAAvPf2yLv3y9vIkjWEMvSiHqtEw0qux+QCCCpEjtkFom3\nmurdQicjTOJHCKrPQqXUi9udNy+b3P/AOZdGR0QqXjVyJ8IB5T55fYqupLkFFAVa\n8jahP+SJlNrz1csUC8Ao8vjL6sI91UVUFMbfsR3N1mTQrliBRTLMmAuzU8QshcTA\ndodCkqnwLYNh3pdHeaZxfPbkHOxQ5KxhUs3nCgI+N8DWgI1+nu3/TanMtTucc8To\nBQttv8dapV/ZTky5k6rAaPU7BH6QWvjBbqOAXNhnWXXedmK5oKLrV9dUOT7FbTrt\nZuVifRBc2h9+6Z/2qix0obnVEL+UZHQ3a6fLtThsoQKBgQDNm2gy8oPE/BAtDreo\nIMnsYzu5XnPnK6ynIrsaMZ7OqDC9rBscD7YyCV1mE8uXULzDr+9oHKREhw9ail/h\nMnUr/7Fp4/ehT8jIROeAyfIJKUNSk+kom6zfictKqJnqHk8oRMPFdTrKXGog5w7r\nFoKVGxHmxjzLcRrWjvfeRipnbQKBgQDIKrDZxSsOf1T0qUejbQtu3vCRRqGBwbLF\n/AITEQoavZLzTsViw4zMTfhif0YjvEgJT1yQ5b0/rqaHU1NBCkitlj0rjs8/7dld\nogyLix+BvuPl1nwKm49EF4MdeLkkf/e209Unc8i26G3vDP1HT5Q3V/rXlUaVWaO1\nhik51yqMOQKBgBB8gJttNMGr0IQ8ZN+XWXmZ72UKvNJxfxObxlLwXaKGe/oJfdb/\nL4XNmG6h8bY9ZBVw2wqHGWjhR4rkA5IkIJ8ZjplGDUojAp+EXufFyaGQbHSHpa96\n5B68hs+Cu2y5Z3F8KhKANumZBW2D+X9CO9BG7mWJycAqXpOLvTZWe/n1AoGAN8bd\nnPE6PEHzFHIPSlTaeLya4ICEBLpK7Kx6j4GSBT2KM05h5lGDbHLVoezBSLfwgteg\nfafnAlXShacMbfVFp0lUJk0XJ0NJ7LN5N3E/CFJ/As6vpe0PEPRUTuQTAz69ci65\nGNNEvOMrrw85jKN6M6nKdkRcdMWTvsNxvXJdotECgYEAmYU5cETxOvXPygS6J78u\ntAwJ+zM5Mo5t93f+hxTb2wLbWJb6sSBKzJjLPgP5pb/3JXfsOUnzTdwiKQdZuNtx\nwcw8JQE5jlHSNG9MTCrbYOdTMbhZ28epzfjRCwF8o2OcaYUlJAd1QPY1QbNUjC4p\nPksf3dnvHh3x9EbTJVM3mUo=\n-----END PRIVATE KEY-----\n",
+  "client_email": "sz-crm-service@smartzaimcrm.iam.gserviceaccount.com",
+  "client_id": "114903321186138961213",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sz-crm-service%40smartzaimcrm.iam.gserviceaccount.com"
+}

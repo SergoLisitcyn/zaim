@@ -12,6 +12,7 @@ use common\widgets\Alert;
 use \frontend\widgets\CityWidget;
 use \frontend\widgets\TopMenu;
 use \frontend\widgets\MenuFooter;
+use \frontend\widgets\Url;
 
 AppAsset::register($this);
 $url = Yii::$app->request->url;
@@ -66,7 +67,7 @@ if($url == '/'){
                         </div>
                         <div class="header-cab">
                             <div class="desktop-visible" style="display: inline-block;vertical-align: top;text-align: center;line-height: 30px;">Тілі:</div>
-                            <a class="desktop-visible" href="https://smartzaim.kz/" style="display: inline-block;vertical-align: top;text-align: center;line-height: 30px;">RU</a>
+                            <?= Url::widget(); ?>
                             <div class="desktop-visible" style="color:#337ab7;display: inline-block;vertical-align: top;text-align: center;line-height: 30px;padding-right: 15px;"><b >| KZ</b></div>
                             <a href="https://smartzaim.kz/lk/login?utm_source=kz.smartzaim.kz" class="header-cab__btn header-cab__btn--outline">Кіру</a>
                             <a href="https://smartzaim.kz/lk/register?utm_source=kz.smartzaim.kz" class="header-cab__btn desktop-visible">Тіркелу</a>

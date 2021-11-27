@@ -139,4 +139,12 @@ class MainController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+    public function actionSheet()
+    {
+        return $this->render('sheet');
+    }
+    public function actionZapusk()
+    {
+        return $this->render('zapusk');
+    }
 }

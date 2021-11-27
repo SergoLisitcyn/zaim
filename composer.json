@@ -32,7 +32,8 @@
         "vova07/yii2-imperavi-widget": "*",
         "karpoff/yii2-crop-image-upload": "dev-master",
         "kartik-v/yii2-popover-x": "*",
-        "kartik-v/yii2-editable": "@dev"
+        "kartik-v/yii2-editable": "@dev",
+        "google/apiclient": "^2.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",
