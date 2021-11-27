@@ -1,5 +1,5 @@
 <?php
-var_dump(__DIR__);die;
+echo 'test';exit;
 // Подключаем клиент Google таблиц
 require __DIR__ . '../../../../vendor/autoload.php';
 
