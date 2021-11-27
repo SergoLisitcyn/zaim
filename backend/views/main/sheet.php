@@ -30,12 +30,12 @@ foreach($response->getSheets() as $sheet) {
 
 $range = $sheetProperties->title;
 $response = $service->spreadsheets_values->get($spreadsheetId, $range);
-//if($response['values']){
-//    Yii::$app->db->createCommand()->truncateTable('links')->execute();
-//} else {
-//    echo '<h1>Таблица пуста</h1>';
-//    die;
-//}
+if($response['values']){
+    Yii::$app->db->createCommand()->truncateTable('links')->execute();
+} else {
+    echo '<h1>Таблица пуста</h1>';
+    die;
+}
 foreach ($response['values']  as $key => $value){
     if($key == 0) continue;
     $model = new \common\models\Links();
