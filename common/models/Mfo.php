@@ -208,6 +208,11 @@ class Mfo extends \yii\db\ActiveRecord
         return implode(', ',$arr);
     }
 
+    public function getSale()
+    {
+        return $this->hasOne(Sale::className(),['mfo_id'=>'id']);
+    }
+
 
     public function afterSave($insert, $changedAttributes)
     {

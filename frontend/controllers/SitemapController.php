@@ -57,6 +57,25 @@ class SitemapController extends Controller
             ];
         }
 
+
+        $news = News::find()->where(['status' => 1])->all();
+        foreach ($news as $new) {
+            $urls[] = [
+                'loc' => 'news/'.$new->url,
+                'lastmod' => date( DATE_W3C ),
+                'priority' => 0.80
+            ];
+        }
+
+        $articles = News::find()->where(['status' => 1])->all();
+        foreach ($articles as $article) {
+            $urls[] = [
+                'loc' => 'articles/'.$article->url,
+                'lastmod' => date( DATE_W3C ),
+                'priority' => 0.80
+            ];
+        }
+
         $pages = Pages::find()->where(['status' => 1])->all();
         foreach ($pages as $page) {
             $urls[] = [
