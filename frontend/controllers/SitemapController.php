@@ -5,6 +5,7 @@ namespace frontend\controllers;
 
 use common\models\City;
 use common\models\Mfo;
+use common\models\News;
 use common\models\Pages;
 use common\models\Sale;
 use common\models\TypeCredit;
