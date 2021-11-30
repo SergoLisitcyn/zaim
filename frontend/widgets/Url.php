@@ -11,10 +11,12 @@ class Url extends Widget
     {
         parent::init();
     }
-
+    public $output;
     public function run()
     {
-        $url = ((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+//        $url = ((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
+        $url = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
         $url = explode('?', $url);
         $url = $url[0];
         $links = Links::find()->where(['kz' => $url])->one();
@@ -25,7 +27,9 @@ class Url extends Widget
         }
 
         return $this->render('url', [
-            'linkRu' => $linkRu
+            'linkRu' => $linkRu,
+            'output' => $this->output
+
         ]);
     }
 
