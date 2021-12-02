@@ -18,7 +18,7 @@ $this->title = 'Рейтинг лучших МФО — smartzaim.kz';
     $month = $monthsList[date("n")];
     ?>
     <p class="updated">Жаңартылған <?= $month.' '.date("Y") ?></p>
-    <h3 class="descr">Для получения онлайн займа, заполните заявку в максимальное количество кредитных организаций:</h3>
+    <h3 class="descr">Онлайн қарыз алу үшін, кредиттік ұйымдарға берілетін өтінім санын барынша көбірек толтырыңыз:</h3>
 </section>
 
 <?= CalculatorWidget::widget() ?>
@@ -26,13 +26,13 @@ $this->title = 'Рейтинг лучших МФО — smartzaim.kz';
 <section class="offers-rating plr">
     <div class="offers-rating-wrap limit-width">
         <div class="loan_calculator_sort">
-            <div class="loan_calculator_sort_header">Сортировать по:</div>
+            <div class="loan_calculator_sort_header">Сұрыптау:</div>
             <div class="loan_calculator_sort_params">
                 <select id="select_loan_calculator_sort_rating">
-                    <option class="others_params" value="">не важно</option>
-                    <option class="others_params" value="max_sum">максимальной сумме</option>
-                    <option class="others_params" value="max_term">максимальному сроку</option>
-                    <option class="others_params" value="approval">проценту одобрения</option>
+                    <option class="others_params" value="">маңызды емес</option>
+                    <option class="others_params" value="max_sum">максималды сома бойынша</option>
+                    <option class="others_params" value="max_term">максималды мерзім бойынша</option>
+                    <option class="others_params" value="approval">мақұлдау пайызы бойынша</option>
                 </select>
             </div>
         </div>
@@ -56,20 +56,20 @@ $this->title = 'Рейтинг лучших МФО — smartzaim.kz';
                         </div>
                     </div>
                     <div class="offer-row">
-                        <div class="offer-row-col">Срок/<br>
-                            <div class="offer-row-col-weight">дней</div>
+                        <div class="offer-row-col">Мерзімі/<br>
+                            <div class="offer-row-col-weight">күн</div>
                         </div>
                         <div class="offer-col"><?= $item->srok ?></div>
                     </div>
                     <div class="offer-row">
-                        <div class="offer-row-col">Макс.сумма/<br>
-                            <div class="offer-row-col-weight">тенге</div>
+                        <div class="offer-row-col">Макс. сомасы/<br>
+                            <div class="offer-row-col-weight">теңге</div>
                         </div>
                         <div class="offer-col"><?= $item->max_sum_calc ?></div>
                     </div>
                     <div class="offer-row">
-                        <div class="offer-row-col">Мөлшерлемесі<br>
-                            <div class="offer-row-col-weight">в день</div>
+                        <div class="offer-row-col">Бір күндік<br>
+                            <div class="offer-row-col-weight">мөлшерлемесі</div>
                         </div>
                         <div class="offer-col"><?= $item->stavka ?></div>
                     </div>
@@ -84,7 +84,7 @@ $this->title = 'Рейтинг лучших МФО — smartzaim.kz';
                         <div class="offer-col"><?= $item->rasmotrenie ?></div>
                     </div>
                     <div class="offer-row">
-                        <div class="offer-row-col">Получение:</div>
+                        <div class="offer-row-col">Алу:</div>
                         <div class="offer-col">
                             <noscript>
                                 <img src="img/2016/08/all.png">
@@ -101,7 +101,7 @@ $this->title = 'Рейтинг лучших МФО — smartzaim.kz';
                             <div class="rating__val"><?= $item->rating ?></div>
                         </div>
                     </div>
-                    <div class="offer-footer-item offer-zaim-calc mfo_card_vert_info_link_creditplus">Сумма займа 50000 тг + комиссия за 7 дней 35 тг = 50035 к выплате</div>
+                    <div class="offer-footer-item offer-zaim-calc mfo_card_vert_info_link_creditplus">Қарыз сомасы 50000 тг + комиссия за 7 дней 35 тг = 50035 Төлеуге</div>
                     <div class="offer-footer-item offer-btn">
                         <a data-mfo="creditplus" href="<?= $item->link_offer ?>" class="offers-compare-btn"></a>
                         <a href="<?= $item->link_offer ?>" class="offers-card-btn">Ақшаны алу</a>
