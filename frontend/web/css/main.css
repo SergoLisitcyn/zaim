@@ -4521,7 +4521,7 @@ p {
 }
 
 .articles_news a{
-    display: inherit;
+    display: initial;
 }
 
 
