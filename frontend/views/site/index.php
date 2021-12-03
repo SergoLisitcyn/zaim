@@ -10,17 +10,14 @@ $this->registerMetaTag(['name' => 'description',
     'content' => '➤Қазақстанда онлайн-қарыздарды қалай жылдам алуға болатынын біліп
      алыңыз ✔Кредит берудің ең пайдалы шарттары бар қаржылық компанияны таңдаңыз және нысанды толтырыңыз.
       Өтінімді қарауға небары 10-15 минут уақыт кетедіツ']);
-
 ?>
 <section class="main-title">
     <h1 class="title">Қазақстандағы онлайн қарыздар</h1>
     <h2 class="subtitle">Неғұрлым тиімді ұсынысты тегін таңдаңыз!</h2>
     <h3 class="descr">Онлайн қарыз алу үшін, кредиттік ұйымдарға берілетін өтінім санын барынша көбірек толтырыңыз:</h3>
 </section>
-
 <?= CalculatorWidget::widget() ?>
 <?php echo GridCatalog::widget(['input' => 'homepage']); ?>
-
 <section class="subscribe-main plr mt18">
     <div class="subscribe-main-wrap limit-width">
         <form name="subscribtion_form" action="/unisender" method="post">
@@ -39,7 +36,6 @@ $this->registerMetaTag(['name' => 'description',
         </form>
     </div>
 </section>
-
 <section class="faq plr">
     <div class="faq-wrap limit-width">
         <div class="faq__title">
@@ -69,12 +65,9 @@ $this->registerMetaTag(['name' => 'description',
                 </div>
             </div>
         </div>
-        <div class="faq__btn">
-            <a href="faq">Нақтырақ</a>
-        </div>
+        <div class="faq__btn"><a href="faq">Нақтырақ</a></div>
     </div>
 </section>
-
 <section class="registration plr">
     <div class="registration-wrap limit-width">
         <div class="registration__items">
@@ -99,7 +92,6 @@ $this->registerMetaTag(['name' => 'description',
         </div>
     </div>
 </section>
-
 <section class="how-take plr">
     <div class="how-take-wrap limit-width">
         <h2 class="how-take__title">Қарызды өтініш берген күні қалай алуға болады?</h2>
@@ -125,7 +117,6 @@ $this->registerMetaTag(['name' => 'description',
         </div>
     </div>
 </section>
-
 <section class="how-take-points plr">
     <div class="how-take-points-wrap limit-width">
         <h2 class="how-take__title">Өтініш берген күні шағын қарызды қалай алуға болады?</h2>
@@ -174,7 +165,6 @@ $this->registerMetaTag(['name' => 'description',
         </ol>
     </div>
 </section>
-
 <section class="advantages plr">
     <div class="advantages-wrap limit-width">
         <h2 class="advantages__title">Біздің артықшылықтарымыз</h2>
@@ -201,12 +191,8 @@ $this->registerMetaTag(['name' => 'description',
         </div>
     </div>
 </section>
-
-
-
 <?= SaleCatalog::widget(); ?>
 <?= Rating::widget(); ?>
-
 <section class="partners">
     <div class="sz-partners">
         <div class="sz-partners-wrap">

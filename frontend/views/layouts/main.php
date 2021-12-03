@@ -1,8 +1,6 @@
 <?php
-
 /* @var $this \yii\web\View */
 /* @var $content string */
-
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
@@ -13,7 +11,6 @@ use \frontend\widgets\CityWidget;
 use \frontend\widgets\TopMenu;
 use \frontend\widgets\MenuFooter;
 use \frontend\widgets\Url;
-
 AppAsset::register($this);
 $url = Yii::$app->request->url;
 if($url == '/'){
@@ -41,7 +38,6 @@ if($url == '/'){
 </head>
 <body class="custom-background" id="<?= $class ?>">
 <?php $this->beginBody() ?>
-
 <div class="wrapper">
     <header class="header">
         <div class="header-body">
@@ -193,15 +189,11 @@ if($url == '/'){
             </div>
         </div>
     </header>
-
     <main>
-        <?= Breadcrumbs::widget([
-            'links' => $this->params['breadcrumbs'] ?? [],
-        ]) ?>
+        <?= Breadcrumbs::widget(['links' => $this->params['breadcrumbs'] ?? [],]) ?>
         <?= $content ?>
     </main>
 </div>
-
 <div class="footer">
     <div class="footer__container container">
         <div class="footer__row">
@@ -236,7 +228,6 @@ if($url == '/'){
         </div>
     </div>
 </div>
-<!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
         m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
@@ -249,14 +240,11 @@ if($url == '/'){
     });
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/86407640" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-78532063-3"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'UA-78532063-3');
 </script>
 <?php $this->endBody() ?>
