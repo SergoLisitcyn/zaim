@@ -120,7 +120,19 @@
     .main-title .descr {
         display: none;
     }
-
+    .main-title .title {
+        padding: 15px 16px;
+        color: #fff;
+        text-align: center;
+        margin-top: 0;
+        font-size: 26px;
+        line-height: 30px;
+        font-weight: 500;
+        z-index: 1;
+        position: relative;
+        font-family: 'PT Sans';
+        padding-bottom: 0;
+    }
     .main-title__img {
         display: none;
         margin: 0 auto -36px;

@@ -6,13 +6,10 @@ use yii\helpers\Html;
 /* @var $model common\models\Mfo */
 
 $this->title = 'Создать МФО';
-$this->params['breadcrumbs'][] = ['label' => 'Mfos', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'МФО', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="mfo-create">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
+<div class="mfo-create" style="margin-top: 20px;">
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>
