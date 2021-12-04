@@ -1,4 +1,6 @@
 <?php
+/* @var $model Mfo */
+use common\models\Mfo;
 use \yii\helpers\Url;
 ?>
 <section class="offers plr" style="margin-top: 70px">
@@ -6,7 +8,7 @@ use \yii\helpers\Url;
         <div class="offers__items">
             <?php foreach ($mfoAll as $mfo) : ?>
             <div class="mfo_card">
-                <?php if($mfo->sale) : ?>
+                <?php if($model::getSale($mfo->id)) : ?>
                     <div class="mfo_achieve promo">Акция</div>
                 <?php endif; ?>
                 <div class="mfo_card_company">

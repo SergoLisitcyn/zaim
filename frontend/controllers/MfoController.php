@@ -12,6 +12,7 @@ use yii\web\Controller;
 use yii\web\HttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\Response;
 
 /**
  * MfoController implements the CRUD actions for Mfo model.
@@ -48,16 +49,11 @@ class MfoController extends Controller
         ]);
     }
 
-    /**
-     * Displays a single Mfo model.
-     * @param integer $id
-     * @return mixed
-     */
     public function actionView($url)
     {
         if(!$url) return $this->redirect('/');
         $mfo = Mfo::find()->where(['status' => 1, 'url' => $url])->one();
-        if(!$mfo) return $this->redirect('/');
+        if(!$mfo) throw new HttpException(404, 'Страница не существует.');
         $sale = Sale::find()->where(['status' => 1,'mfo_id' => $mfo->id])->orderBy(['srok_do' => SORT_DESC])->one();
         $reviews = Review::find()->where(['cat_id' => $mfo->id])->andWhere(['status' => 1])->orderBy(['date' => SORT_DESC])->limit(3)->all();
         if(isset($_POST['email_unisender'])){

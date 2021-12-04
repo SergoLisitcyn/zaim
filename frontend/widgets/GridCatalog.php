@@ -69,9 +69,10 @@ class GridCatalog extends Widget
 
             $output = $mfo->all();
         }
-
+        $model = new Mfo();
         return $this->render('gridCatalog', [
             'mfoAll' => $output,
+            'model' => $model,
         ]);
     }
 }

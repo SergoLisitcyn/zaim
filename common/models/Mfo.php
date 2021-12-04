@@ -208,9 +208,14 @@ class Mfo extends \yii\db\ActiveRecord
         return implode(', ',$arr);
     }
 
-    public function getSale()
+    public static function getSale($id)
     {
-        return $this->hasOne(Sale::className(),['mfo_id'=>'id']);
+        $sale = Sale::find()->where(['mfo_id' => $id])->andWhere(['>=', 'srok_do', date('Y-m-d H:i:s')])->all();
+        if($sale){
+            return true;
+        } else {
+            return false;
+        }
     }
 
 
