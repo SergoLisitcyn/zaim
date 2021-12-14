@@ -5,12 +5,21 @@ use \frontend\widgets\GridCatalog;
 use \frontend\widgets\Rating;
 use \frontend\widgets\SaleCatalog;
 use \frontend\widgets\CalculatorWidget;
-$this->title = 'Онлайн-қарыз калькуляторы — кредит сомасы мен пайызын есептеу';
+$textSum = $textTerm = '';
+if($_GET){
+    if(isset($_GET['sum']) && $_GET['sum']){
+        $textSum = $_GET['sum'].' тенге';
+    }
+    if(isset($_GET['term']) && $_GET['term']){
+        $textTerm = $_GET['term'].' күнге';
+    }
+}
+$this->title = 'Онлайн-қарыз калькуляторы — кредит сомасы мен пайызын есептеу.'.$textSum.' '.$textTerm;
 $this->registerMetaTag(['name' => 'description','content' => 'Қазақстандағы онлайн қарыз калькуляторы сайтта Smartzaim.kz.
  Несиені сомасы мен мерзімі бойынша таңдаңыз']);
 ?>
 <section class="main-title">
-    <h1 class="title">Онлайн-қарыз калькуляторы </h1>
+    <h1 class="title">Онлайн-қарыз калькуляторы: <?php echo $textSum.' '.$textTerm ?></h1>
     <h2 class="subtitle">Неғұрлым тиімді ұсынысты тегін таңдаңыз!</h2>
     <h3 class="descr">Онлайн қарыз алу үшін, кредиттік ұйымдарға берілетін өтінім санын барынша көбірек толтырыңыз:</h3>
 </section>

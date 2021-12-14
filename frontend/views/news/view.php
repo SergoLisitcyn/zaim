@@ -68,7 +68,7 @@ if (isset($model->description) && !empty($model->description)) $this->registerMe
                                     </div>
                                 </div>
                                 <?php endif; ?>
-                                <div class="aktsii-article__box">
+                                <div class="aktsii-article__box" style="margin-top: 35px">
                                     <h3>Ұқсас ұсыныстар</h3>
                                     <div class="aktsii-article__box-inner">
                                         <div class="aktsii-article__box-offers">
