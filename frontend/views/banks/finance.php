@@ -1,5 +1,6 @@
 <?php
 use \yii\helpers\Url;
+$data = unserialize($model->data);
 ?>
 <section class="breadcrumbs plr">
     <div class="breadcrumbs-wrap limit-width">
@@ -55,7 +56,7 @@ use \yii\helpers\Url;
                                             На дату:
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['financial']['date'] ?>
+                                            <?= $data['financial']['date'] ?>
                                         </div>
                                     </div>
                                     <div class="mfo-about__col">
@@ -63,7 +64,7 @@ use \yii\helpers\Url;
                                             Уставной капитал, (млрд. тнг):
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['financial']['authorized_capital'] ?>
+                                            <?= $data['financial']['authorized_capital'] ?>
                                         </div>
                                     </div>
                                     <div class="mfo-about__col">
@@ -71,7 +72,7 @@ use \yii\helpers\Url;
                                             Собственный капитал, (млрд. тнг):
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['financial']['equity'] ?>
+                                            <?= $data['financial']['equity'] ?>
                                         </div>
                                     </div>
                                     <div class="mfo-about__col">
@@ -79,7 +80,7 @@ use \yii\helpers\Url;
                                             Совокупные активы, (млрд. тнг):
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['financial']['total_assets'] ?>
+                                            <?= $data['financial']['total_assets'] ?>
                                         </div>
                                     </div>
                                     <div class="mfo-about__col">
@@ -87,7 +88,7 @@ use \yii\helpers\Url;
                                             Совокупные обязательства, (млрд. тнг):
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['financial']['total_liabilities'] ?>
+                                            <?= $data['financial']['total_liabilities'] ?>
                                         </div>
                                     </div>
                                 </div>
@@ -97,7 +98,7 @@ use \yii\helpers\Url;
                                             Депозиты, (млрд. тнг):
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['financial']['deposits'] ?>
+                                            <?= $data['financial']['deposits'] ?>
                                         </div>
                                     </div>
                                     <div class="mfo-about__col">
@@ -105,7 +106,7 @@ use \yii\helpers\Url;
                                             NPL,%:
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['financial']['npl'] ?>
+                                            <?= $data['financial']['npl'] ?>
                                         </div>
                                     </div>
                                     <div class="mfo-about__col">
@@ -113,7 +114,7 @@ use \yii\helpers\Url;
                                             Чистая прибыль, (млрд. тнг):
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['financial']['net_profit'] ?>
+                                            <?= $data['financial']['net_profit'] ?>
                                         </div>
                                     </div>
                                     <div class="mfo-about__col">
@@ -121,7 +122,7 @@ use \yii\helpers\Url;
                                             ROA,%:
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['financial']['roa'] ?>
+                                            <?= $data['financial']['roa'] ?>
                                         </div>
                                     </div>
                                     <div class="mfo-about__col">
@@ -129,7 +130,7 @@ use \yii\helpers\Url;
                                             ROE, %:
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['financial']['roe'] ?>
+                                            <?= $data['financial']['roe'] ?>
                                         </div>
                                     </div>
                                 </div>

@@ -6,6 +6,7 @@ use \yii\helpers\Url;
 /* @var $model common\models\Banks */
 
 $this->title = $model->name;
+$data = unserialize($model->data);
 \yii\web\YiiAsset::register($this);
 ?>
 <section class="breadcrumbs plr">
@@ -75,8 +76,7 @@ $this->title = $model->name;
                         <div class="mfo-about">
                             <h2 class="mfo-about-title info-subtitle">О банке</h2>
                             <p class="mfo-about-text">
-                                АО «Народный Банк Казахстана» — крупнейший универсальный коммерческий банк Республики Казахстан,
-                                успешно работающий на благо своих клиентов уже более 97 лет.
+                                <?= $model->desc ?>
                             </p>
                             <div class="mfo-about__table">
                                 <div class="mfo-about__columns">
@@ -85,7 +85,7 @@ $this->title = $model->name;
                                             Город:
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['info']['city'] ?>
+                                            <?= $data['info']['city'] ?>
                                         </div>
                                     </div>
                                     <div class="mfo-about__col">
@@ -93,7 +93,7 @@ $this->title = $model->name;
                                             Год основания:
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['info']['year_foundation'] ?>
+                                            <?= $data['info']['year_foundation'] ?>
                                         </div>
                                     </div>
                                     <div class="mfo-about__col">
@@ -101,7 +101,7 @@ $this->title = $model->name;
                                             Номер лицензии Агентства Республики Казахстан по регулированию и развитию финансового рынкам, №:
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['info']['license_number'] ?>
+                                            <?= $data['info']['license_number'] ?>
                                         </div>
                                     </div>
                                     <div class="mfo-about__col">
@@ -109,7 +109,7 @@ $this->title = $model->name;
                                             Дата полчения лицензии Агентства Республики Казахстан по регулированию и развитию финансового рынкам, №:
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['info']['license_data'] ?>
+                                            <?= $data['info']['license_data'] ?>
                                         </div>
                                     </div>
                                     <div class="mfo-about__col">
@@ -117,7 +117,7 @@ $this->title = $model->name;
                                             Председатель правления:
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['info']['chairman'] ?>
+                                            <?= $data['info']['chairman'] ?>
                                         </div>
                                     </div>
                                     <div class="mfo-about__col">
@@ -125,7 +125,7 @@ $this->title = $model->name;
                                             Полное фирменное наименование на русском языке:
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['info']['corporate_name_rus'] ?>
+                                            <?= $data['info']['corporate_name_rus'] ?>
                                         </div>
                                     </div>
                                     <div class="mfo-about__col">
@@ -133,7 +133,7 @@ $this->title = $model->name;
                                             Полное название на казахском языке:
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['info']['corporate_name_kz'] ?>
+                                            <?= $data['info']['corporate_name_kz'] ?>
                                         </div>
                                     </div>
                                     <div class="mfo-about__col">
@@ -141,7 +141,7 @@ $this->title = $model->name;
                                             Название на английском языке:
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['info']['corporate_name_eng'] ?>
+                                            <?= $data['info']['corporate_name_eng'] ?>
                                         </div>
                                     </div>
                                     <div class="mfo-about__col">
@@ -149,7 +149,7 @@ $this->title = $model->name;
                                             Сокращенное название:
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['info']['short_name'] ?>
+                                            <?= $data['info']['short_name'] ?>
                                         </div>
                                     </div>
                                     <div class="mfo-about__col">
@@ -157,7 +157,7 @@ $this->title = $model->name;
                                             URL:
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <a href="#" class="mfo-about__col-right-link"><?= $model->data['info']['url'] ?></a>
+                                            <a href="#" class="mfo-about__col-right-link"><?= $data['info']['url'] ?></a>
                                         </div>
                                     </div>
                                     <div class="mfo-about__col">
@@ -165,7 +165,7 @@ $this->title = $model->name;
                                             Контролирующий акционер:
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['info']['controll_shareholder'] ?>
+                                            <?= $data['info']['controll_shareholder'] ?>
                                         </div>
                                     </div>
                                 </div>
@@ -174,7 +174,7 @@ $this->title = $model->name;
                         <div class="content-text blocks-content-text">
                             <h2 class="content-text-title info-subtitle">Услуги банка:</h2>
                             <div class="content-text-items">
-                                <?php if($model->data['services']['credit_card'] == "+") : ?>
+                                <?php if($data['services']['credit_card'] == "+") : ?>
                                 <div class="content-text-item">
                                     <div class="content-text-item-img">
                                         <img src="/img/banks/services-1.png" data-src="/img/banks/services-1.png" alt="Крединые карты">
@@ -182,7 +182,7 @@ $this->title = $model->name;
                                     <span>Крединые карты</span>
                                 </div>
                                 <?php endif; ?>
-                                <?php if($model->data['services']['credit_cash'] == "+") : ?>
+                                <?php if($data['services']['credit_cash'] == "+") : ?>
                                 <div class="content-text-item">
                                     <div class="content-text-item-img">
                                         <img src="/img/banks/services-2.png" data-src="/img/banks/services-2.png" alt="Кредит наличными">
@@ -190,7 +190,7 @@ $this->title = $model->name;
                                     <span>Кредит наличными</span>
                                 </div>
                                 <?php endif; ?>
-                                <?php if($model->data['services']['credit_auto'] == "+") : ?>
+                                <?php if($data['services']['credit_auto'] == "+") : ?>
                                 <div class="content-text-item">
                                     <div class="content-text-item-img">
                                         <img src="/img/banks/services-3.png" data-src="/img/banks/services-3.png" alt="Автокредит">
@@ -198,7 +198,7 @@ $this->title = $model->name;
                                     <span>Автокредит</span>
                                 </div>
                                 <?php endif; ?>
-                                <?php if($model->data['services']['ipoteka'] == "+") : ?>
+                                <?php if($data['services']['ipoteka'] == "+") : ?>
                                 <div class="content-text-item">
                                     <div class="content-text-item-img">
                                         <img src="/img/banks/services-4.png" data-src="/img/banks/services-4.png" alt="Ипотека">
@@ -213,27 +213,27 @@ $this->title = $model->name;
                             <div class="rating-text-columns">
                                 <div class="rating-text-col">
                                     <div class="rating-text-col-left">Рейтинг S&P:</div>
-                                    <div class="rating-text-col-right"><?= $model->data['rating']['sp_rating'] ?></div>
+                                    <div class="rating-text-col-right"><?= $data['rating']['sp_rating'] ?></div>
                                 </div>
                                 <div class="rating-text-col">
                                     <div class="rating-text-col-left">Прогноз:</div>
-                                    <div class="rating-text-col-right"><?= $model->data['rating']['sp_prediction'] ?></div>
+                                    <div class="rating-text-col-right"><?= $data['rating']['sp_prediction'] ?></div>
                                 </div>
                                 <div class="rating-text-col">
                                     <div class="rating-text-col-left">Рейтинг Fitch:</div>
-                                    <div class="rating-text-col-right"><?= $model->data['rating']['fitch_rating'] ?></div>
+                                    <div class="rating-text-col-right"><?= $data['rating']['fitch_rating'] ?></div>
                                 </div>
                                 <div class="rating-text-col">
                                     <div class="rating-text-col-left">Прогноз:</div>
-                                    <div class="rating-text-col-right"><?= $model->data['rating']['fitch_prediction'] ?></div>
+                                    <div class="rating-text-col-right"><?= $data['rating']['fitch_prediction'] ?></div>
                                 </div>
                                 <div class="rating-text-col">
                                     <div class="rating-text-col-left">Рейтинг Moody’s:</div>
-                                    <div class="rating-text-col-right"><?= $model->data['rating']['moodys_rating'] ?></div>
+                                    <div class="rating-text-col-right"><?= $data['rating']['moodys_rating'] ?></div>
                                 </div>
                                 <div class="rating-text-col">
                                     <div class="rating-text-col-left">Прогноз:</div>
-                                    <div class="rating-text-col-right"><?= $model->data['rating']['moodys_prediction'] ?></div>
+                                    <div class="rating-text-col-right"><?= $data['rating']['moodys_prediction'] ?></div>
                                 </div>
                             </div>
                         </div>

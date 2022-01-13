@@ -5,7 +5,7 @@ use \yii\helpers\Url;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Banks';
+$this->title = 'Банки';
 ?>
 <section class="breadcrumbs plr">
     <div class="breadcrumbs-wrap limit-width">
@@ -21,7 +21,9 @@ $this->title = 'Banks';
 <section class="offers plr bank-offers">
     <div class="offers-wrap limit-width">
         <div class="offers__items">
-            <?php foreach ($banks as $bank) : ?>
+            <?php foreach ($banks as $bank) :
+                $data = unserialize($bank->data);
+                ?>
             <div class="mfo_card">
                 <div class="mfo_card_company">
                     <a href="<?= Url::toRoute(['banks/view', 'url' => $bank->url]) ?>">
@@ -46,7 +48,7 @@ $this->title = 'Banks';
                     <a href="#" class="mfo_card_info_link">Отзывы (125)</a>
                 </div>
                 <div class="mfo_card_info_links">
-                    <?php if($bank->data['services']['credit_card'] == "+") : ?>
+                    <?php if($data['services']['credit_card'] == "+") : ?>
                     <div class="mfo_card_info_links-col">
                         <div class="mfo_card_info_links-col-text">
                             <a href="#" class="mfo_card_info_link">Кредитные карты</a>
@@ -59,7 +61,7 @@ $this->title = 'Banks';
                         </div>
                     </div>
                     <?php endif; ?>
-                    <?php if($bank->data['services']['credit_cash'] == "+") : ?>
+                    <?php if($data['services']['credit_cash'] == "+") : ?>
                     <div class="mfo_card_info_links-col">
                         <div class="mfo_card_info_links-col-text">
                             <a href="#" class="mfo_card_info_link">Кредит наличными</a>
@@ -72,7 +74,7 @@ $this->title = 'Banks';
                         </div>
                     </div>
                     <?php endif; ?>
-                    <?php if($bank->data['services']['credit_auto'] == "+") : ?>
+                    <?php if($data['services']['credit_auto'] == "+") : ?>
                     <div class="mfo_card_info_links-col">
                         <div class="mfo_card_info_links-col-text">
                             <a href="#" class="mfo_card_info_link">Автокредиты</a>
@@ -85,7 +87,7 @@ $this->title = 'Banks';
                         </div>
                     </div>
                     <?php endif; ?>
-                    <?php if($bank->data['services']['ipoteka'] == "+") : ?>
+                    <?php if($data['services']['ipoteka'] == "+") : ?>
                     <div class="mfo_card_info_links-col">
                         <div class="mfo_card_info_links-col-text">
                             <a href="#" class="mfo_card_info_link">Ипотека</a>
@@ -100,7 +102,7 @@ $this->title = 'Banks';
                     <?php endif; ?>
                 </div>
                 <div class="mfo_card_info_about">
-                    <p class="mfo_card_info_about_text">АО «Народный Банк Казахстана» — крупнейший универсальный коммерческий банк Республики Казахстан, успешно работающий на благо своих клиентов уже более 97 лет.</p>
+                    <p class="mfo_card_info_about_text"><?= $bank->desc ?></p>
                 </div>
             </div>
             <?php endforeach; ?>

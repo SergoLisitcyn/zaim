@@ -36,7 +36,7 @@ use yii\widgets\ActiveForm;
         ]
     ]);
     ?>
-
+    <?= $form->field($model, 'desc')->textInput(['maxlength' => true]) ?>
     <?= $form->field($model, 'url')->textInput() ?>
     <?= $form->field($model, 'sort')->textInput() ?>
 

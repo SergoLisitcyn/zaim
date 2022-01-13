@@ -1,5 +1,6 @@
 <?php
 use \yii\helpers\Url;
+$data = unserialize($model->data);
 ?>
 <section class="breadcrumbs plr">
     <div class="breadcrumbs-wrap limit-width">
@@ -55,7 +56,7 @@ use \yii\helpers\Url;
                                             БИН:
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['requisites']['bin'] ?>
+                                            <?= $data['requisites']['bin'] ?>
                                         </div>
                                     </div>
                                     <div class="mfo-about__col">
@@ -63,7 +64,7 @@ use \yii\helpers\Url;
                                             БИК/SWIFT:
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['requisites']['bik_swift'] ?>
+                                            <?= $data['requisites']['bik_swift'] ?>
                                         </div>
                                     </div>
                                     <div class="mfo-about__col">
@@ -71,21 +72,21 @@ use \yii\helpers\Url;
                                             Корсчет в УУМО НБ РК :
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['requisites']['uumo'] ?>
+                                            <?= $data['requisites']['uumo'] ?>
                                         </div>
                                     </div>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
                                             Свидетельство о постановке на учет по НДС:
                                         </div>
-                                        <div class="mfo-about__col-right"><?= $model->data['requisites']['vat_registration_certificate'] ?></div>
+                                        <div class="mfo-about__col-right"><?= $data['requisites']['vat_registration_certificate'] ?></div>
                                     </div>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
                                             ОКПО:
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['codes']['okpo'] ?>
+                                            <?= $data['codes']['okpo'] ?>
                                         </div>
                                     </div>
                                     <div class="mfo-about__col">
@@ -93,7 +94,7 @@ use \yii\helpers\Url;
                                             LEI:
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['codes']['lei'] ?>
+                                            <?= $data['codes']['lei'] ?>
                                         </div>
                                     </div>
                                     <div class="mfo-about__col">
@@ -101,7 +102,7 @@ use \yii\helpers\Url;
                                             SIC:
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['codes']['sic'] ?>
+                                            <?= $data['codes']['sic'] ?>
                                         </div>
                                     </div>
                                     <div class="mfo-about__col">
@@ -109,7 +110,7 @@ use \yii\helpers\Url;
                                             Код Reuters:
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['codes']['reuters'] ?>
+                                            <?= $data['codes']['reuters'] ?>
                                         </div>
                                     </div>
                                 </div>

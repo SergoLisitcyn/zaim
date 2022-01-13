@@ -13,6 +13,7 @@ use yii\web\UploadedFile;
  * @property int $id
  * @property string|null $data
  * @property string|null $image
+ * @property string|null $desc
  * @property string $name
  * @property string $url
  * @property int $sort
@@ -64,7 +65,7 @@ class Banks extends \yii\db\ActiveRecord
             [['data'], 'safe'],
             [['sort', 'status'], 'integer'],
             [['name','url'], 'required'],
-            [['image','name','url'], 'string', 'max' => 255],
+            [['image','name','url','desc'], 'string', 'max' => 255],
         ];
     }
 
@@ -90,6 +91,7 @@ class Banks extends \yii\db\ActiveRecord
             'sort' => 'Сортировка',
             'status' => 'Статус',
             'name' => 'Название банка',
+            'desc' => 'Описание банка',
             'url' => 'Url',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',

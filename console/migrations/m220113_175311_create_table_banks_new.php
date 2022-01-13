@@ -3,15 +3,18 @@
 use yii\db\Migration;
 
 /**
- * Class m220105_112758_create_table_banks
+ * Class m220113_175311_create_table_banks_new
  */
-class m220105_112758_create_table_banks extends Migration
+class m220113_175311_create_table_banks_new extends Migration
 {
     public function up()
     {
         $this->createTable('banks', [
             'id' => $this->primaryKey(),
-            'data' => $this->json()->null(),
+            'name' => $this->string(255)->notNull(),
+            'url' => $this->string(255)->notNull(),
+            'data' => $this->text()->null(),
+            'desc' => $this->string(255)->null(),
             'image' => $this->string()->null(),
             'sort' => $this->integer()->notNull()->defaultValue(0),
             'status' => $this->smallInteger()->notNull()->defaultValue(1),

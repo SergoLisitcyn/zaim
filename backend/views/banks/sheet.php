@@ -98,12 +98,12 @@ foreach ($response['values']  as $key => $value){
     $data['contacts']['h1'] = $value[50];
 //    $data['contacts']['title'] = $value[51];
 //    $data['contacts']['description'] = $value[52];
-    $model->data = $data;
+    $model->data = serialize($data);
     $model->url = $value[49];
     if($banks){
         $banks->name = $value[1];
         $banks->url = $value[49];
-        $banks->data = $data;
+        $banks->data = serialize($data);
         if($banks->save()){
             $countUpdate++;
             continue;

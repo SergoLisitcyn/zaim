@@ -1,5 +1,7 @@
 <?php
 use \yii\helpers\Url;
+
+$data = unserialize($model->data);
 ?>
 <section class="breadcrumbs plr">
     <div class="breadcrumbs-wrap limit-width">
@@ -55,7 +57,7 @@ use \yii\helpers\Url;
                                             Почтовый адрес:
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['contacts']['mailing_address'] ?>
+                                            <?= $data['contacts']['mailing_address'] ?>
                                         </div>
                                     </div>
                                     <div class="mfo-about__col">
@@ -63,7 +65,7 @@ use \yii\helpers\Url;
                                             Телефон для физических лиц:
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['contacts']['phone_individuals'] ?>
+                                            <?= $data['contacts']['phone_individuals'] ?>
                                         </div>
                                     </div>
                                     <div class="mfo-about__col">
@@ -71,7 +73,7 @@ use \yii\helpers\Url;
                                             Телефон для юридических лиц:
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['contacts']['phone_legal'] ?>
+                                            <?= $data['contacts']['phone_legal'] ?>
                                         </div>
                                     </div>
                                     <div class="mfo-about__col">
@@ -79,7 +81,7 @@ use \yii\helpers\Url;
                                             Городской телефон:
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['contacts']['phone_city_1'] ?>
+                                            <?= $data['contacts']['phone_city_1'] ?>
                                         </div>
                                     </div>
                                     <div class="mfo-about__col">
@@ -87,14 +89,14 @@ use \yii\helpers\Url;
                                             E-mail:
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $model->data['contacts']['email'] ?>
+                                            <?= $data['contacts']['email'] ?>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="bank-maps">
-                            <?= $model->data['contacts']['maps'] ?>
+                            <?= $data['contacts']['maps'] ?>
                         </div>
                     </div>
 
