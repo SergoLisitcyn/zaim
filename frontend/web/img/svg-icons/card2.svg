@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 207 152" style="enable-background:new 0 0 207 152;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#C6C6C6;}
+	.st1{fill:#63B5F6;}
+	.st2{opacity:0.1;fill:#1D1D1B;}
+</style>
+<g>
+	<g>
+		<rect x="57.8" y="57.5" class="st0" width="22.9" height="4.3"/>
+		<rect x="57.8" y="121.9" class="st0" width="22.9" height="4.3"/>
+		<path class="st1" d="M78.3,121.9c-6,0-12.1,0-18.1,0c-2.2-20-2.2-40.2,0-60.1c6,0,12.1,0,18.1,0C80.5,81.8,80.5,101.9,78.3,121.9z
+			"/>
+	</g>
+	<g>
+		<rect x="94.9" y="57.5" class="st0" width="22.9" height="4.3"/>
+		<rect x="94.9" y="121.9" class="st0" width="22.9" height="4.3"/>
+		<path class="st1" d="M115.4,121.9c-6,0-12.1,0-18.1,0c-2.2-20-2.2-40.2,0-60.1c6,0,12.1,0,18.1,0
+			C117.6,81.8,117.6,101.9,115.4,121.9z"/>
+	</g>
+	<g>
+		<rect x="132" y="57.5" class="st0" width="22.9" height="4.3"/>
+		<rect x="132" y="121.9" class="st0" width="22.9" height="4.3"/>
+		<path class="st1" d="M134.4,121.9c6,0,12.1,0,18.1,0c2.2-20,2.2-40.2,0-60.1c-6,0-12.1,0-18.1,0
+			C132.2,81.8,132.2,101.9,134.4,121.9z"/>
+	</g>
+	<g>
+		<rect x="45.9" y="126.2" class="st1" width="120.8" height="6.3"/>
+		<rect x="42.4" y="132.5" class="st1" width="127.8" height="6.3"/>
+		<rect x="38.4" y="138.7" class="st1" width="135.8" height="6.3"/>
+		<rect x="45.9" y="129.4" class="st0" width="120.8" height="3.1"/>
+		<rect x="42.4" y="135.6" class="st0" width="127.8" height="3.1"/>
+		<rect x="38.4" y="141.9" class="st0" width="135.8" height="3.1"/>
+	</g>
+	<rect x="52.2" y="49.7" class="st1" width="108.2" height="7.8"/>
+	<rect x="46.8" y="42.2" class="st0" width="119.1" height="7.5"/>
+	<g>
+		<g>
+			<polygon class="st0" points="46.8,42.2 106.3,6.4 165.9,42.2 			"/>
+			<path class="st0" d="M106.3,14.4L141,35.3H71.6L106.3,14.4L106.3,14.4z M106.3,6.4L46.8,42.2h119.1L106.3,6.4L106.3,6.4z"/>
+		</g>
+		<g>
+			<polygon class="st0" points="46.8,42.2 106.3,6.4 165.9,42.2 			"/>
+			<path class="st1" d="M106.3,14.4L141,35.3H71.6L106.3,14.4L106.3,14.4z M106.3,6.4L46.8,42.2h119.1L106.3,6.4L106.3,6.4z"/>
+		</g>
+	</g>
+	<polygon class="st2" points="46.8,42.2 46.8,49.7 52.2,49.7 52.2,57.5 106.3,57.5 106.3,6.4 	"/>
+	<path class="st2" d="M69.3,57.5H57.8v4.3h2.4c-2.2,20-2.2,40.2,0,60.1h-2.4v4.3h11.4V57.5z"/>
+	<path class="st2" d="M106.3,57.5H94.9v4.3h2.4c-2.2,20-2.2,40.2,0,60.1h-2.4v4.3h11.4V57.5z"/>
+	<path class="st2" d="M143.4,57.5H132v4.3h2.4c-2.2,20-2.2,40.2,0,60.1H132v4.3h11.4V57.5z"/>
+	<polygon class="st2" points="106.3,126.2 45.9,126.2 45.9,129.4 45.9,132.5 42.4,132.5 42.4,135.6 42.4,138.7 38.4,138.7 
+		38.4,141.9 38.4,145 106.3,145 	"/>
+</g>
+</svg>

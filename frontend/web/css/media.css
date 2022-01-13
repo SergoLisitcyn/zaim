@@ -757,3 +757,142 @@
         height: 160px;
     }
 }
+
+
+/** Bank ************************************************/
+
+@media (max-width: 1199px) {
+    .bank-main-title__img {
+        display: none;
+    }
+}
+
+@media (max-width: 1070px) {
+    .bank-content-main-info {
+        flex-direction: row;
+    }
+    .bank-content-main-info .mfo-head__rating {
+        margin-top: 8px;
+    }
+    .bank-content-main-info .mfo-head-logo img {
+        max-width: 150px;
+    }
+    .bank-mfo-about {
+        padding: 30px 30px 0;
+    }
+    .bank-content-main-info .content-main-info__item {
+        padding: 0 30px;
+    }
+    .blocks-content-text {
+        padding: 0 30px;
+    }
+    .bank-mfo-about .mfo-about-title {
+        font-size: 24px;
+    }
+    .bank-mfo-about .mfo-about-text {
+        font-size: 15px;
+    }
+    .mfo-about__table .mfo-about__col-left,
+    .mfo-about__table .mfo-about__col-right {
+        font-size: 15px;
+    }
+    .bank-contacts-mfo-about {
+        padding: 5px 15% 0;
+    }
+    .bank-offers-horizontal .mfo_card {
+        flex-direction: column;
+        width: 273px;
+        min-height: 590px;
+    }
+    .bank-offers-horizontal .offers__items {
+        flex-direction: row;
+    }
+    .mfo-license,
+    .mfo-report,
+    .mfo-socials,
+    .mfo-feedback {
+        padding: 30px 15px 0;
+    }
+    .mfo-signs {
+        padding: 20px 30px;
+    }
+}
+
+@media (max-width: 930px) {
+    .bank-offers-horizontal .mfo_card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 700px) {
+    .bank-offers-horizontal .mfo_card {
+        width: 100%;
+    }
+    .mfo-about__logos {
+        margin: 30px 0;
+    }
+    .mfo-license__block {
+        margin-top: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .mfo-license__text {
+        flex-direction: column;
+    }
+    .mfo-license__image {
+        margin-top: 20px;
+    }
+    .mfo-license__col-left,
+    .mfo-license__col-right {
+        width: 100%;
+    }
+}
+
+@media (max-width: 567px) {
+    .bank-content-main-info {
+        flex-direction: column;
+        margin-top: 55px;
+    }
+    .bank-content-main-info .mfo-head-logo {
+        text-align: left;
+        margin-top: 20px;
+    }
+    .n-nav-tabs {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+    .n-nav-tabs>li>a span {
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+    .mfo-about__table .mfo-about__col-left,
+    .mfo-about__table .mfo-about__col-right {
+        width: auto;
+    }
+    .mfo-about__table .mfo-about__col {
+        justify-content: flex-start;
+    }
+    .bank-maps {
+        padding: 0 15px;
+    }
+    .bank-contacts-mfo-about {
+        padding: 5px 15px 0;
+    }
+    .bank-contacts-mfo-about .mfo-about__col {
+        flex-direction: column;
+    }
+    .bank-finance-mfo-about .mfo-about__table {
+        flex-direction: column;
+    }
+    .bank-finance-mfo-about .mfo-about__columns {
+        width: 100%;
+    }
+    .bank-finance-mfo-about .mfo-about__col {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .bank-requisites-mfo-about .mfo-about__col {
+        flex-direction: column;
+    }
+}

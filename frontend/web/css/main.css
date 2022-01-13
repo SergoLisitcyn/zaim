@@ -1282,3 +1282,631 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
     transition: .4s;
 }
 .faq-list__title.active:after{transform:rotate(180deg)}.faq-list__text{color:#000;font-size:17px;display:none;font-weight:400;margin-bottom:5px}.faq-list__item ul{padding-left:20px;margin:18px 0}.faq-list__item ul li{list-style-type:disc}.rating-md{font-size:18px!important}.rating-container .filled-stars{color:#f8a801!important;-webkit-text-stroke:inherit!important;text-shadow:none!important}.conexist{display:none}.content-text h2{color:#028ab4;font-size:30px;line-height:1;font-family:'PT Sans';margin-bottom:15px;font-weight:500;margin-top:30px}.content-text li{font-size:16px;font-weight:300;color:#111;position:relative;padding-left:15px}.content-text p{line-height:1.45;margin:9px 0;font-size:16px;font-weight:300;color:#111;position:relative;padding-left:15px}.content-text ul li:before{float:left;width:6px;height:6px;margin-right:8px;margin-top:6px;border-radius:50%;background:#2c8dc4;content:'';margin-top:10px!important}label{font-weight:400!important}ol li{margin-left:-20px;line-height:2;font-size:17px}p{line-height:1.45;font-size:17px;margin:9px 0}.content-filter li{font-size:18px;color:#111;position:relative;padding-left:15px;font-weight:400}.content-filter ul{text-align:left;margin-bottom:20px;padding:0 0 0 18px}.content-filter ul li{list-style-type:initial!important}.content-filter h2{color:#000;font-size:30px;line-height:1;font-family:'PT Sans';margin-bottom:15px;font-weight:500;margin-top:30px}.content-filter p{margin-bottom:20px}.head-orange{border-radius:6px 6px 0 0!important;background-color:#fda729!important;color:#fff!important;font-size:36px!important;line-height:1.2!important;font-weight:400!important;font-family:inherit!important;text-align:center!important;padding:25px!important;margin-bottom:25px!important}.article-faq-list .head-orange i{font-size:43px!important;font-weight:600!important;width:48px!important;height:48px!important;line-height:48px!important;border-radius:50%!important;background-color:#fff!important;margin-right:15px!important;position:relative!important}.head-orange i{display:inline-block;vertical-align:middle!important;font-style:normal!important;color:#fda729!important;text-align:center!important}.aktsii-article__content li a{display:initial}.aktsii-article__content li{list-style-type:disc}.aktsii-article__content ol{list-style:none;margin:0;background-color:#fda729;color:#fff;display:flex;flex-wrap:wrap;justify-content:space-around;padding:0 40px 25px;counter-reset:aktsii-list}.aktsii-article__content ol li{min-height:56px}.aktsii-article__content ol li{position:relative;padding-left:75px;margin-top:25px;flex:none;width:100%;max-width:320px;color:inherit;line-height:1.45}.aktsii-article__content ol li::before{counter-increment:aktsii-list;content:counter(aktsii-list);position:absolute;top:3px;left:12px;width:53px;height:53px;line-height:53px;border-radius:50%;background-color:#fff;color:#fda729;text-align:center;white-space:nowrap;overflow:hidden;font-size:56px;font-weight:700}.aktsii-article__content p{margin-left:20px;margin-right:20px;margin-top:18px}.aktsii-article__content h2{font-family:inherit;font-size:36px;font-weight:600;text-align:center;color:#fda729;margin:35px 40px 12px}.header-nav__language{display:flex;background-color:#3b9fd8;font-size:20px;line-height:1.1;font-weight:600;padding:8px 20px;margin:0 -20px;color:#fff}#login .content-main-info__content img{border-color:#f8f8f8;border-width:8px;border-style:solid;margin-top:10px;margin-bottom:10px}#login .content-main-info__content p{font-weight:300;color:#111;font-size:16px;line-height:1.5!important;margin:18px 0 0}#login .content-main-info__content h2{line-height:1.2;margin:27px 0 0;font-weight:500;font-size:26px;color:#028ab4!important}#login .content-main-info__content li{font-weight:300;color:#111;font-size:16px;line-height:1.5!important}#login .content-main-info__content ol{padding:0 40px!important}.articles_news li{list-style-type:initial;font-size:17px}.articles_news p{list-style-type:initial;font-size:17px}.articles_news a{display:initial}.news-item{box-shadow:0 2px 6px 0 rgb(12 13 13 / 23%);border-radius:6px}.aktsii-item__link{display:block}.news-item__img-wrap{position:relative;padding-top:40%;overflow:hidden;border-radius:6px;background-color:#141618}.news-item__img-wrap img{width:auto;height:100%}.post-content img{max-width:100%}.news-item__title{position:relative;font-size:18px!important;line-height:1;font-weight:600;color:#fff!important;margin:9px 10px;height:84px;overflow:hidden}.news-item__title h3{font-size:18px!important;line-height:1;font-weight:600;color:#fff!important;margin:0 10px 10px}.news-item__title span{margin-left:10px}.news-item__img-wrap{position:relative;padding-top:40%;overflow:hidden;border-radius:6px;background-color:#141618}.full{display:none;position:fixed;left:0;top:0;right:0;bottom:0;padding:3%;background:rgba(0,0,0,.3) center no-repeat;background-size:contain;background-origin:content-box;z-index:3;cursor:zoom-out}a:focus+.full{display:block}.read-author-info{display:-ms-flexbox;display:-ms-flex;display:flex;-ms-flex-flow:row nowrap;flex-flow:row nowrap;margin-top:35px}.entry-author{background-color:rgba(0,0,0,.04);overflow:hidden;padding:30px 30px 25px;box-sizing:border-box}.author-avatar{-ms-flex:0 0 80px;flex:0 0 80px;margin-right:30px}.round-images img{border-radius:50%}.author-description h4{margin-top:0;color:#303133;font-weight:600;font-family:PT Sans;line-height:1.2}.field-ratingsite-rating{margin-bottom:0!important}.ratings-wrap .help-block{display:block;margin-top:0;margin-bottom:0;color:#737373}.nav>li>a:hover{background-color:transparent!important}.rr_stars_container p{font-size:10px}.review-form .form-group{margin-bottom:0}
+
+/** Bank ************************************************/
+
+.bank-content-info {
+    padding-top: 27px;
+    padding-bottom: 80px;
+}
+.bank-content-info .mfo-about-title {
+    text-align: left;
+}
+
+.info-subtitle {
+    font-size: 24px;
+    font-family: 'Open Sans', sans-serif;
+    color: #028ab4;
+}
+
+.n-nav-tabs {
+    margin: 0 30px;
+    padding: 0 15px;
+    max-width: 100%;
+    border-bottom: 3px solid #dee0e1;
+    text-align: center;
+}
+.n-nav-tabs >li {
+    margin-bottom: -3px;
+}
+.n-nav-tabs >li>a {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    text-transform: none;
+    padding: 0px 5px 13px;
+    letter-spacing: normal;
+}
+.n-nav-tabs >li>a span {
+    font-size: 16px;
+}
+.n-nav-tabs >li.active>a {
+    border-bottom-width: 3px;
+}
+.n-nav-tabs .add_to_compare {
+    position: relative;
+}
+.n-nav-tabs .add_to_compare span:before {
+    top: 4px;
+}
+.white-breadcrumbs__items li:not(:last-child)::after {
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+}
+.bank-content-main-info .mfo-head-logo {
+    margin-top: 0;
+}
+.bank-content-main-info .mfo-head-logo img {
+    max-width: 170px;
+}
+.bank-content-main-info {
+    align-items: flex-start;
+    margin-top: 62px;
+}
+.bank-content-main-info .content-main-info__item h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+.bank-content-main-info .mfo-head__rating {
+    margin-top: 20px;
+}
+.bank-mfo-about .mfo-about-title {
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+.bank-mfo-about .mfo-about {
+    padding-top: 45px;
+}
+.bank-content-reviews .rating__val {
+    color: #ffa800;
+}
+.bank-mfo-about .mfo-about-text {
+    font-family: 'Open Sans', sans-serif;
+    color: #000;
+}
+.mfo-about__table {
+    display: flex;
+    margin-top: 30px;
+}
+.mfo-about__table .mfo-about__columns {
+    width: 100%;
+}
+.mfo-about__table .mfo-about__col {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 5px 0 15px;
+}
+.mfo-about__table .mfo-about__col:not(:first-child) {
+    border-top: 2px dotted #898888;
+}
+.mfo-about__table .mfo-about__col-left,
+.mfo-about__table .mfo-about__col-right {
+    width: 47%;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    line-height: 18px;
+}
+.mfo-about__table .mfo-about__col-left {
+    color: #898888;
+    padding: 0 10px 0 0;
+    display: flex;
+    align-items: flex-start;
+}
+.mfo-about__table .mfo-about__col-right {
+    color: #000;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+.mfo-about__table .mfo-about__col-right-link {
+    text-decoration: underline;
+    color: #028ab4;
+}
+.blocks-content-text .content-text-items {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.blocks-content-text .content-text-title {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    margin-top: 55px;
+}
+.blocks-content-text .content-text-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 3px solid #028ab4;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+    padding: 10px 7px;
+    max-width: 145px;
+    width: 100%;
+    min-height: 130px;
+    box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.3);
+    margin: 0 0 15px;
+}
+.blocks-content-text .content-text-item span {
+    color: #000;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    line-height: 14px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.blocks-content-text .content-text-item-img {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blocks-content-text .content-text-item img {
+    width: 50px;
+}
+
+.w100 img {
+    width: 100% !important;
+}
+
+.blocks-content-text .content-text-item:not(:last-child) {
+    margin-right: 20px;
+}
+
+.bank-rating-text {
+    padding: 0 30px;
+    margin-top: 55px;
+}
+.bank-rating-text .rating-text-title {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    font-size: 24px;
+    color: #028ab4;
+}
+.bank-rating-text .rating-text-columns {
+    max-width: 400px;
+    margin-top: 30px;
+}
+.bank-rating-text .rating-text-col {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 6px 0;
+}
+.bank-rating-text .rating-text-col-left,
+.bank-rating-text .rating-text-col-right {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    line-height: 18px;
+    width: 50%;
+}
+.bank-rating-text .rating-text-col-left {
+    color: #898888;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+.bank-rating-text .rating-text-col-right {
+    color: #000000;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+.bank-maps {
+    margin: 38px auto 0;
+    max-width: 100%;
+    padding: 0 23px;
+    width: 100%;
+}
+.bank-contacts-content-info {
+    padding-bottom: 45px;
+}
+.bank-contacts-mfo-about {
+    padding: 5px 15% 0;
+}
+.bank-contacts-mfo-about .mfo-about__columns {
+    max-width: 510px;
+}
+.bank-contacts-mfo-about .mfo-about__col {
+    justify-content: flex-start;
+}
+.bank-contacts-mfo-about .mfo-about__col-left,
+.bank-contacts-mfo-about .mfo-about__col-right {
+    width: auto;
+}
+.bank-contacts-mfo-about .mfo-about__col-left {
+    color: #070707;
+    font-weight: 500;
+}
+.bank-contacts-mfo-about .mfo-about__col-right {
+    color: #070707;
+    font-weight: 400;
+}
+.bank-contacts-mfo-about .mfo-about__col {
+    padding: 15px 0;
+}
+.bank-finance-mfo-about .mfo-about__table {
+    justify-content: space-between;
+}
+.bank-finance-mfo-about .mfo-about__columns {
+    width: 45%;
+}
+.bank-finance-mfo-about .mfo-about__col-right {
+    justify-content: flex-end;
+}
+.bank-finance-mfo-about .mfo-about__col-left,
+.bank-finance-mfo-about .mfo-about__col-right {
+    width: 65%;
+    font-size: 14px;
+}
+.bank-finance-mfo-about .mfo-about__col-right {
+    font-size: 18px;
+    color: #020202;
+    width: 35%;
+}
+.bank-finance-content-info {
+    padding-bottom: 70px;
+}
+.bank-finance-mfo-about {
+    padding: 40px 75px 0;
+}
+.bank-finance-mfo-about .mfo-about__col {
+    padding: 10px 0 10px;
+}
+.bank-requisites-mfo-about .mfo-about__columns {
+    max-width: 630px;
+    margin: 0 auto;
+}
+.bank-requisites-mfo-about .mfo-about__col {
+    justify-content: flex-start;
+    padding: 10px 0 10px;
+}
+.bank-requisites-mfo-about .mfo-about__col-left,
+.bank-requisites-mfo-about .mfo-about__col-right {
+    width: 60%;
+    font-size: 14px;
+}
+.bank-requisites-mfo-about .mfo-about__col-right {
+    font-size: 16px;
+    width: 40%;
+}
+.bank-offers .offers__items {
+    padding-bottom: 80px;
+}
+.bank-offers .mfo_card {
+    min-height: 590px;
+}
+
+.bank-offers .mfo_card .mfo_card_company-link {
+    width: 215px;
+}
+
+.bank-offers .mfo_card_company {
+    margin: 5px 0;
+}
+.bank-offers .mfo_card_info_link {
+    border: none;
+}
+.bank-offers .mfo_card_company-name a {
+    color: #028ab4;
+    font-size: 24px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+.bank-offers .mfo_card_info_rating {
+    border-bottom: 2px dotted #000;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+.bank-offers .mfo_card_info_rating_label {
+    font-size: 15px;
+}
+.bank-offers .rating__val {
+    color: #131014;
+    font-size: 16px;
+}
+.bank-offers .mfo_card {
+    padding: 15px 20px 20px;
+}
+.bank-offers .mfo_card_info_reviews {
+    padding: 5px 0 8px;
+    border-bottom: 2px dotted #000;
+}
+.bank-offers .mfo_card_info_link {
+    color: #028ab4;
+    font-size: 15px;
+    text-decoration: underline;
+    text-align: left;
+    padding: 3px 0;
+}
+.bank-offers .mfo_card_info_about_text {
+    color: #000000;
+    font-size: 15px;
+    line-height: 24px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    text-align: left;
+}
+.bank-offers .mfo_card_info_about {
+    margin-top: 12px;
+}
+.bank-offers .mfo_card_info_links {
+    border-bottom: 2px dotted #000;
+    padding: 8px 0;
+}
+.bank-offers .mfo_card_info_links-col {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.bank-offers .mfo_card_info_links-col-icons {
+    font-size: 0;
+    width: 23px;
+}
+.bank-offers-horizontal .offers__items {
+    flex-direction: column;
+}
+.bank-offers-horizontal .mfo_card {
+    width: 100%;
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-right: 0;
+}
+.bank-offers-horizontal .offers__items {
+    margin: 0;
+}
+.bank-offers-horizontal .mfo_card_info_inner {
+    display: flex;
+    justify-content: space-between;
+}
+.bank-offers-horizontal .mfo_card_info_rating {
+    border: none;
+}
+.bank-offers-horizontal .mfo_card_info_reviews {
+    border: none;
+}
+.bank-offers-horizontal .mfo_card_info_links {
+    border: none;
+}
+.bank-offers-horizontal .mfo_card_info_about {
+    max-width: 360px;
+}
+.bank-offers-horizontal .mfo_card_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bank-offers-horizontal .mfo_card_info_links-col {
+    justify-content: flex-start;
+}
+.bank-offers-horizontal .mfo_card_info_links-col-icons {
+    margin-right: 15px;
+}
+
+
+
+
+/** MFO ************************************************/
+.mfo-content-box .rating__val {
+    color: #ffa800;
+}
+
+.mfo-content-box .mfo-head-logo img {
+    width: 170px;
+}
+
+.mfo-content-box .content-main-info__item h1 {
+    font-size: 32px;
+    line-height: 41px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.mfo-content-box .mfo-head__text {
+    font-size: 18px;
+    color: #999a9a;
+}
+
+.mfo-content-box .mfo-about-title {
+    text-align: left;
+}
+
+.mfo-about__logos .mfo-about__logos-link {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.mfo-about__logos .mfo-about__logos-link img {
+    max-width: 115px;
+}
+
+
+.mfo-about__logos {
+    margin-top: 65px;
+    margin-bottom: 40px;
+}
+
+.mfo-license {
+    padding: 40px 40px 0;
+    margin-bottom: 15px;
+}
+
+.mfo-license__block {
+    display: flex;
+    align-items: center;
+    max-width: 700px;
+    justify-content: space-between;
+}
+
+.mfo-license__text {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mfo-license__col-left {
+    width: 58%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+    color: #898888;
+}
+
+.mfo-license__col-right {
+    width: 37%;
+    font-size: 16px;
+}
+
+.mfo-report {
+    padding: 40px 40px 0;
+}
+
+.mfo-report__block {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 15px;
+}
+
+.mfo-report__col {
+    display: flex;
+    align-items: flex-end;
+}
+
+.mfo-report__col:not(:last-child) {
+    margin-right: 15px;
+}
+
+.mfo-report__year {
+    font-size: 16px;
+    color: #000000;
+    font-family: 'Open Sans', sans-serif;
+    margin-left: 10px;
+}
+
+.mfo-about__feature-images img {
+    width: 45px;
+}
+
+.mfo-signs {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #e8faff;
+    padding: 30px 40px;
+    margin-top: 50px;
+}
+
+.mfo-signs__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border: 3px solid #0289b4;
+    margin-right: 15px;
+}
+
+.mfo-signs__image img {
+    width: 30px;
+}
+.mfo-signs__text {
+    width: 80%;
+    padding-right: 10px;
+    font-size: 16px;
+    line-height: 17px;
+}
+
+.mfo-signs__box {
+    display: flex;
+    align-items: center;
+    width: 310px;
+}
+
+.mfo-signs__box:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.mfo-money {
+    text-align: center;
+}
+
+.mfo-socials {
+    padding: 40px 40px 0;
+}
+
+.mfo-socials-link {
+    text-decoration: underline;
+    color: #0289b4;
+}
+
+.mfo-socials-link:hover {
+    text-decoration: underline;
+}
+
+.mfo-socials__block {
+    margin-top: 30px;
+    display: flex;
+}
+
+.mfo-socials__link img {
+    width: 40px;
+}
+
+.mfo-socials__link:not(:last-child) {
+    margin-right: 10px;
+}
+
+.mfo-feedback {
+    padding: 40px 40px 0;
+}
+
+.mfo-feedback-link {
+    text-decoration: underline;
+    color: #0289b4;
+}
+
+.mfo-feedback-link:hover {
+    text-decoration: underline;
+}
+
+.mt35 {
+    margin-top: 35px;
+}
+
+.content-main-info__list-disc {
+    padding-left: 55px;
+    margin: 18px 0 0;
+}
+
+.content-main-info__list-disc li {
+    list-style-type: disc;
+    font-size: 15px;
+    font-family: 'Open Sans Light';
+}
+
+.content-main-info__list-disc p {
+    font-family: 'Open Sans Light';
+    font-weight: 300;
+    color: #111;
+    line-height: 1.5;
+    font-size: 16px;
+}

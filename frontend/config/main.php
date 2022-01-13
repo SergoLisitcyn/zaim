@@ -55,6 +55,7 @@ return [
                 'rating' => '/site/rating',
                 'unisender' => '/site/unisender',
                 'unisender_mfo' => '/mfo/unisender',
+                'banks' => '/banks/index',
                 [
                     'pattern' => 'mfo/<url:\S+>/reviews',
                     'route' => '/mfo/reviews',
@@ -68,6 +69,26 @@ return [
                 [
                     'pattern' => 'mfo/<url:\S+>',
                     'route' => '/mfo/view',
+                    'defaults' => ['url' => '']
+                ],
+                [
+                    'pattern' => 'banks/<url:\S+>/requisites',
+                    'route' => '/banks/requisites',
+                    'defaults' => ['url' => '']
+                ],
+                [
+                    'pattern' => 'banks/<url:\S+>/finance',
+                    'route' => '/banks/finance',
+                    'defaults' => ['url' => '']
+                ],
+                [
+                    'pattern' => 'banks/<url:\S+>/contacts',
+                    'route' => '/banks/contacts',
+                    'defaults' => ['url' => '']
+                ],
+                [
+                    'pattern' => 'banks/<url:\S+>',
+                    'route' => '/banks/view',
                     'defaults' => ['url' => '']
                 ],
                 [
@@ -95,7 +116,6 @@ return [
                     'route' => '/site/filter',
                     'defaults' => ['slug' => 'error']
                 ],
-
             ],
         ],
     ],
