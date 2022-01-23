@@ -36,7 +36,20 @@ use yii\widgets\ActiveForm;
         ]
     ]);
     ?>
-    <?= $form->field($model, 'desc')->textInput(['maxlength' => true]) ?>
+
+    <?php
+    echo $form->field($model, 'ustavfile')->widget(\kartik\file\FileInput::classname(), [
+        'options' => [
+            'multiple' => false
+        ],
+        'pluginOptions' => [
+            'showPreview' => false,
+            'showRemove' => true,
+            'showUpload' => false
+        ]
+    ]);
+    ?>
+    <?= $form->field($model, 'desc')->textarea(['rows' => 6]) ?>
     <?= $form->field($model, 'url')->textInput() ?>
     <?= $form->field($model, 'sort')->textInput() ?>
 

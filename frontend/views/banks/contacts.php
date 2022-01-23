@@ -1,5 +1,8 @@
 <?php
 use \yii\helpers\Url;
+use kartik\rating\StarRating;
+use yii\bootstrap\ActiveForm;
+use yii\helpers\Html;
 
 $data = unserialize($model->data);
 ?>
@@ -47,11 +50,17 @@ $data = unserialize($model->data);
                                 <span>Контакты</span>
                             </a>
                         </li>
+                        <li class="">
+                            <a href="<?= Url::toRoute(['banks/reviews', 'url' => $model->url]) ?>">
+                                <span>Отзывы</span>
+                            </a>
+                        </li>
                     </ul>
                     <div class="content-main-info__content">
                         <div class="mfo-about bank-mfo-about bank-contacts-mfo-about">
                             <div class="mfo-about__table">
                                 <div class="mfo-about__columns">
+                                    <?php if($data['contacts']['mailing_address']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
                                             Почтовый адрес:
@@ -60,6 +69,8 @@ $data = unserialize($model->data);
                                             <?= $data['contacts']['mailing_address'] ?>
                                         </div>
                                     </div>
+                                    <?php endif; ?>
+                                    <?php if($data['contacts']['phone_individuals']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
                                             Телефон для физических лиц:
@@ -68,6 +79,8 @@ $data = unserialize($model->data);
                                             <?= $data['contacts']['phone_individuals'] ?>
                                         </div>
                                     </div>
+                                    <?php endif; ?>
+                                    <?php if($data['contacts']['phone_legal']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
                                             Телефон для юридических лиц:
@@ -76,6 +89,8 @@ $data = unserialize($model->data);
                                             <?= $data['contacts']['phone_legal'] ?>
                                         </div>
                                     </div>
+                                    <?php endif; ?>
+                                    <?php if($data['contacts']['phone_city_1']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
                                             Городской телефон:
@@ -84,161 +99,164 @@ $data = unserialize($model->data);
                                             <?= $data['contacts']['phone_city_1'] ?>
                                         </div>
                                     </div>
+                                    <?php endif; ?>
+                                    <?php if($data['contacts']['email']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
                                             E-mail:
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $data['contacts']['email'] ?>
+                                            <a href="mailto:<?= $data['contacts']['email'] ?>"><?= $data['contacts']['email'] ?></a>
                                         </div>
                                     </div>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>
+                        <?php if($data['contacts']['maps']) :  ?>
                         <div class="bank-maps">
                             <?= $data['contacts']['maps'] ?>
                         </div>
+                        <?php endif; ?>
                     </div>
 
                 </div>
                 <div class="content-reviews bank-content-reviews">
-                    <h2 class="content-reviews-title">Отзывы о Народном Банке</h2>
-                    <div class="content-reviews-item">
-                        <div class="rr_review_name">Злата</div>
-                        <span class="rr_date">13.08.2020</span>
-                        <div class="content-reviews-rating">
-                            <div class="rating">
-                                <span class="rating__caption">Простота получения</span>
-                                <div class="rating__stars rating__stars--sm" style="width:100%">
+                    <h2 class="content-reviews-title"><?= $model->name?> туралы пікірлер</h2>
+                    <?php if($reviews) : ?>
+                        <?php foreach ($reviews as $review) : ?>
+                            <div class="content-reviews-item">
+                                <div class="rr_review_name"><?= $review['name_client'] ?></div>
+                                <span class="rr_date"><?php echo date('d.m.Y',strtotime($review['date'])) ?></span>
+                                <div class="content-reviews-rating">
+                                    <div class="rating">
+                                        <span class="rating__caption">Алу қарапайымдылығы</span>
+                                        <div class="rating__stars rating__stars--sm" style="width:100%">
+                                        </div>
+                                        <div class="rating__val">5</div>
+                                    </div>
+                                    <div class="rating">
+                                        <span class="rating__caption">Беру жылдамдығы</span>
+                                        <div class="rating__stars rating__stars--sm" style="width:100%">
+                                        </div>
+                                        <div class="rating__val">5</div>
+                                    </div>
+                                    <div class="rating">
+                                        <span class="rating__caption">Қолдау көрсету қызметі</span>
+                                        <div class="rating__stars rating__stars--sm" style="width:100%">
+                                        </div>
+                                        <div class="rating__val">5</div>
+                                    </div>
                                 </div>
-                                <div class="rating__val">5</div>
+                                <p class="content-reviews-text"><?= $review['body'] ?></p>
+                                <div class="content-reviews-plus">
+                                    <span>Плюсы:</span>
+                                    <span><?= $review['plus'] ?></span>
+                                </div>
+                                <div class="content-reviews-minus">
+                                    <span>Минусы:</span>
+                                    <span><?= $review['minus'] ?></span>
+                                </div>
                             </div>
-                            <div class="rating">
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                    <?php if( Yii::$app->session->hasFlash('successMfoView') ): ?>
+                        <div class="alert alert-success alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <?php echo Yii::$app->session->getFlash('successMfoView'); ?>
+                        </div>
+                    <?php endif;?>
+                    <?php
+                    $action = '/banks/'.$model->url.'/contacts';
+                    $form = ActiveForm::begin(
+                        [
+                            'action' =>[$action],
+                            'options' => [
+                                'class' => 'review-form',
+                                'id' => 'review'
+                            ]
+                        ]
+                    ); ?>
+                    <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
+                    <input type="hidden" id="review-bank_id" name="BankReview[bank_id]" value="<?= $model->id ?>"/>
+                    <input type="hidden" name="BankReview[date]" value="<?php echo date('d.m.Y') ?>"/>
+                    <div class="content-reviews-rating">
+                        <div class="rating">
+                            <div class="rating-row">
+                                <span class="rating__caption">Алу қарапайымдылығы</span>
+                                <div class="rr_stars_container">
+                                    <?php
+                                    echo $form->field($reviewsModel, 'prostota')->label(false)->widget(StarRating::classname(), [
+                                        'pluginOptions' => [
+                                            'theme' => 'krajee-uni',
+                                            'showClear' => false,
+                                            'showCaption' => false,
+                                            'step' => 1,
+                                            'filledStar' => '<span class="rr_star glyphicon glyphicon-star" style="font-size: 14px;"></span>',
+                                            'emptyStar' => '<span class="rr_star glyphicon glyphicon-star-empty" style="font-size: 14px;"></span>',
+                                        ]
+                                    ]);
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <div class="rating-row">
                                 <span class="rating__caption">Скорость выдачи</span>
-                                <div class="rating__stars rating__stars--sm" style="width:100%">
+                                <div class="rr_stars_container">
+                                    <?php
+                                    echo $form->field($reviewsModel, 'speed')->label(false)->widget(StarRating::classname(), [
+                                        'pluginOptions' => [
+                                            'theme' => 'krajee-uni',
+                                            'showClear' => false,
+                                            'showCaption' => false,
+                                            'step' => 1,
+                                            'filledStar' => '<span class="rr_star glyphicon glyphicon-star" style="font-size: 14px;"></span>',
+                                            'emptyStar' => '<span class="rr_star glyphicon glyphicon-star-empty" style="font-size: 14px;"></span>',
+                                        ]
+                                    ]);
+                                    ?>
                                 </div>
-                                <div class="rating__val">5</div>
                             </div>
-                            <div class="rating">
+                        </div>
+                        <div class="rating">
+                            <div class="rating-row">
                                 <span class="rating__caption">Служба поддержки</span>
-                                <div class="rating__stars rating__stars--sm" style="width:100%">
+                                <div class="rr_stars_container">
+                                    <?php
+                                    echo $form->field($reviewsModel, 'support')->label(false)->widget(StarRating::classname(), [
+                                        'pluginOptions' => [
+                                            'theme' => 'krajee-uni',
+                                            'showClear' => false,
+                                            'showCaption' => false,
+                                            'step' => 1,
+                                            'filledStar' => '<span class="rr_star glyphicon glyphicon-star" style="font-size: 14px;"></span>',
+                                            'emptyStar' => '<span class="rr_star glyphicon glyphicon-star-empty" style="font-size: 14px;"></span>',
+                                        ]
+                                    ]);
+                                    ?>
                                 </div>
-                                <div class="rating__val">5</div>
                             </div>
-                        </div>
-                        <p class="content-reviews-text">Меня привлекла простота обращения сюда. Никаких странных вопросов в
-                            анкете, к тому же заявку ты заполняешь сам прямо из дома. Деньги сразу на карту приходят. Никаких
-                            проблем не возникает, если в срок отдаешь. Уже не первый раз обращаюсь сюда.</p>
-                        <div class="content-reviews-plus">
-                            <span>Плюсы:</span>
-                            <span>Просто и быстро.</span>
-                        </div>
-                        <div class="content-reviews-minus">
-                            <span>Минусы:</span>
-                            <span>Нет, если все внимательно делать.</span>
                         </div>
                     </div>
-                    <div class="content-reviews-item">
-                        <div class="rr_review_name">Сергей</div>
-                        <span class="rr_date">29.07.2020</span>
-                        <div class="content-reviews-rating">
-                            <div class="rating">
-                                <span class="rating__caption">Простота получения</span>
-                                <div class="rating__stars rating__stars--sm" style="width:100%">
-                                </div>
-                                <div class="rating__val">5</div>
-                            </div>
-                            <div class="rating">
-                                <span class="rating__caption">Скорость выдачи</span>
-                                <div class="rating__stars rating__stars--sm" style="width:100%">
-                                </div>
-                                <div class="rating__val">5</div>
-                            </div>
-                            <div class="rating">
-                                <span class="rating__caption">Служба поддержки</span>
-                                <div class="rating__stars rating__stars--sm" style="width:61%">
-                                </div>
-                                <div class="rating__val">3</div>
-                            </div>
+                    <div class="review-form__textarea-wrap">
+                        <?= $form->field($reviewsModel, 'body')->textarea(['class' => 'textarea-review','placeholder' => "Өз пікіріңізді қалдырыңыз"])->label(false) ?>
+                        <?= $form->field($reviewsModel, 'plus')->textarea(['class' => 'textarea-plus','placeholder' => "Компанияның артықшылықтары"])->label(false) ?>
+                        <?= $form->field($reviewsModel, 'minus')->textarea(['class' => 'textarea-minus','placeholder' => "Компанияның кемшіліктері"])->label(false) ?>
+                    </div>
+                    <div class="review-form__bottom">
+                        <div class="review-form__input">
+                            <?= $form->field($reviewsModel, 'name_client')->textInput(['class' => 'review-form__input','placeholder' => "Атыңыз"])->label(false) ?>
                         </div>
-                        <p class="content-reviews-text">О сервисе остались только хорошие впечатления. Мне выдали деньги через
-                            полчаса и даже не спросили, куда я собираюсь их потратить. Правда, возникли некоторые сложности при
-                            возврате долга, потому что платёж нужно отправлять через банк заранее, а меня никто не предупредил,
-                            что в противном случае может возникнуть просрочка.</p>
-                        <div class="content-reviews-plus">
-                            <span>Плюсы:</span>
-                            <span>нецелевое использование займа, оперативное оформление.</span>
+                        <div class="review-form__input">
+                            <?= $form->field($reviewsModel, 'email')->textInput(['class' => 'review-form__input','placeholder' => "E-mail"])->label(false) ?>
                         </div>
-                        <div class="content-reviews-minus">
-                            <span>Минусы:</span>
-                            <span>нет хорошей обратной связи с клиентами.</span>
+                        <div class="review-form__btn">
+                            <?= Html::submitButton('Пікірді жариялау', ['class' => 'review-form__btn']) ?>
                         </div>
                     </div>
-                    <form class="review-form">
-                        <div class="content-reviews-rating">
-                            <div class="rating">
-                                <div class="rating-row">
-                                    <span class="rating__caption">Простота получения</span>
-                                    <div class="rr_stars_container">
-                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="1"></span>
-                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="2"></span>
-                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="3"></span>
-                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="4"></span>
-                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="5"></span>
-                                    </div>
-                                </div>
-                                <span class="form-err"></span>
-                            </div>
-                            <div class="rating">
-                                <div class="rating-row">
-                                    <span class="rating__caption">Скорость выдачи</span>
-                                    <div class="rr_stars_container">
-                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="1"></span>
-                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="2"></span>
-                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="3"></span>
-                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="4"></span>
-                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="5"></span>
-                                    </div>
-                                </div>
-                                <span class="form-err"></span>
-                            </div>
-                            <div class="rating">
-                                <div class="rating-row">
-                                    <span class="rating__caption">Служба поддержки</span>
-                                    <div class="rr_stars_container">
-                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="1"></span>
-                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="2"></span>
-                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="3"></span>
-                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="4"></span>
-                                        <span class="rr_star glyphicon glyphicon-star-empty" data-id="rEasy" data-rate="5"></span>
-                                    </div>
-                                </div>
-                                <span class="form-err"></span>
-                            </div>
-                        </div>
-                        <div class="review-form__textarea-wrap">
-                            <textarea class="textarea-review" placeholder="Оставьте свой отзыв" name="rText"></textarea>
-                            <textarea class="textarea-plus" placeholder="Плюсы компании" name="rPlus"></textarea>
-                            <span class="form-err"></span>
-                            <textarea class="textarea-minus" placeholder="Минусы компании" name="rMinus"></textarea>
-                            <span class="form-err"></span>
-                        </div>
-                        <div class="review-form__bottom">
-                            <div class="review-form__input">
-                                <input type="text" placeholder="Имя" name="rName" value="">
-                                <span class="form-err"></span>
-                            </div>
-                            <div class="review-form__input">
-                                <input type="text" placeholder="E-mail">
-                                <span class="form-err"></span>
-                            </div>
-                            <div class="review-form__btn">
-                                <button type="submit" class="review-form__btn">Опубликовать отзыв</button>
-                                <span class="form-err"></span>
-                            </div>
-                        </div>
-                    </form>
-                    <a href="creditplus-reviews.html" class="content-reviews-btn">Смотреть все отзывы о народном банке</a>
+                    <?php ActiveForm::end(); ?>
+                    <a href="/banks/<?= $model->url ?>/reviews" class="content-reviews-btn"><?= $model->name?> туралы барлық пікірлерді қараңыз</a>
                 </div>
             </div>
 

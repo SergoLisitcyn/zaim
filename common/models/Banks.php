@@ -14,6 +14,7 @@ use yii\web\UploadedFile;
  * @property string|null $data
  * @property string|null $image
  * @property string|null $desc
+ * @property string|null $ustav
  * @property string $name
  * @property string $url
  * @property int $sort
@@ -24,12 +25,14 @@ use yii\web\UploadedFile;
 class Banks extends \yii\db\ActiveRecord
 {
     public $mainfile;
+    public $ustavfile;
 
     public function afterSave($insert, $changedAttributes)
     {
         parent::afterSave($insert, $changedAttributes);
 
         $imageSquareFile = UploadedFile::getInstance($this, 'mainfile');
+        $ustavSquareFile = UploadedFile::getInstance($this, 'ustavfile');
         if ($imageSquareFile) {
             $directory = Yii::getAlias('@frontend/web/uploads/images/banks/main-image') . DIRECTORY_SEPARATOR;
             if (!is_dir($directory)) {
@@ -44,6 +47,23 @@ class Banks extends \yii\db\ActiveRecord
 
                 @unlink(Yii::getAlias('@frontend/web') . $this->mainfile);
                 $this->setAttribute('image', $path);
+                $this->save();
+            }
+        }
+        if ($ustavSquareFile) {
+            $directoryUstav = Yii::getAlias('@frontend/web/uploads/images/banks/ustavfile') . DIRECTORY_SEPARATOR;
+            if (!is_dir($directoryUstav)) {
+                FileHelper::createDirectory($directoryUstav);
+            }
+
+            $uid = date('YmdHs').Yii::$app->security->generateRandomString(6);
+            $fileName = $uid . '-ustavfile.' . $ustavSquareFile->extension;
+            $filePath = $directoryUstav . $fileName;
+            if ($ustavSquareFile->saveAs($filePath)) {
+                $path = '/uploads/images/banks/ustavfile/' . $fileName;
+
+                @unlink(Yii::getAlias('@frontend/web') . $this->ustavfile);
+                $this->setAttribute('ustav', $path);
                 $this->save();
             }
         }
@@ -65,7 +85,8 @@ class Banks extends \yii\db\ActiveRecord
             [['data'], 'safe'],
             [['sort', 'status'], 'integer'],
             [['name','url'], 'required'],
-            [['image','name','url','desc'], 'string', 'max' => 255],
+            [['image','name','url','desc','ustav'], 'string', 'max' => 255],
+            [['mainfile','ustavfile'], 'file'],
         ];
     }
 
@@ -95,6 +116,9 @@ class Banks extends \yii\db\ActiveRecord
             'url' => 'Url',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
+            'ustav' => 'Устав',
+            'mainfile' => 'Логотип',
+            'ustavfile' => 'Устав',
         ];
     }
 }

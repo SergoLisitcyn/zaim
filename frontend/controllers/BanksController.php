@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use common\models\BankReview;
 use Yii;
 use common\models\Banks;
 use yii\data\ActiveDataProvider;
@@ -54,36 +55,100 @@ class BanksController extends Controller
         if(!$url) return $this->redirect('/');
         $bank = Banks::find()->where(['status' => 1, 'url' => $url])->one();
         if(!$bank) throw new HttpException(404, 'Страница не существует.');
-        return $this->render('view', [
-            'model' => $bank,
-        ]);
+
+        $reviews = BankReview::find()->where(['bank_id' => $bank->id])->andWhere(['status' => 1])->orderBy(['date' => SORT_DESC])->limit(3)->all();
+        $model = new BankReview();
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('successMfoView', 'Сіздің пікіріңіз жіберілді. Хабарласқаныңыз үшін рахмет!');
+            return $this->refresh();
+        } else {
+            return $this->render('view', [
+                'model' => $bank,
+                'reviews' => $reviews,
+                'reviewsModel' => $model
+            ]);
+        }
     }
 
     public function actionFinance($url)
     {
         if(!$url) return $this->redirect('/');
 
-
         $bank = Banks::find()->where(['status' => 1, 'url' => $url])->one();
-        return $this->render('finance', [
-            'model' => $bank,
-        ]);
+        $reviews = BankReview::find()->where(['bank_id' => $bank->id])->andWhere(['status' => 1])->orderBy(['date' => SORT_DESC])->limit(3)->all();
+        $model = new BankReview();
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('successMfoView', 'Сіздің пікіріңіз жіберілді. Хабарласқаныңыз үшін рахмет!');
+            return $this->refresh();
+        } else {
+            return $this->render('finance', [
+                'model' => $bank,
+                'reviews' => $reviews,
+                'reviewsModel' => $model
+            ]);
+        }
     }
     public function actionRequisites($url)
     {
         if(!$url) return $this->redirect('/');
         $bank = Banks::find()->where(['status' => 1, 'url' => $url])->one();
-        return $this->render('requisites', [
-            'model' => $bank,
-        ]);
+
+        $reviews = BankReview::find()->where(['bank_id' => $bank->id])->andWhere(['status' => 1])->orderBy(['date' => SORT_DESC])->limit(3)->all();
+        $model = new BankReview();
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('successMfoView', 'Сіздің пікіріңіз жіберілді. Хабарласқаныңыз үшін рахмет!');
+            return $this->refresh();
+        } else {
+            return $this->render('requisites', [
+                'model' => $bank,
+                'reviews' => $reviews,
+                'reviewsModel' => $model
+            ]);
+        }
     }
     public function actionContacts($url)
     {
         if(!$url) return $this->redirect('/');
         $bank = Banks::find()->where(['status' => 1, 'url' => $url])->one();
-        return $this->render('contacts', [
-            'model' => $bank,
-        ]);
+        $reviews = BankReview::find()->where(['bank_id' => $bank->id])->andWhere(['status' => 1])->orderBy(['date' => SORT_DESC])->limit(3)->all();
+        $model = new BankReview();
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('successMfoView', 'Сіздің пікіріңіз жіберілді. Хабарласқаныңыз үшін рахмет!');
+            return $this->refresh();
+        } else {
+            return $this->render('contacts', [
+                'model' => $bank,
+                'reviews' => $reviews,
+                'reviewsModel' => $model
+            ]);
+        }
+    }
+
+    public function actionReviews($url)
+    {
+        if(!$url){
+            throw new HttpException(404, 'Страница не существует.');
+        }
+        $bank = Banks::find()->where(['status' => 1, 'url' => $url])->one();
+        $reviews= BankReview::find()
+            ->where([
+                'bank_id' => $bank->id,
+                'status' => 1
+            ])
+            ->all();
+
+        $model = new BankReview();
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('successMfoLogin', 'Сіздің пікіріңіз жіберілді. Хабарласқаныңыз үшін рахмет!');
+            return $this->refresh();
+        } else {
+            return $this->render('reviews', [
+                'model' => $model,
+                'reviews' => $reviews,
+                'bank' => $bank,
+            ]);
+        }
+//        return $this->render('reviews');
     }
 
     /**

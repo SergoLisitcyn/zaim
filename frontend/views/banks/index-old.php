@@ -18,13 +18,12 @@ $this->title = 'Банки';
     <img class="main-title__img bank-main-title__img" src="img/uncode-child/bg-sm.png" alt="">
 </section>
 
-<section class="offers plr bank-offers bank-offers-horizontal">
+<section class="offers plr bank-offers">
     <div class="offers-wrap limit-width">
         <div class="offers__items">
             <?php foreach ($banks as $bank) :
                 $data = unserialize($bank->data);
                 ?>
-
             <div class="mfo_card">
                 <div class="mfo_card_company">
                     <a href="<?= Url::toRoute(['banks/view', 'url' => $bank->url]) ?>">
@@ -34,20 +33,19 @@ $this->title = 'Банки';
                         <img class="lazyload" src="<?= $bank->image ?>" alt="<?= $bank->name ?>">
                     </a>
                 </div>
-                <div class="mfo_card_box">
-                    <div class="mfo_card_company-name">
-                        <a href="<?= Url::toRoute(['banks/view', 'url' => $bank->url]) ?>"><?= $bank->name ?></a>
-                    </div>
-                    <div class="mfo_card_info_rating">
-                        <div class="mfo_card_info_rating_data">
-                            <div class="rating__stars" style="width:92%">
-                            </div>
-                            <div class="rating__val">4.8</div>
+                <div class="mfo_card_company-name">
+                    <a href="<?= Url::toRoute(['banks/view', 'url' => $bank->url]) ?>"><?= $bank->name ?></a>
+                </div>
+                <div class="mfo_card_info_rating">
+                    <div class="mfo_card_info_rating_label">Рейтинг:</div>
+                    <div class="mfo_card_info_rating_data">
+                        <div class="rating__stars" style="width:92%">
                         </div>
+                        <div class="rating__val">4.8</div>
                     </div>
-                    <div class="mfo_card_info_reviews">
-                        <a href="#" class="mfo_card_info_link">Отзывы (125)</a>
-                    </div>
+                </div>
+                <div class="mfo_card_info_reviews">
+                    <a href="#" class="mfo_card_info_link">Отзывы (125)</a>
                 </div>
                 <div class="mfo_card_info_links">
                     <?php if($data['services']['credit_card'] == "+") : ?>

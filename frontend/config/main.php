@@ -87,6 +87,11 @@ return [
                     'defaults' => ['url' => '']
                 ],
                 [
+                    'pattern' => 'banks/<url:\S+>/reviews',
+                    'route' => '/banks/reviews',
+                    'defaults' => ['url' => '']
+                ],
+                [
                     'pattern' => 'banks/<url:\S+>',
                     'route' => '/banks/view',
                     'defaults' => ['url' => '']

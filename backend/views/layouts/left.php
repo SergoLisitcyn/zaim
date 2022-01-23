@@ -58,7 +58,8 @@
                         'icon' => 'comments',
                         'url' => '#',
                         'items' => [
-                            ['label' => 'Все отзывы', 'icon' => 'circle-o', 'url' => ['/review/index'],],
+                            ['label' => 'Отзывы МФО', 'icon' => 'circle-o', 'url' => ['/review/index'],],
+                            ['label' => 'Отзывы Банки', 'icon' => 'circle-o', 'url' => ['/bank-review/index'],],
                         ],
                     ],
                     [
