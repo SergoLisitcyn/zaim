@@ -4,6 +4,14 @@ use kartik\rating\StarRating;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 $data = unserialize($model->data);
+if(isset($data['financial']['title']) and !empty($data['financial']['title'])) {
+    $this->title = $data['financial']['title'];
+} else {
+    $this->title = $model->name;
+}
+if(isset($data['financial']['description']) and !empty($data['financial']['description'])) {
+    $this->registerMetaTag(['name' => 'description','content' => $data['financial']['description']]);
+}
 ?>
 <section class="breadcrumbs plr">
     <div class="breadcrumbs-wrap limit-width">

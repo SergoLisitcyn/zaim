@@ -5,6 +5,14 @@ use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 
 $data = unserialize($model->data);
+if(isset($data['contacts']['title']) and !empty($data['contacts']['title'])) {
+    $this->title = $data['contacts']['title'];
+} else {
+    $this->title = $model->name;
+}
+if(isset($data['contacts']['description']) and !empty($data['contacts']['description'])) {
+    $this->registerMetaTag(['name' => 'description','content' => $data['contacts']['description']]);
+}
 ?>
 <section class="breadcrumbs plr">
     <div class="breadcrumbs-wrap limit-width">

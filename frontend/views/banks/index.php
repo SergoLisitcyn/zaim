@@ -5,7 +5,8 @@ use \yii\helpers\Url;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Банки';
+$this->title = 'Реестр банков Республики Казахстан';
+$this->registerMetaTag(['name' => 'description','content' => 'Банковская система Казахстана. Информации о местных и иностранных банках второго уровня Республики Казахстан.']);
 ?>
 <section class="breadcrumbs plr">
     <div class="breadcrumbs-wrap limit-width">
@@ -27,12 +28,14 @@ $this->title = 'Банки';
 
             <div class="mfo_card">
                 <div class="mfo_card_company">
+                    <?php if($bank->image) : ?>
                     <a href="<?= Url::toRoute(['banks/view', 'url' => $bank->url]) ?>">
                         <noscript>
                             <img src="<?= $bank->image ?>" alt="<?= $bank->name ?>">
                         </noscript>
                         <img class="lazyload" src="<?= $bank->image ?>" alt="<?= $bank->name ?>">
                     </a>
+                    <?php endif; ?>
                 </div>
                 <div class="mfo_card_box">
                     <div class="mfo_card_company-name">

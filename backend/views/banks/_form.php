@@ -37,6 +37,15 @@ use yii\widgets\ActiveForm;
     ]);
     ?>
 
+    <div class="form-group field-mfo-logo_file">
+        <div class="col-sm-12">
+            <?php if($model->ustav) : ?>
+                <a href="<?= $model->ustav ?>"  target="_blank" class="mfo-img_slider_view-right-link">Cсылка на устав</a>
+            <?php else: ?>
+                <b>Устав отсутствует</b>
+            <?php endif; ?>
+        </div>
+    </div>
     <?php
     echo $form->field($model, 'ustavfile')->widget(\kartik\file\FileInput::classname(), [
         'options' => [

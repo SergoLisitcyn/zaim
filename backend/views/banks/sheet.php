@@ -29,7 +29,7 @@ foreach($response->getSheets() as $sheet) {
 }
 
 $range = $sheetProperties->title;
-$response = $service->spreadsheets_values->get($spreadsheetId, 'Лист1');
+$response = $service->spreadsheets_values->get($spreadsheetId, 'RU');
 
 //if($response['values']){
 //    Yii::$app->db->createCommand()->truncateTable('links')->execute();
@@ -95,9 +95,18 @@ foreach ($response['values']  as $key => $value){
     $data['contacts']['email'] = $value[47];
     $data['contacts']['maps'] = $value[48];
     $data['contacts']['url'] = $value[49];
-    $data['contacts']['h1'] = $value[50];
-//    $data['contacts']['title'] = $value[51];
-//    $data['contacts']['description'] = $value[52];
+    $data['h1'] = $value[50];
+    $data['title'] = $value[51];
+    $data['description'] = $value[52];
+    $data['financial']['h1'] = $value[53].' '.$value[50];
+    $data['financial']['title'] = 'Финнасовые показатели '.$value[50].' '.$value[54].' '.'— smartzaim.kz';
+    $data['financial']['description'] = 'Финнасовые показатели '.$value[50].', '.$value[55];
+    $data['requisites']['h1'] = $value[56].' '.$value[50];
+    $data['requisites']['title'] = 'Реквизиты и коды '.$value[50].' '.$value[57];
+    $data['requisites']['description'] = 'Реквизиты и коды '.$value[50].', '.$value[58];
+    $data['contacts']['h1'] = $value[59].' '.$value[50];
+    $data['contacts']['title'] = $value[50].' '.$value[60].' '.'— smartzaim.kz';
+    $data['contacts']['description'] = 'Отзывы о '.$value[50].' '.$value[61];
     $model->data = serialize($data);
     $model->url = $value[49];
     if($banks){

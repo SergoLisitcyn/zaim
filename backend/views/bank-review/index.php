@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'options' => ['width' => '10'],
             ],
             [
-                'label' => 'МФО',
+                'label' => 'Банк',
                 'value' => function ($model) {
                     $mfoName = \common\models\Banks::findOne($model->bank_id);
                     $result = $mfoName->name;

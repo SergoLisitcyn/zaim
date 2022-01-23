@@ -7,9 +7,14 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Banks */
-
-$this->title = $model->name;
 $data = unserialize($model->data);
+
+if(isset($data['title']) and !empty($data['title'])) {
+    $this->title = $data['title'];
+} else {
+    $this->title = $model->name;
+}
+if(isset($data['description']) and !empty($data['description'])) { $this->registerMetaTag(['name' => 'description','content' => $data['description']]); }
 \yii\web\YiiAsset::register($this);
 ?>
 <section class="breadcrumbs plr">
@@ -186,11 +191,9 @@ $data = unserialize($model->data);
                                             URL:
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <noindex>
-                                            <a href="https://<?= $data['info']['url'] ?>" target="_blank" class="mfo-about__col-right-link">
+                                            <a href="https://<?= $data['info']['url'] ?>" target="_blank" rel="nofollow" class="mfo-about__col-right-link">
                                                 <?= $data['info']['url'] ?>
                                             </a>
-                                            </noindex>
                                         </div>
                                     </div>
                                     <?php endif; ?>
