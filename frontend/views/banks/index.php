@@ -12,11 +12,10 @@ $this->registerMetaTag(['name' => 'description','content' => 'Банковска
     <div class="breadcrumbs-wrap limit-width">
         <ul class="breadcrumbs__items white-breadcrumbs__items">
             <li>
-                Банки
+                Банки Казахстана
             </li>
         </ul>
     </div>
-    <img class="main-title__img bank-main-title__img" src="img/uncode-child/bg-sm.png" alt="">
 </section>
 
 <section class="offers plr bank-offers bank-offers-horizontal">

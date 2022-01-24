@@ -65,6 +65,11 @@ if(isset($data['contacts']['description']) and !empty($data['contacts']['descrip
                         </li>
                     </ul>
                     <div class="content-main-info__content">
+                        <?php if($data['contacts']['h1']) :  ?>
+                        <h1 style="color: #000;text-align: left;font-weight: 500;font-size: 30px;line-height: 30px;font-family: 'PT Sans';padding: 10px 35px 0;">
+                            <?= $data['contacts']['h1'] ?>
+                        </h1>
+                        <?php endif; ?>
                         <div class="mfo-about bank-mfo-about bank-contacts-mfo-about">
                             <div class="mfo-about__table">
                                 <div class="mfo-about__columns">

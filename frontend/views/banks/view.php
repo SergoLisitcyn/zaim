@@ -66,7 +66,9 @@ if(isset($data['description']) and !empty($data['description'])) { $this->regist
                     </ul>
                     <div class="content-main-info bank-content-main-info">
                         <div class="content-main-info__item">
-                            <h1><?= $model->name ?></h1>
+                            <?php if($data['h1']) :  ?>
+                            <h1><?= $data['h1'] ?></h1>
+                            <?php endif; ?>
                             <div class="mfo-head__rating">
                                 <div class="rating">
                                     <div class="rating__stars" style="width:90%"></div>

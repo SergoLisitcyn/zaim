@@ -43,7 +43,7 @@ $countUpdate = 0;
 foreach ($response['values']  as $key => $value){
     if($key == 0 || $key == 1 || $key == 2) continue;
     if(isset($value[62]) && $value[62] == '+'){
-    $banks = \common\models\Banks::find()->where(['name' => $value[1]])->one();
+    $banks = \common\models\Banks::find()->where(['url' => $value[49]])->one();
     $model = new \common\models\Banks();
     $model->name = $value[1];
     $data['info']['name'] = $value[1];
