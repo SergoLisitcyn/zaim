@@ -56,6 +56,7 @@ return [
                 'unisender' => '/site/unisender',
                 'unisender_mfo' => '/mfo/unisender',
                 'banks' => '/banks/index',
+                'mfo-new' => '/mfo-new/index',
                 [
                     'pattern' => 'mfo/<url:\S+>/reviews',
                     'route' => '/mfo/reviews',
@@ -94,6 +95,16 @@ return [
                 [
                     'pattern' => 'banks/<url:\S+>',
                     'route' => '/banks/view',
+                    'defaults' => ['url' => '']
+                ],
+                [
+                    'pattern' => 'mfo-new/<url:\S+>/login',
+                    'route' => '/mfo-new/login',
+                    'defaults' => ['url' => '']
+                ],
+                [
+                    'pattern' => 'mfo-new/<url:\S+>',
+                    'route' => '/mfo-new/view',
                     'defaults' => ['url' => '']
                 ],
                 [

@@ -1910,3 +1910,42 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
     line-height: 1.5;
     font-size: 16px;
 }
+
+/**********************************************/
+
+.mfo-about__feature-images {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.mfo-about__feature-images-box {
+    display: flex;
+    align-items: center;
+    width: 310px;
+}
+.mfo-about__feature-images-box:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.mfo-about__feature-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.mfo-about__feature-images img {
+    width: 45px;
+}
+
+.mfo-about__feature-text {
+    width: 80%;
+    padding-right: 10px;
+    font-size: 16px;
+    line-height: 17px;
+}
+
+/**********************************************/
