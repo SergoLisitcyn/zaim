@@ -203,6 +203,27 @@ foreach ($response['values']  as $key => $value){
     $data['contacts']['email_2'] = $value[137];
     $data['contacts']['maps_1'] = $value[138];
     $data['contacts']['maps_2'] = $value[139];
+
+    $data['seo']['h1'] = $value[144];
+    $data['seo']['title'] = $data['seo']['h1'].' — smartzaim.kz';
+    $data['seo']['description'] = $value[146];
+
+    $data['seo']['login_h1'] = $value[147].' '.$data['seo']['h1'];
+    $data['seo']['login_title'] = 'Личный кабинет '.$data['seo']['h1'].' '.$value[148].' — smartzaim.kz';
+    $data['seo']['login_description'] = 'Личный кабинет '.$data['seo']['h1'].' '.$value[149];
+
+    $data['seo']['reviews_h1'] = $value[150].' '.$data['seo']['h1'];
+    $data['seo']['reviews_title'] = $data['seo']['h1'].''.$value[151].' — smartzaim.kz';
+    $data['seo']['reviews_description'] = 'Отзывы о '.$data['seo']['h1'].' '.$value[152];
+
+    $data['seo']['clients_h1'] = $value[153].' '.$data['seo']['h1'];
+    $data['seo']['clients_title'] = 'Горячая линия '.$data['seo']['h1'].''.$value[154].' — smartzaim.kz';
+    $data['seo']['clients_description'] = 'Горячая линия '.$data['seo']['h1'].' '.$value[155];
+
+    $data['seo']['contacts_h1'] = $value[156].' '.$data['seo']['h1'];
+    $data['seo']['contacts_title'] = $data['seo']['h1'].''.$value[157].' — smartzaim.kz';
+    $data['seo']['contacts_description'] =$data['seo']['h1'].' '.$value[158];
+
     $model->data = serialize($data);
     $model->url = $value[143];
     if($mfo){

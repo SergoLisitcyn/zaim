@@ -1,5 +1,13 @@
 <?php
 use \yii\helpers\Url;
+if(isset($data['seo']['login_title']) and !empty($data['seo']['login_title'])) {
+    $this->title = $data['seo']['login_title'];
+} else {
+    $this->title = $model->name;
+}
+if(isset($data['seo']['login_description']) and !empty($data['seo']['login_description'])) {
+    $this->registerMetaTag(['name' => 'description','content' => $data['seo']['login_description']]);
+}
 ?>
 <section class="breadcrumbs plr">
     <div class="breadcrumbs-wrap limit-width">
@@ -51,7 +59,9 @@ use \yii\helpers\Url;
                     </ul>
                     <div class="content-main-info">
                         <div class="content-main-info__item">
-                            <h1>Личный кабинет Честное слово – микрокредит онлайн в Казахстане</h1>
+                            <?php if($data['seo']['login_h1']) :  ?>
+                                <h1><?= $data['seo']['login_h1'] ?></h1>
+                            <?php endif; ?>
                             <div class="blocks-content-text mt35">
                                 <div class="content-text-items">
                                     <?php if($data['login']['phone']) :  ?>

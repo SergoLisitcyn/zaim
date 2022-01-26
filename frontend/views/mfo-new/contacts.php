@@ -1,5 +1,13 @@
 <?php
 use \yii\helpers\Url;
+if(isset($data['seo']['contacts_title']) and !empty($data['seo']['contacts_title'])) {
+    $this->title = $data['seo']['contacts_title'];
+} else {
+    $this->title = $model->name;
+}
+if(isset($data['seo']['contacts_description']) and !empty($data['seo']['contacts_description'])) {
+    $this->registerMetaTag(['name' => 'description','content' => $data['seo']['contacts_description']]);
+}
 ?>
 <section class="breadcrumbs plr">
     <div class="breadcrumbs-wrap limit-width">

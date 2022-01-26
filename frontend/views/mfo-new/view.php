@@ -5,7 +5,14 @@ use \yii\helpers\Url;
 /* @var $this yii\web\View */
 /* @var $model common\models\MfoNew */
 
-$this->title = $model->name;
+if(isset($data['seo']['title']) and !empty($data['seo']['title'])) {
+    $this->title = $data['seo']['title'];
+} else {
+    $this->title = $model->name;
+}
+if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
+    $this->registerMetaTag(['name' => 'description','content' => $data['seo']['description']]);
+}
 \yii\web\YiiAsset::register($this);
 ?>
 <section class="breadcrumbs plr">
@@ -53,7 +60,9 @@ $this->title = $model->name;
                     </ul>
                     <div class="content-main-info">
                         <div class="content-main-info__item">
-                            <h1>Честное слово - микрокредит онлайн в Казахстане</h1>
+                            <?php if($data['seo']['h1']) :  ?>
+                            <h1><?= $data['seo']['h1'] ?></h1>
+                            <?php endif; ?>
                             <div class="mfo-head__rating">
                                 <div class="rating">
                                     <div class="rating__stars" style="width:90%"></div>
