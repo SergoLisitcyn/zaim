@@ -68,6 +68,30 @@ class MfoNewController extends Controller
         ]);
     }
 
+    public function actionClients($url)
+    {
+        if(!$url) return $this->redirect('/');
+        $mfo = MfoNew::find()->where(['status' => 1, 'url' => $url])->one();
+        if(!$mfo) throw new HttpException(404, 'Страница не существует.');
+        $data = unserialize($mfo->data);
+        return $this->render('clients', [
+            'model' => $mfo,
+            'data' => $data,
+        ]);
+    }
+
+    public function actionContacts($url)
+    {
+        if(!$url) return $this->redirect('/');
+        $mfo = MfoNew::find()->where(['status' => 1, 'url' => $url])->one();
+        if(!$mfo) throw new HttpException(404, 'Страница не существует.');
+        $data = unserialize($mfo->data);
+        return $this->render('contacts', [
+            'model' => $mfo,
+            'data' => $data,
+        ]);
+    }
+
     /**
      * Creates a new MfoNew model.
      * If creation is successful, the browser will be redirected to the 'view' page.

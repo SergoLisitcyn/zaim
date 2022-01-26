@@ -170,6 +170,39 @@ foreach ($response['values']  as $key => $value){
     $data['login']['inn'] = $value[108];
 
 
+    $data['clients']['rules'] = $value[109];
+    $data['clients']['faq'] = $value[110];
+    $data['clients']['request_call'] = $value[111];
+    $data['clients']['online_chat'] = $value[112];
+    $data['clients']['whatsApp'] = $value[113];
+    $data['clients']['viber'] = $value[114];
+    $data['clients']['telegram'] = $value[115];
+    $data['clients']['email_consultation'] = $value[116];
+    $data['clients']['call_consultation'] = $value[117];
+    $data['clients']['feedback'] = $value[118];
+    $data['clients']['facebook'] = $value[119];
+    $data['clients']['vk'] = $value[120];
+    $data['clients']['instagram'] = $value[121];
+    $data['clients']['twitter'] = $value[122];
+    $data['clients']['youtube'] = $value[123];
+    $data['clients']['odnoklasniki'] = $value[124];
+
+
+    $data['contacts']['address'] = $value[125];
+    $data['contacts']['version_ru'] = $value[126];
+    $data['contacts']['version_kz'] = $value[127];
+    $data['contacts']['phone_1'] = $value[128];
+    $data['contacts']['phone_2'] = $value[129];
+    $data['contacts']['phone_3'] = $value[130];
+    $data['contacts']['whatsApp'] = $value[131];
+    $data['contacts']['viber'] = $value[132];
+    $data['contacts']['telegram'] = $value[133];
+    $data['contacts']['skype'] = $value[134];
+    $data['contacts']['phone_time'] = $value[135];
+    $data['contacts']['email_1'] = $value[136];
+    $data['contacts']['email_2'] = $value[137];
+    $data['contacts']['maps_1'] = $value[138];
+    $data['contacts']['maps_2'] = $value[139];
     $model->data = serialize($data);
     $model->url = $value[143];
     if($mfo){

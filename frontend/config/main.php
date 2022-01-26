@@ -103,6 +103,16 @@ return [
                     'defaults' => ['url' => '']
                 ],
                 [
+                    'pattern' => 'mfo-new/<url:\S+>/clients',
+                    'route' => '/mfo-new/clients',
+                    'defaults' => ['url' => '']
+                ],
+                [
+                    'pattern' => 'mfo-new/<url:\S+>/contacts',
+                    'route' => '/mfo-new/contacts',
+                    'defaults' => ['url' => '']
+                ],
+                [
                     'pattern' => 'mfo-new/<url:\S+>',
                     'route' => '/mfo-new/view',
                     'defaults' => ['url' => '']

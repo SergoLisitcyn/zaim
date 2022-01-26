@@ -37,7 +37,7 @@ $this->title = $model->name;
                         </li>
                         <li class="">
                             <a href="<?= Url::toRoute(['mfo-new/login', 'url' => $model->url]) ?>">
-                                <span>Личный	кабинет</span>
+                                <span>Личный кабинет</span>
                             </a>
                         </li>
                         <li class="">
@@ -66,13 +66,14 @@ $this->title = $model->name;
                         </div>
                         <div class="content-main-info__item">
                             <div class="mfo-head-logo">
-
+                                <?php if($model->image) : ?>
                                 <a href="#">
                                     <noscript>
                                         <img	src="/img/mfo/4slovo.png">
                                     </noscript>
                                     <img class="lazyloaded" src="/img/mfo/4slovo.png" data-src="/img/mfo/4slovo.png" alt="Честное слово">
                                 </a>
+                                <?php endif; ?>
                                 <div class="mfo-head-approv">Одобрение:
                                     <span class="mfo-head-approv-value">54%</span>
                                 </div>
