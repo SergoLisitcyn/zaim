@@ -38,22 +38,24 @@ if(isset($data['seo']['login_description']) and !empty($data['seo']['login_descr
                     <ul	class="nav nav-tabs n-nav-tabs">
                         <li class="">
                             <a href="<?= Url::toRoute(['mfo-new/view', 'url' => $model->url]) ?>">
-                                <span>О	компании</span>
+                                <span><?= $dataMenu['block_1'] ?></span>
                             </a>
                         </li>
-                        <li class="active">
-                            <a href="<?= Url::toRoute(['mfo-new/login', 'url' => $model->url]) ?>">
-                                <span>Личный	кабинет</span>
-                            </a>
-                        </li>
+                        <?php if($data['login']['lk']) :  ?>
+                            <li class="active">
+                                <a href="<?= Url::toRoute(['mfo-new/login', 'url' => $model->url]) ?>">
+                                    <span><?= $dataMenu['block_2'] ?></span>
+                                </a>
+                            </li>
+                        <?php endif;  ?>
                         <li class="">
                             <a href="<?= Url::toRoute(['mfo-new/clients', 'url' => $model->url]) ?>">
-                                <span>Клиентская поддержка</span>
+                                <span><?= $dataMenu['block_3'] ?></span>
                             </a>
                         </li>
                         <li class="">
                             <a href="<?= Url::toRoute(['mfo-new/contacts', 'url' => $model->url]) ?>">
-                                <span>Контакты</span>
+                                <span><?= $dataMenu['block_4'] ?></span>
                             </a>
                         </li>
                     </ul>
@@ -67,31 +69,31 @@ if(isset($data['seo']['login_description']) and !empty($data['seo']['login_descr
                                     <?php if($data['login']['phone']) :  ?>
                                     <div class="content-text-item">
                                         <div class="content-text-item-img">
-                                            <img src="/img/svg-icons/mobile.svg" alt="Вход по номеру мобильного телефона">
+                                            <img src="/img/svg-icons/mobile.svg" alt="<?= $dataMfo['mfo']['login']['phone'] ?>">
                                         </div>
-                                        <span>Вход по номеру мобильного телефона</span>
+                                        <span><?= $dataMfo['mfo']['login']['phone'] ?></span>
                                     </div>
                                     <?php endif; ?>
                                     <?php if($data['login']['email']) :  ?>
                                     <div class="content-text-item">
                                         <div class="content-text-item-img">
-                                            <img src="/img/svg-icons/mail.svg" alt="Вход по e-mail">
+                                            <img src="/img/svg-icons/mail.svg" alt="<?= $dataMfo['mfo']['login']['email'] ?>">
                                         </div>
-                                        <span>Вход по e-mail</span>
+                                        <span><?= $dataMfo['mfo']['login']['email'] ?></span>
                                     </div>
                                     <?php endif; ?>
                                     <?php if($data['login']['inn']) :  ?>
                                     <div class="content-text-item">
                                         <div class="content-text-item-img">
-                                            <img src="/img/svg-icons/inn.svg" alt="Вход по ИИН">
+                                            <img src="/img/svg-icons/inn.svg" alt="<?= $dataMfo['mfo']['login']['inn'] ?>">
                                         </div>
-                                        <span>Вход по ИИН</span>
+                                        <span><?= $dataMfo['mfo']['login']['inn'] ?></span>
                                     </div>
                                     <?php endif; ?>
                                 </div>
                             </div>
                             <?php if($data['login']['lk']) :  ?>
-                            <a href="https://<?= $data['login']['lk'] ?>" class="content-main-info__button">Войти в личный кабинет</a>
+                            <a href="https://<?= $data['login']['lk'] ?>" class="content-main-info__button"><?= $dataMfo['mfo']['login']['lk'] ?></a>
                             <?php endif; ?>
                             <div class="content-main-info__content">
                                 <p class="content-main-info__text">

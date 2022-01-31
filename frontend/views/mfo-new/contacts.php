@@ -38,22 +38,24 @@ if(isset($data['seo']['contacts_description']) and !empty($data['seo']['contacts
                     <ul	class="nav nav-tabs n-nav-tabs">
                         <li class="">
                             <a href="<?= Url::toRoute(['mfo-new/view', 'url' => $model->url]) ?>">
-                                <span>О	компании</span>
+                                <span><?= $dataMenu['block_1'] ?></span>
                             </a>
                         </li>
-                        <li class="">
-                            <a href="<?= Url::toRoute(['mfo-new/login', 'url' => $model->url]) ?>">
-                                <span>Личный	кабинет</span>
-                            </a>
-                        </li>
+                        <?php if($data['login']['lk']) :  ?>
+                            <li class="">
+                                <a href="<?= Url::toRoute(['mfo-new/login', 'url' => $model->url]) ?>">
+                                    <span><?= $dataMenu['block_2'] ?></span>
+                                </a>
+                            </li>
+                        <?php endif;  ?>
                         <li class="">
                             <a href="<?= Url::toRoute(['mfo-new/clients', 'url' => $model->url]) ?>">
-                                <span>Клиентская поддержка</span>
+                                <span><?= $dataMenu['block_3'] ?></span>
                             </a>
                         </li>
                         <li class="active">
                             <a href="<?= Url::toRoute(['mfo-new/contacts', 'url' => $model->url]) ?>">
-                                <span>Контакты</span>
+                                <span><?= $dataMenu['block_4'] ?></span>
                             </a>
                         </li>
                     </ul>
@@ -64,7 +66,7 @@ if(isset($data['seo']['contacts_description']) and !empty($data['seo']['contacts
                                     <?php if($data['contacts']['address']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Адрес (фактический адрес):
+                                            <?= $dataMfo['mfo']['contacts']['address'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['contacts']['address'] ?>
@@ -74,7 +76,7 @@ if(isset($data['seo']['contacts_description']) and !empty($data['seo']['contacts
                                     <?php if($data['contacts']['version_ru']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Версия сайта на русском языке:
+                                            <?= $dataMfo['mfo']['contacts']['version_ru'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <a href="<?= $data['contacts']['version_ru'] ?>" class="mfo-about__col-right-link"><?= $data['contacts']['version_ru'] ?></a>
@@ -84,7 +86,7 @@ if(isset($data['seo']['contacts_description']) and !empty($data['seo']['contacts
                                     <?php if($data['contacts']['version_kz']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Версия сайта на казахском языке:
+                                            <?= $dataMfo['mfo']['contacts']['version_kz'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <a href="<?= $data['contacts']['version_kz'] ?>" class="mfo-about__col-right-link"><?= $data['contacts']['version_kz'] ?></a>
@@ -94,27 +96,35 @@ if(isset($data['seo']['contacts_description']) and !empty($data['seo']['contacts
                                     <?php if($data['contacts']['phone_1']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Телефон:
+                                            <?= $dataMfo['mfo']['contacts']['phone_1'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <a href="tel:<?= $data['contacts']['phone_1'] ?>" class="mfo-about__col-right-link"><?= $data['contacts']['phone_1'] ?></a>
+                                            <?php if($data['contacts']['phone_2']) : ?>
+                                                , <a href="tel:<?= $data['contacts']['phone_2'] ?>" class="mfo-about__col-right-link"><?= $data['contacts']['phone_2'] ?></a>
+                                            <?php endif; ?>
+                                            <?php if($data['contacts']['phone_3']) : ?>
+                                                , <a href="tel:<?= $data['contacts']['phone_3'] ?>" class="mfo-about__col-right-link"><?= $data['contacts']['phone_3'] ?></a>
+                                            <?php endif; ?>
                                         </div>
                                     </div>
                                     <?php endif; ?>
                                     <?php if($data['contacts']['whatsApp']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            WhatsApp:
+                                            <?= $dataMfo['mfo']['contacts']['whatsApp'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $data['contacts']['whatsApp'] ?>
+                                            <a href="https://wa.me/<?= $data['contacts']['whatsApp'] ?>" target="_blank" rel="nofollow">
+                                                <?= $data['contacts']['whatsApp'] ?>
+                                            </a>
                                         </div>
                                     </div>
                                     <?php endif; ?>
                                     <?php if($data['contacts']['viber']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Viber:
+                                            <?= $dataMfo['mfo']['contacts']['viber'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['contacts']['viber'] ?>
@@ -124,40 +134,47 @@ if(isset($data['seo']['contacts_description']) and !empty($data['seo']['contacts
                                     <?php if($data['contacts']['telegram']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Telegram:
+                                            <?= $dataMfo['mfo']['contacts']['telegram'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $data['contacts']['telegram'] ?>
+                                            <a href="//<?= $data['contacts']['telegram'] ?>" target="_blank" rel="nofollow">
+                                                <?= $data['contacts']['telegram'] ?>
+                                            </a>
                                         </div>
                                     </div>
                                     <?php endif; ?>
-                                    <?php if($data['contacts']['telegram']) : ?>
+                                    <?php if($data['contacts']['skype']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Skype:
+                                            <?= $dataMfo['mfo']['contacts']['skype'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $data['contacts']['skype'] ?>
+                                            <a href="skype:<?= $data['contacts']['skype'] ?>?chat" rel="nofollow" target="_blank">
+                                                <?= $data['contacts']['skype'] ?>
+                                            </a>
                                         </div>
                                     </div>
                                     <?php endif; ?>
-                                    <?php if($data['contacts']['telegram']) : ?>
+                                    <?php if($data['contacts']['phone_time']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Телефон-время:
+                                            <?= $dataMfo['mfo']['contacts']['phone_time'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['contacts']['phone_time'] ?>
                                         </div>
                                     </div>
                                     <?php endif; ?>
-                                    <?php if($data['contacts']['telegram']) : ?>
+                                    <?php if($data['contacts']['email_1']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            E-mail:
+                                            <?= $dataMfo['mfo']['contacts']['email_1'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <a href="mailto:<?= $data['contacts']['email_1'] ?>" class="mfo-about__col-right-link"><?= $data['contacts']['email_1'] ?></a>
+                                            <a href="mailto:<?= $data['contacts']['email_1'] ?>" class="mfo-about__col-right-link" target="_blank" rel="nofollow"><?= $data['contacts']['email_1'] ?></a>
+                                            <?php if($data['contacts']['email_2']) : ?>
+                                                , <a href="mailto:<?= $data['contacts']['email_2'] ?>" class="mfo-about__col-right-link" target="_blank" rel="nofollow"><?= $data['contacts']['email_2'] ?></a>
+                                            <?php endif; ?>
                                         </div>
                                     </div>
                                     <?php endif; ?>

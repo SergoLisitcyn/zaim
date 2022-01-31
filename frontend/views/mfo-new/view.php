@@ -39,22 +39,24 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                     <ul	class="nav nav-tabs n-nav-tabs">
                         <li class="active">
                             <a href="<?= Url::toRoute(['mfo-new/view', 'url' => $model->url]) ?>">
-                                <span>О	компании</span>
+                                <span><?= $dataMenu['block_1'] ?></span>
                             </a>
                         </li>
+                        <?php if($data['login']['lk']) :  ?>
                         <li class="">
                             <a href="<?= Url::toRoute(['mfo-new/login', 'url' => $model->url]) ?>">
-                                <span>Личный кабинет</span>
+                                <span><?= $dataMenu['block_2'] ?></span>
                             </a>
                         </li>
+                        <?php endif;  ?>
                         <li class="">
                             <a href="<?= Url::toRoute(['mfo-new/clients', 'url' => $model->url]) ?>">
-                                <span>Клиентская поддержка</span>
+                                <span><?= $dataMenu['block_3'] ?></span>
                             </a>
                         </li>
                         <li class="">
                             <a href="<?= Url::toRoute(['mfo-new/contacts', 'url' => $model->url]) ?>">
-                                <span>Контакты</span>
+                                <span><?= $dataMenu['block_4'] ?></span>
                             </a>
                         </li>
                     </ul>
@@ -114,7 +116,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['info']['city']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Город:
+                                            <?= $dataMfo['mfo']['info']['city'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['info']['city'] ?>
@@ -124,7 +126,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['info']['international_company']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Международная компания:
+                                            <?= $dataMfo['mfo']['info']['international_company'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['info']['international_company'] ?>
@@ -134,7 +136,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['info']['general_manager']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Генеральный директор:
+                                            <?= $dataMfo['mfo']['info']['general_manager'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['info']['general_manager'] ?>
@@ -144,7 +146,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['info']['country_central_office']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Страна расположения центрального офиса:
+                                            <?= $dataMfo['mfo']['info']['country_central_office'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['info']['country_central_office'] ?>
@@ -154,7 +156,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['info']['city_central_office']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Город расположения центрального офиса:
+                                            <?= $dataMfo['mfo']['info']['city_central_office'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['info']['city_central_office'] ?>
@@ -164,27 +166,27 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['info']['parent_company']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Материнская компания:
+                                            <?= $dataMfo['mfo']['info']['parent_company'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <?= $data['info']['city_central_office'] ?>
+                                            <?= $data['info']['parent_company'] ?>
                                         </div>
                                     </div>
                                     <?php endif; ?>
                                     <?php if($data['info']['website']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Сайт:
+                                            <?= $dataMfo['mfo']['info']['website'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <a href="#" class="mfo-about__col-right-link"><?= $data['info']['website'] ?></a>
+                                            <a href="//<?= $data['info']['website'] ?>" target="_blank" rel="nofollow" class="mfo-about__col-right-link"><?= $data['info']['website'] ?></a>
                                         </div>
                                     </div>
                                     <?php endif; ?>
                                     <?php if($data['info']['entity']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Юридическое лицо:
+                                            <?= $dataMfo['mfo']['info']['entity'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['info']['entity'] ?>
@@ -194,47 +196,48 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                 </div>
                             </div>
                             <div class="mfo-about__logos">
+                                <h2 class="mfo-about-title info-subtitle" style="padding-bottom: 20px;">Членство в профессиональных объединениях:</h2>
                                 <?php if($data['info']['amfok']) :  ?>
                                 <noindex>
-                                    <a href="https://<?= $data['info']['amfok'] ?>" class="mfo-about__logos-link" rel="nofollow" target="_blank">
+                                    <a href="<?= $data['info']['amfok'] ?>" class="mfo-about__logos-link" rel="nofollow" target="_blank">
                                         <noscript>
                                             <img src="/img/mfo/logo_amfok.png" alt="Halyk Bank">
                                         </noscript>
-                                        <img class="lazyloaded" src="/img/mfo/logo_amfok.png" data-src="/img/mfo/logo_amfok.png" alt="Amfok">
+                                        <img class="lazyloaded" src="/img/mfo/logo_amfok.png" data-src="/img/mfo/logo_amfok.png" alt="Ассоциация микрофинансовых организаций Казахстана">
                                     </a>
                                 </noindex>
                                 <?php endif; ?>
                                 <?php if($data['info']['fintech']) :  ?>
                                 <noindex>
-                                    <a href="https://<?= $data['info']['fintech'] ?>" class="mfo-about__logos-link" rel="nofollow" target="_blank">
+                                    <a href="<?= $data['info']['fintech'] ?>" class="mfo-about__logos-link" rel="nofollow" target="_blank">
                                         <noscript>
                                             <img src="/img/mfo/logo_kazfin.png" alt="Halyk Bank">
                                         </noscript>
-                                        <img class="lazyloaded" src="/img/mfo/logo_kazfin.png" data-src="/img/mfo/logo_kazfin.png" alt="Kaz Fintech">
+                                        <img class="lazyloaded" src="/img/mfo/logo_kazfin.png" data-src="/img/mfo/logo_kazfin.png" alt="Объединение юридических лиц «Казахстанская Ассоциация ФинТех»">
                                     </a>
                                 </noindex>
                                 <?php endif; ?>
                             </div>
                         </div>
                         <div class="mfo-license">
-                            <h2 class="mfo-about-title info-subtitle">Лицензия:</h2>
+                            <h2 class="mfo-about-title info-subtitle"><?= $dataTag['license'] ?></h2>
                             <div class="mfo-license__block">
                                 <div class="mfo-license__col">
                                     <?php if($data['license']['license_arrfr']) :  ?>
                                     <div class="mfo-license__text">
-                                        <div class="mfo-license__col-left">Лицензия АРРФР на осуществление микрофинансовой деятельности №:</div>
+                                        <div class="mfo-license__col-left"><?= $dataMfo['mfo']['license']['license_arrfr'] ?></div>
                                         <div class="mfo-license__col-right"><?= $data['license']['license_arrfr'] ?></div>
                                     </div>
                                     <?php endif; ?>
                                     <?php if($data['license']['issue_date']) :  ?>
                                     <div class="mfo-license__text">
-                                        <div class="mfo-license__col-left">Дата выдачи лицензии:</div>
+                                        <div class="mfo-license__col-left"><?= $dataMfo['mfo']['license']['issue_date'] ?></div>
                                         <div class="mfo-license__col-right"><?= $data['license']['issue_date'] ?></div>
                                     </div>
                                     <?php endif; ?>
                                     <?php if($data['license']['date_number_license']) :  ?>
                                     <div class="mfo-license__text">
-                                        <div class="mfo-license__col-left">Дата и номер решения уполномоченного органа о выдаче лицензии:</div>
+                                        <div class="mfo-license__col-left"><?= $dataMfo['mfo']['license']['date_number_license'] ?></div>
                                         <div class="mfo-license__col-right"><?= $data['license']['date_number_license'] ?></div>
                                     </div>
                                     <?php endif; ?>
@@ -248,13 +251,13 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                         </div>
                         <?php if($data['financial_report']['report']) : ?>
                         <div class="mfo-report">
-                            <h2 class="mfo-about-title info-subtitle">Финансовая отчетность:</h2>
+                            <h2 class="mfo-about-title info-subtitle"><?= $dataTag['fin'] ?></h2>
                             <div class="mfo-report__block">
                                 <div class="mfo-report__col">
                                     <a href="https://<?= $data['financial_report']['report'] ?>" class="mfo-report__link" target="_blank" download>
                                         <img class="lazyloaded" src="/img/mfo/pdf.png" data-src="/img/mfo/pdf.png" alt="PDF-файл">
                                     </a>
-                                    <span class="mfo-report__year"><?= $data['financial_report']['year'] ?></span>
+                                    <span class="mfo-report__year">Финансовый отчет за <?= $data['financial_report']['year'] ?>г <?= $data['info']['entity'] ?></span>
                                 </div>
                             </div>
                         </div>
@@ -265,7 +268,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                 <div class="mfo-signs__image">
                                     <img class="lazyloaded" src="/img/svg-icons/signs/icon1.svg" data-src="/img/svg-icons/signs/icon1.svg" alt="Кредиты физическим лицам">
                                 </div>
-                                <div class="mfo-signs__text">Кредиты физическим лицам</div>
+                                <div class="mfo-signs__text"><?= $dataMfo['mfo']['features']['credit_individuals'] ?></div>
                             </div>
                             <?php endif; ?>
                             <?php if($data['features']['credit_legal'] == "+") : ?>
@@ -273,7 +276,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                 <div class="mfo-signs__image">
                                     <img class="lazyloaded" src="/img/svg-icons/signs/icon2.svg" data-src="/img/svg-icons/signs/icon2.svg" alt="Кредиты юридическим лицам">
                                 </div>
-                                <div class="mfo-signs__text">Кредиты юридическим лицам</div>
+                                <div class="mfo-signs__text"><?= $dataMfo['mfo']['features']['credit_legal'] ?></div>
                             </div>
                             <?php endif; ?>
                             <?php if($data['features']['ip'] == "+") : ?>
@@ -281,7 +284,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                 <div class="mfo-signs__image">
                                     <img class="lazyloaded" src="/img/svg-icons/signs/icon3.svg" data-src="/img/svg-icons/signs/icon3.svg" alt="Кредит для ИП">
                                 </div>
-                                <div class="mfo-signs__text">Кредит для ИП</div>
+                                <div class="mfo-signs__text"><?= $dataMfo['mfo']['features']['ip'] ?></div>
                             </div>
                             <?php endif; ?>
                             <?php if($data['features']['consumer'] == "+") : ?>
@@ -289,7 +292,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                 <div class="mfo-signs__image">
                                     <img class="lazyloaded" src="/img/svg-icons/signs/icon4.svg" data-src="/img/svg-icons/signs/icon4.svg" alt="Потребительские цели">
                                 </div>
-                                <div class="mfo-signs__text">Потребительские цели</div>
+                                <div class="mfo-signs__text"><?= $dataMfo['mfo']['features']['consumer'] ?></div>
                             </div>
                             <?php endif; ?>
                             <?php if($data['features']['fast_order'] == "+") : ?>
@@ -297,7 +300,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                 <div class="mfo-signs__image">
                                     <img class="lazyloaded" src="/img/svg-icons/signs/icon5.svg" data-src="/img/svg-icons/signs/icon5.svg" alt="Быстрый займ">
                                 </div>
-                                <div class="mfo-signs__text">Быстрый займ</div>
+                                <div class="mfo-signs__text"><?= $dataMfo['mfo']['features']['fast_order'] ?></div>
                             </div>
                             <?php endif; ?>
                             <?php if($data['features']['application_online'] == "+") : ?>
@@ -305,7 +308,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                 <div class="mfo-signs__image">
                                     <img class="lazyloaded" src="/img/svg-icons/signs/icon6.svg" data-src="/img/svg-icons/signs/icon6.svg" alt="Прием заявки онлайн">
                                 </div>
-                                <div class="mfo-signs__text">Прием заявки онлайн</div>
+                                <div class="mfo-signs__text"><?= $dataMfo['mfo']['features']['application_online'] ?></div>
                             </div>
                             <?php endif; ?>
                             <?php if($data['features']['money_online'] == "+") : ?>
@@ -313,7 +316,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                 <div class="mfo-signs__image">
                                     <img class="lazyloaded" src="/img/svg-icons/signs/icon7.svg" data-src="/img/svg-icons/signs/icon7.svg" alt="Получение денег онлайн">
                                 </div>
-                                <div class="mfo-signs__text">Получение денег онлайн</div>
+                                <div class="mfo-signs__text"><?= $dataMfo['mfo']['features']['money_online'] ?></div>
                             </div>
                             <?php endif; ?>
                             <?php if($data['features']['without_collateral'] == "+") : ?>
@@ -321,7 +324,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                 <div class="mfo-signs__image">
                                     <img class="lazyloaded" src="/img/svg-icons/signs/icon8.svg" data-src="/img/svg-icons/signs/icon8.svg" alt="Без залога">
                                 </div>
-                                <div class="mfo-signs__text">Без залога</div>
+                                <div class="mfo-signs__text"><?= $dataMfo['mfo']['features']['without_collateral'] ?></div>
                             </div>
                             <?php endif; ?>
                             <?php if($data['features']['car_deposit'] == "+") : ?>
@@ -329,7 +332,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                 <div class="mfo-signs__image">
                                     <img class="lazyloaded" src="/img/svg-icons/signs/icon9.svg" data-src="/img/svg-icons/signs/icon9.svg" alt="Залог авто">
                                 </div>
-                                <div class="mfo-signs__text">Залог авто</div>
+                                <div class="mfo-signs__text"><?= $dataMfo['mfo']['features']['car_deposit'] ?></div>
                             </div>
                             <?php endif; ?>
                             <?php if($data['features']['real_estate'] == "+") : ?>
@@ -337,7 +340,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                 <div class="mfo-signs__image">
                                     <img class="lazyloaded" src="/img/svg-icons/signs/icon10.svg" data-src="/img/svg-icons/signs/icon10.svg" alt="Залог недвижимости">
                                 </div>
-                                <div class="mfo-signs__text">Залог недвижимости</div>
+                                <div class="mfo-signs__text"><?= $dataMfo['mfo']['features']['real_estate'] ?></div>
                             </div>
                             <?php endif; ?>
                             <?php if($data['features']['other'] == "+") : ?>
@@ -345,7 +348,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                 <div class="mfo-signs__image">
                                     <img class="lazyloaded" src="/img/svg-icons/signs/icon11.svg" data-src="/img/svg-icons/signs/icon11.svg" alt="Другие виды залога (земля, скот, техника, оборудование, гарантии третих лиц)">
                                 </div>
-                                <div class="mfo-signs__text">Другие виды залога (земля, скот, техника, оборудование, гарантии третих лиц)</div>
+                                <div class="mfo-signs__text"><?= $dataMfo['mfo']['features']['other'] ?></div>
                             </div>
                             <?php endif; ?>
                             <?php if($data['features']['microloan'] == "+") : ?>
@@ -353,7 +356,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                 <div class="mfo-signs__image">
                                     <img class="lazyloaded" src="/img/svg-icons/signs/icon12.svg" data-src="/img/svg-icons/signs/icon12.svg" alt="Поручительство">
                                 </div>
-                                <div class="mfo-signs__text">Поручительство</div>
+                                <div class="mfo-signs__text"><?= $dataMfo['mfo']['features']['microloan'] ?></div>
                             </div>
                             <?php endif; ?>
                             <?php if($data['features']['entrepreneurial'] == "+") : ?>
@@ -361,7 +364,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                 <div class="mfo-signs__image">
                                     <img class="lazyloaded" src="/img/svg-icons/signs/icon13.svg" data-src="/img/svg-icons/signs/icon13.svg" alt="Предпринимательские цели /микрокредит для бизнеса">
                                 </div>
-                                <div class="mfo-signs__text">Предпринимательские цели /микрокредит для бизнеса</div>
+                                <div class="mfo-signs__text"><?= $dataMfo['mfo']['features']['entrepreneurial'] ?></div>
                             </div>
                             <?php endif; ?>
                             <?php if($data['features']['agricultural_purposes'] == "+") : ?>
@@ -369,7 +372,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                 <div class="mfo-signs__image">
                                     <img class="lazyloaded" src="/img/svg-icons/signs/icon14.svg" data-src="/img/svg-icons/signs/icon14.svg" alt="Сельскохозяйственные цели">
                                 </div>
-                                <div class="mfo-signs__text">Сельскохозяйственные цели</div>
+                                <div class="mfo-signs__text"><?= $dataMfo['mfo']['features']['agricultural_purposes'] ?></div>
                             </div>
                             <?php endif; ?>
                             <?php if($data['features']['damu_micro'] == "+") : ?>
@@ -377,7 +380,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                 <div class="mfo-signs__image">
                                     <img class="lazyloaded" src="/img/svg-icons/signs/icon15.svg" data-src="/img/svg-icons/signs/icon15.svg" alt="Микрокредит по программе Даму-микро">
                                 </div>
-                                <div class="mfo-signs__text">Микрокредит по программе Даму-микро</div>
+                                <div class="mfo-signs__text"><?= $dataMfo['mfo']['features']['damu_micro'] ?></div>
                             </div>
                             <?php endif; ?>
                             <?php if($data['features']['microcredit_business'] == "+") : ?>
@@ -385,7 +388,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                 <div class="mfo-signs__image">
                                     <img class="lazyloaded" src="/img/svg-icons/signs/icon16.svg" data-src="/img/svg-icons/signs/icon16.svg" alt="Кредитнаая линия для бизнеса">
                                 </div>
-                                <div class="mfo-signs__text">Кредитнаая линия для бизнеса</div>
+                                <div class="mfo-signs__text"><?= $dataMfo['mfo']['features']['microcredit_business'] ?></div>
                             </div>
                             <?php endif; ?>
                             <?php if($data['features']['unsecured'] == "+") : ?>
@@ -393,7 +396,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                 <div class="mfo-signs__image">
                                     <img class="lazyloaded" src="/img/svg-icons/signs/icon17.svg" data-src="/img/svg-icons/signs/icon17.svg" alt="Беззалоговое кредитование, основанное на солидарной ответственности членов кредитной группы">
                                 </div>
-                                <div class="mfo-signs__text">Беззалоговое кредитование, основанное на солидарной ответственности членов кредитной группы</div>
+                                <div class="mfo-signs__text"><?= $dataMfo['mfo']['features']['unsecured'] ?></div>
                             </div>
                             <?php endif; ?>
                             <?php if($data['features']['pensioners'] == "+") : ?>
@@ -401,18 +404,18 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                 <div class="mfo-signs__image">
                                     <img class="lazyloaded" src="/img/svg-icons/signs/icon18.svg" data-src="/img/svg-icons/signs/icon18.svg" alt="Займ для пенсионеров (пенсионное удостовернеие + выписка с карточного счета)">
                                 </div>
-                                <div class="mfo-signs__text">Займ для пенсионеров (пенсионное удостовернеие + выписка с карточного счета)</div>
+                                <div class="mfo-signs__text"><?= $dataMfo['mfo']['features']['pensioners'] ?></div>
                             </div>
                             <?php endif; ?>
                         </div>
                         <div class="mfo-about">
-                            <h2 class="mfo-about-title info-subtitle">Условия микрокредитования:</h2>
+                            <h2 class="mfo-about-title info-subtitle"><?= $dataTag['uslovia_credit'] ?></h2>
                             <div class="mfo-about__table">
                                 <div class="mfo-about__columns">
                                     <?php if($data['conditions']['min_amount']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Минимальная сумма микрокредита, тенге:
+                                            <?= $dataMfo['mfo']['conditions']['min_amount'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['conditions']['min_amount'] ?>
@@ -422,7 +425,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['conditions']['max_amount']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Максимальная сумма микрокредита, тенге:
+                                            <?= $dataMfo['mfo']['conditions']['max_amount'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['conditions']['max_amount'] ?>
@@ -432,7 +435,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['conditions']['min_term']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Минимальный срок предоставления микрокредита:
+                                            <?= $dataMfo['mfo']['conditions']['min_term'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['conditions']['min_term'] ?>
@@ -442,7 +445,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['conditions']['max_term']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Максимальный срок предоставления микрокредита, дней:
+                                            <?= $dataMfo['mfo']['conditions']['max_term'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['conditions']['max_term'] ?>
@@ -452,7 +455,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['conditions']['max_overpayment']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Максимальная переплата, %:
+                                            <?= $dataMfo['mfo']['conditions']['max_overpayment'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['conditions']['max_overpayment'] ?>
@@ -462,7 +465,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['conditions']['amount_first_microcredit']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Сумма первого микрокредит, max, тнг:
+                                            <?= $dataMfo['mfo']['conditions']['amount_first_microcredit'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['conditions']['amount_first_microcredit'] ?>
@@ -472,7 +475,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['conditions']['stack_min_first_microcredit']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Ставка на первый микрокредит, min, % в день:
+                                            <?= $dataMfo['mfo']['conditions']['stack_min_first_microcredit'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['conditions']['stack_min_first_microcredit'] ?>
@@ -482,7 +485,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['conditions']['stack_max_first_microcredit']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Ставка на первый микрокредит, max % в день:
+                                            <?= $dataMfo['mfo']['conditions']['stack_max_first_microcredit'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['conditions']['stack_max_first_microcredit'] ?>
@@ -492,7 +495,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['conditions']['stack_min_repeat_microcredit']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Ставка на повторный микрокредит, min, % в день:
+                                            <?= $dataMfo['mfo']['conditions']['stack_min_repeat_microcredit'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['conditions']['stack_min_repeat_microcredit'] ?>
@@ -502,7 +505,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['conditions']['stack_max_repeat_microcredit']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Ставка на повторный микрокредит, max, % в день:
+                                            <?= $dataMfo['mfo']['conditions']['stack_max_repeat_microcredit'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['conditions']['stack_max_repeat_microcredit'] ?>
@@ -512,7 +515,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['conditions']['gesv_min']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            ГЭСВ, минимум, %:
+                                            <?= $dataMfo['mfo']['conditions']['gesv_min'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['conditions']['gesv_min'] ?>
@@ -522,7 +525,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['conditions']['gesv_max']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            ГЭСВ, максимум, %:
+                                            <?= $dataMfo['mfo']['conditions']['gesv_max'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['conditions']['gesv_max'] ?>
@@ -532,7 +535,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['conditions']['term_extension_service']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Услуга продления срока микрокредита:
+                                            <?= $dataMfo['mfo']['conditions']['term_extension_service'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['conditions']['term_extension_service'] ?>
@@ -542,7 +545,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['conditions']['term_extension_service']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Минимальный возраст, полных лет:
+                                            <?= $dataMfo['mfo']['conditions']['min_age'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['conditions']['min_age'] ?>
@@ -552,7 +555,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['conditions']['max_age']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Максимальный возраст, полных лет:
+                                            <?= $dataMfo['mfo']['conditions']['max_age'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['conditions']['max_age'] ?>
@@ -562,310 +565,310 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                 </div>
                             </div>
                             <div class="mfo-about__feature">
-                                <h2 class="content-text-title info-subtitle">Особенность:</h2>
+                                <h2 class="content-text-title info-subtitle"><?= $dataTag['osobenost'] ?></h2>
                                 <div class="mfo-about__feature-images">
                                     <?php if($data['singularity']['new_customers']) : ?>
                                     <div class="mfo-about__feature-images-box">
                                         <div class="mfo-about__feature-image">
-                                            <img src="/img/svg-icons/features/icon1.svg" alt="Новым клиентам микрокредит по ставке 0%">
+                                            <img src="/img/svg-icons/features/icon1.svg" alt="<?= $dataMfo['mfo']['singularity']['new_customers'] ?>">
                                         </div>
-                                        <p class="mfo-about__feature-text">Новым клиентам микрокредит по ставке 0%</p>
+                                        <p class="mfo-about__feature-text"><?= $dataMfo['mfo']['singularity']['new_customers'] ?></p>
                                     </div>
                                     <?php endif; ?>
                                     <?php if($data['singularity']['quick_online_application']) : ?>
                                     <div class="mfo-about__feature-images-box">
                                         <div class="mfo-about__feature-image">
-                                            <img src="/img/svg-icons/features/icon2.svg" alt="Быстрое оформление заявки онлайн без звонка оператора">
+                                            <img src="/img/svg-icons/features/icon2.svg" alt="<?= $dataMfo['mfo']['singularity']['quick_online_application'] ?>">
                                         </div>
-                                        <p class="mfo-about__feature-text">Быстрое оформление заявки онлайн без звонка оператора</p>
+                                        <p class="mfo-about__feature-text"><?= $dataMfo['mfo']['singularity']['quick_online_application'] ?></p>
                                     </div>
                                     <?php endif; ?>
                                     <?php if($data['singularity']['round_the_clock']) : ?>
                                     <div class="mfo-about__feature-images-box">
                                         <div class="mfo-about__feature-image">
-                                            <img src="/img/svg-icons/features/icon3.svg" alt="Круглосуточная 7 24 работа компании">
+                                            <img src="/img/svg-icons/features/icon3.svg" alt="<?= $dataMfo['mfo']['singularity']['round_the_clock'] ?>">
                                         </div>
-                                        <p class="mfo-about__feature-text">Круглосуточная 7 24 работа компании</p>
+                                        <p class="mfo-about__feature-text"><?= $dataMfo['mfo']['singularity']['round_the_clock'] ?></p>
                                     </div>
                                     <?php endif; ?>
                                     <?php if($data['singularity']['full_repayment']) : ?>
                                     <div class="mfo-about__feature-images-box">
                                         <div class="mfo-about__feature-image">
-                                            <img src="/img/svg-icons/features/icon4.svg" alt="Полное досрочное погашение микрокредита">
+                                            <img src="/img/svg-icons/features/icon4.svg" alt="<?= $dataMfo['mfo']['singularity']['full_repayment'] ?>">
                                         </div>
-                                        <p class="mfo-about__feature-text">Полное досрочное погашение микрокредита</p>
+                                        <p class="mfo-about__feature-text"><?= $dataMfo['mfo']['singularity']['full_repayment'] ?></p>
                                     </div>
                                     <?php endif; ?>
                                     <?php if($data['singularity']['partial_repayment']) : ?>
                                     <div class="mfo-about__feature-images-box">
                                         <div class="mfo-about__feature-image">
-                                            <img src="/img/svg-icons/features/icon5.svg" alt="Частичное досрочное погашение микрокредита">
+                                            <img src="/img/svg-icons/features/icon5.svg" alt="<?= $dataMfo['mfo']['singularity']['partial_repayment'] ?>">
                                         </div>
-                                        <p class="mfo-about__feature-text">Частичное досрочное погашение микрокредита</p>
+                                        <p class="mfo-about__feature-text"><?= $dataMfo['mfo']['singularity']['partial_repayment'] ?></p>
                                     </div>
                                     <?php endif; ?>
                                     <?php if($data['singularity']['license_arrfr']) : ?>
                                     <div class="mfo-about__feature-images-box">
                                         <div class="mfo-about__feature-image">
-                                            <img src="/img/svg-icons/features/icon6.svg" alt="Лицензированная АРРФР микрофинансовая компания">
+                                            <img src="/img/svg-icons/features/icon6.svg" alt="<?= $dataMfo['mfo']['singularity']['license_arrfr'] ?>">
                                         </div>
-                                        <p class="mfo-about__feature-text">Лицензированная АРРФР микрофинансовая компания</p>
+                                        <p class="mfo-about__feature-text"><?= $dataMfo['mfo']['singularity']['license_arrfr'] ?></p>
                                     </div>
                                     <?php endif; ?>
                                     <?php if($data['singularity']['identity_card']) : ?>
                                     <div class="mfo-about__feature-images-box">
                                         <div class="mfo-about__feature-image">
-                                            <img src="/img/svg-icons/features/icon7.svg" alt="Для оформления заявки достаточно удостоврения личности">
+                                            <img src="/img/svg-icons/features/icon7.svg" alt="<?= $dataMfo['mfo']['singularity']['identity_card'] ?>">
                                         </div>
-                                        <p class="mfo-about__feature-text">Для оформления заявки достаточно удостоврения личности</p>
+                                        <p class="mfo-about__feature-text"><?= $dataMfo['mfo']['singularity']['identity_card'] ?></p>
                                     </div>
                                     <?php endif; ?>
                                     <?php if($data['singularity']['microcredit_without_collateral']) : ?>
                                     <div class="mfo-about__feature-images-box">
                                         <div class="mfo-about__feature-image">
-                                            <img src="/img/svg-icons/features/icon8.svg" alt="Микрокредит без залога">
+                                            <img src="/img/svg-icons/features/icon8.svg" alt="<?= $dataMfo['mfo']['singularity']['microcredit_without_collateral'] ?>">
                                         </div>
-                                        <p class="mfo-about__feature-text">Микрокредит без залога</p>
+                                        <p class="mfo-about__feature-text"><?= $dataMfo['mfo']['singularity']['microcredit_without_collateral'] ?></p>
                                     </div>
                                     <?php endif; ?>
                                     <?php if($data['singularity']['microcredit_without_guarantee']) : ?>
                                     <div class="mfo-about__feature-images-box">
                                         <div class="mfo-about__feature-image">
-                                            <img src="/img/svg-icons/features/icon9.svg" alt="Микрокредит без поручительства">
+                                            <img src="/img/svg-icons/features/icon9.svg" alt="<?= $dataMfo['mfo']['singularity']['microcredit_without_guarantee'] ?>">
                                         </div>
-                                        <p class="mfo-about__feature-text">Микрокредит без поручительства</p>
+                                        <p class="mfo-about__feature-text"><?= $dataMfo['mfo']['singularity']['microcredit_without_guarantee'] ?></p>
                                     </div>
                                     <?php endif; ?>
                                     <?php if($data['singularity']['written']) : ?>
                                     <div class="mfo-about__feature-images-box">
                                         <div class="mfo-about__feature-image">
-                                            <img src="/img/svg-icons/features/icon10.svg" alt="Возможен письменный отказ от обработки персональных данных">
+                                            <img src="/img/svg-icons/features/icon10.svg" alt="<?= $dataMfo['mfo']['singularity']['written'] ?>">
                                         </div>
-                                        <p class="mfo-about__feature-text">Возможен письменный отказ от обработки персональных данных</p>
+                                        <p class="mfo-about__feature-text"><?= $dataMfo['mfo']['singularity']['written'] ?></p>
                                     </div>
                                     <?php endif; ?>
                                     <?php if($data['singularity']['territory_kz']) : ?>
                                     <div class="mfo-about__feature-images-box">
                                         <div class="mfo-about__feature-image">
-                                            <img src="/img/svg-icons/features/icon11.svg" alt="Компания работает на всей территории Республики Казахстана">
+                                            <img src="/img/svg-icons/features/icon11.svg" alt="<?= $dataMfo['mfo']['singularity']['territory_kz'] ?>">
                                         </div>
-                                        <p class="mfo-about__feature-text">Компания работает на всей территории Республики Казахстана</p>
+                                        <p class="mfo-about__feature-text"><?= $dataMfo['mfo']['singularity']['territory_kz'] ?></p>
                                     </div>
                                     <?php endif; ?>
                                     <?php if($data['singularity']['loyal']) : ?>
                                     <div class="mfo-about__feature-images-box">
                                         <div class="mfo-about__feature-image">
-                                            <img src="/img/svg-icons/features/icon12.svg" alt="Лояльная оценка клиентов с плохой кредитной  историей">
+                                            <img src="/img/svg-icons/features/icon12.svg" alt="<?= $dataMfo['mfo']['singularity']['loyal'] ?>">
                                         </div>
-                                        <p class="mfo-about__feature-text">Лояльная оценка клиентов с плохой кредитной  историей</p>
+                                        <p class="mfo-about__feature-text"><?= $dataMfo['mfo']['singularity']['loyal'] ?></p>
                                     </div>
                                     <?php endif; ?>
                                     <?php if($data['singularity']['biometric']) : ?>
                                     <div class="mfo-about__feature-images-box">
                                         <div class="mfo-about__feature-image">
-                                            <img src="/img/svg-icons/features/icon13.svg" alt="Компания использует биометрические данные">
+                                            <img src="/img/svg-icons/features/icon13.svg" alt="<?= $dataMfo['mfo']['singularity']['biometric'] ?>">
                                         </div>
-                                        <p class="mfo-about__feature-text">Компания использует биометрические данные</p>
+                                        <p class="mfo-about__feature-text"><?= $dataMfo['mfo']['singularity']['biometric'] ?></p>
                                     </div>
                                     <?php endif; ?>
                                     <?php if($data['singularity']['calculates']) : ?>
                                     <div class="mfo-about__feature-images-box">
                                         <div class="mfo-about__feature-image">
-                                            <img src="/img/svg-icons/features/icon14.svg" alt="Компания производит расчет коэффициента долговой нагрузки заемщика">
+                                            <img src="/img/svg-icons/features/icon14.svg" alt="<?= $dataMfo['mfo']['singularity']['calculates'] ?>">
                                         </div>
-                                        <p class="mfo-about__feature-text">Компания производит расчет коэффициента долговой нагрузки заемщика</p>
+                                        <p class="mfo-about__feature-text"><?= $dataMfo['mfo']['singularity']['calculates'] ?></p>
                                     </div>
                                     <?php endif; ?>
                                 </div>
                             </div>
                         </div>
                         <div class="content-text blocks-content-text">
-                            <h2 class="content-text-title info-subtitle">Способы получения:</h2>
+                            <h2 class="content-text-title info-subtitle"><?= $dataTag['sposob_poluch'] ?></h2>
                             <div class="content-text-items">
                                 <?php if($data['sposob_get']['bank_card']) : ?>
                                 <div class="content-text-item">
                                     <div class="content-text-item-img">
-                                        <img src="/img/svg-icons/card1.svg" data-src="/img/svg-icons/card1.svg" alt="Банковская карта">
+                                        <img src="/img/svg-icons/card1.svg" data-src="/img/svg-icons/card1.svg" alt="<?= $dataMfo['mfo']['sposob_get']['bank_card'] ?>">
                                     </div>
-                                    <span>Банковская карта</span>
+                                    <span><?= $dataMfo['mfo']['sposob_get']['bank_card'] ?></span>
                                 </div>
                                 <?php endif; ?>
                                 <?php if($data['sposob_get']['iban']) : ?>
                                 <div class="content-text-item">
                                     <div class="content-text-item-img">
-                                        <img src="/img/svg-icons/card2.svg" data-src="/img/svg-icons/card2.svg" alt="Банковский счет (по IBAN)">
+                                        <img src="/img/svg-icons/card2.svg" data-src="/img/svg-icons/card2.svg" alt="<?= $dataMfo['mfo']['sposob_get']['iban'] ?>">
                                     </div>
-                                    <span>Банковский счет (по IBAN)</span>
+                                    <span><?= $dataMfo['mfo']['sposob_get']['iban'] ?></span>
                                 </div>
                                 <?php endif; ?>
                                 <?php if($data['sposob_get']['exceptions']) : ?>
                                 <div class="content-text-item">
                                     <div class="content-text-item-img">
-                                        <img src="/img/svg-icons/exceptions.svg" data-src="/img/svg-icons/exceptions.svg" alt="Исключения">
+                                        <img src="/img/svg-icons/exceptions.svg" data-src="/img/svg-icons/exceptions.svg" alt="<?= $dataMfo['mfo']['sposob_get']['exceptions'] ?>">
                                     </div>
-                                    <span>Исключения</span>
+                                    <span><?= $dataMfo['mfo']['sposob_get']['exceptions'] ?></span>
                                 </div>
                                 <?php endif; ?>
                                 <?php if($data['sposob_get']['kazpost']) : ?>
                                 <div class="content-text-item">
                                     <div class="content-text-item-img w100">
-                                        <img src="/img/svg-icons/kazpost.svg" data-src="/img/svg-icons/kazpost.svg" alt="На счет Казпочты">
+                                        <img src="/img/svg-icons/kazpost.svg" data-src="/img/svg-icons/kazpost.svg" alt="<?= $dataMfo['mfo']['sposob_get']['kazpost'] ?>">
                                     </div>
-                                    <span>На счет Казпочты</span>
+                                    <span><?= $dataMfo['mfo']['sposob_get']['kazpost'] ?></span>
                                 </div>
                                 <?php endif; ?>
                                 <?php if($data['sposob_get']['cash']) : ?>
                                 <div class="content-text-item">
                                     <div class="content-text-item-img">
-                                        <img src="/img/svg-icons/cash.svg" data-src="/img/svg-icons/cash.svg" alt="Наличные">
+                                        <img src="/img/svg-icons/cash.svg" data-src="/img/svg-icons/cash.svg" alt="<?= $dataMfo['mfo']['sposob_get']['cash'] ?>">
                                     </div>
-                                    <span>Наличные</span>
+                                    <span><?= $dataMfo['mfo']['sposob_get']['cash'] ?></span>
                                 </div>
                                 <?php endif; ?>
                             </div>
                         </div>
                         <div class="content-text blocks-content-text">
-                            <h2 class="content-text-title info-subtitle">Способы погашения:</h2>
+                            <h2 class="content-text-title info-subtitle"><?= $dataTag['sposob_pogash'] ?></h2>
                             <div class="content-text-items">
                                 <?php if($data['sposob_repayment']['online_bank_card']) : ?>
                                 <div class="content-text-item">
                                     <div class="content-text-item-img">
-                                        <img src="/img/svg-icons/repayment/pay.svg" data-src="/img/svg-icons/repayment/pay.svg" alt="Оплата банковской картой в личном кабинете">
+                                        <img src="/img/svg-icons/repayment/pay.svg" data-src="/img/svg-icons/repayment/pay.svg" alt="<?= $dataMfo['mfo']['sposob_repayment']['online_bank_card'] ?>">
                                     </div>
-                                    <span>Банковской картой в личном кабинете</span>
+                                    <span><?= $dataMfo['mfo']['sposob_repayment']['online_bank_card'] ?></span>
                                 </div>
                                 <?php endif; ?>
                                 <?php if($data['sposob_repayment']['bank_transfer']) : ?>
                                 <div class="content-text-item">
                                     <div class="content-text-item-img">
-                                        <img src="/img/svg-icons/repayment/transfer.svg" data-src="/img/svg-icons/repayment/transfer.svg" alt="Банковский перевод">
+                                        <img src="/img/svg-icons/repayment/transfer.svg" data-src="/img/svg-icons/repayment/transfer.svg" alt="<?= $dataMfo['mfo']['sposob_repayment']['bank_transfer'] ?>">
                                     </div>
-                                    <span>Банковский перевод</span>
+                                    <span><?= $dataMfo['mfo']['sposob_repayment']['bank_transfer'] ?></span>
                                 </div>
                                 <?php endif; ?>
                                 <?php if($data['sposob_repayment']['kazpost']) : ?>
                                 <div class="content-text-item">
                                     <div class="content-text-item-img w100">
-                                        <img src="/img/svg-icons/repayment/kazpochta.svg" data-src="/img/svg-icons/repayment/kazpochta.svg" alt="Оплата по реквизитам в отделении Казпочты">
+                                        <img src="/img/svg-icons/repayment/kazpochta.svg" data-src="/img/svg-icons/repayment/kazpochta.svg" alt="<?= $dataMfo['mfo']['sposob_repayment']['kazpost'] ?>">
                                     </div>
-                                    <span>По реквизитам в отделении Казпочты</span>
+                                    <span><?= $dataMfo['mfo']['sposob_repayment']['kazpost'] ?></span>
                                 </div>
                                 <?php endif; ?>
                                 <?php if($data['sposob_repayment']['qiwi_terminals']) : ?>
                                 <div class="content-text-item">
                                     <div class="content-text-item-img w100">
-                                        <img src="/img/svg-icons/repayment/qiwi-t.svg" data-src="/img/svg-icons/repayment/qiwi-t.svg" alt="QIWI терминалы">
+                                        <img src="/img/svg-icons/repayment/qiwi-t.svg" data-src="/img/svg-icons/repayment/qiwi-t.svg" alt="<?= $dataMfo['mfo']['sposob_repayment']['qiwi_terminals'] ?>">
                                     </div>
-                                    <span>QIWI <br> терминалы</span>
+                                    <span><?= $dataMfo['mfo']['sposob_repayment']['qiwi_terminals'] ?></span>
                                 </div>
                                 <?php endif; ?>
                                 <?php if($data['sposob_repayment']['kassa24_terminals']) : ?>
                                 <div class="content-text-item">
                                     <div class="content-text-item-img">
-                                        <img src="/img/svg-icons/repayment/kassa24.png" data-src="/img/svg-icons/repayment/kassa24.png" alt="Kassa24 терминалы">
+                                        <img src="/img/svg-icons/repayment/kassa24.png" data-src="/img/svg-icons/repayment/kassa24.png" alt="<?= $dataMfo['mfo']['sposob_repayment']['kassa24_terminals'] ?>">
                                     </div>
-                                    <span>Kassa24 терминалы</span>
+                                    <span><?= $dataMfo['mfo']['sposob_repayment']['kassa24_terminals'] ?></span>
                                 </div>
                                 <?php endif; ?>
                                 <?php if($data['sposob_repayment']['qiwi_wallet']) : ?>
                                 <div class="content-text-item">
                                     <div class="content-text-item-img w100">
-                                        <img src="/img/svg-icons/repayment/qiwi-w.svg" data-src="/img/svg-icons/repayment/qiwi-w.svg" alt="QIWI-кошелек">
+                                        <img src="/img/svg-icons/repayment/qiwi-w.svg" data-src="/img/svg-icons/repayment/qiwi-w.svg" alt="<?= $dataMfo['mfo']['sposob_repayment']['qiwi_wallet'] ?>">
                                     </div>
-                                    <span>QIWI-кошелек</span>
+                                    <span><?= $dataMfo['mfo']['sposob_repayment']['qiwi_wallet'] ?></span>
                                 </div>
                                 <?php endif; ?>
                                 <?php if($data['sposob_repayment']['cyberplat']) : ?>
                                 <div class="content-text-item">
                                     <div class="content-text-item-img">
-                                        <img src="/img/svg-icons/repayment/cyberplat.png" data-src="/img/svg-icons/repayment/cyberplat.png" alt="Киберплат терминал">
+                                        <img src="/img/svg-icons/repayment/cyberplat.png" data-src="/img/svg-icons/repayment/cyberplat.png" alt="<?= $dataMfo['mfo']['sposob_repayment']['cyberplat'] ?>">
                                     </div>
-                                    <span>Киберплат терминал</span>
+                                    <span><?= $dataMfo['mfo']['sposob_repayment']['cyberplat'] ?></span>
                                 </div>
                                 <?php endif; ?>
                                 <?php if($data['sposob_repayment']['office']) : ?>
                                 <div class="content-text-item">
                                     <div class="content-text-item-img">
-                                        <img src="/img/svg-icons/repayment/in-office.svg" data-src="/img/svg-icons/repayment/in-office.svg" alt="В офисе отделении">
+                                        <img src="/img/svg-icons/repayment/in-office.svg" data-src="/img/svg-icons/repayment/in-office.svg" alt="<?= $dataMfo['mfo']['sposob_repayment']['office'] ?>">
                                     </div>
-                                    <span>В офисе отделении</span>
+                                    <span><?= $dataMfo['mfo']['sposob_repayment']['office'] ?></span>
                                 </div>
                                 <?php endif; ?>
                                 <?php if($data['sposob_repayment']['jysan']) : ?>
                                 <div class="content-text-item">
                                     <div class="content-text-item-img w100">
-                                        <img src="/img/svg-icons/repayment/heartland-bank.jpg" data-src="/img/svg-icons/repayment/heartland-bank.jpg" alt="В любом отделении АО «First Heartland Jýsan Bank»">
+                                        <img src="/img/svg-icons/repayment/heartland-bank.jpg" data-src="/img/svg-icons/repayment/heartland-bank.jpg" alt="<?= $dataMfo['mfo']['sposob_repayment']['jysan'] ?>">
                                     </div>
-                                    <span>В любом отделении АО «First Heartland Jýsan Bank»</span>
+                                    <span><?= $dataMfo['mfo']['sposob_repayment']['jysan'] ?></span>
                                 </div>
                                 <?php endif; ?>
                                 <?php if($data['sposob_repayment']['halyk_bank']) : ?>
                                 <div class="content-text-item">
                                     <div class="content-text-item-img w100">
-                                        <img src="/img/svg-icons/repayment/halyk-bank.svg" data-src="/img/svg-icons/repayment/halyk-bank.svg" alt="В отделении АО «Народный Банк Казахстана»">
+                                        <img src="/img/svg-icons/repayment/halyk-bank.svg" data-src="/img/svg-icons/repayment/halyk-bank.svg" alt="<?= $dataMfo['mfo']['sposob_repayment']['halyk_bank'] ?>">
                                     </div>
-                                    <span>В отделении АО «Народный Банк Казахстана»</span>
+                                    <span><?= $dataMfo['mfo']['sposob_repayment']['halyk_bank'] ?></span>
                                 </div>
                                 <?php endif; ?>
                                 <?php if($data['sposob_repayment']['kassa24_lk']) : ?>
                                 <div class="content-text-item">
                                     <div class="content-text-item-img">
-                                        <img src="/img/svg-icons/repayment/personal-cash.png" data-src="/img/svg-icons/repayment/personal-cash.png" alt="Личная касса (Kassa24)">
+                                        <img src="/img/svg-icons/repayment/personal-cash.png" data-src="/img/svg-icons/repayment/personal-cash.png" alt="<?= $dataMfo['mfo']['sposob_repayment']['kassa24_lk'] ?>">
                                     </div>
-                                    <span>Личная касса (Kassa24)</span>
+                                    <span><?= $dataMfo['mfo']['sposob_repayment']['kassa24_lk'] ?></span>
                                 </div>
                                 <?php endif; ?>
                                 <?php if($data['sposob_repayment']['homebank']) : ?>
                                 <div class="content-text-item">
                                     <div class="content-text-item-img">
-                                        <img src="/img/svg-icons/repayment/internet-banking.png" data-src="/img/svg-icons/repayment/internet-banking.png" alt="Интернет-банкинг Homebank">
+                                        <img src="/img/svg-icons/repayment/internet-banking.png" data-src="/img/svg-icons/repayment/internet-banking.png" alt="<?= $dataMfo['mfo']['sposob_repayment']['homebank'] ?>">
                                     </div>
-                                    <span>Интернет-банкинг Homebank</span>
+                                    <span><?= $dataMfo['mfo']['sposob_repayment']['homebank'] ?></span>
                                 </div>
                                 <?php endif; ?>
                                 <?php if($data['sposob_repayment']['qr_code']) : ?>
                                 <div class="content-text-item">
                                     <div class="content-text-item-img">
-                                        <img src="/img/svg-icons/repayment/qr-code.svg" data-src="/img/svg-icons/repayment/qr-code.svg" alt="С помощью QR-кода">
+                                        <img src="/img/svg-icons/repayment/qr-code.svg" data-src="/img/svg-icons/repayment/qr-code.svg" alt="<?= $dataMfo['mfo']['sposob_repayment']['qr_code'] ?>">
                                     </div>
-                                    <span>С помощью QR-кода</span>
+                                    <span><?= $dataMfo['mfo']['sposob_repayment']['qr_code'] ?></span>
                                 </div>
                                 <?php endif; ?>
                                 <?php if($data['sposob_repayment']['mobile_halyk_bank']) : ?>
                                 <div class="content-text-item">
                                     <div class="content-text-item-img">
-                                        <img src="/img/svg-icons/repayment/app-halyk-bank.png" data-src="/img/svg-icons/repayment/app-halyk-bank.png" alt="Мобильное приложение Halyk Bank">
+                                        <img src="/img/svg-icons/repayment/app-halyk-bank.png" data-src="/img/svg-icons/repayment/app-halyk-bank.png" alt="<?= $dataMfo['mfo']['sposob_repayment']['mobile_halyk_bank'] ?>">
                                     </div>
-                                    <span>Мобильное приложение Halyk Bank</span>
+                                    <span><?= $dataMfo['mfo']['sposob_repayment']['mobile_halyk_bank'] ?></span>
                                 </div>
                                 <?php endif; ?>
                                 <?php if($data['sposob_repayment']['plus24']) : ?>
                                 <div class="content-text-item">
                                     <div class="content-text-item-img">
-                                        <img src="/img/svg-icons/repayment/app-plus24.png" data-src="/img/svg-icons/repayment/app-plus24.png" alt="Мобильное приложение PLUS 24">
+                                        <img src="/img/svg-icons/repayment/app-plus24.png" data-src="/img/svg-icons/repayment/app-plus24.png" alt="<?= $dataMfo['mfo']['sposob_repayment']['plus24'] ?>">
                                     </div>
-                                    <span>Мобильное приложение PLUS 24</span>
+                                    <span><?= $dataMfo['mfo']['sposob_repayment']['plus24'] ?></span>
                                 </div>
                                 <?php endif; ?>
                                 <?php if($data['sposob_repayment']['money_market']) : ?>
                                 <div class="content-text-item">
                                     <div class="content-text-item-img">
-                                        <img src="/img/svg-icons/repayment/money-market.png" data-src="/img/svg-icons/repayment/money-market.png" alt="Терминал Деньги Маркет">
+                                        <img src="/img/svg-icons/repayment/money-market.png" data-src="/img/svg-icons/repayment/money-market.png" alt="<?= $dataMfo['mfo']['sposob_repayment']['money_market'] ?>">
                                     </div>
-                                    <span>Терминал Деньги Маркет</span>
+                                    <span><?= $dataMfo['mfo']['sposob_repayment']['money_market'] ?></span>
                                 </div>
                                 <?php endif; ?>
                             </div>
                         </div>
 
                         <div class="mfo-about">
-                            <h2 class="mfo-about-title info-subtitle">Реквизиты:</h2>
+                            <h2 class="mfo-about-title info-subtitle"><?= $dataTag['requisites'] ?></h2>
                             <div class="mfo-about__table">
                                 <div class="mfo-about__columns">
                                     <?php if($data['requisites']['bin']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            БИН:
+                                            <?= $dataMfo['mfo']['requisites']['bin'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['requisites']['bin'] ?>
@@ -875,7 +878,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['requisites']['full_legal_name_ru']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Полное юридическое наименование организации:
+                                            <?= $dataMfo['mfo']['requisites']['full_legal_name_ru'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['requisites']['full_legal_name_ru'] ?>
@@ -885,7 +888,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['requisites']['full_legal_name_kz']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Полное юридическое наименование организации на казахском языке:
+                                            <?= $dataMfo['mfo']['requisites']['full_legal_name_kz'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['requisites']['full_legal_name_kz'] ?>
@@ -895,7 +898,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['requisites']['full_legal_name_en']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Полное юридическое наименование организации на английском языке:
+                                            <?= $dataMfo['mfo']['requisites']['full_legal_name_en'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['requisites']['full_legal_name_en'] ?>
@@ -905,7 +908,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['requisites']['legal_address']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Юридический адрес:
+                                            <?= $dataMfo['mfo']['requisites']['legal_address'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['requisites']['legal_address'] ?>
@@ -915,7 +918,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['requisites']['index']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Индекс:
+                                            <?= $dataMfo['mfo']['requisites']['index'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['requisites']['index'] ?>
@@ -925,7 +928,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['requisites']['date_registration']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Дата регистрации:
+                                            <?= $dataMfo['mfo']['requisites']['date_registration'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['requisites']['date_registration'] ?>
@@ -935,7 +938,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['requisites']['kbe']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            КБЕ:
+                                            <?= $dataMfo['mfo']['requisites']['kbe'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['requisites']['kbe'] ?>
@@ -945,7 +948,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['requisites']['iik']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Счёт/ИИК:
+                                            <?= $dataMfo['mfo']['requisites']['iik'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['requisites']['iik'] ?>
@@ -955,7 +958,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['requisites']['bank']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Банк:
+                                            <?= $dataMfo['mfo']['requisites']['bank'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['requisites']['bank'] ?>
@@ -965,7 +968,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['requisites']['bik']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            БИК:
+                                            <?= $dataMfo['mfo']['requisites']['bik'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['requisites']['bik'] ?>
@@ -975,7 +978,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['requisites']['knp']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            КНП:
+                                            <?= $dataMfo['mfo']['requisites']['knp'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['requisites']['knp'] ?>
@@ -985,7 +988,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['requisites']['tax']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Налоговый орган:
+                                            <?= $dataMfo['mfo']['requisites']['tax'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['requisites']['tax'] ?>
@@ -995,7 +998,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['requisites']['rnn']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            РНН:
+                                            <?= $dataMfo['mfo']['requisites']['rnn'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['requisites']['rnn'] ?>
@@ -1005,7 +1008,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['requisites']['okpo']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            ОКПО:
+                                            <?= $dataMfo['mfo']['requisites']['okpo'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['requisites']['okpo'] ?>
@@ -1015,7 +1018,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['requisites']['kato']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            КАТО:
+                                            <?= $dataMfo['mfo']['requisites']['kato'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['requisites']['kato'] ?>
@@ -1025,7 +1028,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <?php if($data['requisites']['oked']) : ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            ОКЭД:
+                                            <?= $dataMfo['mfo']['requisites']['oked'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['requisites']['oked'] ?>
