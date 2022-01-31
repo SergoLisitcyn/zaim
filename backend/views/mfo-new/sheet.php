@@ -55,6 +55,7 @@ foreach ($response['values']  as $key => $value){
             if($mfoData->save()){
                 continue;
             }else{
+                echo 'tut1';
                 var_dump($mfoData->errors); die;
             }
         }
@@ -63,6 +64,7 @@ foreach ($response['values']  as $key => $value){
         if($modelMfoData->save()){
             continue;
         } else {
+            echo 'tut';
             var_dump($modelMfoData->errors); die;
         }
     }
@@ -79,9 +81,10 @@ foreach ($response['values']  as $key => $value){
         $dataTag['social'] = $value[119];
         if($mfoData){
             $mfoData->data_tag = serialize($dataTag);
-            if($mfoData->update()){
+            if($mfoData->save()){
                 continue;
-            } else{
+            } else {
+                echo 'tut2';
                 var_dump($mfoData->errors); die;
             }
         }
@@ -247,9 +250,10 @@ foreach ($response['values']  as $key => $value){
 //    echo '<pre>';    var_dump($dataMfo);die;
         if($mfoData){
             $mfoData->data_mfo = serialize($dataMfo);
-            if($mfoData->update()){
+            if($mfoData->save()){
                 continue;
             } else{
+                echo 'tut3';
                 var_dump($mfoData->errors); die;
             }
         }
