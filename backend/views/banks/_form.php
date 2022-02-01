@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use vova07\imperavi\Widget;
+use \yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Banks */
@@ -58,6 +60,27 @@ use yii\widgets\ActiveForm;
         ]
     ]);
     ?>
+
+
+    <?= $form->field($model, 'content')->widget(Widget::className(), [
+        'settings' => [
+            'lang' => 'ru',
+            'minHeight' => 300,
+            'formatting' => ['p', 'blockquote', 'h2', 'h1'],
+            'imageUpload' => Url::to(['/banks/save-redactor-img','sub'=>'content']),
+            'attributes' => [
+                [
+                    'attribute' => 'text',
+                    'format' => 'html'
+                ]
+            ],
+            'plugins' => [
+                'clips',
+                'fullscreen'
+            ]
+
+        ]
+    ])?>
     <?= $form->field($model, 'desc')->textarea(['rows' => 6]) ?>
     <?= $form->field($model, 'url')->textInput() ?>
     <?= $form->field($model, 'sort')->textInput() ?>

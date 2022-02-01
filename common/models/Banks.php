@@ -14,6 +14,7 @@ use yii\web\UploadedFile;
  * @property string|null $data
  * @property string|null $image
  * @property string|null $desc
+ * @property string|null $content
  * @property string|null $ustav
  * @property string $name
  * @property string $url
@@ -85,7 +86,8 @@ class Banks extends \yii\db\ActiveRecord
             [['data'], 'safe'],
             [['sort', 'status'], 'integer'],
             [['name','url'], 'required'],
-            [['image','name','url','desc','ustav'], 'string', 'max' => 255],
+            [['image','name','url','ustav'], 'string', 'max' => 255],
+            [['desc','content'], 'string'],
             [['mainfile','ustavfile'], 'file'],
         ];
     }
@@ -119,6 +121,7 @@ class Banks extends \yii\db\ActiveRecord
             'ustav' => 'Устав',
             'mainfile' => 'Логотип',
             'ustavfile' => 'Устав',
+            'content' => 'Контент',
         ];
     }
 }

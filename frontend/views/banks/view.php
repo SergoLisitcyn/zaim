@@ -92,9 +92,11 @@ if(isset($data['description']) and !empty($data['description'])) { $this->regist
                     <div class="content-main-info__content">
                         <div class="mfo-about">
                             <h2 class="mfo-about-title info-subtitle">О банке</h2>
-                            <p class="mfo-about-text">
-                                <?= $model->desc ?>
-                            </p>
+                            <div class="mfo-about-text">
+                                <?php if($model->content) :?>
+                                <?= $model->content ?>
+                                <?php endif;?>
+                            </div>
                             <div class="mfo-about__table">
                                 <div class="mfo-about__columns">
                                     <?php if($data['info']['city']) :  ?>

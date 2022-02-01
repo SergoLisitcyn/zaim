@@ -5,9 +5,13 @@ namespace backend\controllers;
 use Yii;
 use common\models\Banks;
 use common\models\BanksSearch;
+use yii\base\DynamicModel;
+use yii\helpers\FileHelper;
+use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * BanksController implements the CRUD actions for Banks model.
@@ -129,5 +133,47 @@ class BanksController extends Controller
     public function actionSheet()
     {
         return $this->render('sheet');
+    }
+
+    public function actionSaveRedactorImg ($sub='main')
+    {
+        $this -> enableCsrfValidation = false;
+        if (Yii::$app->request->isPost) {
+            $dir = Yii::getAlias('@frontend/web') . '/uploads/images/banks' . $sub . '/';
+            if (!file_exists($dir)){
+                FileHelper::createDirectory($dir);
+            }
+
+            $result_link = 'https://kz.smartzaim.kz/uploads/images/banks' . $sub . '/';
+            $file = UploadedFile::getInstanceByName('file');
+            $model = new DynamicModel (compact ('file'));
+            $model ->addRule ('file', 'image')->validate();
+
+            if ($model ->hasErrors()) {
+
+                $result = [
+                    'error' => $model -> getFirstError ('file')
+                ];
+            } else {
+
+                $model->file->name = strtotime('now').'_'.Yii::$app->getSecurity()->generateRandomString(6) . '.' . $model->file->extension;
+
+                if ($model->file->saveAs ($dir . $model->file->name)) {
+                    $result = ['filelink' => $result_link . $model->file->name,'filename'=>$model->file->name];
+
+                } else {
+
+                    $result = [
+                        'error' => Yii::t ('vova07/imperavi', 'ERROR_CAN_NOT_UPLOAD_FILE')
+                    ];
+
+                }
+            }
+            Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+            return $result;
+        } else {
+            throw new BadRequestHttpException ('Only Post is allowed');
+        }
     }
 }

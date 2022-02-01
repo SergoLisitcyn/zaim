@@ -199,7 +199,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                 <h2 class="mfo-about-title info-subtitle" style="padding-bottom: 20px;">Членство в профессиональных объединениях:</h2>
                                 <?php if($data['info']['amfok']) :  ?>
                                 <noindex>
-                                    <a href="<?= $data['info']['amfok'] ?>" class="mfo-about__logos-link" rel="nofollow" target="_blank">
+                                    <a href="//<?= $data['info']['amfok'] ?>" class="mfo-about__logos-link" rel="nofollow" target="_blank">
                                         <noscript>
                                             <img src="/img/mfo/logo_amfok.png" alt="Halyk Bank">
                                         </noscript>
@@ -209,7 +209,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                 <?php endif; ?>
                                 <?php if($data['info']['fintech']) :  ?>
                                 <noindex>
-                                    <a href="<?= $data['info']['fintech'] ?>" class="mfo-about__logos-link" rel="nofollow" target="_blank">
+                                    <a href="//<?= $data['info']['fintech'] ?>" class="mfo-about__logos-link" rel="nofollow" target="_blank">
                                         <noscript>
                                             <img src="/img/mfo/logo_kazfin.png" alt="Halyk Bank">
                                         </noscript>
@@ -254,7 +254,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                             <h2 class="mfo-about-title info-subtitle"><?= $dataTag['fin'] ?></h2>
                             <div class="mfo-report__block">
                                 <div class="mfo-report__col">
-                                    <a href="https://<?= $data['financial_report']['report'] ?>" class="mfo-report__link" target="_blank" download>
+                                    <a href="//<?= $data['financial_report']['report'] ?>" class="mfo-report__link" target="_blank" download>
                                         <img class="lazyloaded" src="/img/mfo/pdf.png" data-src="/img/mfo/pdf.png" alt="PDF-файл">
                                     </a>
                                     <span class="mfo-report__year">Финансовый отчет за <?= $data['financial_report']['year'] ?>г <?= $data['info']['entity'] ?></span>

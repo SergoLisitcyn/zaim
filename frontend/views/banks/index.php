@@ -55,9 +55,9 @@ $this->registerMetaTag(['name' => 'description','content' => 'Банковска
                     <?php if($data['services']['credit_card'] == "+") : ?>
                     <div class="mfo_card_info_links-col">
                         <div class="mfo_card_info_links-col-text">
-                            <a href="#" class="mfo_card_info_link">Кредитные карты</a>
+                            <span class="mfo_card_info_link">Кредитные карты</span>
                         </div>
-                        <div class="mfo_card_info_links-col-icons">
+                        <div class="mfo_card_info_links-col-icons" style="margin-left:15px">
                             <noscript>
                                 <img src="img/banks/icon-card.png" alt="Иконка карты">
                             </noscript>
@@ -68,9 +68,9 @@ $this->registerMetaTag(['name' => 'description','content' => 'Банковска
                     <?php if($data['services']['credit_cash'] == "+") : ?>
                     <div class="mfo_card_info_links-col">
                         <div class="mfo_card_info_links-col-text">
-                            <a href="#" class="mfo_card_info_link">Кредит наличными</a>
+                            <span class="mfo_card_info_link">Кредит наличными</span>
                         </div>
-                        <div class="mfo_card_info_links-col-icons">
+                        <div class="mfo_card_info_links-col-icons" style="margin-left:15px">
                             <noscript>
                                 <img src="img/banks/icon-money.png" alt="Иконка купюр">
                             </noscript>
@@ -81,9 +81,9 @@ $this->registerMetaTag(['name' => 'description','content' => 'Банковска
                     <?php if($data['services']['credit_auto'] == "+") : ?>
                     <div class="mfo_card_info_links-col">
                         <div class="mfo_card_info_links-col-text">
-                            <a href="#" class="mfo_card_info_link">Автокредиты</a>
+                            <span class="mfo_card_info_link">Автокредиты</span>
                         </div>
-                        <div class="mfo_card_info_links-col-icons">
+                        <div class="mfo_card_info_links-col-icons" style="margin-left:15px">
                             <noscript>
                                 <img src="img/banks/icon-auto.png" alt="Иконка автомобиля">
                             </noscript>
@@ -94,9 +94,9 @@ $this->registerMetaTag(['name' => 'description','content' => 'Банковска
                     <?php if($data['services']['ipoteka'] == "+") : ?>
                     <div class="mfo_card_info_links-col">
                         <div class="mfo_card_info_links-col-text">
-                            <a href="#" class="mfo_card_info_link">Ипотека</a>
+                            <span class="mfo_card_info_link">Ипотека</span>
                         </div>
-                        <div class="mfo_card_info_links-col-icons">
+                        <div class="mfo_card_info_links-col-icons" style="margin-left:15px">
                             <noscript>
                                 <img src="img/banks/icon-mortgage.png" alt="Иконка ипотеки">
                             </noscript>

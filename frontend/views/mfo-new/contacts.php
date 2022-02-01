@@ -79,7 +79,7 @@ if(isset($data['seo']['contacts_description']) and !empty($data['seo']['contacts
                                             <?= $dataMfo['mfo']['contacts']['version_ru'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <a href="<?= $data['contacts']['version_ru'] ?>" class="mfo-about__col-right-link"><?= $data['contacts']['version_ru'] ?></a>
+                                            <a href="//<?= $data['contacts']['version_ru'] ?>" class="mfo-about__col-right-link"><?= $data['contacts']['version_ru'] ?></a>
                                         </div>
                                     </div>
                                     <?php endif; ?>
@@ -89,7 +89,7 @@ if(isset($data['seo']['contacts_description']) and !empty($data['seo']['contacts
                                             <?= $dataMfo['mfo']['contacts']['version_kz'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
-                                            <a href="<?= $data['contacts']['version_kz'] ?>" class="mfo-about__col-right-link"><?= $data['contacts']['version_kz'] ?></a>
+                                            <a href="//<?= $data['contacts']['version_kz'] ?>" class="mfo-about__col-right-link"><?= $data['contacts']['version_kz'] ?></a>
                                         </div>
                                     </div>
                                     <?php endif; ?>

@@ -31,12 +31,6 @@ foreach($response->getSheets() as $sheet) {
 $range = $sheetProperties->title;
 $response = $service->spreadsheets_values->get($spreadsheetId, 'МФО Казахстана');
 
-//if($response['values']){
-//    Yii::$app->db->createCommand()->truncateTable('links')->execute();
-//} else {
-//    echo '<h1>Таблица пуста</h1>';
-//    die;
-//}
 $data = [];
 $countSave = 0;
 $countUpdate = 0;

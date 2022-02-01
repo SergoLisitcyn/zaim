@@ -66,7 +66,7 @@ if(isset($data['contacts']['description']) and !empty($data['contacts']['descrip
                     </ul>
                     <div class="content-main-info__content">
                         <?php if($data['contacts']['h1']) :  ?>
-                        <h1 style="color: #000;text-align: left;font-weight: 500;font-size: 30px;line-height: 30px;font-family: 'PT Sans';padding: 10px 35px 0;">
+                            <h1 style="color: #000;text-align: left;font-weight: 400;font-size: 36px;line-height: 43px;font-family: 'Open Sans', sans-serif;padding: 10px 35px 0;">
                             <?= $data['contacts']['h1'] ?>
                         </h1>
                         <?php endif; ?>

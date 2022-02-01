@@ -118,7 +118,7 @@ if(isset($data['seo']['clients_description']) and !empty($data['seo']['clients_d
                         </div>
                         <?php if($data['clients']['feedback']) : ?>
                         <div class="mfo-feedback">
-                            <a href="<?= $data['clients']['feedback'] ?>" class="mfo-feedback-link">
+                            <a href="//<?= $data['clients']['feedback'] ?>" class="mfo-feedback-link" rel="nofollow" target="_blank">
                                 <h2 class="mfo-about-title info-subtitle"><?= $dataMfo['mfo']['clients']['feedback'] ?></h2>
                             </a>
                         </div>

@@ -31,12 +31,6 @@ foreach($response->getSheets() as $sheet) {
 $range = $sheetProperties->title;
 $response = $service->spreadsheets_values->get($spreadsheetId, 'RU');
 
-//if($response['values']){
-//    Yii::$app->db->createCommand()->truncateTable('links')->execute();
-//} else {
-//    echo '<h1>Таблица пуста</h1>';
-//    die;
-//}
 $data = [];
 $countSave = 0;
 $countUpdate = 0;
@@ -99,7 +93,7 @@ foreach ($response['values']  as $key => $value){
     $data['title'] = $value[51];
     $data['description'] = $value[52];
     $data['financial']['h1'] = $value[53].' '.$value[50];
-    $data['financial']['title'] = 'Финнасовые показатели '.$value[50].' '.$value[54].' '.'— smartzaim.kz';
+    $data['financial']['title'] = 'Финнасовые показатели '.$value[50].$value[54].' '.'— smartzaim.kz';
     $data['financial']['description'] = 'Финнасовые показатели '.$value[50].', '.$value[55];
     $data['requisites']['h1'] = $value[56].' '.$value[50];
     $data['requisites']['title'] = 'Реквизиты и коды '.$value[50].' '.$value[57];
