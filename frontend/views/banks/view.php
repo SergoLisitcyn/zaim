@@ -7,7 +7,6 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Banks */
-$data = unserialize($model->data);
 
 if(isset($data['title']) and !empty($data['title'])) {
     $this->title = $data['title'];
@@ -40,22 +39,26 @@ if(isset($data['description']) and !empty($data['description'])) { $this->regist
                     <ul class="nav nav-tabs nav-tabs n-nav-tabs">
                         <li class="active">
                             <a href="<?= Url::toRoute(['banks/view', 'url' => $model->url]) ?>">
-                                <span>О банке</span>
+                                <span><?= $dataMenu['block_1'] ?></span>
                             </a>
                         </li>
                         <li class="">
                             <a href="<?= Url::toRoute(['banks/finance', 'url' => $model->url]) ?>">
+                                <?php if($version == 'RU') : ?>
+                                <span><?= $dataMenu['block_2'] ?></span>
+                                <?php else: ?>
                                 <span>Финансовые показатели</span>
+                                <?php endif; ?>
                             </a>
                         </li>
                         <li class="">
                             <a href="<?= Url::toRoute(['banks/requisites', 'url' => $model->url]) ?>">
-                                <span>Реквизиты и коды</span>
+                                <span><?= $dataMenu['block_3'] ?></span>
                             </a>
                         </li>
                         <li class="">
                             <a href="<?= Url::toRoute(['banks/contacts', 'url' => $model->url]) ?>">
-                                <span>Контакты</span>
+                                <span><?= $dataMenu['block_4'] ?></span>
                             </a>
                         </li>
                         <li class="">
@@ -102,7 +105,7 @@ if(isset($data['description']) and !empty($data['description'])) { $this->regist
                                     <?php if($data['info']['city']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Город:
+                                            <?= $dataBank['banks']['info']['city'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['info']['city'] ?>
@@ -112,7 +115,7 @@ if(isset($data['description']) and !empty($data['description'])) { $this->regist
                                     <?php if($data['info']['year_foundation']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Год основания:
+                                            <?= $dataBank['banks']['info']['year_foundation'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['info']['year_foundation'] ?>
@@ -122,7 +125,7 @@ if(isset($data['description']) and !empty($data['description'])) { $this->regist
                                     <?php if($data['info']['license_number']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Номер лицензии Агентства Республики Казахстан по регулированию и развитию финансового рынкам, №:
+                                            <?= $dataBank['banks']['info']['license_number'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['info']['license_number'] ?>
@@ -132,7 +135,7 @@ if(isset($data['description']) and !empty($data['description'])) { $this->regist
                                     <?php if($data['info']['license_data']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Дата полчения лицензии Агентства Республики Казахстан по регулированию и развитию финансового рынкам, №:
+                                            <?= $dataBank['banks']['info']['license_data'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['info']['license_data'] ?>
@@ -142,7 +145,7 @@ if(isset($data['description']) and !empty($data['description'])) { $this->regist
                                     <?php if($data['info']['chairman']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Председатель правления:
+                                            <?= $dataBank['banks']['info']['chairman'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['info']['chairman'] ?>
@@ -152,7 +155,7 @@ if(isset($data['description']) and !empty($data['description'])) { $this->regist
                                     <?php if($data['info']['corporate_name_rus']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Полное фирменное наименование на русском языке:
+                                            <?= $dataBank['banks']['info']['corporate_name_rus'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['info']['corporate_name_rus'] ?>
@@ -162,7 +165,7 @@ if(isset($data['description']) and !empty($data['description'])) { $this->regist
                                     <?php if($data['info']['corporate_name_kz']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Полное название на казахском языке:
+                                            <?= $dataBank['banks']['info']['corporate_name_kz'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['info']['corporate_name_kz'] ?>
@@ -172,7 +175,7 @@ if(isset($data['description']) and !empty($data['description'])) { $this->regist
                                     <?php if($data['info']['corporate_name_eng']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Название на английском языке:
+                                            <?= $dataBank['banks']['info']['corporate_name_eng'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['info']['corporate_name_eng'] ?>
@@ -182,7 +185,7 @@ if(isset($data['description']) and !empty($data['description'])) { $this->regist
                                     <?php if($data['info']['short_name']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Сокращенное название:
+                                            <?= $dataBank['banks']['info']['short_name'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['info']['short_name'] ?>
@@ -192,7 +195,7 @@ if(isset($data['description']) and !empty($data['description'])) { $this->regist
                                     <?php if($data['info']['url']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            URL:
+                                            <?= $dataBank['banks']['info']['url'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <a href="https://<?= $data['info']['url'] ?>" target="_blank" rel="nofollow" class="mfo-about__col-right-link">
@@ -204,14 +207,14 @@ if(isset($data['description']) and !empty($data['description'])) { $this->regist
                                     <?php if($data['info']['controll_shareholder']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Контролирующий акционер:
+                                            <?= $dataBank['banks']['info']['controll_shareholder'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['info']['controll_shareholder'] ?>
                                         </div>
                                     </div>
                                     <?php endif; ?>
-                                    <?php if($data['info']['url']) :  ?>
+                                    <?php if($model->ustav) :  ?>
                                         <div class="mfo-about__col">
                                             <div class="mfo-about__col-left">
                                                 Устав:
@@ -225,14 +228,14 @@ if(isset($data['description']) and !empty($data['description'])) { $this->regist
                             </div>
                         </div>
                         <div class="content-text blocks-content-text">
-                            <h2 class="content-text-title info-subtitle">Услуги банка:</h2>
+                            <h2 class="content-text-title info-subtitle"><?= $dataTag['uslugi'] ?></h2>
                             <div class="content-text-items">
                                 <?php if($data['services']['credit_card'] == "+") : ?>
                                 <div class="content-text-item">
                                     <div class="content-text-item-img">
                                         <img src="/img/banks/services-1.png" data-src="/img/banks/services-1.png" alt="Крединые карты">
                                     </div>
-                                    <span>Крединые карты</span>
+                                    <span><?= $dataBank['banks']['services']['credit_card'] ?></span>
                                 </div>
                                 <?php endif; ?>
                                 <?php if($data['services']['credit_cash'] == "+") : ?>
@@ -240,7 +243,7 @@ if(isset($data['description']) and !empty($data['description'])) { $this->regist
                                     <div class="content-text-item-img">
                                         <img src="/img/banks/services-2.png" data-src="/img/banks/services-2.png" alt="Кредит наличными">
                                     </div>
-                                    <span>Кредит наличными</span>
+                                    <span><?= $dataBank['banks']['services']['credit_cash'] ?></span>
                                 </div>
                                 <?php endif; ?>
                                 <?php if($data['services']['credit_auto'] == "+") : ?>
@@ -248,7 +251,7 @@ if(isset($data['description']) and !empty($data['description'])) { $this->regist
                                     <div class="content-text-item-img">
                                         <img src="/img/banks/services-3.png" data-src="/img/banks/services-3.png" alt="Автокредит">
                                     </div>
-                                    <span>Автокредит</span>
+                                    <span><?= $dataBank['banks']['services']['credit_auto'] ?></span>
                                 </div>
                                 <?php endif; ?>
                                 <?php if($data['services']['ipoteka'] == "+") : ?>
@@ -256,47 +259,47 @@ if(isset($data['description']) and !empty($data['description'])) { $this->regist
                                     <div class="content-text-item-img">
                                         <img src="/img/banks/services-4.png" data-src="/img/banks/services-4.png" alt="Ипотека">
                                     </div>
-                                    <span>Ипотека</span>
+                                    <span><?= $dataBank['banks']['services']['ipoteka'] ?></span>
                                 </div>
                                 <?php endif; ?>
                             </div>
                         </div>
                         <div class="rating-text bank-rating-text">
-                            <h2 class="rating-text-title info-subtitle">Рейтинги:</h2>
+                            <h2 class="rating-text-title info-subtitle"><?= $dataTag['rating'] ?></h2>
                             <div class="rating-text-columns">
                                 <?php if($data['rating']['sp_rating']) : ?>
                                 <div class="rating-text-col">
-                                    <div class="rating-text-col-left">Рейтинг S&P:</div>
+                                    <div class="rating-text-col-left"><?= $dataBank['banks']['rating']['sp_rating'] ?></div>
                                     <div class="rating-text-col-right"><?= $data['rating']['sp_rating'] ?></div>
                                 </div>
                                 <?php endif; ?>
                                 <?php if($data['rating']['sp_prediction']) : ?>
                                 <div class="rating-text-col">
-                                    <div class="rating-text-col-left">Прогноз:</div>
+                                    <div class="rating-text-col-left"><?= $dataBank['banks']['rating']['sp_prediction'] ?></div>
                                     <div class="rating-text-col-right"><?= $data['rating']['sp_prediction'] ?></div>
                                 </div>
                                 <?php endif; ?>
                                 <?php if($data['rating']['fitch_rating']) : ?>
                                 <div class="rating-text-col">
-                                    <div class="rating-text-col-left">Рейтинг Fitch:</div>
+                                    <div class="rating-text-col-left"><?= $dataBank['banks']['rating']['fitch_rating'] ?></div>
                                     <div class="rating-text-col-right"><?= $data['rating']['fitch_rating'] ?></div>
                                 </div>
                                 <?php endif; ?>
                                 <?php if($data['rating']['fitch_prediction']) : ?>
                                 <div class="rating-text-col">
-                                    <div class="rating-text-col-left">Прогноз:</div>
+                                    <div class="rating-text-col-left"><?= $dataBank['banks']['rating']['fitch_prediction'] ?></div>
                                     <div class="rating-text-col-right"><?= $data['rating']['fitch_prediction'] ?></div>
                                 </div>
                                 <?php endif; ?>
                                 <?php if($data['rating']['moodys_rating']) : ?>
                                 <div class="rating-text-col">
-                                    <div class="rating-text-col-left">Рейтинг Moody’s:</div>
+                                    <div class="rating-text-col-left"><?= $dataBank['banks']['rating']['moodys_rating'] ?></div>
                                     <div class="rating-text-col-right"><?= $data['rating']['moodys_rating'] ?></div>
                                 </div>
                                 <?php endif; ?>
                                 <?php if($data['rating']['moodys_prediction']) : ?>
                                 <div class="rating-text-col">
-                                    <div class="rating-text-col-left">Прогноз:</div>
+                                    <div class="rating-text-col-left"><?= $dataBank['banks']['rating']['moodys_prediction'] ?></div>
                                     <div class="rating-text-col-right"><?= $data['rating']['moodys_prediction'] ?></div>
                                 </div>
                                 <?php endif; ?>

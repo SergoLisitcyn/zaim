@@ -3,7 +3,6 @@ use \yii\helpers\Url;
 use kartik\rating\StarRating;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
-$data = unserialize($model->data);
 if(isset($data['financial']['title']) and !empty($data['financial']['title'])) {
     $this->title = $data['financial']['title'];
 } else {
@@ -39,22 +38,26 @@ if(isset($data['financial']['description']) and !empty($data['financial']['descr
                     <ul class="nav nav-tabs nav-tabs n-nav-tabs">
                         <li class="">
                             <a href="<?= Url::toRoute(['banks/view', 'url' => $model->url]) ?>">
-                                <span>О банке</span>
+                                <span><?= $dataMenu['block_1'] ?></span>
                             </a>
                         </li>
                         <li class="active">
                             <a href="<?= Url::toRoute(['banks/finance', 'url' => $model->url]) ?>">
-                                <span>Финансовые показатели</span>
+                                <?php if($version == 'RU') : ?>
+                                    <span><?= $dataMenu['block_2'] ?></span>
+                                <?php else: ?>
+                                    <span>Финансовые показатели</span>
+                                <?php endif; ?>
                             </a>
                         </li>
                         <li class="">
                             <a href="<?= Url::toRoute(['banks/requisites', 'url' => $model->url]) ?>">
-                                <span>Реквизиты и коды</span>
+                                <span><?= $dataMenu['block_3'] ?></span>
                             </a>
                         </li>
                         <li class="">
                             <a href="<?= Url::toRoute(['banks/contacts', 'url' => $model->url]) ?>">
-                                <span>Контакты</span>
+                                <span><?= $dataMenu['block_4'] ?></span>
                             </a>
                         </li>
                         <li class="">
@@ -75,7 +78,7 @@ if(isset($data['financial']['description']) and !empty($data['financial']['descr
                                     <?php if($data['financial']['date']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            На дату:
+                                            <?= $dataBank['banks']['financial']['date'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['financial']['date'] ?>
@@ -85,7 +88,7 @@ if(isset($data['financial']['description']) and !empty($data['financial']['descr
                                     <?php if($data['financial']['authorized_capital']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Уставной капитал, (млрд. тнг):
+                                            <?= $dataBank['banks']['financial']['authorized_capital'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['financial']['authorized_capital'] ?>
@@ -95,7 +98,7 @@ if(isset($data['financial']['description']) and !empty($data['financial']['descr
                                     <?php if($data['financial']['equity']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Собственный капитал, (млрд. тнг):
+                                            <?= $dataBank['banks']['financial']['equity'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['financial']['equity'] ?>
@@ -105,7 +108,7 @@ if(isset($data['financial']['description']) and !empty($data['financial']['descr
                                     <?php if($data['financial']['total_assets']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Совокупные активы, (млрд. тнг):
+                                            <?= $dataBank['banks']['financial']['total_assets'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['financial']['total_assets'] ?>
@@ -115,7 +118,7 @@ if(isset($data['financial']['description']) and !empty($data['financial']['descr
                                     <?php if($data['financial']['total_liabilities']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Совокупные обязательства, (млрд. тнг):
+                                            <?= $dataBank['banks']['financial']['total_liabilities'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['financial']['total_liabilities'] ?>
@@ -127,7 +130,7 @@ if(isset($data['financial']['description']) and !empty($data['financial']['descr
                                     <?php if($data['financial']['deposits']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Депозиты, (млрд. тнг):
+                                            <?= $dataBank['banks']['financial']['deposits'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['financial']['deposits'] ?>
@@ -137,7 +140,7 @@ if(isset($data['financial']['description']) and !empty($data['financial']['descr
                                     <?php if($data['financial']['npl']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            NPL,%:
+                                            <?= $dataBank['banks']['financial']['npl'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['financial']['npl'] ?>
@@ -147,7 +150,7 @@ if(isset($data['financial']['description']) and !empty($data['financial']['descr
                                     <?php if($data['financial']['net_profit']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Чистая прибыль, (млрд. тнг):
+                                            <?= $dataBank['banks']['financial']['net_profit'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['financial']['net_profit'] ?>
@@ -157,7 +160,7 @@ if(isset($data['financial']['description']) and !empty($data['financial']['descr
                                     <?php if($data['financial']['roa']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            ROA,%:
+                                            <?= $dataBank['banks']['financial']['roa'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['financial']['roa'] ?>
@@ -167,7 +170,7 @@ if(isset($data['financial']['description']) and !empty($data['financial']['descr
                                     <?php if($data['financial']['roe']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            ROE, %:
+                                            <?= $dataBank['banks']['financial']['roe'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['financial']['roe'] ?>

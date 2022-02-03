@@ -3,7 +3,6 @@ use \yii\helpers\Url;
 use kartik\rating\StarRating;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
-$data = unserialize($model->data);
 if(isset($data['requisites']['title']) and !empty($data['requisites']['title'])) {
     $this->title = $data['requisites']['title'];
 } else {
@@ -39,22 +38,26 @@ if(isset($data['requisites']['description']) and !empty($data['requisites']['des
                     <ul class="nav nav-tabs nav-tabs n-nav-tabs">
                         <li class="">
                             <a href="<?= Url::toRoute(['banks/view', 'url' => $model->url]) ?>">
-                                <span>О банке</span>
+                                <span><?= $dataMenu['block_1'] ?></span>
                             </a>
                         </li>
                         <li class="">
                             <a href="<?= Url::toRoute(['banks/finance', 'url' => $model->url]) ?>">
-                                <span>Финансовые показатели</span>
+                                <?php if($version == 'RU') : ?>
+                                    <span><?= $dataMenu['block_2'] ?></span>
+                                <?php else: ?>
+                                    <span>Финансовые показатели</span>
+                                <?php endif; ?>
                             </a>
                         </li>
                         <li class="active">
                             <a href="<?= Url::toRoute(['banks/requisites', 'url' => $model->url]) ?>">
-                                <span>Реквизиты и коды</span>
+                                <span><?= $dataMenu['block_3'] ?></span>
                             </a>
                         </li>
                         <li class="">
                             <a href="<?= Url::toRoute(['banks/contacts', 'url' => $model->url]) ?>">
-                                <span>Контакты</span>
+                                <span><?= $dataMenu['block_4'] ?></span>
                             </a>
                         </li>
                         <li class="">
@@ -75,7 +78,7 @@ if(isset($data['requisites']['description']) and !empty($data['requisites']['des
                                     <?php if($data['requisites']['bin']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            <b>БИН:</b>
+                                            <b><?= $dataBank['banks']['requisites']['bin'] ?></b>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['requisites']['bin'] ?>
@@ -85,7 +88,7 @@ if(isset($data['requisites']['description']) and !empty($data['requisites']['des
                                     <?php if($data['requisites']['bik_swift']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            <b>БИК/SWIFT:</b>
+                                            <b><?= $dataBank['banks']['requisites']['bik_swift'] ?></b>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['requisites']['bik_swift'] ?>
@@ -95,7 +98,7 @@ if(isset($data['requisites']['description']) and !empty($data['requisites']['des
                                     <?php if($data['requisites']['uumo']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            <b>Корсчет в УУМО НБ РК :</b>
+                                            <b><?= $dataBank['banks']['requisites']['uumo'] ?></b>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['requisites']['uumo'] ?>
@@ -105,7 +108,7 @@ if(isset($data['requisites']['description']) and !empty($data['requisites']['des
                                     <?php if($data['requisites']['vat_registration_certificate']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            <b>Свидетельство о постановке на учет по НДС:</b>
+                                            <b><?= $dataBank['banks']['requisites']['vat_registration_certificate'] ?></b>
                                         </div>
                                         <div class="mfo-about__col-right"><?= $data['requisites']['vat_registration_certificate'] ?></div>
                                     </div>
@@ -113,7 +116,7 @@ if(isset($data['requisites']['description']) and !empty($data['requisites']['des
                                     <?php if($data['codes']['okpo']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            <b>ОКПО:</b>
+                                            <b><?= $dataBank['banks']['codes']['okpo'] ?></b>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['codes']['okpo'] ?>
@@ -123,7 +126,7 @@ if(isset($data['requisites']['description']) and !empty($data['requisites']['des
                                     <?php if($data['codes']['lei']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            <b>LEI:</b>
+                                            <b><?= $dataBank['banks']['codes']['lei'] ?></b>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['codes']['lei'] ?>
@@ -133,7 +136,7 @@ if(isset($data['requisites']['description']) and !empty($data['requisites']['des
                                     <?php if($data['codes']['sic']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            <b>SIC:</b>
+                                            <b><?= $dataBank['banks']['codes']['lei'] ?></b>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['codes']['sic'] ?>
@@ -143,7 +146,7 @@ if(isset($data['requisites']['description']) and !empty($data['requisites']['des
                                     <?php if($data['codes']['reuters']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            <b>Код Reuters:</b>
+                                            <b><?= $dataBank['banks']['codes']['reuters'] ?></b>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['codes']['reuters'] ?>

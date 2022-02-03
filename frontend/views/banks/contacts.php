@@ -4,7 +4,6 @@ use kartik\rating\StarRating;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 
-$data = unserialize($model->data);
 if(isset($data['contacts']['title']) and !empty($data['contacts']['title'])) {
     $this->title = $data['contacts']['title'];
 } else {
@@ -40,22 +39,26 @@ if(isset($data['contacts']['description']) and !empty($data['contacts']['descrip
                     <ul class="nav nav-tabs nav-tabs n-nav-tabs">
                         <li class="">
                             <a href="<?= Url::toRoute(['banks/view', 'url' => $model->url]) ?>">
-                                <span>О банке</span>
+                                <span><?= $dataMenu['block_1'] ?></span>
                             </a>
                         </li>
                         <li class="">
                             <a href="<?= Url::toRoute(['banks/finance', 'url' => $model->url]) ?>">
-                                <span>Финансовые показатели</span>
+                                <?php if($version == 'RU') : ?>
+                                    <span><?= $dataMenu['block_2'] ?></span>
+                                <?php else: ?>
+                                    <span>Финансовые показатели</span>
+                                <?php endif; ?>
                             </a>
                         </li>
                         <li class="">
                             <a href="<?= Url::toRoute(['banks/requisites', 'url' => $model->url]) ?>">
-                                <span>Реквизиты и коды</span>
+                                <span><?= $dataMenu['block_3'] ?></span>
                             </a>
                         </li>
                         <li class="active">
                             <a href="<?= Url::toRoute(['banks/contacts', 'url' => $model->url]) ?>">
-                                <span>Контакты</span>
+                                <span><?= $dataMenu['block_4'] ?></span>
                             </a>
                         </li>
                         <li class="">
@@ -76,7 +79,7 @@ if(isset($data['contacts']['description']) and !empty($data['contacts']['descrip
                                     <?php if($data['contacts']['mailing_address']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Почтовый адрес:
+                                            <?= $dataBank['banks']['contacts']['mailing_address'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['contacts']['mailing_address'] ?>
@@ -86,7 +89,7 @@ if(isset($data['contacts']['description']) and !empty($data['contacts']['descrip
                                     <?php if($data['contacts']['phone_individuals']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Телефон для физических лиц:
+                                            <?= $dataBank['banks']['contacts']['phone_individuals'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['contacts']['phone_individuals'] ?>
@@ -96,7 +99,7 @@ if(isset($data['contacts']['description']) and !empty($data['contacts']['descrip
                                     <?php if($data['contacts']['phone_legal']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Телефон для юридических лиц:
+                                            <?= $dataBank['banks']['contacts']['phone_legal'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['contacts']['phone_legal'] ?>
@@ -106,7 +109,7 @@ if(isset($data['contacts']['description']) and !empty($data['contacts']['descrip
                                     <?php if($data['contacts']['phone_city_1']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            Городской телефон:
+                                            <?= $dataBank['banks']['contacts']['phone_city_1'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['contacts']['phone_city_1'] ?>
@@ -116,7 +119,7 @@ if(isset($data['contacts']['description']) and !empty($data['contacts']['descrip
                                     <?php if($data['contacts']['email']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            E-mail:
+                                            <?= $dataBank['banks']['contacts']['email'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <a href="mailto:<?= $data['contacts']['email'] ?>"><?= $data['contacts']['email'] ?></a>

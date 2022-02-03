@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use common\models\BankData;
 use common\models\BankReview;
 use Yii;
 use common\models\Banks;
@@ -52,74 +53,90 @@ class BanksController extends Controller
      */
     public function actionView(string $url)
     {
-        if(!$url) return $this->redirect('/');
-        $bank = Banks::find()->where(['status' => 1, 'url' => $url])->one();
-        if(!$bank) throw new HttpException(404, 'Страница не существует.');
-
-        $reviews = BankReview::find()->where(['bank_id' => $bank->id])->andWhere(['status' => 1])->orderBy(['date' => SORT_DESC])->limit(3)->all();
+        $bank = Banks::getBankData($url);
+        $reviews = BankReview::find()->where(['bank_id' => $bank['model']->id])->andWhere(['status' => 1])->orderBy(['date' => SORT_DESC])->limit(3)->all();
         $model = new BankReview();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             Yii::$app->session->setFlash('successMfoView', 'Сіздің пікіріңіз жіберілді. Хабарласқаныңыз үшін рахмет!');
             return $this->refresh();
         } else {
             return $this->render('view', [
-                'model' => $bank,
+                'model' => $bank['model'],
+                'data' => $bank['data'],
                 'reviews' => $reviews,
-                'reviewsModel' => $model
+                'version' => $bank['version'],
+                'reviewsModel' => $model,
+                'bankData' => $bank['bankData'],
+                'dataMenu' => $bank['dataMenu'],
+                'dataBank' => $bank['dataBank'],
+                'dataTag' => $bank['dataTag'],
             ]);
         }
     }
 
     public function actionFinance($url)
     {
-        if(!$url) return $this->redirect('/');
-
-        $bank = Banks::find()->where(['status' => 1, 'url' => $url])->one();
-        $reviews = BankReview::find()->where(['bank_id' => $bank->id])->andWhere(['status' => 1])->orderBy(['date' => SORT_DESC])->limit(3)->all();
+        $bank = Banks::getBankData($url);
+        $reviews = BankReview::find()->where(['bank_id' => $bank['model']->id])->andWhere(['status' => 1])->orderBy(['date' => SORT_DESC])->limit(3)->all();
         $model = new BankReview();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             Yii::$app->session->setFlash('successMfoView', 'Сіздің пікіріңіз жіберілді. Хабарласқаныңыз үшін рахмет!');
             return $this->refresh();
         } else {
             return $this->render('finance', [
-                'model' => $bank,
+                'model' => $bank['model'],
+                'data' => $bank['data'],
                 'reviews' => $reviews,
-                'reviewsModel' => $model
+                'version' => $bank['version'],
+                'reviewsModel' => $model,
+                'bankData' => $bank['bankData'],
+                'dataMenu' => $bank['dataMenu'],
+                'dataBank' => $bank['dataBank'],
+                'dataTag' => $bank['dataTag'],
             ]);
         }
     }
     public function actionRequisites($url)
     {
-        if(!$url) return $this->redirect('/');
-        $bank = Banks::find()->where(['status' => 1, 'url' => $url])->one();
-
-        $reviews = BankReview::find()->where(['bank_id' => $bank->id])->andWhere(['status' => 1])->orderBy(['date' => SORT_DESC])->limit(3)->all();
+        $bank = Banks::getBankData($url);
+        $reviews = BankReview::find()->where(['bank_id' => $bank['model']->id])->andWhere(['status' => 1])->orderBy(['date' => SORT_DESC])->limit(3)->all();
         $model = new BankReview();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             Yii::$app->session->setFlash('successMfoView', 'Сіздің пікіріңіз жіберілді. Хабарласқаныңыз үшін рахмет!');
             return $this->refresh();
         } else {
             return $this->render('requisites', [
-                'model' => $bank,
+                'model' => $bank['model'],
+                'data' => $bank['data'],
                 'reviews' => $reviews,
-                'reviewsModel' => $model
+                'version' => $bank['version'],
+                'reviewsModel' => $model,
+                'bankData' => $bank['bankData'],
+                'dataMenu' => $bank['dataMenu'],
+                'dataBank' => $bank['dataBank'],
+                'dataTag' => $bank['dataTag'],
             ]);
         }
     }
     public function actionContacts($url)
     {
-        if(!$url) return $this->redirect('/');
-        $bank = Banks::find()->where(['status' => 1, 'url' => $url])->one();
-        $reviews = BankReview::find()->where(['bank_id' => $bank->id])->andWhere(['status' => 1])->orderBy(['date' => SORT_DESC])->limit(3)->all();
+        $bank = Banks::getBankData($url);
+        $reviews = BankReview::find()->where(['bank_id' => $bank['model']->id])->andWhere(['status' => 1])->orderBy(['date' => SORT_DESC])->limit(3)->all();
         $model = new BankReview();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             Yii::$app->session->setFlash('successMfoView', 'Сіздің пікіріңіз жіберілді. Хабарласқаныңыз үшін рахмет!');
             return $this->refresh();
         } else {
             return $this->render('contacts', [
-                'model' => $bank,
+                'model' => $bank['model'],
+                'data' => $bank['data'],
                 'reviews' => $reviews,
-                'reviewsModel' => $model
+                'version' => $bank['version'],
+                'reviewsModel' => $model,
+                'bankData' => $bank['bankData'],
+                'dataMenu' => $bank['dataMenu'],
+                'dataBank' => $bank['dataBank'],
+                'dataTag' => $bank['dataTag'],
             ]);
         }
     }

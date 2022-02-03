@@ -132,7 +132,13 @@ class BanksController extends Controller
 
     public function actionSheet()
     {
-        return $this->render('sheet');
+        $dataRu = Banks::getBanksUpdate('RU');
+        $dataKz = Banks::getBanksUpdate('KZ');
+
+        return $this->render('sheet', [
+            'dataRu' => $dataRu,
+            'dataKz' => $dataKz
+        ]);
     }
 
     public function actionSaveRedactorImg ($sub='main')
