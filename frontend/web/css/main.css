@@ -1299,33 +1299,35 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
     color: #028ab4;
 }
 
-.n-nav-tabs {
+.n-nav-tabs-bank {
     margin: 0 30px;
     padding: 0 15px;
     max-width: 100%;
     border-bottom: 3px solid #dee0e1;
     text-align: center;
 }
-.n-nav-tabs >li {
+.n-nav-tabs-bank >li {
     margin-bottom: -3px;
 }
-.n-nav-tabs >li>a {
+.n-nav-tabs-bank >li>a {
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     text-transform: none;
     padding: 0px 5px 13px;
     letter-spacing: normal;
 }
-.n-nav-tabs >li>a span {
+.n-nav-tabs-bank >li>a span {
     font-size: 16px;
 }
-.n-nav-tabs >li.active>a {
+.n-nav-tabs-bank >li.active>a {
     border-bottom-width: 3px;
+    /*border-bottom-width: 2px;*/
+    border-bottom-style: solid;
 }
-.n-nav-tabs .add_to_compare {
+.n-nav-tabs-bank .add_to_compare {
     position: relative;
 }
-.n-nav-tabs .add_to_compare span:before {
+.n-nav-tabs-bank .add_to_compare span:before {
     top: 4px;
 }
 .white-breadcrumbs__items li:not(:last-child)::after {
@@ -1411,6 +1413,7 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
     align-items: center;
     justify-content: flex-start;
     flex-wrap: wrap;
+    margin-top: 30px;
 }
 
 .blocks-content-text .content-text-title {
@@ -1515,10 +1518,11 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
     padding-bottom: 45px;
 }
 .bank-contacts-mfo-about {
-    padding: 5px 15% 0;
+    /*padding: 5px 15% 0;*/
+    padding: 5px 5% 0;
 }
 .bank-contacts-mfo-about .mfo-about__columns {
-    max-width: 510px;
+    /*max-width: 510px;*/
 }
 .bank-contacts-mfo-about .mfo-about__col {
     justify-content: flex-start;
@@ -1530,10 +1534,14 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
 .bank-contacts-mfo-about .mfo-about__col-left {
     color: #070707;
     font-weight: 500;
+    width: 40%;
 }
 .bank-contacts-mfo-about .mfo-about__col-right {
     color: #070707;
     font-weight: 400;
+    width: 60%;
+    text-align: right;
+    display: block !important;
 }
 .bank-contacts-mfo-about .mfo-about__col {
     padding: 15px 0;
@@ -1949,3 +1957,38 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
 }
 
 /**********************************************/
+
+/*.nav-tabs-bank {*/
+/*    padding: 0 100px;*/
+/*    display: flex;*/
+/*    align-items: flex-start;*/
+/*    justify-content: space-around;*/
+/*    flex-wrap: wrap;*/
+/*    max-width: 800px;*/
+/*    margin: 0 auto;*/
+/*    border-bottom: 1px solid #eaeaea;*/
+/*    text-align: center;*/
+/*}*/
+
+.nav-tabs-bank>li {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: -3px;
+    cursor: pointer;
+}
+
+.nav-tabs-bank>li> a {
+    font-weight: 600;
+    color: #146696;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: 'PT Sans';
+    letter-spacing: .1em;
+    /*text-transform: uppercase;*/
+}
+
+.nav-tabs-bank>li>a {
+    color: #146696;
+    /*padding: 0 23px 18px;*/
+    line-height: normal;
+}

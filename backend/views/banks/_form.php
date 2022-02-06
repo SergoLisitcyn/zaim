@@ -61,7 +61,7 @@ use \yii\helpers\Url;
     ]);
     ?>
 
-
+    <h1>Русский текст</h1>
     <?= $form->field($model, 'content')->widget(Widget::className(), [
         'settings' => [
             'lang' => 'ru',
@@ -82,6 +82,28 @@ use \yii\helpers\Url;
         ]
     ])?>
     <?= $form->field($model, 'desc')->textarea(['rows' => 6]) ?>
+
+    <h1>Казахский текст</h1>
+    <?= $form->field($model, 'content_kz')->widget(Widget::className(), [
+        'settings' => [
+            'lang' => 'ru',
+            'minHeight' => 300,
+            'formatting' => ['p', 'blockquote', 'h2', 'h1'],
+            'imageUpload' => Url::to(['/banks/save-redactor-img','sub'=>'content']),
+            'attributes' => [
+                [
+                    'attribute' => 'text',
+                    'format' => 'html'
+                ]
+            ],
+            'plugins' => [
+                'clips',
+                'fullscreen'
+            ]
+
+        ]
+    ])?>
+    <?= $form->field($model, 'desc_kz')->textarea(['rows' => 6]) ?>
     <?= $form->field($model, 'url')->textInput() ?>
     <?= $form->field($model, 'sort')->textInput() ?>
 

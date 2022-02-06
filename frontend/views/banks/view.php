@@ -4,6 +4,7 @@ use \yii\helpers\Url;
 use kartik\rating\StarRating;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
+use yii\web\YiiAsset;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Banks */
@@ -14,16 +15,20 @@ if(isset($data['title']) and !empty($data['title'])) {
     $this->title = $model->name;
 }
 if(isset($data['description']) and !empty($data['description'])) { $this->registerMetaTag(['name' => 'description','content' => $data['description']]); }
-\yii\web\YiiAsset::register($this);
+YiiAsset::register($this);
 ?>
 <section class="breadcrumbs plr">
     <div class="breadcrumbs-wrap limit-width">
         <ul class="breadcrumbs__items white-breadcrumbs__items">
             <li>
-                <a href="/banks">Банки</a>
+                <?php if($version == 'RU') : ?>
+                    <a href="/banks">Банки</a>
+                <?php else: ?>
+                    <a href="/banks">Банкi</a>
+                <?php endif; ?>
             </li>
             <li>
-                <?= $model->name ?>
+                <?= $data['info']['name'] ?>
             </li>
         </ul>
     </div>
@@ -36,7 +41,7 @@ if(isset($data['description']) and !empty($data['description'])) { $this->regist
         <div class="content-row">
             <div class="content-box">
                 <div class="content-info bank-content-info">
-                    <ul class="nav nav-tabs nav-tabs n-nav-tabs">
+                    <ul class="nav nav-tabs-bank nav-tabs-bank n-nav-tabs-bank">
                         <li class="active">
                             <a href="<?= Url::toRoute(['banks/view', 'url' => $model->url]) ?>">
                                 <span><?= $dataMenu['block_1'] ?></span>
@@ -44,11 +49,7 @@ if(isset($data['description']) and !empty($data['description'])) { $this->regist
                         </li>
                         <li class="">
                             <a href="<?= Url::toRoute(['banks/finance', 'url' => $model->url]) ?>">
-                                <?php if($version == 'RU') : ?>
                                 <span><?= $dataMenu['block_2'] ?></span>
-                                <?php else: ?>
-                                <span>Финансовые показатели</span>
-                                <?php endif; ?>
                             </a>
                         </li>
                         <li class="">
@@ -63,7 +64,11 @@ if(isset($data['description']) and !empty($data['description'])) { $this->regist
                         </li>
                         <li class="">
                             <a href="<?= Url::toRoute(['banks/reviews', 'url' => $model->url]) ?>">
-                                <span>Отзывы</span>
+                                <?php if($version == 'RU') : ?>
+                                    <span>Отзывы</span>
+                                <?php else: ?>
+                                    <span>Пікірлер</span>
+                                <?php endif; ?>
                             </a>
                         </li>
                     </ul>
@@ -96,8 +101,13 @@ if(isset($data['description']) and !empty($data['description'])) { $this->regist
                         <div class="mfo-about">
                             <h2 class="mfo-about-title info-subtitle">О банке</h2>
                             <div class="mfo-about-text">
-                                <?php if($model->content) :?>
-                                <?= $model->content ?>
+                                <?php if($version == 'KZ'){
+                                    $content = $model->content_kz;
+                                } else {
+                                    $content = $model->content;
+                                }
+                                if($content) :?>
+                                <?= $content ?>
                                 <?php endif;?>
                             </div>
                             <div class="mfo-about__table">
@@ -309,7 +319,7 @@ if(isset($data['description']) and !empty($data['description'])) { $this->regist
 
                 </div>
                 <div class="content-reviews bank-content-reviews">
-                    <h2 class="content-reviews-title"><?= $model->name?> туралы пікірлер</h2>
+                    <h2 class="content-reviews-title" style="padding-left: 0"><?= $data['info']['name'] ?> туралы пікірлер</h2>
                     <?php if($reviews) : ?>
                         <?php foreach ($reviews as $review) : ?>
                             <div class="content-reviews-item">

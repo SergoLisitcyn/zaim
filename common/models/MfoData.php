@@ -2,8 +2,8 @@
 
 namespace common\models;
 
-use Yii;
 use yii\behaviors\TimestampBehavior;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "mfo_data".
@@ -15,7 +15,7 @@ use yii\behaviors\TimestampBehavior;
  * @property int $created_at
  * @property int $updated_at
  */
-class MfoData extends \yii\db\ActiveRecord
+class MfoData extends ActiveRecord
 {
     /**
      * {@inheritdoc}

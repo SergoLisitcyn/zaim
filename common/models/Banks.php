@@ -16,7 +16,9 @@ use yii\web\UploadedFile;
  * @property string|null $data_kz
  * @property string|null $image
  * @property string|null $desc
+ * @property string|null $desc_kz
  * @property string|null $content
+ * @property string|null $content_kz
  * @property string|null $ustav
  * @property string $name
  * @property string $url
@@ -89,7 +91,7 @@ class Banks extends \yii\db\ActiveRecord
             [['sort', 'status'], 'integer'],
             [['name','url'], 'required'],
             [['image','name','url','ustav'], 'string', 'max' => 255],
-            [['desc','content'], 'string'],
+            [['desc','content','content_kz','desc_kz'], 'string'],
             [['mainfile','ustavfile'], 'file'],
         ];
     }
@@ -117,14 +119,16 @@ class Banks extends \yii\db\ActiveRecord
             'sort' => 'Сортировка',
             'status' => 'Статус',
             'name' => 'Название банка',
-            'desc' => 'Описание банка',
+            'desc' => 'Описание банка на русском',
+            'desc_kz' => 'Описание банка на казахском',
             'url' => 'Url',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
             'ustav' => 'Устав',
             'mainfile' => 'Логотип',
             'ustavfile' => 'Устав',
-            'content' => 'Контент',
+            'content' => 'Контент на русском',
+            'content_kz' => 'Контент на казахском',
         ];
     }
 
@@ -156,7 +160,7 @@ class Banks extends \yii\db\ActiveRecord
             $modelBankData = new BankData();
             if($key == 0){
                 $dataMenu['block_1'] = $value[1];
-                if($version == 'RU') $dataMenu['block_2'] = $value[23];
+                $dataMenu['block_2'] = $value[23];
                 $dataMenu['block_3'] = $value[33];
                 $dataMenu['block_4'] = $value[41];
                 if($bankData){
@@ -377,9 +381,12 @@ class Banks extends \yii\db\ActiveRecord
     }
 
     /**
+     * @param $url string
+     * @param $version string
+     * @return array
      * @throws HttpException
      */
-    public static function getBankData($url){
+    public static function getBankData(string $url, string $version = 'KZ'){
         if(!$url) throw new HttpException(404, 'Страница не существует.');
 
         $bank = Banks::find()->where(['status' => 1, 'url' => $url])->one();
@@ -387,14 +394,17 @@ class Banks extends \yii\db\ActiveRecord
 
         $bankData = BankData::find()->where(['name' => 'Data'])->one();
 
-        $version = 'KZ';
+        $data = null;
+        $dataMenu = null;
+        $dataBank = null;
+        $dataTag = null;
+
         if($bankData){
-            if($version == 'RU'){
-                $dataMenu = unserialize($bankData->data_menu_ru);
-                $dataBank = unserialize($bankData->data_bank_ru);
-                $dataTag = unserialize($bankData->data_tag_ru);
-                $data = unserialize($bank->data);
-            } else {
+            $dataMenu = unserialize($bankData->data_menu_ru);
+            $dataBank = unserialize($bankData->data_bank_ru);
+            $dataTag = unserialize($bankData->data_tag_ru);
+            $data = unserialize($bank->data);
+            if($version == 'KZ'){
                 $dataMenu = unserialize($bankData->data_menu_kz);
                 $dataBank = unserialize($bankData->data_bank_kz);
                 $dataTag = unserialize($bankData->data_tag_kz);

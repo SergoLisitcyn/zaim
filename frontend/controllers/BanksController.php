@@ -40,9 +40,11 @@ class BanksController extends Controller
     public function actionIndex()
     {
         $banks = Banks::find()->where(['status' => 1])->all();
+        $version = 'KZ';
 
         return $this->render('index', [
             'banks' => $banks,
+            'version' => $version,
         ]);
     }
 
@@ -53,7 +55,9 @@ class BanksController extends Controller
      */
     public function actionView(string $url)
     {
-        $bank = Banks::getBankData($url);
+        $version = 'KZ';
+        if(isset($_GET) && isset($_GET['version']) && $_GET['version'] == 'ru') $version = 'RU';
+        $bank = Banks::getBankData($url,$version);
         $reviews = BankReview::find()->where(['bank_id' => $bank['model']->id])->andWhere(['status' => 1])->orderBy(['date' => SORT_DESC])->limit(3)->all();
         $model = new BankReview();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -76,7 +80,9 @@ class BanksController extends Controller
 
     public function actionFinance($url)
     {
-        $bank = Banks::getBankData($url);
+        $version = 'KZ';
+        if(isset($_GET) && isset($_GET['version']) && $_GET['version'] == 'ru') $version = 'RU';
+        $bank = Banks::getBankData($url,$version);
         $reviews = BankReview::find()->where(['bank_id' => $bank['model']->id])->andWhere(['status' => 1])->orderBy(['date' => SORT_DESC])->limit(3)->all();
         $model = new BankReview();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -98,7 +104,9 @@ class BanksController extends Controller
     }
     public function actionRequisites($url)
     {
-        $bank = Banks::getBankData($url);
+        $version = 'KZ';
+        if(isset($_GET) && isset($_GET['version']) && $_GET['version'] == 'ru') $version = 'RU';
+        $bank = Banks::getBankData($url,$version);
         $reviews = BankReview::find()->where(['bank_id' => $bank['model']->id])->andWhere(['status' => 1])->orderBy(['date' => SORT_DESC])->limit(3)->all();
         $model = new BankReview();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -120,7 +128,9 @@ class BanksController extends Controller
     }
     public function actionContacts($url)
     {
-        $bank = Banks::getBankData($url);
+        $version = 'KZ';
+        if(isset($_GET) && isset($_GET['version']) && $_GET['version'] == 'ru') $version = 'RU';
+        $bank = Banks::getBankData($url,$version);
         $reviews = BankReview::find()->where(['bank_id' => $bank['model']->id])->andWhere(['status' => 1])->orderBy(['date' => SORT_DESC])->limit(3)->all();
         $model = new BankReview();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -146,10 +156,12 @@ class BanksController extends Controller
         if(!$url){
             throw new HttpException(404, 'Страница не существует.');
         }
-        $bank = Banks::find()->where(['status' => 1, 'url' => $url])->one();
+        $version = 'KZ';
+        if(isset($_GET) && isset($_GET['version']) && $_GET['version'] == 'ru') $version = 'RU';
+        $bank = Banks::getBankData($url,$version);
         $reviews= BankReview::find()
             ->where([
-                'bank_id' => $bank->id,
+                'bank_id' => $bank['model']->id,
                 'status' => 1
             ])
             ->all();
@@ -162,7 +174,13 @@ class BanksController extends Controller
             return $this->render('reviews', [
                 'model' => $model,
                 'reviews' => $reviews,
-                'bank' => $bank,
+                'data' => $bank['data'],
+                'bank' => $bank['model'],
+                'version' => $bank['version'],
+                'bankData' => $bank['bankData'],
+                'dataMenu' => $bank['dataMenu'],
+                'dataBank' => $bank['dataBank'],
+                'dataTag' => $bank['dataTag'],
             ]);
         }
 //        return $this->render('reviews');

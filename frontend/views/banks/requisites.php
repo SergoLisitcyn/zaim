@@ -16,13 +16,17 @@ if(isset($data['requisites']['description']) and !empty($data['requisites']['des
     <div class="breadcrumbs-wrap limit-width">
         <ul class="breadcrumbs__items white-breadcrumbs__items">
             <li>
-                <a href="/banks">Банки</a>
+                <?php if($version == 'RU') : ?>
+                    <a href="/banks">Банки</a>
+                <?php else: ?>
+                    <a href="/banks">Банкi</a>
+                <?php endif; ?>
             </li>
             <li>
-                <a href="<?= Url::toRoute(['banks/view', 'url' => $model->url]) ?>"><?= $model->name ?></a>
+                <a href="<?= Url::toRoute(['banks/view', 'url' => $model->url]) ?>"><?= $data['info']['name'] ?></a>
             </li>
             <li>
-                Реквизиты и коды
+                <?= $dataMenu['block_3'] ?>
             </li>
         </ul>
     </div>
@@ -35,7 +39,7 @@ if(isset($data['requisites']['description']) and !empty($data['requisites']['des
         <div class="content-row">
             <div class="content-box">
                 <div class="content-info bank-content-info">
-                    <ul class="nav nav-tabs nav-tabs n-nav-tabs">
+                    <ul class="nav nav-tabs-bank nav-tabs-bank n-nav-tabs-bank">
                         <li class="">
                             <a href="<?= Url::toRoute(['banks/view', 'url' => $model->url]) ?>">
                                 <span><?= $dataMenu['block_1'] ?></span>
@@ -43,11 +47,7 @@ if(isset($data['requisites']['description']) and !empty($data['requisites']['des
                         </li>
                         <li class="">
                             <a href="<?= Url::toRoute(['banks/finance', 'url' => $model->url]) ?>">
-                                <?php if($version == 'RU') : ?>
-                                    <span><?= $dataMenu['block_2'] ?></span>
-                                <?php else: ?>
-                                    <span>Финансовые показатели</span>
-                                <?php endif; ?>
+                                <span><?= $dataMenu['block_2'] ?></span>
                             </a>
                         </li>
                         <li class="active">
@@ -62,7 +62,11 @@ if(isset($data['requisites']['description']) and !empty($data['requisites']['des
                         </li>
                         <li class="">
                             <a href="<?= Url::toRoute(['banks/reviews', 'url' => $model->url]) ?>">
-                                <span>Отзывы</span>
+                                <?php if($version == 'RU') : ?>
+                                    <span>Отзывы</span>
+                                <?php else: ?>
+                                    <span>Пікірлер</span>
+                                <?php endif; ?>
                             </a>
                         </li>
                     </ul>
@@ -160,7 +164,7 @@ if(isset($data['requisites']['description']) and !empty($data['requisites']['des
 
                 </div>
                 <div class="content-reviews bank-content-reviews">
-                    <h2 class="content-reviews-title"><?= $model->name?> туралы пікірлер</h2>
+                    <h2 class="content-reviews-title" style="padding-left: 0"><?= $data['info']['name']?> туралы пікірлер</h2>
                     <?php if($reviews) : ?>
                         <?php foreach ($reviews as $review) : ?>
                             <div class="content-reviews-item">

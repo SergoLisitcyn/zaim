@@ -9,19 +9,28 @@ use yii\helpers\Html;
 /* @var $model common\models\Mfo */
 
 YiiAsset::register($this);
-$this->title = 'Пікірлер о '.$bank->name.' – ең аз пайызбен берілетін онлайн микрокредиттер';
+$this->title = 'Пікірлер о '.$data['info']['name'].' – ең аз пайызбен берілетін онлайн микрокредиттер';
 ?>
 <section class="breadcrumbs plr">
     <div class="breadcrumbs-wrap limit-width">
         <ul class="breadcrumbs__items">
             <li>
-                <a href="/">Онлайн қарыздар</a>
+                <?php if($version == 'RU') : ?>
+                    <a href="/banks">Банки</a>
+                <?php else: ?>
+                    <a href="/banks">Банкi</a>
+                <?php endif; ?>
             </li>
             <li>
-                <a href="<?= Url::toRoute(['banks/view', 'url' => $bank->url]) ?>"><?= $bank->name ?></a>
+                <a href="<?= Url::toRoute(['banks/view', 'url' => $bank->url]) ?>"><?= $data['info']['name'] ?></a>
             </li>
             <li>
-                Пікірлер
+                <?php if($version == 'RU') : ?>
+                    Отзывы
+                <?php else: ?>
+                    Пікірлер
+                <?php endif; ?>
+
             </li>
         </ul>
     </div>
@@ -33,37 +42,41 @@ $this->title = 'Пікірлер о '.$bank->name.' – ең аз пайызбе
         <div class="content-row">
             <div class="content-box">
                 <div class="content-info">
-                    <ul class="nav nav-tabs nav-tabs n-nav-tabs">
+                    <ul class="nav nav-tabs-bank nav-tabs-bank n-nav-tabs-bank">
                         <li class="">
                             <a href="<?= Url::toRoute(['banks/view', 'url' => $bank->url]) ?>">
-                                <span>О банке</span>
+                                <span><?= $dataMenu['block_1'] ?></span>
                             </a>
                         </li>
                         <li class="">
                             <a href="<?= Url::toRoute(['banks/finance', 'url' => $bank->url]) ?>">
-                                <span>Финансовые показатели</span>
+                                <span><?= $dataMenu['block_2'] ?></span>
                             </a>
                         </li>
                         <li class="">
                             <a href="<?= Url::toRoute(['banks/requisites', 'url' => $bank->url]) ?>">
-                                <span>Реквизиты и коды</span>
+                                <span><?= $dataMenu['block_3'] ?></span>
                             </a>
                         </li>
                         <li class="">
                             <a href="<?= Url::toRoute(['banks/contacts', 'url' => $bank->url]) ?>">
-                                <span>Контакты</span>
+                                <span><?= $dataMenu['block_4'] ?></span>
                             </a>
                         </li>
                         <li class="active">
                             <a href="<?= Url::toRoute(['banks/reviews', 'url' => $bank->url]) ?>">
-                                <span>Отзывы</span>
+                                <?php if($version == 'RU') : ?>
+                                    <span>Отзывы</span>
+                                <?php else: ?>
+                                    <span>Пікірлер</span>
+                                <?php endif; ?>
                             </a>
                         </li>
                     </ul>
                     <div class="content-main-info">
                         <div class="content-main-info__item">
 <!--                            <h1 style="color: #028ab4">Пікірлер о	--><?php //echo $mfo->mfo_name ?><!--</h1>-->
-                            <h1 style="color: #028ab4"><?= $bank->name?> туралы пікірлер</h1>
+                            <h1 style="color: #028ab4"><?= $data['info']['name'] ?> туралы пікірлер</h1>
 
                             <a href="#"  target="_blank" class="content-main-info__button" style="background: #fda729;">Ақшаны алу</a>
                             <div class="content-reviews">
