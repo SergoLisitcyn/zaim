@@ -105,6 +105,7 @@ if($url == '/'){
                     <div class="header-body__col header-body__col--nav desktop-visible">
                         <nav class="header-body-nav">
                             <ul>
+                                <li><a href="/banks">Банки Казахстана</a></li>
                                 <li><a href="/aktsii">Акциялар</a></li>
                                 <li><a href="https://smartzaim.kz/reestr-mfo/?utm_source=kz.smartzaim.kz">МҚҰ тізілімі</a></li>
                             </ul>
@@ -122,6 +123,9 @@ if($url == '/'){
                                 <a	class="header-nav__link header-nav__link--cab" href="#">Тiркелу</a>
                             </div>
                             <ul class="header-nav__list desktop-hidden">
+                                <li class="header-nav__item">
+                                    <a class="header-nav__link" href="/banks">Банки Казахстана</a>
+                                </li>
                                 <li class="header-nav__item">
                                     <a class="header-nav__link" href="/aktsii">Акциялар</a>
                                 </li>

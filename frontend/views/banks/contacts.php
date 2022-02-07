@@ -77,7 +77,8 @@ if(isset($data['contacts']['description']) and !empty($data['contacts']['descrip
                             <?= $data['contacts']['h1'] ?>
                         </h1>
                         <?php endif; ?>
-                        <div class="mfo-about bank-mfo-about bank-contacts-mfo-about">
+<!--                        <div class="mfo-about bank-mfo-about bank-contacts-mfo-about">-->
+                        <div class="mfo-about bank-mfo-about bank-requisites-mfo-about">
                             <div class="mfo-about__table">
                                 <div class="mfo-about__columns">
                                     <?php if($data['contacts']['mailing_address']) :  ?>

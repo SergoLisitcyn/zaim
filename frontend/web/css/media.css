@@ -875,6 +875,7 @@
     .mfo-about__table .mfo-about__col-left,
     .mfo-about__table .mfo-about__col-right {
         width: auto;
+        text-align: left;
     }
     .mfo-about__table .mfo-about__col {
         justify-content: flex-start;
