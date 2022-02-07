@@ -1403,11 +1403,63 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
     display: flex;
     align-items: center;
     padding: 0;
+    justify-content: right;
+    text-align: right;
 }
 .mfo-about__table .mfo-about__col-right-link {
     text-decoration: underline;
     color: #028ab4;
 }
+
+
+.mfo-about__table_uslovia {
+    display: flex;
+    margin-top: 30px;
+}
+.mfo-about__table_uslovia .mfo-about__columns {
+    width: 100%;
+}
+.mfo-about__table_uslovia .mfo-about__col {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 5px 0 15px;
+}
+.mfo-about__table_uslovia .mfo-about__col:not(:first-child) {
+    border-top: 2px dotted #898888;
+}
+.mfo-about__table_uslovia .mfo-about__col-left,
+.mfo-about__table_uslovia .mfo-about__col-right {
+    /*width: 47%;*/
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    line-height: 18px;
+}
+.mfo-about__table_uslovia .mfo-about__col-left {
+    color: #898888;
+    padding: 0 10px 0 0;
+    display: flex;
+    align-items: flex-start;
+}
+.mfo-about__table_uslovia .mfo-about__col-right {
+    color: #000;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+.mfo-about__table_uslovia .mfo-about__col-right-link {
+    text-decoration: underline;
+    color: #028ab4;
+}
+
+
+
+
+
+
 .blocks-content-text .content-text-items {
     display: flex;
     align-items: center;
@@ -1532,12 +1584,12 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
     width: auto;
 }
 .bank-contacts-mfo-about .mfo-about__col-left {
-    color: #070707;
+    color: #898888;
     font-weight: 500;
     width: 40%;
 }
 .bank-contacts-mfo-about .mfo-about__col-right {
-    color: #070707;
+    color: #000;
     font-weight: 400;
     width: 60%;
     text-align: right;
@@ -1590,6 +1642,8 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
 .bank-requisites-mfo-about .mfo-about__col-right {
     font-size: 16px;
     width: 40%;
+    display: block;
+    text-align: right;
 }
 .bank-offers .offers__items {
     padding-bottom: 80px;
@@ -1636,7 +1690,7 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
 .bank-offers .mfo_card_info_link {
     color: #028ab4;
     font-size: 15px;
-    text-decoration: underline;
+    /*text-decoration: underline;*/
     text-align: left;
     padding: 3px 0;
 }

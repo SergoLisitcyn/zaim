@@ -54,7 +54,7 @@ $this->registerMetaTag(['name' => 'description','content' => 'Банковска
                         </div>
                     </div>
                     <div class="mfo_card_info_reviews">
-                        <a href="banks/<?= $bank->url ?>/reviews" class="mfo_card_info_link">Отзывы (0)</a>
+                        <a href="banks/<?= $bank->url ?>/reviews" class="mfo_card_info_link" style="text-decoration: underline">Отзывы (0)</a>
                     </div>
                 </div>
                 <div class="mfo_card_info_links">

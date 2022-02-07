@@ -208,6 +208,19 @@ use \yii\helpers\Url;
                         <h4 class="bold uppercase">3. Фильтры</h4>
                             <?php $typeCredits = \common\models\Filters::find()->with('typeCredits')->all();
                                foreach ($typeCredits as $value){
+                                   if($value['name'] == 'Онлайн кредит түрі'){
+                                       $filterName = 'Вид кредита онлайн';
+                                   } elseif ($value['name'] == 'Алу тәсілі'){
+                                       $filterName = 'Способ получения';
+                                   } elseif ($value['name'] == 'Өтеу тәсілі'){
+                                       $filterName = 'Способ погашения';
+                                   } elseif ($value['name'] == 'Жұмыспен қамтылу түрі'){
+                                       $filterName = 'Тип занятости';
+                                   } elseif ($value['name'] == 'Қарыз мерзімі'){
+                                       $filterName = 'Срок займа';
+                                   } else {
+                                       $filterName = $value['name'];
+                                   }
                                    echo $form->field($model, 'type_credit_arr['.$value['id'].']',['options'=>['class'=>'col-xs-12']])->widget(Select2::classname(), [
                                        'data' => ArrayHelper::map($value->typeCredits,'id','name'),
                                        'language' => 'ru',
@@ -216,7 +229,7 @@ use \yii\helpers\Url;
                                            'allowClear' => true,
                                        ],
                                    ])
-                                       ->label($value['name'])
+                                       ->label($filterName)
                                    ;
                                }
                             ?>

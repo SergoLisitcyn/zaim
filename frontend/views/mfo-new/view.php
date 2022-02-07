@@ -410,7 +410,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                         </div>
                         <div class="mfo-about">
                             <h2 class="mfo-about-title info-subtitle"><?= $dataTag['uslovia_credit'] ?></h2>
-                            <div class="mfo-about__table">
+                            <div class="mfo-about__table_uslovia">
                                 <div class="mfo-about__columns">
                                     <?php if($data['conditions']['min_amount']) : ?>
                                     <div class="mfo-about__col">

@@ -82,7 +82,7 @@ if(isset($data['requisites']['description']) and !empty($data['requisites']['des
                                     <?php if($data['requisites']['bin']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            <b><?= $dataBank['banks']['requisites']['bin'] ?></b>
+                                            <?= $dataBank['banks']['requisites']['bin'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['requisites']['bin'] ?>
@@ -92,7 +92,7 @@ if(isset($data['requisites']['description']) and !empty($data['requisites']['des
                                     <?php if($data['requisites']['bik_swift']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            <b><?= $dataBank['banks']['requisites']['bik_swift'] ?></b>
+                                            <?= $dataBank['banks']['requisites']['bik_swift'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['requisites']['bik_swift'] ?>
@@ -102,7 +102,7 @@ if(isset($data['requisites']['description']) and !empty($data['requisites']['des
                                     <?php if($data['requisites']['uumo']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            <b><?= $dataBank['banks']['requisites']['uumo'] ?></b>
+                                            <?= $dataBank['banks']['requisites']['uumo'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['requisites']['uumo'] ?>
@@ -112,7 +112,7 @@ if(isset($data['requisites']['description']) and !empty($data['requisites']['des
                                     <?php if($data['requisites']['vat_registration_certificate']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            <b><?= $dataBank['banks']['requisites']['vat_registration_certificate'] ?></b>
+                                            <?= $dataBank['banks']['requisites']['vat_registration_certificate'] ?>
                                         </div>
                                         <div class="mfo-about__col-right"><?= $data['requisites']['vat_registration_certificate'] ?></div>
                                     </div>
@@ -120,7 +120,7 @@ if(isset($data['requisites']['description']) and !empty($data['requisites']['des
                                     <?php if($data['codes']['okpo']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            <b><?= $dataBank['banks']['codes']['okpo'] ?></b>
+                                            <?= $dataBank['banks']['codes']['okpo'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['codes']['okpo'] ?>
@@ -130,7 +130,7 @@ if(isset($data['requisites']['description']) and !empty($data['requisites']['des
                                     <?php if($data['codes']['lei']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            <b><?= $dataBank['banks']['codes']['lei'] ?></b>
+                                            <?= $dataBank['banks']['codes']['lei'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['codes']['lei'] ?>
@@ -140,7 +140,7 @@ if(isset($data['requisites']['description']) and !empty($data['requisites']['des
                                     <?php if($data['codes']['sic']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            <b><?= $dataBank['banks']['codes']['lei'] ?></b>
+                                            <?= $dataBank['banks']['codes']['sic'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['codes']['sic'] ?>
@@ -150,7 +150,7 @@ if(isset($data['requisites']['description']) and !empty($data['requisites']['des
                                     <?php if($data['codes']['reuters']) :  ?>
                                     <div class="mfo-about__col">
                                         <div class="mfo-about__col-left">
-                                            <b><?= $dataBank['banks']['codes']['reuters'] ?></b>
+                                            <?= $dataBank['banks']['codes']['reuters'] ?>
                                         </div>
                                         <div class="mfo-about__col-right">
                                             <?= $data['codes']['reuters'] ?>
