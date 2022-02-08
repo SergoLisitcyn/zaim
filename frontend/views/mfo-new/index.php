@@ -11,7 +11,7 @@ $this->title = 'Mfo News';
             <?php foreach ($mfo as $item) : ?>
             <div class="mfo_card" style="min-height: 40px">
                 <div class="mfo_card_company-name">
-                    <a href="<?= Url::toRoute(['mfo-new/view', 'url' => $item->url]) ?>"><?= $item->name ?></a>
+                    <a href="<?= Url::toRoute(['mfo-new/view', 'url' => $item->url]) ?>"><?= $item->mfo_name ?></a>
                 </div>
             </div>
             <?php endforeach; ?>

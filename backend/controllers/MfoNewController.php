@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use common\models\Mfo;
 use Yii;
 use common\models\MfoNew;
 use common\models\MfoNewSearch;
@@ -126,6 +127,10 @@ class MfoNewController extends Controller
     }
     public function actionSheet()
     {
-        return $this->render('sheet');
+        $dataRu = Mfo::getMfoUpdate();
+
+        return $this->render('sheet', [
+            'dataRu' => $dataRu,
+        ]);
     }
 }

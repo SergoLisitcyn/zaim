@@ -2,7 +2,9 @@
 
 namespace frontend\controllers;
 
+use common\models\Mfo;
 use common\models\MfoData;
+use common\models\Sale;
 use Yii;
 use common\models\MfoNew;
 use yii\data\ActiveDataProvider;
@@ -37,7 +39,8 @@ class MfoNewController extends Controller
      */
     public function actionIndex()
     {
-        $mfo = MfoNew::find()->where(['status' => 1])->all();
+//        $mfo = Mfo::find()->where(['status' => 1])->all();
+        $mfo = Mfo::find()->all();
 
         return $this->render('index', [
             'mfo' => $mfo,
@@ -48,11 +51,13 @@ class MfoNewController extends Controller
     public function actionView($url)
     {
         if(!$url) return $this->redirect('/');
-        $mfo = MfoNew::find()->where(['status' => 1, 'url' => $url])->one();
+//        $mfo = Mfo::find()->where(['status' => 1, 'url' => $url])->one();
+        $mfo = Mfo::find()->where(['url' => $url])->one();
 
         if(!$mfo) throw new HttpException(404, 'Страница не существует.');
+        $sale = Sale::find()->where(['status' => 1,'mfo_id' => $mfo->id])->orderBy(['srok_do' => SORT_DESC])->one();
         $mfoDatas = MfoData::find()->where(['name' => 'Data'])->one();
-        $data = unserialize($mfo->data);
+        $data = unserialize($mfo->data_ru);
         $dataMenu = unserialize($mfoDatas->data_menu);
         $dataMfo = unserialize($mfoDatas->data_mfo);
         $dataTag = unserialize($mfoDatas->data_tag);
@@ -62,16 +67,17 @@ class MfoNewController extends Controller
             'dataMenu' => $dataMenu,
             'dataMfo' => $dataMfo,
             'dataTag' => $dataTag,
+            'sale' => $sale,
         ]);
     }
 
     public function actionLogin($url)
     {
         if(!$url) return $this->redirect('/');
-        $mfo = MfoNew::find()->where(['status' => 1, 'url' => $url])->one();
+        $mfo = Mfo::find()->where(['url' => $url])->one();
         if(!$mfo) throw new HttpException(404, 'Страница не существует.');
         $mfoDatas = MfoData::find()->where(['name' => 'Data'])->one();
-        $data = unserialize($mfo->data);
+        $data = unserialize($mfo->data_ru);
         $dataMenu = unserialize($mfoDatas->data_menu);
         $dataMfo = unserialize($mfoDatas->data_mfo);
         return $this->render('login', [
@@ -85,27 +91,29 @@ class MfoNewController extends Controller
     public function actionClients($url)
     {
         if(!$url) return $this->redirect('/');
-        $mfo = MfoNew::find()->where(['status' => 1, 'url' => $url])->one();
+        $mfo = Mfo::find()->where(['status' => 1, 'url' => $url])->one();
         if(!$mfo) throw new HttpException(404, 'Страница не существует.');
         $mfoDatas = MfoData::find()->where(['name' => 'Data'])->one();
-        $data = unserialize($mfo->data);
+        $data = unserialize($mfo->data_ru);
         $dataMenu = unserialize($mfoDatas->data_menu);
         $dataMfo = unserialize($mfoDatas->data_mfo);
+        $dataTag = unserialize($mfoDatas->data_tag);
         return $this->render('clients', [
             'model' => $mfo,
             'data' => $data,
             'dataMenu' => $dataMenu,
             'dataMfo' => $dataMfo,
+            'dataTag' => $dataTag,
         ]);
     }
 
     public function actionContacts($url)
     {
         if(!$url) return $this->redirect('/');
-        $mfo = MfoNew::find()->where(['status' => 1, 'url' => $url])->one();
+        $mfo = Mfo::find()->where(['status' => 1, 'url' => $url])->one();
         if(!$mfo) throw new HttpException(404, 'Страница не существует.');
         $mfoDatas = MfoData::find()->where(['name' => 'Data'])->one();
-        $data = unserialize($mfo->data);
+        $data = unserialize($mfo->data_ru);
         $dataMenu = unserialize($mfoDatas->data_menu);
         $dataMfo = unserialize($mfoDatas->data_mfo);
         $dataTag = unserialize($mfoDatas->data_tag);

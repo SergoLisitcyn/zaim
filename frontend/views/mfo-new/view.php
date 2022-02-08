@@ -19,13 +19,10 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
     <div class="breadcrumbs-wrap limit-width">
         <ul class="breadcrumbs__items white-breadcrumbs__items">
             <li>
-                <a href="/">Займы онлайн</a>
+                <a href="/">Онлайн қарыздар</a>
             </li>
             <li>
-                <a href="/">МФО</a>
-            </li>
-            <li>
-                Честное слово - займ онлайн в Казахстане
+                <?= $model->mfo_name?>
             </li>
         </ul>
     </div>
@@ -67,50 +64,131 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                             <?php endif; ?>
                             <div class="mfo-head__rating">
                                 <div class="rating">
-                                    <div class="rating__stars" style="width:90%"></div>
-                                    <div class="rating__val">4.8</div>
+                                    <?php $starRate = (100 *  $model->rating)/5;?>
+                                    <div class="rating__stars" style="width:<?= $starRate?>%"></div>
+                                    <div class="rating__val"><?= $model->rating?></div>
                                 </div>
                             </div>
-                            <div class="mfo-head__text">Перейти	на	официальный	сайт
-                                <a href="#">4slovo.kz</a>
+                            <div class="mfo-head__text">Ресми сайтқа өту
+                                <a href="<?= $model->link_offer ?>" target="_blank"><?= $model->website?></a>
                             </div>
                         </div>
                         <div class="content-main-info__item">
                             <div class="mfo-head-logo">
-                                <?php if($model->image) : ?>
-                                <a href="#">
-                                    <noscript>
-                                        <img	src="/img/mfo/4slovo.png">
-                                    </noscript>
-                                    <img class="lazyloaded" src="/img/mfo/4slovo.png" data-src="/img/mfo/4slovo.png" alt="Честное слово">
-                                </a>
+                                <?php if($model->logo) : ?>
+                                    <a href="<?= $model->link_offer ?>">
+                                        <noscript>
+                                            <img	src="<?= $model->logo?>">
+                                        </noscript>
+                                        <img class="lazyloaded" src="<?= $model->logo?>" data-src="<?= $model->logo?>" alt="<?= $model->mfo_name?>">
+                                    </a>
                                 <?php endif; ?>
-                                <div class="mfo-head-approv">Одобрение:
-                                    <span class="mfo-head-approv-value">54%</span>
+                                <div class="mfo-head-approv">Мақұлдау:
+                                    <span class="mfo-head-approv-value"><?= $model->odobrenie?>%</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="content-main-info__content">
-                        <div class="akciya-container">
-                            <div class="akciya-container-item">
-                                <div class="akciya-caption">Акция!
+                        <?php if($sale) : ?>
+                            <div class="akciya-container">
+                                <div class="akciya-container-item">
+                                    <div class="akciya-caption">Акция!
+                                    </div>
+                                    <div class="akciya-text"><?= $sale->name?></div>
                                 </div>
-                                <div class="akciya-text">30 призов по 100 000 тенге от Zing!</div>
-                            </div>
-                            <div class="akciya-container-item">
-                                <div class="akciya-date-wrap">
-                                    <div class="akciya-date">1 ноября -  15 декабря
-                                        <a href="#" class="akciya-btn">Подробнее</a>
+                                <div class="akciya-container-item">
+                                    <div class="akciya-date-wrap">
+                                        <div class="akciya-date"><?= date('d.m.Y',strtotime($sale->srok_ot)) ?> - <?= date('d.m.Y',strtotime($sale->srok_do)) ?>
+                                            <a href="<?= \yii\helpers\Url::toRoute(['sale/list', 'url' => $sale->url]) ?>" class="akciya-btn">Нақтырақ</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        <?php endif; ?>
                         <div class="mfo-about">
-                            <h2 class="mfo-about-title info-subtitle">О	компании</h2>
-                            <p class="mfo-about-text">
-                                Онлайн-сервис «Честное слово» входит в пятерку крупнейших игроков микрокредитного рынка Казахстана, выдавая дистанционные микрокредиты без залога и справки о доходах. Клиентам доступна опция продления онлайн-займа или его досрочного погашения. В компании действует программа привилегий и предусмотрена возможность зарабатывать бонусы за приглашение друзей.
-                            </p>
+                            <h2 class="mfo-about-title info-subtitle">Компания туралы</h2>
+                            <div class="mfo-about-text">
+                                <?= $model->about_company ?>
+                            </div>
+                            <div class="mfo-stat-container">
+                                <div class="firstloan">
+                                    <div class="firstloan-col">
+                                        <div class="offer-row-col">Мерзімі/күн</div>
+                                        <div class="offer-col"><?= $model->srok_new_client?></div>
+                                    </div>
+                                    <div class="firstloan-col">
+                                        <div class="offer-row-col">Макс. сомасы/<br>теңге</div>
+                                        <div class="offer-col"><?= $model->sum_new_client?></div>
+                                    </div>
+                                    <div class="firstloan-col">
+                                        <div class="offer-row-col">Бір күндік мөлшерлемесі</div>
+                                        <div class="offer-col"><?= $model->stavka_new_client?></div>
+                                    </div>
+                                    <div class="firstloan-col">
+                                        <div class="offer-row-col">Мақұлдау:</div>
+                                        <div class="offer-col"><?= $model->odobrenie_new_client?>%</div>
+                                    </div>
+                                    <div class="firstloan-col">
+                                        <div class="offer-row-col">Қарау/<br>минут</div>
+                                        <div class="offer-col"><?= $model->rasmotrenie_new_client?></div>
+                                    </div>
+                                    <div class="firstloan-col">
+                                        <div class="offer-row-col">Алу:</div>
+                                        <div class="offer-col">
+                                            <noscript>
+                                                <img	src="/img/2016/08/all.png">
+                                            </noscript>
+                                            <img class="lazyloaded" src="/img/2016/08/all.png" data-src="/img/2016/08/all.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mfo-footer">
+                                    <!--                                <div class="mfo-footer-item">-->
+                                    <!--                                    <div class="mfo-card-compare mfo_card_compare">-->
+                                    <!--                                        <a data-mfo="--><?php //$model->mfo_name?><!--" data-title="--><?php //$model->mfo_name?><!--" href="#">Салыстыру</a>-->
+                                    <!--                                    </div>-->
+                                    <!--                                </div>-->
+                                    <a class="mfo-footer mfo-show-rule" href="#" style="text-decoration: none">Бар клиенттерге арналған шарттарды көрсету ></a>
+                                    <a class="mfo-footer-item mfo-card-btn" href="<?= $model->link_offer ?>" target="_blank">Ақшаны алу</a>
+                                </div>
+                                <div class="conexist">
+                                    <div class="firstloan">
+                                        <div class="firstloan-col">
+                                            <div class="offer-row-col">Мерзімі/күн</div>
+                                            <div class="offer-col"><?= $model->srok_for_client ?></div>
+                                        </div>
+                                        <div class="firstloan-col">
+                                            <div class="offer-row-col">Макс. сомасы/<br>теңге</div>
+                                            <div class="offer-col"><?= $model->sum_for_client ?></div>
+                                        </div>
+                                        <div class="firstloan-col">
+                                            <div class="offer-row-col">Бір күндік мөлшерлемесі</div>
+                                            <div class="offer-col"><?= $model->stavka_for_client ?></div>
+                                        </div>
+                                        <div class="firstloan-col">
+                                            <div class="offer-row-col">Мақұлдау:</div>
+                                            <div class="offer-col"><?= $model->odobrenie_for_client ?>%</div>
+                                        </div>
+                                        <div class="firstloan-col">
+                                            <div class="offer-row-col">Қарау/<br>минут</div>
+                                            <div class="offer-col"><?= $model->rasmotrenie_for_client ?></div>
+                                        </div>
+                                        <div class="firstloan-col">
+                                            <div class="offer-row-col">Алу:</div>
+                                            <div class="offer-col">
+                                                <noscript>
+                                                    <img	src="/img/2016/08/all.png">
+                                                </noscript>
+                                                <img class="lazyloaded" src="/img/2016/08/all.png" data-src="/img/2016/08/all.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-text" style="padding: 0">
+                                <?= $model->content ?>
+                            </div>
                             <div class="mfo-about__table">
                                 <div class="mfo-about__columns">
                                     <?php if($data['info']['city']) :  ?>
@@ -1046,7 +1124,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                         </div>
 
                         <div class="mfo-money">
-                            <a href="#" class="mfo-money-btn content-text-button">Получить деньги</a>
+                            <a href="<?= $model->link_offer ?>" class="mfo-money-btn content-text-button" target="_blank">Ақшаны алу</a>
                         </div>
 
                         <div class="article-contacts">
@@ -1229,12 +1307,14 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                 </div>
                             </div>
                         </div>
-                        <div class="mfo-about__video">
-                            <!-- <h3 class="mfo-about__video-title">Как получить деньги в	Creditplus.kz</h3> -->
-                            <div class="yt-video">
-                                <iframe width="805" height="460" src="https://www.youtube.com/embed/zi3Oag3_7s0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <?php if($model->video) : ?>
+                            <div class="mfo-about__video">
+                                <h3 class="mfo-about__video-title"><?= $model->mfo_name?> ақшаны қалай алуға болады</h3>
+                                <div class="yt-video">
+                                    <iframe width="805" height="460" src="<?= $model->video?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
                             </div>
-                        </div>
+                        <?php endif; ?>
                     </div>
 
                 </div>
@@ -1376,51 +1456,91 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
 
             <sidebar class="content-sidebar">
                 <div class="mfo_card">
-                    <div class="mfo_card__title">Рейтинг	компании</div>
+                    <div class="mfo_card__title">Компанияның рейтингі</div>
                     <div class="mfo_card__info ">
                         <div class="mfo_card__rating">
                             <div class="rating">
-                                <div class="rating__stars"	style="width:96%"></div>
-                                <div	class="rating__val">4.8</div>
-                                <div	class="rating__vote">6</div>
+                                <div class="rating__stars" style="width:<?= $starRate ?>%"></div>
+                                <div class="rating__val"><?= $model->rating ?></div>
+                                <div class="rating__vote">6</div>
                             </div>
                         </div>
                         <div class="aside-rating">
                             <div class="aside-rating-col">
-                                <div class="aside-rating-title">Простота	получения</div>
-                                <div	class="rating">
-                                    <div class="rating__stars"	style="width:96%"></div>
-                                    <div	class="rating__val">4.8</div>
+                                <div class="aside-rating-title">Алу қарапайымдылығы</div>
+                                <div class="rating">
+                                    <div class="rating__stars" style="width:<?= $starRate ?>%"></div>
+                                    <div class="rating__val"><?= $model->rating ?></div>
                                 </div>
                             </div>
                             <div class="aside-rating-col">
-                                <div class="aside-rating-title">Скорость<br />выдачи</div>
-                                <div	class="rating">
-                                    <div class="rating__stars"	style="width:100%"></div>
-                                    <div	class="rating__val">5.0</div>
+                                <div class="aside-rating-title">Беру <br />жылдамдығы</div>
+                                <div class="rating">
+                                    <div class="rating__stars" style="width:100%"></div>
+                                    <div class="rating__val">5.0</div>
                                 </div>
                             </div>
                             <div class="aside-rating-col">
-                                <div class="aside-rating-title">Служба поддержки</div>
-                                <div	class="rating">
-                                    <div class="rating__stars"	style="width:93%"></div>
-                                    <div	class="rating__val">4.7</div>
+                                <div class="aside-rating-title">Қолдау қызметі</div>
+                                <div class="rating">
+                                    <div class="rating__stars" style="width:90%"></div>
+                                    <div class="rating__val">4.7</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="mfo_card">
-                    <div class="mfo_card__title">Подать	заявку</div>
+                    <div	class="mfo_achieve promo">Акция</div>
+                    <div class="mfo_card_company">
+                        <div class="mfo_card__title"><?= $model->website?> ұсынысы</div>
+                    </div>
+                    <div class="mfo_card_info mfo_card_info_col">
+                        <div	class="mfo_card_info_inner">
+                            <div	class="mfo_card_info_time">
+                                <div	class="mfo_card_info_time_label">Мерзімге:</div>
+                                <div	class="mfo_card_info_time_data"><?= $model->srok?></div>
+                            </div>
+                            <div	class="mfo_card_info_sum">
+                                <div	class="mfo_card_info_sum_label">Сомасы (тнг):</div>
+                                <div	class="mfo_card_info_sum_data"><?= $model->sum?></div>
+                            </div>
+                            <div	class="mfo_card_info_rate">
+                                <div	class="mfo_card_info_rate_label">Мөлшерлемесі:</div>
+                                <div	class="mfo_card_info_rate_data"><?= $model->stavka?></div>
+                            </div>
+                            <div	class="mfo_card_info_accept">
+                                <div	class="mfo_card_info_accept_label">Қарау:</div>
+                                <div	class="mfo_card_info_accept_data"><?= $model->rasmotrenie?></div>
+                            </div>
+                            <div	class="mfo_card_info_ways">
+                                <div	class="mfo_card_info_ways_label">Алу:</div>
+                                <div	class="mfo_card_info_ways_data">
+                                    <noscript>
+                                        <img style="height: 20px;"	src="/img/2016/08/all.png">
+                                    </noscript>
+                                    <img	class="lazyload"	style="height: 20px;"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="/img/2016/08/all.png">
+                                </div>
+                            </div>
+                        </div>
+                        <noindex>
+                            <a href="<?= $model->link_offer ?>" target="_blank">
+                                <div class="mfo_card_button">Ақшаны алу</div>
+                            </a>
+                        </noindex>
+                    </div>
+                </div>
+                <div class="mfo_card">
+                    <div class="mfo_card__title">Өтінім беру</div>
                     <div class="mfo_card__info">
-                        <div class="mfo_card__text">Не	смогли выбрать компанию?	Оставьте заявку и мы	подберем для Вас наиболее	выгодные займы!</div>
-                        <a href="#">
-                            <div	class="mfo_card_button">Подробнее</div>
+                        <div class="mfo_card__text">Компанияны таңдай алмадыңыз ба? Өтінім қалдырыңыз, біз Сіз үшін мейлінше пайдалы қарыз түрлерін іріктеп таңдап береміз!</div>
+                        <a href="https://smartzaim.kz/zayavka-na-zajm/?utm_source=kz.smartzaim.kz">
+                            <div	class="mfo_card_button">Нақтырақ</div>
                         </a>
                     </div>
                 </div>
                 <div class="mfo_card">
-                    <div class="mfo_card__title">Рейтинг	заемщиков</div>
+                    <div class="mfo_card__title">Қарыз алушылар рейтингі</div>
                     <div	class="aside-rating aside-rating-mfo">
 
                         <div class="aside-rating-mfo-col">
@@ -1439,7 +1559,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                             <div class="rating__stars"	style="width:87%"></div>
                                             <div	class="rating__val">4.4</div>
                                         </div>
-                                        <div	class="aside-rating-mfo__rev">Отзывы:	177</div>
+                                        <div	class="aside-rating-mfo__rev">Нақтырақ:	177</div>
                                     </div>
                                 </a>
                             </div>
@@ -1456,12 +1576,12 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                             </div>
                             <div class="aside-rating-mfo-item">
                                 <a	href="#">
-                                    <div	class="rating rating-wraps">
+                                    <div class="rating rating-wraps">
                                         <div class="rating-box">
                                             <div class="rating__stars"	style="width:87%"></div>
-                                            <div	class="rating__val">4.6</div>
+                                            <div class="rating__val">4.6</div>
                                         </div>
-                                        <div	class="aside-rating-mfo__rev">Отзывы:	41</div>
+                                        <div class="aside-rating-mfo__rev">Нақтырақ:	41</div>
                                     </div>
                                 </a>
                             </div>
@@ -1483,40 +1603,32 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                             <div class="rating__stars"	style="width:87%"></div>
                                             <div	class="rating__val">3.6</div>
                                         </div>
-                                        <div	class="aside-rating-mfo__rev">Отзывы:	30</div>
+                                        <div	class="aside-rating-mfo__rev">Нақтырақ:	30</div>
                                     </div>
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="mfo_card__info">
-                        <a href="#">
-                            <div	class="mfo_card_button">Подобрать другой займ</div>
+                        <a href="/">
+                            <div class="mfo_card_button">Басқа қарызды таңдау</div>
                         </a>
                     </div>
                 </div>
                 <div class="mfo_card">
-                    <div class="mfo_card__title">Полезные материалы</div>
-                    <div class="mfo_card__info">
-                        <ul class="aside-list">
-                            <li>
-                                <span	class="aside-list__date">29.11.2020</span>
-                                <a href="#"	class="aside-list__title">Многодетные семьи в ВКО будут исключены из очереди на жилье</a>
-                            </li>
-                            <li>
-                                <span	class="aside-list__date">22.11.2020</span>
-                                <a href="#"
-                                   class="aside-list__title">Дорожная карта занятости работает: 207 тысяч жителей Казахстана нашли работу</a>
-                            </li>
-                            <li>
-                                <span	class="aside-list__date">15.11.2020</span>
-                                <a href="#"
-                                   class="aside-list__title">Власти Казахстана проверят подозрительные денежные интернет-переводы на причастность к наркобизнесу</a>
-                            </li>
-                        </ul>
-                        <a href="#"	class="btn-yellow">Все	статьи</a>
-                    </div>
+                    <form	class="subscribtion_form" action="/mfo/<?= $model->url ?>" method="post">
+                        <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
+                        <div	class="aside-subscribe-text">Арнайы ұсыныстар мен акциялар <br>туралы бірінші білгіңіз <br> келе ме?</div>
+                        <div	class="email_sidebar_container">
+                            <div	class="subscribe-sidebar-item subscribe-sidebar-item--input-email">
+                                <input	class="subscribe-sidebar-item__control subscribe-sidebar-item__control--input-email"	placeholder="Email"	type="text"	name="email_unisender"	value=""></div>
+                            <div	class="subscribe-sidebar-item subscribe-sidebar-item--btn-submit">
+                                <input	class="subscribe-sidebar-item__btn subscribe-sidebar-item__btn--btn-submit"	type="submit"	value="Қол қою">
+                            </div>
+                        </div>
+                    </form>
                 </div>
+                <!--                --><?php //echo \frontend\widgets\ArticlesNews::widget() ?>
             </sidebar>
         </div>
     </div>
