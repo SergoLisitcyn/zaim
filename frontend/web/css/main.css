@@ -821,9 +821,10 @@ a.scrollup-right {
     padding: 0 100px;
     display: flex;
     align-items: flex-start;
-    justify-content: space-around;
+    /*justify-content: space-around;*/
+    justify-content: center;
     flex-wrap: wrap;
-    max-width: 800px;
+    /*max-width: 800px;*/
     margin: 0 auto;
     border-bottom: 1px solid #eaeaea;
     text-align: center;
@@ -1130,6 +1131,7 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
 }
 
 .mfo-head-logo img {
+    max-width: 240px;   /****** исправила ***********************/
     width: 240px;
 }
 
@@ -1152,10 +1154,13 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
 }
 
 .content-main-info__item{
-    width: 100%;
+    /* width: 100%; */      /******* закоментила *****************/
     padding: 0 35px;
+    flex: 0 1 auto;       /******* добавила новый код *****************/
 }
-
+.content-main-info__item_pad {      /******* добавила новый код *****************/
+    padding: 0 75px;
+}                                   /****************************************/
 /** CreditPlus *******************/
 
 #creditplus .offer-row-col {
@@ -1338,11 +1343,12 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
     margin-top: 0;
 }
 .bank-content-main-info .mfo-head-logo img {
-    max-width: 170px;
+    /*max-width: 170px;*/
 }
 .bank-content-main-info {
     align-items: flex-start;
-    margin-top: 62px;
+    margin-top: 42px;   /****** исправила ***********************/
+    justify-content: space-between;      /******* добавила новый код *****************/
 }
 .bank-content-main-info .content-main-info__item h1 {
     font-family: 'Open Sans', sans-serif;
@@ -1368,7 +1374,7 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
 }
 .mfo-about__table {
     display: flex;
-    margin-top: 30px;
+    margin-top: 20px;        /****** исправила ***********************/
 }
 .mfo-about__table .mfo-about__columns {
     width: 100%;
@@ -1489,7 +1495,7 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
     width: 100%;
     min-height: 130px;
     box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.3);
-    margin: 0 0 15px;
+    margin: 0 20px 15px 0;                  /****** исправила ***********************/
 }
 .blocks-content-text .content-text-item span {
     color: #000;
@@ -1515,9 +1521,9 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
     width: 100% !important;
 }
 
-.blocks-content-text .content-text-item:not(:last-child) {
+/* .blocks-content-text .content-text-item:not(:last-child) {    закоментила
     margin-right: 20px;
-}
+} */
 
 .bank-rating-text {
     padding: 0 30px;
@@ -1621,7 +1627,7 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
     padding-bottom: 70px;
 }
 .bank-finance-mfo-about {
-    padding: 40px 75px 0;
+    padding: 20px 75px 0;    /****** исправила ***********************/
 }
 .bank-finance-mfo-about .mfo-about__col {
     padding: 10px 0 10px;
@@ -1701,13 +1707,15 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     text-align: left;
+    margin: 0;
 }
 .bank-offers .mfo_card_info_about {
-    margin-top: 12px;
+    margin-top: 0;                    /****** исправила ***********************/
 }
 .bank-offers .mfo_card_info_links {
     border-bottom: 2px dotted #000;
-    padding: 8px 0;
+    padding-bottom: 8px;                         /****** исправила ***********************/
+    margin-bottom: 8px;                        /****** добавила новый код ***********************/
 }
 .bank-offers .mfo_card_info_links-col {
     display: flex;
@@ -1725,8 +1733,8 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
     width: 100%;
     min-height: auto;
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    align-items: flex-start;             /****** исправила ***********************/
+    justify-content: space-evenly;     /****** исправила ***********************/
     margin-right: 0;
 }
 .bank-offers-horizontal .offers__items {
@@ -1752,6 +1760,7 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 185px;                /****** добавила новый код ***********************/
 }
 .bank-offers-horizontal .mfo_card_info_links-col {
     justify-content: flex-start;

@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 use common\models\Mfo;
 use common\models\MfoData;
+use common\models\Review;
 use common\models\Sale;
 use Yii;
 use common\models\MfoNew;
@@ -53,22 +54,35 @@ class MfoNewController extends Controller
         if(!$url) return $this->redirect('/');
 //        $mfo = Mfo::find()->where(['status' => 1, 'url' => $url])->one();
         $mfo = Mfo::find()->where(['url' => $url])->one();
-
         if(!$mfo) throw new HttpException(404, 'Страница не существует.');
+
         $sale = Sale::find()->where(['status' => 1,'mfo_id' => $mfo->id])->orderBy(['srok_do' => SORT_DESC])->one();
+
+        $reviews = Review::find()->where(['cat_id' => $mfo->id])->andWhere(['status' => 1])->orderBy(['date' => SORT_DESC])->limit(3)->all();
+
         $mfoDatas = MfoData::find()->where(['name' => 'Data'])->one();
         $data = unserialize($mfo->data_ru);
         $dataMenu = unserialize($mfoDatas->data_menu);
         $dataMfo = unserialize($mfoDatas->data_mfo);
         $dataTag = unserialize($mfoDatas->data_tag);
-        return $this->render('view', [
-            'model' => $mfo,
-            'data' => $data,
-            'dataMenu' => $dataMenu,
-            'dataMfo' => $dataMfo,
-            'dataTag' => $dataTag,
-            'sale' => $sale,
-        ]);
+
+
+        $model = new Review();
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('successMfoView', 'Сіздің пікіріңіз жіберілді. Хабарласқаныңыз үшін рахмет!');
+            return $this->refresh();
+        } else {
+            return $this->render('view', [
+                'model' => $mfo,
+                'data' => $data,
+                'dataMenu' => $dataMenu,
+                'dataMfo' => $dataMfo,
+                'dataTag' => $dataTag,
+                'sale' => $sale,
+                'reviews' => $reviews,
+                'reviewsModel' => $model
+            ]);
+        }
     }
 
     public function actionLogin($url)

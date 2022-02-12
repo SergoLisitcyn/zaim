@@ -64,14 +64,14 @@ $this->registerMetaTag(['name' => 'description','content' => 'Банковска
                         ?>
 
                     <div class="mfo_card_info_links-col">
-                        <div class="mfo_card_info_links-col-text">
-                            <span class="mfo_card_info_link"><?= $nameCredit ?></span>
-                        </div>
                         <div class="mfo_card_info_links-col-icons" style="margin-left:15px">
                             <noscript>
                                 <img src="img/banks/icon-card.png" alt="Иконка карты">
                             </noscript>
                             <img class="lazyload" src="img/banks/icon-card.png" alt="Иконка карты">
+                        </div>
+                        <div class="mfo_card_info_links-col-text">
+                            <span class="mfo_card_info_link"><?= $nameCredit ?></span>
                         </div>
                     </div>
                     <?php endif; ?>
@@ -80,14 +80,14 @@ $this->registerMetaTag(['name' => 'description','content' => 'Банковска
                         if($version == 'RU') $nameCash = 'Кредитные наличными';
                         ?>
                     <div class="mfo_card_info_links-col">
-                        <div class="mfo_card_info_links-col-text">
-                            <span class="mfo_card_info_link"><?= $nameCash ?></span>
-                        </div>
                         <div class="mfo_card_info_links-col-icons" style="margin-left:15px">
                             <noscript>
                                 <img src="img/banks/icon-money.png" alt="Иконка купюр">
                             </noscript>
                             <img class="lazyload" src="img/banks/icon-money.png" alt="Иконка купюр">
+                        </div>
+                        <div class="mfo_card_info_links-col-text">
+                            <span class="mfo_card_info_link"><?= $nameCash ?></span>
                         </div>
                     </div>
                     <?php endif; ?>
@@ -96,27 +96,27 @@ $this->registerMetaTag(['name' => 'description','content' => 'Банковска
                         if($version == 'RU') $nameAuto = 'Автокредиты';
                         ?>
                     <div class="mfo_card_info_links-col">
-                        <div class="mfo_card_info_links-col-text">
-                            <span class="mfo_card_info_link">Автокредиты</span>
-                        </div>
                         <div class="mfo_card_info_links-col-icons" style="margin-left:15px">
                             <noscript>
                                 <img src="img/banks/icon-auto.png" alt="Иконка автомобиля">
                             </noscript>
                             <img class="lazyload" src="img/banks/icon-auto.png" alt="Иконка автомобиля">
                         </div>
+                        <div class="mfo_card_info_links-col-text">
+                            <span class="mfo_card_info_link">Автокредиты</span>
+                        </div>
                     </div>
                     <?php endif; ?>
                     <?php if($data['services']['ipoteka'] == "+") : ?>
                     <div class="mfo_card_info_links-col">
-                        <div class="mfo_card_info_links-col-text">
-                            <span class="mfo_card_info_link">Ипотека</span>
-                        </div>
                         <div class="mfo_card_info_links-col-icons" style="margin-left:15px">
                             <noscript>
                                 <img src="img/banks/icon-mortgage.png" alt="Иконка ипотеки">
                             </noscript>
                             <img class="lazyload" src="img/banks/icon-mortgage.png" alt="Иконка ипотеки">
+                        </div>
+                        <div class="mfo_card_info_links-col-text">
+                            <span class="mfo_card_info_link">Ипотека</span>
                         </div>
                     </div>
                     <?php endif; ?>

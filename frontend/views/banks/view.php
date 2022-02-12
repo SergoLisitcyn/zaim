@@ -41,7 +41,7 @@ YiiAsset::register($this);
         <div class="content-row">
             <div class="content-box">
                 <div class="content-info bank-content-info">
-                    <ul class="nav nav-tabs-bank nav-tabs-bank n-nav-tabs-bank">
+                    <ul class="nav nav-tabs-mfo" style="padding: 0">
                         <li class="active">
                             <a href="<?= Url::toRoute(['banks/view', 'url' => $model->url]) ?>">
                                 <span><?= $dataMenu['block_1'] ?></span>

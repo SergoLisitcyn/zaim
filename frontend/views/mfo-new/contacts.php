@@ -1,5 +1,6 @@
 <?php
 use \yii\helpers\Url;
+use \frontend\widgets\MfoViewWidget;
 if(isset($data['seo']['contacts_title']) and !empty($data['seo']['contacts_title'])) {
     $this->title = $data['seo']['contacts_title'];
 } else {
@@ -13,13 +14,13 @@ if(isset($data['seo']['contacts_description']) and !empty($data['seo']['contacts
     <div class="breadcrumbs-wrap limit-width">
         <ul class="breadcrumbs__items white-breadcrumbs__items">
             <li>
-                <a href="/">Займы онлайн</a>
+                <a href="/">Онлайн қарыздар</a>
             </li>
             <li>
                 <a href="/">МФО</a>
             </li>
             <li>
-                <a href="/">Честное слово - займ онлайн в Казахстане</a>
+                <a href="/"><?= $data['info']['name']?></a>
             </li>
             <li>
                 Контакты
@@ -35,30 +36,8 @@ if(isset($data['seo']['contacts_description']) and !empty($data['seo']['contacts
         <div class="content-row">
             <div class="content-box mfo-content-box">
                 <div class="content-info">
-                    <ul	class="nav nav-tabs n-nav-tabs">
-                        <li class="">
-                            <a href="<?= Url::toRoute(['mfo-new/view', 'url' => $model->url]) ?>">
-                                <span><?= $dataMenu['block_1'] ?></span>
-                            </a>
-                        </li>
-                        <?php if($data['login']['lk']) :  ?>
-                            <li class="">
-                                <a href="<?= Url::toRoute(['mfo-new/login', 'url' => $model->url]) ?>">
-                                    <span><?= $dataMenu['block_2'] ?></span>
-                                </a>
-                            </li>
-                        <?php endif;  ?>
-                        <li class="">
-                            <a href="<?= Url::toRoute(['mfo-new/clients', 'url' => $model->url]) ?>">
-                                <span><?= $dataMenu['block_3'] ?></span>
-                            </a>
-                        </li>
-                        <li class="active">
-                            <a href="<?= Url::toRoute(['mfo-new/contacts', 'url' => $model->url]) ?>">
-                                <span><?= $dataMenu['block_4'] ?></span>
-                            </a>
-                        </li>
-                    </ul>
+                    <!--  Навигация-->
+                    <?= MfoViewWidget::widget(['type' => 'navigation','model' => $model,'data' => $data,'navigation' => 'contacts']) ?>
                     <div class="content-main-info__content">
                         <div class="mfo-about bank-mfo-about">
                             <div class="mfo-about__table">

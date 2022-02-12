@@ -775,7 +775,7 @@
         margin-top: 8px;
     }
     .bank-content-main-info .mfo-head-logo img {
-        max-width: 150px;
+        max-width: 170px;            /****** исправила ***********************/
     }
     .bank-mfo-about {
         padding: 30px 30px 0;
@@ -798,7 +798,7 @@
     }
     .bank-contacts-mfo-about {
         /*padding: 5px 15% 0;*/
-        padding: 5px 5% 0;
+        /*padding: 5px 5% 0;*/
     }
 
     .bank-contacts-mfo-about .mfo-about__table .mfo-about__col-right {
@@ -808,8 +808,12 @@
     .bank-offers-horizontal .mfo_card {
         flex-direction: column;
         width: 273px;
-        min-height: 590px;
+        min-height: auto;                     /****** исправила ***********************/
+        align-items: center;               /******* добавила новый код *****************/
     }
+    .bank-offers-horizontal .mfo_card_info_links {   /****** добавила новый код ***********************/
+        padding: 15px 0;
+    }                                                   /****************************************/
     .bank-offers-horizontal .offers__items {
         flex-direction: row;
     }
@@ -857,7 +861,7 @@
 @media (max-width: 567px) {
     .bank-content-main-info {
         flex-direction: column;
-        margin-top: 55px;
+        margin-top: 35px;       /****** исправила ***********************/
     }
     .bank-content-main-info .mfo-head-logo {
         text-align: left;
@@ -883,9 +887,9 @@
     .bank-maps {
         padding: 0 15px;
     }
-    .bank-contacts-mfo-about {
+    /* .bank-contacts-mfo-about {     закоментила
         padding: 5px 15px 0;
-    }
+    } */
     .bank-contacts-mfo-about .mfo-about__col {
         flex-direction: column;
     }

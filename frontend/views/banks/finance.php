@@ -39,7 +39,7 @@ if(isset($data['financial']['description']) and !empty($data['financial']['descr
         <div class="content-row">
             <div class="content-box">
                 <div class="content-info bank-content-info bank-finance-content-info">
-                    <ul class="nav nav-tabs-bank nav-tabs-bank n-nav-tabs-bank">
+                    <ul class="nav nav-tabs-mfo" style="padding: 0">
                         <li class="">
                             <a href="<?= Url::toRoute(['banks/view', 'url' => $model->url]) ?>">
                                 <span><?= $dataMenu['block_1'] ?></span>
@@ -70,12 +70,14 @@ if(isset($data['financial']['description']) and !empty($data['financial']['descr
                             </a>
                         </li>
                     </ul>
+                    <?php if($data['financial']['h1']) :  ?>
+                        <div class="content-main-info bank-content-main-info">
+                            <div class="content-main-info__item content-main-info__item_pad">
+                                <h1><?= $data['financial']['h1'] ?></h1>
+                            </div>
+                        </div>
+                    <?php endif; ?>
                     <div class="content-main-info__content">
-                        <?php if($data['financial']['h1']) :  ?>
-                            <h1 style="color: #000;text-align: left;font-weight: 400;font-size: 36px;line-height: 43px;font-family: 'Open Sans', sans-serif;padding: 10px 35px 0;">
-                                <?= $data['financial']['h1'] ?>
-                            </h1>
-                        <?php endif; ?>
                         <div class="mfo-about bank-mfo-about bank-finance-mfo-about">
                             <div class="mfo-about__table">
                                 <div class="mfo-about__columns">
