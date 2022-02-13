@@ -49,7 +49,6 @@ use yii\helpers\Html;
         <?php endif;?>
     <?php endif; ?>
     <?php
-    $action = '/mfo-new/'.$model->url;
     $form = ActiveForm::begin(
         [
             'action' =>[$action],

@@ -14,6 +14,7 @@ class MfoViewWidget  extends Widget
     public $navigation;
     public $reviews;
     public $reviewsModel;
+    public $action;
 
     public function init()
     {
@@ -42,6 +43,15 @@ class MfoViewWidget  extends Widget
                 'reviews' => $this->reviews,
                 'reviewsModel' => $this->reviewsModel,
                 'model' => $this->model,
+                'action' => $this->action,
+            ]);
+        }
+
+        if($this->type == 'sideBar'){
+            return $this->render('mfo/'.$this->type,[
+                'data' => $this->data,
+                'model' => $this->model,
+                'action' => $this->action,
             ]);
         }
 

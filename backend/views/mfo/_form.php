@@ -40,8 +40,9 @@ use \yii\helpers\Url;
                     <div class="col-xs-6">
 
                         <h4 class="bold uppercase">1. МФО</h4>
-                        <?= $form->field($model, 'mfo_name')->textInput(['maxlength' => true]) ?>
-                        <?= $form->field($model, 'url')->textInput(['maxlength' => true])->hint('например 4slovo') ?>
+                        <?= $form->field($model, 'mfo_name')->textInput(['maxlength' => true, 'disabled' => true]) ?>
+
+                        <?= $form->field($model, 'url')->textInput(['maxlength' => true, 'disabled' => true])->hint('например 4slovo') ?>
 
                         <div class="form-group field-mfo-logo_file">
                             <label class="control-label col-sm-4" for="mfo-logo_file"></label>

@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use common\models\MainPage;
 use common\models\Mfo;
 use common\models\MfoData;
 use common\models\Review;
@@ -66,6 +67,10 @@ class MfoNewController extends Controller
         $dataMfo = unserialize($mfoDatas->data_mfo);
         $dataTag = unserialize($mfoDatas->data_tag);
 
+        if(isset($_POST['email_unisender'])){
+            (new MainPage)->unisender($_POST['email_unisender']);
+            return $this->refresh();
+        }
 
         $model = new Review();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -94,6 +99,11 @@ class MfoNewController extends Controller
         $data = unserialize($mfo->data_ru);
         $dataMenu = unserialize($mfoDatas->data_menu);
         $dataMfo = unserialize($mfoDatas->data_mfo);
+        if(isset($_POST['email_unisender'])){
+            (new MainPage)->unisender($_POST['email_unisender']);
+            return $this->refresh();
+        }
+
         return $this->render('login', [
             'model' => $mfo,
             'data' => $data,
@@ -108,17 +118,31 @@ class MfoNewController extends Controller
         $mfo = Mfo::find()->where(['status' => 1, 'url' => $url])->one();
         if(!$mfo) throw new HttpException(404, 'Страница не существует.');
         $mfoDatas = MfoData::find()->where(['name' => 'Data'])->one();
+        $reviews = Review::find()->where(['cat_id' => $mfo->id])->andWhere(['status' => 1])->orderBy(['date' => SORT_DESC])->limit(3)->all();
         $data = unserialize($mfo->data_ru);
         $dataMenu = unserialize($mfoDatas->data_menu);
         $dataMfo = unserialize($mfoDatas->data_mfo);
         $dataTag = unserialize($mfoDatas->data_tag);
-        return $this->render('clients', [
-            'model' => $mfo,
-            'data' => $data,
-            'dataMenu' => $dataMenu,
-            'dataMfo' => $dataMfo,
-            'dataTag' => $dataTag,
-        ]);
+
+        if(isset($_POST['email_unisender'])){
+            (new MainPage)->unisender($_POST['email_unisender']);
+            return $this->refresh();
+        }
+        $model = new Review();
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('successMfoView', 'Сіздің пікіріңіз жіберілді. Хабарласқаныңыз үшін рахмет!');
+            return $this->refresh();
+        } else {
+            return $this->render('clients', [
+                'model' => $mfo,
+                'data' => $data,
+                'dataMenu' => $dataMenu,
+                'dataMfo' => $dataMfo,
+                'dataTag' => $dataTag,
+                'reviews' => $reviews,
+                'reviewsModel' => $model
+            ]);
+        }
     }
 
     public function actionContacts($url)
@@ -126,18 +150,32 @@ class MfoNewController extends Controller
         if(!$url) return $this->redirect('/');
         $mfo = Mfo::find()->where(['status' => 1, 'url' => $url])->one();
         if(!$mfo) throw new HttpException(404, 'Страница не существует.');
+        $reviews = Review::find()->where(['cat_id' => $mfo->id])->andWhere(['status' => 1])->orderBy(['date' => SORT_DESC])->limit(3)->all();
         $mfoDatas = MfoData::find()->where(['name' => 'Data'])->one();
         $data = unserialize($mfo->data_ru);
         $dataMenu = unserialize($mfoDatas->data_menu);
         $dataMfo = unserialize($mfoDatas->data_mfo);
         $dataTag = unserialize($mfoDatas->data_tag);
-        return $this->render('contacts', [
-            'model' => $mfo,
-            'data' => $data,
-            'dataMenu' => $dataMenu,
-            'dataMfo' => $dataMfo,
-            'dataTag' => $dataTag,
-        ]);
+
+        if(isset($_POST['email_unisender'])){
+            (new MainPage)->unisender($_POST['email_unisender']);
+            return $this->refresh();
+        }
+        $model = new Review();
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('successMfoView', 'Сіздің пікіріңіз жіберілді. Хабарласқаныңыз үшін рахмет!');
+            return $this->refresh();
+        } else {
+            return $this->render('contacts', [
+                'model' => $mfo,
+                'data' => $data,
+                'dataMenu' => $dataMenu,
+                'dataMfo' => $dataMfo,
+                'dataTag' => $dataTag,
+                'reviews' => $reviews,
+                'reviewsModel' => $model
+            ]);
+        }
     }
 
     /**
