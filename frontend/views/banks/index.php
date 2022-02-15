@@ -5,14 +5,17 @@ use \yii\helpers\Url;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Реестр банков Республики Казахстан';
-$this->registerMetaTag(['name' => 'description','content' => 'Банковская система Казахстана. Информации о местных и иностранных банках второго уровня Республики Казахстан.']);
+$this->title = 'Қазақстан Республикасы банктерінің тізілімі';
+//$this->title = 'Реестр банков Республики Казахстан';
+//$this->registerMetaTag(['name' => 'description','content' => 'Банковская система Казахстана. Информации о местных и иностранных банках второго уровня Республики Казахстан.']);
+$this->registerMetaTag(['name' => 'description','content' => 'Қазақстанның банк жүйесі. Қазақстан Республикасының жергілікті және шетелдік екінші деңгейлі банктері туралы ақпарат.']);
 ?>
 <section class="breadcrumbs plr">
     <div class="breadcrumbs-wrap limit-width">
         <ul class="breadcrumbs__items white-breadcrumbs__items">
             <li>
-                Банки Казахстана
+<!--                Банки Казахстана-->
+                Қазақстан банктері
             </li>
         </ul>
     </div>
@@ -54,7 +57,7 @@ $this->registerMetaTag(['name' => 'description','content' => 'Банковска
                         </div>
                     </div>
                     <div class="mfo_card_info_reviews">
-                        <a href="banks/<?= $bank->url ?>/reviews" class="mfo_card_info_link" style="text-decoration: underline">Отзывы (0)</a>
+                        <a href="banks/<?= $bank->url ?>/reviews" class="mfo_card_info_link" style="text-decoration: underline">Пікірлер (0)</a>
                     </div>
                 </div>
                 <div class="mfo_card_info_links">

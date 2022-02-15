@@ -49,7 +49,8 @@ if($url == '/'){
                                 <noscript>
                                     <img src="/img/2016/05/logo-2.png" alt="logo" width="160" height="30">
                                 </noscript>
-                                <img src='data:image/svg+xml,%3Csvg%20xmlns=%22https://www.w3.org/2000/svg%22%20viewBox=%220%200%201%201%22%3E%3C/svg%3E'	data-src="/img/2016/05/logo-2.png" alt="logo"	class="lazyload" width="160" height="30">
+<!--                                <img src='data:image/svg+xml,%3Csvg%20xmlns=%22https://www.w3.org/2000/svg%22%20viewBox=%220%200%201%201%22%3E%3C/svg%3E'	data-src="/img/2016/05/logo-2.png" alt="logo"	class="lazyload" width="160" height="30">-->
+                                <img src="/img/2016/05/logo-2.png" alt="logo" class="lazyload" width="160" height="30">
                             </a>
                         </div>
                     </div>
@@ -105,7 +106,7 @@ if($url == '/'){
                     <div class="header-body__col header-body__col--nav desktop-visible">
                         <nav class="header-body-nav">
                             <ul>
-                                <li><a href="/banks">Банки Казахстана</a></li>
+                                <li><a href="/banks">Қазақстан банктері</a></li>
                                 <li><a href="/aktsii">Акциялар</a></li>
                                 <li><a href="https://smartzaim.kz/reestr-mfo/?utm_source=kz.smartzaim.kz">МҚҰ тізілімі</a></li>
                             </ul>
@@ -124,7 +125,7 @@ if($url == '/'){
                             </div>
                             <ul class="header-nav__list desktop-hidden">
                                 <li class="header-nav__item">
-                                    <a class="header-nav__link" href="/banks">Банки Казахстана</a>
+                                    <a class="header-nav__link" href="/banks">Қазақстан банктері</a>
                                 </li>
                                 <li class="header-nav__item">
                                     <a class="header-nav__link" href="/aktsii">Акциялар</a>

@@ -94,6 +94,10 @@ class BanksController extends Controller
             Yii::$app->session->addFlash('success', 'Банк обновлен');
             return $this->redirect(['update', 'id' => $model->id]);
         }
+        if($model->errors){
+            var_dump($model->errors);
+            die;
+        }
 
         return $this->render('update', [
             'model' => $model,
