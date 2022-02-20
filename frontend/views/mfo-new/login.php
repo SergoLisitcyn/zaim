@@ -71,8 +71,10 @@ if(isset($data['seo']['login_description']) and !empty($data['seo']['login_descr
                                     <?php endif; ?>
                                 </div>
                             </div>
-                            <?php if($data['login']['lk']) :  ?>
-                            <a href="https://<?= $data['login']['lk'] ?>" class="content-main-info__button"><?= $dataMfo['mfo']['login']['lk'] ?></a>
+                            <?php if($model->link_offer) : ?>
+                                <a href="<?= $model->link_offer ?>" class="content-main-info__button"><?= $dataMfo['mfo']['login']['lk'] ?></a>
+                            <?php elseif ($data['login']['lk']) : ?>
+                                <a href="https://<?= $data['login']['lk'] ?>" class="content-main-info__button"><?= $dataMfo['mfo']['login']['lk'] ?></a>
                             <?php endif; ?>
                             <div class="content-main-info__content">
                                 <?= $model->login_content ?>

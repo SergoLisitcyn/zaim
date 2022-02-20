@@ -167,8 +167,6 @@ if(isset($data['seo']['contacts_description']) and !empty($data['seo']['contacts
                         <?php endif; ?>
                     </div>
                 </div>
-                <!--  Раздел отзывы -->
-                <?= MfoViewWidget::widget(['type' => 'reviews','model' => $model,'data' => $data,'reviews' => $reviews, 'reviewsModel' => $reviewsModel,'action' => '/mfo-new/'.$model->url.'/contacts']) ?>
             </div>
 
             <!--  SideBar -->

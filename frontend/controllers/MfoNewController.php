@@ -58,6 +58,9 @@ class MfoNewController extends Controller
         if(!$mfo) throw new HttpException(404, 'Страница не существует.');
 
         $sale = Sale::find()->where(['status' => 1,'mfo_id' => $mfo->id])->orderBy(['srok_do' => SORT_DESC])->one();
+        if($sale && $sale->srok_do < date('Y-m-d H:i:s')){
+            $sale = null;
+        }
 
         $reviews = Review::find()->where(['cat_id' => $mfo->id])->andWhere(['status' => 1])->orderBy(['date' => SORT_DESC])->limit(3)->all();
 
@@ -176,6 +179,40 @@ class MfoNewController extends Controller
                 'reviewsModel' => $model
             ]);
         }
+    }
+
+    public function actionReviews($url)
+    {
+        if(!$url) return $this->redirect('/');
+        $mfo = Mfo::find()->where(['status' => 1, 'url' => $url])->one();
+        if(!$mfo) throw new HttpException(404, 'Страница не существует.');
+        $reviews = Review::find()->where(['cat_id' => $mfo->id])->andWhere(['status' => 1])->orderBy(['date' => SORT_DESC])->all();
+        $mfoDatas = MfoData::find()->where(['name' => 'Data'])->one();
+        $data = unserialize($mfo->data_ru);
+        $dataMenu = unserialize($mfoDatas->data_menu);
+        $dataMfo = unserialize($mfoDatas->data_mfo);
+        $dataTag = unserialize($mfoDatas->data_tag);
+
+        if(isset($_POST['email_unisender'])){
+            (new MainPage)->unisender($_POST['email_unisender']);
+            return $this->refresh();
+        }
+        $model = new Review();
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('successMfoView', 'Сіздің пікіріңіз жіберілді. Хабарласқаныңыз үшін рахмет!');
+            return $this->refresh();
+        } else {
+            return $this->render('reviews', [
+                'model' => $mfo,
+                'data' => $data,
+                'dataMenu' => $dataMenu,
+                'dataMfo' => $dataMfo,
+                'dataTag' => $dataTag,
+                'reviews' => $reviews,
+                'reviewsModel' => $model
+            ]);
+        }
+//        return $this->render('reviews');
     }
 
     /**

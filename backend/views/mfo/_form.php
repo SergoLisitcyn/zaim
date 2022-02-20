@@ -117,7 +117,7 @@ use \yii\helpers\Url;
                         <?php
                         echo $form->field($model, 'certificate_file')->widget(\kartik\file\FileInput::classname(), [
                             'options' => [
-                                'accept' => 'image/*',
+//                                'accept' => 'image/*',
                                 'multiple' => false
                             ],
                             'pluginOptions' => [
@@ -128,24 +128,24 @@ use \yii\helpers\Url;
                         ]);
                         ?>
 
-                        <?= $form->field($model, 'rekvisit')->widget(Widget::className(), [
-                            'settings' => [
-                                'lang' => 'ru',
-                                'minHeight' => 200,
-                                'formatting' => ['p', 'blockquote', 'h2', 'h1'],
-                                'attributes' => [
-                                    [
-                                        'attribute' => 'text',
-                                        'format' => 'html'
-                                    ]
-                                ],
-                                'plugins' => [
-                                    'clips',
-                                    'fullscreen'
-                                ]
-
-                            ]
-                        ])?>
+<!--                        --><?php //$form->field($model, 'rekvisit')->widget(Widget::className(), [
+//                            'settings' => [
+//                                'lang' => 'ru',
+//                                'minHeight' => 200,
+//                                'formatting' => ['p', 'blockquote', 'h2', 'h1'],
+//                                'attributes' => [
+//                                    [
+//                                        'attribute' => 'text',
+//                                        'format' => 'html'
+//                                    ]
+//                                ],
+//                                'plugins' => [
+//                                    'clips',
+//                                    'fullscreen'
+//                                ]
+//
+//                            ]
+//                        ])?>
 
                         <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 

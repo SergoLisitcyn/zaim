@@ -52,10 +52,14 @@ if(isset($data['seo']['clients_description']) and !empty($data['seo']['clients_d
                         </div>
                         <?php endif; ?>
                         <div class="mfo-socials">
-                            <?php if($data['clients']['faq']) : ?>
-                            <a href="//<?= $data['clients']['faq']?>" class="mfo-socials-link" target="_blank" rel="nofollow">
-                                <h2 class="mfo-about-title info-subtitle"><?= $dataMfo['mfo']['clients']['faq'] ?></h2>
-                            </a>
+                            <?php if($model->link_offer) : ?>
+                                <a href="<?= $model->link_offer ?>" class="mfo-socials-link" target="_blank" rel="nofollow">
+                                    <h2 class="mfo-about-title info-subtitle"><?= $dataMfo['mfo']['clients']['faq'] ?></h2>
+                                </a>
+                            <?php elseif ($data['clients']['faq']) : ?>
+                                <a href="//<?= $data['clients']['faq']?>" class="mfo-socials-link" target="_blank" rel="nofollow">
+                                    <h2 class="mfo-about-title info-subtitle"><?= $dataMfo['mfo']['clients']['faq'] ?></h2>
+                                </a>
                             <?php endif; ?>
                             <div class="mfo-socials__block">
                                 <?php if($data['clients']['request_call']) : ?>
@@ -95,12 +99,18 @@ if(isset($data['seo']['clients_description']) and !empty($data['seo']['clients_d
                                 <?php endif; ?>
                             </div>
                         </div>
-                        <?php if($data['clients']['feedback']) : ?>
-                        <div class="mfo-feedback">
-                            <a href="//<?= $data['clients']['feedback'] ?>" class="mfo-feedback-link" rel="nofollow" target="_blank">
-                                <h2 class="mfo-about-title info-subtitle"><?= $dataMfo['mfo']['clients']['feedback'] ?></h2>
-                            </a>
-                        </div>
+                        <?php if($model->link_offer) : ?>
+                            <div class="mfo-feedback">
+                                <a href="<?= $model->link_offer ?>" class="mfo-feedback-link" rel="nofollow" target="_blank">
+                                    <h2 class="mfo-about-title info-subtitle"><?= $dataMfo['mfo']['clients']['feedback'] ?></h2>
+                                </a>
+                            </div>
+                        <?php elseif ($data['clients']['feedback']) : ?>
+                            <div class="mfo-feedback">
+                                <a href="//<?= $data['clients']['feedback'] ?>" class="mfo-feedback-link" rel="nofollow" target="_blank">
+                                    <h2 class="mfo-about-title info-subtitle"><?= $dataMfo['mfo']['clients']['feedback'] ?></h2>
+                                </a>
+                            </div>
                         <?php endif; ?>
                         <div class="mfo-socials">
                             <h2 class="mfo-about-title info-subtitle">Соцсети:</h2>
@@ -139,8 +149,6 @@ if(isset($data['seo']['clients_description']) and !empty($data['seo']['clients_d
                         </div>
                     </div>
                 </div>
-                <!--  Раздел отзывы -->
-                <?= MfoViewWidget::widget(['type' => 'reviews','model' => $model,'data' => $data,'reviews' => $reviews, 'reviewsModel' => $reviewsModel,'action' => '/mfo-new/'.$model->url.'/clients']) ?>
             </div>
 
             <!--  SideBar -->

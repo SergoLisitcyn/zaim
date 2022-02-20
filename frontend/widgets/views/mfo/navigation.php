@@ -4,10 +4,12 @@ $view = '';
 $login = '';
 $clients = '';
 $contacts = '';
+$reviews = '';
 if($active == 'view') $view = 'active';
 if($active == 'login') $login = 'active';
 if($active == 'clients') $clients = 'active';
 if($active == 'contacts') $contacts = 'active';
+if($active == 'reviews') $reviews = 'active';
 ?>
 <ul	class="nav nav-tabs-mfo">
     <li class="<?= $view ?>">
@@ -30,6 +32,11 @@ if($active == 'contacts') $contacts = 'active';
     <li class="<?= $contacts ?>">
         <a href="<?= Url::toRoute(['mfo-new/contacts', 'url' => $model->url]) ?>">
             <span><?= $dataMenu['block_4'] ?></span>
+        </a>
+    </li>
+    <li class="<?= $reviews ?>">
+        <a href="<?= Url::toRoute(['mfo-new/reviews', 'url' => $model->url]) ?>">
+            <span>Пікірлер</span>
         </a>
     </li>
 </ul>

@@ -37,7 +37,10 @@ class NewsController extends Controller
 
     public function actionIndex()
     {
-        $news = News::find()->where(['status' => 1])->all();
+        $news = News::find()
+            ->where(['status' => '1'])
+            ->orderBy(['id' => SORT_DESC])
+            ->all();
         if(isset($_POST['email'])){
             (new MainPage)->unisender($_POST['email']);
             return $this->refresh();

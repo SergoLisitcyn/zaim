@@ -113,6 +113,11 @@ return [
                     'defaults' => ['url' => '']
                 ],
                 [
+                    'pattern' => 'mfo-new/<url:\S+>/reviews',
+                    'route' => '/mfo-new/reviews',
+                    'defaults' => ['url' => '']
+                ],
+                [
                     'pattern' => 'mfo-new/<url:\S+>',
                     'route' => '/mfo-new/view',
                     'defaults' => ['url' => '']
