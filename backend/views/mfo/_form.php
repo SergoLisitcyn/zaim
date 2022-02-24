@@ -82,13 +82,13 @@ use \yii\helpers\Url;
 
                         <?= $form->field($model, 'max_term_calc')->textInput(['maxlength' => true])->hint('Для калькулятора и страницы рейтинга') ?>
                         <?= $form->field($model, 'min_term_calc')->textInput(['maxlength' => true])->hint('Для калькулятора и страницы рейтинга') ?>
-                        <?= $form->field($model, 'akcii')->checkbox(['value' => 1, 'uncheck' => 0]) ?>
+<!--                        --><?php //$form->field($model, 'akcii')->checkbox(['value' => 1, 'uncheck' => 0]) ?>
 
                         <?= $form->field($model, 'home_page')->checkbox(['value' => 1, 'uncheck' => 0]) ?>
 
-                        <?= $form->field($model, 'advanced_repayment')->checkbox(['value' => 1, 'uncheck' => 0]) ?>
+                        <?= $form->field($model, 'advanced_repayment')->checkbox(['value' => 1, 'uncheck' => 0,'disabled' => true]) ?>
 
-                        <?= $form->field($model, 'extension_loan')->checkbox(['value' => 1, 'uncheck' => 0]) ?>
+                        <?= $form->field($model, 'extension_loan')->checkbox(['value' => 1, 'uncheck' => 0,'disabled' => true]) ?>
 
                     </div>
 
@@ -96,9 +96,9 @@ use \yii\helpers\Url;
 
                         <h4 class="bold uppercase">2. «Контактная информация»</h4>
 
-                        <?= $form->field($model, 'phone')->textInput(['maxlength' => true]) ?>
+<!--                        --><?php //$form->field($model, 'phone')->textInput(['maxlength' => true]) ?>
 
-                        <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
+<!--                        --><?php //$form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
                         <?= $form->field($model, 'website')->textInput(['maxlength' => true]) ?>
 
@@ -289,9 +289,9 @@ use \yii\helpers\Url;
 
                         <?= $form->field($model, 'login_link')->textInput(['maxlength' => true])->hint('ссылка на личноый кабинет мфо(https://moneyman.kz/secure/registration?partner=smartzaimkz&utm_source=smartzaim&utm_medium=affiliate)') ?>
 
-                        <?= $form->field($model, 'title_login')->textInput(['maxlength' => true])->hint('Для СЕО на странице личный кабинет') ?>
+<!--                        --><?php //$form->field($model, 'title_login')->textInput(['maxlength' => true])->hint('Для СЕО на странице личный кабинет') ?>
 
-                        <?= $form->field($model, 'title_description')->textInput(['maxlength' => true])->hint('Для СЕО на странице личный кабинет') ?>
+<!--                        --><?php //$form->field($model, 'title_description')->textInput(['maxlength' => true])->hint('Для СЕО на странице личный кабинет') ?>
 
                         <?= $form->field($model, 'login_content')->widget(Widget::className(), [
                             'settings' => [

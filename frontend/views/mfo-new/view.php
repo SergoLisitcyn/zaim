@@ -34,7 +34,7 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
             <div class="content-box mfo-content-box">
                 <div class="content-info">
                     <!--  Навигация-->
-                    <?= MfoViewWidget::widget(['type' => 'navigation','model' => $model,'data' => $data,'navigation' => 'view']) ?>
+                    <?= MfoViewWidget::widget(['type' => 'navigation','model' => $model,'data' => $data,'navigation' => 'view','version' => $version]) ?>
 
                     <div class="content-main-info">
                         <div class="content-main-info__item">
@@ -101,10 +101,10 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                             </div>
 
                             <!--   Основная информация -->
-                            <?= MfoViewWidget::widget(['type' => 'main-info','model' => $model,'data' => $data]) ?>
+                            <?= MfoViewWidget::widget(['type' => 'main-info','model' => $model,'data' => $data,'version' => $version]) ?>
 
                             <!--   Членство в профессиональных объединениях -->
-                            <?= MfoViewWidget::widget(['type' => 'associations','model' => $model,'data' => $data]) ?>
+                            <?= MfoViewWidget::widget(['type' => 'associations','model' => $model,'data' => $data,'version' => $version]) ?>
                         </div>
 
                         <!--   Лицензия -->
@@ -128,37 +128,37 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                         <?php endif; ?>
 
                         <!--   Разделы/признаки -->
-                        <?= MfoViewWidget::widget(['type' => 'features','model' => $model,'data' => $data]) ?>
+                        <?= MfoViewWidget::widget(['type' => 'features','model' => $model,'data' => $data,'version' => $version]) ?>
 
                         <div class="mfo-about">
                             <!--   Условия микрокредитования -->
                             <h2 class="mfo-about-title info-subtitle"><?= $dataTag['uslovia_credit'] ?></h2>
-                            <?= MfoViewWidget::widget(['type' => 'uslovia','model' => $model,'data' => $data]) ?>
+                            <?= MfoViewWidget::widget(['type' => 'uslovia','model' => $model,'data' => $data,'version' => $version]) ?>
 
 
                             <!--   Особенность-->
                             <div class="mfo-about__feature">
                                 <h2 class="content-text-title info-subtitle"><?= $dataTag['osobenost'] ?></h2>
-                                <?= MfoViewWidget::widget(['type' => 'osobenost','model' => $model,'data' => $data]) ?>
+                                <?= MfoViewWidget::widget(['type' => 'osobenost','model' => $model,'data' => $data,'version' => $version]) ?>
                             </div>
                         </div>
 
                         <!--      Способы получения-->
                         <div class="content-text blocks-content-text">
                             <h2 class="content-text-title info-subtitle"><?= $dataTag['sposob_poluch'] ?></h2>
-                            <?= MfoViewWidget::widget(['type' => 'sposob_poluch','model' => $model,'data' => $data]) ?>
+                            <?= MfoViewWidget::widget(['type' => 'sposob_poluch','model' => $model,'data' => $data,'version' => $version]) ?>
                         </div>
 
                         <!--      Способы погашения  -->
                         <div class="content-text blocks-content-text">
                             <h2 class="content-text-title info-subtitle"><?= $dataTag['sposob_pogash'] ?></h2>
-                            <?= MfoViewWidget::widget(['type' => 'sposob_pogash','model' => $model,'data' => $data]) ?>
+                            <?= MfoViewWidget::widget(['type' => 'sposob_pogash','model' => $model,'data' => $data,'version' => $version]) ?>
                         </div>
 
                         <!--      Реквизиты  -->
                         <div class="mfo-about">
                             <h2 class="mfo-about-title info-subtitle"><?= $dataTag['requisites'] ?></h2>
-                            <?= MfoViewWidget::widget(['type' => 'requisites','model' => $model,'data' => $data]) ?>
+                            <?= MfoViewWidget::widget(['type' => 'requisites','model' => $model,'data' => $data,'version' => $version]) ?>
                         </div>
 
                         <div class="mfo-money">

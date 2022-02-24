@@ -57,9 +57,18 @@ if(isset($data['seo']['contacts_description']) and !empty($data['seo']['contacts
                                         <div class="mfo-about__col-left">
                                             <?= $dataMfo['mfo']['contacts']['version_ru'] ?>
                                         </div>
-                                        <div class="mfo-about__col-right">
-                                            <a href="//<?= $data['contacts']['version_ru'] ?>" class="mfo-about__col-right-link"><?= $data['contacts']['version_ru'] ?></a>
-                                        </div>
+
+                                        <?php if($model->link_offer) : ?>
+                                            <div class="mfo-about__col-right">
+                                                <a href="<?= $model->link_offer ?>" class="mfo-about__col-right-link">
+                                                    <?= $data['contacts']['version_ru'] ?>
+                                                </a>
+                                            </div>
+                                        <?php else : ?>
+                                            <div class="mfo-about__col-right">
+                                                <a href="//<?= $data['contacts']['version_ru'] ?>" class="mfo-about__col-right-link"><?= $data['contacts']['version_ru'] ?></a>
+                                            </div>
+                                        <?php endif; ?>
                                     </div>
                                     <?php endif; ?>
                                     <?php if($data['contacts']['version_kz']) : ?>
@@ -67,9 +76,17 @@ if(isset($data['seo']['contacts_description']) and !empty($data['seo']['contacts
                                         <div class="mfo-about__col-left">
                                             <?= $dataMfo['mfo']['contacts']['version_kz'] ?>
                                         </div>
-                                        <div class="mfo-about__col-right">
-                                            <a href="//<?= $data['contacts']['version_kz'] ?>" class="mfo-about__col-right-link"><?= $data['contacts']['version_kz'] ?></a>
-                                        </div>
+                                        <?php if($model->link_offer) : ?>
+                                            <div class="mfo-about__col-right">
+                                                <a href="<?= $model->link_offer ?>" class="mfo-about__col-right-link">
+                                                    <?= $data['contacts']['version_ru'] ?>
+                                                </a>
+                                            </div>
+                                        <?php else : ?>
+                                            <div class="mfo-about__col-right">
+                                                <a href="//<?= $data['contacts']['version_kz'] ?>" class="mfo-about__col-right-link"><?= $data['contacts']['version_kz'] ?></a>
+                                            </div>
+                                        <?php endif; ?>
                                     </div>
                                     <?php endif; ?>
                                     <?php if($data['contacts']['phone_1']) : ?>
@@ -80,10 +97,10 @@ if(isset($data['seo']['contacts_description']) and !empty($data['seo']['contacts
                                         <div class="mfo-about__col-right">
                                             <a href="tel:<?= $data['contacts']['phone_1'] ?>" class="mfo-about__col-right-link"><?= $data['contacts']['phone_1'] ?></a>
                                             <?php if($data['contacts']['phone_2']) : ?>
-                                                , <a href="tel:<?= $data['contacts']['phone_2'] ?>" class="mfo-about__col-right-link"><?= $data['contacts']['phone_2'] ?></a>
+                                                ,&nbsp;<a href="tel:<?= $data['contacts']['phone_2'] ?>" class="mfo-about__col-right-link"><?= $data['contacts']['phone_2'] ?></a>
                                             <?php endif; ?>
                                             <?php if($data['contacts']['phone_3']) : ?>
-                                                , <a href="tel:<?= $data['contacts']['phone_3'] ?>" class="mfo-about__col-right-link"><?= $data['contacts']['phone_3'] ?></a>
+                                                ,&nbsp;<a href="tel:<?= $data['contacts']['phone_3'] ?>" class="mfo-about__col-right-link"><?= $data['contacts']['phone_3'] ?></a>
                                             <?php endif; ?>
                                         </div>
                                     </div>
@@ -152,7 +169,7 @@ if(isset($data['seo']['contacts_description']) and !empty($data['seo']['contacts
                                         <div class="mfo-about__col-right">
                                             <a href="mailto:<?= $data['contacts']['email_1'] ?>" class="mfo-about__col-right-link" target="_blank" rel="nofollow"><?= $data['contacts']['email_1'] ?></a>
                                             <?php if($data['contacts']['email_2']) : ?>
-                                                , <a href="mailto:<?= $data['contacts']['email_2'] ?>" class="mfo-about__col-right-link" target="_blank" rel="nofollow"><?= $data['contacts']['email_2'] ?></a>
+                                                ,&nbsp;<a href="mailto:<?= $data['contacts']['email_2'] ?>" class="mfo-about__col-right-link" target="_blank" rel="nofollow"> <?= $data['contacts']['email_2'] ?></a>
                                             <?php endif; ?>
                                         </div>
                                     </div>

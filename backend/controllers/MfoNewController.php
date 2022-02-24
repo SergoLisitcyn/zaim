@@ -127,10 +127,12 @@ class MfoNewController extends Controller
     }
     public function actionSheet()
     {
-        $dataRu = Mfo::getMfoUpdate();
+        $dataRu = Mfo::getMfoUpdate('МФО Казахстана','RU');
+        $dataKz = Mfo::getMfoUpdate('KZ','KZ');
 
         return $this->render('sheet', [
             'dataRu' => $dataRu,
+            'dataKz' => $dataKz,
         ]);
     }
 }

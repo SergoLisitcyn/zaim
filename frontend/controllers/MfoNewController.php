@@ -52,7 +52,9 @@ class MfoNewController extends Controller
 
     public function actionView($url)
     {
-        if(!$url) return $this->redirect('/');
+        if(!$url) throw new HttpException(404, 'Страница не существует.');
+        $version = 'KZ';
+        if(isset($_GET) && isset($_GET['version']) && $_GET['version'] == 'ru') $version = 'RU';
 //        $mfo = Mfo::find()->where(['status' => 1, 'url' => $url])->one();
         $mfo = Mfo::find()->where(['url' => $url])->one();
         if(!$mfo) throw new HttpException(404, 'Страница не существует.');
@@ -65,10 +67,16 @@ class MfoNewController extends Controller
         $reviews = Review::find()->where(['cat_id' => $mfo->id])->andWhere(['status' => 1])->orderBy(['date' => SORT_DESC])->limit(3)->all();
 
         $mfoDatas = MfoData::find()->where(['name' => 'Data'])->one();
-        $data = unserialize($mfo->data_ru);
-        $dataMenu = unserialize($mfoDatas->data_menu);
-        $dataMfo = unserialize($mfoDatas->data_mfo);
-        $dataTag = unserialize($mfoDatas->data_tag);
+        $data = unserialize($mfo->data_kz);
+        $dataMenu = unserialize($mfoDatas->data_menu_kz);
+        $dataMfo = unserialize($mfoDatas->data_mfo_kz);
+        $dataTag = unserialize($mfoDatas->data_tag_kz);
+        if($version == 'RU'){
+            $data = unserialize($mfo->data_ru);
+            $dataMenu = unserialize($mfoDatas->data_menu);
+            $dataMfo = unserialize($mfoDatas->data_mfo);
+            $dataTag = unserialize($mfoDatas->data_tag);
+        }
 
         if(isset($_POST['email_unisender'])){
             (new MainPage)->unisender($_POST['email_unisender']);
@@ -88,20 +96,30 @@ class MfoNewController extends Controller
                 'dataTag' => $dataTag,
                 'sale' => $sale,
                 'reviews' => $reviews,
-                'reviewsModel' => $model
+                'reviewsModel' => $model,
+                'version' => $version,
             ]);
         }
     }
 
     public function actionLogin($url)
     {
-        if(!$url) return $this->redirect('/');
+        if(!$url) throw new HttpException(404, 'Страница не существует.');
+        $version = 'KZ';
+        if(isset($_GET) && isset($_GET['version']) && $_GET['version'] == 'ru') $version = 'RU';
         $mfo = Mfo::find()->where(['url' => $url])->one();
         if(!$mfo) throw new HttpException(404, 'Страница не существует.');
         $mfoDatas = MfoData::find()->where(['name' => 'Data'])->one();
-        $data = unserialize($mfo->data_ru);
-        $dataMenu = unserialize($mfoDatas->data_menu);
-        $dataMfo = unserialize($mfoDatas->data_mfo);
+        $data = unserialize($mfo->data_kz);
+        $dataMenu = unserialize($mfoDatas->data_menu_kz);
+        $dataMfo = unserialize($mfoDatas->data_mfo_kz);
+        $dataTag = unserialize($mfoDatas->data_tag_kz);
+        if($version == 'RU'){
+            $data = unserialize($mfo->data_ru);
+            $dataMenu = unserialize($mfoDatas->data_menu);
+            $dataMfo = unserialize($mfoDatas->data_mfo);
+            $dataTag = unserialize($mfoDatas->data_tag);
+        }
         if(isset($_POST['email_unisender'])){
             (new MainPage)->unisender($_POST['email_unisender']);
             return $this->refresh();
@@ -117,15 +135,23 @@ class MfoNewController extends Controller
 
     public function actionClients($url)
     {
-        if(!$url) return $this->redirect('/');
-        $mfo = Mfo::find()->where(['status' => 1, 'url' => $url])->one();
+        if(!$url) throw new HttpException(404, 'Страница не существует.');
+        $version = 'KZ';
+        if(isset($_GET) && isset($_GET['version']) && $_GET['version'] == 'ru') $version = 'RU';
+        $mfo = Mfo::find()->where(['url' => $url])->one();
         if(!$mfo) throw new HttpException(404, 'Страница не существует.');
         $mfoDatas = MfoData::find()->where(['name' => 'Data'])->one();
         $reviews = Review::find()->where(['cat_id' => $mfo->id])->andWhere(['status' => 1])->orderBy(['date' => SORT_DESC])->limit(3)->all();
-        $data = unserialize($mfo->data_ru);
-        $dataMenu = unserialize($mfoDatas->data_menu);
-        $dataMfo = unserialize($mfoDatas->data_mfo);
-        $dataTag = unserialize($mfoDatas->data_tag);
+        $data = unserialize($mfo->data_kz);
+        $dataMenu = unserialize($mfoDatas->data_menu_kz);
+        $dataMfo = unserialize($mfoDatas->data_mfo_kz);
+        $dataTag = unserialize($mfoDatas->data_tag_kz);
+        if($version == 'RU'){
+            $data = unserialize($mfo->data_ru);
+            $dataMenu = unserialize($mfoDatas->data_menu);
+            $dataMfo = unserialize($mfoDatas->data_mfo);
+            $dataTag = unserialize($mfoDatas->data_tag);
+        }
 
         if(isset($_POST['email_unisender'])){
             (new MainPage)->unisender($_POST['email_unisender']);
@@ -150,15 +176,23 @@ class MfoNewController extends Controller
 
     public function actionContacts($url)
     {
-        if(!$url) return $this->redirect('/');
-        $mfo = Mfo::find()->where(['status' => 1, 'url' => $url])->one();
+        if(!$url) throw new HttpException(404, 'Страница не существует.');
+        $version = 'KZ';
+        if(isset($_GET) && isset($_GET['version']) && $_GET['version'] == 'ru') $version = 'RU';
+        $mfo = Mfo::find()->where(['url' => $url])->one();
         if(!$mfo) throw new HttpException(404, 'Страница не существует.');
         $reviews = Review::find()->where(['cat_id' => $mfo->id])->andWhere(['status' => 1])->orderBy(['date' => SORT_DESC])->limit(3)->all();
         $mfoDatas = MfoData::find()->where(['name' => 'Data'])->one();
-        $data = unserialize($mfo->data_ru);
-        $dataMenu = unserialize($mfoDatas->data_menu);
-        $dataMfo = unserialize($mfoDatas->data_mfo);
-        $dataTag = unserialize($mfoDatas->data_tag);
+        $data = unserialize($mfo->data_kz);
+        $dataMenu = unserialize($mfoDatas->data_menu_kz);
+        $dataMfo = unserialize($mfoDatas->data_mfo_kz);
+        $dataTag = unserialize($mfoDatas->data_tag_kz);
+        if($version == 'RU'){
+            $data = unserialize($mfo->data_ru);
+            $dataMenu = unserialize($mfoDatas->data_menu);
+            $dataMfo = unserialize($mfoDatas->data_mfo);
+            $dataTag = unserialize($mfoDatas->data_tag);
+        }
 
         if(isset($_POST['email_unisender'])){
             (new MainPage)->unisender($_POST['email_unisender']);
@@ -184,7 +218,7 @@ class MfoNewController extends Controller
     public function actionReviews($url)
     {
         if(!$url) return $this->redirect('/');
-        $mfo = Mfo::find()->where(['status' => 1, 'url' => $url])->one();
+        $mfo = Mfo::find()->where(['url' => $url])->one();
         if(!$mfo) throw new HttpException(404, 'Страница не существует.');
         $reviews = Review::find()->where(['cat_id' => $mfo->id])->andWhere(['status' => 1])->orderBy(['date' => SORT_DESC])->all();
         $mfoDatas = MfoData::find()->where(['name' => 'Data'])->one();

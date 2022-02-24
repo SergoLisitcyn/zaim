@@ -13,9 +13,13 @@ $this->title = 'МФО';
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?= Html::a('<i class="fa fa-plus"></i> Создать МФО', ['create'], ['class' => 'mbtn mbtn-success']) ?>
-    </p>
+    <?= Html::a('Запустить обновление', ['mfo-new/sheet'], [
+        'class' => 'btn btn-primary',
+        'data' => [
+            'confirm' => 'Вы точно хотите запустить обновление?',
+            'method' => 'post',
+        ],
+    ]) ?>
 
     <?=
             \kartik\grid\GridView::widget([

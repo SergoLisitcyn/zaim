@@ -15,6 +15,7 @@ class MfoViewWidget  extends Widget
     public $reviews;
     public $reviewsModel;
     public $action;
+    public $version;
 
     public function init()
     {
@@ -24,10 +25,14 @@ class MfoViewWidget  extends Widget
     public function run()
     {
         $mfoDatas = MfoData::find()->where(['name' => 'Data'])->one();
-        $dataMenu = unserialize($mfoDatas->data_menu);
-        $dataMfo = unserialize($mfoDatas->data_mfo);
-        $dataTag = unserialize($mfoDatas->data_tag);
-
+        $dataMenu = unserialize($mfoDatas->data_menu_kz);
+        $dataMfo = unserialize($mfoDatas->data_mfo_kz);
+        $dataTag = unserialize($mfoDatas->data_tag_kz);
+        if($this->version == 'RU'){
+            $dataMenu = unserialize($mfoDatas->data_menu);
+            $dataMfo = unserialize($mfoDatas->data_mfo);
+            $dataTag = unserialize($mfoDatas->data_tag);
+        }
         if($this->navigation){
             return $this->render('mfo/'.$this->type,[
                 'model' => $this->model,

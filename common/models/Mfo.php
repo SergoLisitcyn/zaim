@@ -269,8 +269,13 @@ class Mfo extends \yii\db\ActiveRecord
             }
 
         }
-        MfoTypeCredit::deleteAll(['type_credit_id'=>$arr]);
-        MfoCity::deleteAll(['city_id'=>$arrCity]);
+        if($changedAttributes){
+            MfoTypeCredit::deleteAll(['type_credit_id'=>$arr]);
+        }
+        if($changedAttributes){
+            MfoCity::deleteAll(['city_id'=>$arrCity]);
+        }
+
         $imageSquareFile = UploadedFile::getInstance($this, 'logo_file');
         if ($imageSquareFile) {
             $directory = Yii::getAlias('@frontend/web/uploads/images/mfo/logo') . DIRECTORY_SEPARATOR;
@@ -309,7 +314,7 @@ class Mfo extends \yii\db\ActiveRecord
         }
     }
 
-    public static function getMfoUpdate()
+    public static function getMfoUpdate($list,$version)
     {
         $googleAccountKeyFilePath = __DIR__ . '/../../backend/views/mfo-new/smartzaimcrm-59bd2db3d605.json';
         putenv('GOOGLE_APPLICATION_CREDENTIALS=' . $googleAccountKeyFilePath);
@@ -326,8 +331,7 @@ class Mfo extends \yii\db\ActiveRecord
             $sheetProperties = $sheet->getProperties();
         }
         $range = $sheetProperties->title;
-        $response = $service->spreadsheets_values->get($spreadsheetId, 'МФО Казахстана');
-
+        $response = $service->spreadsheets_values->get($spreadsheetId, $list);
         $data = [];
         $countSave = 0;
         $countUpdate = 0;
@@ -340,22 +344,25 @@ class Mfo extends \yii\db\ActiveRecord
                 $dataMenu['block_3'] = $value[109];
                 $dataMenu['block_4'] = $value[125];
                 if($mfoData){
-                    $mfoData->name = 'Data';
-                    $mfoData->data_menu = serialize($dataMenu);
+                    if($version == 'RU') $mfoData->data_menu = serialize($dataMenu);
+                    if($version == 'KZ') $mfoData->data_menu_kz = serialize($dataMenu);
+
                     if($mfoData->save()){
                         continue;
-                    }else{
-                        echo 'tut1';
+                    } else {
+                        echo 'Ошибка - '.$key;
                         var_dump($mfoData->errors); die;
                     }
-                }
-                $modelMfoData->name = 'Data';
-                $modelMfoData->data_menu = serialize($dataMenu);
-                if($modelMfoData->save()){
-                    continue;
                 } else {
-                    echo 'tut';
-                    var_dump($modelMfoData->errors); die;
+                    $modelMfoData->name = 'Data';
+                    if($version == 'RU') $modelMfoData->data_menu = serialize($dataMenu);
+                    if($version == 'KZ') $modelMfoData->data_menu_kz = serialize($dataMenu);
+                    if($modelMfoData->save()){
+                        continue;
+                    } else {
+                        echo 'Ошибка - '.$key;
+                        var_dump($modelMfoData->errors); die;
+                    }
                 }
             }
             if($key == 1){
@@ -369,12 +376,14 @@ class Mfo extends \yii\db\ActiveRecord
                 $dataTag['sposob_pogash'] = $value[72];
                 $dataTag['requisites'] = $value[88];
                 $dataTag['social'] = $value[119];
+
                 if($mfoData){
-                    $mfoData->data_tag = serialize($dataTag);
+                    if($version == 'RU') $mfoData->data_tag = serialize($dataTag);
+                    if($version == 'KZ') $mfoData->data_tag_kz = serialize($dataTag);
                     if($mfoData->save()){
                         continue;
                     } else {
-                        echo 'tut2';
+                        echo 'Ошибка - '.$key;
                         var_dump($mfoData->errors); die;
                     }
                 }
@@ -537,12 +546,14 @@ class Mfo extends \yii\db\ActiveRecord
                 $dataMfo['mfo']['contacts']['email_2'] = $value[137];
                 $dataMfo['mfo']['contacts']['maps_1'] = $value[138];
                 $dataMfo['mfo']['contacts']['maps_2'] = $value[139];
+
                 if($mfoData){
-                    $mfoData->data_mfo = serialize($dataMfo);
+                    if($version == 'RU') $mfoData->data_mfo = serialize($dataMfo);
+                    if($version == 'KZ') $mfoData->data_mfo_kz = serialize($dataMfo);
                     if($mfoData->save()){
                         continue;
                     } else{
-                        echo 'tut3';
+                        echo 'Ошибка - '.$key;
                         var_dump($mfoData->errors); die;
                     }
                 }
@@ -730,22 +741,46 @@ class Mfo extends \yii\db\ActiveRecord
                 $data['seo']['contacts_title'] = $data['seo']['h1'].''.$value[157].' — smartzaim.kz';
                 $data['seo']['contacts_description'] =$data['seo']['h1'].' '.$value[158];
 
+
+                if($version == 'RU' && !$mfo){
+                    $model->status = 0;
+                    $model->stavka = 'от ';
+                    $model->title = 'test';
+                    $model->data_ru = serialize($data);
+
+//                    Досрочное погашение
+                    $model->advanced_repayment = 0;
+                    if($data['singularity']['full_repayment']) $model->advanced_repayment = 1;
+
+//                    Продление (пролонгация) кредита
+                    $model->extension_loan = 0;
+                    if($data['conditions']['term_extension_service']) $model->extension_loan = 1;
+
+                    $model->url = $value[143];
+                }
                 if($mfo){
-                    $mfo->data_ru = serialize($data);
+                    if($version == 'RU'){
+                        $mfo->data_ru = serialize($data);
+                    }
+                    if($version == 'KZ'){
+                        $mfo->data_kz = serialize($data);
+                    }
+                    //  Досрочное погашение
+                    $mfo->advanced_repayment = 0;
+                    if($data['singularity']['full_repayment']) $mfo->advanced_repayment = 1;
+                    // Продление (пролонгация) кредита
+                    $mfo->extension_loan = 0;
+                    if($data['conditions']['term_extension_service']) $mfo->extension_loan = 1;
+
                     if($mfo->save()){
                         $countUpdate++;
                         continue;
                     } else {
                         echo 'Ошибка - '.$key.' - '.$value[1]; echo '<br><br>';
-                        var_dump($model->errors); die;
+                        var_dump($mfo->errors); die;
                     }
                 }
-                if(!$mfo){
-                    $model->status = 0;
-                    $model->stavka = 'от ';
-                    $model->title = 'test';
-                    $model->data_ru = serialize($data);
-                    $model->url = $value[143];
+                if($version == 'RU' && !$mfo){
                     if($model->save()){
                         $countSave++;
                     } else {
