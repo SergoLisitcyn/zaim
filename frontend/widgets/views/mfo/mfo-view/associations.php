@@ -1,5 +1,5 @@
 <div class="mfo-about__logos">
-    <h2 class="mfo-about-title info-subtitle" style="padding-bottom: 20px;">Членство в профессиональных объединениях:</h2>
+    <h2 class="mfo-about-title info-subtitle" style="padding-bottom: 20px;">Кәсіби бірлестіктерге мүшелік:</h2>
     <?php if($data['info']['amfok']) :  ?>
         <noindex>
             <a href="//<?= $data['info']['amfok'] ?>" class="mfo-about__logos-link" rel="nofollow" target="_blank">

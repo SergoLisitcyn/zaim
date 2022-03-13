@@ -76,7 +76,7 @@ if(isset($data['seo']['login_description']) and !empty($data['seo']['login_descr
                             <?php elseif ($data['login']['lk']) : ?>
                                 <a href="https://<?= $data['login']['lk'] ?>" class="content-main-info__button"><?= $dataMfo['mfo']['login']['lk'] ?></a>
                             <?php endif; ?>
-                            <div class="content-main-info__content">
+                            <div class="content-main-info__content" style="padding-top: 20px">
                                 <?= $model->login_content ?>
                             </div>
                         </div>

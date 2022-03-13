@@ -12,9 +12,15 @@ use \yii\helpers\Url;
                     <div class="mfo_achieve promo">Акция</div>
                 <?php endif; ?>
                 <div class="mfo_card_company">
+                    <?php if(!$mfoNew) : ?>
                     <a href="<?= Url::toRoute(['mfo/view', 'url' => $mfo->url]) ?>">
                         <img src="<?= $mfo->logo; ?>" alt="<?= $mfo->mfo_name ?>">
                     </a>
+                    <?php else: ?>
+                        <a href="<?= Url::toRoute(['mfo-new/view', 'url' => $mfo->url]) ?>">
+                            <img src="<?= $mfo->logo; ?>" alt="<?= $mfo->mfo_name ?>">
+                        </a>
+                    <?php endif; ?>
                 </div>
 <!--                <div class="mfo_card_compare">-->
 <!--                    <a href="--><?php //echo $mfo->link_offer ?><!--">Салыстыру</a>-->
@@ -74,7 +80,7 @@ use \yii\helpers\Url;
                         <div class="mfo_card_info_ways">
                             <div class="mfo_card_info_ways_label">Алу:</div>
                             <div class="mfo_card_info_ways_data">
-                                <img class="lazyload" src="img/2016/08/all.png" alt="all" width="93" height="20">
+                                <img class="lazyload" src="/img/2016/08/all.png" alt="all" width="93" height="20">
                             </div>
                         </div>
                     </div>

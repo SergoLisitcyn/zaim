@@ -211,7 +211,10 @@
     }
 
     .nav-tabs-mfo {
-        padding: 0px 40px;
+        /*padding: 0px 40px;*/
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
     }
 
     .content-main-info__item {
@@ -855,6 +858,7 @@
     .mfo-license__col-left,
     .mfo-license__col-right {
         width: 100%;
+        padding-bottom: 5px;
     }
 }
 

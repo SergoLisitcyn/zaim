@@ -49,6 +49,27 @@ class MfoNewController extends Controller
         ]);
     }
 
+    public function actionFilter($index = null,$filter = null)
+    {
+        if(!$filter || !$index) throw new HttpException(404, 'Страница не существует.');
+
+//        $mfo = Mfo::find()->where(['status' => 1])->all();
+        $mfo = Mfo::find()->all();
+        $array = [];
+        foreach ($mfo as $key => $value){
+            $data = unserialize($value['data_kz']);
+            if(isset($data[$index][$filter]) && $data[$index][$filter]){
+                $array[] = $value['id'];
+            }
+        }
+        $query = Mfo::find()
+            ->where(['in', 'id', $array])->all();
+
+        return $this->render('filter', [
+            'mfo' => $query,
+        ]);
+    }
+
 
     public function actionView($url)
     {

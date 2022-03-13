@@ -744,7 +744,7 @@ class Mfo extends \yii\db\ActiveRecord
 
                 if($version == 'RU' && !$mfo){
                     $model->status = 0;
-                    $model->stavka = 'от ';
+//                    $model->stavka = 'от ';
                     $model->title = 'test';
                     $model->data_ru = serialize($data);
 
@@ -758,13 +758,38 @@ class Mfo extends \yii\db\ActiveRecord
 
                     $model->url = $value[143];
                 }
+
+                if($version == 'KZ' && !$mfo){
+                    $model->srok = $data['conditions']['min_term'].' - '.$data['conditions']['max_term'];
+
+                    if($data['conditions']['stack_min_first_microcredit']){
+                        $model->stavka = 'от '.$data['conditions']['stack_min_first_microcredit'];
+                    } else {
+                        $model->stavka = '0';
+                    }
+                    $model->gesv = $data['conditions']['gesv_min'];
+                    $model->sum_new_client = $data['conditions']['amount_first_microcredit'];
+                    $model->stavka_new_client = $data['conditions']['stack_min_first_microcredit'];
+                }
+
                 if($mfo){
                     if($version == 'RU'){
                         $mfo->data_ru = serialize($data);
                     }
                     if($version == 'KZ'){
                         $mfo->data_kz = serialize($data);
+                        $mfo->srok = $data['conditions']['min_term'].' - '.$data['conditions']['max_term'];
+
+                        if($data['conditions']['stack_min_first_microcredit']){
+                            $mfo->stavka = 'от '.$data['conditions']['stack_min_first_microcredit'];
+                        } else {
+                            $mfo->stavka = '0';
+                        }
+                        $mfo->gesv = $data['conditions']['gesv_min'];
+                        $mfo->sum_new_client = $data['conditions']['amount_first_microcredit'];
+                        $mfo->stavka_new_client = $data['conditions']['stack_min_first_microcredit'];
                     }
+
                     //  Досрочное погашение
                     $mfo->advanced_repayment = 0;
                     if($data['singularity']['full_repayment']) $mfo->advanced_repayment = 1;

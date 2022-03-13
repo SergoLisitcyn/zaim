@@ -19,9 +19,12 @@
             </div>
         <?php endif; ?>
     </div>
-    <?php if($data['license']['link_license']) :  ?>
+<!--    --><?php //if($data['license']['link_license']) :  ?>
+    <?php if($model->certificate) :  ?>
         <div class="mfo-license__image">
-            <img src="/img/mfo/license_mfo_page.jpg" data-src="/img/mfo/license_mfo_page.jpg" class="lazyload attachment-200x size-200x">
+            <a href="<?= $model->certificate ?>" target="_blank">
+                <img src="/img/mfo/license_mfo_page.jpg" data-src="/img/mfo/license_mfo_page.jpg" class="lazyload attachment-200x size-200x">
+            </a>
         </div>
     <?php endif; ?>
 </div>

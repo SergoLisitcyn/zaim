@@ -98,6 +98,14 @@ return [
                     'defaults' => ['url' => '']
                 ],
                 [
+                    'pattern' => 'mfo-new/filter/<index>/<filter>',
+                    'route' => '/mfo-new/filter',
+                    'defaults' => [
+                        'index' => '',
+                        'filter' => ''
+                    ]
+                ],
+                [
                     'pattern' => 'mfo-new/<url:\S+>/login',
                     'route' => '/mfo-new/login',
                     'defaults' => ['url' => '']

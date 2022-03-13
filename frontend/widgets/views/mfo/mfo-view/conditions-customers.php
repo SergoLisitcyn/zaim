@@ -5,7 +5,7 @@
             <div class="offer-col"><?= $model->srok_new_client?></div>
         </div>
         <div class="firstloan-col">
-            <div class="offer-row-col">Макс. сомасы/<br>теңге</div>
+            <div class="offer-row-col">Макс. сомасы/теңге</div>
             <div class="offer-col"><?= $model->sum_new_client?></div>
         </div>
         <div class="firstloan-col">
@@ -17,7 +17,7 @@
             <div class="offer-col"><?= $model->odobrenie_new_client?>%</div>
         </div>
         <div class="firstloan-col">
-            <div class="offer-row-col">Қарау/<br>минут</div>
+            <div class="offer-row-col">Қарау/минут</div>
             <div class="offer-col"><?= $model->rasmotrenie_new_client?></div>
         </div>
         <div class="firstloan-col">
@@ -41,7 +41,7 @@
                 <div class="offer-col"><?= $model->srok_for_client ?></div>
             </div>
             <div class="firstloan-col">
-                <div class="offer-row-col">Макс. сомасы/<br>теңге</div>
+                <div class="offer-row-col">Макс. сомасы/теңге</div>
                 <div class="offer-col"><?= $model->sum_for_client ?></div>
             </div>
             <div class="firstloan-col">
@@ -53,7 +53,7 @@
                 <div class="offer-col"><?= $model->odobrenie_for_client ?>%</div>
             </div>
             <div class="firstloan-col">
-                <div class="offer-row-col">Қарау/<br>минут</div>
+                <div class="offer-row-col">Қарау/минут</div>
                 <div class="offer-col"><?= $model->rasmotrenie_for_client ?></div>
             </div>
             <div class="firstloan-col">

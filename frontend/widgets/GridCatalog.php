@@ -9,6 +9,7 @@ class GridCatalog extends Widget
 {
     public $input;
     public $output;
+    public $mfoNew = false;
 
     public function init()
     {
@@ -73,6 +74,7 @@ class GridCatalog extends Widget
         return $this->render('gridCatalog', [
             'mfoAll' => $output,
             'model' => $model,
+            'mfoNew' => $this->mfoNew,
         ]);
     }
 }
