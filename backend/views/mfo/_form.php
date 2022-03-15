@@ -163,13 +163,13 @@ use \yii\helpers\Url;
                     <div class="col-xs-6">
                         <h4 class="bold uppercase">Подраздел “Условия общие”</h4>
 
-                        <?= $form->field($model, 'srok')->textInput(['maxlength' => true])->hint('например 7 - 30 дней') ?>
+                        <?= $form->field($model, 'srok')->textInput(['maxlength' => true, 'disabled' => true])->hint('например 7 - 30 дней') ?>
 
                         <?= $form->field($model, 'sum')->textInput(['maxlength' => true])->hint('например 10 000 - 130 000') ?>
 
-                        <?= $form->field($model, 'stavka')->textInput(['maxlength' => true])->hint('например от 0,01 %') ?>
+                        <?= $form->field($model, 'stavka')->textInput(['maxlength' => true,'disabled' => true])->hint('например от 0,01 %') ?>
 
-                        <?= $form->field($model, 'gesv')->textInput(['maxlength' => true])->hint('например от 7,3%') ?>
+                        <?= $form->field($model, 'gesv')->textInput(['maxlength' => true,'disabled' => true])->hint('например от 7,3%') ?>
 
                         <?= $form->field($model, 'odobrenie')->textInput()->hint('только цифры без знака %') ?>
 
@@ -181,9 +181,9 @@ use \yii\helpers\Url;
 
                         <?= $form->field($model, 'srok_new_client')->textInput(['maxlength' => true])->hint('например 7 - 30 дней') ?>
 
-                        <?= $form->field($model, 'sum_new_client')->textInput(['maxlength' => true])->hint('например 10 000 - 130 000') ?>
+                        <?= $form->field($model, 'sum_new_client')->textInput(['maxlength' => true, 'disabled' => true])->hint('например 10 000 - 130 000') ?>
 
-                        <?= $form->field($model, 'stavka_new_client')->textInput(['maxlength' => true])->hint('например от 0,01 %') ?>
+                        <?= $form->field($model, 'stavka_new_client')->textInput(['maxlength' => true, 'disabled' => true])->hint('например от 0,01 %') ?>
 
                         <?= $form->field($model, 'odobrenie_new_client')->textInput()->hint('только цифры без знака %') ?>
 
