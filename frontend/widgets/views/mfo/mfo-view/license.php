@@ -7,7 +7,7 @@
             </div>
         <?php endif; ?>
         <?php if($data['license']['issue_date']) :  ?>
-            <div class="mfo-license__text">
+            <div class="mfo-license__text" style="padding-top: 10px;padding-bottom: 5px">
                 <div class="mfo-license__col-left"><?= $dataMfo['mfo']['license']['issue_date'] ?></div>
                 <div class="mfo-license__col-right"><?= $data['license']['issue_date'] ?></div>
             </div>

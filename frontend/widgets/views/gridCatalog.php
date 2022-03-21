@@ -46,6 +46,7 @@ use \yii\helpers\Url;
                 </div>
                 <div class="mfo_card_info">
                     <div class="mfo_card_info_inner">
+                        <?php if($mfo->rating) : ?>
                         <div class="mfo_card_info_rating">
                             <div class="mfo_card_info_rating_label">Рейтинг:</div>
                             <div class="mfo_card_info_rating_data">
@@ -53,30 +54,43 @@ use \yii\helpers\Url;
                                 <div class="rating__val"><?= $mfo->rating ?></div>
                             </div>
                         </div>
+                        <?php endif; ?>
+                        <?php if($mfo->srok) : ?>
                         <div class="mfo_card_info_time">
                             <div class="mfo_card_info_time_label">Мерзімге:</div>
                             <div class="mfo_card_info_time_data"><?= $mfo->srok ?></div>
                         </div>
+                        <?php endif; ?>
+                        <?php if($mfo->sum) : ?>
                         <div class="mfo_card_info_sum">
                             <div class="mfo_card_info_sum_label">Сомасы (тнг):</div>
                             <div class="mfo_card_info_sum_data"><?= $mfo->sum ?></div>
                         </div>
+                        <?php endif; ?>
+                        <?php if($mfo->stavka) : ?>
                         <div class="mfo_card_info_rate">
                             <div class="mfo_card_info_rate_label">Мөлшерлемесі:</div>
                             <div class="mfo_card_info_rate_data"><?= $mfo->stavka ?></div>
                         </div>
+                        <?php endif; ?>
+                        <?php if($mfo->gesv) : ?>
                         <div class="mfo_card_info_accept">
                             <div class="mfo_card_info_accept_label">ГЭСВ:</div>
                             <div class="mfo_card_info_accept_data"><?= $mfo->gesv ?></div>
                         </div>
+                        <?php endif; ?>
+                        <?php if($mfo->odobrenie) : ?>
                         <div class="mfo_card_info_approval">
                             <div class="mfo_card_info_approval_label">Мақұлдау:</div>
                             <div class="mfo_card_info_approval_data"><?= $mfo->odobrenie ?>%</div>
                         </div>
+                        <?php endif; ?>
+                        <?php if($mfo->rasmotrenie) : ?>
                         <div class="mfo_card_info_accept">
                             <div class="mfo_card_info_accept_label">Қаралуы:</div>
                             <div class="mfo_card_info_accept_data"><?= $mfo->rasmotrenie ?></div>
                         </div>
+                        <?php endif; ?>
                         <div class="mfo_card_info_ways">
                             <div class="mfo_card_info_ways_label">Алу:</div>
                             <div class="mfo_card_info_ways_data">

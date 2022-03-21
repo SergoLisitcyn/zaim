@@ -2,12 +2,15 @@
 
 namespace frontend\controllers;
 
+use common\models\City;
 use common\models\MainPage;
+use common\models\MfoData;
 use common\models\Review;
 use common\models\Sale;
 use Yii;
 use common\models\Mfo;
 use yii\data\ActiveDataProvider;
+use yii\data\Pagination;
 use yii\web\Controller;
 use yii\web\HttpException;
 use yii\web\NotFoundHttpException;
@@ -46,6 +49,27 @@ class MfoController extends Controller
 
         return $this->render('index', [
             'dataProvider' => $dataProvider,
+        ]);
+    }
+    public function actionReestrMfo()
+    {
+        $models = Mfo::find();
+        $countQuery = clone $models;
+        $pages = new Pagination(['totalCount' => $countQuery->count()]);
+        $mfoAll = $models->offset($pages->offset)
+            ->limit($pages->limit)
+            ->all();
+
+        $mfoDatas = MfoData::find()->where(['name' => 'Data'])->one();
+        $dataMfo = unserialize($mfoDatas->data_mfo_kz);
+
+        $city = City::find()->where(['status' => 1])->all();
+
+        return $this->render('reestr-mfo', [
+            'mfoAll' => $mfoAll,
+            'dataMfo' => $dataMfo,
+            'pages' => $pages,
+            'citys' => $city,
         ]);
     }
 

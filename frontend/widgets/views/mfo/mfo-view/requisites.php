@@ -40,6 +40,7 @@
                 </div>
             </div>
         <?php endif; ?>
+<!--        Юридический адрес-->
         <?php if($data['requisites']['legal_address']) : ?>
             <div class="mfo-about__col">
                 <div class="mfo-about__col-left">

@@ -57,6 +57,7 @@ return [
                 'unisender_mfo' => '/mfo/unisender',
                 'banks' => '/banks/index',
                 'mfo-new' => '/mfo-new/index',
+                'reestr-mfo' => '/mfo/reestr-mfo',
                 [
                     'pattern' => 'mfo/<url:\S+>/reviews',
                     'route' => '/mfo/reviews',

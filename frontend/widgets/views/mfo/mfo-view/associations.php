@@ -1,3 +1,4 @@
+<?php if ($data['info']['fintech'] || $data['info']['amfok']) : ?>
 <div class="mfo-about__logos">
     <h2 class="mfo-about-title info-subtitle" style="padding-bottom: 20px;">Кәсіби бірлестіктерге мүшелік:</h2>
     <?php if($data['info']['amfok']) :  ?>
@@ -21,3 +22,4 @@
         </noindex>
     <?php endif; ?>
 </div>
+<?php endif; ?>

@@ -767,6 +767,18 @@ class Mfo extends \yii\db\ActiveRecord
                     } else {
                         $model->stavka = '0';
                     }
+                    if($data['conditions']['min_amount'] && $data['conditions']['max_amount']){
+                        $model->sum = $data['conditions']['min_amount'].' - '.$data['conditions']['max_amount'];
+                    }
+                    if(!$data['conditions']['min_amount'] && $data['conditions']['max_amount']){
+                        $model->sum = $data['conditions']['max_amount'];
+                    }
+                    if($data['conditions']['min_amount'] && !$data['conditions']['max_amount']){
+                        $model->sum = $data['conditions']['min_amount'];
+                    }
+
+                    $data['conditions']['min_amount'] = $value[38];
+                    $data['conditions']['max_amount'] = $value[39];
                     $model->gesv = $data['conditions']['gesv_min'];
                     $model->sum_new_client = $data['conditions']['amount_first_microcredit'];
                     $model->stavka_new_client = $data['conditions']['stack_min_first_microcredit'];
@@ -785,6 +797,17 @@ class Mfo extends \yii\db\ActiveRecord
                         } else {
                             $mfo->stavka = '0';
                         }
+
+                        if($data['conditions']['min_amount'] && $data['conditions']['max_amount']){
+                            $mfo->sum = $data['conditions']['min_amount'].' - '.$data['conditions']['max_amount'];
+                        }
+                        if(!$data['conditions']['min_amount'] && $data['conditions']['max_amount']){
+                            $mfo->sum = $data['conditions']['max_amount'];
+                        }
+                        if($data['conditions']['min_amount'] && !$data['conditions']['max_amount']){
+                            $mfo->sum = $data['conditions']['min_amount'];
+                        }
+
                         $mfo->gesv = $data['conditions']['gesv_min'];
                         $mfo->sum_new_client = $data['conditions']['amount_first_microcredit'];
                         $mfo->stavka_new_client = $data['conditions']['stack_min_first_microcredit'];

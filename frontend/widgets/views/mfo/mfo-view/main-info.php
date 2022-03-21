@@ -1,5 +1,6 @@
 <div class="mfo-about__table">
     <div class="mfo-about__columns">
+<!--        Город-->
         <?php if($data['info']['city']) :  ?>
             <div class="mfo-about__col">
                 <div class="mfo-about__col-left">
@@ -10,6 +11,7 @@
                 </div>
             </div>
         <?php endif; ?>
+<!--        Международная компания-->
         <?php if($data['info']['international_company']) :  ?>
             <div class="mfo-about__col">
                 <div class="mfo-about__col-left">
@@ -20,6 +22,7 @@
                 </div>
             </div>
         <?php endif; ?>
+<!--        Генеральный директор-->
         <?php if($data['info']['general_manager']) :  ?>
             <div class="mfo-about__col">
                 <div class="mfo-about__col-left">
@@ -30,6 +33,7 @@
                 </div>
             </div>
         <?php endif; ?>
+<!--        Страна расположения центрального офиса-->
         <?php if($data['info']['country_central_office']) :  ?>
             <div class="mfo-about__col">
                 <div class="mfo-about__col-left">
@@ -40,6 +44,7 @@
                 </div>
             </div>
         <?php endif; ?>
+<!--        Город расположения центрального офиса-->
         <?php if($data['info']['city_central_office']) :  ?>
             <div class="mfo-about__col">
                 <div class="mfo-about__col-left">
@@ -50,6 +55,7 @@
                 </div>
             </div>
         <?php endif; ?>
+<!--        Материнская компания-->
         <?php if($data['info']['parent_company']) :  ?>
             <div class="mfo-about__col">
                 <div class="mfo-about__col-left">
@@ -60,6 +66,7 @@
                 </div>
             </div>
         <?php endif; ?>
+<!--        Сайт-->
         <?php if($data['info']['website']) :  ?>
             <div class="mfo-about__col">
                 <div class="mfo-about__col-left">
@@ -70,6 +77,7 @@
                 </div>
             </div>
         <?php endif; ?>
+<!--        Юридическое лицо-->
         <?php if($data['info']['entity']) :  ?>
             <div class="mfo-about__col">
                 <div class="mfo-about__col-left">

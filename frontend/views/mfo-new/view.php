@@ -62,9 +62,11 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                         <img class="lazyloaded" src="<?= $model->logo?>" data-src="<?= $model->logo?>" alt="<?= $model->mfo_name?>">
                                     </a>
                                 <?php endif; ?>
+                                <?php if($model->odobrenie) : ?>
                                 <div class="mfo-head-approv">Мақұлдау:
-                                    <span class="mfo-head-approv-value"><?= $model->odobrenie?>%</span>
+                                    <span class="mfo-head-approv-value"><?= $model->odobrenie ?>%</span>
                                 </div>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
@@ -85,6 +87,8 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                 </div>
                             </div>
                         <?php endif; ?>
+
+                        <?php if($model->about_company) : ?>
                         <div class="mfo-about">
                             <h2 class="mfo-about-title info-subtitle">Компания туралы</h2>
                             <!--   О компании -->
@@ -92,6 +96,8 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                 <?= $model->about_company ?>
                             </div>
                         </div>
+                        <?php endif; ?>
+
                         <!--   Условия для существующих клиентов-->
                         <?= MfoViewWidget::widget(['type' => 'conditions-customers','model' => $model,'data' => $data]) ?>
                         <div class="mfo-about">

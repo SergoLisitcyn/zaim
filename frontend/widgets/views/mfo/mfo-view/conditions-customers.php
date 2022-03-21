@@ -1,3 +1,4 @@
+<?php if($model->srok_new_client) : ?>
 <div class="mfo-stat-container">
     <div class="firstloan">
         <div class="firstloan-col">
@@ -68,3 +69,4 @@
         </div>
     </div>
 </div>
+<?php endif; ?>
