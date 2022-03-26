@@ -1,6 +1,22 @@
 <?php
 use \yii\helpers\Url;
+$this->title = 'Қазақстанның барлық жұмыс істейтін микроқаржы ұйымдары – smartzaim.kz';
+$this->registerMetaTag(['name' => 'description','content' => 'Қазақстанның микроқаржы нарығы туралы толық ақпарат.
+Микроқаржы компанияларының деректемелері мен ерекшеліктері.Микрокредитті алу және өтеу шарттары мен ережелері.
+ Клиенттердің пікірлері, тұтынушыларды қолдау және байланыс.']);
 ?>
+<section class="breadcrumbs plr">
+    <div class="breadcrumbs-wrap limit-width">
+        <ul class="breadcrumbs__items">
+            <li>
+                <a href="/">Онлайн қарыздар</a>
+            </li>
+            <li>
+                МҚҰ тізілімі
+            </li>
+        </ul>
+    </div>
+</section>
 <section class="content reestr plr">
     <div class="content-wrap limit-width">
         <div class="content-row">
@@ -8,13 +24,13 @@ use \yii\helpers\Url;
                 <div class="content-info">
                     <div class="content-main-info">
                         <div class="content-main-info__item">
-                            <h1>Государственный реестр микрофинансовых организаций Казахстана</h1>
+                            <h1>Қазақстанның микроқаржы ұйымдарының тізілімі</h1>
                             <div class="content-main-info__content">
                                 <p class="reestr__text">
-                                    Все компании, которые находятся в реестре, подчинаются регулированию и надзору Национального банка Казахстана. Здесь вы можете проверить наличие компании в перечне.
+                                    Тізілімдегі барлық компаниялар Қаржы нарығын реттеу және дамыту агенттігінің (ҚНРДА) реттеуі мен қадағалауына бағынады. Осы жерде сіз компанияның тізілімде болуын тексере аласыз.
                                 </p>
                                 <p class="reestr__text">
-                                    Последнее обновление: <span><b>25 августа 2020 года</b></span>
+                                    Соңғы жаңарту: <span><b><?= $updateTime ?></b></span>
                                 </p>
                                 <div class="reestr-filter">
                                     <form action="reestr-mfo" method="post">
@@ -23,7 +39,9 @@ use \yii\helpers\Url;
                                         <div class="reestr-filter__info">
                                             <div class="reestr-filter__items">
                                                 <div class="reestr-filter__item reestr-filter__item_column">
-                                                    <div class="reestr-filter__item-title">Заполните хотя бы одно из полей и нажмите кнопку</div>
+                                                    <div class="reestr-filter__item-title">
+                                                        Өрістердің кем дегенде біреуін толтырыңыз және батырманы басыңыз
+                                                    </div>
                                                     <div class="reestr-filter__inputs">
                                                         <div class="reestr-filter__inputs-col">
                                                             <input name="reestr-name" type="text" placeholder="Название">
@@ -33,12 +51,12 @@ use \yii\helpers\Url;
                                                         </div>
                                                         <div class="reestr-filter__inputs-col">
 <!--                                                            <input	class="btn-orange"	type="submit"	value="Поиск организации">-->
-                                                            <button class="btn-orange"	type="submit">Поиск организации</button>
+                                                            <button class="btn-orange"	type="submit">ҰЙЫМДЫ ІЗДЕУ</button>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="reestr-filter__item">
-                                                    <div class="reestr-filter__item-title">Или выберите заглавную букву компании</div>
+                                                    <div class="reestr-filter__item-title">Немесе компанияның басты әрпін таңдаңыз</div>
                                                     <div class="reestr-filter__select-col">
                                                         <div class="reestr-filter__select reestr-filter__select-letter style-light">
                                                             <select>
@@ -88,7 +106,7 @@ use \yii\helpers\Url;
                                                     </div>
                                                 </div>
                                                 <div class="reestr-filter__item">
-                                                    <div class="reestr-filter__item-title">Или выберите город</div>
+                                                    <div class="reestr-filter__item-title">Немесе қаланы таңдаңыз</div>
                                                     <div class="reestr-filter__select-col">
                                                         <div class="reestr-filter__select reestr-filter__select-city style-light">
                                                             <select>
@@ -112,8 +130,15 @@ use \yii\helpers\Url;
 
                                     <div class="reestr-item">
                                         <div class="reestr-item__logo">
+                                            <?php if($mfo->logo) : ?>
                                             <img src="<?= $mfo->logo ?>" alt="">
+                                            <?php else: ?>
+                                            <div class="reestr-item__status">
+                                                Қолданыстағы
+                                            </div>
+                                            <?php endif; ?>
                                         </div>
+
                                         <div class="reestr-item__content">
                                             <?php if(isset($data['seo']['h1'])) : ?>
                                             <div class="reestr-item__title"><?= $data['seo']['h1'] ?></div>

@@ -61,9 +61,11 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                                     <div class="rating__val"><?= $model->rating?></div>
                                 </div>
                             </div>
-                            <div class="mfo-head__text">Ресми сайтқа өту
-                                <a href="<?= $model->link_offer ?>" target="_blank"><?= $model->website?></a>
-                            </div>
+                            <?php if($model->link_offer) : ?>
+                                <div class="mfo-head__text">Ресми сайтқа өту
+                                    <a href="<?= $model->link_offer ?>" target="_blank"><?= $model->website?></a>
+                                </div>
+                            <?php endif; ?>
                         </div>
                         <div class="content-main-info__item">
                             <div class="mfo-head-logo">

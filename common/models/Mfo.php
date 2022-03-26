@@ -350,7 +350,7 @@ class Mfo extends \yii\db\ActiveRecord
                     if($mfoData->save()){
                         continue;
                     } else {
-                        echo 'Ошибка - '.$key;
+                        echo 'Ошибка1 - '.$key;
                         var_dump($mfoData->errors); die;
                     }
                 } else {
@@ -360,7 +360,7 @@ class Mfo extends \yii\db\ActiveRecord
                     if($modelMfoData->save()){
                         continue;
                     } else {
-                        echo 'Ошибка - '.$key;
+                        echo 'Ошибка2 - '.$key;
                         var_dump($modelMfoData->errors); die;
                     }
                 }
@@ -383,7 +383,7 @@ class Mfo extends \yii\db\ActiveRecord
                     if($mfoData->save()){
                         continue;
                     } else {
-                        echo 'Ошибка - '.$key;
+                        echo 'Ошибка3 - '.$key;
                         var_dump($mfoData->errors); die;
                     }
                 }
@@ -553,7 +553,7 @@ class Mfo extends \yii\db\ActiveRecord
                     if($mfoData->save()){
                         continue;
                     } else{
-                        echo 'Ошибка - '.$key;
+                        echo 'Ошибка4 - '.$key;
                         var_dump($mfoData->errors); die;
                     }
                 }
@@ -740,7 +740,7 @@ class Mfo extends \yii\db\ActiveRecord
                 $data['seo']['contacts_h1'] = $value[156].' '.$data['seo']['h1'];
                 $data['seo']['contacts_title'] = $data['seo']['h1'].''.$value[157].' — smartzaim.kz';
                 $data['seo']['contacts_description'] =$data['seo']['h1'].' '.$value[158];
-
+//                $data['banklink'] = $value[161];
 
                 if($version == 'RU' && !$mfo){
                     $model->status = 0;
@@ -824,7 +824,7 @@ class Mfo extends \yii\db\ActiveRecord
                         $countUpdate++;
                         continue;
                     } else {
-                        echo 'Ошибка - '.$key.' - '.$value[1]; echo '<br><br>';
+                        echo 'Ошибка5 - '.$key.' - '.$value[1]; echo '<br><br>';
                         var_dump($mfo->errors); die;
                     }
                 }
@@ -832,7 +832,10 @@ class Mfo extends \yii\db\ActiveRecord
                     if($model->save()){
                         $countSave++;
                     } else {
-                        echo 'Ошибка - '.$key.' - '.$value[1]; echo '<br><br>';
+                        if($key == 26){
+                            var_dump($mfo);die;
+                        }
+                        echo 'Ошибка6 - '.$key.' - '.$value[1]; echo '<br><br>';
                         var_dump($model->errors); die;
                     }
                 }

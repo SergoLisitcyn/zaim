@@ -53,23 +53,30 @@ class MfoController extends Controller
     }
     public function actionReestrMfo()
     {
-        $models = Mfo::find();
+        $models = Mfo::find()->orderBy(['mfo_name' => SORT_ASC]);
         $countQuery = clone $models;
         $pages = new Pagination(['totalCount' => $countQuery->count()]);
         $mfoAll = $models->offset($pages->offset)
             ->limit($pages->limit)
             ->all();
 
+
         $mfoDatas = MfoData::find()->where(['name' => 'Data'])->one();
         $dataMfo = unserialize($mfoDatas->data_mfo_kz);
 
         $city = City::find()->where(['status' => 1])->all();
 
+        $arr = ['қаңтар','ақпан','наурыз','сәуір','мамыр','маусым','шілде','тамыз','қыркүйек','қазан','қараша','желтоқсан',];
+        $updatedAt = $mfoAll[0]['updated_at'];
+        $month = date('n',$updatedAt) - 1;
+
+        $updateTime = date('d',$updatedAt).' '.$arr[$month].' '.date('Y',$updatedAt).' жыл';
         return $this->render('reestr-mfo', [
             'mfoAll' => $mfoAll,
             'dataMfo' => $dataMfo,
             'pages' => $pages,
             'citys' => $city,
+            'updateTime' => $updateTime,
         ]);
     }
 

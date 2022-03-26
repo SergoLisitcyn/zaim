@@ -8,7 +8,7 @@ use \frontend\widgets\MfoViewWidget;
 if(isset($data['seo']['title']) and !empty($data['seo']['title'])) {
     $this->title = $data['seo']['title'];
 } else {
-    $this->title = $model->name;
+    $this->title = $model->mfo_name;
 }
 if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
     $this->registerMetaTag(['name' => 'description','content' => $data['seo']['description']]);
@@ -48,9 +48,11 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                                     <div class="rating__val"><?= $model->rating?></div>
                                 </div>
                             </div>
+                            <?php if($model->link_offer) : ?>
                             <div class="mfo-head__text">Ресми сайтқа өту
                                 <a href="<?= $model->link_offer ?>" target="_blank"><?= $model->website?></a>
                             </div>
+                            <?php endif; ?>
                         </div>
                         <div class="content-main-info__item">
                             <div class="mfo-head-logo">
