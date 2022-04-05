@@ -56,63 +56,13 @@ $this->registerMetaTag(['name' => 'description','content' => 'Қазақстан
                                                     </div>
                                                 </div>
                                                 <div class="reestr-filter__item">
-                                                    <div class="reestr-filter__item-title">Немесе компанияның басты әрпін таңдаңыз</div>
-                                                    <div class="reestr-filter__select-col">
-                                                        <div class="reestr-filter__select reestr-filter__select-letter style-light">
-                                                            <select>
-                                                                <option value=""></option>
-                                                                <option value="1">1</option>
-                                                                <option value="∑">∑</option>
-                                                                <option value="A">A</option>
-                                                                <option value="B">B</option>
-                                                                <option value="C">C</option>
-                                                                <option value="D">D</option>
-                                                                <option value="E">E</option>
-                                                                <option value="F">F</option>
-                                                                <option value="G">G</option>
-                                                                <option value="H">H</option>
-                                                                <option value="I">I</option>
-                                                                <option value="K">K</option>
-                                                                <option value="L">L</option>
-                                                                <option value="N">N</option>
-                                                                <option value="P">P</option>
-                                                                <option value="R">R</option>
-                                                                <option value="S">S</option>
-                                                                <option value="T">T</option>
-                                                                <option value="Z">Z</option>
-                                                                <option value="А">А</option>
-                                                                <option value="Б">Б</option>
-                                                                <option value="В">В</option>
-                                                                <option value="Г">Г</option>
-                                                                <option value="Д">Д</option>
-                                                                <option value="Е">Е</option>
-                                                                <option value="Ж">Ж</option>
-                                                                <option value="З">З</option>
-                                                                <option value="И">И</option>
-                                                                <option value="К">К</option>
-                                                                <option value="М">М</option>
-                                                                <option value="Н">Н</option>
-                                                                <option value="О">О</option>
-                                                                <option value="П">П</option>
-                                                                <option value="Р">Р</option>
-                                                                <option value="С">С</option>
-                                                                <option value="Т">Т</option>
-                                                                <option value="Ф">Ф</option>
-                                                                <option value="Ш">Ш</option>
-                                                                <option value="Ы">Ы</option>
-                                                                <option value="Э">Э</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="reestr-filter__item">
                                                     <div class="reestr-filter__item-title">Немесе қаланы таңдаңыз</div>
                                                     <div class="reestr-filter__select-col">
                                                         <div class="reestr-filter__select reestr-filter__select-city style-light">
-                                                            <select>
+                                                            <select name="reestr-city">
                                                                 <option value=""></option>
                                                                 <?php foreach ($citys as $city) : ?>
-                                                                <option value="<?= $city->name ?>"><?= $city->name ?></option>
+                                                                <option value="<?= $city->url ?>"><?= $city->name ?></option>
                                                                 <?php endforeach; ?>
                                                             </select>
                                                         </div>
@@ -222,17 +172,36 @@ $this->registerMetaTag(['name' => 'description','content' => 'Қазақстан
                                     </div>
                                     <?php endforeach; ?>
                                 </div>
-                                    <div class="div-pagination">
-                                        <?php echo \yii\widgets\LinkPager::widget([
-                                          'pagination' => $pages,
-                                          'prevPageLabel' => false,
-                                          'nextPageLabel' => false,
-                                          'activePageCssClass' => 'current' ,
-                                          'firstPageCssClass' => 'lknflbes',
-                                          'pageCssClass' => 'page-numbers',
-                                        ]);
+                                <?php if($q != '00000000') : ?>
+                                <div class="div-pagination">
+                                    <ul class="pagination">
+                                        <?php foreach ($words as $word) :
+                                          $current = '';
+                                          if($word['first'] == $q){
+                                              $current = 'current';
+                                          }
                                         ?>
-                                    </div>
+
+                                        <li class="page-numbers <?= $current ?>">
+                                            <a href="/reestr-mfo?page=<?= $word['first']  ?>"><?= $word['first']  ?>
+                                            </a>
+                                        </li>
+<!--                                        <li class="page-numbers current"><a href="/reestr-mfo?page=6" data-page="5">6</a></li>-->
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </div>
+                                <?php endif; ?>
+<!--                                    <div class="div-pagination">-->
+<!--                                        --><?php //echo \yii\widgets\LinkPager::widget([
+//                                          'pagination' => $pages,
+//                                          'prevPageLabel' => false,
+//                                          'nextPageLabel' => false,
+//                                          'activePageCssClass' => 'current' ,
+//                                          'firstPageCssClass' => 'lknflbes',
+//                                          'pageCssClass' => 'page-numbers',
+//                                        ]);
+//                                        ?>
+<!--                                    </div>-->
                             </div>
                         </div>
                     </div>

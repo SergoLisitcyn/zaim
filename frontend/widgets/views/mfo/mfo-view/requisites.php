@@ -1,3 +1,6 @@
+<?php
+use \yii\helpers\Url;
+?>
 <div class="mfo-about__table">
     <div class="mfo-about__columns">
         <?php if($data['requisites']['bin']) : ?>
@@ -97,7 +100,11 @@
                     <?= $dataMfo['mfo']['requisites']['bank'] ?>
                 </div>
                 <div class="mfo-about__col-right">
-                    <?= $data['requisites']['bank'] ?>
+                    <?php if(isset($data['banklink']) && $data['banklink']) : ?>
+                    <a href="<?= Url::toRoute(['banks/view', 'url' => $data['banklink']]) ?>"><?= $data['requisites']['bank'] ?></a>
+                    <?php else: ?>
+                        <?= $data['requisites']['bank'] ?>
+                    <?php endif; ?>
                 </div>
             </div>
         <?php endif; ?>

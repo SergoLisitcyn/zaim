@@ -15,6 +15,7 @@ use yii\web\UploadedFile;
  *
  * @property int $id
  * @property string $mfo_name
+ * @property string $mfo_name_kz
  * @property float|null $rating
  * @property string $srok
  * @property string $sum
@@ -23,6 +24,7 @@ use yii\web\UploadedFile;
  * @property string $rasmotrenie
  * @property string|null $phone
  * @property string|null $email
+ * @property string|null $bin
  * @property string|null $website
  * @property string|null $logo
  * @property string|null $certificate
@@ -103,7 +105,7 @@ class Mfo extends \yii\db\ActiveRecord
                 'link_offer', 'title', 'description', 'keywords', 'type_credit_array', 'url', 'text_video',
                 'mfo_city_array', 'srok_new_client', 'sum_new_client', 'stavka_new_client', 'odobrenie_new_client',
                 'rasmotrenie_new_client', 'srok_for_client', 'sum_for_client', 'stavka_for_client',
-                'odobrenie_for_client', 'rasmotrenie_for_client', 'login_link','gesv','certificate'], 'string', 'max' => 255],
+                'odobrenie_for_client', 'rasmotrenie_for_client', 'login_link','gesv','certificate','mfo_name_kz','bin'], 'string', 'max' => 255],
             [['type_credit_arr','mfo_city_arr'], 'safe'],
             [['logo_file','certificate_file'], 'file'],
         ];
@@ -167,7 +169,9 @@ class Mfo extends \yii\db\ActiveRecord
             'odobrenie_for_client' => 'Одобрение для существуещего клиента',
             'rasmotrenie_for_client' => 'Рассмотрение для существуещего клиента',
             'login_link' => 'Ссылка на личный кабинет',
-            'gesv' => 'ГЭСВ'
+            'gesv' => 'ГЭСВ',
+            'mfo_name_kz' => 'Название на КЗ',
+            'bin' => 'БИН',
         ];
     }
     public function afterFind()
@@ -740,11 +744,17 @@ class Mfo extends \yii\db\ActiveRecord
                 $data['seo']['contacts_h1'] = $value[156].' '.$data['seo']['h1'];
                 $data['seo']['contacts_title'] = $data['seo']['h1'].''.$value[157].' — smartzaim.kz';
                 $data['seo']['contacts_description'] =$data['seo']['h1'].' '.$value[158];
-//                $data['banklink'] = $value[161];
+                if(isset($value[161]) && $value[161]){
+                    $data['banklink'] = $value[161];
+                }
 
                 if($version == 'RU' && !$mfo){
                     $model->status = 0;
-//                    $model->stavka = 'от ';
+                    if($data['conditions']['stack_min_first_microcredit']){
+                        $model->stavka = 'от '.$data['conditions']['stack_min_first_microcredit'];
+                    } else {
+                        $model->stavka = '0';
+                    }
                     $model->title = 'test';
                     $model->data_ru = serialize($data);
 
@@ -766,6 +776,13 @@ class Mfo extends \yii\db\ActiveRecord
                         $model->stavka = 'от '.$data['conditions']['stack_min_first_microcredit'];
                     } else {
                         $model->stavka = '0';
+                    }
+
+                    if($data['requisites']['bin']){
+                        $model->bin = $data['requisites']['bin'];
+                    }
+                    if($data['seo']['h1']){
+                        $model->mfo_name_kz = $data['seo']['h1'];
                     }
                     if($data['conditions']['min_amount'] && $data['conditions']['max_amount']){
                         $model->sum = $data['conditions']['min_amount'].' - '.$data['conditions']['max_amount'];
@@ -797,7 +814,12 @@ class Mfo extends \yii\db\ActiveRecord
                         } else {
                             $mfo->stavka = '0';
                         }
-
+                        if($data['requisites']['bin']){
+                            $mfo->bin = $data['requisites']['bin'];
+                        }
+                        if($data['seo']['h1']){
+                            $mfo->mfo_name_kz = $data['seo']['h1'];
+                        }
                         if($data['conditions']['min_amount'] && $data['conditions']['max_amount']){
                             $mfo->sum = $data['conditions']['min_amount'].' - '.$data['conditions']['max_amount'];
                         }
@@ -832,9 +854,7 @@ class Mfo extends \yii\db\ActiveRecord
                     if($model->save()){
                         $countSave++;
                     } else {
-                        if($key == 26){
-                            var_dump($mfo);die;
-                        }
+                        echo $version;
                         echo 'Ошибка6 - '.$key.' - '.$value[1]; echo '<br><br>';
                         var_dump($model->errors); die;
                     }
