@@ -894,7 +894,7 @@ class Mfo extends ActiveRecord
     public static function getWordsForPagination()
     {
         return Yii::$app->db
-            ->createCommand('SELECT distinct left( `mfo_name` , 1) as `first` from `mfo` WHERE `data_kz` IS NOT NULL ORDER BY `first` ASC')
+            ->createCommand('SELECT distinct left( `mfo_name_kz` , 1) as `first` from `mfo` WHERE `data_kz` IS NOT NULL ORDER BY `first` ASC')
             ->queryAll();
     }
 
