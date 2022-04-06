@@ -73,10 +73,10 @@ class MfoController extends Controller
             $q = '00000000';
         } else {
             $mfoAll = Mfo::find()
-                ->where('mfo_name LIKE :q')
+                ->where('mfo_name_kz LIKE :q')
                 ->andWhere(['not', ['data_kz' => null]])
                 ->addParams(['q'=>$q . '%'])
-                ->orderBy('mfo_name ASC')
+                ->orderBy('mfo_name_kz ASC')
                 ->all();
         }
 
