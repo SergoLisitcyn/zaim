@@ -3,9 +3,9 @@
 namespace common\models;
 
 use Yii;
-use yii\base\BaseObject;
 use yii\behaviors\TimestampBehavior;
-use yii\db\Expression;
+use yii\db\ActiveRecord;
+use yii\db\Exception;
 use \yii\helpers\ArrayHelper;
 use yii\helpers\FileHelper;
 use yii\web\UploadedFile;
@@ -16,6 +16,7 @@ use yii\web\UploadedFile;
  * @property int $id
  * @property string $mfo_name
  * @property string $mfo_name_kz
+ * @property string $city_kz
  * @property float|null $rating
  * @property string $srok
  * @property string $sum
@@ -68,7 +69,7 @@ use yii\web\UploadedFile;
  * @property string|null $login_link
  * @property string|null $gesv
  */
-class Mfo extends \yii\db\ActiveRecord
+class Mfo extends ActiveRecord
 {
     public $type_credit_arr;
     public $mfo_city_arr;
@@ -105,7 +106,8 @@ class Mfo extends \yii\db\ActiveRecord
                 'link_offer', 'title', 'description', 'keywords', 'type_credit_array', 'url', 'text_video',
                 'mfo_city_array', 'srok_new_client', 'sum_new_client', 'stavka_new_client', 'odobrenie_new_client',
                 'rasmotrenie_new_client', 'srok_for_client', 'sum_for_client', 'stavka_for_client',
-                'odobrenie_for_client', 'rasmotrenie_for_client', 'login_link','gesv','certificate','mfo_name_kz','bin'], 'string', 'max' => 255],
+                'odobrenie_for_client', 'rasmotrenie_for_client', 'login_link','gesv','certificate',
+                'mfo_name_kz','bin','city_kz'], 'string', 'max' => 255],
             [['type_credit_arr','mfo_city_arr'], 'safe'],
             [['logo_file','certificate_file'], 'file'],
         ];
@@ -172,6 +174,7 @@ class Mfo extends \yii\db\ActiveRecord
             'gesv' => 'ГЭСВ',
             'mfo_name_kz' => 'Название на КЗ',
             'bin' => 'БИН',
+            'city_kz' => 'Город',
         ];
     }
     public function afterFind()
@@ -778,6 +781,10 @@ class Mfo extends \yii\db\ActiveRecord
                         $model->stavka = '0';
                     }
 
+                    if ($data['info']['city']){
+                        $model->city_kz = $data['info']['city'];
+                    }
+
                     if($data['requisites']['bin']){
                         $model->bin = $data['requisites']['bin'];
                     }
@@ -813,6 +820,10 @@ class Mfo extends \yii\db\ActiveRecord
                             $mfo->stavka = 'от '.$data['conditions']['stack_min_first_microcredit'];
                         } else {
                             $mfo->stavka = '0';
+                        }
+
+                        if ($data['info']['city']){
+                            $mfo->city_kz = $data['info']['city'];
                         }
                         if($data['requisites']['bin']){
                             $mfo->bin = $data['requisites']['bin'];
@@ -866,4 +877,38 @@ class Mfo extends \yii\db\ActiveRecord
             'countUpdate' => $countUpdate,
         ];
     }
+
+    public static function getTextDate(): string
+    {
+        $all = Mfo::find()->all();
+        $arr = ['қаңтар','ақпан','наурыз','сәуір','мамыр','маусым','шілде','тамыз','қыркүйек','қазан','қараша','желтоқсан',];
+        $updatedAt = $all[0]['updated_at'];
+        $month = date('n',$updatedAt) - 1;
+
+        return date('d',$updatedAt).' '.$arr[$month].' '.date('Y',$updatedAt).' жыл';
+    }
+
+    /**
+     * @throws Exception
+     */
+    public static function getWordsForPagination()
+    {
+        return Yii::$app->db
+            ->createCommand('SELECT distinct left( `mfo_name` , 1) as `first` from `mfo` WHERE `data_kz` IS NOT NULL ORDER BY `first` ASC')
+            ->queryAll();
+    }
+
+
+    public static function getFormReestrMfo($bin = null,$name = null,$city = null): array
+    {
+        $all = Mfo::find()->where(['not', ['data_kz' => null]]);
+
+        if($bin) $all->andWhere(['like', 'bin', $bin . '%', false]);
+        if($name) $all->andWhere(['like', 'mfo_name_kz', $name . '%', false]);
+        if($city) $all->andWhere(['city_kz' => $city]);
+
+        return $all->all();
+    }
+
+
 }

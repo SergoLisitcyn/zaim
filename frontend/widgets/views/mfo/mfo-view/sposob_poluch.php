@@ -4,7 +4,7 @@ use \yii\helpers\Url;
 <div class="content-text-items">
     <?php if($data['sposob_get']['bank_card']) : ?>
     <a href="<?= Url::toRoute(['mfo-new/filter','index' => 'sposob_get', 'filter' => 'bank_card']) ?>">
-        <div class="content-text-item">
+        <div class="content-text-item" style="margin: 0 40px 15px 0;">
             <div class="content-text-item-img">
                 <img src="/img/svg-icons/card1.svg" data-src="/img/svg-icons/card1.svg" alt="<?= $dataMfo['mfo']['sposob_get']['bank_card'] ?>">
             </div>

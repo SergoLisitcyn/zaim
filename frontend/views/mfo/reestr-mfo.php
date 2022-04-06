@@ -61,8 +61,9 @@ $this->registerMetaTag(['name' => 'description','content' => 'Қазақстан
                                                         <div class="reestr-filter__select reestr-filter__select-city style-light">
                                                             <select name="reestr-city">
                                                                 <option value=""></option>
-                                                                <?php foreach ($citys as $city) : ?>
-                                                                <option value="<?= $city->url ?>"><?= $city->name ?></option>
+                                                                <?php  foreach ($citys as $key => $value) :
+                                                                    ?>
+                                                                <option value="<?= $value['city'] ?>"><?= $value['city'] ?></option>
                                                                 <?php endforeach; ?>
                                                             </select>
                                                         </div>
@@ -186,7 +187,6 @@ $this->registerMetaTag(['name' => 'description','content' => 'Қазақстан
                                             <a href="/reestr-mfo?page=<?= $word['first']  ?>"><?= $word['first']  ?>
                                             </a>
                                         </li>
-<!--                                        <li class="page-numbers current"><a href="/reestr-mfo?page=6" data-page="5">6</a></li>-->
                                         <?php endforeach; ?>
                                     </ul>
                                 </div>

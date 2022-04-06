@@ -11,6 +11,7 @@ use Yii;
 use common\models\Mfo;
 use yii\data\ActiveDataProvider;
 use yii\data\Pagination;
+use yii\db\Exception;
 use yii\db\Expression;
 use yii\web\Controller;
 use yii\web\HttpException;
@@ -52,73 +53,60 @@ class MfoController extends Controller
             'dataProvider' => $dataProvider,
         ]);
     }
+
+    /**
+     * @throws Exception
+     */
     public function actionReestrMfo()
     {
         $request = Yii::$app->request;
-        $post = $request->post();
         $bin = $request->post('reestr-bin');
         $name = $request->post('reestr-name');
         $city = $request->post('reestr-city');
-        $words = Yii::$app->db->createCommand('SELECT distinct left( `mfo_name` , 1) as `first` from `mfo` ORDER BY `first` ASC')
-            ->queryAll();
-
         $page = $request->get('page');
-        if($page){
-            $q = $page;
-        } else {
-            $q = 'А';
-        }
+
+        $q = 'А';
+        if($page) $q = $page;
+
         if($bin || $name || $city){
-            if($bin && !$name){
-                $mfoAll = Mfo::find()->where(['like', 'bin', $bin . '%', false])->all();
-            }
-            if($name && !$bin){
-                $mfoAll = Mfo::find()->where(['like', 'mfo_name_kz', $name . '%', false])->all();
-            }
-            if($bin && $name){
-                $mfoAll = Mfo::find()
-                    ->where(['like', 'mfo_name_kz', $name . '%', false])
-                    ->where(['like', 'bin', $bin . '%', false])
-                    ->all();
-            }
-            if($city){
-                $mfoAll = Mfo::find()
-                    ->joinWith('city')
-                    ->where(['city.url' => $city])
-                    ->andWhere(['mfo.status' => '1'])
-                    ->orderBy(new Expression('rand()'))
-                    ->all();
-            }
+            $mfoAll = Mfo::getFormReestrMfo($bin,$name,$city);
             $q = '00000000';
         } else {
-            $mfoAll = Mfo::find()->where('mfo_name LIKE :q')->addParams(['q'=>$q . '%'])->orderBy('mfo_name ASC')->all();
+            $mfoAll = Mfo::find()
+                ->where('mfo_name LIKE :q')
+                ->andWhere(['not', ['data_kz' => null]])
+                ->addParams(['q'=>$q . '%'])
+                ->orderBy('mfo_name ASC')
+                ->all();
         }
 
         $mfoDatas = MfoData::find()->where(['name' => 'Data'])->one();
         $dataMfo = unserialize($mfoDatas->data_mfo_kz);
 
-        $city = City::find()->where(['status' => 1])->all();
+        $city = Mfo::find()
+            ->select(['city_kz AS city'])
+            ->where(['not', ['data_kz' => null]])
+            ->groupBy(['city'])
+            ->asArray()
+            ->all();
 
-        $arr = ['қаңтар','ақпан','наурыз','сәуір','мамыр','маусым','шілде','тамыз','қыркүйек','қазан','қараша','желтоқсан',];
-        $all = Mfo::find()->all();
-        $updatedAt = $all[0]['updated_at'];
-        $month = date('n',$updatedAt) - 1;
-
-        $updateTime = date('d',$updatedAt).' '.$arr[$month].' '.date('Y',$updatedAt).' жыл';
         return $this->render('reestr-mfo', [
             'mfoAll' => $mfoAll,
             'dataMfo' => $dataMfo,
 //            'pages' => $pages,
             'citys' => $city,
-            'updateTime' => $updateTime,
-            'words' => $words,
+            'updateTime' => Mfo::getTextDate(),
+            'words' => Mfo::getWordsForPagination(),
             'q' => $q,
         ]);
     }
 
+    /**
+     * @throws HttpException
+     */
     public function actionView($url)
     {
-        if(!$url) return $this->redirect('/');
+        if(!$url) throw new HttpException(404, 'Страница не существует.');
         $mfo = Mfo::find()->where(['status' => 1, 'url' => $url])->one();
         if(!$mfo) throw new HttpException(404, 'Страница не существует.');
         $sale = Sale::find()->where(['status' => 1,'mfo_id' => $mfo->id])->orderBy(['srok_do' => SORT_DESC])->one();
