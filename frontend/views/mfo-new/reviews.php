@@ -45,13 +45,13 @@ $this->registerMetaTag(['name' => 'description',
                             <a href="<?= $model->link_offer ?>"  target="_blank" class="content-main-info__button" style="background: #fda729;">Ақшаны алу</a>
 
                             <!--  Раздел отзывы -->
-                            <?= MfoViewWidget::widget(['type' => 'reviews','model' => $model,'data' => $data,'reviews' => $reviews, 'reviewsModel' => $reviewsModel,'action' => '/mfo-new/'.$model->url.'/reviews']) ?>
+                            <?= MfoViewWidget::widget(['type' => 'reviews','model' => $model,'data' => $data,'reviews' => $reviews, 'reviewsModel' => $reviewsModel,'action' => '/mfo/'.$model->url.'/reviews']) ?>
                         </div>
                     </div>
                 </div>
             </div>
             <!--  SideBar -->
-            <?= MfoViewWidget::widget(['type' => 'sideBar','model' => $model,'data' => $data,'action' => '/mfo-new/'.$model->url.'/reviews']) ?>
+            <?= MfoViewWidget::widget(['type' => 'sideBar','model' => $model,'data' => $data,'action' => '/mfo/'.$model->url.'/reviews']) ?>
         </div>
     </div>
 </section>

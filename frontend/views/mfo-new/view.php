@@ -2,6 +2,8 @@
 
 use \yii\helpers\Url;
 use \frontend\widgets\MfoViewWidget;
+use yii\web\YiiAsset;
+
 /* @var $this yii\web\View */
 /* @var $model common\models\MfoNew */
 
@@ -13,7 +15,7 @@ if(isset($data['seo']['title']) and !empty($data['seo']['title'])) {
 if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
     $this->registerMetaTag(['name' => 'description','content' => $data['seo']['description']]);
 }
-\yii\web\YiiAsset::register($this);
+YiiAsset::register($this);
 ?>
 <section class="breadcrumbs plr">
     <div class="breadcrumbs-wrap limit-width">
@@ -203,11 +205,11 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
 
                 </div>
                 <!--  Раздел отзывы -->
-                <?= MfoViewWidget::widget(['type' => 'reviews','model' => $model,'data' => $data,'reviews' => $reviews, 'reviewsModel' => $reviewsModel,'action' => '/mfo-new/'.$model->url]) ?>
+                <?= MfoViewWidget::widget(['type' => 'reviews','model' => $model,'data' => $data,'reviews' => $reviews, 'reviewsModel' => $reviewsModel,'action' => '/mfo/'.$model->url]) ?>
             </div>
 
             <!--  SideBar -->
-            <?= MfoViewWidget::widget(['type' => 'sideBar','model' => $model,'data' => $data,'action' => '/mfo-new/'.$model->url]) ?>
+            <?= MfoViewWidget::widget(['type' => 'sideBar','model' => $model,'data' => $data,'action' => '/mfo/'.$model->url]) ?>
 
         </div>
     </div>

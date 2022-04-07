@@ -58,21 +58,21 @@ return [
                 'banks' => '/banks/index',
                 'mfo-new' => '/mfo-new/index',
                 'reestr-mfo' => '/mfo/reestr-mfo',
-                [
-                    'pattern' => 'mfo/<url:\S+>/reviews',
-                    'route' => '/mfo/reviews',
-                    'defaults' => ['url' => '']
-                ],
-                [
-                    'pattern' => 'mfo/<url:\S+>/login',
-                    'route' => '/mfo/login',
-                    'defaults' => ['url' => '']
-                ],
-                [
-                    'pattern' => 'mfo/<url:\S+>',
-                    'route' => '/mfo/view',
-                    'defaults' => ['url' => '']
-                ],
+//                [
+//                    'pattern' => 'mfo/<url:\S+>/reviews',
+//                    'route' => '/mfo/reviews',
+//                    'defaults' => ['url' => '']
+//                ],
+//                [
+//                    'pattern' => 'mfo/<url:\S+>/login',
+//                    'route' => '/mfo/login',
+//                    'defaults' => ['url' => '']
+//                ],
+//                [
+//                    'pattern' => 'mfo/<url:\S+>',
+//                    'route' => '/mfo/view',
+//                    'defaults' => ['url' => '']
+//                ],
                 [
                     'pattern' => 'banks/<url:\S+>/requisites',
                     'route' => '/banks/requisites',
@@ -99,7 +99,7 @@ return [
                     'defaults' => ['url' => '']
                 ],
                 [
-                    'pattern' => 'mfo-new/filter/<index>/<filter>',
+                    'pattern' => 'mfo/filter/<index>/<filter>',
                     'route' => '/mfo-new/filter',
                     'defaults' => [
                         'index' => '',
@@ -107,27 +107,27 @@ return [
                     ]
                 ],
                 [
-                    'pattern' => 'mfo-new/<url:\S+>/login',
+                    'pattern' => 'mfo/<url:\S+>/login',
                     'route' => '/mfo-new/login',
                     'defaults' => ['url' => '']
                 ],
                 [
-                    'pattern' => 'mfo-new/<url:\S+>/clients',
+                    'pattern' => 'mfo/<url:\S+>/clients',
                     'route' => '/mfo-new/clients',
                     'defaults' => ['url' => '']
                 ],
                 [
-                    'pattern' => 'mfo-new/<url:\S+>/contacts',
+                    'pattern' => 'mfo/<url:\S+>/contacts',
                     'route' => '/mfo-new/contacts',
                     'defaults' => ['url' => '']
                 ],
                 [
-                    'pattern' => 'mfo-new/<url:\S+>/reviews',
+                    'pattern' => 'mfo/<url:\S+>/reviews',
                     'route' => '/mfo-new/reviews',
                     'defaults' => ['url' => '']
                 ],
                 [
-                    'pattern' => 'mfo-new/<url:\S+>',
+                    'pattern' => 'mfo/<url:\S+>',
                     'route' => '/mfo-new/view',
                     'defaults' => ['url' => '']
                 ],

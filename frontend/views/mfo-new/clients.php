@@ -152,7 +152,7 @@ if(isset($data['seo']['clients_description']) and !empty($data['seo']['clients_d
             </div>
 
             <!--  SideBar -->
-            <?= MfoViewWidget::widget(['type' => 'sideBar','model' => $model,'data' => $data,'action' => '/mfo-new/'.$model->url.'/clients']) ?>
+            <?= MfoViewWidget::widget(['type' => 'sideBar','model' => $model,'data' => $data,'action' => '/mfo/'.$model->url.'/clients']) ?>
         </div>
     </div>
 </section>

@@ -13,7 +13,7 @@ use \yii\helpers\Url;
                 <?php endif; ?>
                 <div class="mfo_card_company">
                     <?php if(!$mfoNew) : ?>
-                    <a href="<?= Url::toRoute(['mfo/view', 'url' => $mfo->url]) ?>">
+                    <a href="<?= Url::toRoute(['mfo-new/view', 'url' => $mfo->url]) ?>">
                         <img src="<?= $mfo->logo; ?>" alt="<?= $mfo->mfo_name ?>">
                     </a>
                     <?php else: ?>

@@ -86,7 +86,7 @@ if(isset($data['seo']['login_description']) and !empty($data['seo']['login_descr
             </div>
 
             <!--  SideBar -->
-            <?= MfoViewWidget::widget(['type' => 'sideBar','model' => $model,'data' => $data,'action' => '/mfo-new/'.$model->url.'/login']) ?>
+            <?= MfoViewWidget::widget(['type' => 'sideBar','model' => $model,'data' => $data,'action' => '/mfo/'.$model->url.'/login']) ?>
         </div>
     </div>
 </section>
