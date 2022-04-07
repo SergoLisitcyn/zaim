@@ -108,7 +108,7 @@ if($url == '/'){
                             <ul>
                                 <li><a href="/banks">Қазақстан банктері</a></li>
                                 <li><a href="/aktsii">Акциялар</a></li>
-                                <li><a href="https://smartzaim.kz/reestr-mfo/?utm_source=kz.smartzaim.kz">МҚҰ тізілімі</a></li>
+                                <li><a href="/reestr-mfo">МҚҰ тізілімі</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -131,7 +131,7 @@ if($url == '/'){
                                     <a class="header-nav__link" href="/aktsii">Акциялар</a>
                                 </li>
                                 <li class="header-nav__item">
-                                    <a class="header-nav__link" href="https://smartzaim.kz/reestr-mfo/?utm_source=kz.smartzaim.kz">МҚҰ тізілімі</a>
+                                    <a class="header-nav__link" href="/reestr-mfo">МҚҰ тізілімі</a>
                                 </li>
                             </ul>
                             <?= TopMenu::widget(); ?>
