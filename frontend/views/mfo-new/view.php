@@ -136,33 +136,50 @@ if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
                         <?php endif; ?>
 
                         <!--   Разделы/признаки -->
+                        <?php $features = array_diff($data['features'], array('', NULL, false));
+                            if($features) :
+                        ?>
                         <?= MfoViewWidget::widget(['type' => 'features','model' => $model,'data' => $data,'version' => $version]) ?>
+                        <?php endif; ?>
 
+
+                        <?php
+                            $conditions = array_diff($data['conditions'], array('', NULL, false));
+                            $singularity = array_diff($data['singularity'], array('', NULL, false));
+                            if($conditions || $singularity) :
+                        ?>
                         <div class="mfo-about">
                             <!--   Условия микрокредитования -->
+                            <?php if($conditions)  : ?>
                             <h2 class="mfo-about-title info-subtitle"><?= $dataTag['uslovia_credit'] ?></h2>
                             <?= MfoViewWidget::widget(['type' => 'uslovia','model' => $model,'data' => $data,'version' => $version]) ?>
-
+                            <?php endif; ?>
 
                             <!--   Особенность-->
+                            <?php if($singularity)  : ?>
                             <div class="mfo-about__feature">
                                 <h2 class="content-text-title info-subtitle"><?= $dataTag['osobenost'] ?></h2>
                                 <?= MfoViewWidget::widget(['type' => 'osobenost','model' => $model,'data' => $data,'version' => $version]) ?>
                             </div>
+                            <?php endif; ?>
                         </div>
-
+                        <?php endif; ?>
                         <!--      Способы получения-->
+                        <?php $sposob_get = array_diff($data['sposob_get'], array('', NULL, false));
+                        if($sposob_get)  : ?>
                         <div class="content-text blocks-content-text">
                             <h2 class="content-text-title info-subtitle"><?= $dataTag['sposob_poluch'] ?></h2>
                             <?= MfoViewWidget::widget(['type' => 'sposob_poluch','model' => $model,'data' => $data,'version' => $version]) ?>
                         </div>
-
+                        <?php endif; ?>
                         <!--      Способы погашения  -->
+                        <?php $sposob_repayment = array_diff($data['sposob_repayment'], array('', NULL, false));
+                        if($sposob_repayment)  : ?>
                         <div class="content-text blocks-content-text">
                             <h2 class="content-text-title info-subtitle"><?= $dataTag['sposob_pogash'] ?></h2>
                             <?= MfoViewWidget::widget(['type' => 'sposob_pogash','model' => $model,'data' => $data,'version' => $version]) ?>
                         </div>
-
+                        <?php endif; ?>
                         <!--      Реквизиты  -->
                         <div class="mfo-about">
                             <h2 class="mfo-about-title info-subtitle"><?= $dataTag['requisites'] ?></h2>
