@@ -17,9 +17,12 @@ class SaleCatalog extends Widget
 
     public function run()
     {
+        $date = date('Y-m-d H:i:s');
         $sales = Sale::find()
             ->where(['status' => '1'])
-            ->orderBy(['id' => SORT_DESC])
+            ->andWhere(['>', 'srok_do', $date])
+            ->orderBy(['srok_do' => SORT_DESC])
+            ->limit(10)
             ->all();
 
         return $this->render('sale', [

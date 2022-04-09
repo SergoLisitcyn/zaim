@@ -1,7 +1,9 @@
 <?php
 
-use \frontend\widgets\SaleCatalog;
+use frontend\widgets\ContentSideBar;
 use \frontend\widgets\Rating;
+use yii\helpers\Url;
+
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
@@ -45,24 +47,27 @@ $this->registerMetaTag(['name' => 'description',
                                 <?php foreach ($sales as $sale) :?>
                                 <div class="aktsii-list__item">
                                     <div class="aktsii-item">
-                                        <a href="<?= \yii\helpers\Url::toRoute(['sale/list', 'url' => $sale->url]) ?>" class="aktsii-item__link">
+                                        <a href="<?= Url::toRoute(['sale/list', 'url' => $sale->url]) ?>" class="aktsii-item__link">
                                             <div class="aktsii-item__img-wrap">
-                                                <a href="<?= \yii\helpers\Url::toRoute(['sale/list', 'url' => $sale->url]) ?>">
+                                                <a href="<?= Url::toRoute(['sale/list', 'url' => $sale->url]) ?>">
                                                     <img src="<?= $sale->image ?>" data-lazy-type="image" data-lazy-src="<?= $sale->image ?>" alt="<?= $sale->name ?>" class="lazy aktsii-item__img lazy-loaded">
                                                 </a>
                                                 <noscript>
                                                     <img src="<?= $sale->srok_ot ?>" alt="" class="aktsii-item__img">
                                                 </noscript>
                                             </div>
-                                            <a href="<?= \yii\helpers\Url::toRoute(['sale/list', 'url' => $sale->url]) ?>">
+                                            <a href="<?= Url::toRoute(['sale/list', 'url' => $sale->url]) ?>">
                                             <h3 class="aktsii-item__title"><?= $sale->name ?></h3>
                                             </a>
                                         </a>
                                         <div class="aktsii-item__date">с <?= date('d.m.Y',strtotime($sale->srok_ot)) ?> по <?= date('d.m.Y',strtotime($sale->srok_do)) ?></div>
-                                        <a href="<?= \yii\helpers\Url::toRoute(['sale/list', 'url' => $sale->url]) ?>" class="aktsii-item__more">Нақтырақ</a>
+                                        <a href="<?= Url::toRoute(['sale/list', 'url' => $sale->url]) ?>" class="aktsii-item__more">Нақтырақ</a>
                                     </div>
                                 </div>
                                 <?php endforeach; ?>
+                            </div>
+                            <div class="aktsii-arhiv">
+                                <a href="aktsii/arhiv">Акциялар мұрағаты >></a>
                             </div>
                             <ul class="pagination">
                                 <li>
@@ -75,7 +80,7 @@ $this->registerMetaTag(['name' => 'description',
 
             </div>
 
-            <?= \frontend\widgets\ContentSideBar::widget(['type' => 'aktsii']); ?>
+            <?= ContentSideBar::widget(['type' => 'aktsii']); ?>
 
         </div>
     </div>

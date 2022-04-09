@@ -3,9 +3,9 @@
         <div class="mfo_card_company">
             <a href="http://4slovo.kz/register/?aprt159=6512bd43d9caa6e02c990b0a82652dca&utm_source=smartzaim.kz&utm_content=sitekz">
                 <noscript>
-                    <img src="img/2016/08/4slovo-e1550510710120.png" alt="Честное слово – микрокредит онлайн в Казахстане">
+                    <img src="/img/2016/08/4slovo-e1550510710120.png" alt="Честное слово – микрокредит онлайн в Казахстане">
                 </noscript>
-                <img class=" ls-is-cached lazyloaded" src="img/2016/08/4slovo-e1550510710120.png" data-src="img/2016/08/4slovo-e1550510710120.png" alt="Честное слово – микрокредит онлайн в Казахстане">
+                <img class=" ls-is-cached lazyloaded" src="/img/2016/08/4slovo-e1550510710120.png" data-src="/img/2016/08/4slovo-e1550510710120.png" alt="Честное слово – микрокредит онлайн в Казахстане">
             </a>
         </div>
 <!--        <div class="mfo_card_compare">-->
@@ -48,9 +48,9 @@
                     <div class="mfo_card_info_ways_label">Алу:</div>
                     <div class="mfo_card_info_ways_data">
                         <noscript>
-                            <img src="img/2016/08/all.png" alt="all">
+                            <img src="/img/2016/08/all.png" alt="all">
                         </noscript>
-                        <img class=" ls-is-cached lazyloaded" src="img/2016/08/all.png" data-src="img/2016/08/all.png" alt="all">
+                        <img class=" ls-is-cached lazyloaded" src="/img/2016/08/all.png" data-src="/img/2016/08/all.png" alt="all">
                     </div>
                 </div>
             </div>

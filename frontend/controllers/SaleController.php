@@ -40,9 +40,11 @@ class SaleController extends Controller
      */
     public function actionIndex()
     {
+        $date = date('Y-m-d H:i:s');
         $sales = Sale::find()
             ->where(['status' => '1'])
-            ->orderBy(['id' => SORT_DESC])
+            ->andWhere(['>=', 'srok_do', $date])
+            ->orderBy(['srok_do' => SORT_DESC])
             ->all();
         if(isset($_POST['email'])){
             (new MainPage)->unisender($_POST['email']);
@@ -78,7 +80,13 @@ class SaleController extends Controller
 
     public function actionArhiv()
     {
-        $sales = Sale::find()->where(['status' => 0])->all();
+        $date = date('Y-m-d H:i:s');
+        $sales = Sale::find()
+            ->where(['status' => '1'])
+            ->andWhere(['<=', 'srok_do', $date])
+            ->orderBy(['srok_do' => SORT_DESC])
+            ->all();
+
         return $this->render('arhiv', [
             'sales' => $sales,
         ]);

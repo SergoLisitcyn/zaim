@@ -49,6 +49,7 @@ return [
                 'sitemap.xml' => '/sitemap/index',
                 'valuta-bagamy' => '/site/currency',
                 'aktsii' => '/sale/index',
+                'aktsii/arhiv' => '/sale/arhiv',
                 'articles' => '/articles/index',
                 'news' => '/news/index',
                 'kreditnyj-kalkulyator' => '/site/calculator',
