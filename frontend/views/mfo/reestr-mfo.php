@@ -173,10 +173,28 @@ $this->registerMetaTag(['name' => 'description','content' => 'Қазақстан
                                     </div>
                                     <?php endforeach; ?>
                                 </div>
-                                <?php if($q != '00000000') : ?>
+                                <?php if($q != '00000000') :
+                                    $ru = [];
+                                    $en = [];
+                                    $kz = [];
+                                    foreach ($words as $word){
+                                        if (preg_match('/[А-Яа-яЁё]/u', $word['first'])) {
+                                            $ru[] = $word;
+                                        }
+                                        if (preg_match('/[A-Za-z]/iu', $word['first'])) {
+                                            $en[] = $word;
+                                        }
+                                        if(!preg_match('/[A-Za-z]/iu', $word['first']) && !preg_match('/[А-Яа-яЁё]/u', $word['first'])){
+                                            $kz[] = $word;
+                                        }
+                                    }
+                                    ?>
                                 <div class="div-pagination">
-                                    <ul class="pagination">
-                                        <?php foreach ($words as $word) :
+                                    <?php if($ru) { ?>
+                                    <ul class="pagination" style="margin-bottom: 0;padding-bottom: 0;">
+                                        <?php
+
+                                        foreach ($ru as $word) :
                                           $current = '';
                                           if($word['first'] == $q){
                                               $current = 'current';
@@ -187,8 +205,45 @@ $this->registerMetaTag(['name' => 'description','content' => 'Қазақстан
                                             <a href="/reestr-mfo?page=<?= $word['first']  ?>"><?= $word['first']  ?>
                                             </a>
                                         </li>
+                                        <?php endforeach;?>
+                                    </ul>
+                                    <?php  }?>
+                                    <?php if($en) { ?>
+                                    <ul class="pagination" style="margin-top: 0;padding-top: 0;margin-bottom: 0;padding-bottom: 0;">
+                                        <?php
+
+                                        foreach ($en as $word) :
+                                            $current = '';
+                                            if($word['first'] == $q){
+                                                $current = 'current';
+                                            }
+                                            ?>
+
+                                            <li class="page-numbers <?= $current ?>">
+                                                <a href="/reestr-mfo?page=<?= $word['first']  ?>"><?= $word['first']  ?>
+                                                </a>
+                                            </li>
                                         <?php endforeach; ?>
                                     </ul>
+                                    <?php  }?>
+                                    <?php if($kz) { ?>
+                                        <ul class="pagination" style="margin-top: 0;padding-top: 0;">
+                                            <?php
+
+                                            foreach ($kz as $word) :
+                                                $current = '';
+                                                if($word['first'] == $q){
+                                                    $current = 'current';
+                                                }
+                                                ?>
+
+                                                <li class="page-numbers <?= $current ?>">
+                                                    <a href="/reestr-mfo?page=<?= $word['first']  ?>"><?= $word['first']  ?>
+                                                    </a>
+                                                </li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    <?php  }?>
                                 </div>
                                 <?php endif; ?>
 <!--                                    <div class="div-pagination">-->
