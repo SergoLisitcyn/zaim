@@ -227,6 +227,114 @@ if(isset($data['seo']['clients_description']) and !empty($data['seo']['clients_d
                                 </div>
                             </div>
                         </div>
+                        <?php if($data['clients']['rules']) : ?>
+                        <div class="mfo-report">
+                            <div class="mfo-report__block" style="margin-top: 0;">
+                                <div class="mfo-report__col" style="align-items: center;">
+                                    <h2 class="mfo-about-title info-subtitle"><?= $dataMfo['mfo']['clients']['rules'] ?></h2>
+                                    <a href="//<?= $data['clients']['rules']?>" class="mfo-report__link" download target="_blank" rel="nofollow">
+                                        <img class="lazyloaded" src="/img/mfo/pdf.png" data-src="/img/mfo/pdf.png" alt="PDF-файл" style="margin-left: 15px">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <?php endif; ?>
+                        <div class="mfo-socials">
+                            <?php if($model->link_offer) : ?>
+                                <a href="<?= $model->link_offer ?>" class="mfo-socials-link" target="_blank" rel="nofollow">
+                                    <h2 class="mfo-about-title info-subtitle"><?= $dataMfo['mfo']['clients']['faq'] ?></h2>
+                                </a>
+                            <?php elseif ($data['clients']['faq']) : ?>
+                                <a href="//<?= $data['clients']['faq']?>" class="mfo-socials-link" target="_blank" rel="nofollow">
+                                    <h2 class="mfo-about-title info-subtitle"><?= $dataMfo['mfo']['clients']['faq'] ?></h2>
+                                </a>
+                            <?php endif; ?>
+                            <div class="mfo-socials__block">
+                                <?php if($data['clients']['request_call']) : ?>
+                                <a href="#" class="mfo-socials__link">
+                                    <img class="lazyloaded" src="/img/svg-icons/socials/call.svg" data-src="/img/svg-icons/socials/call.svg" alt="Заказать звонок">
+                                </a>
+                                <?php endif; ?>
+                                <?php if($data['clients']['online_chat']) : ?>
+                                <a href="#" class="mfo-socials__link">
+                                    <img class="lazyloaded" src="/img/svg-icons/socials/chat.svg" data-src="/img/svg-icons/socials/chat.svg" alt="Онлайн чат">
+                                </a>
+                                <?php endif; ?>
+                                <?php if($data['clients']['whatsApp']) : ?>
+                                <a href="#" class="mfo-socials__link">
+                                    <img class="lazyloaded" src="/img/svg-icons/socials/whatsapp.svg" data-src="/img/svg-icons/socials/whatsapp.svg" alt="WhatsApp">
+                                </a>
+                                <?php endif; ?>
+                                <?php if($data['clients']['viber']) : ?>
+                                <a href="#" class="mfo-socials__link">
+                                    <img class="lazyloaded" src="/img/svg-icons/socials/viber.svg" data-src="/img/svg-icons/socials/viber.svg" alt="Viber">
+                                </a>
+                                <?php endif; ?>
+                                <?php if($data['clients']['telegram']) : ?>
+                                <a href="#" class="mfo-socials__link">
+                                    <img class="lazyloaded" src="/img/svg-icons/socials/telegram.svg" data-src="/img/svg-icons/socials/telegram.svg" alt="Telegram">
+                                </a>
+                                <?php endif; ?>
+                                <?php if($data['clients']['email_consultation']) : ?>
+                                <a href="#" class="mfo-socials__link">
+                                    <img class="lazyloaded" src="/img/svg-icons/socials/email.svg" data-src="/img/svg-icons/socials/email.svg" alt="Email для консультации">
+                                </a>
+                                <?php endif; ?>
+                                <?php if($data['clients']['call_consultation']) : ?>
+                                <a href="#" class="mfo-socials__link">
+                                    <img class="lazyloaded" src="/img/svg-icons/socials/consultation.svg" data-src="/img/svg-icons/socials/consultation.svg" alt="Позвонить для консультации">
+                                </a>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                        <?php if($model->link_offer) : ?>
+                            <div class="mfo-feedback">
+                                <a href="<?= $model->link_offer ?>" class="mfo-feedback-link" rel="nofollow" target="_blank">
+                                    <h2 class="mfo-about-title info-subtitle"><?= $dataMfo['mfo']['clients']['feedback'] ?></h2>
+                                </a>
+                            </div>
+                        <?php elseif ($data['clients']['feedback']) : ?>
+                            <div class="mfo-feedback">
+                                <a href="//<?= $data['clients']['feedback'] ?>" class="mfo-feedback-link" rel="nofollow" target="_blank">
+                                    <h2 class="mfo-about-title info-subtitle"><?= $dataMfo['mfo']['clients']['feedback'] ?></h2>
+                                </a>
+                            </div>
+                        <?php endif; ?>
+                        <div class="mfo-socials">
+                            <h2 class="mfo-about-title info-subtitle">Соцсети:</h2>
+                            <div class="mfo-socials__block">
+                                <?php if($data['clients']['facebook']) : ?>
+                                <a href="//<?= $data['clients']['facebook'] ?>" class="mfo-socials__link" rel="nofollow" target="_blank">
+                                    <img class="lazyloaded" src="/img/svg-icons/socials/facebook.svg" data-src="/img/svg-icons/socials/facebook.svg" alt="Facebook">
+                                </a>
+                                <?php endif; ?>
+                                <?php if($data['clients']['vk']) : ?>
+                                <a href="//<?= $data['clients']['vk'] ?>" class="mfo-socials__link" rel="nofollow" target="_blank">
+                                    <img class="lazyloaded" src="/img/svg-icons/socials/vk.svg" data-src="/img/svg-icons/socials/vk.svg" alt="Vk">
+                                </a>
+                                <?php endif; ?>
+                                <?php if($data['clients']['instagram']) : ?>
+                                <a href="//<?= $data['clients']['instagram'] ?>" class="mfo-socials__link" rel="nofollow" target="_blank">
+                                    <img class="lazyloaded" src="/img/svg-icons/socials/instagram.svg" data-src="/img/svg-icons/socials/instagram.svg" alt="Instagram">
+                                </a>
+                                <?php endif; ?>
+                                <?php if($data['clients']['twitter']) : ?>
+                                <a href="//<?= $data['clients']['twitter'] ?>" class="mfo-socials__link" rel="nofollow" target="_blank">
+                                    <img class="lazyloaded" src="/img/svg-icons/socials/twitter.svg" data-src="/img/svg-icons/socials/twitter.svg" alt="Twitter">
+                                </a>
+                                <?php endif; ?>
+                                <?php if($data['clients']['youtube']) : ?>
+                                <a href="//<?= $data['clients']['youtube'] ?>" class="mfo-socials__link" rel="nofollow" target="_blank">
+                                    <img class="lazyloaded" src="/img/svg-icons/socials/youtube.svg" data-src="/img/svg-icons/socials/youtube.svg" alt="Youtube">
+                                </a>
+                                <?php endif; ?>
+                                <?php if($data['clients']['odnoklasniki']) : ?>
+                                <a href="//<?= $data['clients']['odnoklasniki'] ?>" class="mfo-socials__link" rel="nofollow" target="_blank">
+                                    <img class="lazyloaded" src="/img/svg-icons/socials/odnoklassniki.svg" data-src="/img/svg-icons/socials/odnoklassniki.svg" alt="Одноклассники">
+                                </a>
+                                <?php endif; ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

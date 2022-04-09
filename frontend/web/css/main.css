@@ -2474,3 +2474,81 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
     border-top: 14.5px solid transparent !important;
     border-bottom: 14.5px solid transparent !important;
 }
+
+
+
+/*Clients-mfo*/
+.mfo-clients {
+    padding: 20px 40px;
+}
+
+.mfo-clients-column {
+    display: flex;
+    padding: 30px 0;
+}
+
+.mfo-clients-column:not(:last-child) {
+    border-bottom: 1px dashed #898888;
+}
+
+.mfo-clients-column__col:first-child {
+    margin-right: 15px;
+    width: 35%;
+}
+
+.mfo-clients-column__title {
+    color: #898888;
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.mfo-clients-column__link {
+    color: #028ab4;
+    text-decoration: underline;
+}
+
+.mfo-clients-column__social {
+    display: flex;
+    align-items: flex-start;
+}
+
+.mfo-clients__file {
+    display: flex;
+}
+
+.mfo-clients__file-link {
+    margin-right: 15px;
+}
+
+.mfo-clients-column-social__list {
+    width: 250px;
+}
+
+.mfo-clients-column-social__list-item {
+    padding-right: 10px;
+}
+
+.mfo-clients-column-social__list-item:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.mfo-clients-column-social__list-link {
+    display: flex;
+    align-items: center;
+}
+
+.mfo-clients-column-social__list-icon {
+    width: 40px;
+    margin-right: 15px;
+}
+
+.mfo-clients-column-social__list-text {
+    color: #028ab4;
+    font-size: 16px;
+    line-height: 18px;
+    text-decoration: underline;
+}
+
+.mfo-clients-column-social__list-link:hover .mfo-clients-column-social__list-text {
+    text-decoration: none;
+}

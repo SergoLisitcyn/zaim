@@ -910,6 +910,35 @@
     .bank-requisites-mfo-about .mfo-about__col {
         flex-direction: column;
     }
+
+    .mfo-about__table .mfo-about__col {
+        justify-content: flex-start;
+    }
+
+    .mfo-clients {
+        padding: 15px;
+    }
+
+    .mfo-clients-column {
+        padding: 20px 0;
+    }
+
+    .mfo-clients-column__social {
+        flex-direction: column;
+    }
+
+    .mfo-clients-column-social__list {
+        width: 100%;
+        padding: 0;
+    }
+
+    .mfo-clients-column-social__list:not(:first-child) {
+        margin-top: 15px;
+    }
+
+    .mfo-clients-column-social__list-text {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 959px) {
@@ -974,5 +1003,24 @@
     }
     .reestr-item__btn {
         text-align: center;
+    }
+}
+
+
+@media (max-width: 900px) {
+    .mfo-clients-column__social {
+        margin-top: 15px;
+    }
+
+    .mfo-clients-column {
+        flex-direction: column;
+    }
+
+    .mfo-clients__file {
+        margin-top: 15px;
+    }
+
+    .mfo-clients-column__col:first-child {
+        width: 100%;
     }
 }
