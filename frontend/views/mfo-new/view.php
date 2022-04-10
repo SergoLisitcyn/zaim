@@ -138,11 +138,13 @@ YiiAsset::register($this);
                         <?php endif; ?>
 
                         <!--   Разделы/признаки -->
-                        <?php $features = array_diff($data['features'], array('', NULL, false));
+                        <?php
+                        if(isset($data['features']) && $data['features']) {
+                        $features = array_diff($data['features'], array('', NULL, false));
                             if($features) :
                         ?>
                         <?= MfoViewWidget::widget(['type' => 'features','model' => $model,'data' => $data,'version' => $version]) ?>
-                        <?php endif; ?>
+                        <?php endif; }?>
 
 
                         <?php
@@ -167,21 +169,25 @@ YiiAsset::register($this);
                         </div>
                         <?php endif; ?>
                         <!--      Способы получения-->
-                        <?php $sposob_get = array_diff($data['sposob_get'], array('', NULL, false));
+                        <?php
+                        if(isset($data['sposob_get']) && $data['sposob_get']) {
+                        $sposob_get = array_diff($data['sposob_get'], array('', NULL, false));
                         if($sposob_get)  : ?>
                         <div class="content-text blocks-content-text">
                             <h2 class="content-text-title info-subtitle"><?= $dataTag['sposob_poluch'] ?></h2>
                             <?= MfoViewWidget::widget(['type' => 'sposob_poluch','model' => $model,'data' => $data,'version' => $version]) ?>
                         </div>
-                        <?php endif; ?>
+                        <?php endif; }?>
                         <!--      Способы погашения  -->
-                        <?php $sposob_repayment = array_diff($data['sposob_repayment'], array('', NULL, false));
+                        <?php
+                        if(isset($data['sposob_repayment']) && $data['sposob_repayment']) {
+                        $sposob_repayment = array_diff($data['sposob_repayment'], array('', NULL, false));
                         if($sposob_repayment)  : ?>
                         <div class="content-text blocks-content-text">
                             <h2 class="content-text-title info-subtitle"><?= $dataTag['sposob_pogash'] ?></h2>
                             <?= MfoViewWidget::widget(['type' => 'sposob_pogash','model' => $model,'data' => $data,'version' => $version]) ?>
                         </div>
-                        <?php endif; ?>
+                        <?php endif; }?>
                         <!--      Реквизиты  -->
                         <div class="mfo-about">
                             <h2 class="mfo-about-title info-subtitle"><?= $dataTag['requisites'] ?></h2>
