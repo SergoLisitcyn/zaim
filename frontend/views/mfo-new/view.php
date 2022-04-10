@@ -148,8 +148,14 @@ YiiAsset::register($this);
 
 
                         <?php
-                            $conditions = array_diff($data['conditions'], array('', NULL, false));
+                            $conditions = false;
+                            $singularity = false;
+                            if(isset($data['conditions']) && $data['conditions']) {
+                                $conditions = array_diff($data['conditions'], array('', NULL, false));
+                            }
+                            if(isset($data['singularity']) && $data['singularity']) {
                             $singularity = array_diff($data['singularity'], array('', NULL, false));
+                            }
                             if($conditions || $singularity) :
                         ?>
                         <div class="mfo-about">
