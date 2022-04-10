@@ -90,17 +90,19 @@ if(isset($data['seo']['clients_description']) and !empty($data['seo']['clients_d
                                                 </a>
                                             </li>
                                             <?php endif; ?>
-                                            <?php if($data['clients']['whatsApp']) : ?>
+<!--                                            --><?php //if($data['clients']['whatsApp']) : ?>
+                                            <?php if($data['contacts']['whatsApp']) : ?>
                                             <li class="mfo-clients-column-social__list-item">
-                                                <a href="#" class="mfo-clients-column-social__list-link">
+                                                <a href="https://wa.me/<?= $data['contacts']['whatsApp'] ?>" class="mfo-clients-column-social__list-link" target="_blank" rel="nofollow">
                                                     <img class="mfo-clients-column-social__list-icon lazyloaded" src="/img/svg-icons/socials/whatsapp.svg" data-src="img/svg-icons/socials/whatsapp.svg" alt="WhatsApp">
                                                     <span class="mfo-clients-column-social__list-text">WhatsApp</span>
                                                 </a>
                                             </li>
                                             <?php endif; ?>
-                                            <?php if($data['clients']['telegram']) : ?>
+<!--                                            --><?php //if($data['clients']['telegram']) : ?>
+                                            <?php if($data['contacts']['telegram']) : ?>
                                             <li class="mfo-clients-column-social__list-item">
-                                                <a href="#" class="mfo-clients-column-social__list-link">
+                                                <a href="//<?= $data['contacts']['telegram'] ?>" class="mfo-clients-column-social__list-link" target="_blank" rel="nofollow">
                                                     <img class="mfo-clients-column-social__list-icon lazyloaded" src="/img/svg-icons/socials/telegram.svg" data-src="img/svg-icons/socials/telegram.svg" alt="Telegram">
                                                     <span class="mfo-clients-column-social__list-text">Telegram</span>
                                                 </a>
@@ -132,9 +134,10 @@ if(isset($data['seo']['clients_description']) and !empty($data['seo']['clients_d
                                                 </a>
                                             </li>
                                             <?php endif; ?>
-                                            <?php if($data['clients']['email_consultation']) : ?>
+<!--                                            --><?php //if($data['clients']['email_consultation']) : ?>
+                                            <?php if($data['contacts']['email_1']) : ?>
                                             <li class="mfo-clients-column-social__list-item">
-                                                <a href="#" class="mfo-clients-column-social__list-link">
+                                                <a href="mailto:<?= $data['contacts']['email_1'] ?>" class="mfo-clients-column-social__list-link" target="_blank" rel="nofollow">
                                                     <img class="mfo-clients-column-social__list-icon lazyloaded" src="/img/svg-icons/socials/email.svg" data-src="img/svg-icons/socials/email.svg" alt="Email для консультации">
                                                     <span class="mfo-clients-column-social__list-text">Email для консультации</span>
                                                 </a>

@@ -1,7 +1,7 @@
 <?php
 
-use yii\helpers\Html;
-use yii\grid\GridView;
+use frontend\widgets\ContentSideBar;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\ArticlesSearch */
@@ -47,7 +47,7 @@ $this->registerMetaTag(['name' => 'description',
                                     <?php foreach ($articles as $article) :?>
                                         <div class="aktsii-list__item">
                                             <div class="news-item">
-                                                <a href="<?= \yii\helpers\Url::toRoute(['articles/view', 'url' => $article->url]) ?>" class="aktsii-item__link">
+                                                <a href="<?= Url::toRoute(['articles/view', 'url' => $article->url]) ?>" class="aktsii-item__link">
                                                     <div class="news-item__img-wrap">
                                                         <img src="<?= $article->preview_image ?>"
                                                              data-lazy-type="image"
@@ -76,7 +76,7 @@ $this->registerMetaTag(['name' => 'description',
 
                 </div>
 
-                <?= \frontend\widgets\ContentSideBar::widget(['type' => 'articles']); ?>
+                <?= ContentSideBar::widget(['type' => 'articles']); ?>
 
             </div>
         </div>
