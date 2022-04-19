@@ -66,9 +66,15 @@ class MfoNewController extends Controller
             ->where(['in', 'id', $array])->all();
         $mfoDatas = MfoData::find()->where(['name' => 'Data'])->one();
         $dataMfo = unserialize($mfoDatas->data_mfo_kz);
+        $tag = null;
+        if(isset($dataMfo['mfo'][$index][$filter]) && $dataMfo['mfo'][$index][$filter]){
+            $tag = $dataMfo['mfo'][$index][$filter];
+        }
+
         return $this->render('filter', [
             'mfoAll' => $query,
             'dataMfo' => $dataMfo,
+            'tag' => $tag,
         ]);
     }
 

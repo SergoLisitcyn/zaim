@@ -68,9 +68,16 @@ class MfoController extends Controller
         $q = 'А';
         if($page) $q = $page;
 
+
+        $mfoDatas = MfoData::find()->where(['name' => 'Data'])->one();
+        $dataMfo = unserialize($mfoDatas->data_mfo_kz);
+        $dataTag = unserialize($mfoDatas->data_tag_kz);
         if($bin || $name || $city){
             $mfoAll = Mfo::getFormReestrMfo($bin,$name,$city);
             $q = '00000000';
+            if($city){
+                return Yii::$app->response->redirect(['mfo/reestr-mfo-city', 'url' => $city]);
+            }
         } else {
             $mfoAll = Mfo::find()
                 ->where('mfo_name_kz LIKE :q')
@@ -79,9 +86,6 @@ class MfoController extends Controller
                 ->orderBy('mfo_name_kz ASC')
                 ->all();
         }
-
-        $mfoDatas = MfoData::find()->where(['name' => 'Data'])->one();
-        $dataMfo = unserialize($mfoDatas->data_mfo_kz);
 
         $city = Mfo::find()
             ->select(['city_kz AS city'])
@@ -93,12 +97,29 @@ class MfoController extends Controller
         return $this->render('reestr-mfo', [
             'mfoAll' => $mfoAll,
             'dataMfo' => $dataMfo,
+            'dataTag' => $dataTag,
 //            'pages' => $pages,
             'citys' => $city,
             'updateTime' => Mfo::getTextDate(),
             'words' => Mfo::getWordsForPagination(),
             'q' => $q,
         ]);
+    }
+
+    public function actionReestrMfoCity($url)
+    {
+        if(!$url) throw new HttpException(404, 'Страница не существует.');
+        $mfoAll = Mfo::getFormReestrMfo(null,null,$url);
+        $mfoDatas = MfoData::find()->where(['name' => 'Data'])->one();
+        $dataMfo = unserialize($mfoDatas->data_mfo_kz);
+        $dataTag = unserialize($mfoDatas->data_tag_kz);
+        return $this->render('reestr-mfo-city', [
+            'mfoAll' => $mfoAll,
+            'dataMfo' => $dataMfo,
+            'dataTag' => $dataTag,
+            'tag' => $url,
+        ]);
+
     }
 
     /**

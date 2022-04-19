@@ -11,16 +11,22 @@
 <!--</div>-->
 <?php
 use \yii\helpers\Url;
+if($tag){
+    $this->title = $tag.' – smartzaim.kz';
+}
+
 ?>
 <section class="breadcrumbs plr">
     <div class="breadcrumbs-wrap limit-width">
         <ul class="breadcrumbs__items">
             <li>
-                <a href="/">Онлайн қарыздар</a>
+                <a href="/reestr-mfo">МҚҰ тізілімі</a>
             </li>
+            <?php if($tag) :?>
             <li>
-                МҚҰ тізілімі
+                <?= $tag ?>
             </li>
+            <?php endif; ?>
         </ul>
     </div>
 </section>
@@ -31,6 +37,9 @@ use \yii\helpers\Url;
                 <div class="content-info">
                     <div class="content-main-info">
                         <div class="content-main-info__item">
+                            <?php if($tag) :?>
+                                    <h1 style="text-align: center"><?= $tag ?></h1>
+                            <?php endif; ?>
                             <div class="content-main-info__content">
                                 <div class="reestr-article__list bank-offers-horizontal">
                                     <?php foreach ($mfoAll as $mfo) :

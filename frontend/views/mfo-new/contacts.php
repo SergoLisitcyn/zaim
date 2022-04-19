@@ -60,13 +60,15 @@ if(isset($data['seo']['contacts_description']) and !empty($data['seo']['contacts
 
                                         <?php if($model->link_offer) : ?>
                                             <div class="mfo-about__col-right">
-                                                <a href="<?= $model->link_offer ?>" class="mfo-about__col-right-link">
+<!--                                                <a href="" class="mfo-about__col-right-link">-->
                                                     <?= $data['contacts']['version_ru'] ?>
-                                                </a>
+<!--                                                </a>-->
                                             </div>
                                         <?php else : ?>
                                             <div class="mfo-about__col-right">
-                                                <a href="//<?= $data['contacts']['version_ru'] ?>" class="mfo-about__col-right-link"><?= $data['contacts']['version_ru'] ?></a>
+<!--                                                <a href="" class="mfo-about__col-right-link">-->
+                                                    <?= $data['contacts']['version_ru'] ?>
+<!--                                                </a>-->
                                             </div>
                                         <?php endif; ?>
                                     </div>
@@ -78,13 +80,15 @@ if(isset($data['seo']['contacts_description']) and !empty($data['seo']['contacts
                                         </div>
                                         <?php if($model->link_offer) : ?>
                                             <div class="mfo-about__col-right">
-                                                <a href="<?= $model->link_offer ?>" class="mfo-about__col-right-link">
+<!--                                                <a href="" class="mfo-about__col-right-link">-->
                                                     <?= $data['contacts']['version_ru'] ?>
-                                                </a>
+<!--                                                </a>-->
                                             </div>
                                         <?php else : ?>
                                             <div class="mfo-about__col-right">
-                                                <a href="//<?= $data['contacts']['version_kz'] ?>" class="mfo-about__col-right-link"><?= $data['contacts']['version_kz'] ?></a>
+<!--                                                <a href="" class="mfo-about__col-right-link">-->
+                                                    <?= $data['contacts']['version_kz'] ?>
+<!--                                                </a>-->
                                             </div>
                                         <?php endif; ?>
                                     </div>

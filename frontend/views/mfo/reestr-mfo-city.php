@@ -2,17 +2,21 @@
 
 use frontend\widgets\ReestrMfoFilter;
 use \yii\helpers\Url;
-$this->title = 'Қазақстанның барлық жұмыс істейтін микроқаржы ұйымдары – smartzaim.kz';
-$this->registerMetaTag(['name' => 'description','content' => 'Қазақстанның микроқаржы нарығы туралы толық ақпарат.
-Микроқаржы компанияларының деректемелері мен ерекшеліктері.Микрокредитті алу және өтеу шарттары мен ережелері.
- Клиенттердің пікірлері, тұтынушыларды қолдау және байланыс.']);
+if($tag){
+    $this->title = 'Реестр МФО Казахстана. Все микрофинансовые компании в городе '.$tag;
+}
 ?>
 <section class="breadcrumbs plr">
     <div class="breadcrumbs-wrap limit-width">
         <ul class="breadcrumbs__items">
             <li>
-                МҚҰ тізілімі
+                <a href="/reestr-mfo">МҚҰ тізілімі</a>
             </li>
+            <?php if($tag) :?>
+                <li>
+                    <?= $tag ?>
+                </li>
+            <?php endif; ?>
         </ul>
     </div>
 </section>
@@ -23,61 +27,10 @@ $this->registerMetaTag(['name' => 'description','content' => 'Қазақстан
                 <div class="content-info">
                     <div class="content-main-info">
                         <div class="content-main-info__item">
-                            <h1>Қазақстанның микроқаржы ұйымдарының тізілімі</h1>
+                            <?php if($tag) :?>
+                                <h1 style="text-align: center"><?= $tag ?></h1>
+                            <?php endif; ?>
                             <div class="content-main-info__content">
-                                <p class="reestr__text">
-                                    Тізілімдегі барлық компаниялар Қаржы нарығын реттеу және дамыту агенттігінің (ҚНРДА) реттеуі мен қадағалауына бағынады. Осы жерде сіз компанияның тізілімде болуын тексере аласыз.
-                                </p>
-                                <p class="reestr__text">
-                                    Соңғы жаңарту: <span><b><?= $updateTime ?></b></span>
-                                </p>
-                                <div class="reestr-filter">
-                                    <form action="reestr-mfo" method="post">
-                                    <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
-                                    <div class="reestr-filter__form">
-                                        <div class="reestr-filter__info">
-                                            <div class="reestr-filter__items">
-                                                <div class="reestr-filter__item reestr-filter__item_column">
-                                                    <div class="reestr-filter__item-title">
-                                                        Өрістердің кем дегенде біреуін толтырыңыз және батырманы басыңыз
-                                                    </div>
-                                                    <div class="reestr-filter__inputs">
-                                                        <div class="reestr-filter__inputs-col">
-                                                            <input name="reestr-name" type="text" placeholder="Название">
-                                                        </div>
-                                                        <div class="reestr-filter__inputs-col">
-                                                            <input name="reestr-bin" type="text" placeholder="БИН">
-                                                        </div>
-                                                        <div class="reestr-filter__inputs-col">
-<!--                                                            <input	class="btn-orange"	type="submit"	value="Поиск организации">-->
-                                                            <button class="btn-orange"	type="submit">ҰЙЫМДЫ ІЗДЕУ</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="reestr-filter__item">
-                                                    <div class="reestr-filter__item-title">Немесе қаланы таңдаңыз</div>
-                                                    <div class="reestr-filter__select-col">
-                                                        <div class="reestr-filter__select reestr-filter__select-city style-light">
-                                                            <select name="reestr-city">
-                                                                <option value=""></option>
-                                                                <?php  foreach ($citys as $key => $value) :
-                                                                    ?>
-                                                                <option value="<?= $value['city'] ?>"><?= $value['city'] ?></option>
-                                                                <?php endforeach; ?>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </form>
-                                </div>
-
-                                <?php
-                                if($_POST || $_GET) {
-
-                                ?>
                                 <div class="reestr-article__list bank-offers-horizontal">
                                     <?php foreach ($mfoAll as $mfo) :
                                         $data = unserialize($mfo->data_kz);
@@ -177,94 +130,6 @@ $this->registerMetaTag(['name' => 'description','content' => 'Қазақстан
                                     </div>
                                     <?php endforeach; ?>
                                 </div>
-                                <?php } else {
-                                    echo ReestrMfoFilter::widget(['type' => $dataMfo,'tag' => $dataTag]);
-                                    }
-                                ?>
-                                <?php if($q != '00000000') :
-                                    $ru = [];
-                                    $en = [];
-                                    $kz = [];
-                                    foreach ($words as $word){
-                                        if (preg_match('/[А-Яа-яЁё]/u', $word['first'])) {
-                                            $ru[] = $word;
-                                        }
-                                        if (preg_match('/[A-Za-z]/iu', $word['first'])) {
-                                            $en[] = $word;
-                                        }
-                                        if(!preg_match('/[A-Za-z]/iu', $word['first']) && !preg_match('/[А-Яа-яЁё]/u', $word['first'])){
-                                            $kz[] = $word;
-                                        }
-                                    }
-                                    ?>
-                                <div class="div-pagination">
-                                    <?php if($ru) { ?>
-                                    <ul class="pagination" style="margin-bottom: 0;padding-bottom: 0;">
-                                        <?php
-
-                                        foreach ($ru as $word) :
-                                          $current = '';
-                                          if($word['first'] == $q){
-                                              $current = 'current';
-                                          }
-                                        ?>
-
-                                        <li class="page-numbers <?= $current ?>">
-                                            <a href="/reestr-mfo?page=<?= $word['first']  ?>"><?= $word['first']  ?>
-                                            </a>
-                                        </li>
-                                        <?php endforeach;?>
-                                    </ul>
-                                    <?php  }?>
-                                    <?php if($en) { ?>
-                                    <ul class="pagination" style="margin-top: 0;padding-top: 0;margin-bottom: 0;padding-bottom: 0;">
-                                        <?php
-
-                                        foreach ($en as $word) :
-                                            $current = '';
-                                            if($word['first'] == $q){
-                                                $current = 'current';
-                                            }
-                                            ?>
-
-                                            <li class="page-numbers <?= $current ?>">
-                                                <a href="/reestr-mfo?page=<?= $word['first']  ?>"><?= $word['first']  ?>
-                                                </a>
-                                            </li>
-                                        <?php endforeach; ?>
-                                    </ul>
-                                    <?php  }?>
-                                    <?php if($kz) { ?>
-                                        <ul class="pagination" style="margin-top: 0;padding-top: 0;">
-                                            <?php
-
-                                            foreach ($kz as $word) :
-                                                $current = '';
-                                                if($word['first'] == $q){
-                                                    $current = 'current';
-                                                }
-                                                ?>
-
-                                                <li class="page-numbers <?= $current ?>">
-                                                    <a href="/reestr-mfo?page=<?= $word['first']  ?>"><?= $word['first']  ?>
-                                                    </a>
-                                                </li>
-                                            <?php endforeach; ?>
-                                        </ul>
-                                    <?php  }?>
-                                </div>
-                                <?php endif; ?>
-<!--                                    <div class="div-pagination">-->
-<!--                                        --><?php //echo \yii\widgets\LinkPager::widget([
-//                                          'pagination' => $pages,
-//                                          'prevPageLabel' => false,
-//                                          'nextPageLabel' => false,
-//                                          'activePageCssClass' => 'current' ,
-//                                          'firstPageCssClass' => 'lknflbes',
-//                                          'pageCssClass' => 'page-numbers',
-//                                        ]);
-//                                        ?>
-<!--                                    </div>-->
                             </div>
                         </div>
                     </div>
@@ -292,9 +157,9 @@ $this->registerMetaTag(['name' => 'description','content' => 'Қазақстан
                             <div class="aside-rating-mfo-item">
                                 <a	href="#">
                                     <noscript>
-                                        <img	src="img/2016/08/4slovo-e1550510710120.png">
+                                        <img	src="/img/2016/08/4slovo-e1550510710120.png">
                                     </noscript>
-                                    <img	class="lazyload"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="img/2016/08/4slovo-e1550510710120.png"	style="width: 110px;">
+                                    <img	class="lazyload"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="/img/2016/08/4slovo-e1550510710120.png"	style="width: 110px;">
                                 </a>
                             </div>
                             <div class="aside-rating-mfo-item">
@@ -314,9 +179,9 @@ $this->registerMetaTag(['name' => 'description','content' => 'Қазақстан
                             <div class="aside-rating-mfo-item">
                                 <a	href="#">
                                     <noscript>
-                                        <img	src="img2016/08/moneyman.png">
+                                        <img	src="/img2016/08/moneyman.png">
                                     </noscript>
-                                    <img	class="lazyload"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="img/2016/08/moneyman.png"	style="width: 110px;">
+                                    <img	class="lazyload"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="/img/2016/08/moneyman.png"	style="width: 110px;">
                                 </a>
                             </div>
                             <div class="aside-rating-mfo-item">
@@ -336,9 +201,9 @@ $this->registerMetaTag(['name' => 'description','content' => 'Қазақстан
                             <div class="aside-rating-mfo-item">
                                 <a	href="#">
                                     <noscript>
-                                        <img	src="img/2018/01/tengokz_300x140_0.png">
+                                        <img	src="/img/2018/01/tengokz_300x140_0.png">
                                     </noscript>
-                                    <img	class="lazyload"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="img/2018/01/tengokz_300x140_0.png">
+                                    <img	class="lazyload"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="/img/2018/01/tengokz_300x140_0.png">
                                 </a>
                             </div>
                             <div class="aside-rating-mfo-item">

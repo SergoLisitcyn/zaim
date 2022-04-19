@@ -3,6 +3,7 @@
 namespace frontend\widgets;
 
 use common\models\Links;
+use Yii;
 use yii\bootstrap\Widget;
 
 class Url extends Widget
@@ -25,7 +26,9 @@ class Url extends Widget
         } else {
             $linkRu = 'https://smartzaim.kz/';
         }
-
+        if(Yii::$app->request->pathInfo == 'reestr-mfo'){
+            $linkRu = 'https://smartzaim.kz/reestr-mfo/?letter=%D0%90';
+        }
         return $this->render('url', [
             'linkRu' => $linkRu,
             'output' => $this->output

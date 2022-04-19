@@ -59,11 +59,11 @@ return [
                 'banks' => '/banks/index',
                 'mfo-new' => '/mfo-new/index',
                 'reestr-mfo' => '/mfo/reestr-mfo',
-//                [
-//                    'pattern' => 'mfo/<url:\S+>/reviews',
-//                    'route' => '/mfo/reviews',
-//                    'defaults' => ['url' => '']
-//                ],
+                [
+                    'pattern' => 'mfo/reestr-mfo-city/<url:\S+>',
+                    'route' => '/mfo/reestr-mfo-city',
+                    'defaults' => ['url' => '']
+                ],
 //                [
 //                    'pattern' => 'mfo/<url:\S+>/login',
 //                    'route' => '/mfo/login',

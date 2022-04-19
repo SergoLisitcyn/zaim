@@ -326,7 +326,9 @@ class SiteController extends Controller
     public function actionRating()
     {
         $mfo = Mfo::find()
-            ->orderBy(['sort' => SORT_ASC])
+            ->orderBy(['rating' => SORT_DESC])
+            ->where(['home_page' => 1])
+            ->limit(10)
             ->all();
 
         return $this->render('rating', [
