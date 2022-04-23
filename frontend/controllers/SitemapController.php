@@ -40,7 +40,7 @@ class SitemapController extends Controller
                 'priority' => 0.80
             ];
         }
-        $mfos = Mfo::find()->where(['status' => 1])->all();
+        $mfos = Mfo::find()->where(['not', ['data_kz' => null]])->all();
         foreach ($mfos as $mfo) {
             $urls[] = [
                 'loc' => 'mfo/'.$mfo->url,
@@ -86,7 +86,7 @@ class SitemapController extends Controller
             ];
         }
 
-        $mfosLogin = Mfo::find()->where(['status' => 1])->all();
+        $mfosLogin = Mfo::find()->where(['not', ['data_kz' => null]])->all();
         foreach ($mfosLogin as $mfoLogin) {
             $urls[] = [
                 'loc' => 'mfo/'.$mfoLogin->url.'/login',
@@ -95,7 +95,7 @@ class SitemapController extends Controller
             ];
         }
 
-        $mfosReviews = Mfo::find()->where(['status' => 1])->all();
+        $mfosReviews = Mfo::find()->where(['not', ['data_kz' => null]])->all();
         foreach ($mfosReviews as $review) {
             $urls[] = [
                 'loc' => 'mfo/'.$review->url.'/reviews',
