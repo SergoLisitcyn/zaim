@@ -8,6 +8,7 @@ use yii\db\ActiveRecord;
 use yii\db\Exception;
 use \yii\helpers\ArrayHelper;
 use yii\helpers\FileHelper;
+use yii\web\HttpException;
 use yii\web\UploadedFile;
 
 /**
@@ -910,5 +911,86 @@ class Mfo extends ActiveRecord
         return $all->all();
     }
 
+    public static function getMfoDatas($version = null)
+    {
+        $mfoDatas = MfoData::find()->where(['name' => 'Data'])->one();
+        $dataMfo = unserialize($mfoDatas->data_mfo_kz);
+        $dataTag = unserialize($mfoDatas->data_tag_kz);
+        $dataMenu = unserialize($mfoDatas->data_menu_kz);
+        if($version == 'RU'){
+            $dataMenu = unserialize($mfoDatas->data_menu);
+            $dataMfo = unserialize($mfoDatas->data_mfo);
+            $dataTag = unserialize($mfoDatas->data_tag);
+        }
+        return [
+            'dataMfo' => $dataMfo,
+            'dataTag' => $dataTag,
+            'dataMenu' => $dataMenu,
+        ];
+    }
 
+
+    /**
+     * Есть ли у МФО выбранный фильтр
+     * @param string|null $index
+     * @param string|null $filter
+     * @return array
+     * @throws HttpException
+     */
+    public static function getFilterData(string $index = null, string $filter = null)
+    {
+        if(!$filter || !$index) throw new HttpException(404, 'Страница не существует.');
+
+        $mfo = Mfo::find()->where(['not', ['data_kz' => null]])->all();
+        $array = [];
+        foreach ($mfo as $key => $value){
+            $data = unserialize($value['data_kz']);
+            if(isset($data[$index][$filter]) && $data[$index][$filter]){
+                $array[] = $value['id'];
+            }
+        }
+        $query = Mfo::find()
+            ->where(['in', 'id', $array])->all();
+        $mfoDatas = MfoData::find()->where(['name' => 'Data'])->one();
+        $dataMfo = unserialize($mfoDatas->data_mfo_kz);
+        $tag = null;
+        if(isset($dataMfo['mfo'][$index][$filter]) && $dataMfo['mfo'][$index][$filter]){
+            $tag = $dataMfo['mfo'][$index][$filter];
+        }
+
+        return [
+            'mfoAll' => $query,
+            'dataMfo' => $dataMfo,
+            'tag' => $tag,
+        ];
+    }
+
+    /**
+     * Поиск МФО по первой букве
+     * @param string $letter
+     * @return array
+     */
+    public static function findMfoByLetter(string $letter): array
+    {
+        return Mfo::find()
+            ->where('mfo_name_kz LIKE :q')
+            ->andWhere(['not', ['data_kz' => null]])
+            ->addParams(['q'=>$letter . '%'])
+            ->orderBy('mfo_name_kz ASC')
+            ->all();
+    }
+
+    /**
+     * Поиск всех городов добавленных из гугл файла
+     * @return array
+     */
+    public static function findAllCity(): array
+    {
+        return Mfo::find()
+            ->select(['city_kz AS city'])
+            ->where(['not', ['data_kz' => null]])
+            ->groupBy(['city'])
+            ->asArray()
+            ->all();
+    }
 }

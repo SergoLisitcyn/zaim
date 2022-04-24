@@ -40,21 +40,6 @@ class MfoController extends Controller
     }
 
     /**
-     * Lists all Mfo models.
-     * @return mixed
-     */
-    public function actionIndex()
-    {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Mfo::find(),
-        ]);
-
-        return $this->render('index', [
-            'dataProvider' => $dataProvider,
-        ]);
-    }
-
-    /**
      * @throws Exception
      */
     public function actionReestrMfo()
@@ -68,10 +53,8 @@ class MfoController extends Controller
         $q = '1';
         if($page) $q = $page;
 
+        $mfoDatas = Mfo::getMfoDatas();
 
-        $mfoDatas = MfoData::find()->where(['name' => 'Data'])->one();
-        $dataMfo = unserialize($mfoDatas->data_mfo_kz);
-        $dataTag = unserialize($mfoDatas->data_tag_kz);
         if($bin || $name || $city){
             $mfoAll = Mfo::getFormReestrMfo($bin,$name,$city);
             $q = '00000000';
@@ -79,27 +62,14 @@ class MfoController extends Controller
                 return Yii::$app->response->redirect(['mfo/reestr-mfo-city', 'url' => $city]);
             }
         } else {
-            $mfoAll = Mfo::find()
-                ->where('mfo_name_kz LIKE :q')
-                ->andWhere(['not', ['data_kz' => null]])
-                ->addParams(['q'=>$q . '%'])
-                ->orderBy('mfo_name_kz ASC')
-                ->all();
+            $mfoAll = Mfo::findMfoByLetter($q);
         }
-
-        $city = Mfo::find()
-            ->select(['city_kz AS city'])
-            ->where(['not', ['data_kz' => null]])
-            ->groupBy(['city'])
-            ->asArray()
-            ->all();
 
         return $this->render('reestr-mfo', [
             'mfoAll' => $mfoAll,
-            'dataMfo' => $dataMfo,
-            'dataTag' => $dataTag,
-//            'pages' => $pages,
-            'citys' => $city,
+            'dataMfo' => $mfoDatas['dataMfo'],
+            'dataTag' => $mfoDatas['dataTag'],
+            'citys' => Mfo::findAllCity(),
             'updateTime' => Mfo::getTextDate(),
             'words' => Mfo::getWordsForPagination(),
             'q' => $q,
@@ -110,89 +80,14 @@ class MfoController extends Controller
     {
         if(!$url) throw new HttpException(404, 'Страница не существует.');
         $mfoAll = Mfo::getFormReestrMfo(null,null,$url);
-        $mfoDatas = MfoData::find()->where(['name' => 'Data'])->one();
-        $dataMfo = unserialize($mfoDatas->data_mfo_kz);
-        $dataTag = unserialize($mfoDatas->data_tag_kz);
+        $mfoDatas = Mfo::getMfoDatas();
+
         return $this->render('reestr-mfo-city', [
             'mfoAll' => $mfoAll,
-            'dataMfo' => $dataMfo,
-            'dataTag' => $dataTag,
+            'dataMfo' => $mfoDatas['dataMfo'],
+            'dataTag' => $mfoDatas['dataTag'],
             'tag' => $url,
         ]);
 
-    }
-
-    /**
-     * @throws HttpException
-     */
-    public function actionView($url)
-    {
-        if(!$url) throw new HttpException(404, 'Страница не существует.');
-        $mfo = Mfo::find()->where(['status' => 1, 'url' => $url])->one();
-        if(!$mfo) throw new HttpException(404, 'Страница не существует.');
-        $sale = Sale::find()->where(['status' => 1,'mfo_id' => $mfo->id])->orderBy(['srok_do' => SORT_DESC])->one();
-        $reviews = Review::find()->where(['cat_id' => $mfo->id])->andWhere(['status' => 1])->orderBy(['date' => SORT_DESC])->limit(3)->all();
-        if(isset($_POST['email_unisender'])){
-            (new MainPage)->unisender($_POST['email_unisender']);
-            return $this->refresh();
-        }
-        $model = new Review();
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->session->setFlash('successMfoView', 'Сіздің пікіріңіз жіберілді. Хабарласқаныңыз үшін рахмет!');
-
-            return $this->refresh();
-        } else {
-            return $this->render('view', [
-                'model' => $mfo,
-                'sale' => $sale,
-                'reviews' => $reviews,
-                'reviewsModel' => $model
-            ]);
-        }
-    }
-
-    public function actionLogin($url)
-    {
-        if(!$url){
-            return $this->redirect('/');
-        }
-        if(isset($_POST['email_unisender'])){
-            (new MainPage)->unisender($_POST['email_unisender']);
-            return $this->refresh();
-        }
-        $mfo = Mfo::find()->where(['status' => 1, 'url' => $url])->one();
-        return $this->render('login', [
-            'model' => $mfo,
-        ]);
-    }
-
-    public function actionReviews($url)
-    {
-        if(!$url){
-            throw new HttpException(404, 'Страница не существует.');
-        }
-        $mfo = Mfo::find()->where(['status' => 1, 'url' => $url])->one();
-        $reviews= Review::find()
-            ->where([
-                'cat_id' => $mfo->id,
-                'status' => 1
-            ])
-            ->all();
-        if(isset($_POST['email_unisender'])){
-            (new MainPage)->unisender($_POST['email_unisender']);
-            return $this->refresh();
-        }
-        $model = new Review();
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->session->setFlash('successMfoLogin', 'Сіздің пікіріңіз жіберілді. Хабарласқаныңыз үшін рахмет!');
-            return $this->refresh();
-        } else {
-            return $this->render('reviews', [
-                'model' => $model,
-                'reviews' => $reviews,
-                'mfo' => $mfo,
-            ]);
-        }
-//        return $this->render('reviews');
     }
 }

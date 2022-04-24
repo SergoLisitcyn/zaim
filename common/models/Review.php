@@ -66,4 +66,14 @@ class Review extends \yii\db\ActiveRecord
             'status' => 'Статус',
         ];
     }
+
+
+    public static function getReviewMfo($id,$limit = null): array
+    {
+        if($limit){
+            return Review::find()->where(['cat_id' => $id])->andWhere(['status' => 1])->orderBy(['date' => SORT_DESC])->limit(3)->all();
+        } else {
+            return Review::find()->where(['cat_id' => $id])->andWhere(['status' => 1])->orderBy(['date' => SORT_DESC])->all();
+        }
+    }
 }
