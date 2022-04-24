@@ -54,22 +54,15 @@ if(isset($data['seo']['clients_description']) and !empty($data['seo']['clients_d
                                 </div>
                             </div>
                             <?php endif; ?>
-                            <?php if($model->link_offer) : ?>
-                            <div class="mfo-clients__column mfo-clients-column">
-                                <div class="mfo-clients-column__col">
-                                    <div class="mfo-clients-column__title">
-                                        <a href="<?= $model->link_offer ?>" class="mfo-clients-column__link" target="_blank" rel="nofollow">
-                                            <?= $dataMfo['mfo']['clients']['faq'] ?>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <?php elseif ($data['clients']['faq']) : ?>
+                            <?php if($data['clients']['faq']) : ?>
                                 <div class="mfo-clients__column mfo-clients-column">
                                     <div class="mfo-clients-column__col">
-                                        <div class="mfo-clients-column__title">
-                                            <a href="//<?= $data['clients']['faq']?>" class="mfo-clients-column__link" target="_blank" rel="nofollow">
-                                                <?= $dataMfo['mfo']['clients']['faq'] ?>
+                                        <div class="mfo-clients-column__title"><?= $dataMfo['mfo']['clients']['faq'] ?></div>
+                                    </div>
+                                    <div class="mfo-clients-column__col">
+                                        <div class="mfo-clients__file">
+                                            <a href="//<?= $data['clients']['faq']?>" class="mfo-clients__file-link" rel="nofollow">
+                                                <?= $data['clients']['faq'] ?>
                                             </a>
                                         </div>
                                     </div>
@@ -84,9 +77,11 @@ if(isset($data['seo']['clients_description']) and !empty($data['seo']['clients_d
                                         <ul class="mfo-clients-column-social__list">
                                             <?php if($data['clients']['request_call']) : ?>
                                             <li class="mfo-clients-column-social__list-item">
-                                                <a href="#" class="mfo-clients-column-social__list-link">
+                                                <a class="mfo-clients-column-social__list-link">
                                                     <img class="mfo-clients-column-social__list-icon lazyloaded" src="/img/svg-icons/socials/call.svg" data-src="img/svg-icons/socials/call.svg" alt="Заказать звонок">
-                                                    <span class="mfo-clients-column-social__list-text">Заказать звонок</span>
+                                                    <span class="mfo-clients-column-social__list-text" style="text-decoration: none;">
+                                                        Можно заказать обратный звонок
+                                                    </span>
                                                 </a>
                                             </li>
                                             <?php endif; ?>
@@ -95,7 +90,7 @@ if(isset($data['seo']['clients_description']) and !empty($data['seo']['clients_d
                                             <li class="mfo-clients-column-social__list-item">
                                                 <a href="https://wa.me/<?= $data['contacts']['whatsApp'] ?>" class="mfo-clients-column-social__list-link" target="_blank" rel="nofollow">
                                                     <img class="mfo-clients-column-social__list-icon lazyloaded" src="/img/svg-icons/socials/whatsapp.svg" data-src="img/svg-icons/socials/whatsapp.svg" alt="WhatsApp">
-                                                    <span class="mfo-clients-column-social__list-text">WhatsApp</span>
+                                                    <span class="mfo-clients-column-social__list-text"><?= $data['contacts']['whatsApp'] ?></span>
                                                 </a>
                                             </li>
                                             <?php endif; ?>
@@ -104,15 +99,15 @@ if(isset($data['seo']['clients_description']) and !empty($data['seo']['clients_d
                                             <li class="mfo-clients-column-social__list-item">
                                                 <a href="//<?= $data['contacts']['telegram'] ?>" class="mfo-clients-column-social__list-link" target="_blank" rel="nofollow">
                                                     <img class="mfo-clients-column-social__list-icon lazyloaded" src="/img/svg-icons/socials/telegram.svg" data-src="img/svg-icons/socials/telegram.svg" alt="Telegram">
-                                                    <span class="mfo-clients-column-social__list-text">Telegram</span>
+                                                    <span class="mfo-clients-column-social__list-text"><?= $data['contacts']['telegram'] ?></span>
                                                 </a>
                                             </li>
                                             <?php endif; ?>
-                                            <?php if($data['clients']['call_consultation']) : ?>
+                                            <?php if($data['contacts']['phone_1']) : ?>
                                             <li class="mfo-clients-column-social__list-item">
-                                                <a href="#" class="mfo-clients-column-social__list-link">
+                                                <a href="tel:<?= $data['contacts']['phone_1'] ?>" class="mfo-clients-column-social__list-link">
                                                     <img class="mfo-clients-column-social__list-icon lazyloaded" src="/img/svg-icons/socials/consultation.svg" data-src="img/svg-icons/socials/consultation.svg" alt="Позвонить для консультации">
-                                                    <span class="mfo-clients-column-social__list-text">Позвонить для консультации</span>
+                                                    <span class="mfo-clients-column-social__list-text"><?= $data['contacts']['phone_1'] ?></span>
                                                 </a>
                                             </li>
                                             <?php endif; ?>
@@ -120,9 +115,9 @@ if(isset($data['seo']['clients_description']) and !empty($data['seo']['clients_d
                                         <ul class="mfo-clients-column-social__list">
                                             <?php if($data['clients']['online_chat']) : ?>
                                             <li class="mfo-clients-column-social__list-item">
-                                                <a href="#" class="mfo-clients-column-social__list-link">
+                                                <a class="mfo-clients-column-social__list-link">
                                                     <img class="mfo-clients-column-social__list-icon lazyloaded" src="/img/svg-icons/socials/chat.svg" data-src="img/svg-icons/socials/chat.svg" alt="Онлайн чат">
-                                                    <span class="mfo-clients-column-social__list-text">Онлайн чат</span>
+                                                    <span class="mfo-clients-column-social__list-text" style="text-decoration: none;">На сайте есть онлайн чат</span>
                                                 </a>
                                             </li>
                                             <?php endif; ?>
@@ -139,7 +134,7 @@ if(isset($data['seo']['clients_description']) and !empty($data['seo']['clients_d
                                             <li class="mfo-clients-column-social__list-item">
                                                 <a href="mailto:<?= $data['contacts']['email_1'] ?>" class="mfo-clients-column-social__list-link" target="_blank" rel="nofollow">
                                                     <img class="mfo-clients-column-social__list-icon lazyloaded" src="/img/svg-icons/socials/email.svg" data-src="img/svg-icons/socials/email.svg" alt="Email для консультации">
-                                                    <span class="mfo-clients-column-social__list-text">Email для консультации</span>
+                                                    <span class="mfo-clients-column-social__list-text"><?= $data['contacts']['email_1'] ?></span>
                                                 </a>
                                             </li>
                                             <?php endif; ?>
@@ -147,26 +142,20 @@ if(isset($data['seo']['clients_description']) and !empty($data['seo']['clients_d
                                     </div>
                                 </div>
                             </div>
-                            <?php if($model->link_offer) : ?>
+<!--                            Форма обратной связи-->
+                            <?php if($data['clients']['feedback']) : ?>
                             <div class="mfo-clients__column mfo-clients-column">
                                 <div class="mfo-clients-column__col">
-                                    <div class="mfo-clients-column__title">
-                                        <a href="<?= $model->link_offer ?>" class="mfo-clients-column__link" rel="nofollow" target="_blank">
-                                            <?= $dataMfo['mfo']['clients']['feedback'] ?>
+                                    <div class="mfo-clients-column__title"><?= $dataMfo['mfo']['clients']['feedback'] ?></div>
+                                </div>
+                                <div class="mfo-clients-column__col">
+                                    <div class="mfo-clients__file">
+                                        <a href="//<?= $data['clients']['feedback']?>" class="mfo-clients__file-link" rel="nofollow" target="_blank">
+                                            <?= $data['clients']['feedback']?>
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                            <?php elseif ($data['clients']['feedback']) : ?>
-                                <div class="mfo-clients__column mfo-clients-column">
-                                    <div class="mfo-clients-column__col">
-                                        <div class="mfo-clients-column__title">
-                                            <a href="//<?= $data['clients']['feedback'] ?>" class="mfo-clients-column__link" rel="nofollow" target="_blank">
-                                                <?= $dataMfo['mfo']['clients']['feedback'] ?>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
                             <?php endif; ?>
                             <div class="mfo-clients__column mfo-clients-column">
                                 <div class="mfo-clients-column__col">
@@ -179,15 +168,15 @@ if(isset($data['seo']['clients_description']) and !empty($data['seo']['clients_d
                                             <li class="mfo-clients-column-social__list-item">
                                                 <a href="//<?= $data['clients']['facebook'] ?>" class="mfo-clients-column-social__list-link" rel="nofollow" target="_blank">
                                                     <img class="mfo-clients-column-social__list-icon lazyloaded" src="/img/svg-icons/socials/facebook.svg" data-src="/img/svg-icons/socials/facebook.svg" alt="Facebook">
-                                                    <span class="mfo-clients-column-social__list-text">Facebook</span>
+                                                    <span class="mfo-clients-column-social__list-text"><?= $data['clients']['facebook'] ?></span>
                                                 </a>
                                             </li>
                                             <?php endif; ?>
                                             <?php if($data['clients']['vk']) : ?>
                                             <li class="mfo-clients-column-social__list-item">
-                                                <a href="//<?= $data['clients']['facebook'] ?>" class="mfo-clients-column-social__list-link" rel="nofollow" target="_blank">
+                                                <a href="//<?= $data['clients']['vk'] ?>" class="mfo-clients-column-social__list-link" rel="nofollow" target="_blank">
                                                     <img class="mfo-clients-column-social__list-icon lazyloaded" src="/img/svg-icons/socials/vk.svg" data-src="/img/svg-icons/socials/vk.svg" alt="Vk">
-                                                    <span class="mfo-clients-column-social__list-text">VK</span>
+                                                    <span class="mfo-clients-column-social__list-text"><?= $data['clients']['vk'] ?></span>
                                                 </a>
                                             </li>
                                             <?php endif; ?>
@@ -195,7 +184,7 @@ if(isset($data['seo']['clients_description']) and !empty($data['seo']['clients_d
                                             <li class="mfo-clients-column-social__list-item">
                                                 <a href="//<?= $data['clients']['instagram'] ?>" class="mfo-clients-column-social__list-link" rel="nofollow" target="_blank">
                                                     <img class="mfo-clients-column-social__list-icon lazyloaded" src="/img/svg-icons/socials/instagram.svg" data-src="/img/svg-icons/socials/instagram.svg" alt="Инстаграм">
-                                                    <span class="mfo-clients-column-social__list-text">Инстаграм</span>
+                                                    <span class="mfo-clients-column-social__list-text"><?= $data['clients']['instagram'] ?></span>
                                                 </a>
                                             </li>
                                             <?php endif; ?>
@@ -205,7 +194,7 @@ if(isset($data['seo']['clients_description']) and !empty($data['seo']['clients_d
                                             <li class="mfo-clients-column-social__list-item">
                                                 <a href="//<?= $data['clients']['twitter'] ?>" class="mfo-clients-column-social__list-link" rel="nofollow" target="_blank">
                                                     <img class="mfo-clients-column-social__list-icon lazyloaded" src="/img/svg-icons/socials/twitter.svg" data-src="/img/svg-icons/socials/twitter.svg" alt="Twitter">
-                                                    <span class="mfo-clients-column-social__list-text">Twitter</span>
+                                                    <span class="mfo-clients-column-social__list-text"><?= $data['clients']['twitter'] ?></span>
                                                 </a>
                                             </li>
                                             <?php endif; ?>
@@ -213,7 +202,7 @@ if(isset($data['seo']['clients_description']) and !empty($data['seo']['clients_d
                                             <li class="mfo-clients-column-social__list-item">
                                                 <a href="//<?= $data['clients']['youtube'] ?>" class="mfo-clients-column-social__list-link" rel="nofollow" target="_blank">
                                                     <img class="mfo-clients-column-social__list-icon lazyloaded" src="/img/svg-icons/socials/youtube.svg" data-src="/img/svg-icons/socials/youtube.svg" alt="Youtube">
-                                                    <span class="mfo-clients-column-social__list-text">Youtube</span>
+                                                    <span class="mfo-clients-column-social__list-text"><?= $data['clients']['youtube'] ?></span>
                                                 </a>
                                             </li>
                                             <?php endif; ?>
@@ -221,7 +210,7 @@ if(isset($data['seo']['clients_description']) and !empty($data['seo']['clients_d
                                             <li class="mfo-clients-column-social__list-item">
                                                 <a href="//<?= $data['clients']['odnoklasniki'] ?>" class="mfo-clients-column-social__list-link" rel="nofollow" target="_blank">
                                                     <img class="mfo-clients-column-social__list-icon lazyloaded" src="/img/svg-icons/socials/odnoklassniki.svg" data-src="/img/svg-icons/socials/odnoklassniki.svg" alt="Одноклассники">
-                                                    <span class="mfo-clients-column-social__list-text">Одноклассники</span>
+                                                    <span class="mfo-clients-column-social__list-text"><?= $data['clients']['odnoklasniki'] ?></span>
                                                 </a>
                                             </li>
                                             <?php endif; ?>

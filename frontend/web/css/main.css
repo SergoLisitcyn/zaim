@@ -2521,6 +2521,10 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
 
 .mfo-clients__file-link {
     margin-right: 15px;
+    color: #028ab4;
+    font-size: 16px;
+    line-height: 18px;
+    text-decoration: underline;
 }
 
 .mfo-clients-column-social__list {
