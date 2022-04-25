@@ -40,6 +40,11 @@ if(isset($data['seo']['clients_description']) and !empty($data['seo']['clients_d
                     <?= MfoViewWidget::widget(['type' => 'navigation','model' => $model,'data' => $data,'navigation' => 'clients']) ?>
                     <div class="content-main-info__content">
                         <div class="mfo-clients">
+                            <?php if($data['seo']['h1']) :  ?>
+                                <h1 style="font-size: 32px;line-height: 41px;font-family: 'Open Sans', sans-serif;">
+                                    <?= $data['seo']['h1'] ?>
+                                </h1>
+                            <?php endif; ?>
                             <?php if($data['clients']['rules']) : ?>
                             <div class="mfo-clients__column mfo-clients-column">
                                 <div class="mfo-clients-column__col">

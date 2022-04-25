@@ -40,6 +40,11 @@ if(isset($data['seo']['contacts_description']) and !empty($data['seo']['contacts
                     <?= MfoViewWidget::widget(['type' => 'navigation','model' => $model,'data' => $data,'navigation' => 'contacts']) ?>
                     <div class="content-main-info__content">
                         <div class="mfo-about bank-mfo-about">
+                            <?php if($data['seo']['h1']) :  ?>
+                                <h1 style="font-size: 32px;line-height: 41px;font-family: 'Open Sans', sans-serif;">
+                                    <?= $data['seo']['h1'] ?>
+                                </h1>
+                            <?php endif; ?>
                             <div class="mfo-about__table">
                                 <div class="mfo-about__columns">
                                     <?php if($data['contacts']['address']) : ?>
