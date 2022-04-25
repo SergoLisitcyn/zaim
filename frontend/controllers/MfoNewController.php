@@ -157,6 +157,8 @@ class MfoNewController extends Controller
             $data = unserialize($mfo->data_ru);
         }
 
+        $socialView = Mfo::getSocialViewClients($data);
+
         if(isset($_POST['email_unisender'])){
             (new MainPage)->unisender($_POST['email_unisender']);
             return $this->refresh();
@@ -172,7 +174,8 @@ class MfoNewController extends Controller
                 'dataMfo' => $mfoDatas['dataMfo'],
                 'dataMenu' => $mfoDatas['dataMenu'],
                 'dataTag' => $mfoDatas['dataTag'],
-                'reviewsModel' => $model
+                'reviewsModel' => $model,
+                'socialView' => $socialView
             ]);
         }
     }

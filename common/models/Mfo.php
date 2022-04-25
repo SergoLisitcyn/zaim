@@ -993,4 +993,20 @@ class Mfo extends ActiveRecord
             ->asArray()
             ->all();
     }
+
+    /**
+     * Отображать соцсети на странице клиентской поддержки
+     * @param $data
+     * @return bool
+     */
+    public static function getSocialViewClients($data): bool
+    {
+
+        if(!($data['clients']['facebook']) && !($data['clients']['vk']) && !($data['clients']['instagram']) &&
+            !($data['clients']['twitter']) && !($data['clients']['youtube']) && !($data['clients']['odnoklasniki'])){
+            return false;
+        }
+
+        return true;
+    }
 }

@@ -4,7 +4,7 @@ use \frontend\widgets\MfoViewWidget;
 if(isset($data['seo']['clients_title']) and !empty($data['seo']['clients_title'])) {
     $this->title = $data['seo']['clients_title'];
 } else {
-    $this->title = $model->name;
+    $this->title = $model->mfo_name;
 }
 if(isset($data['seo']['clients_description']) and !empty($data['seo']['clients_description'])) {
     $this->registerMetaTag(['name' => 'description','content' => $data['seo']['clients_description']]);
@@ -20,7 +20,7 @@ if(isset($data['seo']['clients_description']) and !empty($data['seo']['clients_d
                 <a href="/">МФО</a>
             </li>
             <li>
-                <a href="/"><?= $data['info']['name']?></a>
+                <a href="/"><?= $data['info']['name'] ?></a>
             </li>
             <li>
                 Клиентская поддержка
@@ -157,6 +157,7 @@ if(isset($data['seo']['clients_description']) and !empty($data['seo']['clients_d
                                 </div>
                             </div>
                             <?php endif; ?>
+                            <?php if($socialView) :?>
                             <div class="mfo-clients__column mfo-clients-column">
                                 <div class="mfo-clients-column__col">
                                     <div class="mfo-clients-column__title">Соцсети:</div>
@@ -218,6 +219,7 @@ if(isset($data['seo']['clients_description']) and !empty($data['seo']['clients_d
                                     </div>
                                 </div>
                             </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>

@@ -4,7 +4,7 @@ use \frontend\widgets\MfoViewWidget;
 if(isset($data['seo']['contacts_title']) and !empty($data['seo']['contacts_title'])) {
     $this->title = $data['seo']['contacts_title'];
 } else {
-    $this->title = $model->name;
+    $this->title = $model->mfo_name;
 }
 if(isset($data['seo']['contacts_description']) and !empty($data['seo']['contacts_description'])) {
     $this->registerMetaTag(['name' => 'description','content' => $data['seo']['contacts_description']]);
