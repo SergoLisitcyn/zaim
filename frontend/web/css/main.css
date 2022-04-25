@@ -2529,6 +2529,7 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
 
 .mfo-clients-column-social__list {
     width: 250px;
+    padding-left: 0;
 }
 
 .mfo-clients-column-social__list-item {

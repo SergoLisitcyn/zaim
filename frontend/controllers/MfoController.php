@@ -76,7 +76,12 @@ class MfoController extends Controller
         ]);
     }
 
-    public function actionReestrMfoCity($url)
+    /**
+     * @param $url
+     * @return string
+     * @throws HttpException
+     */
+    public function actionReestrMfoCity($url): string
     {
         if(!$url) throw new HttpException(404, 'Страница не существует.');
         $mfoAll = Mfo::getFormReestrMfo(null,null,$url);
