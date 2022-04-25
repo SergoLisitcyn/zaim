@@ -29,6 +29,23 @@ class Url extends Widget
         if(Yii::$app->request->pathInfo == 'reestr-mfo'){
             $linkRu = 'https://smartzaim.kz/reestr-mfo/?letter=%D0%90';
         }
+        if(Yii::$app->controller->route == 'mfo-new/view'){
+            $linkRu = 'https://smartzaim.kz/'.Yii::$app->request->pathInfo.'/';
+        }
+        if(Yii::$app->controller->route == 'mfo-new/login'){
+            $linkRu = 'https://smartzaim.kz/'.Yii::$app->request->pathInfo.'/';
+        }
+        if(Yii::$app->controller->route == 'mfo-new/contacts'){
+            $linkRu = 'https://smartzaim.kz/'.Yii::$app->request->pathInfo.'/';
+        }
+        if(Yii::$app->controller->route == 'mfo-new/reviews'){
+            $linkRu = 'https://smartzaim.kz/'.Yii::$app->request->pathInfo.'/';
+        }
+        if(Yii::$app->controller->route == 'mfo-new/clients'){
+            $str = trim(Yii::$app->request->pathInfo, " \clients.");
+            $linkRu = 'https://smartzaim.kz/'.$str.'clients_support/';
+        }
+
         return $this->render('url', [
             'linkRu' => $linkRu,
             'output' => $this->output
