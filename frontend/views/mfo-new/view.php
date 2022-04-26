@@ -36,7 +36,9 @@ YiiAsset::register($this);
             <div class="content-box mfo-content-box">
                 <div class="content-info">
                     <!--  Навигация-->
-                    <?= MfoViewWidget::widget(['type' => 'navigation','model' => $model,'data' => $data,'navigation' => 'view','version' => $version]) ?>
+                    <?= MfoViewWidget::widget(['type' => 'navigation','model' => $model,'data' => $data,
+                        'navigation' => 'view','version' => $version,'clientsPageView' => $clientsPageView])
+                    ?>
 
                     <div class="content-main-info">
                         <div class="content-main-info__item">

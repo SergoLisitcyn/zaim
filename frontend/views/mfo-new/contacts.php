@@ -37,7 +37,7 @@ if(isset($data['seo']['contacts_description']) and !empty($data['seo']['contacts
             <div class="content-box mfo-content-box">
                 <div class="content-info">
                     <!--  Навигация-->
-                    <?= MfoViewWidget::widget(['type' => 'navigation','model' => $model,'data' => $data,'navigation' => 'contacts']) ?>
+                    <?= MfoViewWidget::widget(['type' => 'navigation','model' => $model,'data' => $data,'navigation' => 'contacts','clientsPageView' => $clientsPageView]) ?>
                     <div class="content-main-info__content">
                         <div class="mfo-about bank-mfo-about">
                             <?php if($data['seo']['h1']) :  ?>

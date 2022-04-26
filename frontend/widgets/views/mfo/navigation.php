@@ -24,11 +24,13 @@ if($active == 'reviews') $reviews = 'active';
             </a>
         </li>
     <?php endif;  ?>
+    <?php if($clientsPageView) : ?>
     <li class="<?= $clients ?>">
         <a href="<?= Url::toRoute(['mfo-new/clients', 'url' => $model->url]) ?>">
             <span><?= $dataMenu['block_3'] ?></span>
         </a>
     </li>
+    <?php endif; ?>
     <li class="<?= $contacts ?>">
         <a href="<?= Url::toRoute(['mfo-new/contacts', 'url' => $model->url]) ?>">
             <span><?= $dataMenu['block_4'] ?></span>

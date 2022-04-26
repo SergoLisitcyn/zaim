@@ -41,12 +41,13 @@ class MfoSearch extends Mfo
      */
     public function search($params)
     {
-        $query = Mfo::find();
+        $query = Mfo::find()->orderBy(['home_page' => SORT_DESC]);
 
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort' => ['attributes' => ['mfo_name','status']]
         ]);
 
         $this->load($params);

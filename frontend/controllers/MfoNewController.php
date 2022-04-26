@@ -83,7 +83,7 @@ class MfoNewController extends Controller
         if($version == 'RU'){
             $data = unserialize($mfo->data_ru);
         }
-
+        $clientsPageView = Mfo::getSocialViewClients($data);
         if(isset($_POST['email_unisender'])){
             (new MainPage)->unisender($_POST['email_unisender']);
             return $this->refresh();
@@ -104,6 +104,7 @@ class MfoNewController extends Controller
                 'reviews' => Review::getReviewMfo($mfo->id,true),
                 'reviewsModel' => $model,
                 'version' => $version,
+                'clientsPageView' => $clientsPageView,
             ]);
         }
     }
@@ -125,7 +126,7 @@ class MfoNewController extends Controller
         if($version == 'RU'){
             $data = unserialize($mfo->data_ru);
         }
-
+        $clientsPageView = Mfo::getSocialViewClients($data);
         if(isset($_POST['email_unisender'])){
             (new MainPage)->unisender($_POST['email_unisender']);
             return $this->refresh();
@@ -136,6 +137,7 @@ class MfoNewController extends Controller
             'data' => $data,
             'dataMfo' => $mfoDatas['dataMfo'],
             'dataMenu' => $mfoDatas['dataMenu'],
+            'clientsPageView' => $clientsPageView,
         ]);
     }
 
@@ -158,7 +160,7 @@ class MfoNewController extends Controller
         }
 
         $socialView = Mfo::getSocialViewClients($data);
-
+        $clientsPageView = Mfo::getSocialViewClients($data);
         if(isset($_POST['email_unisender'])){
             (new MainPage)->unisender($_POST['email_unisender']);
             return $this->refresh();
@@ -175,7 +177,8 @@ class MfoNewController extends Controller
                 'dataMenu' => $mfoDatas['dataMenu'],
                 'dataTag' => $mfoDatas['dataTag'],
                 'reviewsModel' => $model,
-                'socialView' => $socialView
+                'socialView' => $socialView,
+                'clientsPageView' => $clientsPageView,
             ]);
         }
     }
@@ -198,7 +201,7 @@ class MfoNewController extends Controller
         if($version == 'RU'){
             $data = unserialize($mfo->data_ru);
         }
-
+        $clientsPageView = Mfo::getSocialViewClients($data);
         if(isset($_POST['email_unisender'])){
             (new MainPage)->unisender($_POST['email_unisender']);
             return $this->refresh();
@@ -214,7 +217,8 @@ class MfoNewController extends Controller
                 'dataMfo' => $mfoDatas['dataMfo'],
                 'dataMenu' => $mfoDatas['dataMenu'],
                 'dataTag' => $mfoDatas['dataTag'],
-                'reviewsModel' => $model
+                'reviewsModel' => $model,
+                'clientsPageView' => $clientsPageView,
             ]);
         }
     }
@@ -227,7 +231,7 @@ class MfoNewController extends Controller
         if(!$mfo) throw new HttpException(404, 'Страница не существует.');
 
         $data = unserialize($mfo->data_ru);
-
+        $clientsPageView = Mfo::getSocialViewClients($data);
         $mfoDatas = Mfo::getMfoDatas();
 
         if(isset($_POST['email_unisender'])){
@@ -246,7 +250,8 @@ class MfoNewController extends Controller
                 'dataMenu' => $mfoDatas['dataMenu'],
                 'dataTag' => $mfoDatas['dataTag'],
                 'reviews' => Review::getReviewMfo($mfo->id),
-                'reviewsModel' => $model
+                'reviewsModel' => $model,
+                'clientsPageView' => $clientsPageView,
             ]);
         }
     }

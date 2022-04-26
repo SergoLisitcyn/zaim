@@ -33,7 +33,7 @@ $this->title = 'МФО';
                 'panel' => [
                     'type'=>'default',
                     'beforeOptions' => ['style' => 'text-align: left!important'],
-                    'before'=> \yii\helpers\Html::button('<i class="glyphicon glyphicon-refresh"></i> Обновить', ['class' => 'btn btn-material btn-grey', 'onclick' => '$.pjax.reload({container: \'#w0-pjax\'});']),
+//                    'before'=> Html::button('<i class="glyphicon glyphicon-refresh"></i> Обновить', ['class' => 'btn btn-material btn-grey', 'onclick' => '$.pjax.reload({container: \'#w0-pjax\'});']),
                     'after'=> "",
                 ],
                 'summary' => "<span style='padding:6px;border-radius:4px; color:#222d32'>Всего: <b>{totalCount}</b></span><span style='padding:6px;border-radius:4px;color:#222d32;margin-left:20px;'>Отображается: <b>{begin} - {end}</b></span>",

@@ -16,6 +16,7 @@ class MfoViewWidget  extends Widget
     public $reviewsModel;
     public $action;
     public $version;
+    public $clientsPageView = null;
 
     public function init()
     {
@@ -40,6 +41,7 @@ class MfoViewWidget  extends Widget
                 'active' => $this->navigation,
                 'dataMfo' => $dataMfo,
                 'dataMenu' => $dataMenu,
+                'clientsPageView' => $this->clientsPageView,
             ]);
         }
         if($this->type == 'reviews'){

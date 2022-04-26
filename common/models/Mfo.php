@@ -1009,4 +1009,21 @@ class Mfo extends ActiveRecord
 
         return true;
     }
+
+    /**
+     * Отображать страницу клиентской поддержки
+     * @param $data
+     * @return bool
+     */
+    public static function getPageViewClients($data): bool
+    {
+        $socialViewClients = self::getSocialViewClients($data);
+        if(!$socialViewClients && !$data['clients']['rules'] && !$data['clients']['faq'] && !$data['clients']['request_call'] &&
+            !$data['contacts']['whatsApp'] && !$data['contacts']['telegram'] && !$data['clients']['online_chat'] &&
+        !$data['clients']['viber'] && !$data['contacts']['email_1'] && !$data['clients']['feedback']){
+            return false;
+        }
+
+        return true;
+    }
 }
