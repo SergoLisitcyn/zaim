@@ -89,7 +89,8 @@ $this->registerMetaTag(['name' => 'description','content' => 'Қазақстан
                                             <img src="<?= $mfo->logo ?>" alt="<?php if(isset($data['seo']['h1'])) {echo $data['seo']['h1']; }?>">
                                             <?php else: ?>
                                             <div class="reestr-item__status">
-                                                Қолданыстағы
+                                                <img src="/img/logo.jpg">
+<!--                                                Қолданыстағы-->
                                             </div>
                                             <?php endif; ?>
                                         </div>

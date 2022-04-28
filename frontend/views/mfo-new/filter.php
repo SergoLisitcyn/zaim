@@ -52,7 +52,8 @@ if($tag){
                                                     <img src="<?= $mfo->logo ?>" alt="">
                                                 <?php else: ?>
                                                     <div class="reestr-item__status">
-                                                        Қолданыстағы
+                                                        <img src="/img/logo.jpg">
+<!--                                                        Қолданыстағы-->
                                                     </div>
                                                 <?php endif; ?>
                                             </div>

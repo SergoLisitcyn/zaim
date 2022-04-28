@@ -278,7 +278,9 @@ class Mfo extends ActiveRecord
 
         }
         if($changedAttributes){
-            MfoTypeCredit::deleteAll(['type_credit_id'=>$arr]);
+            if($this->type_credit_arr != null){
+                MfoTypeCredit::deleteAll(['type_credit_id'=>$arr]);
+            }
         }
         if($changedAttributes){
             MfoCity::deleteAll(['city_id'=>$arrCity]);
