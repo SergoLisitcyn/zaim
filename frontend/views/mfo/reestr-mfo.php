@@ -211,7 +211,7 @@ $this->registerMetaTag(['name' => 'description','content' => 'Қазақстан
                                         ?>
 
                                         <li class="page-numbers <?= $current ?>">
-                                            <a href="/reestr-mfo?page=<?= $word['first']  ?>"><?= $word['first']  ?>
+                                            <a href="/reestr-mfo?page=<?= $word['get']  ?>"><?= $word['first']  ?>
                                             </a>
                                         </li>
                                         <?php endforeach;?>
@@ -229,7 +229,7 @@ $this->registerMetaTag(['name' => 'description','content' => 'Қазақстан
                                             ?>
 
                                             <li class="page-numbers <?= $current ?>">
-                                                <a href="/reestr-mfo?page=<?= $word['first']  ?>"><?= $word['first']  ?>
+                                                <a href="/reestr-mfo?page=<?= $word['get']  ?>"><?= $word['first']  ?>
                                                 </a>
                                             </li>
                                         <?php endforeach; ?>
@@ -247,7 +247,7 @@ $this->registerMetaTag(['name' => 'description','content' => 'Қазақстан
                                                 ?>
 
                                                 <li class="page-numbers <?= $current ?>">
-                                                    <a href="/reestr-mfo?page=<?= $word['first']  ?>"><?= $word['first']  ?>
+                                                    <a href="/reestr-mfo?page=<?= $word['get']  ?>"><?= $word['first']  ?>
                                                     </a>
                                                 </li>
                                             <?php endforeach; ?>

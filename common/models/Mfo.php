@@ -38,6 +38,8 @@ use yii\web\UploadedFile;
  * @property int|null $home_page
  * @property string|null $link_offer
  * @property string|null $about_company
+ * @property string|null $letter
+ * @property string|null $letter_get
  * @property string|null $content
  * @property string $title
  * @property string|null $description
@@ -108,7 +110,7 @@ class Mfo extends ActiveRecord
                 'mfo_city_array', 'srok_new_client', 'sum_new_client', 'stavka_new_client', 'odobrenie_new_client',
                 'rasmotrenie_new_client', 'srok_for_client', 'sum_for_client', 'stavka_for_client',
                 'odobrenie_for_client', 'rasmotrenie_for_client', 'login_link','gesv','certificate',
-                'mfo_name_kz','bin','city_kz'], 'string', 'max' => 255],
+                'mfo_name_kz','bin','city_kz','letter','letter_get'], 'string', 'max' => 255],
             [['type_credit_arr','mfo_city_arr'], 'safe'],
             [['logo_file','certificate_file'], 'file'],
         ];
@@ -176,6 +178,8 @@ class Mfo extends ActiveRecord
             'mfo_name_kz' => 'Название на КЗ',
             'bin' => 'БИН',
             'city_kz' => 'Город',
+            'letter' => 'Буква',
+            'letter_get' => 'Буква в гет запросе',
         ];
     }
     public function afterFind()
@@ -773,6 +777,12 @@ class Mfo extends ActiveRecord
                     if($data['conditions']['term_extension_service']) $model->extension_loan = 1;
 
                     $model->url = $value[143];
+                    if(isset($value[172])){
+                        $model->letter = $value[172];
+                    }
+                    if(isset($value[173])){
+                        $model->letter_get = $value[173];
+                    }
                 }
 
                 if($version == 'KZ' && !$mfo){
@@ -814,6 +824,12 @@ class Mfo extends ActiveRecord
                 if($mfo){
                     if($version == 'RU'){
                         $mfo->data_ru = serialize($data);
+                        if(isset($value[172])){
+                            $mfo->letter = $value[172];
+                        }
+                        if(isset($value[173])){
+                            $mfo->letter_get = $value[173];
+                        }
                     }
                     if($version == 'KZ'){
                         $mfo->data_kz = serialize($data);
@@ -896,9 +912,16 @@ class Mfo extends ActiveRecord
      */
     public static function getWordsForPagination()
     {
-        return Yii::$app->db
-            ->createCommand('SELECT distinct left( `mfo_name_kz` , 1) as `first` from `mfo` WHERE `data_kz` IS NOT NULL ORDER BY `first` ASC')
-            ->queryAll();
+        return  Mfo::find()
+            ->select(['letter as first','letter_get as get'])
+            ->where(['not', ['data_kz' => null]])
+            ->groupBy(['letter'])
+            ->orderBy(['letter' => SORT_ASC])
+            ->asArray()
+            ->all();
+//        return Yii::$app->db
+//            ->createCommand('SELECT distinct left( `mfo_name_kz` , 1) as `first` from `mfo` WHERE `data_kz` IS NOT NULL ORDER BY `first` ASC')
+//            ->queryAll();
     }
 
 
@@ -975,9 +998,10 @@ class Mfo extends ActiveRecord
     public static function findMfoByLetter(string $letter): array
     {
         return Mfo::find()
-            ->where('mfo_name_kz LIKE :q')
+            ->where(['letter_get' => $letter])
+//            ->where('mfo_name_kz LIKE :q')
             ->andWhere(['not', ['data_kz' => null]])
-            ->addParams(['q'=>$letter . '%'])
+//            ->addParams(['q'=>$letter . '%'])
             ->orderBy('mfo_name_kz ASC')
             ->all();
     }
