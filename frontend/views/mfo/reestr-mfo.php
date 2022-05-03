@@ -187,13 +187,17 @@ $this->registerMetaTag(['name' => 'description','content' => 'Қазақстан
                                     $en = [];
                                     $kz = [];
                                     foreach ($words as $word){
-                                        if (preg_match('/[А-Яа-яЁё]/u', $word['first'])) {
+
+//                                        if (preg_match('/[А-Яа-яЁё]/u', $word['first'])) {
+                                        if (stristr($word['get'], '-ru')) {
                                             $ru[] = $word;
                                         }
-                                        if (preg_match('/[A-Za-z]/iu', $word['first'])) {
+//                                        if (preg_match('/[A-Za-z]/iu', $word['first'])) {
+                                        if (stristr($word['get'], '-lt')) {
                                             $en[] = $word;
                                         }
-                                        if(!preg_match('/[A-Za-z]/iu', $word['first']) && !preg_match('/[А-Яа-яЁё]/u', $word['first'])){
+//                                        if(!preg_match('/[A-Za-z]/iu', $word['first']) && !preg_match('/[А-Яа-яЁё]/u', $word['first'])){
+                                        if (stristr($word['get'], '-kz')) {
                                             $kz[] = $word;
                                         }
                                     }

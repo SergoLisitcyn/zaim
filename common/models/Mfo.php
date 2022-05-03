@@ -915,7 +915,7 @@ class Mfo extends ActiveRecord
         return  Mfo::find()
             ->select(['letter as first','letter_get as get'])
             ->where(['not', ['data_kz' => null]])
-            ->groupBy(['letter'])
+            ->groupBy(['get'])
             ->orderBy(['letter' => SORT_ASC])
             ->asArray()
             ->all();
