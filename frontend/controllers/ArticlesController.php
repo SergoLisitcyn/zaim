@@ -38,7 +38,7 @@ class ArticlesController extends Controller
     {
         $articles = Articles::find()
             ->where(['status' => '1'])
-            ->orderBy(['id' => SORT_DESC])
+            ->orderBy(['date_publish' => SORT_DESC])
             ->all();
         if(isset($_POST['email'])){
             (new MainPage)->unisender($_POST['email']);

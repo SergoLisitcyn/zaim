@@ -40,7 +40,7 @@ class ArticlesSearch extends Articles
      */
     public function search($params)
     {
-        $query = Articles::find();
+        $query = Articles::find()->orderBy(['date_publish' => SORT_DESC]);
 
         // add conditions that should always apply here
 

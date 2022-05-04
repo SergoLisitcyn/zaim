@@ -40,7 +40,7 @@ class SaleSearch extends Sale
      */
     public function search($params)
     {
-        $query = Sale::find();
+        $query = Sale::find()->orderBy(['srok_do' => SORT_DESC]);
 
         // add conditions that should always apply here
 
