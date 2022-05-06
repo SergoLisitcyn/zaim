@@ -13,7 +13,15 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="filters-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-
+    <?=
+    Html::a('Запустить обновление', ['sheet'], [
+        'class' => 'btn btn-primary',
+        'data' => [
+            'confirm' => 'Вы точно хотите запустить обновление?',
+            'method' => 'post',
+        ],
+    ])
+    ?>
     <p>
         <?= Html::a('Создать фильтр', ['create'], ['class' => 'btn btn-success']) ?>
     </p>

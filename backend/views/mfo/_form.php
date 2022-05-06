@@ -228,6 +228,7 @@ use \yii\helpers\Url;
                                        'options' => ['placeholder' => 'Выбрать '.$value['name'].'', 'multiple' => true],
                                        'pluginOptions' => [
                                            'allowClear' => true,
+                                           'disabled' => true
                                        ],
                                    ])
                                        ->label($filterName)
@@ -241,6 +242,7 @@ use \yii\helpers\Url;
                             'options' => ['placeholder' => 'Выбрать города ...', 'multiple' => true],
                             'pluginOptions' => [
                                 'allowClear' => true,
+                                'disabled' => true
                             ],
                         ]); ?>
                     </div>

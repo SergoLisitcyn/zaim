@@ -160,4 +160,15 @@ class FiltersController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
+    /**
+     * @throws \yii\db\Exception
+     */
+    public function actionSheet()
+    {
+        Filters::getFilters('filters');
+        Filters::getFilters('city');
+
+        return $this->render('sheet');
+    }
 }

@@ -236,59 +236,59 @@ class Mfo extends ActiveRecord
     public function afterSave($insert, $changedAttributes)
     {
         parent::afterSave($insert, $changedAttributes);
-        $arr = ArrayHelper::map($this->type,'id','id');
-        if($this->type_credit_arr){
-            foreach ($this->type_credit_arr as $key => $value){
-
-                if($value){
-                    foreach ($value as $item){
-                        if(is_numeric($item)){
-                            $find = MfoTypeCredit::find()
-                                ->where(['type_credit_id' => $item])
-                                ->andWhere(['mfo_id' => $this->id])
-                                ->all();
-
-                            if($item && empty($find)){
-                                $model = new MfoTypeCredit();
-                                $model->mfo_id = $this->id;
-                                $model->type_credit_id = $item;
-                                $model->save();
-                            }
-                            if(isset($arr[$item])){
-                                unset($arr[$item]);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-
-        $arrCity = ArrayHelper::map($this->city,'id','id');
-        if($this->mfo_city_arr){
-            foreach ($this->mfo_city_arr as $one){
-                if(is_numeric($one)){
-                    if(!in_array($one,$arrCity)){
-                        $model = new MfoCity();
-                        $model->mfo_id = $this->id;
-                        $model->city_id = $one;
-                        $model->save();
-                    }
-                    if(isset($arrCity[$one])){
-                        unset($arrCity[$one]);
-                    }
-                }
-            }
-
-        }
-        if($changedAttributes){
-            if($this->type_credit_arr != null){
-                MfoTypeCredit::deleteAll(['type_credit_id'=>$arr]);
-            }
-        }
-        if($changedAttributes){
-            MfoCity::deleteAll(['city_id'=>$arrCity]);
-        }
+//        $arr = ArrayHelper::map($this->type,'id','id');
+//        if($this->type_credit_arr){
+//            foreach ($this->type_credit_arr as $key => $value){
+//
+//                if($value){
+//                    foreach ($value as $item){
+//                        if(is_numeric($item)){
+//                            $find = MfoTypeCredit::find()
+//                                ->where(['type_credit_id' => $item])
+//                                ->andWhere(['mfo_id' => $this->id])
+//                                ->all();
+//
+//                            if($item && empty($find)){
+//                                $model = new MfoTypeCredit();
+//                                $model->mfo_id = $this->id;
+//                                $model->type_credit_id = $item;
+//                                $model->save();
+//                            }
+//                            if(isset($arr[$item])){
+//                                unset($arr[$item]);
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//
+//
+//        $arrCity = ArrayHelper::map($this->city,'id','id');
+//        if($this->mfo_city_arr){
+//            foreach ($this->mfo_city_arr as $one){
+//                if(is_numeric($one)){
+//                    if(!in_array($one,$arrCity)){
+//                        $model = new MfoCity();
+//                        $model->mfo_id = $this->id;
+//                        $model->city_id = $one;
+//                        $model->save();
+//                    }
+//                    if(isset($arrCity[$one])){
+//                        unset($arrCity[$one]);
+//                    }
+//                }
+//            }
+//
+//        }
+//        if($changedAttributes){
+//            if($this->type_credit_arr != null){
+//                MfoTypeCredit::deleteAll(['type_credit_id'=>$arr]);
+//            }
+//        }
+//        if($changedAttributes){
+//            MfoCity::deleteAll(['city_id'=>$arrCity]);
+//        }
 
         $imageSquareFile = UploadedFile::getInstance($this, 'logo_file');
         if ($imageSquareFile) {
