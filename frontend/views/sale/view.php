@@ -40,7 +40,7 @@ if (isset($model->description) && !empty($model->description)) $this->registerMe
                             <div class="aktsii-article__dates">
                                 <i></i><span><?= date("d.m.Y", strtotime($model->srok_ot)) ?> - <?= date("d.m.Y", strtotime($model->srok_do)) ?></span>
                             </div>
-                            <div class="email_container">
+                            <div class="email_container" style="margin-top: 0">
                                 <div class="text_top_subscribe_container">Сілтемеге жазылыңыз және акциялар мен арнайы<br> ұсыныстар туралы алғашқылардың бірі болып біліңіз</div>
                                 <div class="subscribe-top-item-wrap">
                                     <div	class="subscribe-top-item subscribe-top-item--input-email">
