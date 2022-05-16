@@ -152,14 +152,16 @@ class Filters extends \yii\db\ActiveRecord
                                   ])
                                   ->one();
                               $model = new MfoTypeCredit();
-                              if ($value[$k]) {
+                              if (isset($value[$k]) && $value[$k]) {
                                   if (!$mfoType) {
                                       $model->mfo_id = $mfo->id;
                                       $model->type_credit_id = $item['id'];
                                       $model->save();
                                   }
                               } else {
-                                  $mfoType->delete();
+                                  if($mfoType){
+                                      $mfoType->delete();
+                                  }
                               }
                           }
                       }
@@ -213,14 +215,16 @@ class Filters extends \yii\db\ActiveRecord
                                   ])
                                   ->one();
                               $model = new MfoCity();
-                              if ($value[$k]) {
+                              if (isset($value[$k]) && $value[$k]) {
                                   if (!$mfoTypeCity) {
                                       $model->mfo_id = $mfoCity->id;
                                       $model->city_id = $itemCity['id'];
                                       $model->save();
                                   }
                               } else {
-                                  $mfoTypeCity->delete();
+                                  if($mfoTypeCity){
+                                      $mfoTypeCity->delete();
+                                  }
                               }
                           }
                       }
