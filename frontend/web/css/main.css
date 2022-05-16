@@ -179,7 +179,7 @@ select{width:100%;max-width:100%;min-width:100%;-webkit-appearance:none;appearan
     transform: scale(1);
     -webkit-transition: .4s;
     transition: .4s;
-    opacity: .5;
+    /*opacity: .5;*/
 }
 
 .aktsii-item__title {
@@ -199,7 +199,7 @@ select{width:100%;max-width:100%;min-width:100%;-webkit-appearance:none;appearan
 
 .aktsii-item__img:hover {
     transform: scale(1.07);
-    opacity: 1;
+    /*opacity: 1;*/
 }
 
 .aktsii-item__date {
