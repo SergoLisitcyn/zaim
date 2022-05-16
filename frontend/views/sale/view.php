@@ -50,7 +50,7 @@ if (isset($model->description) && !empty($model->description)) $this->registerMe
                                     </div>
                                 </div>
                             </div>
-                            <div class="aktsii-article__content">
+                            <div class="aktsii-article__content articles_aktsii">
                                 <a href="<?= $model->partner_link?>"  target="_blank" class="aktsii-article__img">
                                     <img class="lazy lazy-loaded" src="<?= $model->image?>" data-lazy-type="image" data-lazy-src="<?= $model->image?>" alt="Акция Dengiclick" width="600" height="270">
                                     <noscript>
