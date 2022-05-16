@@ -167,7 +167,7 @@ class FiltersController extends Controller
     public function actionSheet()
     {
         Filters::getFilters('filters');
-        Filters::getFilters('city');
+//        Filters::getFilters('city');
 
         return $this->render('sheet');
     }
