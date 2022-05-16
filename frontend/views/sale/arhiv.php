@@ -57,7 +57,7 @@ $this->registerMetaTag(['name' => 'description',
                                             </div>
                                             <h3 class="aktsii-item__title"><?= $sale->name ?></h3>
                                         </a>
-                                        <div class="aktsii-item__date">с <?= date('m.d.Y',strtotime($sale->srok_ot)) ?> по <?= date('m.d.Y',strtotime($sale->srok_do)) ?></div>
+                                        <div class="aktsii-item__date">с <?= date('d.m.Y',strtotime($sale->srok_ot)) ?> по <?= date('d.m.Y',strtotime($sale->srok_do)) ?></div>
                                         <a href="<?= Url::toRoute(['sale/list', 'url' => $sale->url]) ?>" class="aktsii-item__more">Нақтырақ</a>
                                     </div>
                                 </div>
@@ -66,11 +66,22 @@ $this->registerMetaTag(['name' => 'description',
                             <div class="aktsii-arhiv">
                                 <a href="/aktsii">Акциялар></a>
                             </div>
-                            <ul class="pagination">
-                                <li>
-                                    <a href="#" class="page-numbers current">1</a>
-                                </li>
-                            </ul>
+<!--                            <ul class="pagination">-->
+<!--                                <li>-->
+<!--                                    <a href="#" class="page-numbers current">1</a>-->
+<!--                                </li>-->
+<!--                            </ul>-->
+                                                                <div class="div-pagination">
+                                                                    <?php echo \yii\widgets\LinkPager::widget([
+                                                                      'pagination' => $pages,
+                                                                      'prevPageLabel' => false,
+                                                                      'nextPageLabel' => false,
+                                                                      'activePageCssClass' => 'current' ,
+                                                                      'firstPageCssClass' => 'lknflbes',
+                                                                      'pageCssClass' => 'page-numbers',
+                                                                    ]);
+                                                                    ?>
+                                                                </div>
                         </div>
                     </div>
                 </div>

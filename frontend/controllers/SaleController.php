@@ -8,6 +8,7 @@ use common\models\Reviews;
 use Yii;
 use common\models\Sale;
 use yii\data\ActiveDataProvider;
+use yii\data\Pagination;
 use yii\db\Expression;
 use yii\web\Controller;
 use yii\web\HttpException;
@@ -81,14 +82,23 @@ class SaleController extends Controller
     public function actionArhiv()
     {
         $date = date('Y-m-d H:i:s');
-        $sales = Sale::find()
+//        $sales = Sale::find()
+//            ->where(['status' => '1'])
+//            ->andWhere(['<=', 'srok_do', $date])
+//            ->orderBy(['srok_do' => SORT_DESC])
+//            ->all();
+        $query = Sale::find()
             ->where(['status' => '1'])
             ->andWhere(['<=', 'srok_do', $date])
-            ->orderBy(['srok_do' => SORT_DESC])
+            ->orderBy(['srok_do' => SORT_DESC]);
+        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 10]);
+        $sales = $query->offset($pages->offset)
+            ->limit($pages->limit)
             ->all();
 
         return $this->render('arhiv', [
             'sales' => $sales,
+            'pages' => $pages,
         ]);
 
     }
