@@ -87,7 +87,7 @@ YiiAsset::register($this);
                                 <div class="akciya-container-item">
                                     <div class="akciya-date-wrap">
                                         <div class="akciya-date"><?= date('d.m.Y',strtotime($sale->srok_ot)) ?> - <?= date('d.m.Y',strtotime($sale->srok_do)) ?>
-                                            <a href="<?= \yii\helpers\Url::toRoute(['sale/list', 'url' => $sale->url]) ?>" class="akciya-btn">Нақтырақ</a>
+                                            <a href="<?= Url::toRoute(['sale/list', 'url' => $sale->url]) ?>" class="akciya-btn">Нақтырақ</a>
                                         </div>
                                     </div>
                                 </div>

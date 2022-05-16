@@ -73,7 +73,11 @@
                     <?= $dataMfo['mfo']['info']['website'] ?>
                 </div>
                 <div class="mfo-about__col-right">
-                    <a href="//<?= $data['info']['website'] ?>" target="_blank" rel="nofollow" class="mfo-about__col-right-link"><?= $data['info']['website'] ?></a>
+                    <?php if($model->link_offer) :?>
+                    <a href="<?= $model->link_offer ?>" target="_blank" rel="nofollow" class="mfo-about__col-right-link"><?= $data['info']['website'] ?></a>
+                    <?php else: ?>
+                        <a href="//<?= $data['info']['website'] ?>" target="_blank" rel="nofollow" class="mfo-about__col-right-link"><?= $data['info']['website'] ?></a>
+                    <?php endif; ?>
                 </div>
             </div>
         <?php endif; ?>
