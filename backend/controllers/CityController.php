@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use common\models\Filters;
 use Yii;
 use common\models\City;
 use common\models\CitySearch;
@@ -155,5 +156,14 @@ class CityController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+    /**
+     * @throws \yii\db\Exception
+     */
+    public function actionSheet()
+    {
+        Filters::getFilters('city');
+
+        return $this->render('sheet');
     }
 }

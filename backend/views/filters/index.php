@@ -22,6 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ])
     ?>
+    <p></p>
     <p>
         <?= Html::a('Создать фильтр', ['create'], ['class' => 'btn btn-success']) ?>
     </p>

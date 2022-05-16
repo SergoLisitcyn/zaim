@@ -13,7 +13,16 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="city-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-
+    <?=
+    Html::a('Запустить обновление', ['sheet'], [
+        'class' => 'btn btn-primary',
+        'data' => [
+            'confirm' => 'Вы точно хотите запустить обновление?',
+            'method' => 'post',
+        ],
+    ])
+    ?>
+    <p></p>
     <p>
         <?= Html::a('Создать город', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
