@@ -58,7 +58,7 @@ if (isset($model->description) && !empty($model->description)) $this->registerMe
                                     </noscript>
                                 </a>
                                 <?= $model->content ?>
-                                <a href="<?= $model->partner_link ?>" target="_blank" class="articles_button">Акцияға қатысу</a>
+                                <a href="<?= $model->partner_link ?>" target="_blank" class="articles_button" style="display: inherit">Акцияға қатысу</a>
                                 <div class="aktsii-article__box">
                                     <h3>Ұқсас ұсыныстар</h3>
                                     <div class="aktsii-article__box-inner">
