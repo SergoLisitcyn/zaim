@@ -1,5 +1,7 @@
 <?php
 use common\models\Mfo;
+use frontend\widgets\ArticlesNews;
+
 $starRate = (100 * $model->rating) / 5;
 ?>
 <sidebar class="content-sidebar">
@@ -178,5 +180,5 @@ $starRate = (100 * $model->rating) / 5;
             </div>
         </form>
     </div>
-    <?php echo \frontend\widgets\ArticlesNews::widget() ?>
+    <?php echo ArticlesNews::widget() ?>
 </sidebar>

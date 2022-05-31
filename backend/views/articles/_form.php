@@ -81,7 +81,7 @@ use \common\models\Author;
 
     <?= $form->field($model, 'date_publish')->widget(DatePicker::className(),['pluginOptions' => [
         'autoclose'=>true,
-        'format' => 'dd.mm.yyyy'
+        'format' => 'yyyy-mm-dd'
     ]])->label('Дата публикации') ?>
 
     <?= $form->field($model, 'url')->textInput(['maxlength' => true])->hint('например rozygrysh-shesti-ajfonov-ot-turbomoney') ?>

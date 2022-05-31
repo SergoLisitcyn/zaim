@@ -1,7 +1,6 @@
 <?php
 
-use yii\helpers\Html;
-use yii\widgets\DetailView;
+use yii\helpers\Url;
 use \frontend\widgets\Rating;
 
 /* @var $this yii\web\View */
@@ -73,7 +72,7 @@ if (isset($model->description) && !empty($model->description)) $this->registerMe
                                     <div class="aktsii-article__box-inner">
                                         <div class="aktsii-article__box-offers">
                                             <?php foreach ($articlesRandom as $random) : ?>
-                                                <a href="<?= \yii\helpers\Url::toRoute(['articles/view', 'url' => $random->url]) ?>" title="<?= $random->name?>">
+                                                <a href="<?= Url::toRoute(['articles/view', 'url' => $random->url]) ?>" title="<?= $random->name?>">
                                                     <noscript>
                                                         <img src="<?= $random->preview_image?>" alt="<?= $random->name?>" />
                                                     </noscript>
