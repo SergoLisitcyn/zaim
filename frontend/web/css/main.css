@@ -199,7 +199,7 @@ select{width:100%;max-width:100%;min-width:100%;-webkit-appearance:none;appearan
 
 .aktsii-item__img:hover {
     transform: scale(1.07);
-    /*opacity: 1;*/
+    opacity: 1;
 }
 
 .aktsii-item__date {
@@ -2591,8 +2591,4 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
 }
 .news-item__img-wrap:hover .news-item__title span {
     display: none;
-}
-
-.news-item__img-wrap:hover{
-    opacity: 1;
 }
