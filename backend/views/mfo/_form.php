@@ -1,5 +1,6 @@
 <?php
 
+use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 use \common\models\City;
 use \kartik\select2\Select2;
@@ -20,7 +21,7 @@ use \yii\helpers\Url;
             </div>
             <div class="content">
 
-                <?php $form = \yii\bootstrap\ActiveForm::begin([
+                <?php $form = ActiveForm::begin([
                     'layout' => 'horizontal',
                     'options' => ['enctype' => 'multipart/form-data'],
                     'fieldConfig' => [
@@ -203,50 +204,50 @@ use \yii\helpers\Url;
                         <?= $form->field($model, 'rasmotrenie_for_client')->textInput(['maxlength' => true])->hint('например 10 минут') ?>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xs-12">
-
-                        <h4 class="bold uppercase">3. Фильтры</h4>
-                            <?php $typeCredits = \common\models\Filters::find()->with('typeCredits')->all();
-                               foreach ($typeCredits as $value){
-                                   if($value['name'] == 'Онлайн кредит түрі'){
-                                       $filterName = 'Вид кредита онлайн';
-                                   } elseif ($value['name'] == 'Алу тәсілі'){
-                                       $filterName = 'Способ получения';
-                                   } elseif ($value['name'] == 'Өтеу тәсілі'){
-                                       $filterName = 'Способ погашения';
-                                   } elseif ($value['name'] == 'Жұмыспен қамтылу түрі'){
-                                       $filterName = 'Тип занятости';
-                                   } elseif ($value['name'] == 'Қарыз мерзімі'){
-                                       $filterName = 'Срок займа';
-                                   } else {
-                                       $filterName = $value['name'];
-                                   }
-                                   echo $form->field($model, 'type_credit_arr['.$value['id'].']',['options'=>['class'=>'col-xs-12']])->widget(Select2::classname(), [
-                                       'data' => ArrayHelper::map($value->typeCredits,'id','name'),
-                                       'language' => 'ru',
-                                       'options' => ['placeholder' => 'Выбрать '.$value['name'].'', 'multiple' => true],
-                                       'pluginOptions' => [
-                                           'allowClear' => true,
-                                           'disabled' => true
-                                       ],
-                                   ])
-                                       ->label($filterName)
-                                   ;
-                               }
-                            ?>
-
-                        <?php echo $form->field($model, 'mfo_city_arr',['options'=>['class'=>'col-xs-12']])->widget(Select2::classname(), [
-                            'data' => ArrayHelper::map(City::find()->all(),'id','name'),
-                            'language' => 'ru',
-                            'options' => ['placeholder' => 'Выбрать города ...', 'multiple' => true],
-                            'pluginOptions' => [
-                                'allowClear' => true,
-                                'disabled' => true
-                            ],
-                        ]); ?>
-                    </div>
-                </div>
+<!--                <div class="row">-->
+<!--                    <div class="col-xs-12">-->
+<!---->
+<!--                        <h4 class="bold uppercase">3. Фильтры</h4>-->
+<!--                            --><?php //$typeCredits = \common\models\Filters::find()->with('typeCredits')->all();
+//                               foreach ($typeCredits as $value){
+//                                   if($value['name'] == 'Онлайн кредит түрі'){
+//                                       $filterName = 'Вид кредита онлайн';
+//                                   } elseif ($value['name'] == 'Алу тәсілі'){
+//                                       $filterName = 'Способ получения';
+//                                   } elseif ($value['name'] == 'Өтеу тәсілі'){
+//                                       $filterName = 'Способ погашения';
+//                                   } elseif ($value['name'] == 'Жұмыспен қамтылу түрі'){
+//                                       $filterName = 'Тип занятости';
+//                                   } elseif ($value['name'] == 'Қарыз мерзімі'){
+//                                       $filterName = 'Срок займа';
+//                                   } else {
+//                                       $filterName = $value['name'];
+//                                   }
+//                                   echo $form->field($model, 'type_credit_arr['.$value['id'].']',['options'=>['class'=>'col-xs-12']])->widget(Select2::classname(), [
+//                                       'data' => ArrayHelper::map($value->typeCredits,'id','name'),
+//                                       'language' => 'ru',
+//                                       'options' => ['placeholder' => 'Выбрать '.$value['name'].'', 'multiple' => true],
+//                                       'pluginOptions' => [
+//                                           'allowClear' => true,
+//                                           'disabled' => true
+//                                       ],
+//                                   ])
+//                                       ->label($filterName)
+//                                   ;
+//                               }
+//                            ?>
+<!---->
+<!--                        --><?php //echo $form->field($model, 'mfo_city_arr',['options'=>['class'=>'col-xs-12']])->widget(Select2::classname(), [
+//                            'data' => ArrayHelper::map(City::find()->all(),'id','name'),
+//                            'language' => 'ru',
+//                            'options' => ['placeholder' => 'Выбрать города ...', 'multiple' => true],
+//                            'pluginOptions' => [
+//                                'allowClear' => true,
+//                                'disabled' => true
+//                            ],
+//                        ]); ?>
+<!--                    </div>-->
+<!--                </div>-->
 
 
                 <div class="row">
@@ -326,7 +327,7 @@ use \yii\helpers\Url;
                     <?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Обновить', ['class' => $model->isNewRecord ? 'mbtn mbtn-success' : 'mbtn mbtn-primary']) ?>
                 </div>
 
-                <?php \yii\bootstrap\ActiveForm::end(); ?>
+                <?php ActiveForm::end(); ?>
 
             </div>
         </div>

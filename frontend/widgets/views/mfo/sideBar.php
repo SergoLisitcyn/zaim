@@ -1,4 +1,7 @@
-<?php $starRate = (100 * $model->rating) / 5; ?>
+<?php
+use common\models\Mfo;
+$starRate = (100 * $model->rating) / 5;
+?>
 <sidebar class="content-sidebar">
     <div class="mfo_card">
         <div class="mfo_card__title">Компанияның рейтингі</div>
@@ -68,11 +71,13 @@
                     </div>
                 </div>
             </div>
+            <?php if($model->link_offer && $model->status != Mfo::STATUS_DEACTIVATED_LINK) :?>
             <noindex>
                 <a href="<?= $model->link_offer ?>" target="_blank">
                     <div class="mfo_card_button">Ақшаны алу</div>
                 </a>
             </noindex>
+            <?php endif; ?>
         </div>
     </div>
     <div class="mfo_card">

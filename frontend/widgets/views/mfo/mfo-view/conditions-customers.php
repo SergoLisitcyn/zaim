@@ -1,4 +1,7 @@
-<?php if($model->srok_new_client) : ?>
+<?php
+use common\models\Mfo;
+
+if($model->srok_new_client && $model->status != Mfo::STATUS_DEACTIVATED_LINK) : ?>
 <div class="mfo-stat-container">
     <div class="firstloan">
         <div class="firstloan-col">

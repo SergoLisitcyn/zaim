@@ -1,6 +1,5 @@
 <?php
-
-use frontend\widgets\ReestrMfoFilter;
+use common\models\Mfo;
 use \yii\helpers\Url;
 if($tag){
     $this->title = 'Реестр МФО Казахстана. Все микрофинансовые компании в городе '.$tag;
@@ -95,7 +94,7 @@ if($tag){
                                                             </div>
                                                         </div>
                                                         <?php endif; ?>
-                                                        <?php if($mfo->link_offer) : ?>
+                                                        <?php if($mfo->link_offer && $mfo->status != Mfo::STATUS_DEACTIVATED_LINK) : ?>
                                                         <div class="reestr-item__descr-item">
                                                             <div class="reestr-item__descr-title"><?= $dataMfo['mfo']['info']['website'] ?></div>
                                                             <div class="reestr-item__descr-text">

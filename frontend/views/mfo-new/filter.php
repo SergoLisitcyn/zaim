@@ -10,6 +10,7 @@
 <!--    --><?php //echo GridCatalog::widget(['output' => $mfo,'mfoNew' => true]); ?>
 <!--</div>-->
 <?php
+use common\models\Mfo;
 use \yii\helpers\Url;
 if($tag){
     $this->title = $tag.' – smartzaim.kz';
@@ -105,7 +106,7 @@ if($tag){
                                                                     </div>
                                                                 </div>
                                                             <?php endif; ?>
-                                                            <?php if($mfo->link_offer) : ?>
+                                                            <?php if($mfo->link_offer && $mfo->status != Mfo::STATUS_DEACTIVATED_LINK) : ?>
                                                                 <div class="reestr-item__descr-item">
                                                                     <div class="reestr-item__descr-title"><?= $dataMfo['mfo']['info']['website'] ?></div>
                                                                     <div class="reestr-item__descr-text">

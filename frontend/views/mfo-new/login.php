@@ -1,4 +1,5 @@
 <?php
+use common\models\Mfo;
 use \yii\helpers\Url;
 use \frontend\widgets\MfoViewWidget;
 if(isset($data['seo']['login_title']) and !empty($data['seo']['login_title'])) {
@@ -71,7 +72,7 @@ if(isset($data['seo']['login_description']) and !empty($data['seo']['login_descr
                                     <?php endif; ?>
                                 </div>
                             </div>
-                            <?php if($model->link_offer) : ?>
+                            <?php if($model->link_offer && $model->status != Mfo::STATUS_DEACTIVATED_LINK) : ?>
                                 <a href="<?= $model->link_offer ?>" class="content-main-info__button"><?= $dataMfo['mfo']['login']['lk'] ?></a>
                             <?php elseif ($data['login']['lk']) : ?>
                                 <a href="https://<?= $data['login']['lk'] ?>" class="content-main-info__button"><?= $dataMfo['mfo']['login']['lk'] ?></a>

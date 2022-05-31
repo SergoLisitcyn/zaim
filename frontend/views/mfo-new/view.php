@@ -1,5 +1,6 @@
 <?php
 
+use common\models\Mfo;
 use \yii\helpers\Url;
 use \frontend\widgets\MfoViewWidget;
 use yii\web\YiiAsset;
@@ -52,7 +53,7 @@ YiiAsset::register($this);
                                     <div class="rating__val"><?= $model->rating?></div>
                                 </div>
                             </div>
-                            <?php if($model->link_offer) : ?>
+                            <?php if($model->link_offer && $model->status != Mfo::STATUS_DEACTIVATED_LINK) : ?>
                             <div class="mfo-head__text">Ресми сайтқа өту
                                 <a href="<?= $model->link_offer ?>" target="_blank"><?= $model->website?></a>
                             </div>

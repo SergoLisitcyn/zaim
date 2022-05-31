@@ -40,11 +40,34 @@ $this->title = 'МФО';
                 'columns' => [
                     ['class' => 'yii\grid\SerialColumn'],
                     'mfo_name',
+//                    [
+//                        'class' => 'kartik\grid\EditableColumn',
+//                        'attribute' => 'status',
+//                        'vAlign' => 'middle',
+////                        'width' => '210px',
+//                    ],
                     [
                         'class' => 'kartik\grid\EditableColumn',
                         'attribute' => 'status',
-                        'vAlign' => 'middle',
-//                        'width' => '210px',
+                        'hAlign' => 'center',
+                        'filter' => false,
+                        'editableOptions' =>  function ($model, $key, $index) {
+                            return [
+                                'header' => 'сортировку',
+                                'inputType' => 'dropDownList',
+                                'data' => [0 =>'Неактивен',1 =>'Активен',2 => 'Активен.Партнерская ссылка отключена.'],
+                            ];
+                        },
+                        'value' => function($model){
+                            if($model->status == 0){
+                                return 'Неактивен';
+                            } elseif($model->status == 1) {
+                                return 'Активен';
+                            } elseif ($model->status == 2){
+                                return 'Активен.Партнерская ссылка отключена';
+                            }
+                            return 'Неактивен';
+                        },
                     ],
                     [
                         'class' => 'kartik\grid\EditableColumn',

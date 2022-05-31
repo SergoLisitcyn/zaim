@@ -83,7 +83,7 @@ class MfoController extends Controller
                 $out = Json::encode(['output'=>$output, 'message'=>'']);
             }
             echo $out;
-            return;
+            return $this->refresh();
         }
         return $this->render('index', [
             'searchModel' => $searchModel,

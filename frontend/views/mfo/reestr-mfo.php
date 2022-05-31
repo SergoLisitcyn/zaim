@@ -1,5 +1,5 @@
 <?php
-
+use common\models\Mfo;
 use frontend\widgets\ReestrMfoFilter;
 use \yii\helpers\Url;
 $this->title = 'Қазақстанның барлық жұмыс істейтін микроқаржы ұйымдары – smartzaim.kz';
@@ -142,7 +142,7 @@ $this->registerMetaTag(['name' => 'description','content' => 'Қазақстан
                                                             </div>
                                                         </div>
                                                         <?php endif; ?>
-                                                        <?php if($mfo->link_offer) : ?>
+                                                        <?php if($mfo->link_offer && $mfo->status != Mfo::STATUS_DEACTIVATED_LINK) : ?>
                                                         <div class="reestr-item__descr-item">
                                                             <div class="reestr-item__descr-title"><?= $dataMfo['mfo']['info']['website'] ?></div>
                                                             <div class="reestr-item__descr-text">

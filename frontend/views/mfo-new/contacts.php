@@ -1,5 +1,6 @@
 <?php
-use \yii\helpers\Url;
+
+use common\models\Mfo;
 use \frontend\widgets\MfoViewWidget;
 if(isset($data['seo']['contacts_title']) and !empty($data['seo']['contacts_title'])) {
     $this->title = $data['seo']['contacts_title'];
@@ -63,7 +64,7 @@ if(isset($data['seo']['contacts_description']) and !empty($data['seo']['contacts
                                             <?= $dataMfo['mfo']['contacts']['version_ru'] ?>
                                         </div>
 
-                                        <?php if($model->link_offer) : ?>
+                                        <?php if($model->link_offer && $model->status != Mfo::STATUS_DEACTIVATED_LINK) : ?>
                                             <div class="mfo-about__col-right">
 <!--                                                <a href="" class="mfo-about__col-right-link">-->
                                                     <?= $data['contacts']['version_ru'] ?>
@@ -83,7 +84,7 @@ if(isset($data['seo']['contacts_description']) and !empty($data['seo']['contacts
                                         <div class="mfo-about__col-left">
                                             <?= $dataMfo['mfo']['contacts']['version_kz'] ?>
                                         </div>
-                                        <?php if($model->link_offer) : ?>
+                                        <?php if($model->link_offer && $model->status != Mfo::STATUS_DEACTIVATED_LINK) : ?>
                                             <div class="mfo-about__col-right">
 <!--                                                <a href="" class="mfo-about__col-right-link">-->
                                                     <?= $data['contacts']['version_ru'] ?>

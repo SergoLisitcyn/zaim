@@ -79,6 +79,10 @@ class Mfo extends ActiveRecord
     public $logo_file;
     public $certificate_file;
 
+    const STATUS_WAITING = 0;
+    const STATUS_ACTIVE = 1;
+    const STATUS_DEACTIVATED_LINK = 2;
+
     /**
      * {@inheritdoc}
      */
