@@ -57,7 +57,7 @@ $this->registerMetaTag(['name' => 'description',
                                                              alt="" class="aktsii-item__img"></noscript>
                                                     <div class="news-item__title">
                                                         <h3><?= $article->name ?></h3>
-                                                        <span><?= $article->date ?></span>
+                                                        <span><?= date('d.m.Y', strtotime($article->date)) ?></span>
                                                     </div>
                                                 </div>
                                             </a>
