@@ -19,7 +19,16 @@
                 'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
                 'items' => [
                     ['label' => 'Навигация', 'options' => ['class' => 'header']],
-                    ['label' => 'МФО', 'icon' => 'book', 'url' => ['mfo/index']],
+//                    ['label' => 'МФО', 'icon' => 'book', 'url' => ['mfo/index']],
+                    [
+                        'label' => 'МФО',
+                        'icon' => 'book',
+                        'url' => '#',
+                        'items' => [
+                            ['label' => 'МФО на главной', 'icon' => 'circle-o', 'url' => ['/mfo/home'],],
+                            ['label' => 'Все МФО', 'icon' => 'circle-o', 'url' => ['/mfo/index'],],
+                        ],
+                    ],
                     ['label' => 'Банки', 'icon' => 'bank', 'url' => ['banks/index']],
                     ['label' => 'Создание страниц', 'icon' => 'file-code-o', 'url' => ['/pages']],
 //                    ['label' => 'Редактор главной страницы', 'icon' => 'file-code-o', 'url' => ['/main/update?id=1']],

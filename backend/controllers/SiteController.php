@@ -64,7 +64,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return Yii::$app->response->redirect(['mfo/index']);
+        return Yii::$app->response->redirect(['mfo/home']);
     }
 
     /**

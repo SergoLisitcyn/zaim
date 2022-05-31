@@ -145,6 +145,10 @@ class Filters extends \yii\db\ActiveRecord
                               if (!$mfo) {
                                   throw new Exception('Такого МФО не существует');
                               }
+                              if($value[0]){
+                                  $mfo->priznak_sort = $value[0];
+                                  $mfo->save();
+                              }
                               $mfoType = MfoTypeCredit::find()
                                   ->where([
                                       'mfo_id' => $mfo->id,
@@ -207,6 +211,10 @@ class Filters extends \yii\db\ActiveRecord
                               $mfoCity = Mfo::find()->where(['url' => $value[2]])->one();
                               if (!$mfoCity) {
                                   throw new Exception('Такого МФО не существует');
+                              }
+                              if($value[0]){
+                                  $mfoCity->city_sort = $value[0];
+                                  $mfoCity->save();
                               }
                               $mfoTypeCity = MfoCity::find()
                                   ->where([

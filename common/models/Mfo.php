@@ -57,6 +57,8 @@ use yii\web\UploadedFile;
  * @property int|null $min_term_calc
  * @property int|null $advanced_repayment
  * @property int|null $extension_loan
+ * @property int|null $city_sort
+ * @property int|null $priznak_sort
  * @property string|null $mfo_city_array
  * @property string|null $srok_new_client
  * @property string|null $sum_new_client
@@ -107,7 +109,7 @@ class Mfo extends ActiveRecord
             [['mfo_name', 'stavka', 'title', 'url'], 'required'],
             [['rating'], 'number'],
             [['odobrenie', 'akcii', 'home_page', 'status', 'created_at', 'updated_at', 'sort', 'max_sum_calc',
-                'min_sum_calc', 'max_term_calc', 'min_term_calc', 'advanced_repayment', 'extension_loan'], 'integer'],
+                'min_sum_calc', 'max_term_calc', 'min_term_calc', 'advanced_repayment', 'extension_loan','priznak_sort','city_sort'], 'integer'],
             [['rekvisit', 'about_company', 'content', 'login_content','data_ru','data_kz'], 'string'],
             [['mfo_name', 'srok', 'sum', 'stavka', 'rasmotrenie', 'phone', 'email', 'website', 'logo', 'video',
                 'link_offer', 'title', 'description', 'keywords', 'type_credit_array', 'url', 'text_video',
@@ -184,6 +186,8 @@ class Mfo extends ActiveRecord
             'city_kz' => 'Город',
             'letter' => 'Буква',
             'letter_get' => 'Буква в гет запросе',
+            'priznak_sort' => 'Сортировка по признакам',
+            'city_sort' => 'Сортировка по городам',
         ];
     }
     public function afterFind()
@@ -935,8 +939,10 @@ class Mfo extends ActiveRecord
 
         if($bin) $all->andWhere(['like', 'bin', $bin . '%', false]);
         if($name) $all->andWhere(['like', 'mfo_name_kz', $name . '%', false]);
-        if($city) $all->andWhere(['city_kz' => $city]);
-
+        if($city){
+            $all->andWhere(['city_kz' => $city]);
+            $all->orderBy(['city_sort' => SORT_ASC]);
+        }
         return $all->all();
     }
 
@@ -979,7 +985,7 @@ class Mfo extends ActiveRecord
             }
         }
         $query = Mfo::find()
-            ->where(['in', 'id', $array])->all();
+            ->where(['in', 'id', $array])->orderBy(['priznak_sort' => SORT_ASC])->all();
         $mfoDatas = MfoData::find()->where(['name' => 'Data'])->one();
         $dataMfo = unserialize($mfoDatas->data_mfo_kz);
         $tag = null;

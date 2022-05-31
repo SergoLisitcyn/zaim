@@ -7,6 +7,7 @@ use Yii;
 use common\models\Mfo;
 use common\models\MfoSearch;
 use yii\base\DynamicModel;
+use yii\data\ActiveDataProvider;
 use yii\filters\AccessControl;
 use yii\helpers\FileHelper;
 use yii\helpers\Json;
@@ -87,6 +88,33 @@ class MfoController extends Controller
         }
         return $this->render('index', [
             'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    public function actionHome()
+    {
+        $dataProvider = new ActiveDataProvider([
+            'query' => Mfo::find()->where(['home_page' => 1]),
+        ]);
+        if (Yii::$app->request->post('hasEditable'))
+        {
+            $id=$_POST['editableKey'];
+            $model = $this->findModel($id);
+            $out    = Json::encode(['output'=>'', 'message'=>'']);
+            $post = [];
+            $posted = current($_POST['Mfo']);
+            $post['Mfo'] = $posted;
+            if ($model->load($post)) {
+                $model->save();
+                $output = '';
+                $out = Json::encode(['output'=>$output, 'message'=>'']);
+            }
+            echo $out;
+            return $this->refresh();
+        }
+
+        return $this->render('home', [
             'dataProvider' => $dataProvider,
         ]);
     }
