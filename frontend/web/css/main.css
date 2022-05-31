@@ -2581,3 +2581,7 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
 .mfo-clients-column-social__list-link:hover .mfo-clients-column-social__list-text {
     text-decoration: none;
 }
+
+.sale_button_view:hover{
+    color: #fff;
+}

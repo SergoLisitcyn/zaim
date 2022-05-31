@@ -66,6 +66,14 @@
     #successRating{
         width: 20% !important;
     }
+    .aktsii-article__content h2{
+        font-size: 24px;
+        font-family: inherit;
+        font-weight: 600;
+        text-align: center;
+        color: #fda729;
+        margin: 35px 40px 12px;
+    }
 }
 
 
@@ -94,6 +102,14 @@
         display: block;
         width: 85px;
         height: 55px;
+    }
+    .aktsii-article__content h2{
+        font-size: 24px;
+        font-family: inherit;
+        font-weight: 600;
+        text-align: center;
+        color: #fda729;
+        margin: 35px 40px 12px;
     }
 }
 
@@ -227,6 +243,14 @@
     .content-main-info__item h1 {
         font-size: 24px;
         line-height: 29px;
+    }
+    .aktsii-article__content h2{
+        font-size: 24px;
+        font-family: inherit;
+        font-weight: 600;
+        text-align: center;
+        color: #fda729;
+        margin: 35px 40px 12px;
     }
 
     .feedback-form__fields {

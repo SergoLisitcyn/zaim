@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\DetailView;
 use \frontend\widgets\Rating;
 
@@ -58,13 +59,13 @@ if (isset($model->description) && !empty($model->description)) $this->registerMe
                                     </noscript>
                                 </a>
                                 <?= $model->content ?>
-                                <a href="<?= $model->partner_link ?>" target="_blank" class="articles_button" style="display: inherit">Акцияға қатысу</a>
+                                <a href="<?= $model->partner_link ?>" target="_blank" class="articles_button sale_button_view" style="display: inherit">Акцияға қатысу</a>
                                 <div class="aktsii-article__box">
                                     <h3>Ұқсас ұсыныстар</h3>
                                     <div class="aktsii-article__box-inner">
                                         <div class="aktsii-article__box-offers">
                                             <?php foreach ($salesRandom as $random) : ?>
-                                            <a href="<?= \yii\helpers\Url::toRoute(['sale/list', 'url' => $random->url]) ?>">
+                                            <a href="<?= Url::toRoute(['sale/list', 'url' => $random->url]) ?>">
                                                 <noscript>
                                                     <img src="<?= $random->image?>" alt="<?= $random->name?>" />
                                                 </noscript>
