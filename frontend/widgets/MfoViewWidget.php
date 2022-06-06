@@ -54,11 +54,23 @@ class MfoViewWidget  extends Widget
             ]);
         }
 
+        $rating = Mfo::find()
+            ->orderBy(['rating' => SORT_DESC])
+            ->where(['home_page' => 1])
+            ->limit(3)
+            ->all();
         if($this->type == 'sideBar'){
+
             return $this->render('mfo/'.$this->type,[
                 'data' => $this->data,
                 'model' => $this->model,
                 'action' => $this->action,
+                'rating' => $rating,
+            ]);
+        }
+        if($this->type == 'sideBarRating'){
+            return $this->render('mfo/'.$this->type,[
+                'rating' => $rating,
             ]);
         }
 

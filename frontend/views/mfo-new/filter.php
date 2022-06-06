@@ -11,6 +11,7 @@
 <!--</div>-->
 <?php
 use common\models\Mfo;
+use frontend\widgets\MfoViewWidget;
 use \yii\helpers\Url;
 if($tag){
     $this->title = $tag.' – smartzaim.kz';
@@ -160,82 +161,7 @@ if($tag){
                         </div>
                     </form>
                 </div>
-                <div class="mfo_card">
-                    <div class="mfo_card__title">Рейтинг	заемщиков</div>
-                    <div	class="aside-rating aside-rating-mfo">
-
-                        <div class="aside-rating-mfo-col">
-                            <div class="aside-rating-mfo-item">
-                                <a	href="#">
-                                    <noscript>
-                                        <img	src="/img/2016/08/4slovo-e1550510710120.png">
-                                    </noscript>
-                                    <img	class="lazyload"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="/img/2016/08/4slovo-e1550510710120.png"	style="width: 110px;">
-                                </a>
-                            </div>
-                            <div class="aside-rating-mfo-item">
-                                <a	href="#">
-                                    <div	class="rating rating-wraps">
-                                        <div class="rating-box">
-                                            <div class="rating__stars"	style="width:87%"></div>
-                                            <div	class="rating__val">4.4</div>
-                                        </div>
-                                        <div	class="aside-rating-mfo__rev">Отзывы:	177</div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="aside-rating-mfo-col">
-                            <div class="aside-rating-mfo-item">
-                                <a	href="#">
-                                    <noscript>
-                                        <img	src="/img2016/08/moneyman.png">
-                                    </noscript>
-                                    <img	class="lazyload"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="/img/2016/08/moneyman.png"	style="width: 110px;">
-                                </a>
-                            </div>
-                            <div class="aside-rating-mfo-item">
-                                <a	href="#">
-                                    <div	class="rating rating-wraps">
-                                        <div class="rating-box">
-                                            <div class="rating__stars"	style="width:87%"></div>
-                                            <div	class="rating__val">4.6</div>
-                                        </div>
-                                        <div	class="aside-rating-mfo__rev">Отзывы:	41</div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="aside-rating-mfo-col">
-                            <div class="aside-rating-mfo-item">
-                                <a	href="#">
-                                    <noscript>
-                                        <img	src="/img/2018/01/tengokz_300x140_0.png">
-                                    </noscript>
-                                    <img	class="lazyload"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="/img/2018/01/tengokz_300x140_0.png">
-                                </a>
-                            </div>
-                            <div class="aside-rating-mfo-item">
-                                <a	href="#">
-                                    <div	class="rating rating-wraps">
-                                        <div class="rating-box">
-                                            <div class="rating__stars"	style="width:87%"></div>
-                                            <div	class="rating__val">3.6</div>
-                                        </div>
-                                        <div	class="aside-rating-mfo__rev">Отзывы:	30</div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mfo_card__info">
-                        <a href="#">
-                            <div	class="mfo_card_button">Подобрать другой займ</div>
-                        </a>
-                    </div>
-                </div>
+                <?= MfoViewWidget::widget(['type' => 'sideBarRating']) ?>
             </sidebar>
         </div>
     </div>
