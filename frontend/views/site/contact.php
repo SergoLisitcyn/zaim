@@ -24,7 +24,7 @@ $this->registerMetaTag(['name' => 'description',
                         </p>
                         <p class="content-main-info__text">
                             Телефоны:
-                            <a class="phone" href="tel:+77172727920">+7	(717) 272-79-20</a>
+                            <a class="phone" href="tel:+7 717 297-34-56">+7 717 297-34-56</a>
                         </p>
                         <p class="content-main-info__text">
                             Мекенжайы: Алматы қаласы, Бостандық ауданы, Тимирязев көшесі,42. к10
