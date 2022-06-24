@@ -745,7 +745,10 @@ class Mfo extends ActiveRecord
 
                 $data['seo']['h1'] = $value[144];
                 $data['seo']['title'] = $data['seo']['h1'].' — smartzaim.kz';
-//                $data['seo']['description'] = $value[146];
+                if($version == 'KZ'){
+                    $data['seo']['description'] = $value[146];
+                }
+
 
                 $data['seo']['login_h1'] = $value[147].' '.$data['seo']['h1'];
                 $data['seo']['login_title'] = 'Личный кабинет '.$data['seo']['h1'].' '.$value[148].' — smartzaim.kz';
