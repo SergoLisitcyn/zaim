@@ -39,7 +39,8 @@ class GridCatalog extends Widget
                 ->andWhere(['<=','min_sum_calc',$get['sum']])
                 ->andWhere(['>=','max_term_calc',$get['term']])
                 ->andWhere(['<=','min_term_calc',$get['term']])
-                ->andWhere(['mfo.status' => '1']);
+//                ->andWhere(['mfo.status' => '1'])
+            ;
 
             if(isset($get['advanced_repayment'])) {
                 $mfo->andWhere(['advanced_repayment' => $get['advanced_repayment']]);
