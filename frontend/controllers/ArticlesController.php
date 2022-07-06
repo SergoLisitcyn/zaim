@@ -8,6 +8,7 @@ use common\models\Mfo;
 use Yii;
 use common\models\Articles;
 use common\models\ArticlesSearch;
+use yii\data\Pagination;
 use yii\db\Expression;
 use yii\web\Controller;
 use yii\web\HttpException;
@@ -36,9 +37,12 @@ class ArticlesController extends Controller
 
     public function actionIndex()
     {
-        $articles = Articles::find()
+        $query = Articles::find()
             ->where(['status' => '1'])
-            ->orderBy(['date_publish' => SORT_DESC])
+            ->orderBy(['date_publish' => SORT_DESC]);
+        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 10]);
+        $articles = $query->offset($pages->offset)
+            ->limit($pages->limit)
             ->all();
         if(isset($_POST['email'])){
             (new MainPage)->unisender($_POST['email']);
@@ -46,6 +50,7 @@ class ArticlesController extends Controller
         }
         return $this->render('index', [
             'articles' => $articles,
+            'pages' => $pages,
         ]);
     }
 

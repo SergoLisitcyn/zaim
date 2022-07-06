@@ -2599,3 +2599,22 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
 .news-item__img-wrap:hover .news-item__title span {
     display: none;
 }
+.pagination .page-numbers-news > a{
+    border: none !important;
+    z-index: 2 !important;
+    /*background-color: #eee !important;*/
+    color: #146696!important;
+    border-radius: 50% !important;
+    font-size: 17px !important;
+    cursor: pointer !important;
+}
+.pagination .page-numbers-news.active > a{
+    z-index: 2 !important;
+    background-color: #eee !important;
+    color: #333 !important;
+    cursor: default !important;
+}
+/*.page-numbers-news > .active > a{*/
+/*.page-numbers-news{*/
+/*    */
+/*}*/

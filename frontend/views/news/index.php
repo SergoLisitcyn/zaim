@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Url;
+use yii\widgets\LinkPager;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\ArticlesSearch */
@@ -65,11 +66,12 @@ $this->registerMetaTag(['name' => 'description',
 
                                 <?php endforeach; ?>
                             </div>
-                            <ul class="pagination">
-                                <li>
-                                    <a href="#" class="page-numbers current">1</a>
-                                </li>
-                            </ul>
+                            <?= LinkPager::widget([
+                                'pagination' => $pages,
+                                'prevPageLabel' => false,
+                                'nextPageLabel' => false,
+                                'pageCssClass' => 'page-numbers-news',
+                            ]); ?>
                         </div>
                     </div>
                 </div>

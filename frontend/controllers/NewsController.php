@@ -9,6 +9,7 @@ use common\models\Mfo;
 use Yii;
 use common\models\News;
 use common\models\NewsSearch;
+use yii\data\Pagination;
 use yii\db\Expression;
 use yii\web\Controller;
 use yii\web\HttpException;
@@ -37,9 +38,12 @@ class NewsController extends Controller
 
     public function actionIndex()
     {
-        $news = News::find()
+        $query = News::find()
             ->where(['status' => '1'])
-            ->orderBy(['date' => SORT_DESC])
+            ->orderBy(['date' => SORT_DESC]);
+        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 10]);
+        $news = $query->offset($pages->offset)
+            ->limit($pages->limit)
             ->all();
         if(isset($_POST['email'])){
             (new MainPage)->unisender($_POST['email']);
@@ -48,6 +52,7 @@ class NewsController extends Controller
 
         return $this->render('index', [
             'news' => $news,
+            'pages' => $pages,
         ]);
     }
 
