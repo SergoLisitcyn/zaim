@@ -53,7 +53,7 @@ $this->registerMetaTag(['name' => 'description',
                                                     <img src="<?= $sale->image ?>" data-lazy-type="image" data-lazy-src="<?= $sale->image ?>" alt="<?= $sale->name ?>" class="lazy aktsii-item__img lazy-loaded">
                                                 </a>
                                                 <noscript>
-                                                    <img src="<?= $sale->srok_ot ?>" alt="" class="aktsii-item__img">
+                                                    <img src="<?= $sale->image ?>" alt="<?= $sale->name ?>" class="aktsii-item__img">
                                                 </noscript>
                                             </div>
                                             <a href="<?= Url::toRoute(['sale/list', 'url' => $sale->url]) ?>">

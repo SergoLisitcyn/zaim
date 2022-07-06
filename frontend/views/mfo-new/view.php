@@ -29,7 +29,7 @@ YiiAsset::register($this);
             </li>
         </ul>
     </div>
-    <img class="main-title__img bank-main-title__img" src="img/uncode-child/bg-sm.png" alt="">
+    <img class="main-title__img bank-main-title__img" src="/img/uncode-child/bg-sm.png" alt="">
 </section>
 <section class="content plr">
     <div class="content-wrap limit-width">

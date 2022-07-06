@@ -657,7 +657,7 @@ if(isset($model->description) and !empty($model->description)) { $this->register
                             <div class="aside-rating-mfo-item">
                                 <a	href="#">
                                     <noscript>
-                                        <img	src="img2016/08/moneyman.png">
+                                        <img src="/img/2016/08/moneyman.png">
                                     </noscript>
                                     <img	class="lazyload"	src='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20%20%22%3E%3C/svg%3E'	data-src="/img/2016/08/moneyman.png"	style="width: 110px;">
                                 </a>

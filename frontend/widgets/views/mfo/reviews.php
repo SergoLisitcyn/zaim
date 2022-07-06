@@ -137,5 +137,5 @@ use yii\helpers\Html;
         </div>
     </div>
     <?php ActiveForm::end(); ?>
-    <a href="/mfo-new/<?= $model->url ?>/reviews" class="content-reviews-btn"><?= $model->mfo_name?> туралы барлық пікірлерді қараңыз</a>
+    <a href="/mfo/<?= $model->url ?>/reviews" class="content-reviews-btn"><?= $model->mfo_name?> туралы барлық пікірлерді қараңыз</a>
 </div>

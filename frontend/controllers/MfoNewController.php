@@ -9,6 +9,7 @@ use common\models\Review;
 use common\models\Sale;
 use Yii;
 use common\models\MfoNew;
+use yii\console\Response;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\HttpException;
@@ -35,11 +36,9 @@ class MfoNewController extends Controller
         ];
     }
 
-    public function actionIndex(): string
+    public function actionIndex()
     {
-        return $this->render('index', [
-            'mfo' => Mfo::find()->all(),
-        ]);
+        return Yii::$app->response->redirect(['mfo/reestr-mfo']);
     }
 
     /**
