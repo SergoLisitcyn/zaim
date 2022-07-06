@@ -3,6 +3,7 @@
 
 namespace frontend\controllers;
 
+use common\models\Articles;
 use common\models\City;
 use common\models\Mfo;
 use common\models\News;
@@ -68,7 +69,7 @@ class SitemapController extends Controller
             ];
         }
 
-        $articles = News::find()->where(['status' => 1])->all();
+        $articles = Articles::find()->where(['status' => 1])->all();
         foreach ($articles as $article) {
             $urls[] = [
                 'loc' => 'articles/'.$article->url,
