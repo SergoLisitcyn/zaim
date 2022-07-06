@@ -1,7 +1,6 @@
 <?php
 
-use yii\helpers\Html;
-use yii\grid\GridView;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\ArticlesSearch */
@@ -47,7 +46,7 @@ $this->registerMetaTag(['name' => 'description',
                                 <?php foreach ($news as $article) :?>
                                     <div class="aktsii-list__item">
                                         <div class="news-item">
-                                            <a href="<?= \yii\helpers\Url::toRoute(['news/view', 'url' => $article->url]) ?>" class="aktsii-item__link">
+                                            <a href="<?= Url::toRoute(['news/view', 'url' => $article->url]) ?>" class="aktsii-item__link">
                                                 <div class="news-item__img-wrap">
                                                     <img src="<?= $article->images ?>"
                                                          data-lazy-type="image"
