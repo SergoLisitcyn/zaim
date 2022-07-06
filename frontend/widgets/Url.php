@@ -45,7 +45,9 @@ class Url extends Widget
             $str = trim(Yii::$app->request->pathInfo, " \clients.");
             $linkRu = 'https://smartzaim.kz/'.$str.'clients_support/';
         }
-
+        if(Yii::$app->controller->route == 'banks/index'){
+            $linkRu = 'https://smartzaim.kz/'.Yii::$app->request->pathInfo.'/';
+        }
         return $this->render('url', [
             'linkRu' => $linkRu,
             'output' => $this->output
