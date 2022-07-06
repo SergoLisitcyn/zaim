@@ -65,9 +65,9 @@ if($url == '/'){
                         <div class="header-cab">
                             <div class="desktop-visible" style="display: inline-block;vertical-align: top;text-align: center;line-height: 30px;">Тілі:</div>
                             <?= Url::widget(['output' => 'desktop']); ?>
-                            <div class="desktop-visible" style="color:#337ab7;display: inline-block;vertical-align: top;text-align: center;line-height: 30px;padding-right: 15px;"><b >| KZ</b></div>
-                            <a href="https://smartzaim.kz/lk/login?utm_source=kz.smartzaim.kz" class="header-cab__btn header-cab__btn--outline">Кіру</a>
-                            <a href="https://smartzaim.kz/lk/register?utm_source=kz.smartzaim.kz" class="header-cab__btn desktop-visible">Тіркелу</a>
+                            <div class="desktop-visible" style="color:#337ab7;display: inline-block;vertical-align: top;text-align: center;line-height: 30px;"><b >| KZ</b></div>
+<!--                            <a href="https://smartzaim.kz/lk/login?utm_source=kz.smartzaim.kz" class="header-cab__btn header-cab__btn--outline">Кіру</a>-->
+<!--                            <a href="https://smartzaim.kz/lk/register?utm_source=kz.smartzaim.kz" class="header-cab__btn desktop-visible">Тіркелу</a>-->
                         </div>
                         <div class="header-body__menu-btn desktop-hidden">
                             <button type="button" class="header-menu-btn" id="headerMenuBtn" aria-label="Меню">
