@@ -11,7 +11,7 @@ use yii\helpers\Url;
                     <a href="<?= Url::toRoute(['sale/list', 'url' => $sale->url]) ?>" class="aktsii-item__link">
                         <div class="aktsii-item__img-wrap">
                             <a href="<?= Url::toRoute(['sale/list', 'url' => $sale->url]) ?>">
-                            <img src="<?= $sale->image ?>" data-lazy-type="image" data-lazy-src="<?= $sale->image ?>" alt="" class="lazy aktsii-item__img lazy-loaded" style="opacity: 1;">
+                            <img src="<?= $sale->image ?>" data-lazy-type="image" data-lazy-src="<?= $sale->image ?>" alt="" class="lazy aktsii-item__img lazy-loaded"  style="opacity: 1;">
                             </a>
                             <noscript>
                                 <img src="<?= $sale->image ?>" alt="" class="aktsii-item__img" style="opacity: 1;">
