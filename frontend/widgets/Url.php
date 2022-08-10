@@ -23,33 +23,43 @@ class Url extends Widget
         $links = Links::find()->where(['kz' => $url])->one();
         if($links){
             $linkRu = $links->ru;
+            $linkKz = $links->ru;
         } else {
             $linkRu = 'https://smartzaim.kz/';
+            $linkKz = 'https://kz.smartzaim.kz/';
         }
         if(Yii::$app->request->pathInfo == 'reestr-mfo'){
             $linkRu = 'https://smartzaim.kz/reestr-mfo/?letter=%D0%90';
+            $linkKz = 'https://kz.smartzaim.kz/reestr-mfo';
         }
         if(Yii::$app->controller->route == 'mfo-new/view'){
             $linkRu = 'https://smartzaim.kz/'.Yii::$app->request->pathInfo.'/';
+            $linkKz = 'https://kz.smartzaim.kz/'.Yii::$app->request->pathInfo;
         }
         if(Yii::$app->controller->route == 'mfo-new/login'){
             $linkRu = 'https://smartzaim.kz/'.Yii::$app->request->pathInfo.'/';
+            $linkKz = 'https://kz.smartzaim.kz/'.Yii::$app->request->pathInfo;
         }
         if(Yii::$app->controller->route == 'mfo-new/contacts'){
             $linkRu = 'https://smartzaim.kz/'.Yii::$app->request->pathInfo.'/';
+            $linkKz = 'https://kz.smartzaim.kz/'.Yii::$app->request->pathInfo;
         }
         if(Yii::$app->controller->route == 'mfo-new/reviews'){
             $linkRu = 'https://smartzaim.kz/'.Yii::$app->request->pathInfo.'/';
+            $linkKz = 'https://kz.smartzaim.kz/'.Yii::$app->request->pathInfo;
         }
         if(Yii::$app->controller->route == 'mfo-new/clients'){
             $str = trim(Yii::$app->request->pathInfo, " \clients.");
             $linkRu = 'https://smartzaim.kz/'.$str.'clients_support/';
+            $linkKz = 'https://kz.smartzaim.kz/'.$str.'clients_support';
         }
         if(Yii::$app->controller->route == 'banks/index'){
             $linkRu = 'https://smartzaim.kz/'.Yii::$app->request->pathInfo.'/';
+            $linkKz = 'https://kz.smartzaim.kz/'.Yii::$app->request->pathInfo.'/';
         }
         return $this->render('url', [
             'linkRu' => $linkRu,
+            'linkKz' => $linkKz,
             'output' => $this->output
 
         ]);
