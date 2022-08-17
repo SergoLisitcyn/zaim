@@ -21,7 +21,6 @@ class Url extends Widget
         $url = explode('?', $url);
         $url = $url[0];
         $links = Links::find()->where(['kz' => $url])->one();
-        var_dump($links);die;
         if($links){
             $linkRu = $links->ru;
             $linkKz = $links->ru;
