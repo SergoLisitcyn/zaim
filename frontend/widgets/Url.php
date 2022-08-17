@@ -28,6 +28,9 @@ class Url extends Widget
             $linkRu = 'https://smartzaim.kz/';
             $linkKz = 'https://kz.smartzaim.kz/';
         }
+        if(Yii::$app->controller->id == 'site' && Yii::$app->controller->action->id == 'index'){
+            $linkKz = 'https://kz.smartzaim.kz/';
+        }
 
         if(Yii::$app->request->pathInfo == 'reestr-mfo'){
             $linkRu = 'https://smartzaim.kz/reestr-mfo/?letter=%D0%90';
