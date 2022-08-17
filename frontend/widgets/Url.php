@@ -21,6 +21,7 @@ class Url extends Widget
         $url = explode('?', $url);
         $url = $url[0];
         $links = Links::find()->where(['kz' => $url])->one();
+        var_dump($links);die;
         if($links){
             $linkRu = $links->ru;
             $linkKz = $links->ru;
@@ -28,6 +29,7 @@ class Url extends Widget
             $linkRu = 'https://smartzaim.kz/';
             $linkKz = 'https://kz.smartzaim.kz/';
         }
+
         if(Yii::$app->request->pathInfo == 'reestr-mfo'){
             $linkRu = 'https://smartzaim.kz/reestr-mfo/?letter=%D0%90';
             $linkKz = 'https://kz.smartzaim.kz/reestr-mfo';
