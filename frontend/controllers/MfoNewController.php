@@ -185,42 +185,42 @@ class MfoNewController extends Controller
     /**
      * @throws HttpException
      */
-    public function actionContacts($url)
-    {
-        if(!$url) throw new HttpException(404, 'Страница не существует.');
-
-        $version = 'KZ';
-        if(isset($_GET) && isset($_GET['version']) && $_GET['version'] == 'ru') $version = 'RU';
-
-        $mfo = Mfo::find()->where(['url' => $url])->one();
-        if(!$mfo) throw new HttpException(404, 'Страница не существует.');
-
-        $data = unserialize($mfo->data_kz);
-        $mfoDatas = Mfo::getMfoDatas($version);
-        if($version == 'RU'){
-            $data = unserialize($mfo->data_ru);
-        }
-        $clientsPageView = Mfo::getSocialViewClients($data);
-        if(isset($_POST['email_unisender'])){
-            (new MainPage)->unisender($_POST['email_unisender']);
-            return $this->refresh();
-        }
-        $model = new Review();
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->session->setFlash('successMfoView', 'Сіздің пікіріңіз жіберілді. Хабарласқаныңыз үшін рахмет!');
-            return $this->refresh();
-        } else {
-            return $this->render('contacts', [
-                'model' => $mfo,
-                'data' => $data,
-                'dataMfo' => $mfoDatas['dataMfo'],
-                'dataMenu' => $mfoDatas['dataMenu'],
-                'dataTag' => $mfoDatas['dataTag'],
-                'reviewsModel' => $model,
-                'clientsPageView' => $clientsPageView,
-            ]);
-        }
-    }
+//    public function actionContacts($url)
+//    {
+//        if(!$url) throw new HttpException(404, 'Страница не существует.');
+//
+//        $version = 'KZ';
+//        if(isset($_GET) && isset($_GET['version']) && $_GET['version'] == 'ru') $version = 'RU';
+//
+//        $mfo = Mfo::find()->where(['url' => $url])->one();
+//        if(!$mfo) throw new HttpException(404, 'Страница не существует.');
+//
+//        $data = unserialize($mfo->data_kz);
+//        $mfoDatas = Mfo::getMfoDatas($version);
+//        if($version == 'RU'){
+//            $data = unserialize($mfo->data_ru);
+//        }
+//        $clientsPageView = Mfo::getSocialViewClients($data);
+//        if(isset($_POST['email_unisender'])){
+//            (new MainPage)->unisender($_POST['email_unisender']);
+//            return $this->refresh();
+//        }
+//        $model = new Review();
+//        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+//            Yii::$app->session->setFlash('successMfoView', 'Сіздің пікіріңіз жіберілді. Хабарласқаныңыз үшін рахмет!');
+//            return $this->refresh();
+//        } else {
+//            return $this->render('contacts', [
+//                'model' => $mfo,
+//                'data' => $data,
+//                'dataMfo' => $mfoDatas['dataMfo'],
+//                'dataMenu' => $mfoDatas['dataMenu'],
+//                'dataTag' => $mfoDatas['dataTag'],
+//                'reviewsModel' => $model,
+//                'clientsPageView' => $clientsPageView,
+//            ]);
+//        }
+//    }
 
     public function actionReviews($url)
     {

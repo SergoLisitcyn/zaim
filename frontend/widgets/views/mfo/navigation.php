@@ -31,11 +31,11 @@ if($active == 'reviews') $reviews = 'active';
         </a>
     </li>
     <?php endif; ?>
-    <li class="<?= $contacts ?>">
-        <a href="<?= Url::toRoute(['mfo-new/contacts', 'url' => $model->url]) ?>">
-            <span><?= $dataMenu['block_4'] ?></span>
-        </a>
-    </li>
+<!--    <li class="--><?php //$contacts ?><!--">-->
+<!--        <a href="--><?php //Url::toRoute(['mfo-new/contacts', 'url' => $model->url]) ?><!--">-->
+<!--            <span>--><?php //$dataMenu['block_4'] ?><!--</span>-->
+<!--        </a>-->
+<!--    </li>-->
     <li class="<?= $reviews ?>">
         <a href="<?= Url::toRoute(['mfo-new/reviews', 'url' => $model->url]) ?>">
             <span>Пікірлер</span>

@@ -117,11 +117,11 @@ return [
                     'route' => '/mfo-new/clients',
                     'defaults' => ['url' => '']
                 ],
-                [
-                    'pattern' => 'mfo/<url:\S+>/contacts',
-                    'route' => '/mfo-new/contacts',
-                    'defaults' => ['url' => '']
-                ],
+//                [
+//                    'pattern' => 'mfo/<url:\S+>/contacts',
+//                    'route' => '/mfo-new/contacts',
+//                    'defaults' => ['url' => '']
+//                ],
                 [
                     'pattern' => 'mfo/<url:\S+>/reviews',
                     'route' => '/mfo-new/reviews',

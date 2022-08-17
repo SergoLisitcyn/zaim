@@ -1,7 +1,7 @@
 <?php if($output == 'hreflang') { ?>
-    <link rel="alternate" href="<?php echo $linkRu?>" hreflang="ru-kz">
+    <link rel="alternate" href="<?php echo $linkRu ?>" hreflang="ru-kz">
     <link rel="alternate" href="<?php echo $linkKz ?>" hreflang="kk-kz">
-    <link rel="alternate" href="<?php echo $linkKz ?>" hreflang="x-default">
+    <link rel="alternate" href="<?php echo $linkRu ?>" hreflang="x-default">
 <?php } else { ?>
     <?php if($output == 'desktop') { ?>
     <a class="desktop-visible" href="<?php echo $linkRu?>" style="display: inline-block;vertical-align: top;text-align: center;line-height: 30px;">RU</a>

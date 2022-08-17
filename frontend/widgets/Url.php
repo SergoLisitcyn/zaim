@@ -32,6 +32,10 @@ class Url extends Widget
             $linkRu = 'https://smartzaim.kz/reestr-mfo/?letter=%D0%90';
             $linkKz = 'https://kz.smartzaim.kz/reestr-mfo';
         }
+        if(Yii::$app->request->pathInfo == 'reestr-mfo' && isset($_GET['page'])){
+            $linkRu = 'https://smartzaim.kz/'.Yii::$app->request->pathInfo.'/?letter='.$_GET['page'];
+            $linkKz = 'https://kz.smartzaim.kz/'.Yii::$app->request->pathInfo.'?page='.$_GET['page'];
+        }
         if(Yii::$app->controller->route == 'mfo-new/view'){
             $linkRu = 'https://smartzaim.kz/'.Yii::$app->request->pathInfo.'/';
             $linkKz = 'https://kz.smartzaim.kz/'.Yii::$app->request->pathInfo;
@@ -51,11 +55,11 @@ class Url extends Widget
         if(Yii::$app->controller->route == 'mfo-new/clients'){
             $str = trim(Yii::$app->request->pathInfo, " \clients.");
             $linkRu = 'https://smartzaim.kz/'.$str.'clients_support/';
-            $linkKz = 'https://kz.smartzaim.kz/'.$str.'clients_support';
+            $linkKz = 'https://kz.smartzaim.kz/'.$str.'clients';
         }
         if(Yii::$app->controller->route == 'banks/index'){
             $linkRu = 'https://smartzaim.kz/'.Yii::$app->request->pathInfo.'/';
-            $linkKz = 'https://kz.smartzaim.kz/'.Yii::$app->request->pathInfo.'/';
+            $linkKz = 'https://kz.smartzaim.kz/'.Yii::$app->request->pathInfo;
         }
         return $this->render('url', [
             'linkRu' => $linkRu,
