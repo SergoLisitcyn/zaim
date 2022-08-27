@@ -37,8 +37,14 @@ if($active == 'reviews') $reviews = 'active';
 <!--        </a>-->
 <!--    </li>-->
     <li class="<?= $reviews ?>">
+        <?php if($countReview > 0) : ?>
         <a href="<?= Url::toRoute(['mfo-new/reviews', 'url' => $model->url]) ?>">
-            <span>Пікірлер</span>
+            <span>Пікірлер(<?= $countReview ?>)</span>
         </a>
+        <?php else: ?>
+        <a href="<?= Url::toRoute(['mfo-new/view', 'url' => $model->url,'#'=>'reviews']) ?>">
+            <span>ПІКІРДІ ЖАРИЯЛАУ</span>
+        </a>
+        <?php endif; ?>
     </li>
 </ul>

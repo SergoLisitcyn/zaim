@@ -3,7 +3,7 @@ use kartik\rating\StarRating;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 ?>
-<div class="content-reviews">
+<div class="content-reviews" id="reviews">
     <h2 class="content-reviews-title"><?= $model->mfo_name ?> туралы пікірлер</h2>
     <?php if($reviews) : ?>
         <?php foreach ($reviews as $review) : ?>

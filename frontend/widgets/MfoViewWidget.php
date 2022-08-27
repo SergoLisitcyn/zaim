@@ -4,6 +4,7 @@ namespace frontend\widgets;
 
 use common\models\Mfo;
 use common\models\MfoData;
+use common\models\Review;
 use yii\bootstrap\Widget;
 
 class MfoViewWidget  extends Widget
@@ -35,6 +36,8 @@ class MfoViewWidget  extends Widget
             $dataTag = unserialize($mfoDatas->data_tag);
         }
         if($this->navigation){
+            $countReview = Review::getReviewMfo($this->model->id,null,true);
+
             return $this->render('mfo/'.$this->type,[
                 'model' => $this->model,
                 'data' => $this->data,
@@ -42,6 +45,7 @@ class MfoViewWidget  extends Widget
                 'dataMfo' => $dataMfo,
                 'dataMenu' => $dataMenu,
                 'clientsPageView' => $this->clientsPageView,
+                'countReview' => $countReview,
             ]);
         }
         if($this->type == 'reviews'){

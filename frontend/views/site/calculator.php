@@ -24,28 +24,28 @@ $this->registerMetaTag(['name' => 'description','content' => 'Қазақстан
     <h3 class="descr">Онлайн қарыз алу үшін, кредиттік ұйымдарға берілетін өтінім санын барынша көбірек толтырыңыз:</h3>
 </section>
 
-<?= CalculatorWidget::widget() ?>
+<?php //echo CalculatorWidget::widget() ?>
 
 
 <?php echo GridCatalog::widget(['input' => 'calculator']); ?>
 
-<section class="subscribe-main plr mt18">
-    <div class="subscribe-main-wrap limit-width">
-        <form name="subscribtion_form">
-            <h2>Акцияға жазылу</h2>
-            <div class="subscribe_text_item">
-                <span>Жазылушылар үшін бізде жеке жеңілдіктер болады!</span>
-                <br>
-                <span>Бірінші болып білгіңіз келе ме?</span>
-            </div>
-            <div class="subscribe_input_item">
-                <input id="subscribe_email" class="subscribe-input" placeholder="E-mail" type="text" name="email" value="">
-                <input id="subscribe_phone" class="subscribe-input" placeholder="Телефон (міндетті емес)" type="text" name="phone" value="">
-                <input class="subscribe-btn" type="submit" value="Қол қою">
-            </div>
-        </form>
-    </div>
-</section>
+<!--<section class="subscribe-main plr mt18">-->
+<!--    <div class="subscribe-main-wrap limit-width">-->
+<!--        <form name="subscribtion_form">-->
+<!--            <h2>Акцияға жазылу</h2>-->
+<!--            <div class="subscribe_text_item">-->
+<!--                <span>Жазылушылар үшін бізде жеке жеңілдіктер болады!</span>-->
+<!--                <br>-->
+<!--                <span>Бірінші болып білгіңіз келе ме?</span>-->
+<!--            </div>-->
+<!--            <div class="subscribe_input_item">-->
+<!--                <input id="subscribe_email" class="subscribe-input" placeholder="E-mail" type="text" name="email" value="">-->
+<!--                <input id="subscribe_phone" class="subscribe-input" placeholder="Телефон (міндетті емес)" type="text" name="phone" value="">-->
+<!--                <input class="subscribe-btn" type="submit" value="Қол қою">-->
+<!--            </div>-->
+<!--        </form>-->
+<!--    </div>-->
+<!--</section>-->
 
 <section class="faq plr">
     <div class="faq-wrap limit-width">

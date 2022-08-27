@@ -21,7 +21,7 @@ $this->title = 'Рейтинг лучших МФО — smartzaim.kz';
     <h3 class="descr">Онлайн қарыз алу үшін, кредиттік ұйымдарға берілетін өтінім санын барынша көбірек толтырыңыз:</h3>
 </section>
 
-<?= CalculatorWidget::widget() ?>
+<?php //echo CalculatorWidget::widget() ?>
 
 <section class="offers-rating plr">
     <div class="offers-rating-wrap limit-width">

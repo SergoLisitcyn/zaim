@@ -63,6 +63,9 @@ class MfoController extends Controller
             }
         } else {
             $mfoAll = Mfo::findMfoByLetter($q);
+            if(!$mfoAll && $q != 1){
+                throw new HttpException(404, 'Страница не существует.');
+            }
         }
 
         return $this->render('reestr-mfo', [
