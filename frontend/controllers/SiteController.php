@@ -284,10 +284,10 @@ class SiteController extends Controller
     }
 
 
-    public function actionCalculator()
-    {
-        return $this->render('calculator');
-    }
+//    public function actionCalculator()
+//    {
+//        return $this->render('calculator');
+//    }
 
     /**
      * @throws HttpException

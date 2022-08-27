@@ -52,7 +52,7 @@ return [
                 'aktsii/arhiv' => '/sale/arhiv',
                 'articles' => '/articles/index',
                 'news' => '/news/index',
-                'kreditnyj-kalkulyator' => '/site/calculator',
+//                'kreditnyj-kalkulyator' => '/site/calculator',
                 'rating' => '/site/rating',
                 'unisender' => '/site/unisender',
                 'unisender_mfo' => '/mfo/unisender',
