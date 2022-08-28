@@ -117,7 +117,7 @@ class MfoNewController extends Controller
         $version = 'KZ';
         if(isset($_GET) && isset($_GET['version']) && $_GET['version'] == 'ru') $version = 'RU';
         $mfo = Mfo::find()->where(['url' => $url])->one();
-        if(!$mfo || $mfo->login_content) throw new HttpException(404, 'Страница не существует.');
+        if(!$mfo || !$mfo->login_content) throw new HttpException(404, 'Страница не существует.');
         $data = unserialize($mfo->data_kz);
         $mfoDatas = Mfo::getMfoDatas($version);
 
