@@ -306,7 +306,7 @@
     .mfo_card_info_rating_data {
         text-align: center;
         float: none!important;
-        margin: 0 auto!important;
+        /*margin: 0 auto!important;*/
     }
     .offer-row-col {
         float: left;
