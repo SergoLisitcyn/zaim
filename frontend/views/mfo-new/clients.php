@@ -43,7 +43,7 @@ if(isset($data['seo']['clients_description']) and !empty($data['seo']['clients_d
                         <div class="mfo-clients">
                             <?php if($data['seo']['h1']) :  ?>
                                 <h1 style="font-size: 32px;line-height: 41px;font-family: 'Open Sans', sans-serif;">
-                                    <?= $data['seo']['h1'] ?>
+                                    Жедел желі <?=  $data['seo']['h1'] ?>
                                 </h1>
                             <?php endif; ?>
                             <?php if($data['clients']['rules']) : ?>
@@ -227,8 +227,62 @@ if(isset($data['seo']['clients_description']) and !empty($data['seo']['clients_d
                             </div>
                             <?php endif; ?>
                         </div>
+                        <?php if(!$model->login_content) : ?>
+                        <div class="blocks-content-text login_clients">
 
+                            <?php if($data['seo']['h1']) :  ?>
+                                <h2>
+                                    Жеке кабинет <?=  $data['seo']['h1'] ?>
+                                </h2>
+                            <?php endif; ?>
+                            <div class="mfo-about__table">
+                                <div class="mfo-about__columns">
+                                    <?php if($data['login']['lk']) : ?>
+                                        <div class="mfo-about__col">
+                                            <div class="mfo-about__col-left">
+                                                <?= $dataMfo['mfo']['login']['lk'] ?>
+                                            </div>
+                                            <div class="mfo-about__col-right">
+                                                <?= $data['login']['lk'] ?>
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                            <div class="content-text-items">
+                                <?php if($data['login']['phone']) :  ?>
+                                    <div class="content-text-item">
+                                        <div class="content-text-item-img">
+                                            <img src="/img/svg-icons/mobile.svg" alt="<?= $dataMfo['mfo']['login']['phone'] ?>">
+                                        </div>
+                                        <span><?= $dataMfo['mfo']['login']['phone'] ?></span>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if($data['login']['email']) :  ?>
+                                    <div class="content-text-item">
+                                        <div class="content-text-item-img">
+                                            <img src="/img/svg-icons/mail.svg" alt="<?= $dataMfo['mfo']['login']['email'] ?>">
+                                        </div>
+                                        <span><?= $dataMfo['mfo']['login']['email'] ?></span>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if($data['login']['inn']) :  ?>
+                                    <div class="content-text-item">
+                                        <div class="content-text-item-img">
+                                            <img src="/img/svg-icons/inn.svg" alt="<?= $dataMfo['mfo']['login']['inn'] ?>">
+                                        </div>
+                                        <span><?= $dataMfo['mfo']['login']['inn'] ?></span>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                        <?php endif; ?>
                         <div class="mfo-about bank-mfo-about" style="padding-top: 0">
+                            <?php if($data['seo']['h1']) :  ?>
+                                <h2>
+                                    Байланыстар <?=  $data['seo']['h1'] ?>
+                                </h2>
+                            <?php endif; ?>
                             <div class="mfo-about__table">
                                 <div class="mfo-about__columns">
                                     <?php if($data['contacts']['address']) : ?>
