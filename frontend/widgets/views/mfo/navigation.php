@@ -17,7 +17,7 @@ if($active == 'reviews') $reviews = 'active';
             <span><?= $dataMenu['block_1'] ?></span>
         </a>
     </li>
-    <?php if($data['login']['lk']) :  ?>
+    <?php if($data['login']['lk'] && $model->login_content) :  ?>
         <li class="<?= $login ?>">
             <a href="<?= Url::toRoute(['mfo-new/login', 'url' => $model->url]) ?>">
                 <span><?= $dataMenu['block_2'] ?></span>
