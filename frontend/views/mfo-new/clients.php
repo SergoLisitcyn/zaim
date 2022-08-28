@@ -277,7 +277,7 @@ if(isset($data['seo']['clients_description']) and !empty($data['seo']['clients_d
                             </div>
                         </div>
                         <?php endif; ?>
-                        <div class="mfo-about bank-mfo-about" style="padding-top: 0">
+                        <div class="mfo-about bank-mfo-about">
                             <?php if($data['seo']['h1']) :  ?>
                                 <h2>
                                     Байланыстар <?=  $data['seo']['h1'] ?>
