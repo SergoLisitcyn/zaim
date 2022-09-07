@@ -10,8 +10,11 @@ use common\models\TypeCredit;
             <ul class="header-nav__list-l2">
                 <?php foreach ($typeCredits as $typeCredit): ?>
                 <li class="header-nav__item-l2">
+
                     <?php
-                    $url = $typeCredit->url;
+                    /*
+                   $url = $typeCredit->url;
+
                     if($url == 'zajm-60-dnej'){
                         $url = 'https://smartzaim.kz/zajm-60-dnej/';
                         ?>
@@ -21,9 +24,9 @@ use common\models\TypeCredit;
                     <?php } else { ?>
                     <a href="/<?= $url ?>" class="header-nav__link-l2"><?= $typeCredit->name?></a>
                     <?php }
-
+*/
                     ?>
-
+                    <a href="/<?= $typeCredit->url ?>" class="header-nav__link-l2"><?= $typeCredit->name?></a>
                 </li>
                 <?php endforeach; ?>
             </ul>

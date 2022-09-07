@@ -511,11 +511,6 @@
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://kz.smartzaim.kz/reestr-mfo?page=</loc>
-        <lastmod>2022-04-30T20:28:47+00:00</lastmod>
-        <priority>0.80</priority>
-    </url>
-    <url>
         <loc>https://kz.smartzaim.kz/reestr-mfo?page=q-kz</loc>
         <lastmod>2022-04-30T20:28:47+00:00</lastmod>
         <priority>0.80</priority>
