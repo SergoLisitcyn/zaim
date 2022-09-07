@@ -87,7 +87,11 @@ class SitemapController extends Controller
             ];
         }
 
-        $mfosLogin = Mfo::find()->where(['not', ['data_kz' => null]])->all();
+        $mfosLogin = Mfo::find()
+            ->where(['not', ['data_kz' => null]])
+            ->andWhere(['not', ['login_content' => null]])
+            ->all();
+
         foreach ($mfosLogin as $mfoLogin) {
             $urls[] = [
                 'loc' => 'mfo/'.$mfoLogin->url.'/login',
