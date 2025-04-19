@@ -165,19 +165,19 @@ if (isset($model->description) && !empty($model->description)) $this->registerMe
                         </div>
                     </div>
                 </div>
-                <div class="mfo_card">
-                    <form	class="subscribtion_form subscribtion_form-second" action="/news/<?= $model->url ?>" method="post">
-                        <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
-                        <div	class="aside-subscribe-text">Арнайы ұсыныстар мен акциялар <br>туралы бірінші білгіңіз <br> келе ме?</div>
-                        <div	class="email_sidebar_container">
-                            <div	class="subscribe-sidebar-item subscribe-sidebar-item--input-email">
-                                <input	class="subscribe-sidebar-item__control subscribe-sidebar-item__control--input-email"	placeholder="Email"	type="text"	name="email"	value=""></div>
-                            <div	class="subscribe-sidebar-item subscribe-sidebar-item--btn-submit">
-                                <input	class="subscribe-sidebar-item__btn subscribe-sidebar-item__btn--btn-submit"	type="submit"	value="Қол қою">
-                            </div>
-                        </div>
-                    </form>
-                </div>
+<!--                <div class="mfo_card">-->
+<!--                    <form	class="subscribtion_form subscribtion_form-second" action="/news/--><?php //= $model->url ?><!--" method="post">-->
+<!--                        <input type="hidden" name="_csrf" value="--><?php //=Yii::$app->request->getCsrfToken()?><!--" />-->
+<!--                        <div	class="aside-subscribe-text">Арнайы ұсыныстар мен акциялар <br>туралы бірінші білгіңіз <br> келе ме?</div>-->
+<!--                        <div	class="email_sidebar_container">-->
+<!--                            <div	class="subscribe-sidebar-item subscribe-sidebar-item--input-email">-->
+<!--                                <input	class="subscribe-sidebar-item__control subscribe-sidebar-item__control--input-email"	placeholder="Email"	type="text"	name="email"	value=""></div>-->
+<!--                            <div	class="subscribe-sidebar-item subscribe-sidebar-item--btn-submit">-->
+<!--                                <input	class="subscribe-sidebar-item__btn subscribe-sidebar-item__btn--btn-submit"	type="submit"	value="Қол қою">-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </form>-->
+<!--                </div>-->
             </sidebar>
         </div>
     </div>
