@@ -38,16 +38,29 @@ if (isset($model->description) && !empty($model->description)) $this->registerMe
                     <div class="content-main-info">
                         <div class="content-main-info__item" style="padding: 0">
                             <h1 style="text-align: center;color: #146696!important;font-family: inherit;font-weight: 700;margin: 0 40px 25px;"><?= $model->name ?></h1>
-                            <div class="email_container">
-                                <div class="text_top_subscribe_container">Сілтемеге жазылыңыз және акциялар мен арнайы<br> ұсыныстар туралы алғашқылардың бірі болып біліңіз</div>
-                                <div class="subscribe-top-item-wrap">
-                                    <div	class="subscribe-top-item subscribe-top-item--input-email">
-                                        <input	class="subscribe-top-item__control subscribe-top-item__control--input-email"	placeholder="Email"	type="text"	name="email"	value=""></div>
-                                    <div	class="subscribe-top-item subscribe-top-item--btn-submit">
-                                        <input	class="subscribe-top-item__btn subscribe-top-item__btn--btn-submit"	type="submit"	value="Қол қою">
+<!--                            <div class="email_container">-->
+<!--                                <div class="text_top_subscribe_container">Сілтемеге жазылыңыз және акциялар мен арнайы<br> ұсыныстар туралы алғашқылардың бірі болып біліңіз</div>-->
+<!--                                <div class="subscribe-top-item-wrap">-->
+<!--                                    <div	class="subscribe-top-item subscribe-top-item--input-email">-->
+<!--                                        <input	class="subscribe-top-item__control subscribe-top-item__control--input-email"	placeholder="Email"	type="text"	name="email"	value=""></div>-->
+<!--                                    <div	class="subscribe-top-item subscribe-top-item--btn-submit">-->
+<!--                                        <input	class="subscribe-top-item__btn subscribe-top-item__btn--btn-submit"	type="submit"	value="Қол қою">-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+                            <?php if($model->sale_url) : ?>
+                                <div class="sale-block">
+                                    <div class="sale-block-text">
+                                        Бірнеше минуттан кейін ақша!
+                                        <br>
+                                        Онлайн МҚҰ-да жедел түрде ақша ала аласыз. Ақшаны бірнеше минут ішінде алу үшін
+                                        біздің сайтта ұсынылған компанияларда онлайн өтінімді толтырыңыз.
+                                    </div>
+                                    <div class="sale-block-button">
+                                        <a href="<?= $model->sale_url ?>" target="_blank">Ақшаны алу</a>
                                     </div>
                                 </div>
-                            </div>
+                            <?php endif; ?>
                             <div class="aktsii-article__content articles_news">
                                 <?= $model->content ?>
                                 <?php if($author) : ?>

@@ -71,6 +71,7 @@ use \common\models\Author;
 
         ]
     ])?>
+    <?= $form->field($model, 'sale_url')->textInput() ?>
 
     <?php echo $form->field($model, 'user_id',['options'=>['class'=>'col-xs-12','style'=>'padding-left:0']])->widget(Select2::classname(), [
         'data' => ArrayHelper::map(Author::find()->all(),'id','name'),
@@ -89,6 +90,7 @@ use \common\models\Author;
     <?= $form->field($model, 'title_seo')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
+
 
     <?= $form->field($model, 'user_id')->textInput() ?>
 

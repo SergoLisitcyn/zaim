@@ -2628,3 +2628,47 @@ input.subscribe-sidebar-item__btn.subscribe-sidebar-item__btn--btn-submit {
 /*.page-numbers-news{*/
 /*    */
 /*}*/
+.sale-block{
+    padding: 20px 40px;
+    background: #fda729;
+    margin-top: 20px;
+}
+
+.sale-block-text{
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.sale-block-button{
+    /*display: block;*/
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 6px 12px;
+    color: #fba828;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    transition: .2s;
+}
+
+.sale-block-button a{
+    color: #fba828;
+}
+
+.sale-block-button {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* по вертикали, если нужно */
+}
+
+.sale-block-button a {
+    width: 200px;
+    padding: 10px 20px;
+    text-align: center;
+    background-color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}

@@ -16,6 +16,11 @@ if(isset($data['seo']['title']) and !empty($data['seo']['title'])) {
 if(isset($data['seo']['description']) and !empty($data['seo']['description'])) {
     $this->registerMetaTag(['name' => 'description','content' => $data['seo']['description']]);
 }
+
+$url = $model->link_offer;
+if(isset($data['sale']['url'])){
+    $url = 'https://'.$data['sale']['url'];
+}
 YiiAsset::register($this);
 ?>
 <section class="breadcrumbs plr">
@@ -62,7 +67,7 @@ YiiAsset::register($this);
                         <div class="content-main-info__item">
                             <div class="mfo-head-logo">
                                 <?php if($model->logo) : ?>
-                                    <a href="<?= $model->link_offer ?>">
+                                    <a href="<?= $url ?>">
                                         <noscript>
                                             <img	src="<?= $model->logo?>">
                                         </noscript>
@@ -78,6 +83,17 @@ YiiAsset::register($this);
                         </div>
                     </div>
                     <div class="content-main-info__content">
+                        <?php if($data['sale']['active'] == '+') : ?>
+                        <div class="sale-block">
+                              <div class="sale-block-text">
+                                  <?= $data['sale']['text_top'] ?><br>
+                                  <?= $data['sale']['text_bottom'] ?>
+                              </div>
+                            <div class="sale-block-button">
+                                <a href="https://<?= $data['sale']['url'] ?>" target="_blank">Ақшаны алу</a>
+                            </div>
+                        </div>
+                        <?php endif; ?>
                         <?php if($sale) : ?>
                             <div class="akciya-container">
                                 <div class="akciya-container-item">

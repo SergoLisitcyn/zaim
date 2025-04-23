@@ -34,16 +34,16 @@ $this->registerMetaTag(['name' => 'description',
                     <div class="content-main-info">
                         <div class="content-main-info__item">
                             <h1>📰 Акциялар мұрағаты</h1>
-                            <div class="email_container">
-                                <div class="text_top_subscribe_container">Сілтемеге жазылыңыз және акциялар мен арнайы<br> ұсыныстар туралы алғашқылардың бірі болып біліңіз</div>
-                                <div class="subscribe-top-item-wrap">
-                                    <div	class="subscribe-top-item subscribe-top-item--input-email">
-                                        <input	class="subscribe-top-item__control subscribe-top-item__control--input-email"	placeholder="Email"	type="text"	name="email"	value=""></div>
-                                    <div	class="subscribe-top-item subscribe-top-item--btn-submit">
-                                        <input	class="subscribe-top-item__btn subscribe-top-item__btn--btn-submit"	type="submit"	value="Қол қою">
-                                    </div>
-                                </div>
-                            </div>
+<!--                            <div class="email_container">-->
+<!--                                <div class="text_top_subscribe_container">Сілтемеге жазылыңыз және акциялар мен арнайы<br> ұсыныстар туралы алғашқылардың бірі болып біліңіз</div>-->
+<!--                                <div class="subscribe-top-item-wrap">-->
+<!--                                    <div	class="subscribe-top-item subscribe-top-item--input-email">-->
+<!--                                        <input	class="subscribe-top-item__control subscribe-top-item__control--input-email"	placeholder="Email"	type="text"	name="email"	value=""></div>-->
+<!--                                    <div	class="subscribe-top-item subscribe-top-item--btn-submit">-->
+<!--                                        <input	class="subscribe-top-item__btn subscribe-top-item__btn--btn-submit"	type="submit"	value="Қол қою">-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
                             <div class="aktsii-list__container">
                                 <?php foreach ($sales as $sale) :?>
                                 <div class="aktsii-list__item">

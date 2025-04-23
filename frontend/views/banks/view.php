@@ -98,6 +98,17 @@ YiiAsset::register($this);
                         </div>
                     </div>
                     <div class="content-main-info__content">
+                        <?php if(isset($data['sale']['active']) && $data['sale']['active'] == '+') : ?>
+                            <div class="sale-block">
+                                <div class="sale-block-text">
+                                    <?= $data['sale']['text_top'] ?><br>
+                                    <?= $data['sale']['text_bottom'] ?>
+                                </div>
+                                <div class="sale-block-button">
+                                    <a href="https://<?= $data['sale']['url'] ?>" target="_blank">Ақшаны алу</a>
+                                </div>
+                            </div>
+                        <?php endif; ?>
                         <div class="mfo-about">
                             <h2 class="mfo-about-title info-subtitle">О банке</h2>
                             <div class="mfo-about-text">
@@ -453,7 +464,7 @@ YiiAsset::register($this);
                         </div>
                     </div>
                     <?php ActiveForm::end(); ?>
-                    <a href="/banks/<?= $model->url ?>/reviews" class="content-reviews-btn"><?= $model->name?> туралы барлық пікірлерді қараңыз</a>
+<!--                    <a href="/banks/--><?php //= $model->url ?><!--/reviews" class="content-reviews-btn">--><?php //= $model->name?><!-- туралы барлық пікірлерді қараңыз</a>-->
                 </div>
             </div>
 

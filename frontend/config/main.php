@@ -13,6 +13,9 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
+        'assetManager' => [
+            'appendTimestamp' => true,
+        ],
         'request' => [
             'baseUrl' => '',
 //            'csrfParam' => '_csrf-frontend',

@@ -768,6 +768,10 @@ class Mfo extends ActiveRecord
                 if(isset($value[161]) && $value[161]){
                     $data['banklink'] = $value[161];
                 }
+                $data['sale']['text_top'] = $value[163];
+                $data['sale']['text_bottom'] = $value[164];
+                $data['sale']['url'] = $value[165];
+                $data['sale']['active'] = $value[166];
 
                 if($version == 'RU' && !$mfo){
                     $model->status = 0;

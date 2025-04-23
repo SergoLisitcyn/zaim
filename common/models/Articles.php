@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 use yii\helpers\FileHelper;
 use yii\web\UploadedFile;
 
@@ -17,11 +18,12 @@ use yii\web\UploadedFile;
  * @property string $url
  * @property string|null $title_seo
  * @property string|null $description
+ * @property string|null $sale_url
  * @property int|null $user_id
  * @property int|null $sort
  * @property int|null $status
  */
-class Articles extends \yii\db\ActiveRecord
+class Articles extends ActiveRecord
 {
     public $mainfile;
 
@@ -63,7 +65,7 @@ class Articles extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'date_publish', 'url'], 'required'],
-            [['content'], 'string'],
+            [['content','sale_url'], 'string'],
             [['user_id', 'sort', 'status'], 'integer'],
             [['name', 'preview_image', 'date_publish', 'url', 'title_seo', 'description'], 'string', 'max' => 255],
             [['mainfile'], 'file'],
@@ -88,6 +90,7 @@ class Articles extends \yii\db\ActiveRecord
             'sort' => 'Сортировка',
             'status' => 'Статус',
             'mainfile' => 'Главная картинка',
+            'sale_url' => 'Партнерская ссылка',
         ];
     }
 }

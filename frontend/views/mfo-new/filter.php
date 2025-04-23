@@ -149,18 +149,18 @@ if($tag){
                 </div>
             </div>
             <sidebar class="content-sidebar">
-                <div class="mfo_card">
-                    <form	class="subscribtion_form subscribtion_form-second">
-                        <div	class="aside-subscribe-text">Вы хотите первыми узнавать	<br> о специальных	предложениях <br> и акциях?</div>
-                        <div	class="email_sidebar_container">
-                            <div	class="subscribe-sidebar-item subscribe-sidebar-item--input-email">
-                                <input	class="subscribe-sidebar-item__control subscribe-sidebar-item__control--input-email"	placeholder="Email"	type="text"	name="email"	value=""></div>
-                            <div	class="subscribe-sidebar-item subscribe-sidebar-item--btn-submit">
-                                <input	class="subscribe-sidebar-item__btn subscribe-sidebar-item__btn--btn-submit"	type="submit"	value="Подписаться">
-                            </div>
-                        </div>
-                    </form>
-                </div>
+<!--                <div class="mfo_card">-->
+<!--                    <form	class="subscribtion_form subscribtion_form-second">-->
+<!--                        <div	class="aside-subscribe-text">Вы хотите первыми узнавать	<br> о специальных	предложениях <br> и акциях?</div>-->
+<!--                        <div	class="email_sidebar_container">-->
+<!--                            <div	class="subscribe-sidebar-item subscribe-sidebar-item--input-email">-->
+<!--                                <input	class="subscribe-sidebar-item__control subscribe-sidebar-item__control--input-email"	placeholder="Email"	type="text"	name="email"	value=""></div>-->
+<!--                            <div	class="subscribe-sidebar-item subscribe-sidebar-item--btn-submit">-->
+<!--                                <input	class="subscribe-sidebar-item__btn subscribe-sidebar-item__btn--btn-submit"	type="submit"	value="Подписаться">-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </form>-->
+<!--                </div>-->
                 <?= MfoViewWidget::widget(['type' => 'sideBarRating']) ?>
             </sidebar>
         </div>

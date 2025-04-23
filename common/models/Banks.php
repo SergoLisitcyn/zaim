@@ -284,6 +284,14 @@ class Banks extends \yii\db\ActiveRecord
                 $data['contacts']['h1'] = $value[59].' '.$value[50];
                 $data['contacts']['title'] = $value[50].' '.$value[60].' '.'— smartzaim.kz';
                 $data['contacts']['description'] = 'Отзывы о '.$value[50].' '.$value[61];
+                if($version == 'KZ'){
+                    $data['sale']['text_top'] = $value[64];
+                    $data['sale']['text_bottom'] = $value[65];
+                    $data['sale']['url'] = $value[66];
+                    $data['sale']['active'] = $value[67];
+                }
+
+
                 if($version == 'RU' && !$banks){
                     $model->data = serialize($data);
                     $model->url = $value[49];
