@@ -25,6 +25,17 @@ $this->registerMetaTag(['name' => 'description','content' => 'Қазақстан
                     <div class="content-main-info">
                         <div class="content-main-info__item">
                             <h1>Қазақстанның микроқаржы ұйымдарының тізілімі</h1>
+                            <div class="sale-block">
+                                <div class="sale-block-text">
+                                    Бірнеше минуттан кейін ақша!
+                                    <br>
+                                    Онлайн МҚҰ-да жедел түрде ақша ала аласыз. Ақшаны бірнеше минут ішінде алу үшін
+                                    біздің сайтта ұсынылған компанияларда онлайн өтінімді толтырыңыз.
+                                </div>
+                                <div class="sale-block-button">
+                                    <a href="https://maxzaim.com/6803f79457da5?utm_medium=kz.smartzaim.kz&utm_source=reestr-mfo" target="_blank">Ақшаны алу</a>
+                                </div>
+                            </div>
                             <div class="content-main-info__content">
                                 <p class="reestr__text">
                                     Тізілімдегі барлық компаниялар Қаржы нарығын реттеу және дамыту агенттігінің (ҚНРДА) реттеуі мен қадағалауына бағынады. Осы жерде сіз компанияның тізілімде болуын тексере аласыз.
