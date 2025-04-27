@@ -431,3 +431,11 @@ a.desc:after {
     margin-top: 20px;
 }
 /*Profile END*/
+
+.alert-success{
+    margin-top: 10px;
+}
+
+.alert-danger{
+    margin-top: 10px;
+}

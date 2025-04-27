@@ -17,17 +17,15 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('Создать отзыв', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-
+    <?= Html::beginForm(['review/checkbox-delete'],'post');?>
+    <?= Html::submitButton('Удалить выбранные', ['class' => 'btn btn-danger mt-3 mb-3','data-confirm' => Yii::t('yii', 'Вы уверены, что хотите удалить данные записи? Восстановить их будет нельзя.'),]);?>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= \kartik\grid\GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            [
-                'class' => 'yii\grid\SerialColumn',
-                'options' => ['width' => '10'],
-            ],
+            ['class' => 'yii\grid\CheckboxColumn'],
             [
                 'label' => 'МФО',
                 'value' => function ($model) {
