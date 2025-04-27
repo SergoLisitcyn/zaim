@@ -10,7 +10,10 @@ $this->title = $model->name;
 
 if (isset($model->title_seo) && !empty($model->title_seo)) $this->title = $model->title_seo;
 if (isset($model->description) && !empty($model->description)) $this->registerMetaTag(['name' => 'description', 'content' => $model->description]);
-
+$url = 'https://maxzaim.com/6803f79457da5?utm_medium=kz.smartzaim.kz&utm_source=articles';
+    if($model->sale_url){
+        $url = $model->sale_url;
+    }
 \yii\web\YiiAsset::register($this);
 ?>
 <section class="breadcrumbs plr">
@@ -48,7 +51,6 @@ if (isset($model->description) && !empty($model->description)) $this->registerMe
 <!--                                    </div>-->
 <!--                                </div>-->
 <!--                            </div>-->
-                            <?php if($model->sale_url) : ?>
                                 <div class="sale-block">
                                     <div class="sale-block-text">
                                         Бірнеше минуттан кейін ақша!
@@ -57,10 +59,9 @@ if (isset($model->description) && !empty($model->description)) $this->registerMe
                                         біздің сайтта ұсынылған компанияларда онлайн өтінімді толтырыңыз.
                                     </div>
                                     <div class="sale-block-button">
-                                        <a href="<?= $model->sale_url ?>" target="_blank">Ақшаны алу</a>
+                                        <a href="<?= $url ?>" target="_blank">Ақшаны алу</a>
                                     </div>
                                 </div>
-                            <?php endif; ?>
                             <div class="aktsii-article__content articles_news">
                                 <?= $model->content ?>
                                 <?php if($author) : ?>
