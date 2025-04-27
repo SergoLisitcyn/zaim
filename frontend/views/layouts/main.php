@@ -32,7 +32,7 @@ if($url == '/'){
     <link rel="stylesheet" href="/libs/fontawesome/css/font-awesome.min.css" />
     <?= Url::widget(['output' => 'hreflang']); ?>
     <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" id="ao_optimized_gfonts" href="https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C600%2C700%2C800%7COpen+Sans%3A300%2Cregular%2Citalic%2C600%2C700%2C800%7CPT+Serif%3Aregular%2Citalic%7CPT+Sans%3Aregular%2Citalic%2C700" />
-<!--    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2975264109383693" crossorigin="anonymous"></script>-->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2975264109383693" crossorigin="anonymous"></script>
     <?php $this->registerCsrfMetaTags() ?>
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
