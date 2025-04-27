@@ -134,7 +134,7 @@ class Banks extends \yii\db\ActiveRecord
 
     public static function getBanksUpdate($version)
     {
-        $googleAccountKeyFilePath = __DIR__ . '/../../backend/views/banks/smartzaimcrm-59bd2db3d605.json';
+        $googleAccountKeyFilePath = __DIR__ . '/../../backend/views/banks/smartzaimcrm-f5d168c97ba7.json';
         putenv('GOOGLE_APPLICATION_CREDENTIALS=' . $googleAccountKeyFilePath);
 
         $client = new \Google_Client();

@@ -338,7 +338,7 @@ class Mfo extends ActiveRecord
 
     public static function getMfoUpdate($list,$version)
     {
-        $googleAccountKeyFilePath = __DIR__ . '/../../backend/views/mfo-new/smartzaimcrm-59bd2db3d605.json';
+        $googleAccountKeyFilePath = __DIR__ . '/../../backend/views/mfo-new/smartzaimcrm-f5d168c97ba7.json';
         putenv('GOOGLE_APPLICATION_CREDENTIALS=' . $googleAccountKeyFilePath);
 
         $client = new \Google_Client();
