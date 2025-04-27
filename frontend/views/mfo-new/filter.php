@@ -44,6 +44,17 @@ if($tag){
                             <?php endif; ?>
                             <div class="content-main-info__content">
                                 <div class="reestr-article__list bank-offers-horizontal">
+                                    <div class="sale-block">
+                                        <div class="sale-block-text">
+                                            Бірнеше минуттан кейін ақша!
+                                            <br>
+                                            Онлайн МҚҰ-да жедел түрде ақша ала аласыз. Ақшаны бірнеше минут ішінде алу үшін
+                                            біздің сайтта ұсынылған компанияларда онлайн өтінімді толтырыңыз.
+                                        </div>
+                                        <div class="sale-block-button">
+                                            <a href="https://maxzaim.com/6803f79457da5?utm_medium=kz.smartzaim.kz&utm_source=reestr-mfo" target="_blank">Ақшаны алу</a>
+                                        </div>
+                                    </div>
                                     <?php foreach ($mfoAll as $mfo) :
                                         $data = unserialize($mfo->data_kz);
                                         ?>
