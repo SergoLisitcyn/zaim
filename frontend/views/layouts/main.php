@@ -39,14 +39,7 @@ if($url == '/'){
 </head>
 <body class="custom-background" id="<?= $class ?>">
 <?php $this->beginBody() ?>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2975264109383693" crossorigin="anonymous"></script>
-<!-- Homepage Leaderboard -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:728px;height:90px"
-     data-ad-client="ca-pub-2975264109383693"></ins>
-<script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+<!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2975264109383693" crossorigin="anonymous"></script>-->
 <div class="wrapper">
     <header class="header">
         <div class="header-body">
