@@ -22,6 +22,19 @@ if(isset($city->description) and !empty($city->description)) { $this->registerMe
     <h2 class="subtitle">Неғұрлым тиімді ұсынысты тегін таңдаңыз!</h2>
     <h3 class="descr">Онлайн қарыз алу үшін, кредиттік ұйымдарға берілетін өтінім санын барынша көбірек толтырыңыз:</h3>
 </section>
+<section class="faq plr">
+    <div class="sale-block">
+        <div class="sale-block-text">
+            Бірнеше минуттан кейін ақша!
+            <br>
+            Онлайн МҚҰ-да жедел түрде ақша ала аласыз. Ақшаны бірнеше минут ішінде алу үшін
+            біздің сайтта ұсынылған компанияларда онлайн өтінімді толтырыңыз.
+        </div>
+        <div class="sale-block-button">
+            <a href="https://maxzaim.com/6803f79457da5?utm_medium=kz.smartzaim.kz&utm_source=articles" target="_blank">Ақшаны алу</a>
+        </div>
+    </div>
+</section>
 
 <?php //echo CalculatorWidget::widget() ?>
 
